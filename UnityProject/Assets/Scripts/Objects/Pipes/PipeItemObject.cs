@@ -1,8 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Systems.Pipes;
+using Objects.Atmospherics;
 
-namespace Pipes
+
+namespace Items.Atmospherics
 {
 	public class PipeItemObject : PipeItem
 	{
@@ -10,23 +12,18 @@ namespace Pipes
 
 		public override void BuildPipe()
 		{
-			var searchVec = registerItem.LocalPosition;
-			var Pipe = (GetPipeObject());
-			if (Pipe != null)
-			{
-				int Offset = PipeFunctions.GetOffsetAngle(transform.localEulerAngles.z);
-				Quaternion? rot = Quaternion.Euler(0.0f, 0.0f,Offset );
-				var New = Spawn.ServerPrefab(Pipe.gameObject,registerItem.WorldPositionServer, localRotation: rot );
-				New.GameObject.GetComponent<MonoPipe>().SetColour(Colour);
-				Despawn.ServerSingle(this.gameObject);
-			}
+			var pipe = GetPipeObject();
+			if (pipe == null) return;
 
+			int offset = PipeFunctions.GetOffsetAngle(transform.localEulerAngles.z);
+			Quaternion? rotation = Quaternion.Euler(0.0f, 0.0f, offset);
+			var spawn = Spawn.ServerPrefab(pipe.gameObject,registerItem.WorldPositionServer, localRotation: rotation);
+
+			spawn.GameObject.GetComponent<MonoPipe>().SetColour(Colour);
+			_ = Despawn.ServerSingle(gameObject);
 		}
 
-		public virtual void Setsprite()
-		{
-		}
-
+		public virtual void Setsprite() { }
 
 		public virtual MonoPipe GetPipeObject()
 		{
@@ -37,8 +34,9 @@ namespace Pipes
 		{
 			if (pipeObject != null)
 			{
-				return (pipeObject.pipeData.Connections.Copy());
+				return pipeObject.pipeData.Connections.Copy();
 			}
+
 			return null;
 		}
 	}

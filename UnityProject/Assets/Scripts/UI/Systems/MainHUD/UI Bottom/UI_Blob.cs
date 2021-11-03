@@ -60,10 +60,22 @@ public class UI_Blob : MonoBehaviour
 	private bool core;
 
 	[HideInInspector]
+	public bool blobnet;
+
+	[HideInInspector]
 	public BlobPlayer blobPlayer = null;
 
 	[HideInInspector]
 	public BlobMouseInputController controller = null;
+
+	public void ToggleBlobNet()
+	{
+		if (blobPlayer == null) return;
+
+		blobnet = !blobnet;
+
+		blobPlayer.ToggleLineRenderers(blobnet);
+	}
 	public void JumpToCore()
 	{
 		if (blobPlayer == null) return;
@@ -306,7 +318,7 @@ public class UI_Blob : MonoBehaviour
 
 	public void UpdateStrainInfo()
 	{
-		GenerateBlobStrainData(blobPlayer.clientCurrentStrain);
+		GenerateBlobStrainData(blobPlayer.ClientCurrentStrain);
 		ResetButtons();
 	}
 
@@ -353,7 +365,7 @@ public class UI_Blob : MonoBehaviour
 		//First time generating
 		if (!randomStrains.Any())
 		{
-			var strains = blobPlayer.blobStrains.Where(s => s != blobPlayer.clientCurrentStrain);
+			var strains = blobPlayer.blobStrains.Where(s => s != blobPlayer.ClientCurrentStrain);
 			randomStrains = strains.PickRandom(4).ToList();
 		}
 

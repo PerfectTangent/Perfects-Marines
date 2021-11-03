@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Systems.Atmospherics;
-using Chemistry;
 using UnityEngine;
+using Chemistry;
+using Systems.Atmospherics;
+using Objects.Atmospherics;
+using Items.Atmospherics;
+using Tiles.Pipes;
 
-namespace Pipes
+namespace Systems.Pipes
 {
 	[Serializable]
 	public class PipeData
@@ -14,10 +16,10 @@ namespace Pipes
 		public Connections Connections;
 		public CustomLogic CustomLogic;
 		public LiquidPipeNet OnNet;
-		public PipeActions PipeAction;
+		[HideInInspector] public PipeActions PipeAction;
 		public bool NetCompatible = true;
 
-		public MixAndVolume mixAndVolume = new MixAndVolume();
+		[HideInInspector] public MixAndVolume mixAndVolume = new MixAndVolume();
 
 		public MixAndVolume GetMixAndVolume
 		{
@@ -30,13 +32,13 @@ namespace Pipes
 				else
 				{
 					return (mixAndVolume);
+
 				}
 			}
 		}
 
-
-		public List<PipeData> ConnectedPipes = new List<PipeData>();
-		public List<PipeData> Outputs = new List<PipeData>(); //Make sure to redirect to net if there is existence
+		[NonSerialized] public List<PipeData> ConnectedPipes = new List<PipeData>();
+		[NonSerialized] public List<PipeData> Outputs = new List<PipeData>(); //Make sure to redirect to net if there is existence
 
 		public PipeNode pipeNode;
 		public MonoPipe MonoPipe;
@@ -54,12 +56,12 @@ namespace Pipes
 					return (MonoPipe.MatrixPos);
 				}
 
-				Logger.Log("Vector3Int null!!");
+				Logger.Log("Vector3Int null!!", Category.Pipes);
 				return (Vector3Int.zero);
 			}
 		}
 
-		public Matrix matrix
+		public Matrix Matrix
 		{
 			get
 			{
@@ -72,11 +74,10 @@ namespace Pipes
 					return (MonoPipe.Matrix);
 				}
 
-				Logger.Log("Matrix null!!");
+				Logger.Log("Matrix null!!", Category.Pipes);
 				return (null);
 			}
 		}
-
 
 		public virtual void OnEnable()
 		{
@@ -85,9 +86,9 @@ namespace Pipes
 				PipeAction.pipeData = this;
 			}
 
-			AtmosManager.Instance.inGameNewPipes.Add(this);
+			AtmosManager.Instance.AddPipe(this);
 			ConnectedPipes =
-				PipeFunctions.GetConnectedPipes(ConnectedPipes, this, MatrixPos, matrix);
+				PipeFunctions.GetConnectedPipes(ConnectedPipes, this, MatrixPos, Matrix);
 
 			foreach (var Pipe in ConnectedPipes)
 			{
@@ -138,7 +139,7 @@ namespace Pipes
 
 		public virtual void OnDisable()
 		{
-			AtmosManager.Instance.inGameNewPipes.Remove(this);
+			AtmosManager.Instance.RemovePipe(this);
 			foreach (var Pipe in ConnectedPipes)
 			{
 				if(Pipe == null) continue;
@@ -167,7 +168,7 @@ namespace Pipes
 
 						// this one probably require more work than just null check
 						if(Pipe.OnNet == null)
-							Logger.LogWarning("Pipe.OnNet == null", Category.Atmos);
+							Logger.LogWarning("Pipe.OnNet == null", Category.Pipes);
 						else
 							Pipe.OnNet.RemoveEqualiseWith(this);
 					}
@@ -204,16 +205,20 @@ namespace Pipes
 			}
 
 			ZeroedLocation.z = 0;
-			var tileWorldPosition = MatrixManager.LocalToWorld(ZeroedLocation, matrix).RoundToInt();
-			MatrixManager.ReagentReact(ToSpill.Item1, tileWorldPosition);
-			MetaDataLayer metaDataLayer = MatrixManager.AtPoint(tileWorldPosition, true).MetaDataLayer;
+
+			var tileWorldPosition = MatrixManager.LocalToWorld(ZeroedLocation, Matrix).RoundToInt();
+			var matrixInfo = MatrixManager.AtPoint(tileWorldPosition, true);
+
+			MatrixManager.ReagentReact(ToSpill.Item1, tileWorldPosition, matrixInfo);
+
+			MetaDataLayer metaDataLayer = matrixInfo.MetaDataLayer;
 			if (pipeNode != null)
 			{
 				GasMix.TransferGas(pipeNode.IsOn.GasMix, ToSpill.Item2, ToSpill.Item2.Moles);
 			}
 			else
 			{
-				GasMix.TransferGas(matrix.GetMetaDataNode(ZeroedLocation).GasMix, ToSpill.Item2, ToSpill.Item2.Moles);
+				GasMix.TransferGas(Matrix.GetMetaDataNode(ZeroedLocation).GasMix, ToSpill.Item2, ToSpill.Item2.Moles);
 			}
 			metaDataLayer.UpdateSystemsAt(ZeroedLocation, SystemType.AtmosSystem);
 		}
@@ -323,17 +328,18 @@ namespace Pipes
 		{
 			if (MonoPipe == null)
 			{
-				var Transform = matrix.UnderFloorLayer.GetMatrix4x4(pipeNode.NodeLocation, pipeNode.RelatedTile);
-				var pipe = Spawn.ServerPrefab(pipeNode.RelatedTile.SpawnOnDeconstruct,  MatrixManager.LocalToWorld(pipeNode.NodeLocation,matrix),
-					localRotation: PipeDeconstruction.QuaternionFromMatrix(Transform)).GameObject;
+				Matrix4x4 matrix = Matrix.MetaTileMap.GetMatrix4x4(pipeNode.NodeLocation, LayerType.Underfloor, true).GetValueOrDefault(Matrix4x4.identity);
+				var pipe = Spawn.ServerPrefab(
+						pipeNode.RelatedTile.SpawnOnDeconstruct,
+						MatrixManager.LocalToWorld(pipeNode.NodeLocation, this.Matrix),
+						localRotation: PipeDeconstruction.QuaternionFromMatrix(matrix)).GameObject;
 				var itempipe = pipe.GetComponent<PipeItemTile>();
-				itempipe.Colour = matrix.UnderFloorLayer.GetColour(pipeNode.NodeLocation, pipeNode.RelatedTile);
+				itempipe.Colour = Matrix.MetaTileMap.GetColour(pipeNode.NodeLocation, LayerType.Underfloor, true).GetValueOrDefault(Color.white);
 				itempipe.Setsprite();
-				//matrix.RemoveUnderFloorTile(pipeNode.NodeLocation,pipeNode.RelatedTile);
-				pipeNode.LocatedOn.RemoveUnderFloorTile(pipeNode.NodeLocation, pipeNode.RelatedTile);
+				pipeNode.LocatedOn.TileChangeManager.RemoveTile(pipeNode.NodeLocation, LayerType.Underfloor);
 
 				pipeNode.IsOn.PipeData.Remove(pipeNode);
-				this.OnDisable();
+				OnDisable();
 			}
 		}
 
@@ -374,7 +380,6 @@ namespace Pipes
 				}
 			}
 		}
-
 
 		public virtual void TickUpdate()
 		{

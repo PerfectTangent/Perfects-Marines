@@ -1,7 +1,9 @@
 using System.Collections;
 using System;
+using AddressableReferences;
 using UnityEngine;
 using Mirror;
+using Systems.Botany;
 using Systems.Explosions;
 
 namespace Items.Weapons
@@ -35,6 +37,10 @@ namespace Items.Weapons
 		[SerializeField]
 		[Tooltip("SpriteHandler used for blinking animation")]
 		private SpriteHandler spriteHandler = default;
+
+		//Sound made
+		[Tooltip("The sound used when the lemon is armed and about to explode.")]
+		[SerializeField] private AddressableAudioSource ArmedSound = null;
 
 		[SerializeField]
 		[Tooltip("Used to override the potency values of the plant data")]
@@ -171,7 +177,7 @@ namespace Items.Weapons
 			var worldPos = objectBehaviour.AssumedWorldPositionServer();
 
 			// Despawn grenade
-			Despawn.ServerSingle(gameObject);
+			_ = Despawn.ServerSingle(gameObject);
 
 			// Explosion here
 			var explosionGO = Instantiate(explosionPrefab, explosionMatrix.transform);
@@ -182,7 +188,7 @@ namespace Items.Weapons
 
 		private void PlayPinSFX(Vector3 position)
 		{
-			SoundManager.PlayNetworkedAtPos("sizzle", position, sourceObj: gameObject);
+			SoundManager.PlayNetworkedAtPos(ArmedSound, position, sourceObj: gameObject);
 		}
 
 		private void UpdateTimer(bool timerRunning)

@@ -2,6 +2,8 @@
 using NaughtyAttributes;
 using ScriptableObjects;
 using TileManagement;
+using AddressableReferences;
+using ScriptableObjects.Audio;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -9,7 +11,10 @@ using UnityEngine.Tilemaps;
 public abstract class BasicTile : LayerTile
 {
 	[Tooltip("What it sounds like when walked over")] [ShowIf(nameof(passable))]
-	public FloorTileType floorTileType = FloorTileType.floor;
+	public FloorSounds floorTileSounds;
+
+	[Tooltip("can the sounds specified be overridden by objects like clown shoes")]
+	public bool CanSoundOverride = false;
 
 	[Tooltip("Allow gases to pass through the cell this tile occupies?")]
 	[FormerlySerializedAs("AtmosPassable")]
@@ -29,16 +34,37 @@ public abstract class BasicTile : LayerTile
 
 	[Tooltip("Can this tile be mined?")] [FormerlySerializedAs("Mineable")] [SerializeField]
 	private bool mineable = false;
+	[Tooltip("How long does it take to mine this tile?")] [SerializeField] [ShowIf(nameof(mineable))]
+	private float miningTime = 5f;
+
+	[Tooltip("Can a player construct above this tile?")]
+	public bool constructable;
+
+	[Range(0.0f, 1f)] [Tooltip("RadiationPassability 0 = 100% Resistant")] [SerializeField]
+	public float RadiationPassability = 1;
+
+	[Range(0f, 1f)] [Tooltip("ThermalConductivity 0 = 100% Conductivity")] [SerializeField]
+	public float ThermalConductivity = 0.05f;
+
+	[Range(0f, 1000000f)] [Tooltip("Heat Capacity 0 to 1000000")] [SerializeField]
+	public float HeatCapacity = 10000;
 
 	/// <summary>
 	/// Can this tile be mined?
 	/// </summary>
 	public bool Mineable => mineable;
+	public float MiningTime => miningTime;
 
 	[Tooltip("Will bullets bounce from this tile?")] [SerializeField]
 	private bool doesReflectBullet = false;
 
 	public bool DoesReflectBullet => doesReflectBullet;
+
+	[Tooltip("Can this tile be damaged at all?")]
+	public bool indestructible;
+
+	[Tooltip("Do explosions have to completely destroy the tile before passing it, Otherwise explosion extends all its energy on the wall")]
+	public bool ExplosionImpassable;
 
 	[Tooltip("What things are allowed to pass through this even if it is not passable?")]
 	[FormerlySerializedAs("PassableException")]
@@ -104,9 +130,30 @@ public abstract class BasicTile : LayerTile
 
 	public LootOnDespawn LootOnDespawn => lootOnDespawn;
 
-	[SerializeField] private string soundOnHit = default;
+	[SerializeField]
+	[Tooltip("The tile that will spawn when this tile is destroyed")]
+	private LayerTile toTileWhenDestroyed = null;
 
-	public string SoundOnHit => soundOnHit;
+	public LayerTile ToTileWhenDestroyed => toTileWhenDestroyed;
+
+	[Tooltip("What object to spawn when it's destroyed.")] [SerializeField]
+	private SpawnableList spawnOnDestroy = null;
+
+	public SpawnableList SpawnOnDestroy => spawnOnDestroy;
+
+	[SerializeField]
+	private DamageOverlaySO damageOverlayList = null;
+
+	public DamageOverlaySO DamageOverlayList => damageOverlayList;
+
+	[SerializeField]
+	[Foldout("SoundOnHit")]
+	private AddressableAudioSource soundOnHit = null;
+
+	public AddressableAudioSource SoundOnHit => soundOnHit;
+
+	[SerializeField]
+	public List<AddressableAudioSource> SoundOnDestroy = new List<AddressableAudioSource>();
 
 	public override void RefreshTile(Vector3Int position, ITilemap tilemap)
 	{
@@ -152,9 +199,8 @@ public abstract class BasicTile : LayerTile
 		return IsAtmosPassable() && !isSealed;
 	}
 
-
 	//yeah,This needs to be moved out into its own class
-	public virtual bool AreUnderfloorSame(Matrix4x4 thisTransformMatrix, BasicTile basicTile, Matrix4x4 TransformMatrix)
+	public virtual bool IsTileRepeated(Matrix4x4 thisTransformMatrix, BasicTile basicTile, Matrix4x4 TransformMatrix, MetaDataNode metaDataNode)
 	{
 		if (basicTile == this)
 		{

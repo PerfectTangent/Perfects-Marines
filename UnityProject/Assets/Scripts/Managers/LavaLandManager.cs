@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Managers;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEditor;
@@ -11,11 +12,8 @@ using TileManagement;
 
 namespace Systems.Scenes
 {
-	public class LavaLandManager : MonoBehaviour
+	public class LavaLandManager : SingletonManager<LavaLandManager>
 	{
-		private static LavaLandManager instance;
-		public static LavaLandManager Instance => instance;
-
 		public List<LavaLandRandomAreaSO> areaSOs = new List<LavaLandRandomAreaSO>();
 
 		private List<LavaLandData> dataList = new List<LavaLandData>();
@@ -54,26 +52,14 @@ namespace Systems.Scenes
 		[HideInInspector]
 		public QuantumPad LavaLandBase2Connector;
 
-		private void Awake()
-		{
-			if (instance == null)
-			{
-				instance = this;
-			}
-			else
-			{
-				Destroy(this);
-			}
-		}
-
 		private void OnEnable()
 		{
-			EventManager.AddHandler(EVENT.RoundStarted, SpawnLavaLand);
+			EventManager.AddHandler(Event.ScenesLoadedServer, SpawnLavaLand);
 		}
 
 		private void OnDisable()
 		{
-			EventManager.RemoveHandler(EVENT.RoundStarted, SpawnLavaLand);
+			EventManager.RemoveHandler(Event.ScenesLoadedServer, SpawnLavaLand);
 		}
 
 		public void SpawnLavaLand()
@@ -94,16 +80,16 @@ namespace Systems.Scenes
 				script.numR = Random.Range(1, 7);
 				script.DoSim();
 			}
-
+			yield return null;
 			tileChangeManager = MatrixManager.Instance.lavaLandMatrix.transform.parent.GetComponent<TileChangeManager>();
 
 			GenerateStructures();
-
+			yield return null;
 			MatrixManager.Instance.lavaLandMatrix.transform.parent.GetComponent<OreGenerator>().RunOreGenerator();
 
 			SetQuantumPads();
 
-			Debug.Log("Finished generating LavaLand");
+			Logger.Log("Finished generating LavaLand", Category.Round);
 
 			yield break;
 		}

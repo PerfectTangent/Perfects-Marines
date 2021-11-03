@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using Items;
 using UnityEngine;
 using Mirror;
 using Objects.Atmospherics;
+using Systems.Clothing;
+using Messages.Server;
 
 /// <summary>
 /// Component which manages all the equipment on a player.
@@ -11,21 +15,25 @@ using Objects.Atmospherics;
 public class Equipment : NetworkBehaviour
 {
 	private PlayerScript script;
-	public ItemStorage ItemStorage { get; private set; }
+	public DynamicItemStorage ItemStorage => script.DynamicItemStorage;
 
 	public bool IsInternalsEnabled;
-	private ItemSlot maskSlot;
+
 	private Dictionary<NamedSlot, ClothingItem> clothingItems;
 
 	[NonSerialized]
 	public NamedSlotFlagged obscuredSlots = NamedSlotFlagged.None;
 
-	private string TheyPronoun => script.characterSettings.TheyPronoun();
-	private string TheirPronoun => script.characterSettings.TheirPronoun();
+	private string TheyPronoun => script.characterSettings.TheyPronoun(script);
+	private string TheirPronoun => script.characterSettings.TheirPronoun(script);
+
+	private IEnumerable<ItemSlot> maskSlot => ItemStorage.GetNamedItemSlots(NamedSlot.mask);
+	private IEnumerable<ItemSlot> headSlot => ItemStorage.GetNamedItemSlots(NamedSlot.head);
+	private IEnumerable<ItemSlot> idSlot  => ItemStorage.GetNamedItemSlots(NamedSlot.id);
+
 
 	private void Awake()
 	{
-		ItemStorage = GetComponent<ItemStorage>();
 		script = GetComponent<PlayerScript>();
 
 		clothingItems = new Dictionary<NamedSlot, ClothingItem>();
@@ -37,7 +45,6 @@ public class Equipment : NetworkBehaviour
 			}
 		}
 
-		maskSlot = ItemStorage.GetNamedItemSlot(NamedSlot.mask);
 		InitInternals();
 	}
 
@@ -63,8 +70,8 @@ public class Equipment : NetworkBehaviour
 	private void InitInternals()
 	{
 		IsInternalsEnabled = false;
-		EventManager.AddHandler(EVENT.EnableInternals, OnInternalsEnabled);
-		EventManager.AddHandler(EVENT.DisableInternals, OnInternalsDisabled);
+		EventManager.AddHandler(Event.EnableInternals, OnInternalsEnabled);
+		EventManager.AddHandler(Event.DisableInternals, OnInternalsDisabled);
 	}
 
 	/// <summary>
@@ -72,8 +79,8 @@ public class Equipment : NetworkBehaviour
 	/// </summary>
 	private void UnregisisterInternals()
 	{
-		EventManager.RemoveHandler(EVENT.EnableInternals, OnInternalsEnabled);
-		EventManager.RemoveHandler(EVENT.DisableInternals, OnInternalsDisabled);
+		EventManager.RemoveHandler(Event.EnableInternals, OnInternalsEnabled);
+		EventManager.RemoveHandler(Event.DisableInternals, OnInternalsDisabled);
 	}
 
 	public void OnInternalsEnabled()
@@ -84,32 +91,6 @@ public class Equipment : NetworkBehaviour
 	public void OnInternalsDisabled()
 	{
 		CmdSetInternalsEnabled(false);
-	}
-
-	/// <summary>
-	/// Clientside method.
-	/// Checks if player has proper internals equipment (Oxygen Tank and Mask)
-	/// equipped in the correct inventory slots (suitStorage and mask)
-	/// </summary>
-	public bool HasInternalsEquipped()
-	{
-		var item = maskSlot?.Item;
-		if (item == null) return false;
-		var itemAttrs = item.GetComponent<ItemAttributesV2>();
-		if (itemAttrs == null) return false;
-
-		if (itemAttrs.HasTrait(CommonTraits.Instance.Mask))
-		{
-			foreach (var gasSlot in ItemStorage.GetGasSlots())
-			{
-				if (gasSlot.Item && gasSlot.Item.GetComponent<GasContainer>())
-				{
-					return true;
-				}
-			}
-		}
-
-		return false;
 	}
 
 	/// <summary>
@@ -136,97 +117,302 @@ public class Equipment : NetworkBehaviour
 		return obscuredSlots.HasFlag(ItemSlot.GetFlaggedSlot(namedSlot));
 	}
 
+	#region Identity
+
+	/// <summary>
+	/// Determine whether the identity of the player is obscured by articles of clothing
+	/// with the ObscuresIdentity trait in the head or mask slots.
+	/// </summary>
+	public bool IsIdentityObscured()
+	{
+		// check if any worn mask or headwear obscures identity of the wearer
+		return (IsOccupied(maskSlot) && HidesIdentity(maskSlot)
+				|| (IsOccupied(headSlot) && HidesIdentity(headSlot)));
+	}
+
+	public bool HidesIdentity(IEnumerable<ItemSlot> ToCheck)
+	{
+		foreach (var itemSlot in ToCheck)
+		{
+			if (itemSlot.Item.TryGetComponent<ClothingV2>(out var headwear))
+			{
+				if (headwear.HidesIdentity == false)
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public bool IsOccupied(IEnumerable<ItemSlot> ToCheck)
+	{
+		foreach (var itemSlot in ToCheck)
+		{
+			if (itemSlot.IsOccupied == false)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+
+	/// <summary>
+	/// Attempts to get the in-game name of the player based on what is in their ID slot.
+	/// </summary>
+	/// <returns>Unknown if an identity couldn't be found.</returns>
+	public string GetPlayerNameByEquipment()
+	{
+		if (IsOccupied(idSlot))
+		{
+			foreach (var itemSlot in idSlot)
+			{
+				if (itemSlot.Item.TryGetComponent<IDCard>(out var idCard))
+				{
+					if (string.IsNullOrEmpty(idCard.RegisteredName) == false)
+					{
+						return idCard.RegisteredName;
+					}
+				}
+			}
+		}
+
+		if (IsOccupied(idSlot))
+		{
+			foreach (var itemSlot in idSlot)
+			{
+				if (itemSlot.Item.TryGetComponent<Items.PDA.PDALogic>(out var pda))
+				{
+					if (string.IsNullOrEmpty(pda.RegisteredPlayerName) == false)
+					{
+						return pda.RegisteredPlayerName;
+					}
+				}
+			}
+		}
+
+		return "Unknown";
+	}
+
+	#endregion Identity
+
 	#region Examination
 
 	public string Examine()
 	{
+
+		StringBuilder equipment = new StringBuilder();
+		string pronounIs = "";
+		string pronounHas = "";
 		string theyPronoun = TheyPronoun;
 		theyPronoun = theyPronoun[0].ToString().ToUpper() + theyPronoun.Substring(1);
 		string theirPronoun = TheirPronoun;
-		string equipment = "";
+
+		//switch out words depending on if the examined player is nonbinary, because "they is wearing" is not how you grammer.
+		pronounIs = script.characterSettings.IsPronoun(script);
+		pronounHas = script.characterSettings.HasPronoun(script);
+
 
 		if (IsExaminable(NamedSlot.uniform))
 		{
-			equipment += $"{theyPronoun} is wearing a <b>{ItemNameInSlot(NamedSlot.uniform)}</b>.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.uniform))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing a <b>{ItemNameInSlot(itemSlot)}</b>.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.head))
 		{
-			equipment += $"{theyPronoun} is wearing a <b>{ItemNameInSlot(NamedSlot.head)}</b> on {theirPronoun} head.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.head))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing a <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} head.\n");
+			}
+
 		}
 
 		if (IsExaminable(NamedSlot.outerwear))
 		{
-			equipment += $"{theyPronoun} is wearing a <b>{ItemNameInSlot(NamedSlot.outerwear)}</b>.\n";
-
-			if (IsExaminable(NamedSlot.suitStorage))
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.outerwear))
 			{
-				equipment += $"{theyPronoun} is carrying a <b>{ItemNameInSlot(NamedSlot.suitStorage)}</b> " +
-						$"on {theirPronoun} {ItemNameInSlot(NamedSlot.outerwear)}.\n";
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing a <b>{ItemNameInSlot(itemSlot)}</b>.\n");
+			}
+		}
+
+		if (IsExaminable(NamedSlot.suitStorage))
+		{
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.suitStorage))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} carrying a <b>{ItemNameInSlot(itemSlot)}</b>. \n");
 			}
 		}
 
 		if (IsExaminable(NamedSlot.back))
 		{
-			equipment += $"{theyPronoun} has a <b>{ItemNameInSlot(NamedSlot.back)}</b> on {theirPronoun} back.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.back))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} a <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} back.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.leftHand))
 		{
-			equipment += $"{theyPronoun} is holding a <b>{ItemNameInSlot(NamedSlot.leftHand)}</b> in {theirPronoun} left hand.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.leftHand))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} holding a <b>{ItemNameInSlot(itemSlot)}</b> in {theirPronoun} left hand.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.rightHand))
 		{
-			equipment += $"{theyPronoun} is holding a <b>{ItemNameInSlot(NamedSlot.rightHand)}</b> in {theirPronoun} right hand.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.rightHand))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} holding a <b>{ItemNameInSlot(itemSlot)}</b> in {theirPronoun} right hand.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.hands))
 		{
-			equipment += $"{theyPronoun} has <b>{ItemNameInSlot(NamedSlot.hands)}</b> on {theirPronoun} hands.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.hands))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} hands.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.handcuffs))
 		{
-			equipment += $"<color=red>{theyPronoun} is restrained with <b>{ItemNameInSlot(NamedSlot.handcuffs)}</b>!</color>\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.handcuffs))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"<color=red>{theyPronoun} {pronounIs} restrained with <b>{ItemNameInSlot(itemSlot)}</b>!</color>\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.belt))
 		{
-			equipment += $"{theyPronoun} has a <b>{ItemNameInSlot(NamedSlot.belt)}</b> about {theirPronoun} waist.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.belt))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} a <b>{ItemNameInSlot(itemSlot)}</b> about {theirPronoun} waist.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.feet))
 		{
-			equipment += $"{theyPronoun} is wearing <b>{ItemNameInSlot(NamedSlot.feet)}</b> on {theirPronoun} feet.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.feet))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} feet.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.mask))
 		{
-			equipment += $"{theyPronoun} has a <b>{ItemNameInSlot(NamedSlot.mask)}</b> on {theirPronoun} face.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.mask))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} a <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} face.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.neck))
 		{
-			equipment += $"{theyPronoun} is wearing a <b>{ItemNameInSlot(NamedSlot.neck)}</b> around {theirPronoun} neck.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.neck))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing a <b>{ItemNameInSlot(itemSlot)}</b> around {theirPronoun} neck.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.eyes))
 		{
-			equipment += $"{theyPronoun} has <b>{ItemNameInSlot(NamedSlot.eyes)}</b> covering {theirPronoun} eyes.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.eyes))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} <b>{ItemNameInSlot(itemSlot)}</b> covering {theirPronoun} eyes.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.ear))
 		{
-			equipment += $"{theyPronoun} has <b>{ItemNameInSlot(NamedSlot.ear)}</b> on {theirPronoun} ears.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.ear))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounHas} <b>{ItemNameInSlot(itemSlot)}</b> on {theirPronoun} ears.\n");
+			}
 		}
 
 		if (IsExaminable(NamedSlot.id))
 		{
-			equipment += $"{theyPronoun} is wearing a <b>{ItemNameInSlot(NamedSlot.id)}</b>.\n";
+			foreach (var itemSlot in ItemStorage.GetNamedItemSlots(NamedSlot.id))
+			{
+				if (itemSlot.IsEmpty)
+				{
+					continue;
+				}
+				equipment.Append($"{theyPronoun} {pronounIs} wearing a <b>{ItemNameInSlot(itemSlot)}</b>.\n");
+			}
 		}
 
-		return equipment;
+		return equipment.ToString();
 	}
 
 	private bool IsExaminable(NamedSlot slot)
@@ -236,18 +422,12 @@ public class Equipment : NetworkBehaviour
 			return false;
 		}
 
-		var storageSlot = ItemStorage.GetNamedItemSlot(slot);
-		if (storageSlot.IsEmpty)
-		{
-			return false;
-		}
-
 		return true;
 	}
 
-	private string ItemNameInSlot(NamedSlot slot)
+	private string ItemNameInSlot(ItemSlot slot)
 	{
-		return ItemStorage.GetNamedItemSlot(slot).ItemObject.ExpensiveName();
+		return slot.ItemObject.ExpensiveName();
 	}
 
 	#endregion Examination

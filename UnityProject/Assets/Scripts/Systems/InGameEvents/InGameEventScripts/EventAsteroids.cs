@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Systems.Explosions;
+using AddressableReferences;
+using Managers;
+using Strings;
 
 namespace InGameEvents
 {
@@ -33,17 +36,27 @@ namespace InGameEvents
 		[SerializeField]
 		private int maxTimeBetweenMeteors = 10;
 
+		private bool IsMatrixInvalid()
+		{
+			if (stationMatrix != null) return false;
+
+			Logger.LogError($"Unable to start \"{nameof(EventAsteroids)}\". Main station may not be initialized yet.", Category.Event);
+			return true;
+		}
+
 		public override void OnEventStart()
 		{
 			stationMatrix = MatrixManager.MainStationMatrix;
+
+			if (IsMatrixInvalid()) return;
 
 			if (AnnounceEvent)
 			{
 				var text = "Proximity Alert:\nInbound Meteors have been detected.\nBrace for impact!";
 
-				CentComm.MakeAnnouncementNoSound(CentComm.CentCommAnnounceTemplate, text);
+				CentComm.MakeAnnouncement(ChatTemplates.CentcomAnnounce, text, CentComm.UpdateSound.NoSound);
 
-				SoundManager.PlayNetworked("Meteors");
+				_ = SoundManager.PlayNetworked(CommonSounds.Instance.MeteorsAnnouncement);
 			}
 
 			if (FakeEvent) return;
@@ -53,6 +66,8 @@ namespace InGameEvents
 
 		public override void OnEventStartTimed()
 		{
+			if (IsMatrixInvalid()) return;
+
 			int asteroidAmount = UnityEngine.Random.Range(minMeteorAmount, maxMeteorAmount);
 
 			for (var i = 1; i <= asteroidAmount; i++)
@@ -70,12 +85,14 @@ namespace InGameEvents
 			{
 				var text = "Situation Update:\nNo more Meteors have been detected.";
 
-				CentComm.MakeAnnouncement(CentComm.CentCommAnnounceTemplate, text, CentComm.UpdateSound.alert);
+				CentComm.MakeAnnouncement(ChatTemplates.CentcomAnnounce, text, CentComm.UpdateSound.Alert);
 			}
 		}
 
 		private IEnumerator SpawnMeteorsWithDelay(float asteroidAmount)
 		{
+			if (IsMatrixInvalid()) yield break;
+
 			for (var i = 1; i <= asteroidAmount; i++)
 			{
 				int multiplier = 1;

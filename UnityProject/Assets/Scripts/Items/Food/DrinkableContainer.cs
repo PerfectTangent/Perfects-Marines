@@ -2,19 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Items;
 using ScriptableObjects;
 using UnityEngine;
+using AddressableReferences;
+using Messages.Server.SoundMessages;
+using Random = UnityEngine.Random;
+using WebSocketSharp;
 
 [RequireComponent(typeof(ItemAttributesV2))]
 [RequireComponent(typeof(ReagentContainer))]
 public class DrinkableContainer : Consumable
 {
-	public string sound = "Slurp";
+	/// <summary>
+	/// The name of the sound the player makes when drinking
+	/// </summary>
+	[Tooltip("The name of the sound the player makes when drinking (must be in soundmanager")]
+	[SerializeField] private AddressableAudioSource drinkSound = null;
+
+	private float RandomPitch => Random.Range( 0.7f, 1.3f );
 
 	private ReagentContainer container;
 	private ItemAttributesV2 itemAttributes;
 	private RegisterItem item;
-
 
 	private static readonly StandardProgressActionConfig ProgressConfig
 		= new StandardProgressActionConfig(StandardProgressActionType.Restrain);
@@ -76,9 +86,10 @@ public class DrinkableContainer : Consumable
 		DoDrinkEffects(eater, drinkAmount);
 
 		// Play sound
-		if (item && !string.IsNullOrEmpty(sound))
+		if (item && drinkSound != null)
 		{
-			SoundManager.PlayNetworkedAtPos(sound, eater.WorldPos, sourceObj: eater.gameObject);
+			AudioSourceParameters audioSourceParameters = new AudioSourceParameters(RandomPitch, spatialBlend: 1f);
+			SoundManager.PlayNetworkedAtPos(drinkSound, eater.WorldPos, audioSourceParameters, sourceObj: eater.gameObject);
 		}
 	}
 
@@ -90,7 +101,7 @@ public class DrinkableContainer : Consumable
 
 		if ((int) drinkAmount == 0) return;
 
-		foreach (var reagent in container.CurrentReagentMix)
+		foreach (var reagent in container.CurrentReagentMix.reagents.m_dict)
 		{
 			//if its not alcoholic skip
 			if (!AlcoholicDrinksSOScript.Instance.AlcoholicReagents.Contains(reagent.Key)) continue;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Random = UnityEngine.Random;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class MapList
@@ -13,26 +14,28 @@ public class MapList
 
 	public string GetRandomMap()
 	{
-		var mapsToChooseFrom = new List<string>(lowPopMaps);
 		var playerCount = PlayerList.LastRoundPlayerCount;
-
 		if (playerCount < PlayerList.Instance.ConnectionCount)
 		{
 			playerCount = PlayerList.Instance.ConnectionCount;
 		}
 
-		if (playerCount <= medPopMinLimit && lowPopMaps.Count > 0)
+		List<string> mapsToChooseFrom;
+
+		if (playerCount < medPopMinLimit)
 		{
-			return mapsToChooseFrom[Random.Range(0, mapsToChooseFrom.Count)];
+			mapsToChooseFrom = lowPopMaps;
+		}
+		else if (playerCount < highPopMinLimit)
+		{
+			mapsToChooseFrom = medPopMaps;
+		}
+		else
+		{
+			mapsToChooseFrom = highPopMaps;
 		}
 
-		mapsToChooseFrom = new List<string>(medPopMaps);
-		if (playerCount >= highPopMinLimit)
-		{
-			mapsToChooseFrom.AddRange(highPopMaps);
-		}
-
-		var rand = Random.Range(0, mapsToChooseFrom.Count);
-		return mapsToChooseFrom[rand];
+		// Check that we can actually load the scene.
+		return mapsToChooseFrom.Where(map => SceneUtility.GetBuildIndexByScenePath(map) > -1).PickRandom();
 	}
 }

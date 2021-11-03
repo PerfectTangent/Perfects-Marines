@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Mirror;
+using Player.Movement;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -58,7 +59,7 @@ namespace Objects
 		private void Disassemble(HandApply interaction)
 		{
 			Spawn.ServerPrefab(resourcesMadeOf, gameObject.WorldPosServer(), count: howMany);
-			Despawn.ServerSingle(gameObject);
+			_ = Despawn.ServerSingle(gameObject);
 		}
 	}
 }

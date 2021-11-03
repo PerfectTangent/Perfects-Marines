@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DatabaseAPI;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AdminCommands;
+using Messages.Client.Admin;
+
 
 namespace AdminTools
 {
@@ -31,8 +31,7 @@ namespace AdminTools
 
 		void SendEditRequest()
 		{
-			RequestGameModeUpdate.Send(ServerData.UserID, PlayerList.Instance.AdminToken, currentData.nextGameMode,
-				currentData.isSecret);
+			RequestGameModeUpdate.Send(currentData.nextGameMode, currentData.isSecret);
 		}
 
 		public override void OnPageRefresh(AdminPageRefreshData adminPageData)
@@ -69,7 +68,7 @@ namespace AdminTools
 
 		public void ToggleOOCMute()
 		{
-			ServerCommandVersionOneMessageClient.Send(ServerData.UserID, PlayerList.Instance.AdminToken, "CmdToggleOOCMute");
+			AdminCommandsManager.Instance.CmdToggleOOCMute();
 		}
 	}
 }

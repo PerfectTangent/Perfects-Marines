@@ -3,9 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Doors;
+using Items;
+using Messages.Server;
 using UnityEngine;
 using UnityEngine.Events;
 using Objects;
+using ScriptableObjects.Audio;
 
 public partial class PlayerSync
 {
@@ -22,7 +25,7 @@ public partial class PlayerSync
 	public CollisionEvent OnHighSpeedCollision() => onHighSpeedCollision;
 
 	public Vector3Int ServerPosition => serverState.WorldPosition.RoundToInt();
-	public Vector3Int ServerLocalPosition => serverState.Position.RoundToInt();
+	public Vector3Int ServerLocalPosition => serverState.LocalPosition.RoundToInt();
 
 	public Vector3Int LastNonHiddenPosition => serverState.LastNonHiddenPosition.RoundToInt();
 
@@ -87,10 +90,10 @@ public partial class PlayerSync
 		{
 			if (registerPlayer.IsSlippingServer)
 			{
-				return MatrixManager.IsNoGravityAt(serverState.WorldPosition.RoundToInt(), true)
-					|| MatrixManager.IsSlipperyAt(serverState.WorldPosition.RoundToInt());
+				return Matrix.IsNoGravityAt(serverState.LocalPosition.RoundToInt(), true)
+					|| Matrix.MetaDataLayer.IsSlipperyAt(serverState.LocalPosition.RoundToInt());
 			}
-			return !playerScript.IsGhost && MatrixManager.IsNonStickyAt(serverState.WorldPosition.RoundToInt(), true);
+			return !playerScript.IsGhost && Matrix.IsNonStickyAt(serverState.LocalPosition.RoundToInt(), true);
 		}
 	}
 
@@ -293,7 +296,7 @@ public partial class PlayerSync
 		var newState = new PlayerState
 		{
 			MoveNumber = 0,
-			WorldImpulse = direction,
+			WorldImpulse = Vector2.zero,
 			MatrixId = newMatrix.Id,
 			WorldPosition = pushGoal,
 			ImportantFlightUpdate = true,
@@ -413,6 +416,7 @@ public partial class PlayerSync
 			pushPull.InformHead(pushPull.PulledBy);
 			//			InformPullMessage.Send( pushPull.PulledBy, this.pushPull, pushPull.PulledBy );
 		}
+		UpdateClientState(serverState);
 	}
 
 	/// Clears server pending actions queue
@@ -443,6 +447,7 @@ public partial class PlayerSync
 
 	/// Tries to assign next target from queue to serverTargetState if there are any
 	/// (In order to start lerping towards it)
+	/// do not loop
 	[Server]
 	private void TryUpdateServerTarget()
 	{
@@ -480,7 +485,6 @@ public partial class PlayerSync
 			SyncMatrix();
 		}
 
-		TryUpdateServerTarget();
 		//Logger.Log($"Server Updated target {serverTargetState}. {serverPendingActions.Count} pending");
 	}
 
@@ -488,16 +492,8 @@ public partial class PlayerSync
 	[Server]
 	private PlayerState NextStateServer(PlayerState state, PlayerAction action)
 	{
-		//movement not allowed when buckled
-		if (playerMove.IsBuckled)
-		{
-			Logger.LogWarning($"Ignored {action}: player is bucked, rolling back!", Category.Movement);
-			RollbackPosition();
-			return state;
-		}
-
 		// if player is in RCS mode and MatrixMove is not null
-		if(playerScript.RcsMode && playerScript.RcsMatrixMove)
+		if (playerScript.RcsMode && playerScript.RcsMatrixMove)
 		{
 			Vector2Int dir = action.Direction();
 			// try to move shuttle on server side
@@ -507,15 +503,23 @@ public partial class PlayerSync
 			return state;
 		}
 
+		//movement not allowed when buckled
+		if (playerMove.IsBuckled)
+		{
+			Logger.LogWarning($"Ignored {action}: player is bucked, rolling back!", Category.Movement);
+			RollbackPosition();
+			return state;
+		}
+
 		//Check if there is a bump interaction according to the server
 		BumpType serverBump = CheckSlideAndBump(state, isServer: true, ref action);
 
 		//Client only needs to check whether movement was prevented, specific type of bump doesn't matter
 		bool isClientBump = action.isBump;
 
-		if (!playerScript.playerHealth || !playerScript.playerHealth.IsSoftCrit)
+		if (!playerScript.playerHealth || !playerScript.registerTile.IsLayingDown)
 		{
-			SpeedServer = action.isRun ? playerMove.RunSpeed : playerMove.WalkSpeed;
+			SpeedServer = ActionSpeed(action);
 		}
 
 		//we only lerp back if the client thinks it's passable  but server does not...if client
@@ -529,10 +533,10 @@ public partial class PlayerSync
 			if (serverBump == BumpType.Push || serverBump == BumpType.Blocked)
 			{
 				var worldTarget = state.WorldPosition.RoundToInt() + (Vector3Int)action.Direction();
-				var swapee = MatrixManager.GetAt<PlayerSync>(worldTarget, true);
+				var swapee = MatrixManager.GetAs<RegisterPlayer>(worldTarget, true);
 				if (swapee != null && swapee.Count > 0)
 				{
-					swapee[0].RollbackPosition();
+					swapee[0].PlayerScript.PlayerSync.RollbackPosition();
 				}
 			}
 		}
@@ -582,16 +586,13 @@ public partial class PlayerSync
 			return state;
 		}
 
-		PlayerState nextState = NextState(state, action, true);
+		var nextState = NextState(state, action, true);
 
 		nextState.Speed = SpeedServer;
-		if (!playerScript.IsGhost)
-		{
-			playerScript.OnTileReached().Invoke(nextState.WorldPosition.RoundToInt());
+		if (playerScript.IsGhost) return nextState;
 
-			//Jester
-			//SoundManager.FootstepAtPosition(nextState.WorldPosition, playerScript.mind.stepType, gameObject);
-		}
+		playerScript.OnTileReached().Invoke(nextState.WorldPosition.RoundToInt());
+		FootstepSounds.PlayerFootstepAtPosition(nextState.WorldPosition, this);
 
 		return nextState;
 	}
@@ -649,6 +650,16 @@ public partial class PlayerSync
 
 		//		Logger.LogTraceFormat( "{0} Interacting {1}->{2}, server={3}", Category.Movement, Time.unscaledTime*1000, worldPos, worldTarget, isServer );
 		InteractPushable(worldPos, direction);
+
+		//Bump all objects with IBumpObject interface
+		foreach (var objectOnTile in MatrixManager.GetAt<ObjectBehaviour>(worldTarget, true))
+		{
+			var bumpAbles = objectOnTile.GetComponents<IBumpableObject>();
+			foreach (var bump in bumpAbles)
+			{
+				bump.OnBump(gameObject);
+			}
+		}
 
 		yield return WaitFor.Seconds(.1f);
 	}
@@ -829,7 +840,7 @@ public partial class PlayerSync
 					//Extending prediction by one tile if player's transform reaches previously set goal
 					//note: since this is a local position, the impulse needs to be converted to a local rotation,
 					//hence the multiplication
-					Vector3Int newGoal = Vector3Int.RoundToInt(serverState.Position + (Vector3)serverState.LocalImpulse(this));
+					Vector3Int newGoal = Vector3Int.RoundToInt(serverState.LocalPosition + (Vector3)serverState.LocalImpulse(this));
 					Vector3Int intOrigin = Vector3Int.RoundToInt(registerPlayer.WorldPosition + (Vector3)serverState.LocalImpulse(this));
 
 					if (intOrigin.x > 18000 || intOrigin.x < -18000 || intOrigin.y > 18000 || intOrigin.y < -18000)
@@ -838,7 +849,7 @@ public partial class PlayerSync
 						Logger.Log($"Player {transform.name} was forced to stop at {intOrigin}", Category.Movement);
 						return;
 					}
-					serverState.Position = newGoal;
+					serverState.LocalPosition = newGoal;
 					ClearQueueServer();
 
 					var newPos = serverState.WorldPosition;
@@ -972,9 +983,14 @@ public partial class PlayerSync
 		CheckTileContagion();
 		CheckTileSlip();
 
-		var shoeSlot = playerScript.ItemStorage.GetNamedItemSlot(NamedSlot.feet);
-
-		bool slipProtection = !shoeSlot.IsEmpty && shoeSlot.ItemAttributes.HasTrait(CommonTraits.Instance.NoSlip);
+		bool slipProtection = true;
+		foreach (var itemSlot in playerScript.DynamicItemStorage.GetNamedItemSlots(NamedSlot.feet))
+		{
+			if (itemSlot.ItemAttributes == null || itemSlot.ItemAttributes.HasTrait(CommonTraits.Instance.NoSlip) == false)
+			{
+				slipProtection = false;
+			}
+		}
 
 		if (slipProtection) return;
 		var crossedItems = MatrixManager.GetAt<ItemAttributesV2>(position, true);
@@ -983,18 +999,27 @@ public partial class PlayerSync
 			if (crossedItem.HasTrait(CommonTraits.Instance.Slippery))
 			{
 				registerPlayer.ServerSlip(slipWhileWalking: true);
+				if (crossedItem.HasTrait(CommonTraits.Instance.BluespaceActivity))
+				{
+					//TODO: Replace call with one that passes in potency once potency is trackable
+					registerPlayer.ServerBluespaceActivity();
+				}
 			}
 		}
 	}
 
 	public void CheckTileSlip()
 	{
-
 		var matrix = MatrixManager.Get(serverState.MatrixId);
 
-		var shoeSlot = playerScript.ItemStorage.GetNamedItemSlot(NamedSlot.feet);
-
-		bool slipProtection = !shoeSlot.IsEmpty && shoeSlot.ItemAttributes.HasTrait(CommonTraits.Instance.NoSlip);
+		bool slipProtection = true;
+		foreach (var itemSlot in playerScript.DynamicItemStorage.GetNamedItemSlots(NamedSlot.feet))
+		{
+			if (itemSlot.ItemAttributes == null || itemSlot.ItemAttributes.HasTrait(CommonTraits.Instance.NoSlip) == false)
+			{
+				slipProtection = false;
+			}
+		}
 
 		if (matrix.MetaDataLayer.IsSlipperyAt(ServerLocalPosition) && !slipProtection)
 		{

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using HealthV2;
 using UnityEngine;
 using Mirror;
 
@@ -13,6 +14,8 @@ namespace Objects.Medical
 		public Sprite emptySprite;
 		public string statusString;
 		public CloningConsole console;
+
+		public float LimbCloningDamage = 25;
 
 		public enum CloningPodStatus
 		{
@@ -47,7 +50,8 @@ namespace Objects.Medical
 			}
 			if (record.mind.IsOnline())
 			{
-				PlayerSpawn.ServerClonePlayer(record.mind, transform.position.CutToInt());
+				var playerBody = PlayerSpawn.ServerClonePlayer(record.mind, transform.position.CutToInt()).GetComponent<LivingHealthMasterBase>();
+				playerBody.ApplyDamageAll(this.gameObject, LimbCloningDamage, AttackType.Internal, DamageType.Clone, false);
 			}
 			statusSync = CloningPodStatus.Empty;
 		}

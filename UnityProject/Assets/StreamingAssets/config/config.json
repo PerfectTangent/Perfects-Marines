@@ -1,6 +1,8 @@
 {
     "RconPort": 7778,
 
+    "DiscordLinkID": "",
+
     "DiscordWebhookOOCURL": "",
 
     "DiscordWebhookOOCMentionsID": "677800847391850496",
@@ -19,7 +21,7 @@
 
     "DiscordWebhookErrorLogURL": "",
 	
-	"AddressableCatalogues":[],
+	"AddressableCatalogues":["https://unitystationfile.b-cdn.net/Addressables/SoundAndMusic/SoundAndMusic.txt"],
 	
-	"LobbyAddressableCatalogues":["https://unitystationfile.b-cdn.net/BundleTest/StandaloneWindows64/SoundAndMusic.json"]
+	"LobbyAddressableCatalogues":["https://unitystationfile.b-cdn.net/Addressables/SoundAndMusic/SoundAndMusic.txt"]
 }

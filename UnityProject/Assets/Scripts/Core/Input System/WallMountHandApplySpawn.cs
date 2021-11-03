@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Objects.Construction;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: namespace me
 public class WallMountHandApplySpawn : MonoBehaviour, ICheckedInteractable<PositionalHandApply>
 {
 	public GameObject WallMountToSpawn;
-	public bool IsAPC;
 	public bool IsWallProtrusion;
 
 	public bool WillInteract(PositionalHandApply interaction, NetworkSide side)
@@ -20,7 +21,7 @@ public class WallMountHandApplySpawn : MonoBehaviour, ICheckedInteractable<Posit
 	{
 		var roundTargetWorldPosition = interaction.WorldPositionTarget.RoundToInt();
 		MatrixInfo matrix = MatrixManager.AtPoint(roundTargetWorldPosition, true);
-		if (matrix.Matrix == null)
+		if (matrix?.Matrix == null)
 		{
 			return;
 		}
@@ -70,23 +71,16 @@ public class WallMountHandApplySpawn : MonoBehaviour, ICheckedInteractable<Posit
 			roundTargetWorldPosition = tileInFront;
 		}
 
-		if (IsAPC)
-		{
-			var localPosInt = MatrixManager.WorldToLocalInt(roundTargetWorldPosition, matrix);
-			var econs = interaction.Performer.GetComponentInParent<Matrix>().GetElectricalConnections(localPosInt);
-			foreach (var Connection in econs)
-			{
-				if (Connection.Categorytype == PowerTypeCategory.APC)
-				{
-					econs.Clear();
-					ElectricalPool.PooledFPCList.Add(econs);
-					return;
-				}
-			}
-		}
 		GameObject WallMount = Spawn.ServerPrefab(WallMountToSpawn, roundTargetWorldPosition,  interaction.Performer.transform.parent, spawnItems: false).GameObject;
 		var Directional = WallMount.GetComponent<Directional>();
-		Directional.FaceDirection(Orientation.FromEnum(FaceDirection));
+		if (Directional != null) Directional.FaceDirection(Orientation.FromEnum(FaceDirection));
+
 		Inventory.ServerConsume(interaction.HandSlot, 1);
+
+		var construction = WallMount.GetComponent<LightFixtureConstruction>();
+		if(construction!= null)
+		{
+			construction.ServerSetState(LightFixtureConstruction.State.initial);
+		}
 	}
 }

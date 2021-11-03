@@ -8,7 +8,7 @@ namespace Antagonists
 	/// <summary>
 	/// An escape objective to escape on the shuttle alive
 	/// </summary>
-	[CreateAssetMenu(menuName="ScriptableObjects/Objectives/Escape")]
+	[CreateAssetMenu(menuName="ScriptableObjects/AntagObjectives/Escape")]
 	public class Escape : Objective
 	{
 		/// <summary>
@@ -31,7 +31,8 @@ namespace Antagonists
 		protected override bool CheckCompletion()
 		{
 			return !Owner.body.playerHealth.IsDead &&
-				ValidShuttles.Any( shuttle => Owner.body.registerTile.Matrix.Id == shuttle.MatrixInfo.Id && shuttle.HasWorkingThrusters);
+				ValidShuttles.Any( shuttle => shuttle.MatrixInfo != null
+					&& Owner.body.registerTile.Matrix.Id == shuttle.MatrixInfo.Id && shuttle.HasWorkingThrusters);
 		}
 	}
 }

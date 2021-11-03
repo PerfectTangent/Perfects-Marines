@@ -1,55 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using AdminTools;
-using Messages.Client;
-using Mirror;
+﻿using Mirror;
 
-public class RequestAdminChatMessage : ClientMessage
+
+namespace Messages.Client.Admin
 {
-	public string Userid;
-	public string AdminToken;
-	public string Message;
-
-	public override void Process()
+	public class RequestAdminChatMessage : ClientMessage<RequestAdminChatMessage.NetMessage>
 	{
-		VerifyAdminStatus();
-	}
-
-	void VerifyAdminStatus()
-	{
-		var player = PlayerList.Instance.GetAdmin(Userid, AdminToken);
-		if (player != null)
+		public struct NetMessage : NetworkMessage
 		{
-			UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(Message, Userid);
+			public string Message;
 		}
-	}
 
-	public static RequestAdminChatMessage Send(string userId, string adminToken, string message)
-	{
-		RequestAdminChatMessage msg = new RequestAdminChatMessage
+		public override void Process(NetMessage msg)
 		{
-			Userid = userId,
-			AdminToken = adminToken,
-			Message = message
-		};
-		msg.Send();
-		return msg;
-	}
+			VerifyAdminStatus(msg);
+		}
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Userid = reader.ReadString();
-		AdminToken = reader.ReadString();
-		Message = reader.ReadString();
-	}
+		private void VerifyAdminStatus(NetMessage msg)
+		{
+			if (IsFromAdmin())
+			{
+				UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(msg.Message, SentByPlayer.UserId);
+			}
+		}
 
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteString(Userid);
-		writer.WriteString(AdminToken);
-		writer.WriteString(Message);
+		public static NetMessage Send(string message)
+		{
+			NetMessage msg = new NetMessage
+			{
+				Message = message
+			};
+
+			Send(msg);
+			return msg;
+		}
 	}
 }

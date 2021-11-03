@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Objects.Atmospherics;
 using Systems.Atmospherics;
+using Items;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,10 @@ public class ControlInternals : TooltipMonoBehaviour
 	[SerializeField] private Color activeAirFlowTankColor = default;
 
 	[NonSerialized] private int _currentState = 1;
+
+	private GameObject Mask;
+	private GameObject Tank;
+
 	public int CurrentState
 	{
 		get => _currentState;
@@ -57,7 +63,7 @@ public class ControlInternals : TooltipMonoBehaviour
 					mask.enabled = true;
 					break;
 				default:
-					Logger.LogError("currentState is out of range. <1; 5>");
+					Logger.LogError("Internals state is out of range. <1; 5>", Category.PlayerInventory);
 					break;
 			}
 		}
@@ -75,19 +81,14 @@ public class ControlInternals : TooltipMonoBehaviour
 
 	void OnEnable()
 	{
-		EventManager.AddHandler(EVENT.EnableInternals, OnEnableInternals);
-		EventManager.AddHandler(EVENT.DisableInternals, OnDisableInternals);
+		EventManager.AddHandler(Event.EnableInternals, OnEnableInternals);
+		EventManager.AddHandler(Event.DisableInternals, OnDisableInternals);
 	}
 
 	void OnDisable()
 	{
-		EventManager.RemoveHandler(EVENT.EnableInternals, OnEnableInternals);
-		EventManager.RemoveHandler(EVENT.DisableInternals, OnDisableInternals);
-
-		if (PlayerManager.LocalPlayerScript != null && PlayerManager.LocalPlayerScript.IsGhost == false)
-		{
-			RemoveListeners();
-		}
+		EventManager.RemoveHandler(Event.EnableInternals, OnEnableInternals);
+		EventManager.RemoveHandler(Event.DisableInternals, OnDisableInternals);
 	}
 
 	/// <summary>
@@ -104,12 +105,12 @@ public class ControlInternals : TooltipMonoBehaviour
 		if (PlayerManager.LocalPlayerScript.playerHealth.IsCrit)
 			return;
 
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
+		SoundManager.Play(CommonSounds.Instance.Click01);
 
 		if (isAirflowEnabled)
-			EventManager.Broadcast(EVENT.DisableInternals);
+			EventManager.Broadcast(Event.DisableInternals);
 		else
-			EventManager.Broadcast(EVENT.EnableInternals);
+			EventManager.Broadcast(Event.EnableInternals);
 
 		UpdateState();
 	}
@@ -127,61 +128,74 @@ public class ControlInternals : TooltipMonoBehaviour
 	public void SetupListeners()
 	{
 		UpdateState();
-
-		ItemSlot maskSlot = PlayerManager.LocalPlayerScript.ItemStorage.GetNamedItemSlot(NamedSlot.mask);
-		maskSlot.OnSlotContentsChangeClient.AddListener(() => OnMaskChanged(maskSlot));
-
-		foreach (NamedSlot namedSlot in ItemStorage.GasUseSlots)
-		{
-			ItemSlot itemSlot = PlayerManager.LocalPlayerScript.ItemStorage.GetNamedItemSlot(namedSlot);
-			itemSlot.OnSlotContentsChangeClient.AddListener(() => OnOxygenTankEquipped());
-		}
+		PlayerManager.LocalPlayerScript.DynamicItemStorage.OnContentsChangeClient.AddListener(InventoryChange);
 	}
 
-	public void RemoveListeners()
+	public void InventoryChange()
 	{
-		ItemSlot maskSlot = PlayerManager.LocalPlayerScript.ItemStorage.GetNamedItemSlot(NamedSlot.mask);
-		maskSlot.OnSlotContentsChangeClient.RemoveListener(() => OnMaskChanged(maskSlot));
-
-		foreach (NamedSlot namedSlot in ItemStorage.GasUseSlots)
+		if (PlayerManager.LocalPlayerScript.IsGhost) return;
+		if (Mask == null)
 		{
-			ItemSlot itemSlot = PlayerManager.LocalPlayerScript.ItemStorage.GetNamedItemSlot(namedSlot);
-			itemSlot.OnSlotContentsChangeClient.RemoveListener(() => OnOxygenTankEquipped());
-		}
-	}
-
-	private void OnMaskChanged(ItemSlot itemSlot)
-	{
-		ItemAttributesV2 maskItemAttrs = itemSlot.ItemAttributes;
-		if (maskItemAttrs != null && maskItemAttrs.CanConnectToTank)
-			isWearingMask = true;
-		else
-			isWearingMask = false;
-
-		UpdateState();
-	}
-
-	private void OnOxygenTankEquipped()
-	{
-		this.gasContainer = null;
-		foreach (NamedSlot namedSlot in ItemStorage.GasUseSlots)
-		{
-			ItemSlot itemSlot = PlayerManager.LocalPlayerScript.ItemStorage.GetNamedItemSlot(namedSlot);
-			if (itemSlot.ItemObject != null && itemSlot.ItemObject.TryGetComponent(out GasContainer gasContainer))
+			foreach (var maskItemSlot in PlayerManager.LocalPlayerScript.DynamicItemStorage.GetNamedItemSlots(NamedSlot.mask ))
 			{
-				this.gasContainer = gasContainer;
-				break;
+				if (maskItemSlot.ItemObject != null && maskItemSlot.ItemAttributes != null)
+				{
+					if (maskItemSlot.ItemAttributes.CanConnectToTank)
+					{
+						Mask = maskItemSlot.ItemObject;
+						isWearingMask = true;
+						break;
+					}
+				}
 			}
 		}
 
+		if (Tank == null)
+		{
+			bool Doublebreak = false;
+			foreach (NamedSlot namedSlot in DynamicItemStorage.GasUseSlots)
+			{
+				foreach (ItemSlot itemSlot in PlayerManager.LocalPlayerScript.DynamicItemStorage.GetNamedItemSlots(namedSlot))
+				{
+					if (itemSlot.ItemObject != null && itemSlot.ItemObject.TryGetComponent(out GasContainer gasContainer))
+					{
+						Tank = itemSlot.ItemObject;
+						this.gasContainer = gasContainer;
+						Doublebreak = true;
+						break;
+					}
+				}
+				if (Doublebreak) break;
+			}
+		}
+
+
+		if (Mask != null)
+		{
+			if (PlayerManager.LocalPlayerScript.DynamicItemStorage.InventoryHasObject(Mask) == false)
+			{
+				isWearingMask = false;
+				Mask = null;
+			}
+		}
+
+		if (Tank != null)
+		{
+			if (PlayerManager.LocalPlayerScript.DynamicItemStorage.InventoryHasObject(Tank) == false)
+			{
+				gasContainer = null;
+				Tank = null;
+			}
+		}
 		UpdateState();
 	}
 
+
 	private void Update()
 	{
-		if (gasContainer != null)
+		if (gasContainer != null && airTankFillImage != null)
 		{
-			airTankFillImage.fillAmount = gasContainer.GasMix.GetMoles(Gas.Oxygen) / gasContainer.MaximumMoles;
+			airTankFillImage.fillAmount = gasContainer.FullPercentageClient;
 		}
 	}
 
@@ -192,21 +206,21 @@ public class ControlInternals : TooltipMonoBehaviour
 		{
 			CurrentState = 1;
 			if(isAirflowEnabled)
-				EventManager.Broadcast(EVENT.DisableInternals);
+				EventManager.Broadcast(Event.DisableInternals);
 		}
 		// Player is wearing a tank, but no mask.
 		else if (!isWearingMask && gasContainer != null)
 		{
 			CurrentState = 2;
 			if(isAirflowEnabled)
-				EventManager.Broadcast(EVENT.DisableInternals);
+				EventManager.Broadcast(Event.DisableInternals);
 		}
 		// Player is wearing a mask, but no tank
 		else if (isWearingMask && gasContainer == null)
 		{
 			CurrentState = 3;
 			if(isAirflowEnabled)
-				EventManager.Broadcast(EVENT.DisableInternals);
+				EventManager.Broadcast(Event.DisableInternals);
 		}
 		// Player is wearing a mask and a tank, but airflow is off
 		else if (isWearingMask && gasContainer != null && !isAirflowEnabled)

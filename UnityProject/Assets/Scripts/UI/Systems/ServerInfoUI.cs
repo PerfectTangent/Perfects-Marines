@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DatabaseAPI;
-using UnityEngine;
-using TMPro;
-using Mirror;
+﻿using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
+using Mirror;
+using TMPro;
+using DatabaseAPI;
 using Initialisation;
 using Messages.Client;
-using UnityEngine.UI;
+using Messages.Server;
+using UI;
+
 
 namespace ServerInfo
 {
@@ -45,51 +46,52 @@ namespace ServerInfo
         {
 	        ServerName.text = newName;
 	        ServerDesc.text = newDesc;
-	        if(string.IsNullOrEmpty(ServerInfoUILobby.serverDiscordID)) return;
+	        if (string.IsNullOrEmpty(ServerInfoUILobby.serverDiscordID)) return;
 	        DiscordButton.SetActive(true);
 	        DiscordButton.GetComponent<OpenURL>().url = "https://discord.gg/" + ServerInfoUILobby.serverDiscordID;
         }
     }
 
-	public class ServerInfoMessageServer : ServerMessage
+	public class ServerInfoMessageServer : ServerMessage<ServerInfoMessageServer.NetMessage>
 	{
-		public string ServerName;
-
-		public string ServerDesc;
-
-		public override void Process()
+		public struct NetMessage : NetworkMessage
 		{
-			GUI_IngameMenu.Instance.GetComponent<ServerInfoUI>().ClientSetValues(ServerName, ServerDesc);
+			public string ServerName;
+			public string ServerDesc;
 		}
 
-		public static ServerInfoMessageServer Send(NetworkConnection clientConn,string serverName, string serverDesc)
+		public override void Process(NetMessage msg)
 		{
-			ServerInfoMessageServer msg = new ServerInfoMessageServer
+			GUI_IngameMenu.Instance.GetComponent<ServerInfoUI>().ClientSetValues(msg.ServerName, msg.ServerDesc);
+		}
+
+		public static NetMessage Send(NetworkConnection clientConn,string serverName, string serverDesc)
+		{
+			NetMessage msg = new NetMessage
 			{
 				ServerName = serverName,
 				ServerDesc = serverDesc
 			};
-			msg.SendTo(clientConn);
+
+			SendTo(clientConn, msg);
 			return msg;
 		}
 	}
 
-	public class ServerInfoMessageClient : ClientMessage
+	public class ServerInfoMessageClient : ClientMessage<ServerInfoMessageClient.NetMessage>
 	{
-		public string PlayerId;
+		public struct NetMessage : NetworkMessage { }
 
-		public override void Process()
+		public override void Process(NetMessage msg)
 		{
 			ServerInfoMessageServer.Send(SentByPlayer.Connection, ServerData.ServerConfig.ServerName, ServerInfoUI.serverDesc);
 		}
 
-		public static ServerInfoMessageClient Send(string playerId)
+		public static NetMessage Send()
 		{
-			ServerInfoMessageClient msg = new ServerInfoMessageClient
-			{
-				PlayerId = playerId,
-			};
-			msg.Send();
+			NetMessage msg = new NetMessage();
+
+			Send(msg);
 			return msg;
 		}
 	}

@@ -1,376 +1,480 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mirror;
 using UnityEngine;
-using Newtonsoft.Json;
-using Random = System.Random;
 
-public class SpriteUpdateMessage : ServerMessage
+namespace Messages.Server.SpritesMessages
 {
-	private static List<char> ControlCharacters = new List<char>()
+	public class SpriteUpdateMessage : ServerMessage<SpriteUpdateMessage.NetMessage>
 	{
-		'>', '<', '&', ',', '?', '~', '`', '@', '{', '%', '^', '£'
-	};
+		public static readonly List<SpriteUpdateEntry> UnprocessedData = new List<SpriteUpdateEntry>();
 
-	public string SerialiseData;
-
-	//> = PresentSpriteSet
-	//< = VariantIndex
-	//& = CataloguePage
-	//, = PushTexture
-	//? = Empty
-	//~ = PushClear
-	//` = SetColour
-	//% = Pallet
-	//^ = ClearPallet
-
-	private static StringBuilder ToReturn = new StringBuilder("", 2000);
-
-	public override void Process()
-	{
-		if (CustomNetworkManager.Instance._isServer == true) return;
-		if (SerialiseData != "")
+		public struct NetMessage : NetworkMessage
 		{
-			int Start = 0;
-			int Scanning = 0;
-			while (SerialiseData.Length > Scanning)
+			public List<KeyValuePair<SpriteHandler, SpriteHandlerManager.SpriteChange>> Data;
+			//public string SerialiseData;
+		}
+
+		public override void Process(NetMessage msg)
+		{
+			if (CustomNetworkManager.Instance._isServer)
+				return;
+
+			List<SpriteUpdateEntry> spriteUpdateList = new List<SpriteUpdateEntry>();
+
+			spriteUpdateList.AddRange(UnprocessedData);
+			for (var i = spriteUpdateList.Count - 1; i >= 0; i--)
 			{
-				Scanning = GoToIndexOfCharacter(SerialiseData, '@', Start);
-				uint NetID = uint.Parse(SerialiseData.Substring(Start, Scanning - Start));
-				if (NetworkIdentity.spawned.ContainsKey(NetID) == false || NetworkIdentity.spawned[NetID] == null)
+				var spriteUpdateEntry = spriteUpdateList[i];
+				if (ProcessEntry(spriteUpdateEntry))
 				{
-					Scanning = SkipSection(Start);
-					Start = Scanning;
-					continue;
+					spriteUpdateList.Remove(spriteUpdateEntry);
 				}
+			}
 
+			UnprocessedData.Clear();
+			UnprocessedData.AddRange(spriteUpdateList);
+		}
 
-				Start = Scanning + 1;
-				Scanning = GoToIndexOfCharacter(SerialiseData, '{', Scanning);
-				string Name = SerialiseData.Substring(Start, Scanning - Start);
+		private bool ProcessEntry(SpriteUpdateEntry spriteUpdateEntry)
+		{
+			if (NetworkIdentity.spawned.ContainsKey(spriteUpdateEntry.id) == false)
+				return false;
+			var networkIdentity = NetworkIdentity.spawned[spriteUpdateEntry.id];
+			if (networkIdentity == null)
+				return false;
 
-				var SP = SpriteHandlerManager.Instance.PresentSprites[NetworkIdentity.spawned[NetID]][Name];
+			if (SpriteHandlerManager.PresentSprites.ContainsKey(networkIdentity) == false ||
+			    SpriteHandlerManager.PresentSprites[networkIdentity].ContainsKey(spriteUpdateEntry.name) == false)
+			{
+				return false;
+			}
 
-				Scanning++;
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '>')
+			var spriteHandler = SpriteHandlerManager.PresentSprites[networkIdentity][spriteUpdateEntry.name];
+			var argumentIndex = 0;
+			foreach (var spriteOperation in spriteUpdateEntry.call)
+			{
+				if (spriteOperation == SpriteOperation.PresentSpriteSet)
 				{
-					Scanning += 1;
-					Start = Scanning;
-					Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
-					int SpriteID = int.Parse(SerialiseData.Substring(Start, Scanning - Start));
-					SP.SetSpriteSO(SpriteCatalogue.Instance.Catalogue[SpriteID], Network: false);
+					var argument = spriteUpdateEntry.arg[argumentIndex];
+					argumentIndex++;
+					spriteHandler.SetSpriteSO(SpriteCatalogue.ResistantCatalogue[argument], networked: false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '<')
+				else if (spriteOperation == SpriteOperation.VariantIndex)
 				{
-					Scanning += 1;
-					Start = Scanning;
-					Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
-
-					SP.ChangeSpriteVariant(int.Parse(SerialiseData.Substring(Start, Scanning - Start)), NetWork: false);
+					var argument = spriteUpdateEntry.arg[argumentIndex];
+					argumentIndex++;
+					spriteHandler.ChangeSpriteVariant(argument, false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '&')
+				else if (spriteOperation == SpriteOperation.CataloguePage)
 				{
-					Scanning += 1;
-					Start = Scanning;
-					Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
-					SP.ChangeSprite(int.Parse(SerialiseData.Substring(Start, Scanning - Start)), false);
+					var argument = spriteUpdateEntry.arg[argumentIndex];
+					argumentIndex++;
+					spriteHandler.ChangeSprite(argument, false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == ',')
+				else if (spriteOperation == SpriteOperation.AnimateOnce)
 				{
-					Scanning++;
-					SP.PushTexture(false);
+					var argument = spriteUpdateEntry.arg[argumentIndex];
+					argumentIndex++;
+					spriteHandler.AnimateOnce(argument, false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '?')
+				else if (spriteOperation == SpriteOperation.PushTexture)
 				{
-					Scanning++;
-					SP.Empty(false);
+					spriteHandler.PushTexture(false);
 				}
-
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '~')
+				else if (spriteOperation == SpriteOperation.Empty)
 				{
-					Scanning++;
-					SP.PushClear(false);
+					spriteHandler.Empty(false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '^')
+				else if (spriteOperation == SpriteOperation.PushClear)
 				{
-					Scanning++;
-					SP.ClearPallet(false);
+					spriteHandler.PushClear(false);
 				}
-
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '`')
+				else if (spriteOperation == SpriteOperation.ClearPallet)
 				{
-					Color TheColour = Color.white;
-					TheColour.r = ((int)SerialiseData[Scanning + 1] / 255f);
-					TheColour.g = ((int)SerialiseData[Scanning + 2] / 255f);
-					TheColour.b = ((int)SerialiseData[Scanning + 3] / 255f);
-					TheColour.a = ((int)SerialiseData[Scanning + 4] / 255f);
-					Scanning = Scanning + 4;
-					SP.SetColor(TheColour, false);
-					Scanning++;
+					spriteHandler.ClearPalette(false);
 				}
-
-				if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '%')
+				else if (spriteOperation == SpriteOperation.SetColour)
 				{
-					Scanning = Scanning + 1;
-					int paletteCount = SerialiseData[Scanning];
-
-					List<Color> Colours = new List<Color>();
-					for (int i = 0; i < paletteCount; i++)
+					var color = ColorFromArgumentList(spriteUpdateEntry.arg, argumentIndex);
+					argumentIndex += 4;
+					spriteHandler.SetColor(color, false);
+				}
+				else if (spriteOperation == SpriteOperation.Pallet)
+				{
+					var paletteCount = spriteUpdateEntry.arg[argumentIndex];
+					var colorList = new List<Color>();
+					for (var i = 0; i < paletteCount; i++)
 					{
-						Colours.Add(GetColourFromStringIndex(SerialiseData, Scanning + (i * 4)));
+						var color = ColorFromArgumentList(spriteUpdateEntry.arg, argumentIndex);
+						argumentIndex += 5;
+						colorList.Add(color);
 					}
 
-					Scanning = Scanning + 1;
-					Scanning = Scanning + 4 * paletteCount;
+					spriteHandler.SetPaletteOfCurrentSprite(colorList, false);
+				}
+			}
 
-					SP.SetPaletteOfCurrentSprite(Colours, false);
+			return true;
+		}
+
+		private static Color ColorFromArgumentList(List<int> argumentList, int argumentIndex)
+		{
+			var color = Color.white;
+			color.r = argumentList[argumentIndex] / 255f;
+			color.g = argumentList[argumentIndex + 1] / 255f;
+			color.b = argumentList[argumentIndex + 2] / 255f;
+			color.a = argumentList[argumentIndex + 3] / 255f;
+			return color;
+		}
+
+		public static void SendToSpecified(NetworkConnection recipient,
+			Dictionary<SpriteHandler, SpriteHandlerManager.SpriteChange> toSend)
+		{
+			foreach (var changeChunk in toSend.Chunk(2000))
+			{
+				var msg = GenerateMessage(changeChunk);
+				SendTo(recipient, msg);
+			}
+		}
+
+		public static void SendToAll(Dictionary<SpriteHandler, SpriteHandlerManager.SpriteChange> toSend)
+		{
+			foreach (var changeChunk in toSend.Chunk(2000))
+			{
+				var msg = GenerateMessage(changeChunk);
+				SendToAll(msg);
+			}
+		}
+
+
+		private static NetMessage GenerateMessage(
+			IEnumerable<KeyValuePair<SpriteHandler, SpriteHandlerManager.SpriteChange>> toSend)
+		{
+			var msg = new NetMessage();
+			msg.Data = toSend.ToList();
+			return msg;
+		}
+
+		[Serializable]
+		public class SpriteUpdateEntry
+		{
+			public uint id;
+			public string name;
+			public List<SpriteOperation> call = new List<SpriteOperation>();
+			public List<int> arg = new List<int>();
+		}
+
+		public enum SpriteOperation
+		{
+			PresentSpriteSet,
+			VariantIndex,
+			CataloguePage,
+			AnimateOnce,
+			PushTexture,
+			Empty,
+			PushClear,
+			ClearPallet,
+			SetColour,
+			Pallet
+		}
+	}
+
+	public static class SpriteUpdateMessageReaderWriters
+	{
+		public static SpriteUpdateMessage.NetMessage Deserialize(this NetworkReader reader)
+		{
+			var message = new SpriteUpdateMessage.NetMessage();
+			SpriteUpdateMessage.SpriteUpdateEntry UnprocessedData = null;
+			while (true)
+			{
+				UnprocessedData = null;
+				bool ProcessSection = true;
+				uint NetID = reader.ReadUInt32();
+				if (NetID == 0)
+				{
+					break;
 				}
 
-				Scanning++;
-				Start = Scanning;
+				if (NetworkIdentity.spawned.ContainsKey(NetID) == false || NetworkIdentity.spawned[NetID] == null)
+				{
+					ProcessSection = false;
+				}
+
+				string Name = reader.ReadString();
+				if (ProcessSection == false ||
+				    NetworkIdentity.spawned.ContainsKey(NetID) == false ||
+				    SpriteHandlerManager.PresentSprites.ContainsKey(NetworkIdentity.spawned[NetID]) == false ||
+				    SpriteHandlerManager.PresentSprites[NetworkIdentity.spawned[NetID]].ContainsKey(Name) == false)
+				{
+					ProcessSection = false;
+				}
+
+				if (ProcessSection == false)
+				{
+					UnprocessedData = new SpriteUpdateMessage.SpriteUpdateEntry();
+					UnprocessedData.name = Name;
+					UnprocessedData.id = NetID;
+				}
+
+				SpriteHandler SP = null;
+				if (ProcessSection) SP = SpriteHandlerManager.PresentSprites[NetworkIdentity.spawned[NetID]][Name];
+
+				while (true)
+				{
+					byte Operation = reader.ReadByte();
+
+					if (Operation == 255)
+					{
+						if (ProcessSection == false)
+						{
+							SpriteUpdateMessage.UnprocessedData.Add(UnprocessedData);
+						}
+
+						break;
+					}
+
+					if (Operation == 1)
+					{
+						int SpriteID = reader.ReadInt32();
+						if (ProcessSection)
+						{
+							try
+							{
+								SP.SetSpriteSO(SpriteCatalogue.ResistantCatalogue[SpriteID], networked: false);
+							}
+							catch (Exception e)
+							{
+								Logger.Log("ddD");
+							}
+
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.PresentSpriteSet);
+							UnprocessedData.arg.Add(SpriteID);
+						}
+					}
+
+
+					if (Operation == 2)
+					{
+						int Variant = reader.ReadInt32();
+						if (ProcessSection)
+						{
+							SP.ChangeSpriteVariant(Variant, networked: false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.VariantIndex);
+							UnprocessedData.arg.Add(Variant);
+						}
+					}
+
+					if (Operation == 3)
+					{
+						int Sprite = reader.ReadInt32();
+						if (ProcessSection)
+						{
+							SP.ChangeSprite(Sprite, false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.CataloguePage);
+							UnprocessedData.arg.Add(Sprite);
+						}
+					}
+
+					if (Operation == 4)
+					{
+						int SpriteAnimate = reader.ReadInt32();
+						if (ProcessSection)
+						{
+							SP.AnimateOnce(SpriteAnimate, false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.AnimateOnce);
+							UnprocessedData.arg.Add(SpriteAnimate);
+						}
+					}
+
+					if (Operation == 5)
+					{
+						if (ProcessSection)
+						{
+							SP.PushTexture(false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.PushTexture);
+						}
+					}
+
+					if (Operation == 6)
+					{
+						if (ProcessSection)
+						{
+							SP.Empty(false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.Empty);
+						}
+					}
+
+
+					if (Operation == 7)
+					{
+						if (ProcessSection)
+						{
+							SP.PushClear(false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.PushClear);
+						}
+					}
+
+					if (Operation == 8)
+					{
+						if (ProcessSection)
+						{
+							SP.ClearPalette(false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.ClearPallet);
+						}
+					}
+
+
+					if (Operation == 9)
+					{
+						Color TheColour = reader.ReadColor();
+						if (ProcessSection)
+						{
+							if (SP)
+							{
+								//TODO: remove this check - registering arrives after the sprite update, all clients will disconnect after a runtime
+								//removing and readding a bodypart through surgery would cause it, since the network identity already exists unlike the creation of a new human
+								SP.SetColor(TheColour, false);
+							}
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.SetColour);
+							UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(TheColour.r * 255)));
+							UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(TheColour.g * 255)));
+							UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(TheColour.b * 255)));
+							UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(TheColour.a * 255)));
+						}
+					}
+
+					if (Operation == 10)
+					{
+						int paletteCount = reader.ReadByte();
+						List<Color> Colours = new List<Color>();
+						for (int i = 0; i < paletteCount; i++)
+						{
+							Colours.Add(reader.ReadColor());
+						}
+
+						if (ProcessSection)
+						{
+							SP.SetPaletteOfCurrentSprite(Colours, false);
+						}
+						else
+						{
+							UnprocessedData.call.Add(SpriteUpdateMessage.SpriteOperation.Pallet);
+							UnprocessedData.arg.Add(Convert.ToChar(paletteCount));
+							foreach (var color in Colours)
+							{
+								UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(color.r * 255)));
+								UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(color.g * 255)));
+								UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(color.b * 255)));
+								UnprocessedData.arg.Add(Convert.ToChar(Mathf.RoundToInt(color.a * 255)));
+							}
+						}
+					}
+				}
 			}
-		}
-	}
 
-	public int SkipSection (int Start){
-		int Scanning;
-		Scanning = GoToIndexOfCharacter(SerialiseData, '@', Start);
-		Start = Scanning + 1;
-		Scanning = GoToIndexOfCharacter(SerialiseData, '{', Scanning);
-		Scanning++;
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '>')
-		{
-			Scanning += 1;
-			Start = Scanning;
-			Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
+			return message;
 		}
 
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '<')
+		public static void Serialize(this NetworkWriter writer, SpriteUpdateMessage.NetMessage message)
 		{
-			Scanning += 1;
-			Start = Scanning;
-			Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
-		}
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '&')
-		{
-			Scanning += 1;
-			Start = Scanning;
-			Scanning = GotoIndexOfNextControlCharacter(SerialiseData, Scanning);
-		}
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == ',')
-		{
-			Scanning++;
-		}
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '?')
-		{
-			Scanning++;
-		}
-
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '~')
-		{
-			Scanning++;
-		}
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '^')
-		{
-			Scanning++;
-		}
-
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '`')
-		{
-			Scanning = Scanning + 4;
-			Scanning++;
-		}
-
-		if (SerialiseData.Length > Scanning && SerialiseData[Scanning] == '%')
-		{
-			Scanning = Scanning + 1;
-			int paletteCount = SerialiseData[Scanning];
-
-			Scanning = Scanning + 1 + 4 * paletteCount;
-		}
-
-		Scanning++;
-		return Scanning;
-	}
-
-	/// <summary>
-	/// Starts on control character/previous character
-	/// </summary>
-	/// <param name="SearchingIn"></param>
-	/// <param name="Start"></param>
-	/// <returns></returns>
-	public static Color GetColourFromStringIndex(string SearchingIn, int Start)
-	{
-		Color TheColour = Color.white;
-		TheColour.r = (SearchingIn[Start + 1] / 255f);
-		TheColour.g = (SearchingIn[Start + 2] / 255f);
-		TheColour.b = (SearchingIn[Start + 3] / 255f);
-		TheColour.a = (SearchingIn[Start + 4] / 255f);
-		return TheColour;
-	}
-
-	public static int GoToIndexOfCharacter(string SearchingIn, char Character, int CurrentLocation)
-	{
-		while (SearchingIn[CurrentLocation] != Character)
-		{
-			CurrentLocation++;
-		}
-
-		return CurrentLocation;
-	}
-
-	public static int GotoIndexOfNextControlCharacter(string SearchingIn, int CurrentLocation)
-	{
-		while (SearchingIn.Length > CurrentLocation &&
-		       ControlCharacters.Contains(SearchingIn[CurrentLocation]) == false)
-		{
-			CurrentLocation++;
-		}
-
-		return CurrentLocation;
-	}
-
-	public static void SendToSpecified(NetworkConnection recipient,
-		Dictionary<SpriteHandler, SpriteHandlerManager.SpriteChange> ToSend)
-	{
-		foreach (var changeChunk in ToSend.Chunk(500))
-		{
-			var msg = GenerateMessage(changeChunk);
-			msg.SendTo(recipient);
-		}
-	}
-
-	public static void SendToAll(Dictionary<SpriteHandler, SpriteHandlerManager.SpriteChange> ToSend)
-	{
-		foreach (var changeChunk in ToSend.Chunk(500))
-		{
-			var msg = GenerateMessage(changeChunk);
-			msg.SendToAll();
-		}
-	}
-
-
-	public static SpriteUpdateMessage GenerateMessage(
-		IEnumerable<KeyValuePair<SpriteHandler, SpriteHandlerManager.SpriteChange>> ToSend)
-	{
-		SpriteUpdateMessage msg = new SpriteUpdateMessage();
-		GenerateStates(msg, ToSend);
-		ToReturn.Clear();
-		return (msg);
-	}
-
-	public static void GenerateStates(SpriteUpdateMessage spriteUpdateMessage,
-		IEnumerable<KeyValuePair<SpriteHandler, SpriteHandlerManager.SpriteChange>> ToSend)
-	{
-		foreach (var VARIABLE in ToSend)
-		{
-			if(VARIABLE.Value == null) continue;
-
-			ToReturn.Append(VARIABLE.Key.GetMasterNetID().netId.ToString());
-			ToReturn.Append("@");
-
-			if(VARIABLE.Key == null)
-				ToReturn.Append("default_name");
-			else
-				ToReturn.Append(VARIABLE.Key.name);
-
-			ToReturn.Append("{");
-			GenerateSerialisation(VARIABLE.Value);
-		}
-
-		spriteUpdateMessage.SerialiseData = ToReturn.ToString();
-	}
-
-
-	public static void GenerateSerialisation(SpriteHandlerManager.SpriteChange spriteChange)
-	{
-		if (spriteChange.PresentSpriteSet != -1)
-		{
-			ToReturn.Append(">");
-			ToReturn.Append(spriteChange.PresentSpriteSet.ToString());
-		}
-
-		if (spriteChange.VariantIndex != -1)
-		{
-			ToReturn.Append("<");
-			ToReturn.Append(spriteChange.VariantIndex.ToString());
-		}
-
-		if (spriteChange.CataloguePage != -1)
-		{
-			ToReturn.Append("&");
-			ToReturn.Append(spriteChange.CataloguePage.ToString());
-		}
-
-		if (spriteChange.PushTexture)
-		{
-			ToReturn.Append(",");
-		}
-
-		if (spriteChange.Empty)
-		{
-			ToReturn.Append("?");
-		}
-
-		if (spriteChange.PushClear)
-		{
-			ToReturn.Append("~");
-		}
-
-		if (spriteChange.ClearPallet)
-		{
-			ToReturn.Append('^');
-		}
-
-		if (spriteChange.SetColour != null)
-		{
-			ToReturn.Append("`");
-			ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(spriteChange.SetColour.Value.r * 255)));
-			ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(spriteChange.SetColour.Value.g * 255)));
-			ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(spriteChange.SetColour.Value.b * 255)));
-			ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(spriteChange.SetColour.Value.a * 255)));
-		}
-
-		if (spriteChange.Pallet != null)
-		{
-			if (spriteChange.Pallet.Count < 1 || spriteChange.Pallet.Count > 255)
+			foreach (var keyValuePair in message.Data)
 			{
-				Logger.Log(string.Format("Pallet size must be between 1 and 255. It is currently {0}.",spriteChange.Pallet.Count));
-				ToReturn.Append("£");
-				return;
-			}
+				var spriteChange = keyValuePair.Value;
+				writer.WriteUInt32(keyValuePair.Key.GetMasterNetID().netId);
+				writer.WriteString(keyValuePair.Key.name);
 
-			ToReturn.Append("%");
-			ToReturn.Append(Convert.ToChar(spriteChange.Pallet.Count));
+				if (spriteChange.PresentSpriteSet != -1)
+				{
+					writer.WriteByte((byte) 1);
+					writer.WriteInt32(spriteChange.PresentSpriteSet);
+				}
 
-			foreach (Color Colour in spriteChange.Pallet)
-			{
-				ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(Colour.r * 255)));
-				ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(Colour.g * 255)));
-				ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(Colour.b * 255)));
-				ToReturn.Append(Convert.ToChar(Mathf.RoundToInt(Colour.a * 255)));
-				
+				if (spriteChange.VariantIndex != -1)
+				{
+					writer.WriteByte((byte) 2);
+					writer.WriteInt32(spriteChange.VariantIndex);
+				}
+
+				if (spriteChange.CataloguePage != -1)
+				{
+					writer.WriteByte((byte) 3);
+					writer.WriteInt32(spriteChange.CataloguePage);
+				}
+
+				if (spriteChange.AnimateOnce)
+				{
+					writer.WriteByte((byte) 4);
+					writer.WriteInt32(spriteChange.CataloguePage);
+				}
+
+				if (spriteChange.PushTexture)
+				{
+					writer.WriteByte((byte) 5);
+				}
+
+				if (spriteChange.Empty)
+				{
+					writer.WriteByte((byte) 6);
+				}
+
+				if (spriteChange.PushClear)
+				{
+					writer.WriteByte((byte) 7);
+				}
+
+				if (spriteChange.ClearPalette)
+				{
+					writer.WriteByte((byte) 8);
+				}
+
+				if (spriteChange.SetColour != null)
+				{
+					writer.WriteByte((byte) 9);
+					writer.WriteColor(spriteChange.SetColour.Value);
+				}
+
+				if (spriteChange.Palette != null)
+				{
+					writer.WriteByte((byte) 10);
+					writer.WriteByte((byte) spriteChange.Palette.Count);
+					foreach (Color Colour in spriteChange.Palette)
+					{
+						writer.WriteColor(Colour);
+					}
+				}
+				writer.WriteByte((byte) 255);
 			}
+			writer.WriteUInt32(0);
 		}
-
-		ToReturn.Append("£");
 	}
 }

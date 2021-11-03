@@ -38,9 +38,9 @@ public class ItemLightControl : NetworkBehaviour, IServerInventoryMove
 		NamedSlot.suitStorage,
 		NamedSlot.belt,
 		NamedSlot.back,
-		NamedSlot.storage01,
-		NamedSlot.storage02,
-		NamedSlot.storage03,
+		NamedSlot.storage01, NamedSlot.storage02, NamedSlot.storage03, NamedSlot.storage04,
+		NamedSlot.storage05, NamedSlot.storage06, NamedSlot.storage07, NamedSlot.storage08,
+		NamedSlot.storage09, NamedSlot.storage10,
 		NamedSlot.suitStorage,
 		NamedSlot.head,
 		NamedSlot.id // PDA in ID slot
@@ -60,7 +60,7 @@ public class ItemLightControl : NetworkBehaviour, IServerInventoryMove
 
 	private float CachedIntensity = 0.5f;
 
-	public PlayerLightData PlayerLightData;
+	[NaughtyAttributes.ReadOnlyAttribute] public PlayerLightData PlayerLightData;
 
 	private Light2D.LightSprite objectLightSprite;
 
@@ -68,7 +68,7 @@ public class ItemLightControl : NetworkBehaviour, IServerInventoryMove
 	{
 		if (objectLightEmission == null)
 		{
-			Debug.LogError($"{this} field objectLightEmission is null, please check {gameObject} prefab.");
+			Logger.LogError($"{this} field objectLightEmission is null, please check {gameObject} prefab.", Category.Lighting);
 			return;
 		}
 
@@ -115,7 +115,7 @@ public class ItemLightControl : NetworkBehaviour, IServerInventoryMove
 		if (IsOn == on) return;
 		if (LightEmission == null)
 		{
-			Debug.LogError($"{this} field LightEmission is null, please check scripts.");
+			Logger.LogError($"{this} field LightEmission is null, please check scripts.", Category.Lighting);
 			return;
 		}
 
@@ -130,7 +130,7 @@ public class ItemLightControl : NetworkBehaviour, IServerInventoryMove
 	{
 		if (PlayerLightData == null)
 		{
-			Debug.LogError("PlayerLightData returned Null please check scripts");
+			Logger.LogError("PlayerLightData returned Null please check scripts", Category.Lighting);
 			return;
 		}
 		if (IsOn && intensity > -1)

@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
+using UnityEngine.Profiling;
+using Mirror;
+using Messages.Server.HealthMessages;
 using Systems.Atmospherics;
 using Light2D;
-using UnityEngine;
-using UnityEngine.Events;
-using Mirror;
-using UnityEngine.Profiling;
+using HealthV2;
+
 
 /// <summary>
 /// The Required component for all living creatures
 /// Monitors and calculates health
 /// </summary>
-[RequireComponent(typeof(HealthStateMonitor))]
 public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireExposable, IExaminable, IServerSpawn
 {
 	private static readonly float GIB_THRESHOLD = 200f;
@@ -35,10 +35,9 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 	public float Resistance { get; } = 50;
 
-	[Tooltip("For mobs that can breath in any atmos environment")]
-	public bool canBreathAnywhere = false;
 
 	public float OverallHealth { get; private set; } = 100;
+	[NonSerialized]
 	public float cloningDamage;
 
 	/// <summary>
@@ -46,12 +45,15 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// </summary>
 	private float afterDeathDamage = 0f;
 
-	// Systems can also be added via inspector
-	public BloodSystem bloodSystem;
-	public BrainSystem brainSystem;
-	public RespiratorySystem respiratorySystem;
-
 	public BloodSplatType bloodColor;
+
+	/*
+	 *  Quick and dirty way to make these hardcoded values dynamic cause different max health values!
+	 */
+
+	public int SOFTCRIT_THRESHOLD => 0;
+	public int CRIT_THRESHOLD => (int) (0 - maxHealth * 30 / 100);
+	public int DEATH_THRESHOLD => (int) -maxHealth;
 
 	/// <summary>
 	/// If there are any body parts for this living thing, then add them to this list
@@ -60,19 +62,13 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	[Header("Fill BodyPart fields in via Inspector:")]
 	public List<BodyPartBehaviour> BodyParts = new List<BodyPartBehaviour>();
 
-	//For meat harvest (pete etc)
-	public bool allowKnifeHarvest;
-
 	[Header("For harvestable animals")] public GameObject[] butcherResults;
-
-	protected DamageType LastDamageType;
-
-	protected GameObject LastDamagedBy;
 
 	public event Action<GameObject> applyDamageEvent;
 
 	public event Action OnDeathNotifyEvent;
 
+	[NonSerialized]
 	public float RTT;
 
 	public ConsciousState ConsciousState
@@ -122,15 +118,10 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	private RegisterTile registerTile;
 	private ConsciousState consciousState;
 
-	public bool IsCrit => ConsciousState == ConsciousState.UNCONSCIOUS;
-	public bool IsSoftCrit => ConsciousState == ConsciousState.BARELY_CONSCIOUS;
+	public bool IsCrit => consciousState == ConsciousState.UNCONSCIOUS;
+	public bool IsSoftCrit => consciousState == ConsciousState.BARELY_CONSCIOUS;
 
-	public bool IsDead => ConsciousState == ConsciousState.DEAD;
-
-	/// <summary>
-	/// Has the heart stopped.
-	/// </summary>
-	public bool IsCardiacArrest => bloodSystem.HeartStopped;
+	public bool IsDead => consciousState == ConsciousState.DEAD;
 
 	private int damageEffectAttempts = 0;
 	private int maxDamageEffectAttempts = 1;
@@ -146,22 +137,16 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 	void OnEnable()
 	{
-		if (CustomNetworkManager.IsServer)
-		{
-			UpdateManager.Add(ServerPeriodicUpdate, tickRate);
-		}
+		if(CustomNetworkManager.IsServer == false) return;
 
-		UpdateManager.Add(PeriodicUpdate, 1f);
+		UpdateManager.Add(ServerPeriodicUpdate, tickRate);
 	}
 
 	void OnDisable()
 	{
-		if (CustomNetworkManager.IsServer)
-		{
-			UpdateManager.Remove(CallbackType.PERIODIC_UPDATE, ServerPeriodicUpdate);
-		}
+		if(CustomNetworkManager.IsServer == false) return;
 
-		UpdateManager.Remove(CallbackType.PERIODIC_UPDATE, PeriodicUpdate);
+		UpdateManager.Remove(CallbackType.PERIODIC_UPDATE, ServerPeriodicUpdate);
 	}
 
 	/// Add any missing systems:
@@ -170,30 +155,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		if (registerTile != null) return;
 		registerTile = GetComponent<RegisterTile>();
 		//Always include blood for living entities:
-		bloodSystem = GetComponent<BloodSystem>();
-		if (bloodSystem == null)
-		{
-			bloodSystem = gameObject.AddComponent<BloodSystem>();
-		}
-
-		//Always include respiratory for living entities:
-		respiratorySystem = GetComponent<RespiratorySystem>();
-		if (respiratorySystem == null)
-		{
-			respiratorySystem = gameObject.AddComponent<RespiratorySystem>();
-		}
-
-		respiratorySystem.CanBreatheAnywhere = canBreathAnywhere;
-
-		var tryGetHead = FindBodyPart(BodyPartType.Head);
-		if (tryGetHead != null && brainSystem == null)
-		{
-			if (tryGetHead.Type != BodyPartType.Chest)
-			{
-				//Head exists, install a brain system
-				brainSystem = gameObject.AddComponent<BrainSystem>();
-			}
-		}
 	}
 
 	public override void OnStartServer()
@@ -211,7 +172,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		DNABloodType = new DNAandBloodType();
 		DNABloodType.BloodColor = bloodColor;
 		DNABloodTypeJSON = JsonUtility.ToJson(DNABloodType);
-		bloodSystem.SetBloodType(DNABloodType);
 	}
 
 	public override void OnStartClient()
@@ -242,15 +202,7 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		DNABloodType = JsonUtility.FromJson<DNAandBloodType>(updatedDNA);
 	}
 
-	public void Extinguish()
-	{
-		SyncFireStacks(fireStacks, 0);
-	}
 
-	public void ChangeFireStacks(float deltaValue)
-	{
-		SyncFireStacks(fireStacks, fireStacks + deltaValue);
-	}
 
 	private void SyncFireStacks(float oldValue, float newValue)
 	{
@@ -299,10 +251,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 				Category.Health);
 			return null;
 		}
-
-		//See if damage affects the state of the blood:
-		// See if any of the healing applied affects blood state
-		bloodSystem.AffectBloodState(bodyPartAim, damageType, amount);
 
 		if (damageType == DamageType.Brute || damageType == DamageType.Burn)
 		{
@@ -353,7 +301,7 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 		foreach (var bodyPart in BodyParts)
 		{
-			ApplyDamageToBodypart(damagedBy, damage / BodyParts.Count, attackType, damageType, bodyPart.Type);
+			ApplyDamageToBodyPart(damagedBy, damage / BodyParts.Count, attackType, damageType, bodyPart.Type);
 		}
 	}
 
@@ -365,10 +313,10 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// <param name="attackType">type of attack that is causing the damage</param>
 	/// <param name="damageType">The Type of Damage</param>
 	[Server]
-	public void ApplyDamageToBodypart(GameObject damagedBy, float damage,
+	public void ApplyDamageToBodyPart(GameObject damagedBy, float damage,
 		AttackType attackType, DamageType damageType)
 	{
-		ApplyDamageToBodypart(damagedBy, damage, attackType, damageType, BodyPartType.Chest.Randomize(0));
+		ApplyDamageToBodyPart(damagedBy, damage, attackType, damageType, BodyPartType.Chest.Randomize(0));
 	}
 
 	/// <summary>
@@ -380,12 +328,12 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// <param name="damageType">The Type of Damage</param>
 	/// <param name="bodyPartAim">Body Part that is affected</param>
 	[Server]
-	public virtual void ApplyDamageToBodypart(GameObject damagedBy, float damage,
+	public virtual void ApplyDamageToBodyPart(GameObject damagedBy, float damage,
 		AttackType attackType, DamageType damageType, BodyPartType bodyPartAim)
 	{
 		TryGibbing(damage);
 
-		BodyPartBehaviour bodyPartBehaviour = GetBodyPart(damage, damageType, bodyPartAim);
+		var bodyPartBehaviour = GetBodyPart(damage, damageType, bodyPartAim);
 		if (bodyPartBehaviour == null)
 		{
 			return;
@@ -395,8 +343,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 		applyDamageEvent?.Invoke(damagedBy);
 
-		LastDamageType = damageType;
-		LastDamagedBy = damagedBy;
 		bodyPartBehaviour.ReceiveDamage(damageType, bodyPartBehaviour.armor.GetDamage(damage, attackType));
 		HealthBodyPartMessage.Send(gameObject, gameObject, bodyPartAim, bodyPartBehaviour.BruteDamage,
 			bodyPartBehaviour.BurnDamage);
@@ -445,11 +391,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 			return;
 		}
 
-		if (!GameManager.Instance.GibbingAllowed)
-		{
-			return;
-		}
-
 		if (afterDeathDamage >= GIB_THRESHOLD)
 		{
 			Harvest();
@@ -495,15 +436,20 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// ---------------------------
 
 	//Handled via UpdateManager
-	void ServerPeriodicUpdate()
+	private void ServerPeriodicUpdate()
 	{
 		// TODO If becomes dead, why not remove from UpdateManager?
+		if (damageEffectAttempts >= maxDamageEffectAttempts)
+		{
+			damageEffectAttempts = 0;
+		}
+
 		if (IsDead) return;
 
 		if (fireStacks > 0)
 		{
 			//TODO: Burn clothes (see species.dm handle_fire)
-			ApplyDamageToBodypart(null, fireStacks * DAMAGE_PER_FIRE_STACK, AttackType.Fire, DamageType.Burn);
+			ApplyDamageToBodyPart(null, fireStacks * DAMAGE_PER_FIRE_STACK, AttackType.Fire, DamageType.Burn);
 			//gradually deplete fire stacks
 			SyncFireStacks(fireStacks, fireStacks - 0.1f);
 			//instantly stop burning if there's no oxygen at this location
@@ -513,54 +459,14 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 				SyncFireStacks(fireStacks, 0);
 			}
 
-			registerTile.Matrix.ReactionManager.ExposeHotspotWorldPosition(gameObject.TileWorldPosition());
+			registerTile.Matrix.ReactionManager.ExposeHotspotWorldPosition(gameObject.TileWorldPosition(), 700);
 		}
 
-		CalculateRadiationDamage();
 		CalculateOverallHealth();
 		CheckHealthAndUpdateConsciousState();
 	}
 
-	private void PeriodicUpdate()
-	{
-		if (damageEffectAttempts >= maxDamageEffectAttempts)
-		{
-			damageEffectAttempts = 0;
-		}
-	}
 
-
-	public float RadiationStacks = 0;
-
-	/// <summary>
-	/// Radiation damage Calculations
-	/// </summary>
-	[Server]
-	public void CalculateRadiationDamage()
-	{
-		var RadLevel = (registerTile.Matrix.GetRadiationLevel(registerTile.LocalPosition) * (tickRate / 5f) / 6);
-		var Chest = BodyParts.First(part => part.Type == BodyPartType.Chest);
-		RadiationStacks += Chest.armor.GetDamage(RadLevel, AttackType.Rad);
-
-		var ProcessingRadiation = RadiationStacks * 0.001f;
-		if (ProcessingRadiation < 20 && ProcessingRadiation > 0.5f)
-		{
-			ProcessingRadiation = 20;
-		}
-
-		RadiationStacks -= ProcessingRadiation;
-		bloodSystem.ToxinLevel +=  ProcessingRadiation * 0.05f;
-
-		//Natural healing
-		//Problems should be in the metabolic system
-		//but thats on players only
-		bloodSystem.ToxinLevel -= 0.01f;
-
-		if (RadiationStacks < 0)
-		{
-			RadiationStacks = 0;
-		}
-	}
 
 	/// ---------------------------
 	/// VISUAL EFFECTS
@@ -570,7 +476,7 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// Server only
 	/// </Summary>
 	[Server]
-	protected virtual void DetermineDamageEffects(DamageType damageType)
+	protected void DetermineDamageEffects(DamageType damageType)
 	{
 		if (damageEffectAttempts >= maxDamageEffectAttempts)
 		{
@@ -583,7 +489,8 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		if (damageType == DamageType.Brute)
 		{
 			//spawn blood
-			EffectsFactory.BloodSplat(registerTile.WorldPositionServer, BloodSplatSize.medium, bloodColor);
+			//TODO: Re - impliment this using the new reagent- first code introduced in PR #6810
+			//EffectsFactory.BloodSplat(registerTile.WorldPositionServer, BloodSplatSize.medium, bloodColor);
 		}
 	}
 
@@ -596,10 +503,8 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	[Server]
 	public void CalculateOverallHealth()
 	{
-		float newHealth = 100;
+		float newHealth = maxHealth;
 		newHealth -= CalculateOverallBodyPartDamage();
-		newHealth -= CalculateOverallBloodLossDamage();
-		newHealth -= bloodSystem.OxygenDamage;
 		newHealth -= cloningDamage;
 		OverallHealth = newHealth;
 	}
@@ -616,56 +521,11 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		return bodyPartDmg;
 	}
 
-	public float GetTotalBruteDamage()
-	{
-		float bruteDmg = 0;
-		for (int i = 0; i < BodyParts.Count; i++)
-		{
-			bruteDmg += BodyParts[i].BruteDamage;
-		}
-
-		return bruteDmg;
-	}
-
-	public float GetTotalBurnDamage()
-	{
-		float burnDmg = 0;
-		for (int i = 0; i < BodyParts.Count; i++)
-		{
-			burnDmg += BodyParts[i].BurnDamage;
-		}
-
-		return burnDmg;
-	}
-
-	/// Blood Loss and Toxin damage:
-	public int CalculateOverallBloodLossDamage()
-	{
-		float maxBloodDmg = Mathf.Abs(HealthThreshold.Dead) + maxHealth;
-		float bloodDmg = 0f;
-		if (bloodSystem.BloodLevel < (int) BloodVolume.SAFE)
-		{
-			bloodDmg = Mathf.Lerp(0f, maxBloodDmg, 1f - (bloodSystem.BloodLevel / (float) BloodVolume.NORMAL));
-		}
-
-
-		if (bloodSystem.ToxinLevel > 1f)
-		{
-			//TODO determine a way to handle toxin damage when toxins are implemented
-			//There will need to be some kind of blood / toxin ratio and severity limits determined
-		}
-
-		//to Whoever put this here /\, am Just make it simple
-		bloodDmg += bloodSystem.ToxinLevel;
-
-		return Mathf.RoundToInt(Mathf.Clamp(bloodDmg, 0f, maxBloodDmg));
-	}
-
 	/// ---------------------------
 	/// CRIT + DEATH METHODS
 	/// ---------------------------
 	///Death from other causes
-	public virtual void Death()
+	public void Death()
 	{
 		if (IsDead)
 		{
@@ -676,7 +536,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		afterDeathDamage = 0;
 		ConsciousState = ConsciousState.DEAD;
 		OnDeathActions();
-		bloodSystem.StopBleedingAll();
 		//stop burning
 		//TODO: When clothes/limb burning is implemented, probably should keep burning until clothes are burned up
 		SyncFireStacks(fireStacks, 0);
@@ -711,17 +570,16 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// </summary>
 	private void CheckHealthAndUpdateConsciousState()
 	{
-		if (ConsciousState != ConsciousState.CONSCIOUS && bloodSystem.OxygenDamage < HealthThreshold.OxygenPassOut &&
-		    OverallHealth > HealthThreshold.SoftCrit)
+		if (ConsciousState != ConsciousState.CONSCIOUS && OverallHealth > SOFTCRIT_THRESHOLD)
 		{
 			Logger.LogFormat("{0}, back on your feet!", Category.Health, gameObject.name);
 			Uncrit();
 			return;
 		}
 
-		if (OverallHealth <= HealthThreshold.SoftCrit || bloodSystem.OxygenDamage > HealthThreshold.OxygenPassOut)
+		if (OverallHealth <= SOFTCRIT_THRESHOLD)
 		{
-			if (OverallHealth <= HealthThreshold.Crit)
+			if (OverallHealth <= CRIT_THRESHOLD)
 			{
 				Crit(false);
 			}
@@ -741,70 +599,10 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 	private bool NotSuitableForDeath()
 	{
-		return OverallHealth > HealthThreshold.Dead || IsDead;
+		return OverallHealth > DEATH_THRESHOLD || IsDead;
 	}
 
 	protected abstract void OnDeathActions();
-
-	// --------------------
-	// UPDATES FROM SERVER
-	// --------------------
-
-	// Stats are separated so that the server only updates the area of concern when needed
-
-	/// <summary>
-	/// Updates the main health stats from the server via NetMsg
-	/// </summary>
-	public void UpdateClientHealthStats(float overallHealth)
-	{
-		OverallHealth = overallHealth;
-		//	Logger.Log($"Update stats for {gameObject.name} OverallHealth: {overallHealth} ConsciousState: {consciousState.ToString()}", Category.Health);
-	}
-
-	/// <summary>
-	/// Updates the conscious state from the server via NetMsg
-	/// </summary>
-	public void UpdateClientConsciousState(ConsciousState proposedState)
-	{
-		ConsciousState = proposedState;
-	}
-
-	/// <summary>
-	/// Updates the respiratory health stats from the server via NetMsg
-	/// </summary>
-	public void UpdateClientRespiratoryStats(bool value)
-	{
-		respiratorySystem.IsSuffocating = value;
-	}
-
-	public void UpdateClientTemperatureStats(float value)
-	{
-		respiratorySystem.temperature = value;
-	}
-
-	public void UpdateClientPressureStats(float value)
-	{
-		respiratorySystem.pressure = value;
-	}
-
-	/// <summary>
-	/// Updates the blood health stats from the server via NetMsg
-	/// </summary>
-	public void UpdateClientBloodStats(int heartRate, float bloodVolume, float oxygenDamage, float toxinLevel)
-	{
-		bloodSystem.UpdateClientBloodStats(heartRate, bloodVolume, oxygenDamage, toxinLevel);
-	}
-
-	/// <summary>
-	/// Updates the brain health stats from the server via NetMsg
-	/// </summary>
-	public void UpdateClientBrainStats(bool isHusk, int brainDamage)
-	{
-		if (brainSystem != null)
-		{
-			brainSystem.UpdateClientBrainStats(isHusk, brainDamage);
-		}
-	}
 
 	/// <summary>
 	/// Updates the bodypart health stats from the server via NetMsg
@@ -818,83 +616,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 
 			bodyPart.UpdateClientBodyPartStat(bruteDamage, burnDamage);
 		}
-	}
-
-	/// ---------------------------
-	/// Electrocution Methods
-	/// ---------------------------
-	/// Note: Electrocution for players is extended in PlayerHealth deriviative.
-	/// This is a generic electrocution implementation that just deals damage.
-	/// <summary>
-	/// Electrocutes a mob, applying damage to the victim depending on the electrocution power.
-	/// </summary>
-	/// <param name="electrocution">The object containing all information for this electrocution</param>
-	/// <returns>Returns an ElectrocutionSeverity for when the following logic depends on the elctrocution severity.</returns>
-	public virtual LivingShockResponse Electrocute(Electrocution electrocution)
-	{
-		float resistance = ApproximateElectricalResistance(electrocution.Voltage);
-		float shockPower = Electrocution.CalculateShockPower(electrocution.Voltage, resistance);
-		var severity = GetElectrocutionSeverity(shockPower);
-
-		switch (severity)
-		{
-			case LivingShockResponse.None:
-				break;
-			case LivingShockResponse.Mild:
-				MildElectrocution(electrocution, shockPower);
-				break;
-			case LivingShockResponse.Painful:
-				PainfulElectrocution(electrocution, shockPower);
-				break;
-			case LivingShockResponse.Lethal:
-				LethalElectrocution(electrocution, shockPower);
-				break;
-		}
-
-		return severity;
-	}
-
-	/// <summary>
-	/// Finds the severity of the electrocution.
-	/// In the future, this would depend on the victim's size. For now, assume humanoid size.
-	/// </summary>
-	/// <param name="shockPower">The power of the electrocution determines the shock response </param>
-	protected virtual LivingShockResponse GetElectrocutionSeverity(float shockPower)
-	{
-		LivingShockResponse severity;
-
-		if (shockPower >= 0.01 && shockPower < 1) severity = LivingShockResponse.Mild;
-		else if (shockPower >= 1 && shockPower < 100) severity = LivingShockResponse.Painful;
-		else if (shockPower >= 100) severity = LivingShockResponse.Lethal;
-		else severity = LivingShockResponse.None;
-
-		return severity;
-	}
-
-	// Overrideable for custom electrical resistance calculations.
-	protected virtual float ApproximateElectricalResistance(float voltage)
-	{
-		// TODO: Approximate mob's electrical resistance based on mob size.
-		return 500;
-	}
-
-	protected virtual void MildElectrocution(Electrocution electrocution, float shockPower)
-	{
-		return;
-	}
-
-	protected virtual void PainfulElectrocution(Electrocution electrocution, float shockPower)
-	{
-		LethalElectrocution(electrocution, shockPower);
-	}
-
-	protected virtual void LethalElectrocution(Electrocution electrocution, float shockPower)
-	{
-		// TODO: Add sparks VFX at shockSourcePos.
-		SoundManager.PlayNetworkedAtPos("Sparks#", electrocution.ShockSourcePos);
-
-		float damage = shockPower;
-		ApplyDamage(null, damage, AttackType.Internal, DamageType.Burn);
 	}
 
 	/// ---------------------------
@@ -918,11 +639,12 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	[Server]
 	protected virtual void Gib()
 	{
-		EffectsFactory.BloodSplat(transform.position, BloodSplatSize.large, bloodColor);
+		//TODO: Re - impliment this using the new reagent- first code introduced in PR #6810
+		//EffectsFactory.BloodSplat(transform.position, BloodSplatSize.large, bloodColor);
 		//todo: actual gibs
 
 		//never destroy players!
-		Despawn.ServerSingle(gameObject);
+		_ = Despawn.ServerSingle(gameObject);
 	}
 
 	public BodyPartBehaviour FindBodyPart(BodyPartType bodyPartAim)
@@ -981,12 +703,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	/// </summary>
 	public string Examine(Vector3 worldPos)
 	{
-		if (this is PlayerHealth)
-		{
-			// Let ExaminablePlayer take care of this.
-			return default;
-		}
-
 		return GetExamineText();
 	}
 
@@ -996,22 +712,19 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 		string theyPronoun = "It";
 		string theirPronoun = "its";
 
-		var cs = GetComponentInParent<PlayerScript>()?.characterSettings;
+		var ps = GetComponentInParent<PlayerScript>();
+		var cs = ps?.characterSettings;
 		if (cs != null)
 		{
-			theyPronoun = cs.TheyPronoun();
-			theyPronoun = theyPronoun[0].ToString().ToUpper() + theyPronoun.Substring(1);
-			theirPronoun = cs.TheirPronoun();
+			theyPronoun = cs.TheyPronoun(ps).Capitalize();
+			theirPronoun = cs.TheirPronoun(ps);
 		}
 
 		var healthString = $"{theyPronoun} is ";
 		if (IsDead)
 		{
 			healthString += "limp and unresponsive; there are no signs of life";
-			if (this is PlayerHealth && GetComponent<PlayerScript>().mind.IsOnline() == false)
-			{
-				healthString += $" and {theirPronoun} soul has departed";
-			}
+
 
 			healthString += "...";
 		}
@@ -1034,10 +747,6 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 				healthDescription = "in good shape.";
 			}
 
-			if (respiratorySystem.IsSuffocating)
-			{
-				healthDescription = "having trouble breathing!";
-			}
 			// On fire?
 			if (FireStacks > 0)
 			{
@@ -1045,11 +754,7 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 			}
 			healthString += healthDescription;
 
-			if (this is PlayerHealth && GetComponent<PlayerScript>().mind.IsOnline() == false)
-			{
-				healthString += $"\n{theyPronoun} has a blank, absent-minded stare and appears completely unresponsive to anything. " +
-						$"{theyPronoun} may snap out of it soon.";
-			}
+
 		}
 
 		return healthString;
@@ -1064,42 +769,5 @@ public abstract class LivingHealthBehaviour : NetworkBehaviour, IHealth, IFireEx
 	}
 }
 
-/// <summary>
-/// Event which fires when fire stack value changes.
-/// </summary>
-public class FireStackEvent : UnityEvent<float>
-{
-}
 
-/// <summary>
-/// Communicates fire status changes.
-/// </summary>
-public class FireStatus
-{
-	//whether becoming on fire or extinguished
-	public readonly bool IsOnFire;
 
-	//whether we are engulfed by flames or just partially on fire
-	public readonly bool IsEngulfed;
-
-	public FireStatus(bool isOnFire, bool isEngulfed)
-	{
-		IsOnFire = isOnFire;
-		IsEngulfed = isEngulfed;
-	}
-}
-
-public static class HealthThreshold
-{
-	public const int SoftCrit = 0;
-	public const int Crit = -30;
-	public const int Dead = -100;
-	public const int OxygenPassOut = 50;
-}
-
-/// <summary>
-/// Event which fires when conscious state changes, provides the old state and the new state
-/// </summary>
-public class ConsciousStateEvent : UnityEvent<ConsciousState, ConsciousState>
-{
-}

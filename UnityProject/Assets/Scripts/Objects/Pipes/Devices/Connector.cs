@@ -1,19 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Objects.Atmospherics;
 
-namespace Pipes
+
+namespace Objects.Atmospherics
 {
 	public class Connector : MonoPipe
 	{
 		private Canister canister;
-
-		public override void Start()
-		{
-			pipeData.PipeAction = new MonoActions();
-			base.Start();
-		}
 
 		public override void TickUpdate()
 		{

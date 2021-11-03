@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using Messages.Server;
 using Mirror;
 using UnityEngine;
+using UI;
 
 /// <summary>
 /// Controls everything to do with player voting
@@ -59,20 +60,21 @@ public class VotingManager : NetworkBehaviour
 
 	void OnEnable()
 	{
-		EventManager.AddHandler(EVENT.RoundStarted, OnRoundStarted);
-		EventManager.AddHandler(EVENT.RoundEnded, OnRoundEnded);
+		EventManager.AddHandler(Event.RoundStarted, OnRoundStarted);
+		EventManager.AddHandler(Event.RoundEnded, OnRoundEnded);
 	}
 
 	void OnDisable()
 	{
-		EventManager.RemoveHandler(EVENT.RoundStarted, OnRoundStarted);
-		EventManager.RemoveHandler(EVENT.RoundEnded, OnRoundEnded);
+		EventManager.RemoveHandler(Event.RoundStarted, OnRoundStarted);
+		EventManager.RemoveHandler(Event.RoundEnded, OnRoundEnded);
 	}
 
 	void OnRoundStarted()
 	{
 		cooldown = StartCoroutine(StartVoteCooldown(RoundStartCooldownTime));
 	}
+
 	void OnRoundEnded()
 	{
 		if (cooldown != null)
@@ -82,7 +84,7 @@ public class VotingManager : NetworkBehaviour
 	}
 
 	[Server]
-	public void TryInitiateRestartVote(GameObject instigator)
+	public void TryInitiateRestartVote(GameObject instigator, NetworkConnection sender = null)
 	{
 		if (voteInProgress || voteRestartSuccess) return;
 
@@ -99,6 +101,7 @@ public class VotingManager : NetworkBehaviour
 		votePolicy = VotePolicy.MajorityRules;
 		voteInProgress = true;
 		RpcOpenVoteWindow("Vote restart initiated by", instigator.name, CountAmountString(), (30 - prevSecond).ToString());
+		RpcVoteCallerDefault(sender);
 		Logger.Log($"Vote restart initiated by {instigator.name}", Category.Admin);
 	}
 
@@ -179,7 +182,8 @@ public class VotingManager : NetworkBehaviour
 			{
 				case VoteType.RestartRound:
 					if (voteRestartSuccess) return;
-					voteRestartSuccess = true;
+					if (GameManager.Instance.CurrentRoundState != RoundState.Started) return;
+						voteRestartSuccess = true;
 					Logger.Log("Vote to restart server was successful. Restarting now.....", Category.Admin);
 					VideoPlayerMessage.Send(VideoType.RestartRound);
 					GameManager.Instance.EndRound();
@@ -255,5 +259,13 @@ public class VotingManager : NetworkBehaviour
 		if (GUI_IngameMenu.Instance == null) return;
 
 		GUI_IngameMenu.Instance.VotePopUp.ShowVotePopUp(title, instigator, count, time);
+	}
+
+	[TargetRpc]
+	private void RpcVoteCallerDefault(NetworkConnection target)
+	{
+		if (GUI_IngameMenu.Instance == null) return;
+
+		GUI_IngameMenu.Instance.VotePopUp.VoteYes();
 	}
 }

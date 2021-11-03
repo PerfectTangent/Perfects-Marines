@@ -24,15 +24,15 @@ public class ControlAction : MonoBehaviour
 	/// </summary>
 	public void Resist()
 	{
-		if(PlayerManager.LocalPlayerScript.IsGhost)
+		if (PlayerManager.LocalPlayerScript.IsGhost)
 		{
 			return;
 		}
 
 		PlayerManager.LocalPlayerScript.playerNetworkActions.CmdResist();
 
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
-		Logger.Log("Resist Button", Category.UI);
+		SoundManager.Play(CommonSounds.Instance.Click01);
+		Logger.Log("Resist Button", Category.UserInput);
 	}
 
 	/// <summary>
@@ -40,11 +40,11 @@ public class ControlAction : MonoBehaviour
 	/// </summary>
 	public void Drop()
 	{
-
 		// if (!Validations.CanInteract(PlayerManager.LocalPlayerScript, NetworkSide.Client, allowCuffed: true)); Commented out because it does... nothing?
-		UI_ItemSlot currentSlot = UIManager.Hands.CurrentSlot;
 
-		if(PlayerManager.LocalPlayerScript.IsGhost)
+		var currentSlot = PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot();
+
+		if (PlayerManager.LocalPlayerScript.IsGhost)
 		{
 			return;
 		}
@@ -54,13 +54,15 @@ public class ControlAction : MonoBehaviour
 			return;
 		}
 
-		if(UIManager.IsThrow)
+		if (UIManager.IsThrow)
 		{
 			Throw();
 		}
-		PlayerManager.LocalPlayerScript.playerNetworkActions.CmdDropItem(currentSlot.NamedSlot);
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
-		Logger.Log("Drop Button", Category.UI);
+
+		PlayerManager.LocalPlayerScript.playerNetworkActions.CmdDropItem(currentSlot.ItemStorage.gameObject.NetId(),
+			currentSlot.NamedSlot.GetValueOrDefault( NamedSlot.none ));
+		SoundManager.Play(CommonSounds.Instance.Click01);
+		Logger.Log("Drop Button", Category.UserInput);
 	}
 
 	/// <summary>
@@ -70,7 +72,7 @@ public class ControlAction : MonoBehaviour
 	{
 		if (forceDisable)
 		{
-			Logger.Log("Throw force disabled", Category.UI);
+			Logger.Log("Throw force disabled", Category.UserInput);
 			UIManager.IsThrow = false;
 			throwImage.sprite = throwSprites[0];
 			return;
@@ -86,15 +88,15 @@ public class ControlAction : MonoBehaviour
 			}
 
 			// Enable throw
-			Logger.Log("Throw Button Enabled", Category.UI);
-			SoundManager.Play(SingletonSOSounds.Instance.Click01);
+			Logger.Log("Throw Button Enabled", Category.UserInput);
+			SoundManager.Play(CommonSounds.Instance.Click01);
 			UIManager.IsThrow = true;
 			throwImage.sprite = throwSprites[1];
 		}
 		else if (throwImage.sprite == throwSprites[1] && UIManager.IsThrow == true)
 		{
 			// Disable throw
-			Logger.Log("Throw Button Disabled", Category.UI);
+			Logger.Log("Throw Button Disabled", Category.UserInput);
 			UIManager.IsThrow = false;
 			throwImage.sprite = throwSprites[0];
 		}

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
+using HealthV2;
+using Managers;
+using Mirror;
 using UnityEngine;
 
 namespace Health.Sickness
@@ -8,13 +11,11 @@ namespace Health.Sickness
 	/// <summary>
 	/// Sickness subsystem manager
 	/// </summary>
-	public class SicknessManager : MonoBehaviour
+	public class SicknessManager : SingletonManager<SicknessManager>
 	{
 		public List<Sickness> Sicknesses;
 
-		private List<PlayerSickness> sickPlayers;
-
-		private static SicknessManager sicknessManager;
+		private List<MobSickness> sickPlayers;
 		private Thread sicknessThread;
 		private float startedTime;
 		private System.Random random;
@@ -23,34 +24,35 @@ namespace Health.Sickness
 		[SerializeField]
 		private GameObject contagionPrefab = null;
 
-		public static SicknessManager Instance
-		{
-			get
-			{
-				if (!sicknessManager)
-				{
-					sicknessManager = FindObjectOfType<SicknessManager>();
-				}
-
-				return sicknessManager;
-			}
-		}
-
 		private void OnEnable()
 		{
+			if(Application.isEditor == false && NetworkServer.active == false) return;
+
 			UpdateManager.Add(SicknessUpdate, 1);
 		}
 
 		private void OnDisable()
 		{
+			if(Application.isEditor == false && NetworkServer.active == false) return;
+
 			UpdateManager.Remove(CallbackType.PERIODIC_UPDATE, SicknessUpdate);
 		}
 
 		private void Start()
 		{
-			sickPlayers = new List<PlayerSickness>();
+			if(Application.isEditor == false && NetworkServer.active == false) return;
+
+			sickPlayers = new List<MobSickness>();
+
+			// We can't use UnityEngine.Random because it can be called only in the main thread.
+			random = new System.Random();
+			sicknessThread = new Thread(ProcessSickness);
+			sicknessThread.Start();
+
+			blockingCollectionSymptoms = new BlockingCollection<SymptomManifestation>();
 		}
 
+		//Server side only
 		private void SicknessUpdate()
 		{
 			// Since unity can provide Time.time only in the main thread, we update for our running thread at the begining of frame.
@@ -60,16 +62,6 @@ namespace Health.Sickness
 			SymptomManifestation symptomManifestation;
 			while (blockingCollectionSymptoms.TryTake(out symptomManifestation))
 				TriggerStageSymptom(symptomManifestation);
-		}
-
-		private void Awake()
-		{
-			// We can't use UnityEngine.Random because it can be called only in the main thread.
-			random = new System.Random();
-			sicknessThread = new Thread(ProcessSickness);
-			sicknessThread.Start();
-
-			blockingCollectionSymptoms = new BlockingCollection<SymptomManifestation>();
 		}
 
 		private void ProcessSickness()
@@ -82,10 +74,10 @@ namespace Health.Sickness
 					{
 						sickPlayers.RemoveAll(p => p.sicknessAfflictions.Count == 0);
 
-						foreach (PlayerSickness playerSickness in sickPlayers)
+						foreach (MobSickness playerSickness in sickPlayers)
 						{
 							// Don't check sickness for unconcious and dead players.
-							if ((playerSickness.playerHealth != null) && (playerSickness.playerHealth.ConsciousState < ConsciousState.UNCONSCIOUS))
+							if ((playerSickness.MobHealth != null) && (playerSickness.MobHealth.ConsciousState < ConsciousState.UNCONSCIOUS))
 							{
 								playerSickness.sicknessAfflictions.RemoveAll(p => p.IsHealed);
 
@@ -94,7 +86,7 @@ namespace Health.Sickness
 									foreach (SicknessAffliction sicknessAffliction in playerSickness.sicknessAfflictions)
 									{
 										CheckSicknessProgression(sicknessAffliction);
-										CheckSymptomOccurence(sicknessAffliction, playerSickness.playerHealth);
+										CheckSymptomOccurence(sicknessAffliction, playerSickness.MobHealth);
 										Thread.Sleep(100);
 									}
 								}
@@ -110,7 +102,7 @@ namespace Health.Sickness
 		/// <summary>
 		/// Check if we should trigger due symptoms
 		/// </summary>
-		private void CheckSymptomOccurence(SicknessAffliction sicknessAffliction, PlayerHealth playerHealth)
+		private void CheckSymptomOccurence(SicknessAffliction sicknessAffliction, LivingHealthMasterBase livingHealth)
 		{
 			Sickness sickness = sicknessAffliction.Sickness;
 
@@ -125,7 +117,7 @@ namespace Health.Sickness
 						SicknessStage sicknessStage = sickness.SicknessStages[stage];
 
 						// Since many symptoms need to be called within the main thread, we invoke it
-						sicknessManager.blockingCollectionSymptoms.Add(new SymptomManifestation(sicknessAffliction, stage, playerHealth));
+						Instance.blockingCollectionSymptoms.Add(new SymptomManifestation(sicknessAffliction, stage, livingHealth));
 
 						if (sicknessStage.RepeatSymptom)
 						{
@@ -181,7 +173,7 @@ namespace Health.Sickness
 		{
 			// Sometimes, the symptom get queued before the player dies and is unqueud when the player is dead/unconcious.
 			// This prevents the symptom to be shown.
-			if (symptomManifestation.PlayerHealth.ConsciousState >= ConsciousState.UNCONSCIOUS)
+			if (symptomManifestation.MobHealth.ConsciousState >= ConsciousState.UNCONSCIOUS)
 				return;
 
 				switch (symptomManifestation.SicknessAffliction.Sickness.SicknessStages[symptomManifestation.Stage].Symptom)
@@ -234,8 +226,8 @@ namespace Health.Sickness
 		/// </summary>
 		private void PerformSymptomSneeze(SymptomManifestation symptomManifestation)
 		{
-			GameObject performer = symptomManifestation.PlayerHealth.gameObject;
-			Chat.AddActionMsgToChat(performer, "You sneeze.", $"{performer.name} sneezes");
+			GameObject performer = symptomManifestation.MobHealth.gameObject;
+			Chat.AddActionMsgToChat(performer, "You sneeze.", $"{performer.ExpensiveName()} sneezes!");
 
 			if (symptomManifestation.SicknessAffliction.Sickness.Contagious)
 			{
@@ -248,8 +240,8 @@ namespace Health.Sickness
 		/// </summary>
 		private void PerformSymptomCough(SymptomManifestation symptomManifestation)
 		{
-			GameObject performer = symptomManifestation.PlayerHealth.gameObject;
-			Chat.AddActionMsgToChat(performer, "You cough.", $"{performer.name} coughs");
+			GameObject performer = symptomManifestation.MobHealth.gameObject;
+			Chat.AddActionMsgToChat(performer, "You cough.", $"{performer.ExpensiveName()} coughs!");
 
 			if (symptomManifestation.SicknessAffliction.Sickness.Contagious)
 			{
@@ -263,15 +255,16 @@ namespace Health.Sickness
 		/// </summary>
 		private void PerformSymptomCustomMessage(SymptomManifestation symptomManifestation)
 		{
-			GameObject performer = symptomManifestation.PlayerHealth.gameObject;
+			GameObject performer = symptomManifestation.MobHealth.gameObject;
 
 			CustomMessageParameter customMessageParameter = (CustomMessageParameter)symptomManifestation.SicknessAffliction.Sickness.SicknessStages[symptomManifestation.Stage].ExtendedSymptomParameters;
 
 			int randomMessage = Random.Range(0, customMessageParameter.CustomMessages.Count);
 			CustomMessage customMessage = customMessageParameter.CustomMessages[randomMessage];
 
-			string privateMessage = (customMessage.privateMessage ?? "").Replace("%PLAYERNAME%", performer.name);
-			string publicMessage = (customMessage.publicMessage ?? "").Replace("%PLAYERNAME%", performer.name);
+			string performerName = performer.ExpensiveName();
+			string privateMessage = (customMessage.privateMessage ?? "").Replace("%PLAYERNAME%", performerName);
+			string publicMessage = (customMessage.publicMessage ?? "").Replace("%PLAYERNAME%", performerName);
 
 			if (string.IsNullOrWhiteSpace(publicMessage))
 				Chat.AddExamineMsg(performer, privateMessage);
@@ -284,7 +277,7 @@ namespace Health.Sickness
 		/// </summary>
 		private void PerformSymptomWellbeing(SymptomManifestation symptomManifestation)
 		{
-			symptomManifestation.PlayerHealth.RemoveSickness(symptomManifestation.SicknessAffliction.Sickness);
+			symptomManifestation.MobHealth.RemoveSickness(symptomManifestation.SicknessAffliction.Sickness);
 		}
 
 		/// <summary>
@@ -292,7 +285,7 @@ namespace Health.Sickness
 		/// </summary>
 		private void PerformSymptomImmune(SymptomManifestation symptomManifestation)
 		{
-			symptomManifestation.PlayerHealth.ImmuneSickness(symptomManifestation.SicknessAffliction.Sickness);
+			symptomManifestation.MobHealth.ImmuneSickness(symptomManifestation.SicknessAffliction.Sickness);
 		}
 
 		/// <summary>
@@ -306,20 +299,22 @@ namespace Health.Sickness
 		/// <param name="symptomManifestation"></param>
 		private void SpawnContagion(SymptomManifestation symptomManifestation)
 		{
-			Vector3Int position = symptomManifestation.PlayerHealth.gameObject.RegisterTile().WorldPositionServer;
-			Directional playerDirectional = symptomManifestation.PlayerHealth.PlayerMove.PlayerDirectional;
+			Vector3Int position = symptomManifestation.MobHealth.gameObject.RegisterTile().WorldPositionServer;
+			Directional directional = symptomManifestation.MobHealth.GetComponent<Directional>();
 
 			// Player position
 			SpawnContagionSpot(symptomManifestation, position);
 
+			if(directional == null) return;
+
 			// In front
-			SpawnContagionSpot(symptomManifestation, position + playerDirectional.CurrentDirection.Vector);
+			SpawnContagionSpot(symptomManifestation, position + directional.CurrentDirection.Vector);
 
 			// Front left
-			SpawnContagionSpot(symptomManifestation, position + (Quaternion.Euler(0, 0, -45) * playerDirectional.CurrentDirection.Vector));
+			SpawnContagionSpot(symptomManifestation, position + (Quaternion.Euler(0, 0, -45) * directional.CurrentDirection.Vector));
 
 			// Front Right
-			SpawnContagionSpot(symptomManifestation, position + (Quaternion.Euler(0, 0, 45) * playerDirectional.CurrentDirection.Vector));
+			SpawnContagionSpot(symptomManifestation, position + (Quaternion.Euler(0, 0, 45) * directional.CurrentDirection.Vector));
 		}
 
 		private void SpawnContagionSpot(SymptomManifestation symptomManifestation, Vector3 position)
@@ -331,28 +326,28 @@ namespace Health.Sickness
 		}
 
 		// Add this player as a sick player
-		public void RegisterSickPlayer(PlayerSickness playerSickness)
+		public void RegisterSickPlayer(MobSickness mobSickness)
 		{
 			lock(sickPlayers)
 			{
-				if (!sickPlayers.Contains(playerSickness))
-					sickPlayers.Add(playerSickness);
+				if (!sickPlayers.Contains(mobSickness))
+					sickPlayers.Add(mobSickness);
 			}
 		}
 
 		// Remove this player from the sick players
-		public void UnregisterHealedPlayer(PlayerSickness playerSickness)
+		public void UnregisterHealedPlayer(MobSickness mobSickness)
 		{
 			lock (sickPlayers)
 			{
-				if (!sickPlayers.Contains(playerSickness))
-					sickPlayers.Remove(playerSickness);
+				if (!sickPlayers.Contains(mobSickness))
+					sickPlayers.Remove(mobSickness);
 			}
 		}
 
 		private void OnDestroy()
 		{
-			blockingCollectionSymptoms.Dispose();
+			blockingCollectionSymptoms?.Dispose();
 		}
 	}
 }

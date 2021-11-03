@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using Mirror;
 using Systems.Disposals;
+using AddressableReferences;
+using Random = UnityEngine.Random;
+using Messages.Server.SoundMessages;
 
 namespace Objects.Disposals
 {
@@ -31,31 +35,41 @@ namespace Objects.Disposals
 		Handle = 3
 	}
 
-	[ExecuteInEditMode]
-	public class DisposalBin : DisposalMachine, IServerDespawn, IExaminable, ICheckedInteractable<MouseDrop>
+	public class DisposalBin : DisposalMachine, IExaminable, ICheckedInteractable<MouseDrop>, IEscapable
 	{
-		const int CHARGED_PRESSURE = 600; // kPa
-		const int AUTO_FLUSH_DELAY = 2;
-		const float ANIMATION_TIME = 1.3f; // As per sprite sheet JSON file.
+		private const int CHARGED_PRESSURE = 600; // kPa
+		private const int AUTO_FLUSH_DELAY = 2;
+		private const float ANIMATION_TIME = 1.3f; // As per sprite sheet JSON file.
 
-		[SerializeField] AudioSource rechargeSFX = null;
+		[SerializeField]
+		private AddressableAudioSource rechargeSFX = null;
+		[SerializeField]
+		private AddressableAudioSource AirFlapSound = null;
+		[SerializeField]
+		private AddressableAudioSource FlushSound = null;
+		[SerializeField]
+		[Tooltip("The sound when throwing things in the bin.")]
+		private List<AddressableAudioSource> trashDunkSounds = null;
+		[SerializeField]
+		[Tooltip("The sound when the item doesn't fall into the trash can.")]
+		private AddressableAudioSource trashDunkMissSound = null;
 
-		HasNetworkTab netTab;
-		SpriteHandler overlaysSpriteHandler;
+		private string runLoopGUID = "";
 
-		Coroutine autoFlushCoroutine;
-		Coroutine rechargeCoroutine;
+		private HasNetworkTab netTab;
+		private SpriteHandler overlaysSpriteHandler;
+
+		private Coroutine autoFlushCoroutine;
+		private Coroutine rechargeCoroutine;
 
 		// GUI instances can listen to this, to update UI state.
 		public event Action BinStateUpdated;
 
 		// We sync binState so that the client knows when to play or stop the recharging SFX.
 		[SyncVar(hook = nameof(OnSyncBinState))]
-		BinState binState = BinState.Disconnected;
+		private BinState binState = BinState.Disconnected;
 		[SyncVar]
-		int chargePressure = 0;
-
-		DisposalVirtualContainer virtualContainer;
+		private int chargePressure = 0;
 
 		public BinState BinState => binState;
 		public bool PowerDisconnected => binState == BinState.Disconnected;
@@ -71,7 +85,8 @@ namespace Objects.Disposals
 		public bool Screwdriverable => MachineSecured && (PowerDisconnected || PowerOff);
 		public int ChargePressure => chargePressure;
 		public bool BinCharged => chargePressure >= CHARGED_PRESSURE;
-		public bool ServerHasContents => virtualContainer != null ? virtualContainer.HasContents : false;
+
+		private float RandomDunkPitch => Random.Range(0.7f, 1.2f);
 
 		#region Lifecycle
 
@@ -82,11 +97,13 @@ namespace Objects.Disposals
 			overlaysSpriteHandler = transform.GetChild(1).GetComponent<SpriteHandler>();
 		}
 
-		public override void OnStartServer()
+		public override void OnSpawnServer(SpawnInfo info)
 		{
 			// Assume bin starts unanchored and therefore UI is inaccessable.
 			netTab.enabled = false;
-			base.OnStartServer();
+			UpdateSpriteBinState();
+
+			base.OnSpawnServer(info);
 		}
 
 		protected override void SpawnMachineAsInstalled()
@@ -97,32 +114,28 @@ namespace Objects.Disposals
 			SetBinState(BinState.Ready);
 		}
 
-		public void OnDespawnServer(DespawnInfo info)
-		{
-			if (virtualContainer != null) Despawn.ServerSingle(virtualContainer.gameObject);
-		}
-
 		#endregion Lifecycle
 
 		#region Sync
 
-		void OnSyncBinState(BinState oldState, BinState newState)
+		private void OnSyncBinState(BinState oldState, BinState newState)
 		{
 			binState = newState;
 
 			if (BinCharging)
 			{
-				rechargeSFX.Play();
+				runLoopGUID = Guid.NewGuid().ToString();
+				SoundManager.PlayAtPositionAttached(rechargeSFX, registerObject.WorldPosition, gameObject, runLoopGUID);
 			}
 			else
 			{
-				rechargeSFX.Stop();
+				SoundManager.Stop(runLoopGUID);
 			}
 		}
 
 		#endregion Sync
 
-		void SetBinState(BinState newState)
+		private void SetBinState(BinState newState)
 		{
 			binState = newState;
 			UpdateSpriteBinState();
@@ -135,7 +148,7 @@ namespace Objects.Disposals
 			UpdateSpriteBinState();
 		}
 
-		void UpdateSpriteBinState()
+		private void UpdateSpriteBinState()
 		{
 			if (MachineUnattached)
 			{
@@ -178,14 +191,12 @@ namespace Objects.Disposals
 		// Click on disposal bin
 		public override bool WillInteract(PositionalHandApply interaction, NetworkSide side)
 		{
-			if (!DefaultWillInteract.Default(interaction, side)) return false;
+			if (DefaultWillInteract.Default(interaction, side) == false) return false;
 			if (interaction.HandObject == null) return false;
 
 			if (base.WillInteract(interaction, side)) return true;
 			// Bin accepts all items for disposal.
-			else if (MachineSecured) return true;
-
-			return false;
+			return MachineSecured;
 		}
 
 		// Click on disposal bin
@@ -193,24 +204,41 @@ namespace Objects.Disposals
 		{
 			currentInteraction = interaction;
 
-			if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Wrench)
-					&& MachineWrenchable) TryUseWrench();
-			else if (Validations.HasUsedActiveWelder(interaction)
-					&& MachineWeldable) TryUseWelder();
-			else if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver)
-					&& Screwdriverable) TryUseScrewdriver();
-
-			else if (MachineSecured) StoreItem();
+			if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Wrench) && MachineWrenchable)
+			{
+				TryUseWrench();
+			}
+			else if (Validations.HasUsedActiveWelder(interaction) && MachineWeldable)
+			{
+				TryUseWelder();
+			}
+			else if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver) && Screwdriverable)
+			{
+				TryUseScrewdriver();
+			}
+			else if (MachineSecured)
+			{
+				Inventory.ServerDrop(interaction.HandSlot, interaction.TargetVector);
+				StoreItem(interaction.UsedObject);
+			}
 		}
 
 		// Drag something and drop on disposal bin
 		public bool WillInteract(MouseDrop interaction, NetworkSide side)
 		{
-			if (!DefaultWillInteract.Default(interaction, side)) return false;
-			if (!Validations.IsReachableByRegisterTiles(
+			if (DefaultWillInteract.Default(interaction, side) == false) return false;
+
+			if (interaction.TargetObject == null) return false;
+
+			if (Validations.IsReachableByRegisterTiles(
 					interaction.Performer.RegisterTile(),
 					interaction.UsedObject.RegisterTile(),
-					side == NetworkSide.Server)) return false;
+					side == NetworkSide.Server) == false) return false;
+
+			if (Validations.IsReachableByRegisterTiles(
+				interaction.Performer.RegisterTile(),
+				interaction.TargetObject.RegisterTile(),
+				side == NetworkSide.Server) == false) return false;
 
 			return true;
 		}
@@ -219,17 +247,20 @@ namespace Objects.Disposals
 		public void ServerPerformInteraction(MouseDrop interaction)
 		{
 			if (interaction.UsedObject == null) return;
-			if (!interaction.UsedObject.TryGetComponent<PlayerScript>(out var script)) return; // Test to see if player
+			if (interaction.UsedObject.TryGetComponent<PlayerScript>(out _) == false) return; // Test to see if player
 
 			// Don't store player unless secured.
-			if (!MachineSecured) return;
+			if (MachineSecured == false) return;
 			StartStoringPlayer(interaction);
 		}
 
 		public override string Examine(Vector3 worldPos = default)
 		{
 			string baseString = "It";
-			if (FloorPlatingExposed()) baseString = base.Examine().TrimEnd('.') + " and";
+			if (FloorPlatingExposed())
+			{
+				baseString = base.Examine().TrimEnd('.') + " and";
+			}
 
 			switch (BinState)
 			{
@@ -248,29 +279,50 @@ namespace Objects.Disposals
 			return baseString;
 		}
 
-		public void PlayerTryClimbingOut(GameObject player)
+		public void EntityTryEscape(GameObject entity)
 		{
-			if (BinFlushing) return;
-
-			if (player.TryGetComponent(out ObjectBehaviour playerBehaviour))
+			if (BinFlushing)
 			{
-				EjectPlayer(playerBehaviour);
+				Chat.AddExamineMsgFromServer(
+						entity,
+						"You're too late! A blast of oily air hits you with force... You start to lose your grip...");
+				return;
 			}
+
+			container.RetrieveObject(entity);
 		}
 
 		#endregion Interactions
 
-		void StoreItem()
+		// gives the probability of an object falling into the bin. Yes, it's like basketball
+		public void OnFlyingObjectHit(GameObject item)
 		{
-			if (virtualContainer == null) virtualContainer = SpawnNewContainer();
-			Inventory.ServerDrop(currentInteraction.HandSlot, currentInteraction.TargetVector);
-			virtualContainer.AddItem(currentInteraction.HandObject.GetComponent<ObjectBehaviour>());
+			if (MachineSecured == false) return;
+
+			if (DMMath.Prob(25))
+			{
+				Chat.AddLocalMsgToChat($"The {item.ExpensiveName()} bounces off the rim of the {gameObject.ExpensiveName()}!", gameObject);
+				var dunkMissParameters = new AudioSourceParameters(pitch: RandomDunkPitch);
+				SoundManager.PlayNetworkedAtPos(trashDunkMissSound, registerObject.WorldPositionServer, dunkMissParameters);
+				return;
+			}
+
+			Chat.AddLocalMsgToChat($"The {item.ExpensiveName()} goes straight into the {gameObject.ExpensiveName()}! Score!", gameObject);
+			StoreItem(item);
+		}
+
+		private void StoreItem(GameObject item)
+		{
+			container.StoreObject(item);
+
+			AudioSourceParameters dunkParameters = new AudioSourceParameters(pitch: RandomDunkPitch);
+			SoundManager.PlayNetworkedAtPos(trashDunkSounds, gameObject.WorldPosServer(), dunkParameters);
 
 			this.RestartCoroutine(AutoFlush(), ref autoFlushCoroutine);
 		}
 
 		// TODO This was copied from somewhere. Where?
-		void StartStoringPlayer(MouseDrop interaction)
+		private void StartStoringPlayer(MouseDrop interaction)
 		{
 			Vector3Int targetObjectLocalPosition = interaction.TargetObject.RegisterTile().LocalPosition;
 			Vector3Int targetObjectWorldPos = interaction.TargetObject.WorldPosServer().CutToInt();
@@ -284,8 +336,7 @@ namespace Objects.Disposals
 			// Runs when the progress action is complete.
 			void StoringPlayer()
 			{
-				PlayerScript playerScript;
-				if (interaction.UsedObject.TryGetComponent(out playerScript))
+				if (interaction.UsedObject.TryGetComponent<PlayerScript>(out var playerScript))
 				{
 					if (playerScript.registerTile.Matrix.IsPassableAtOneMatrixOneTile(targetObjectLocalPosition, true, context: gameObject))
 					{
@@ -308,46 +359,49 @@ namespace Objects.Disposals
 			StandardProgressAction.Create(cfg, StoringPlayer).ServerStartProgress(interaction.UsedObject.RegisterTile(), 2, interaction.Performer);
 		}
 
-		void StorePlayer(MouseDrop interaction)
+		private void StorePlayer(MouseDrop interaction)
 		{
-			if (virtualContainer == null) virtualContainer = SpawnNewContainer();
-			virtualContainer.AddPlayer(interaction.DroppedObject.GetComponent<ObjectBehaviour>());
+			container.StoreObject(interaction.DroppedObject);
 
 			this.RestartCoroutine(AutoFlush(), ref autoFlushCoroutine);
-		}
-
-		void EjectPlayer(ObjectBehaviour playerBehaviour)
-		{
-			if (virtualContainer == null) return;
-			virtualContainer.RemovePlayer(playerBehaviour);
 		}
 
 		#region UI
 
 		public void FlushContents()
 		{
-			if (BinReady) StartCoroutine(RunFlushSequence());
+			if (BinReady)
+			{
+				StartCoroutine(RunFlushSequence());
+			}
 		}
 
 		public void EjectContents()
 		{
-			if (autoFlushCoroutine != null) StopCoroutine(autoFlushCoroutine);
+			if (autoFlushCoroutine != null)
+			{
+				StopCoroutine(autoFlushCoroutine);
+			}
 			if (BinFlushing) return;
-			if (virtualContainer == null) return;
 
-			Despawn.ServerSingle(virtualContainer.gameObject);
-			virtualContainer = null;
+			container.RetrieveObjects();
 		}
 
 		public void TogglePower()
 		{
-			if (PowerOff) TurnPowerOn();
-			else TurnPowerOff();
+			if (PowerOff)
+			{
+				TurnPowerOn();
+			}
+			else
+			{
+				TurnPowerOff();
+			}
 		}
 
 		#endregion UI
 
-		void TurnPowerOn()
+		private void TurnPowerOn()
 		{
 			// Cannot turn the pump on if power is not connected.
 			if (PowerDisconnected) return;
@@ -355,7 +409,7 @@ namespace Objects.Disposals
 			if (BinCharged)
 			{
 				SetBinState(BinState.Ready);
-				if (ServerHasContents)
+				if (container.IsEmpty == false)
 				{
 					this.RestartCoroutine(AutoFlush(), ref autoFlushCoroutine);
 				}
@@ -367,7 +421,7 @@ namespace Objects.Disposals
 			}
 		}
 
-		void TurnPowerOff()
+		private void TurnPowerOff()
 		{
 			// Cannot disable power while flushing
 			if (BinFlushing) return;
@@ -377,25 +431,25 @@ namespace Objects.Disposals
 			SetBinState(BinState.Off);
 		}
 
-		IEnumerator Recharge()
+		private IEnumerator Recharge()
 		{
-			while (BinCharging && !BinCharged)
+			while (BinCharging && BinCharged == false)
 			{
 				yield return WaitFor.Seconds(1);
 				chargePressure += 20;
 			}
 
-			if (!PowerOff && !PowerDisconnected)
+			if (PowerOff == false && PowerDisconnected == false)
 			{
 				SetBinState(BinState.Ready);
 				this.RestartCoroutine(AutoFlush(), ref autoFlushCoroutine);
 			}
 
 			// Sound of the bin's air intake flap closing.
-			SoundManager.PlayNetworkedAtPos("Click", registerObject.WorldPositionServer, sourceObj: gameObject);
+			SoundManager.PlayNetworkedAtPos(AirFlapSound, registerObject.WorldPositionServer, sourceObj: gameObject);
 		}
 
-		IEnumerator RunFlushSequence()
+		private IEnumerator RunFlushSequence()
 		{
 			// Bin orifice closes...
 			SetBinState(BinState.Flushing);
@@ -403,35 +457,33 @@ namespace Objects.Disposals
 
 			// Bin orifice closed. Release the charge.
 			chargePressure = 0;
-			SoundManager.PlayNetworkedAtPos("DisposalMachineFlush", registerObject.WorldPositionServer, sourceObj: gameObject);
-			if (virtualContainer != null)
-			{
-				virtualContainer.GetComponent<ObjectBehaviour>().parentContainer = null;
-				DisposalsManager.Instance.NewDisposal(virtualContainer);
-				virtualContainer = null;
-			}
+			SoundManager.PlayNetworkedAtPos(FlushSound, registerObject.WorldPositionServer, sourceObj: gameObject);
+			DisposalsManager.Instance.NewDisposal(container);
 
 			// Restore charge.
 			SetBinState(BinState.Recharging);
 			StartCoroutine(Recharge());
 		}
 
-		IEnumerator AutoFlush()
+		private IEnumerator AutoFlush()
 		{
 			yield return WaitFor.Seconds(AUTO_FLUSH_DELAY);
-			if (BinReady && ServerHasContents) StartCoroutine(RunFlushSequence());
+			if (BinReady && container.IsEmpty == false)
+			{
+				StartCoroutine(RunFlushSequence());
+			}
 		}
 
 		#region Construction
 
-		void TryUseScrewdriver()
+		private void TryUseScrewdriver()
 		{
 			// Assume binState is Secured
 			string finishPerformerMsg = $"You connect the {objectAttributes.InitialName} to the power.";
 			string finishOthersMsg = $"{currentInteraction.Performer.ExpensiveName()} connects the " +
 						$"{objectAttributes.InitialName} to the power.";
 
-			if (!PowerDisconnected)
+			if (PowerDisconnected == false)
 			{
 				finishPerformerMsg = $"You disconnect the {objectAttributes.InitialName} from the power.";
 				finishOthersMsg = $"{currentInteraction.Performer.ExpensiveName()} disconnects the " +
@@ -441,7 +493,7 @@ namespace Objects.Disposals
 			ToolUtils.ServerUseToolWithActionMessages(currentInteraction, 0, "", "", finishPerformerMsg, finishOthersMsg, () => UseScrewdriver());
 		}
 
-		void UseScrewdriver()
+		private void UseScrewdriver()
 		{
 			// Advance construction state by connecting power.
 			if (PowerDisconnected)

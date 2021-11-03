@@ -1,18 +1,43 @@
-﻿using Mirror;
+﻿using UnityEngine;
+using AddressableReferences;
 
 namespace Objects
 {
-	public class ServiceBell : Pickupable
+	public class ServiceBell : MonoBehaviour, IServerSpawn, ICheckedInteractable<HandApply>
 	{
-		public override void ServerPerformInteraction(HandApply interaction)
+
+		[Tooltip("The sound the bell makes when it rings.")]
+		[SerializeField] private AddressableAudioSource RingSound = null;
+
+		[Tooltip("The additional sound for when the bell spawns as a large bell.")]
+		[SerializeField]
+		private AddressableAudioSource BigBellRingSound = null;
+
+		[SerializeField] private SpriteHandler BellSpriteRenderer;
+
+		public bool WillInteract(HandApply interaction, NetworkSide side)
 		{
-			// yes, we can pick up the service bell!
-			if (interaction.Intent == Intent.Grab)
+			if (DefaultWillInteract.Default(interaction, side) == false) return false;
+			
+			return interaction.Intent != Intent.Grab
+			       && interaction.Intent != Intent.Harm
+			       && interaction.TargetObject == gameObject
+			       && interaction.HandObject == null;
+		}
+
+		public void ServerPerformInteraction(HandApply interaction)
+		{
+			SoundManager.PlayNetworkedAtPos(RingSound, interaction.TargetObject.WorldPosServer());
+		}
+
+		public void OnSpawnServer(SpawnInfo info)
+		{
+			// Roll for the big bell
+			if (Random.value <= 0.005)
 			{
-				base.ServerPerformInteraction(interaction);
-				return;
+				RingSound = BigBellRingSound;
+				BellSpriteRenderer.ChangeSpriteVariant(1);
 			}
-			SoundManager.PlayNetworkedAtPos("ServiceBell", interaction.TargetObject.WorldPosServer());
 		}
 	}
 }

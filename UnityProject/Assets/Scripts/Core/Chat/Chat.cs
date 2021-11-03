@@ -6,6 +6,11 @@ using DiscordWebhook;
 using DatabaseAPI;
 using Systems.MobAIs;
 using System.Text;
+using System.Text.RegularExpressions;
+using Systems.Ai;
+using Core.Chat;
+using Items;
+using Messages.Server;
 
 /// <summary>
 /// The Chat API
@@ -28,28 +33,14 @@ public partial class Chat : MonoBehaviour
 			return chat;
 		}
 	}
-
-	//Connections to scene based ChatRelay. This is null if in the lobby
-	private ChatRelay chatRelay;
-	private Action<ChatEvent> addChatLogServer;
-	private Action<string, ChatChannel> addChatLogClient;
-	private Action<string> addAdminPriv;
 	//Does the ghost hear everyone or just local
 	public bool GhostHearAll { get; set; } = true;
 
 	public bool OOCMute = false;
 
-	/// <summary>
-	/// Set the scene based chat relay at the start of every round
-	/// </summary>
-	public static void RegisterChatRelay(ChatRelay relay, Action<ChatEvent> serverChatMethod,
-		Action<string, ChatChannel> clientChatMethod, Action<string> adminMethod)
-	{
-		Instance.chatRelay = relay;
-		Instance.addChatLogServer = serverChatMethod;
-		Instance.addChatLogClient = clientChatMethod;
-		Instance.addAdminPriv = adminMethod;
-	}
+	public EmoteActionManager emoteActionManager;
+
+	private static Regex htmlRegex = new Regex(@"^(http|https)://.*$");
 
 	public static void InvokeChatEvent(ChatEvent chatEvent)
 	{
@@ -65,8 +56,19 @@ public partial class Chat : MonoBehaviour
 				continue;
 			}
 
+			// A temporary solution until proper telecomms is implemented
+			if (Channels.RadioChannels.HasFlag(channel))
+			{
+				if (InGameEvents.EventCommsBlackout.CommsDown) return;
+
+				if (InGameEvents.EventProcessorOverload.ProcessorOverload)
+				{
+					chatEvent.message = InGameEvents.EventProcessorOverload.ProcessMessage(chatEvent.message);
+				}
+			}
+
 			chatEvent.channels = channel;
-			Instance.addChatLogServer.Invoke(chatEvent);
+			ChatRelay.Instance.PropagateChatToClients(chatEvent);
 			discordMessageBuilder.Append($"[{channel}] ");
 		}
 
@@ -81,12 +83,25 @@ public partial class Chat : MonoBehaviour
 	/// Send a Chat Msg from a player to the selected Chat Channels
 	/// Server only
 	/// </summary>
-	public static void AddChatMsgToChat(ConnectedPlayer sentByPlayer, string message, ChatChannel channels)
+	public static void AddChatMsgToChat(ConnectedPlayer sentByPlayer, string message, ChatChannel channels, Loudness loudness = Loudness.NORMAL)
 	{
 		message = AutoMod.ProcessChatServer(sentByPlayer, message);
 		if (string.IsNullOrWhiteSpace(message)) return;
 
 		var player = sentByPlayer.Script;
+
+		//Check to see whether this player is allowed to send on the chosen channels
+		if (player != null)
+		{
+			channels &= player.GetAvailableChannelsMask(true);
+		}
+		else
+		{
+			//If player is null, must be in lobby therefore lock to OOC
+			channels = ChatChannel.OOC;
+		}
+
+		if (channels == ChatChannel.None) return;
 
 		// The exact words that leave the player's mouth (or that are narrated). Already includes HONKs, stutters, etc.
 		// This step is skipped when speaking in the OOC channel.
@@ -95,73 +110,158 @@ public partial class Chat : MonoBehaviour
 		if (!isOOC)
 		{
 			processedMessage = ProcessMessage(sentByPlayer, message);
+
+			if (string.IsNullOrWhiteSpace(processedMessage.message)) return;
 		}
 
 		var chatEvent = new ChatEvent
 		{
 			message = isOOC ? message : processedMessage.message,
 			modifiers = (player == null) ? ChatModifier.None : processedMessage.chatModifiers,
-			speaker = (player == null) ? sentByPlayer.Username : player.name,
-			position = (player == null) ? TransformState.HiddenPos : player.gameObject.AssumedWorldPosServer(),
+			speaker = (player == null) ? sentByPlayer.Username : player.playerName,
+			position = (player == null) ? TransformState.HiddenPos : player.PlayerChatLocation.AssumedWorldPosServer(),
 			channels = channels,
-			originator = sentByPlayer.GameObject
+			originator = (player == null) ? sentByPlayer.GameObject : player.PlayerChatLocation,
+			VoiceLevel = loudness
 		};
+
+		//This is to make sure OOC doesn't break
+		if (sentByPlayer.Job != JobType.NULL)
+		{
+			CheckVoiceLevel(sentByPlayer.Script, chatEvent.channels);
+		}
+
 
 		if (channels.HasFlag(ChatChannel.OOC))
 		{
-			chatEvent.speaker = sentByPlayer.Username;
+			chatEvent.speaker = StripAll(sentByPlayer.Username);
 
 			var isAdmin = PlayerList.Instance.IsAdmin(sentByPlayer.UserId);
 
 			if (isAdmin)
 			{
-				chatEvent.speaker = "<color=red>[Admin]</color> " + chatEvent.speaker;
+				chatEvent.speaker = "<color=red>[A]</color> " + chatEvent.speaker;
+			}
+			else if(PlayerList.Instance.IsMentor(sentByPlayer.UserId))
+			{
+				chatEvent.speaker = "<color=#6400ff>[M]</color> " + chatEvent.speaker;
 			}
 
 			if (Instance.OOCMute && !isAdmin) return;
 
-			Instance.addChatLogServer.Invoke(chatEvent);
+			//http/https links in OOC chat
+			if (isAdmin || !GameManager.Instance.AdminOnlyHtml)
+			{
+				if (htmlRegex.IsMatch(chatEvent.message))
+				{
+					var messageParts = chatEvent.message.Split(' ');
+
+					var builder = new StringBuilder();
+
+					foreach (var part in messageParts)
+					{
+						if (!htmlRegex.IsMatch(part))
+						{
+							builder.Append(part);
+							builder.Append(" ");
+							continue;
+						}
+
+						builder.Append($"<link={part}><color=blue>{part}</color></link> ");
+					}
+
+					chatEvent.message = builder.ToString();
+
+					//TODO have a config file available to whitelist/blacklist links if all players are allowed to post links
+					//disables client side tag protection to allow <link=></link> tag
+					chatEvent.stripTags = false;
+				}
+			}
+
+			ChatRelay.Instance.PropagateChatToClients(chatEvent);
+
+			var strippedSpeaker = StripTags(chatEvent.speaker);
 
 			//Sends OOC message to a discord webhook
-			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookOOCURL, message, chatEvent.speaker, ServerData.ServerConfig.DiscordWebhookOOCMentionsID);
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookOOCURL, message, strippedSpeaker, ServerData.ServerConfig.DiscordWebhookOOCMentionsID);
 
 			if (!ServerData.ServerConfig.DiscordWebhookSendOOCToAllChat) return;
 
 			//Send it to All chat
-			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAllChatURL, $"[{ChatChannel.OOC}]  {message}\n", chatEvent.speaker);
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAllChatURL, $"[{ChatChannel.OOC}]  {message}\n", strippedSpeaker);
 
 			return;
 		}
 
 		// TODO the following code uses player.playerHealth, but ConciousState would be more appropriate.
 		// Check if the player is allowed to talk:
-		if (player != null && player.playerHealth != null)
+		if (player != null)
 		{
-			if (!player.IsDeadOrGhost && player.mind.IsMiming && !processedMessage.chatModifiers.HasFlag(ChatModifier.Emote))
+			if (player.playerHealth != null)
 			{
-				AddWarningMsgFromServer(sentByPlayer.GameObject, "You can't talk because you made a vow of silence.");
-				return;
-			}
-
-			if (player.playerHealth.IsCrit || player.playerHealth.IsCardiacArrest)
-			{
-				if (!player.playerHealth.IsDead)
+				if (!player.IsDeadOrGhost && player.mind.IsMiming && !processedMessage.chatModifiers.HasFlag(ChatModifier.Emote))
 				{
+					AddWarningMsgFromServer(sentByPlayer.GameObject, "You can't talk because you made a vow of silence.");
 					return;
 				}
-				else
+
+				if (player.playerHealth.IsCrit)
 				{
-					chatEvent.channels = ChatChannel.Ghost;
+					if (!player.playerHealth.IsDead)
+					{
+						return;
+					}
+					else
+					{
+						chatEvent.channels = ChatChannel.Ghost;
+					}
 				}
-			}
-			else if (!player.playerHealth.IsDead && !player.IsGhost)
-			{
-				//Control the chat bubble
-				player.playerNetworkActions.CmdToggleChatIcon(true, processedMessage.message, channels, processedMessage.chatModifiers);
+				else if (!player.playerHealth.IsDead && !player.IsGhost)
+				{
+					//Control the chat bubble
+					player.playerNetworkActions.ServerToggleChatIcon(true, processedMessage.message, channels, processedMessage.chatModifiers);
+				}
 			}
 		}
 
 		InvokeChatEvent(chatEvent);
+	}
+
+	private static Loudness CheckVoiceLevel(PlayerScript script, ChatChannel channels)
+	{
+		//Check if is not a ghost/spectator and the player has an inventory.
+		if (script.IsDeadOrGhost || script.DynamicItemStorage == null)
+		{
+			return Loudness.NORMAL;
+		}
+
+		foreach (ItemSlot slot in script.DynamicItemStorage.GetNamedItemSlots(NamedSlot.ear))
+		{
+			Headset headset = slot.Item?.gameObject.GetComponent<Headset>();
+			if (headset == null) continue;
+
+			//TODO this sets the voice level by the first headset found, if multiple should we choose loudest instead?
+			if (headset.LoudSpeakOn && IsOnCorrectChannels(channels))
+			{
+				return headset.LoudspeakLevel;
+			}
+		}
+
+		return Loudness.NORMAL;
+	}
+
+	private static bool IsOnCorrectChannels(ChatChannel channels)
+	{
+		if (channels.HasFlag(ChatChannel.Common) ||
+		    channels.HasFlag(ChatChannel.Command) || channels.HasFlag(ChatChannel.Security)
+		    || channels.HasFlag(ChatChannel.Engineering) || channels.HasFlag(ChatChannel.Medical)
+		    || channels.HasFlag(ChatChannel.Science)
+		    || channels.HasFlag(ChatChannel.Syndicate) || channels.HasFlag(ChatChannel.Supply))
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	/// <summary>
@@ -172,8 +272,9 @@ public partial class Chat : MonoBehaviour
 	/// <param name="channels">The channels to broadcast on.</param>
 	/// <param name="chatModifiers">Chat modifiers to use e.g. ChatModifier.ColdlyState.</param>
 	/// <param name="broadcasterName">Optional name for the broadcaster. Pulls name from GameObject if not used.</param>
+	/// <param name="voiceLevel">How loud is this message?</param>
 	public static void AddCommMsgByMachineToChat(
-			GameObject sentByMachine, string message, ChatChannel channels,
+			GameObject sentByMachine, string message, ChatChannel channels, Loudness voiceLevel,
 			ChatModifier chatModifiers = ChatModifier.None, string broadcasterName = default)
 	{
 		if (string.IsNullOrWhiteSpace(message)) return;
@@ -185,7 +286,8 @@ public partial class Chat : MonoBehaviour
 			speaker = broadcasterName != default ? broadcasterName : sentByMachine.ExpensiveName(),
 			position = sentByMachine.WorldPosServer(),
 			channels = channels,
-			originator = sentByMachine
+			originator = sentByMachine,
+			VoiceLevel = voiceLevel
 		};
 
 		InvokeChatEvent(chatEvent);
@@ -202,7 +304,7 @@ public partial class Chat : MonoBehaviour
 	{
 		if (!IsServer()) return;
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			message = message,
 			channels = ChatChannel.System,
@@ -219,7 +321,7 @@ public partial class Chat : MonoBehaviour
 	{
 		if (!IsServer()) return;
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			message = message,
 			channels = ChatChannel.System
@@ -242,7 +344,7 @@ public partial class Chat : MonoBehaviour
 		//dont send message if originator message is blank
 		if (string.IsNullOrWhiteSpace(originatorMessage)) return;
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			channels = ChatChannel.Action,
 			speaker = originator.name,
@@ -275,7 +377,7 @@ public partial class Chat : MonoBehaviour
 	{
 		if (!IsServer()) return;
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			channels = ChatChannel.Combat,
 			message = originatorMsg,
@@ -333,19 +435,17 @@ public partial class Chat : MonoBehaviour
 			victimName = "yourself";
 			if (player != null)
 			{
-				if (player.Script.characterSettings.Gender == Gender.Female)
+				if (player.Script.characterSettings.BodyType == BodyType.Female)
 				{
 					victimNameOthers = "herself";
 				}
-
-				if (player.Script.characterSettings.Gender == Gender.Male)
+				else if (player.Script.characterSettings.BodyType == BodyType.Male)
 				{
 					victimNameOthers = "himself";
 				}
-
-				if (player.Script.characterSettings.Gender == Gender.Neuter)
+				else
 				{
-					victimNameOthers = "itself";
+					victimNameOthers = "themselves";
 				}
 			}
 			else
@@ -388,7 +488,7 @@ public partial class Chat : MonoBehaviour
 			pos = posOverride;
 		}
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			channels = ChatChannel.Combat,
 			message = message,
@@ -418,7 +518,7 @@ public partial class Chat : MonoBehaviour
 
 		var message =
 			$"{victim.ExpensiveName()} has been hit by a {item.Item()?.ArticleName ?? item.name}{InTheZone(effectiveHitZone)}";
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			channels = ChatChannel.Combat,
 			message = message,
@@ -462,7 +562,7 @@ public partial class Chat : MonoBehaviour
 		if (!IsServer()) return;
 		Instance.TryStopCoroutine(ref composeMessageHandle);
 
-		Instance.addChatLogServer.Invoke(new ChatEvent
+		ChatRelay.Instance.PropagateChatToClients(new ChatEvent
 		{
 			channels = ChatChannel.Local,
 			message = message,
@@ -493,7 +593,7 @@ public partial class Chat : MonoBehaviour
 	public static void AddExamineMsgFromServer(GameObject recipient, string msg)
 	{
 		if (!IsServer()) return;
-		UpdateChatMessage.Send(recipient, ChatChannel.Examine, ChatModifier.None, msg);
+		UpdateChatMessage.Send(recipient, ChatChannel.Examine, ChatModifier.None, msg, Loudness.NORMAL);
 	}
 
 	/// <inheritdoc cref="AddExamineMsgFromServer(GameObject, string)"/>
@@ -515,7 +615,7 @@ public partial class Chat : MonoBehaviour
 	/// <param name="message"> The message to add to the client chat stream</param>
 	public static void AddExamineMsgToClient(string message)
 	{
-		Instance.addChatLogClient.Invoke(message, ChatChannel.Examine);
+		ChatRelay.Instance.UpdateClientChat(message, ChatChannel.Examine, true, PlayerManager.LocalPlayer, Loudness.NORMAL);
 	}
 
 	/// <summary>
@@ -550,13 +650,18 @@ public partial class Chat : MonoBehaviour
 
 	public static void AddWarningMsgToClient(string message)
 	{
-		message = ProcessMessageFurther(message, "", ChatChannel.Warning, ChatModifier.None); //TODO: Put processing in a unified place for server and client.
-		Instance.addChatLogClient.Invoke(message, ChatChannel.Warning);
+		message = ProcessMessageFurther(message, "", ChatChannel.Warning, ChatModifier.None, Loudness.NORMAL); //TODO: Put processing in a unified place for server and client.
+		ChatRelay.Instance.UpdateClientChat(message, ChatChannel.Warning, true, PlayerManager.LocalPlayer, Loudness.NORMAL);
 	}
 
 	public static void AddAdminPrivMsg(string message)
 	{
-		Instance.addAdminPriv.Invoke(message);
+		ChatRelay.Instance.AddAdminPrivMessageToClient(message);
+	}
+
+	public static void AddMentorPrivMsg(string message)
+	{
+		ChatRelay.Instance.AddMentorPrivMessageToClient(message);
 	}
 
 	/// <summary>

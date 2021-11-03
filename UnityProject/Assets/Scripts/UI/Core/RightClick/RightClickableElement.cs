@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using ScriptableObjects;
 using UnityEngine;
 
 /// <summary>
@@ -10,8 +11,7 @@ using UnityEngine;
 /// </summary>
 public class RightClickableElement
 {
-	private const string RIGHT_CLICK_OPTION_FOLDER = "ScriptableObjects/Interaction/RightclickOptions";
-	private static Dictionary<string, RightClickOption> optionNameToOption;
+	private static Dictionary<string, RightClickOption> optionNameToOption = new Dictionary<string, RightClickOption>();
 
 	private readonly RightClickOption option;
 	private readonly Action action;
@@ -51,9 +51,9 @@ public class RightClickableElement
 		Sprite bgSpriteOverride = null, bool keepMenuOpen = true)
 
 	{
-		if (optionNameToOption == null)
+		if (optionNameToOption == null || optionNameToOption.Count == 0)
 		{
-			initOptionDict();
+			InitOptionsDict();
 		}
 
 		if (optionNameToOption.TryGetValue(optionName, out var option))
@@ -63,21 +63,20 @@ public class RightClickableElement
 		else
 		{
 			Logger.LogWarningFormat("Unable to find right click option with name {0}. Ensure" +
-			                      " the RightClickOption scriptable object exists in the folder {1}." +
+			                      " the RightClickOption scriptable object exists in the singleton folder." +
 			                      " A default option will be displayed instead with the same name.",
-									Category.UI, optionName, RIGHT_CLICK_OPTION_FOLDER);
+									Category.UserInput, optionName);
 			return FromOptionName("Default", action, bgColorOverride, nameOverride != null ? nameOverride : optionName, spriteOverride, bgSpriteOverride, keepMenuOpen);
 		}
 	}
 
-	private static void initOptionDict()
+	private static void InitOptionsDict()
 	{
 		optionNameToOption = new Dictionary<string, RightClickOption>();
-		var allOptions = Resources.LoadAll<RightClickOption>(RIGHT_CLICK_OPTION_FOLDER);
 
-		foreach (var option in allOptions)
+		foreach (var opt in RightClickManager.Instance.RightClickOptions)
 		{
-			optionNameToOption.Add(option.name, option);
+			optionNameToOption.Add(opt.name, opt);
 		}
 	}
 

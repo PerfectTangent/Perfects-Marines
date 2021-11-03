@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using NaughtyAttributes;
+using System.Text;
+using Items;
+using Items.Cargo.Wrapping;
+using Objects;
+using Objects.Atmospherics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using Objects;
-using Items;
 
 namespace Systems.Cargo
 {
@@ -15,30 +18,30 @@ namespace Systems.Cargo
 
 		public int Credits;
 		public ShuttleStatus ShuttleStatus = ShuttleStatus.DockedStation;
-		public float CurrentFlyTime = 0f;
+		public float CurrentFlyTime;
 		public string CentcomMessage = "";  // Message that will appear in status tab. Resets on sending shuttle to centcom.
-		public List<CargoOrderCategory> Supplies = new List<CargoOrderCategory>(); // Supplies - all the stuff cargo can order
-		public CargoOrderCategory CurrentCategory;
-		public List<CargoOrder> CurrentOrders = new List<CargoOrder>(); // Orders - payed orders that will spawn in shuttle on centcom arrival
-		public List<CargoOrder> CurrentCart = new List<CargoOrder>(); // Cart - current orders, that haven't been payed for/ordered yet
+		public List<CargoCategory> Supplies = new List<CargoCategory>(); // Supplies - all the stuff cargo can order
+		public List<CargoOrderSO> CurrentOrders = new List<CargoOrderSO>(); // Orders - payed orders that will spawn in shuttle on centcom arrival
+		public List<CargoOrderSO> CurrentCart = new List<CargoOrderSO>(); // Cart - current orders, that haven't been payed for/ordered yet
+		public List<CargoBounty> ActiveBounties = new List<CargoBounty>();
 
 		public int cartSizeLimit = 20;
 
 		public CargoUpdateEvent OnCartUpdate = new CargoUpdateEvent();
 		public CargoUpdateEvent OnShuttleUpdate = new CargoUpdateEvent();
 		public CargoUpdateEvent OnCreditsUpdate = new CargoUpdateEvent();
-		public CargoUpdateEvent OnCategoryUpdate = new CargoUpdateEvent();
 		public CargoUpdateEvent OnTimerUpdate = new CargoUpdateEvent();
+		public CargoUpdateEvent OnBountiesUpdate = new CargoUpdateEvent();
 
 		[SerializeField]
-		private CargoData cargoData = null;
-
-		public CargoData CargoData => cargoData;
+		private CargoData cargoData;
 
 		[SerializeField]
 		private float shuttleFlyDuration = 10f;
 
 		private Dictionary<string, ExportedItem> exportedItems = new Dictionary<string, ExportedItem>();
+
+		public Dictionary<ItemTrait, int> SoldHistory = new Dictionary<ItemTrait, int>();
 
 		private void Awake()
 		{
@@ -84,12 +87,16 @@ namespace Systems.Cargo
 		void OnRoundRestart(Scene oldScene, Scene newScene)
 		{
 			Supplies.Clear();
+			ActiveBounties.Clear();
 			CurrentOrders.Clear();
 			CurrentCart.Clear();
+			SoldHistory.Clear();
 			ShuttleStatus = ShuttleStatus.DockedStation;
 			Credits = 1000;
 			CurrentFlyTime = 0f;
 			CentcomMessage = "";
+			Supplies = new List<CargoCategory>(cargoData.Categories);
+			ActiveBounties = new List<CargoBounty>(cargoData.CargoBounties);
 		}
 
 		/// <summary>
@@ -98,10 +105,7 @@ namespace Systems.Cargo
 		/// </summary>
 		public void CallShuttle()
 		{
-			if (!CustomNetworkManager.Instance._isServer)
-			{
-				return;
-			}
+			if (CustomNetworkManager.IsServer == false) return;
 
 			if (CurrentFlyTime > 0f || ShuttleStatus == ShuttleStatus.OnRouteCentcom
 									|| ShuttleStatus == ShuttleStatus.OnRouteStation)
@@ -109,53 +113,44 @@ namespace Systems.Cargo
 				return;
 			}
 
-			if (CustomNetworkManager.Instance._isServer)
+			CurrentFlyTime = shuttleFlyDuration;
+			//It works so - shuttle stays in centcomDest until timer is done,
+			//then it starts moving to station
+			if (ShuttleStatus == ShuttleStatus.DockedCentcom)
 			{
-				CurrentFlyTime = shuttleFlyDuration;
-				//It works so - shuttle stays in centcomDest until timer is done,
-				//then it starts moving to station
-				if (ShuttleStatus == ShuttleStatus.DockedCentcom)
-				{
-					SpawnOrder();
-					ShuttleStatus = ShuttleStatus.OnRouteStation;
-					CentcomMessage += "Shuttle is sent back with goods." + "\n";
-					StartCoroutine(Timer(true));
-				}
+				SpawnOrder();
+				ShuttleStatus = ShuttleStatus.OnRouteStation;
+				CentcomMessage += "Shuttle is sent back with goods." + "\n";
+				StartCoroutine(Timer(true));
+			}
 
-				//If we are at station - First checks for any people or animals aboard
-				//If any, refuses to depart until the lifeform is removed.
-				//If none, we start timer and launch shuttle at the same time.
-				//Once shuttle arrives centcomDest - CargoShuttle will wait till timer is done
-				//and will call OnShuttleArrival()
-				else if (ShuttleStatus == ShuttleStatus.DockedStation)
+			//If we are at station - First checks for any people or animals aboard
+			//If any, refuses to depart until the lifeform is removed.
+			//If none, we start timer and launch shuttle at the same time.
+			//Once shuttle arrives centcomDest - CargoShuttle will wait till timer is done
+			//and will call OnShuttleArrival()
+			else if (ShuttleStatus == ShuttleStatus.DockedStation)
+			{
+				string warningMessageEnd = "organisms aboard." + "\n";
+				if (CheckLifeforms())
 				{
-					string warningMessageEnd = "organisms aboard." + "\n";
-					if (CheckLifeforms())
+					CurrentFlyTime = 0;
+					if (CentcomMessage.EndsWith(warningMessageEnd) == false)
 					{
-						CurrentFlyTime = 0;
-						if (CentcomMessage.EndsWith(warningMessageEnd) == false)
-						{
-							CentcomMessage += "Due to safety and security reasons, the automatic cargo shuttle is unable to depart with any human, alien or animal organisms aboard." + "\n";
-						}
+						CentcomMessage += "Due to safety and security reasons, the automatic cargo shuttle is unable to depart with any human, alien or animal organisms aboard." + "\n";
 					}
-					else
-					{
-						CargoShuttle.Instance.MoveToCentcom();
-						ShuttleStatus = ShuttleStatus.OnRouteCentcom;
-						CentcomMessage = "";
-						exportedItems.Clear();
-						StartCoroutine(Timer(false));
-					}
+				}
+				else
+				{
+					CargoShuttle.Instance.MoveToCentcom();
+					ShuttleStatus = ShuttleStatus.OnRouteCentcom;
+					CentcomMessage = string.Empty;
+					exportedItems.Clear();
+					StartCoroutine(Timer(false));
 				}
 			}
 
-			OnShuttleUpdate?.Invoke();
-		}
-
-		public void LoadData()
-		{
-			//need a shallow copy so the actual SO list isn't cleared on round restart!
-			Supplies = new List<CargoOrderCategory>(cargoData.Supplies);
+			OnShuttleUpdate.Invoke();
 		}
 
 		private IEnumerator Timer(bool launchToStation)
@@ -163,7 +158,7 @@ namespace Systems.Cargo
 			while (CurrentFlyTime > 0f)
 			{
 				CurrentFlyTime -= 1f;
-				OnTimerUpdate?.Invoke();
+				OnTimerUpdate.Invoke();
 				yield return WaitFor.Seconds(1);
 			}
 
@@ -180,38 +175,31 @@ namespace Systems.Cargo
 		/// </summary>
 		public void OnShuttleArrival()
 		{
-			if (!CustomNetworkManager.Instance._isServer)
-			{
-				return;
-			}
+			if (CustomNetworkManager.IsServer == false) return;
 
 			if (ShuttleStatus == ShuttleStatus.OnRouteCentcom)
 			{
-
 				foreach (var entry in exportedItems)
 				{
-					if (entry.Value.TotalValue <= 0)
-					{
-						continue;
-					}
+					if (entry.Value.TotalValue <= 0) continue;
 
-					CentcomMessage += $"+{ entry.Value.TotalValue } credits: " +
-									  $"{ entry.Value.Count }";
+					CentcomMessage += $"+{entry.Value.TotalValue} credits: {entry.Value.Count}";
 
 					if (!string.IsNullOrEmpty(entry.Value.ExportMessage) && string.IsNullOrEmpty(entry.Value.ExportName))
-					{ // Special handling for items that don't want pluralisation after
-						CentcomMessage += $" { entry.Value.ExportMessage }\n";
+					{
+						// Special handling for items that don't want pluralisation after
+						CentcomMessage += $" {entry.Value.ExportMessage}\n";
 					}
 					else
 					{
-						CentcomMessage += $" { entry.Key }";
+						CentcomMessage += $" {entry.Key}";
 
 						if (entry.Value.Count > 1)
 						{
 							CentcomMessage += "s";
 						}
 
-						CentcomMessage += $" { entry.Value.ExportMessage }\n";
+						CentcomMessage += $" {entry.Value.ExportMessage}\n";
 					}
 				}
 
@@ -222,96 +210,175 @@ namespace Systems.Cargo
 				ShuttleStatus = ShuttleStatus.DockedStation;
 			}
 
-			OnShuttleUpdate?.Invoke();
+			OnShuttleUpdate.Invoke();
 		}
 
-		public void DestroyItem(ObjectBehaviour item, HashSet<GameObject> alreadySold)
+		public void ProcessCargo(GameObject obj, HashSet<GameObject> alreadySold)
 		{
-			//already sold this this sales cycle.
-			if (alreadySold.Contains(item.gameObject)) return;
-			var storage = item.GetComponent<InteractableStorage>();
-			if (storage)
+			if (obj.TryGetComponent<WrappedBase>(out var wrappedObject))
 			{
-				foreach (var slot in storage.ItemStorage.GetItemSlots())
+				var wrappedContents = wrappedObject.GetOrGenerateContent();
+				ProcessCargo(wrappedContents, alreadySold);
+				DespawnItem(obj, alreadySold);
+				return;
+			}
+
+			// already sold this this sales cycle.
+			if (alreadySold.Contains(obj)) return;
+
+			if (obj.TryGetComponent<ItemStorage>(out var storage))
+			{
+				// Check to spawn initial contents, can't just use prefab data due to recursion
+				if (storage.ContentsSpawned == false)
+				{
+					storage.TrySpawnContents();
+				}
+
+				foreach (var slot in storage.GetItemSlots())
 				{
 					if (slot.Item)
 					{
-						DestroyItem(slot.Item.GetComponent<ObjectBehaviour>(), alreadySold);
+						ProcessCargo(slot.Item.gameObject, alreadySold);
 					}
 				}
 			}
 
-			//note: it seems the held items are also detected in UnloadCargo as being on the matrix but only
-			//when they were spawned or moved onto that cargo shuttle (outside of the crate) prior to being placed into the crate. If they
-			//were instead placed into the crate and then the crate was moved onto the cargo shuttle, they
-			//will only be found with this check and won't be found in UnloadCargo.
-			//TODO: Better logic for ClosetControl updating its held items' parent matrix when crossing matrix with items inside.
-			var closet = item.GetComponent<ClosetControl>();
-			if (closet)
+			if (obj.TryGetComponent<ObjectContainer>(out var container))
 			{
-				foreach (var closetItem in closet.ServerHeldItems)
+				container.TrySpawnInitialContents(true);
+
+				//Check to spawn initial contents, cant just use prefab data due to recursion
+				foreach (var recursiveObj in container.GetStoredObjects())
 				{
-					DestroyItem(closetItem, alreadySold);
+					ProcessCargo(recursiveObj, alreadySold);
 				}
 			}
 
 			// If there is no bounty for the item - we dont destroy it.
-			var credits = Instance.GetSellPrice(item);
+			var credits = Instance.GetSellPrice(obj);
 			Credits += credits;
-			OnCreditsUpdate?.Invoke();
+			OnCreditsUpdate.Invoke();
 
-			var attributes = item.gameObject.GetComponent<Attributes>();
-			string exportName = System.String.Empty;
-			if (attributes)
+			string exportName;
+			if (obj.TryGetComponent<Attributes>(out var attributes))
 			{
-				if (string.IsNullOrEmpty(attributes.ExportName))
-				{
-					exportName = attributes.ArticleName;
-				}
-				else
-				{
-					exportName = attributes.ExportName;
-				}
+				exportName = string.IsNullOrEmpty(attributes.ExportName) ? attributes.ArticleName : attributes.ExportName;
 			}
 			else
 			{
-				exportName = item.gameObject.ExpensiveName();
+				exportName = obj.gameObject.ExpensiveName();
 			}
-			ExportedItem export;
-			if (exportedItems.ContainsKey(exportName))
-			{
-				export = exportedItems[exportName];
-			}
-			else
+
+			if (exportedItems.TryGetValue(exportName, out ExportedItem export) == false)
 			{
 				export = new ExportedItem
 				{
-					ExportMessage = attributes ? attributes.ExportMessage : "",
-					ExportName = attributes ? attributes.ExportName : "" // Need to always use the given export name
+					ExportMessage = attributes ? attributes.ExportMessage : string.Empty,
+					ExportName = attributes ? attributes.ExportName : string.Empty // Need to always use the given export name
 				};
 				exportedItems.Add(exportName, export);
 			}
 
-			var stackable = item.gameObject.GetComponent<Stackable>();
-			var count = 1;
-			if (stackable)
-			{
-				count = stackable.Amount;
-			}
+			var count = obj.TryGetComponent<Stackable>(out var stackable) ? stackable.Amount : 1;
 
 			export.Count += count;
 			export.TotalValue += credits;
 
-			var playerScript = item.GetComponent<PlayerScript>();
-			if (playerScript != null)
+			if (obj.TryGetComponent<ItemAttributesV2>(out var itemAttributes))
 			{
-				playerScript.playerHealth.ServerGibPlayer();
+				foreach (var itemTrait in itemAttributes.GetTraits())
+				{
+					if (itemTrait == null)
+					{
+						Logger.LogError($"{itemAttributes.name} has null or empty item trait, please fix");
+						continue;
+					}
+
+					if (SoldHistory.ContainsKey(itemTrait) == false)
+					{
+						SoldHistory.Add(itemTrait, 0);
+					}
+					SoldHistory[itemTrait] += count;
+					count = TryCompleteBounty(itemTrait, count);
+
+					if (count == 0) break;
+				}
 			}
 
-			item.registerTile.UnregisterClient();
-			item.registerTile.UnregisterServer();
-			alreadySold.Add(item.gameObject);
-			Despawn.ServerSingle(item.gameObject);
+			// Add value of mole inside gas container
+			if (obj.TryGetComponent<GasContainer>(out var gasContainer))
+			{
+				var stringBuilder = new StringBuilder(export.ExportMessage);
+
+				foreach (var gas in gasContainer.GasMix.GasesArray)
+				{
+					int gasValue = (int)gas.Moles * gas.GasSO.ExportPrice;
+					stringBuilder.AppendLine($"Exported {gas.Moles} moles of {gas.GasSO.Name} for {gasValue} credits");
+					export.TotalValue += gasValue;
+					Credits += gasValue;
+				}
+
+				export.ExportMessage = stringBuilder.ToString();
+				OnCreditsUpdate.Invoke();
+			}
+
+			if (obj.TryGetComponent<PlayerScript>(out var playerScript))
+			{
+				// No one must survive to tell the secrets of Central Command's cargo handling techniques.
+				playerScript.playerHealth.Gib();
+			}
+
+			if (attributes != null && attributes.ExportType != Attributes.CargoExportType.Always
+				&& (Credits == 0 || export.TotalValue == 0)) return;
+
+			DespawnItem(obj, alreadySold);
+		}
+
+		private void DespawnItem(GameObject obj, HashSet<GameObject> alreadySold)
+		{
+			alreadySold.Add(obj);
+			var registerTile = obj.RegisterTile();
+			registerTile.UnregisterClient();
+			registerTile.UnregisterServer();
+			_ = Despawn.ServerSingle(obj);
+		}
+
+		private int TryCompleteBounty(ItemTrait itemTrait, int count)
+		{
+			for (var i = ActiveBounties.Count - 1; i >= 0; i--)
+			{
+				var activeBounty = ActiveBounties[i];
+				if (activeBounty.Demands.ContainsKey(itemTrait))
+				{
+					if (activeBounty.Demands[itemTrait] >= count)
+					{
+						activeBounty.Demands[itemTrait] -= count;
+						count = 0;
+						CheckBountyCompletion(activeBounty);
+						break;
+					}
+					count -= activeBounty.Demands[itemTrait];
+					activeBounty.Demands[itemTrait] = 0;
+					CheckBountyCompletion(activeBounty);
+				}
+			}
+
+			return count;
+		}
+
+		private void CheckBountyCompletion(CargoBounty cargoBounty)
+		{
+			foreach (var demand in cargoBounty.Demands.m_dict)
+			{
+				if (demand.Value > 0)
+				{
+					return;
+				}
+			}
+			ActiveBounties.Remove(cargoBounty);
+			Credits += cargoBounty.Reward;
+			CentcomMessage += $"+{cargoBounty.Reward.ToString()} credits: {cargoBounty.Description} - completed.\n";
+			OnBountiesUpdate.Invoke();
 		}
 
 		private void SpawnOrder()
@@ -327,7 +394,7 @@ namespace Systems.Cargo
 			}
 		}
 
-		public void AddToCart(CargoOrder orderToAdd)
+		public void AddToCart(CargoOrderSO orderToAdd)
 		{
 			if (!CustomNetworkManager.Instance._isServer)
 			{
@@ -340,10 +407,10 @@ namespace Systems.Cargo
 			}
 
 			CurrentCart.Add(orderToAdd);
-			OnCartUpdate?.Invoke();
+			OnCartUpdate.Invoke();
 		}
 
-		public void RemoveFromCart(CargoOrder orderToRemove)
+		public void RemoveFromCart(CargoOrderSO orderToRemove)
 		{
 			if (!CustomNetworkManager.Instance._isServer)
 			{
@@ -351,18 +418,7 @@ namespace Systems.Cargo
 			}
 
 			CurrentCart.Remove(orderToRemove);
-			OnCartUpdate?.Invoke();
-		}
-
-		public void OpenCategory(CargoOrderCategory categoryToOpen)
-		{
-			if (!CustomNetworkManager.Instance._isServer)
-			{
-				return;
-			}
-
-			CurrentCategory = categoryToOpen;
-			OnCategoryUpdate?.Invoke();
+			OnCartUpdate.Invoke();
 		}
 
 		public int TotalCartPrice()
@@ -370,7 +426,7 @@ namespace Systems.Cargo
 			int totalPrice = 0;
 			for (int i = 0; i < CurrentCart.Count; i++)
 			{
-				totalPrice += CurrentCart[i].CreditsCost;
+				totalPrice += CurrentCart[i].CreditCost;
 			}
 			return (totalPrice);
 		}
@@ -389,25 +445,20 @@ namespace Systems.Cargo
 				CurrentCart.Clear();
 				Credits -= totalPrice;
 			}
-			OnCreditsUpdate?.Invoke();
-			OnCartUpdate?.Invoke();
-			return;
+			OnCreditsUpdate.Invoke();
+			OnCartUpdate.Invoke();
 		}
 
-		public int GetSellPrice(ObjectBehaviour item)
+		public int GetSellPrice(GameObject obj)
 		{
-			if (!CustomNetworkManager.Instance._isServer)
+			if (CustomNetworkManager.IsServer == false) return 0;
+
+			if (obj.TryGetComponent<Attributes>(out var attributes))
 			{
-				return 0;
+				return attributes.ExportCost;
 			}
 
-			var attributes = item.GetComponent<Attributes>();
-			if (attributes == null)
-			{
-				return 0;
-			}
-
-			return attributes.ExportCost;
+			return 0;
 		}
 
 		private class ExportedItem
@@ -417,25 +468,6 @@ namespace Systems.Cargo
 			public int Count;
 			public int TotalValue;
 		}
-	}
-
-	[System.Serializable]
-	public class CargoOrder
-	{
-		public string OrderName = "Crate with beer and steak";
-		public int CreditsCost = 1000;
-		public GameObject Crate = null;
-		public List<GameObject> Items = new List<GameObject>();
-
-		[ReadOnly]
-		public int TotalCreditExport = 0;
-	}
-
-	[System.Serializable]
-	public class CargoOrderCategory
-	{
-		public string CategoryName = "";
-		public List<CargoOrder> Supplies = new List<CargoOrder>();
 	}
 
 	public class CargoUpdateEvent : UnityEvent { }

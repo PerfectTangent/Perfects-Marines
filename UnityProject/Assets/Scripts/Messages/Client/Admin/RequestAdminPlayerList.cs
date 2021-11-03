@@ -1,53 +1,34 @@
-﻿using System.Collections;
-using Messages.Client;
-using UnityEngine;
-using Utility = UnityEngine.Networking.Utility;
-using Mirror;
+﻿using Mirror;
+using Messages.Server.AdminTools;
 
-/// <summary>
-///     Request admin page data from the server
-/// </summary>
-public class RequestAdminPlayerList : ClientMessage
+
+namespace Messages.Client.Admin
 {
-	public string Userid;
-	public string AdminToken;
-
-	public override void Process()
+	/// <summary>
+	///     Request admin page data from the server
+	/// </summary>
+	public class RequestAdminPlayerList : ClientMessage<RequestAdminPlayerList.NetMessage>
 	{
-		VerifyAdminStatus();
-	}
+		public struct NetMessage : NetworkMessage { }
 
-	void VerifyAdminStatus()
-	{
-		var player = PlayerList.Instance.GetAdmin(Userid, AdminToken);
-		if (player != null)
+		public override void Process(NetMessage msg)
 		{
-			AdminPlayerListRefreshMessage.Send(player, Userid);
+			VerifyAdminStatus(msg);
 		}
-	}
 
-	public static RequestAdminPlayerList Send(string userId, string adminToken)
-	{
-		RequestAdminPlayerList msg = new RequestAdminPlayerList
+		private void VerifyAdminStatus(NetMessage msg)
 		{
-			Userid = userId,
-			AdminToken = adminToken
-		};
-		msg.Send();
-		return msg;
-	}
+			if (IsFromAdmin() == false && PlayerList.Instance.IsMentor(SentByPlayer.UserId) == false) return;
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Userid = reader.ReadString();
-		AdminToken = reader.ReadString();
-	}
+			AdminPlayerListRefreshMessage.Send(SentByPlayer.GameObject, SentByPlayer.UserId);
+		}
 
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteString(Userid);
-		writer.WriteString(AdminToken);
+		public static NetMessage Send()
+		{
+			NetMessage msg = new NetMessage();
+
+			Send(msg);
+			return msg;
+		}
 	}
 }

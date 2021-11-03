@@ -29,7 +29,7 @@ namespace UI.Objects.Security
 		{
 			if (record == null)
 			{
-				Logger.Log("SecurityRecordItem: no record found, not doing init", Category.NetUI);
+				Logger.Log("SecurityRecordItem: no record found, not doing init", Category.Machines);
 				return;
 			}
 			securityRecord = record;
@@ -50,6 +50,8 @@ namespace UI.Objects.Security
 					return DebugTools.HexToColor("424142");
 				case SecurityStatus.Arrest:
 					return DebugTools.HexToColor("C10000");
+				case SecurityStatus.Criminal:
+					return DebugTools.HexToColor("C17100");
 				case SecurityStatus.Parole:
 					return DebugTools.HexToColor("F57211");
 			}

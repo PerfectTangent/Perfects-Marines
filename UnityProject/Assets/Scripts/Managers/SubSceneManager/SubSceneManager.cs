@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Messages.Client;
 using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,7 @@ public partial class SubSceneManager : NetworkBehaviour
 	[SerializeField] private AsteroidListSO asteroidList = null;
 	[SerializeField] private AdditionalSceneListSO additionalSceneList = null;
 
-	readonly ScenesSyncList loadedScenesList = new ScenesSyncList();
+	public readonly ScenesSyncList loadedScenesList = new ScenesSyncList();
 
 	public MainStationListSO MainStationList => mainStationList;
 
@@ -23,6 +24,7 @@ public partial class SubSceneManager : NetworkBehaviour
 	public bool MainStationLoaded { get; private set; }
 
 	public bool SyndicateLoaded { get; private set; }
+	public Scene SyndicateScene { get; private set; }
 	public bool WizardLoaded { get; private set; }
 
 	void Awake()
@@ -77,29 +79,6 @@ public partial class SubSceneManager : NetworkBehaviour
 		}
 	}
 
-	//TODO Update mirror
-	public static void ManuallyLoadScene(string ToLoad)
-	{
-		Instance.StartCoroutine(Instance.WaitLoad(ToLoad));
-	}
-
-	IEnumerator WaitLoad(string ToLoad)
-	{
-		while (clientIsLoadingSubscene)
-		{
-			yield return null;
-		}
-		foreach (var ReadyLoaded in Instance.clientLoadedSubScenes)
-		{
-			if (ReadyLoaded.SceneName == ToLoad)
-			{
-				yield break;
-			}
-		}
-		clientIsLoadingSubscene = true;
-		yield return Instance.StartCoroutine(Instance.LoadSubScene(ToLoad));
-		clientIsLoadingSubscene = false;
-	}
 }
 
 public enum SceneType

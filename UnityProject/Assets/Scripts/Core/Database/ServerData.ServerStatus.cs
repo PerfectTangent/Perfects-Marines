@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityWebRequest = UnityEngine.Networking.UnityWebRequest;
-using Utility = UnityEngine.Networking.Utility;
 using Mirror;
-using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
+using IgnoranceTransport;
+using Managers;
 
 namespace DatabaseAPI
 {
@@ -40,7 +40,8 @@ namespace DatabaseAPI
 		private float updateWait = 0f;
 		private string publicIP;
 		private TelepathyTransport telepathyTransport;
-		private BoosterTransport boosterTransport = null;
+		private Ignorance ignoranceTransport;
+		//private BoosterTransport boosterTransport = null;
 
 		void AttemptConfigLoad()
 		{
@@ -50,6 +51,7 @@ namespace DatabaseAPI
 			if (File.Exists(path))
 			{
 				telepathyTransport = FindObjectOfType<TelepathyTransport>();
+				ignoranceTransport = FindObjectOfType<Ignorance>();
 				config = JsonUtility.FromJson<ServerConfig>(File.ReadAllText(path));
 				Instance.StartCoroutine(Instance.SendServerStatus());
 			}
@@ -155,15 +157,21 @@ namespace DatabaseAPI
 		private int GetPort()
 		{
 			int port = (config.ServerPort != 0) ? config.ServerPort : 7777;
+
 			if (telepathyTransport != null)
 			{
 				return Convert.ToInt32(telepathyTransport.port);
 			}
 
-			if (boosterTransport!= null)
+			if (ignoranceTransport != null)
 			{
-				return Convert.ToInt32(boosterTransport.boosterPort);
+				return Convert.ToInt32(ignoranceTransport.port);
 			}
+
+			// if (boosterTransport!= null)
+			// {
+			// 	return Convert.ToInt32(boosterTransport.boosterPort);
+			// }
 
 			return port;
 		}
@@ -218,6 +226,9 @@ namespace DatabaseAPI
 		public string WinDownload;
 		public string OSXDownload;
 		public string LinuxDownload;
+
+		//End of a discord invite used for serverinfo page
+		public string DiscordLinkID;
 
 		//Discord Webhook URL//
 

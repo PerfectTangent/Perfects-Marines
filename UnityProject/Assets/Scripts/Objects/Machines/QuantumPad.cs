@@ -9,7 +9,8 @@ using Systems.Scenes;
 
 namespace Objects.Science
 {
-	public class QuantumPad : NetworkBehaviour, ICheckedInteractable<HandApply>
+
+	public class QuantumPad : NetworkBehaviour, IServerSpawn, ICheckedInteractable<HandApply>
 	{
 		public QuantumPad connectedPad;
 
@@ -70,7 +71,6 @@ namespace Objects.Science
 		{
 			registerTile = GetComponent<RegisterTile>();
 			spriteHandler = GetComponentInChildren<SpriteHandler>();
-			spriteHandler.ChangeSprite(0);
 		}
 
 		private void Start()
@@ -96,13 +96,14 @@ namespace Objects.Science
 			{
 				LavaLandManager.Instance.LavaLandBase2Connector = this;
 			}
+
+			spriteHandler.ChangeSprite(0);
 		}
 
-		private void OnEnable()
+		public void OnSpawnServer(SpawnInfo info)
 		{
-			if (!passiveDetect) return;
-			if (!CustomNetworkManager.IsServer) return;
-
+			if (!passiveDetect)
+				return;
 			UpdateManager.Add(ServerDetectObjectsOnTile, 1f);
 		}
 
@@ -125,7 +126,7 @@ namespace Objects.Science
 			ServerDetectObjectsOnTile();
 		}
 
-		public void ServerDetectObjectsOnTile()
+		private void ServerDetectObjectsOnTile()
 		{
 			if (connectedPad == null) return;
 
@@ -172,8 +173,8 @@ namespace Objects.Science
 			//detect players positioned on the portal bit of the gateway
 			foreach (ObjectBehaviour player in Matrix.Get<ObjectBehaviour>(registerTileLocation, ObjectType.Player, true))
 			{
-				Chat.AddLocalMsgToChat(message, travelCoord, gameObject);
-				SoundManager.PlayNetworkedForPlayer(player.gameObject, SingletonSOSounds.Instance.StealthOff); //very weird, sometimes does the sound other times not.
+				Chat.AddExamineMsgFromServer(player.gameObject, message);
+				_ = SoundManager.PlayNetworkedForPlayer(player.gameObject, CommonSounds.Instance.StealthOff); //very weird, sometimes does the sound other times not.
 				TransportUtility.TransportObjectAndPulled(player, travelCoord);
 				somethingTeleported = true;
 			}
@@ -182,7 +183,19 @@ namespace Objects.Science
 			foreach (var item in Matrix.Get<ObjectBehaviour>(registerTileLocation, ObjectType.Object, true)
 									.Concat(Matrix.Get<ObjectBehaviour>(registerTileLocation, ObjectType.Item, true)))
 			{
-				TransportUtility.TransportObjectAndPulled(item, travelCoord);
+
+				if (item.gameObject.TryGetComponent(out IQuantumReaction reaction))
+				{
+					reaction.OnTeleportStart();
+					TransportUtility.TransportObjectAndPulled(item, travelCoord);
+					reaction.OnTeleportEnd();
+				}
+
+				else
+				{
+					TransportUtility.TransportObjectAndPulled(item, travelCoord);
+				}
+
 				somethingTeleported = true;
 			}
 

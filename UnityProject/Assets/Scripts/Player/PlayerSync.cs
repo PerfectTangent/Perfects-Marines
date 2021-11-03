@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Messages.Client.NewPlayer;
 using UnityEngine;
 using Mirror;
 using Objects;
+using Player.Movement;
 
 public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllable
 {
@@ -47,8 +49,10 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 	public bool IsMoving => isServer ? IsMovingServer : IsMovingClient;
 
 	public PlayerMove playerMove;
-	private PlayerScript playerScript;
+	public PlayerScript playerScript;
 	private Directional playerDirectional;
+
+	public bool Step = false;
 
 	private Matrix Matrix => registerPlayer != null ? registerPlayer.Matrix : null;
 
@@ -62,6 +66,70 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 
 	public bool IsBeingPulledServer => pushPull && pushPull.IsBeingPulled;
 	public bool IsBeingPulledClient => pushPull && pushPull.IsBeingPulledClient;
+
+	/// <summary>
+	/// true when player tries to break pull or leave container (e.g. locker).
+	/// </summary>
+	private bool didWiggle = false;
+
+	private void Awake()
+	{
+		playerScript = GetComponent<PlayerScript>();
+		pushPull = GetComponent<PushPull>();
+		playerDirectional = GetComponent<Directional>();
+		registerPlayer = GetComponent<RegisterPlayer>();
+	}
+
+	public void SetInitialPositionStates()
+	{
+		var matrixInfo = MatrixManager.AtPoint(Vector3Int.RoundToInt(transform.position), false);
+		predictedState.MatrixId = matrixInfo.Id;
+		playerState.MatrixId = matrixInfo.Id;
+		var pos = transform.position;
+		predictedState.WorldPosition = pos;
+		playerState.WorldPosition = pos;
+
+		PlayerNewPlayer.Send(netId);
+		UpdateManager.Add(CallbackType.UPDATE, UpdateMe);
+
+
+	}
+
+	public override void OnStartServer()
+	{
+		serverPendingActions = new Queue<PlayerAction>();
+		InitServerState();
+	}
+
+	public override void OnStartLocalPlayer()
+	{
+		setLocalPlayer();
+	}
+
+	private void OnEnable()
+	{
+		onTileReached.AddListener(Cross);
+		EventManager.AddHandler(Event.PlayerRejoined, setLocalPlayer);
+	}
+	private void OnDisable()
+	{
+		onTileReached.RemoveListener(Cross);
+		EventManager.RemoveHandler(Event.PlayerRejoined, setLocalPlayer);
+		UpdateManager.Remove(CallbackType.UPDATE, UpdateMe);
+	}
+
+	/// <summary>
+	/// Sets up the action queue for the local player.
+	/// </summary>
+	public void setLocalPlayer()
+	{
+		if (isLocalPlayer)
+		{
+			pendingActions = new Queue<PlayerAction>();
+			//UpdatePredictedState();
+			predictedSpeedClient = UIManager.Intent.Running ? playerMove.RunSpeed : playerMove.WalkSpeed;
+		}
+	}
 
 	public void Nudge(NudgeInfo info)
 	{
@@ -321,7 +389,7 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 	{
 		if (isServer)
 		{
-			Logger.LogFormat("Swap {0} from {1} to {2}", Category.Lerp, name, (Vector2) serverState.WorldPosition,
+			Logger.LogFormat("Swap {0} from {1} to {2}", Category.Movement, name, (Vector2) serverState.WorldPosition,
 				toWorldPosition.To2Int());
 			PlayerState nextStateServer = NextStateSwap(serverState, toWorldPosition, true);
 			ServerState = nextStateServer;
@@ -354,96 +422,21 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 
 	#endregion
 
-	private void Awake()
-	{
-		playerScript = GetComponent<PlayerScript>();
-		pushPull = GetComponent<PushPull>();
-		playerDirectional = GetComponent<Directional>();
-		registerPlayer = GetComponent<RegisterPlayer>();
-	}
-
-	public override void OnStartClient()
-	{
-		//prevents player temporarily showing up at 0,0 when they spawn before they receive their first position
-		playerState.WorldPosition = transform.localPosition;
-		PlayerNewPlayer.Send(netId);
-	}
-
-	public override void OnStartServer()
-	{
-		serverPendingActions = new Queue<PlayerAction>();
-		InitServerState();
-	}
-
-	public override void OnStartLocalPlayer()
-	{
-		setLocalPlayer();
-	}
-
-	private void OnEnable()
-	{
-		onTileReached.AddListener(Cross);
-		EventManager.AddHandler(EVENT.PlayerRejoined, setLocalPlayer);
-		UpdateManager.Add(CallbackType.UPDATE, UpdateMe);
-	}
-	private void OnDisable()
-	{
-		onTileReached.RemoveListener(Cross);
-		EventManager.RemoveHandler(EVENT.PlayerRejoined, setLocalPlayer);
-		UpdateManager.Remove(CallbackType.UPDATE, UpdateMe);
-	}
-
-	/// <summary>
-	/// Sets up the action queue for the local player.
-	/// </summary>
-	public void setLocalPlayer()
-	{
-		if (isLocalPlayer)
-		{
-			pendingActions = new Queue<PlayerAction>();
-			UpdatePredictedState();
-			predictedSpeedClient = UIManager.Intent.Running ? playerMove.RunSpeed : playerMove.WalkSpeed;
-		}
-	}
-
-	/// <summary>
-	/// true when player tries to break pull or leave container (e.g. locker).
-	/// </summary>
-	private bool didWiggle = false;
-
-	[Client]
-	public void TryEscapeContainer()
-	{
-		if (Camera2DFollow.followControl.target.TryGetComponent(out ClosetControl closet))
-		{
-			CmdTryEscapeCloset();
-		}
-		else if (Camera2DFollow.followControl.target.TryGetComponent(out Objects.Disposals.DisposalVirtualContainer disposalContainer))
-		{
-			CmdTryEscapeDisposals();
-		}
-	}
-
 	[Command]
-	private void CmdTryEscapeCloset()
+	public void CmdTryEscapeContainer()
 	{
-		if (pushPull?.parentContainer == null) return;
+		ServerTryEscapeContainer();
+	}
+
+	[Server]
+	public void ServerTryEscapeContainer()
+	{
+		if (pushPull == null || pushPull.parentContainer == null) return;
 		GameObject parentContainer = pushPull.parentContainer.gameObject;
 
-		if (parentContainer.TryGetComponent(out ClosetControl closet))
+		foreach (var escapable in parentContainer.GetComponents<IEscapable>())
 		{
-			closet.PlayerTryEscaping(gameObject);
-		}
-	}
-	[Command]
-	private void CmdTryEscapeDisposals()
-	{
-		if (pushPull?.parentContainer == null) return;
-		GameObject parentContainer = pushPull.parentContainer.gameObject;
-
-		if (parentContainer.TryGetComponent(out Objects.Disposals.DisposalVirtualContainer disposalContainer))
-		{
-			disposalContainer.PlayerTryEscaping(gameObject);
+			escapable.EntityTryEscape(gameObject);
 		}
 	}
 
@@ -466,7 +459,7 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 					// Player inside something
 					else if (Camera2DFollow.followControl.target != PlayerManager.LocalPlayer.transform)
 					{
-						TryEscapeContainer();
+						CmdTryEscapeContainer();
 						didWiggle = true;
 					}
 				}
@@ -489,13 +482,17 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 			return;
 		}
 
+		var server = CustomNetworkManager.IsServer;
+
 		if (Matrix != null)
 		{
-			CheckMovementClient();
-			bool server = isServer;
 			if (server)
 			{
 				CheckMovementServer();
+			}
+			else if (CustomNetworkManager.IsHeadless == false)
+			{
+				CheckMovementClient(); //needed for space floating movement to update for the Server if it is not headless
 			}
 
 			if (!ClientPositionReady)
@@ -507,10 +504,10 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 			{
 				if (CommonInput.GetKeyDown(KeyCode.F7) && gameObject == PlayerManager.LocalPlayer)
 				{
-					PlayerSpawn.ServerSpawnDummy();
+					PlayerSpawn.ServerSpawnDummy(gameObject.transform);
 				}
 
-				if (serverState.Position != serverLerpState.Position)
+				if (serverState.LocalPosition != serverLerpState.LocalPosition)
 				{
 					ServerLerp();
 				}
@@ -522,12 +519,23 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 		}
 
 		//Registering
-		if (registerPlayer.LocalPositionClient != Vector3Int.RoundToInt(predictedState.Position))
+		if (registerPlayer.LocalPositionClient != Vector3Int.RoundToInt(predictedState.LocalPosition))
 		{
-			registerPlayer.UpdatePositionClient();
+			if (server)
+			{
+				if (registerPlayer.ServerSetNetworkedMatrixNetID(MatrixManager.Get(predictedState.MatrixId).NetID) ==
+				    false)
+				{
+					registerPlayer.UpdatePositionClient();
+				}
+			}
+			else
+			{
+				registerPlayer.UpdatePositionClient();
+			}
 		}
 
-		if (registerPlayer.LocalPositionServer != Vector3Int.RoundToInt(serverState.Position))
+		if (server && registerPlayer.LocalPositionServer != Vector3Int.RoundToInt(serverState.LocalPosition))
 		{
 			registerPlayer.UpdatePositionServer();
 		}
@@ -558,7 +566,7 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 	{
 		var newState = state;
 		newState.MoveNumber++;
-		newState.Position = playerMove.GetNextPosition(Vector3Int.RoundToInt(state.Position), action, isReplay,
+		newState.LocalPosition = playerMove.GetNextPosition(Vector3Int.RoundToInt(state.LocalPosition), action, isReplay,
 			MatrixManager.Get(newState.MatrixId).Matrix);
 
 		var proposedWorldPos = newState.WorldPosition;
@@ -648,15 +656,13 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 	}
 #endif
 
-	public void RecievePlayerMoveAction(PlayerAction moveActions)
+	public void ReceivePlayerMoveAction(PlayerAction moveActions)
 	{
-		if (moveActions.moveActions.Length != 0 && !MoveCooldown
-		                                        && isLocalPlayer && playerMove != null
-		                                        && !didWiggle && ClientPositionReady)
+		if (moveActions.moveActions.Length != 0 && !MoveCooldown && isLocalPlayer && playerMove != null && !didWiggle && ClientPositionReady)
 		{
 			bool beingDraggedWithCuffs = playerMove.IsCuffed && playerScript.pushPull.IsBeingPulledClient;
 
-			if (playerMove.allowInput && !playerMove.IsBuckled && !beingDraggedWithCuffs && !UIManager.IsInputFocus)
+			if (playerMove.allowInput && !beingDraggedWithCuffs && !UIManager.IsInputFocus && ActionSpeed(moveActions) > 0)
 			{
 				StartCoroutine(DoProcess(moveActions));
 			}
@@ -668,5 +674,26 @@ public partial class PlayerSync : NetworkBehaviour, IPushable, IPlayerControllab
 				}
 			}
 		}
+	}
+
+	private float ActionSpeed(PlayerAction action)
+	{
+		float speed = 0;
+		if (!playerScript.registerTile.IsLayingDown)
+		{
+			if (action.isRun)
+			{
+				speed = playerMove.RunSpeed;
+			}
+			if (speed <= 0 || speed < playerMove.WalkSpeed)
+			{
+				speed = playerMove.WalkSpeed;
+			}
+		}
+		if (speed <= 0 || speed < playerMove.CrawlSpeed)
+		{
+			speed = playerMove.CrawlSpeed;
+		}
+		return speed;
 	}
 }

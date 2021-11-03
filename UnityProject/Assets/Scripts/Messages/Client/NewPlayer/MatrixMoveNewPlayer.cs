@@ -1,40 +1,34 @@
-﻿using System.Collections;
-using Messages.Client;
-using Mirror;
+﻿using Mirror;
+using Shuttles;
 
-public class MatrixMoveNewPlayer: ClientMessage
+namespace Messages.Client.NewPlayer
 {
-	public uint MatrixMove;
-
-	public override void Process()
+	public class MatrixMoveNewPlayer : ClientMessage<MatrixMoveNewPlayer.NetMessage>
 	{
-		// LoadNetworkObject returns bool, so it can be used to check if object is loaded correctly
-		if (LoadNetworkObject(MatrixMove))
+		public struct NetMessage : NetworkMessage
 		{
-			NetworkObject.GetComponent<MatrixMove>()?.UpdateNewPlayer(
-				SentByPlayer.Connection);
+			public uint MatrixSyncNetId;
 		}
-	}
 
-	public static MatrixMoveNewPlayer Send(uint matrixMoveNetId)
-	{
-		MatrixMoveNewPlayer msg = new MatrixMoveNewPlayer
+		public override void Process(NetMessage msg)
 		{
-			MatrixMove = matrixMoveNetId
-		};
-		msg.Send();
-		return msg;
-	}
+			// LoadNetworkObject returns bool, so it can be used to check if object is loaded correctly
+			if (LoadNetworkObject(msg.MatrixSyncNetId))
+			{
+				NetworkObject.GetComponent<MatrixSync>().OrNull()?.MatrixMove.OrNull()?.UpdateNewPlayer(
+					SentByPlayer.Connection);
+			}
+		}
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		MatrixMove = reader.ReadUInt32();
-	}
+		public static NetMessage Send(uint matrixSyncNetId)
+		{
+			NetMessage msg = new NetMessage
+			{
+				MatrixSyncNetId = matrixSyncNetId
+			};
 
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteUInt32(MatrixMove);
+			Send(msg);
+			return msg;
+		}
 	}
 }

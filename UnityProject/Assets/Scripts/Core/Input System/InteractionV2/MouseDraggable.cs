@@ -51,7 +51,7 @@ public class MouseDraggable : MonoBehaviour
 			if (shadow == null)
 			{
 				Logger.LogWarning("No drag shadow sprite was set and no sprite renderer found for " + name +
-				                  " so there will be no drag shadow for this object.");
+				                  " so there will be no drag shadow for this object.", Category.Sprites);
 			}
 		}
 		lightingSystem = Camera.main.GetComponent<LightingSystem>();
@@ -122,7 +122,7 @@ public class MouseDraggable : MonoBehaviour
 	/// </summary>
 	/// <param name="dragger">player attempting the drag</param>
 	/// <returns></returns>
-	public bool CanBeginDrag(GameObject dragger)
+	public bool CanBeginDrag(PlayerScript dragger)
 	{
 		return Validations.CanApply(dragger, gameObject, NetworkSide.Client, allowDragWhileSoftCrit,
 			draggerMustBeAdjacent ? ReachRange.Standard : ReachRange.Unlimited);

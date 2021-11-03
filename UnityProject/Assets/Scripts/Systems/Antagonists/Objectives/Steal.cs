@@ -8,7 +8,7 @@ namespace Antagonists
 	/// <summary>
 	/// An objective to steal items from the station
 	/// </summary>
-	[CreateAssetMenu(menuName="ScriptableObjects/Objectives/Steal")]
+	[CreateAssetMenu(menuName="ScriptableObjects/AntagObjectives/Steal")]
 	public class Steal : Objective
 	{
 		/// <summary>
@@ -30,7 +30,7 @@ namespace Antagonists
 		/// <summary>
 		/// Make sure there's at least one item which hasn't been targeted
 		/// </summary>
-		public override bool IsPossible(PlayerScript candidate)
+		protected override bool IsPossibleInternal(PlayerScript candidate)
 		{
 			// Get all items from the item pool which haven't been targeted already
 			int itemCount = ItemPool.Where( itemDict =>
@@ -60,7 +60,7 @@ namespace Antagonists
 			if (itemEntry.Key == null)
 			{
 				Logger.LogError($"Objective steal item target failed because the item chosen is somehow destroyed." +
-				                " Definitely a programming bug. ", Category.Round);
+				                " Definitely a programming bug. ", Category.Antags);
 				return;
 			}
 			ItemName = itemEntry.Key.Item().InitialName;
@@ -69,7 +69,7 @@ namespace Antagonists
 			{
 				Logger.LogError($"Objective steal item target failed because the InitialName has not been" +
 				                $" set on this objects ItemAttributes. " +
-				                $"Item: {itemEntry.Key.Item().gameObject.name}", Category.Round);
+				                $"Item: {itemEntry.Key.Item().gameObject.name}", Category.Antags);
 				return;
 			}
 			Amount = itemEntry.Value;

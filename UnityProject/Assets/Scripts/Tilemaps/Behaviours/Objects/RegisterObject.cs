@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Blob;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Mirror;
+using Core.Editor.Attributes;
+
 
 /// <summary>
 /// <see cref="RegisterTile"/> for an object, adds additional logic to
@@ -12,22 +14,38 @@ using Mirror;
 [ExecuteInEditMode]
 public class RegisterObject : RegisterTile
 {
+	[PrefabModeOnly]
 	public bool AtmosPassable = true;
-	[SyncVar]
+
+	[NonSerialized]
+	[SyncVar(hook = nameof(SetPassable))]
 	public bool Passable = true;
 
+	[NonSerialized]
+	[SyncVar(hook = nameof(SetCrawlingPassable))]
+	public bool CrawlPassable = false;
+
+	[PrefabModeOnly]
 	[Tooltip("If true, this object won't block players from interacting with other objects")]
 	public bool ReachableThrough = true;
 
+
 	private bool initialAtmosPassable;
+
+	[SerializeField, FormerlySerializedAs("Passable"), PrefabModeOnly]
 	private bool initialPassable;
 
-	[SerializeField] private List<PassableExclusionTrait> passableExclusionsToThis = default;
+	[SerializeField, FormerlySerializedAs("CrawlPassable"), PrefabModeOnly]
+	private bool initialCrawlPassable;
+
+	[SerializeField, PrefabModeOnly]
+	private List<PassableExclusionTrait> passableExclusionsToThis = default;
 
 	protected override void Awake()
 	{
 		base.Awake();
-		initialPassable = Passable;
+		SetCrawlingPassable(CrawlPassable, initialCrawlPassable);
+		SetPassable(Passable,initialPassable);
 		initialAtmosPassable = AtmosPassable;
 	}
 
@@ -37,7 +55,8 @@ public class RegisterObject : RegisterTile
 	public void RestoreAllToDefault()
 	{
 		AtmosPassable = initialAtmosPassable;
-		Passable = initialPassable;
+		SetCrawlingPassable(CrawlPassable, initialCrawlPassable);
+		SetPassable(Passable,initialPassable);
 	}
 
 	/// <summary>
@@ -45,13 +64,32 @@ public class RegisterObject : RegisterTile
 	/// </summary>
 	public void RestorePassableToDefault()
 	{
-		Passable = initialPassable;
+		SetCrawlingPassable(CrawlPassable, initialCrawlPassable);
+		SetPassable(Passable,initialPassable);
+	}
+
+	public void SetPassable(bool old, bool Newin)
+	{
+		Passable = Newin;
+	}
+
+	public void SetCrawlingPassable(bool old, bool Newin)
+	{
+		CrawlPassable = Newin;
 	}
 
 	public override bool IsPassableFromOutside(Vector3Int enteringFrom, bool isServer, GameObject context = null)
 	{
 		if (context == gameObject) return true; // Object can pass through its own RegisterTile.
 		if (CheckPassableExclusions(context)) return true;
+		if (Passable != CrawlPassable)
+		{
+			if (context != null && context.GetComponent<RegisterPlayer>() != null &&
+			    context.GetComponent<RegisterPlayer>().IsLayingDown)
+			{
+				return CrawlPassable || (isServer ? LocalPositionServer == TransformState.HiddenPos : LocalPositionClient == TransformState.HiddenPos);
+			}
+		}
 
 		return Passable || (isServer ? LocalPositionServer == TransformState.HiddenPos : LocalPositionClient == TransformState.HiddenPos);
 	}
@@ -61,6 +99,14 @@ public class RegisterObject : RegisterTile
 		if (context == gameObject) return true; // Object can pass through its own RegisterTile.
 		if (CheckPassableExclusions(context)) return true;
 
+		if (Passable != CrawlPassable)
+		{
+			if (context != null && context.GetComponent<RegisterPlayer>() != null &&
+			    context.GetComponent<RegisterPlayer>().IsLayingDown)
+			{
+				return CrawlPassable || (isServer ? LocalPositionServer == TransformState.HiddenPos : LocalPositionClient == TransformState.HiddenPos);
+			}
+		}
 		return Passable || (isServer ? LocalPositionServer == TransformState.HiddenPos : LocalPositionClient == TransformState.HiddenPos );
 	}
 

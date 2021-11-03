@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using Chemistry.Components;
+using AddressableReferences;
+using Messages.Server.SoundMessages;
+
 
 [RequireComponent(typeof(Pickupable))]
 public class SpaceCleaner : NetworkBehaviour, ICheckedInteractable<AimApply>
 {
 	public int travelDistance = 6;
+	[SerializeField] private AddressableAudioSource Spray2 = null;
 
 	private float travelTime => 1f / travelDistance;
 
@@ -49,7 +53,8 @@ public class SpaceCleaner : NetworkBehaviour, ICheckedInteractable<AimApply>
 
 		Effect.PlayParticleDirectional( this.gameObject, interaction.TargetVector );
 
-		SoundManager.PlayNetworkedAtPos("Spray2", startPos, 1, sourceObj: interaction.Performer);
+		AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: 1);
+		SoundManager.PlayNetworkedAtPos(Spray2, startPos, audioSourceParameters, sourceObj: interaction.Performer);
 
 		interaction.Performer.Pushable()?.NewtonianMove((-interaction.TargetVector).NormalizeToInt(), speed: 1f);
 	}
@@ -65,7 +70,23 @@ public class SpaceCleaner : NetworkBehaviour, ICheckedInteractable<AimApply>
 
 	void SprayTile(Vector3Int worldPos)
 	{
-		reagentContainer.Spill(worldPos, reagentsPerUse);
+		MatrixInfo matrixInfo = MatrixManager.AtPoint(worldPos, true);
+		Vector3Int localPos = MatrixManager.WorldToLocalInt(worldPos, matrixInfo);
+		if (reagentContainer != null && reagentContainer.ReagentMixTotal > 0.1)
+		{
+			if (reagentContainer.MajorMixReagent.name == "SpaceCleaner")
+			{
+				matrixInfo.MetaDataLayer.Clean(worldPos, localPos, false);
+			}
+			else if (reagentContainer.MajorMixReagent.name == "Water")
+			{
+				matrixInfo.MetaDataLayer.Clean(worldPos, localPos, true);
+			}
+			else
+			{
+				MatrixManager.ReagentReact(reagentContainer.TakeReagents(reagentsPerUse), worldPos);
+			}
+		}
 	}
 	private List<Vector3Int> CheckPassableTiles(Vector2 startPos, Vector2 targetPos)
 	{

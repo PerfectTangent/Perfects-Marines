@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Items;
 using UnityEngine;
 using Mirror;
 using UnityEngine.Serialization;
@@ -9,7 +10,7 @@ using WebSocketSharp;
 /// <summary>
 ///     ID card properties
 /// </summary>
-public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInteractable<HandActivate>
+public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInteractable<HandActivate>, IExaminable
 {
 
 	[Tooltip("Sprite to use when the card is a normal card")]
@@ -56,9 +57,10 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 	[SyncVar(hook = nameof(SyncName))]
 	private string registeredName;
 
+	public int[] currencies = new int[(int)CurrencyType.Total];
 
 	//The actual list of access allowed set via the server and synced to all clients
-	private SyncListInt accessSyncList = new SyncListInt();
+	private readonly SyncList<int> accessSyncList = new SyncList<int>();
 
 	//To switch the card sprites when the type changes
 	private SpriteRenderer spriteRenderer;
@@ -203,6 +205,7 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 	{
 		if (!HasAccess(access)) return;
 		accessSyncList.Remove((int)access);
+		netIdentity.isDirty = true;
 	}
 
 	/// <summary>
@@ -213,6 +216,7 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 	{
 		if (HasAccess(access)) return;
 		accessSyncList.Add((int)access);
+		netIdentity.isDirty = true;
 	}
 
 	/// <summary>
@@ -254,7 +258,12 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 	[Server]
 	public void ServerChangeOccupation(Occupation occupation, bool grantDefaultAccess = true, bool clear = true)
 	{
-		if (clear) accessSyncList.Clear();
+		if (clear)
+		{
+			accessSyncList.Clear();
+			netIdentity.isDirty = true;
+		}
+
 		if (grantDefaultAccess)
 		{
 			ServerAddAccess(occupation.AllowedAccess);
@@ -272,4 +281,17 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 	{
 		SyncName(registeredName, newName);
 	}
+
+	public string Examine(Vector3 pos)
+	{
+		return $"The account linked to the ID belongs to '{registeredName}' and reports a balance of {currencies[(int)CurrencyType.Credits]} credits. " +
+		       $"The labor budget reports an allowance of {currencies[(int)CurrencyType.LaborPoints]} points.";
+	}
+}
+
+public enum CurrencyType
+{
+	Credits,
+	LaborPoints,
+	Total
 }

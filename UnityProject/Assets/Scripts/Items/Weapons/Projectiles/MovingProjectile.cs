@@ -43,6 +43,8 @@ namespace Weapons.Projectiles
 
 		private void Update()
 		{
+			if(projectile.Destroyed) return;
+
 			CachePreviousPosition();
 
 			if (ProcessMovement( MoveProjectile()))
@@ -65,7 +67,7 @@ namespace Weapons.Projectiles
 
 		private bool ProcessMovement(Vector2 distanceToTravel)
 		{
-			return projectile.ProcessMove(distanceToTravel, thisTransform.position);
+			return projectile.ProcessMove(distanceToTravel, thisTransform.position, previousPosition);
 		}
 
 		private void SimulateCollision()

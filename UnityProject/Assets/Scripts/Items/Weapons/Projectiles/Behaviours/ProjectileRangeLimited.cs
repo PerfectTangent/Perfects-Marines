@@ -11,7 +11,9 @@ namespace Weapons.Projectiles.Behaviours
 		[SerializeField] private float maxDistance = 15;
 		private float currentDistance;
 
-		public bool OnMove(Vector2 traveledDistance)
+		public float CurrentDistance => currentDistance;
+
+		public bool OnMove(Vector2 traveledDistance, Vector2 previousWorldPosition)
 		{
 			return AddDistance(traveledDistance.magnitude);
 		}
@@ -30,6 +32,11 @@ namespace Weapons.Projectiles.Behaviours
 		public void ResetDistance()
 		{
 			currentDistance = 0;
+		}
+
+		public void SetDistance(float newDistance)
+		{
+			currentDistance = newDistance;
 		}
 
 		private void OnDisable()

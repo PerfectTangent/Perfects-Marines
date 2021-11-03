@@ -1,39 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AddressableReferences;
 using Objects.Disposals;
+using Objects;
 
 namespace Systems.Disposals
 {
 	/// <summary>
 	/// Creates, updates, and removes all disposal instances.
 	/// </summary>
-	public class DisposalsManager : MonoBehaviour
+	public class DisposalsManager : MonoBehaviourSingleton<DisposalsManager>
 	{
-		static DisposalsManager instance;
-		public static DisposalsManager Instance {
-			get {
-				if (instance == null)
-				{
-					instance = FindObjectOfType<DisposalsManager>();
-				}
-
-				return instance;
-			}
-			set { instance = value; }
-		}
-
 		[SerializeField]
 		[Tooltip("Set the virtual container prefab to be used in disposal instances.")]
 		public GameObject VirtualContainerPrefab;
 		[SerializeField]
 		[Tooltip("Set how many tiles every disposal instance can traverse in one second.")]
-		float TileTraversalsPerSecond = 20;
+		private float TileTraversalsPerSecond = 20;
+		[SerializeField]
+		private AddressableAudioSource disposalEjectionHiss = default;
 
-		List<DisposalTraversal> disposalInstances = new List<DisposalTraversal>();
+		public AddressableAudioSource DisposalEjectionHiss => disposalEjectionHiss;
 
-		void Update()
+		private readonly List<DisposalTraversal> disposalInstances = new List<DisposalTraversal>();
+
+		private void Update()
 		{
+			// TODO: this is terrible.
+
 			/*
 			 * Allow one disposal instance to traverse per update.
 			 * This means that in the (unlikely) event of huge number of disposals, performance
@@ -47,7 +42,7 @@ namespace Systems.Disposals
 
 			foreach (DisposalTraversal disposal in disposalInstances)
 			{
-				if (!disposal.CurrentlyDelayed)
+				if (disposal.CurrentlyDelayed == false)
 				{
 					UpdateDisposal(disposal);
 					break;
@@ -58,11 +53,12 @@ namespace Systems.Disposals
 		public static GameObject SpawnVirtualContainer(Vector3Int worldPosition)
 		{
 			SpawnResult virtualContainerSpawn = Spawn.ServerPrefab(Instance.VirtualContainerPrefab, worldPosition);
-			if (!virtualContainerSpawn.Successful)
+			if (virtualContainerSpawn.Successful == false)
 			{
 				Logger.LogError(
 						"Failed to spawn disposal virtual container! " +
-						$"Is {nameof(DisposalsManager)} missing reference to {nameof(Instance.VirtualContainerPrefab)}?");
+						$"Is {nameof(DisposalsManager)} missing reference to {nameof(Instance.VirtualContainerPrefab)}?",
+						Category.Machines);
 				return default;
 			}
 
@@ -72,10 +68,13 @@ namespace Systems.Disposals
 		/// <summary>
 		/// Create a new disposal instance, which will move its contents along the disposal pipe network.
 		/// </summary>
-		/// <param name="container">The virtual container holding the entities to be disposed of.</param>
-		public void NewDisposal(DisposalVirtualContainer container)
+		/// <param name="sourceContainer">The container holding the entities to be disposed of.</param>
+		public void NewDisposal(ObjectContainer sourceContainer)
 		{
-			DisposalTraversal traversal = new DisposalTraversal(container);
+			var disposalContainer = SpawnVirtualContainer(sourceContainer.gameObject.RegisterTile().WorldPositionServer);
+			sourceContainer.TransferObjectsTo(disposalContainer.GetComponent<ObjectContainer>());
+
+			var traversal = new DisposalTraversal(disposalContainer.GetComponent<DisposalVirtualContainer>());
 			disposalInstances.Add(traversal);
 		}
 
@@ -88,7 +87,7 @@ namespace Systems.Disposals
 			disposalInstances.Remove(disposal);
 		}
 
-		void UpdateDisposal(DisposalTraversal disposal)
+		private void UpdateDisposal(DisposalTraversal disposal)
 		{
 			if (disposal.TraversalFinished)
 			{
@@ -103,7 +102,7 @@ namespace Systems.Disposals
 			StartCoroutine(DelayTraversal(disposal));
 		}
 
-		IEnumerator DelayTraversal(DisposalTraversal disposal)
+		private IEnumerator DelayTraversal(DisposalTraversal disposal)
 		{
 			yield return WaitFor.Seconds(1 / TileTraversalsPerSecond);
 			disposal.CurrentlyDelayed = false;

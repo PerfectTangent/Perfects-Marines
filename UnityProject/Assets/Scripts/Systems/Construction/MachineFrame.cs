@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Items;
 using UnityEngine;
 using Mirror;
 using ScriptableObjects;
@@ -8,7 +10,7 @@ using Objects.Machines;
 
 namespace Objects.Construction
 {
-	[System.Serializable]
+	[Serializable]
 	public class AllowedTraitList
 	{
 		public AllowedTraitList()
@@ -23,7 +25,7 @@ namespace Objects.Construction
 		public ItemTrait AllowedTrait;
 	}
 
-	[System.Serializable]
+	[Serializable]
 	public class SyncListItem : SyncList<AllowedTraitList> { }
 
 	/// <summary>
@@ -57,6 +59,8 @@ namespace Objects.Construction
 		private bool putBoardInManually;
 
 		private StatefulState CurrentState => stateful.CurrentState;
+
+		private List<VendorItem> previousVendorContent;
 
 		private void Awake()
 		{
@@ -234,7 +238,7 @@ namespace Objects.Construction
 					() =>
 					{
 						Spawn.ServerPrefab(CommonPrefabs.Instance.Metal, SpawnDestination.At(gameObject), 5);
-						Despawn.ServerSingle(gameObject);
+						_ = Despawn.ServerSingle(gameObject);
 					});
 			}
 		}
@@ -304,6 +308,8 @@ namespace Objects.Construction
 				{
 					allowedTraits.Add(new AllowedTraitList(list.itemTrait));
 				}
+
+				netIdentity.isDirty = true;
 
 				Inventory.ServerTransfer(interaction.HandSlot, circuitBoardSlot);
 				stateful.ServerChangeState(circuitAddedState);
@@ -377,17 +383,28 @@ namespace Objects.Construction
 
 				if (spawnedObject == null)
 				{
-					Logger.LogWarning(machineParts.machine + " is missing the machine script!", Category.ItemSpawn);
+					Logger.LogWarning(machineParts.machine + " is missing the machine script!", Category.Construction);
 					return;
 				}
 
 				//Send circuit board data to the new machine
-				spawnedObject.SetBasicPartsUsed(basicPartsUsed);
 				spawnedObject.SetPartsInFrame(partsInFrame);
+				spawnedObject.SetBasicPartsUsed(basicPartsUsed);
 				spawnedObject.SetMachineParts(machineParts);
 
+				//Restoring previous vendor content if possible
+				var vendor = spawnedObject.GetComponent<Vendor>();
+				if (vendor != null)
+				{
+					var vendorContent = GetPreviousVendorContent();
+					if(vendorContent != null)
+					{
+						vendor.VendorContent = vendorContent;
+					}
+				}
+
 				//Despawn frame
-				Despawn.ServerSingle(gameObject);
+				_ = Despawn.ServerSingle(gameObject);
 			}
 			else if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Crowbar) && circuitBoardSlot.IsOccupied)
 			{
@@ -641,7 +658,7 @@ namespace Objects.Construction
 
 			if (board == null)
 			{
-				Logger.LogWarning("MachineBoardPrefab was null", Category.ItemSpawn);
+				Logger.LogWarning("MachineBoardPrefab was null", Category.Construction);
 				return;
 			}
 
@@ -656,17 +673,32 @@ namespace Objects.Construction
 
 			// Basic items to the machine frame from the despawned machine
 			machineParts = machine.MachineParts;
+			partsInFrame = machine.PartsInFrame;
+			basicPartsUsed = machine.BasicPartsUsed;
+
+			// Save vendor content if necessary, which is stored temporarily in the machine frame and transferred to the restock item if it exists
+			var vendor = machine.GetComponent<Vendor>();
+			if (vendor != null)
+			{
+				previousVendorContent = vendor.VendorContent;
+			}
+			TryTransferVendorContent();
 
 			allowedTraits.Clear();
 
-			foreach (var list in machineParts.machineParts)
+			if (machineParts == null || machineParts.machineParts == null)
 			{
-				allowedTraits.Add(new AllowedTraitList(list.itemTrait));
+				Logger.LogError($"Failed to find machine parts for {machineParts.OrNull()?.name ?? board.ExpensiveName()}");
+			}
+			else
+			{
+				foreach (var list in machineParts.machineParts)
+				{
+					allowedTraits.Add(new AllowedTraitList(list.itemTrait));
+				}
 			}
 
-			partsInFrame = machine.PartsInFrame;
-
-			basicPartsUsed = machine.BasicPartsUsed;
+			netIdentity.isDirty = true;
 
 			// Put it in
 			Inventory.ServerAdd(board, circuitBoardSlot);
@@ -675,6 +707,34 @@ namespace Objects.Construction
 			objectBehaviour.ServerSetPushable(false);
 			stateful.ServerChangeState(partsAddedState);
 			putBoardInManually = false;
+		}
+
+		/// <summary>
+		/// Transfers vendor content data to the first restock item found in partsInFrame
+		/// </summary>
+		private void TryTransferVendorContent()
+		{
+			foreach(var part in partsInFrame)
+			{
+				var restock = part.Key.GetComponent<VendingRestock>();
+				if (restock != null)
+				{
+					restock.SetPreviousVendorContent(previousVendorContent);
+					previousVendorContent = null;
+					return;
+				}
+			}
+		}
+
+		private List<VendorItem> GetPreviousVendorContent()
+		{
+			foreach(var part in partsInFrame)
+			{
+				var restock = part.Key.GetComponent<VendingRestock>();
+				if (restock != null && restock.PreviousVendorContent != null)
+					return restock.PreviousVendorContent;
+			}
+			return previousVendorContent;
 		}
 
 		public void WhenDestroyed(DestructionInfo info)
@@ -697,7 +757,16 @@ namespace Objects.Construction
 			{
 				foreach (var part in machineParts.machineParts)
 				{
-					Spawn.ServerPrefab(part.basicItem, gameObject.WorldPosServer(), gameObject.transform.parent, count: part.amountOfThisPart);
+					//Spawn the part
+					var partObj = Spawn.ServerPrefab(part.basicItem, gameObject.WorldPosServer(), gameObject.transform.parent, count: part.amountOfThisPart).GameObject;
+
+					//Transfer vendor content if possible
+					var restock = partObj.GetComponent<VendingRestock>();
+					if (restock != null && previousVendorContent != null)
+					{
+						restock.SetPreviousVendorContent(previousVendorContent);
+						previousVendorContent = null;
+					}
 				}
 			}
 			else

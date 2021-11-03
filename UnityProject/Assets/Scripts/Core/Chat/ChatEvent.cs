@@ -34,6 +34,13 @@ public enum ChatChannel
 	[Description("")]	Blob		= 1 << 20
 }
 
+public static class Channels
+{
+	public static ChatChannel RadioChannels = ChatChannel.Common | ChatChannel.Command | ChatChannel.Syndicate
+			| ChatChannel.Engineering | ChatChannel.Supply | ChatChannel.Medical
+			| ChatChannel.Science | ChatChannel.Security | ChatChannel.Service;
+}
+
 /// <summary>
 /// A set of flags to show active chat modifiers. Be aware this can contain multiple active chat modifiers at once!
 /// </summary>
@@ -72,6 +79,15 @@ public enum ChatModifier
 	Scotsman = 1 << 21
 }
 
+public enum Loudness
+{
+	QUIET,
+	NORMAL,
+	LOUD,
+	SCREAMING,
+	EARRAPE
+}
+
 public class ChatEvent
 {
 	public ChatChannel channels;
@@ -82,6 +98,8 @@ public class ChatEvent
 	public double timestamp;
 	public Vector3 position = TransformState.HiddenPos;
 	public GameObject originator;
+	public bool stripTags = true;
+	public Loudness VoiceLevel = Loudness.NORMAL;
 
 	/// <summary>
 	/// Send chat message only to those on this matrix

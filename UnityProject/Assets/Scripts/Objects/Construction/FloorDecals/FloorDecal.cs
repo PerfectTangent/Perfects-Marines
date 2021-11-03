@@ -21,6 +21,8 @@ namespace Objects.Construction
 
 		public bool CanDryUp = false;
 
+		public bool isBlood = false;
+
 		[SyncVar(hook = "OnColorChanged")]
 		[HideInInspector]
 		public Color color;
@@ -87,7 +89,7 @@ namespace Objects.Construction
 		{
 			if (Cleanable)
 			{
-				Despawn.ServerSingle(gameObject);
+				_ = Despawn.ServerSingle(gameObject);
 			}
 		}
 	}

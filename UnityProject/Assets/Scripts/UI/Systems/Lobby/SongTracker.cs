@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Audio.Containers
@@ -27,6 +28,8 @@ namespace Audio.Containers
 		/// </summary>
 		public bool PlayingRandomPlayList { get; private set; }
 
+		#region Lifecycle
+
 		private void Awake()
 		{
 			ToggleUI(false);
@@ -36,13 +39,13 @@ namespace Audio.Containers
 				PlayerPrefs.Save();
 			}
 
-			if (PlayerPrefs.HasKey(PlayerPrefKeys.MusicVolume))
+			if (PlayerPrefs.HasKey(PlayerPrefKeys.MusicVolumeKey))
 			{
-				volumeSlider.value = PlayerPrefs.GetFloat(PlayerPrefKeys.MusicVolume);
+				volumeSlider.value = PlayerPrefs.GetFloat(PlayerPrefKeys.MusicVolumeKey);
 			}
 			else
 			{
-				volumeSlider.value = 0.5f;
+				volumeSlider.value = 0.8f;
 			}
 		}
 
@@ -53,7 +56,7 @@ namespace Audio.Containers
 
 		private void Update()
 		{
-			if (!PlayingRandomPlayList || CustomNetworkManager.isHeadless) return;
+			if (PlayingRandomPlayList == false || CustomNetworkManager.IsHeadless) return;
 
 			if (MusicManager.isLobbyMusicPlaying()) return;
 
@@ -61,18 +64,18 @@ namespace Audio.Containers
 			if (currentWaitTime >= timeBetweenSongs)
 			{
 				currentWaitTime = 0f;
-				PlayRandomTrack();
+				_ = PlayRandomTrack();
 			}
 
 			DetermineMuteState();
 		}
 
+		#endregion
+
 		public void StartPlayingRandomPlaylist()
 		{
-			if (CustomNetworkManager.isHeadless) return;
-
+			if (CustomNetworkManager.IsHeadless) return;
 			PlayingRandomPlayList = true;
-			PlayRandomTrack();
 			ToggleUI(true);
 		}
 
@@ -128,20 +131,23 @@ namespace Audio.Containers
 			}
 		}
 
-		private void PlayRandomTrack()
+		private async Task PlayRandomTrack()
 		{
-			if (CustomNetworkManager.isHeadless) return;
+			if (CustomNetworkManager.IsHeadless) return;
 
-			var songInfo = MusicManager.Instance.PlayRandomTrack();
-			trackName.text = songInfo[0];
-			// If the name of the artist is included, add it as well
-			if (songInfo.Length == 2)
-			{
-				artist.text = songInfo[1];
-			}
-			else
-			{
-				artist.text = "";
+			var songInfo = await MusicManager.Instance.PlayRandomTrack();
+
+			if(songInfo != null){
+				trackName.text = songInfo[0];
+				// If the name of the artist is included, add it as well
+				if (songInfo.Length == 2)
+				{
+					artist.text = songInfo[1];
+				}
+				else
+				{
+					artist.text = "";
+				}
 			}
 		}
 
@@ -152,7 +158,7 @@ namespace Audio.Containers
 
 		public void OnTrackButtonClick()
 		{
-			PlayRandomTrack();
+			_ = PlayRandomTrack();
 		}
 	}
 }

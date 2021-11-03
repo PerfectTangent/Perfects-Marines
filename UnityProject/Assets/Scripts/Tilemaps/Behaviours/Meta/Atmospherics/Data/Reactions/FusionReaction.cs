@@ -8,12 +8,14 @@ namespace Systems.Atmospherics
 {
 	public class FusionReaction : Reaction
 	{
+
+		private static System.Random rnd = new System.Random();
 		public bool Satisfies(GasMix gasMix)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public void React(GasMix gasMix, Vector3 tilePos)
+		public void React(GasMix gasMix, MetaDataNode node)
 		{
 			var oldHeatCap = gasMix.WholeHeatCapacity;
 
@@ -31,9 +33,10 @@ namespace Systems.Atmospherics
 
 			var gasPower = 0f;
 
-			foreach (var gas in Gas.All)
+
+			foreach (var gas in gasMix.GasesArray)
 			{
-				gasPower += gas.FusionPower * gasMix.GetMoles(gas);
+				gasPower += gas.GasSO.FusionPower * gas.Moles;
 			}
 
 			var instability =  Mathf.Pow(gasPower * AtmosDefines.INSTABILITY_GAS_POWER_FACTOR, 2) % toroidalSize;
@@ -79,12 +82,15 @@ namespace Systems.Atmospherics
 
 			if (reactionEnergy != 0)
 			{
-				RadiationManager.Instance.RequestPulse(MatrixManager.AtPoint(tilePos.RoundToInt(), true).Matrix, tilePos.RoundToInt(), Mathf.Max((AtmosDefines.FUSION_RAD_COEFFICIENT/instability)+ AtmosDefines.FUSION_RAD_MAX, 0), UnityEngine.Random.Range(Int32.MinValue, Int32.MaxValue));
+				RadiationManager.Instance.RequestPulse(node.PositionMatrix, node.Position, Mathf.Max((AtmosDefines.FUSION_RAD_COEFFICIENT/instability)+ AtmosDefines.FUSION_RAD_MAX, 0), rnd.Next(Int32.MinValue, Int32.MaxValue));
 
 				var newHeatCap = gasMix.WholeHeatCapacity;
 				if (newHeatCap > 0.0003f && (gasMix.Temperature <= AtmosDefines.FUSION_MAXIMUM_TEMPERATURE || reactionEnergy <= 0))
 				{
-					gasMix.SetTemperature(Mathf.Clamp(((gasMix.Temperature * oldHeatCap + reactionEnergy) / newHeatCap), 2.7f, Single.PositiveInfinity));
+					gasMix.SetTemperature(
+						Mathf.Clamp(((gasMix.Temperature * oldHeatCap + reactionEnergy) / newHeatCap),
+							AtmosDefines.SPACE_TEMPERATURE,
+							Single.PositiveInfinity));
 				}
 			}
 		}

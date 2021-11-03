@@ -1,7 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Mirror;
+using AddressableReferences;
+using Messages.Server.SoundMessages;
 
 namespace Objects.Drawers
 {
@@ -10,8 +12,11 @@ namespace Objects.Drawers
 	/// </summary>
 	[RequireComponent(typeof(ObjectBehaviour))] // For setting held items' containers to the drawer.
 	[ExecuteInEditMode]
-	public class Drawer : NetworkBehaviour, IServerDespawn, ICheckedInteractable<HandApply>
+	public class Drawer : NetworkBehaviour, IServerLifecycle, ICheckedInteractable<HandApply>, IEscapable
 	{
+	[SerializeField] private AddressableAudioSource BinOpenSFX = null;
+	[SerializeField] private AddressableAudioSource BinCloseSFX = null;
+
 		protected enum DrawerState
 		{
 			Open = 0,
@@ -40,6 +45,7 @@ namespace Objects.Drawers
 		protected GameObject tray;
 		protected CustomNetTransform trayTransform;
 		protected ObjectBehaviour trayBehaviour;
+		protected ObjectContainer container;
 		protected SpriteHandler traySpriteHandler;
 
 		[SerializeField]
@@ -51,35 +57,31 @@ namespace Objects.Drawers
 
 		protected DrawerState drawerState = DrawerState.Shut;
 
-		// Inventory
-		// Using a dictionary for held items so we can have a messy drawer by keeping their original vectors.
-		protected Dictionary<ObjectBehaviour, Vector3> serverHeldItems = new Dictionary<ObjectBehaviour, Vector3>();
-		protected List<ObjectBehaviour> serverHeldPlayers = new List<ObjectBehaviour>();
-
-		#region Init Methods
+		#region Lifecycle
 
 		protected virtual void Awake()
 		{
 			registerObject = GetComponent<RegisterObject>();
 			directional = GetComponent<Directional>();
 			drawerPushPull = GetComponent<PushPull>();
+			container = GetComponent<ObjectContainer>();
 			drawerSpriteHandler = GetComponentInChildren<SpriteHandler>();
 		}
 
-		public override void OnStartServer()
+		public void OnSpawnServer(SpawnInfo info)
 		{
-			base.OnStartServer();
 			registerObject = GetComponent<RegisterObject>();
-			registerObject.WaitForMatrixInit(ServerInit);
+			ServerInit();
 			directional.OnDirectionChange.AddListener(OnDirectionChanged);
 		}
 
-		void ServerInit(MatrixInfo matrixInfo)
+		private void ServerInit()
 		{
 			SpawnResult traySpawn = Spawn.ServerPrefab(trayPrefab, DrawerWorldPosition);
 			if (!traySpawn.Successful)
 			{
-				Logger.LogError($"Failed to spawn tray! Is {name} prefab missing reference to {nameof(traySpawn)} prefab?");
+				Logger.LogError($"Failed to spawn tray! Is {name} prefab missing reference to {nameof(traySpawn)} prefab?",
+					Category.Machines);
 				return;
 			}
 			tray = traySpawn.GameObject;
@@ -95,20 +97,16 @@ namespace Objects.Drawers
 			UpdateSpriteOrientation();
 		}
 
-		#endregion Init Methods
+		#endregion
 
 		/// <summary>
-		/// If the object is about to despawn, eject its contents (unless already open)
-		/// so they are not stranded at HiddenPos.
+		/// If the drawer is about to despawn, despawn the tray too, so it is not stranded at HiddenPos.
 		/// </summary>
-		/// <param name="despawnInfo"></param>
 		public void OnDespawnServer(DespawnInfo despawnInfo)
 		{
 			if (drawerState == DrawerState.Open) return;
 
-			EjectItems(true);
-			EjectPlayers(true);
-			Despawn.ServerSingle(tray);
+			_ = Despawn.ServerSingle(tray);
 		}
 
 		#region Sprite
@@ -198,10 +196,10 @@ namespace Objects.Drawers
 			trayBehaviour.parentContainer = null;
 			trayTransform.SetPosition(TrayWorldPosition);
 
-			EjectItems();
-			EjectPlayers();
+			container.RetrieveObjects(TrayWorldPosition);
 
-			SoundManager.PlayNetworkedAtPos("BinOpen", DrawerWorldPosition, Random.Range(0.8f, 1.2f), sourceObj: gameObject);
+			AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: Random.Range(0.8f, 1.2f));
+			SoundManager.PlayNetworkedAtPos(BinOpenSFX, DrawerWorldPosition, audioSourceParameters, sourceObj: gameObject);
 			SetDrawerState(DrawerState.Open);
 		}
 
@@ -210,77 +208,30 @@ namespace Objects.Drawers
 			trayBehaviour.parentContainer = drawerPushPull;
 			trayBehaviour.VisibleState = false;
 
-			GatherItems();
-			if (storePlayers) GatherPlayers();
-
-			SoundManager.PlayNetworkedAtPos("BinClose", DrawerWorldPosition, Random.Range(0.8f, 1.2f), sourceObj: gameObject);
+			GatherObjects();
+			AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: Random.Range(0.8f, 1.2f));
+			SoundManager.PlayNetworkedAtPos(BinCloseSFX, DrawerWorldPosition, audioSourceParameters, sourceObj: gameObject);
 			SetDrawerState(DrawerState.Shut);
 		}
 
-		/// <summary>
-		/// Ejects items when drawer is opened or despawned. If action is despawning, set drawerDespawning true.
-		/// </summary>
-		/// <param name="drawerDespawning"></param>
-		protected virtual void EjectItems(bool drawerDespawning = false)
+		protected virtual void GatherObjects()
 		{
-			Vector3 position = TrayWorldPosition;
-			if (drawerDespawning) position = DrawerWorldPosition;
-
-			foreach (KeyValuePair<ObjectBehaviour, Vector3> item in serverHeldItems)
-			{
-				item.Key.parentContainer = null;
-				item.Key.GetComponent<CustomNetTransform>().SetPosition(position - item.Value);
-			}
-
-			serverHeldItems = new Dictionary<ObjectBehaviour, Vector3>();
-		}
-
-		protected virtual void GatherItems()
-		{
-			var items = Matrix.Get<ObjectBehaviour>(TrayLocalPosition, ObjectType.Item, true);
+			var items = Matrix.Get<ObjectBehaviour>(TrayLocalPosition, true);
 			foreach (ObjectBehaviour item in items)
 			{
+				if (storePlayers == false && item.TryGetComponent<PlayerScript>(out _)) continue;
+
 				// Other position fields such as registerObject.WorldPosition seem to give tile integers.
-				var tileOffsetPosition = TrayWorldPosition - item.transform.position;
-				serverHeldItems.Add(item, tileOffsetPosition);
-				item.parentContainer = drawerPushPull;
-				item.VisibleState = false;
+				var tileOffsetPosition = item.transform.position - TrayWorldPosition;
+				container.StoreObject(item.gameObject, tileOffsetPosition);
 			}
 		}
 
-		/// <summary>
-		/// Ejects players when drawer is opened or despawned. If action is despawning, set drawerDespawning true.
-		/// </summary>
-		/// <param name="drawerDespawning"></param>
-		protected virtual void EjectPlayers(bool drawerDespawning = false)
+		public void EntityTryEscape(GameObject entity)
 		{
-			Vector3 position = TrayWorldPosition;
-			if (drawerDespawning) position = DrawerWorldPosition;
-
-			foreach (ObjectBehaviour player in serverHeldPlayers)
+			if (entity.Player() != null)
 			{
-				player.parentContainer = null;
-				player.GetComponent<PlayerSync>().SetPosition(position);
-
-				//Stop tracking the drawer
-				FollowCameraMessage.Send(player.gameObject, player.gameObject);
-			}
-
-			serverHeldPlayers = new List<ObjectBehaviour>();
-		}
-
-		protected virtual void GatherPlayers()
-		{
-			var players = Matrix.Get<ObjectBehaviour>(TrayLocalPosition, ObjectType.Player, true);
-			foreach (ObjectBehaviour player in players)
-			{
-				serverHeldPlayers.Add(player);
-				player.parentContainer = drawerPushPull;
-				player.VisibleState = false;
-
-				// Start tracking the drawer
-				var playerScript = player.GetComponent<PlayerScript>();
-				if (!playerScript.IsGhost) FollowCameraMessage.Send(player.gameObject, gameObject);
+				OpenDrawer();
 			}
 		}
 

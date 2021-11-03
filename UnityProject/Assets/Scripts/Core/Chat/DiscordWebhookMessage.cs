@@ -1,10 +1,12 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Net;
 using System.Text.RegularExpressions;
 using DatabaseAPI;
 using System.Collections;
+using Managers;
 using Newtonsoft.Json;
 
 namespace DiscordWebhook
@@ -12,11 +14,8 @@ namespace DiscordWebhook
 	/// <summary>
 	/// Used to send messages to a discord webhook URLs, URLs need to be set up in the config.json file. Supports OOC, Ahelp, Announcements and All chat.
 	/// </summary>
-	public class DiscordWebhookMessage : MonoBehaviour
+	public class DiscordWebhookMessage : SingletonManager<DiscordWebhookMessage>
 	{
-		private static DiscordWebhookMessage instance;
-		public static DiscordWebhookMessage Instance => instance;
-
 		private Queue<string> OOCMessageQueue = new Queue<string>();
 		private Queue<string> AdminAhelpMessageQueue = new Queue<string>();
 		private Queue<string> AnnouncementMessageQueue = new Queue<string>();
@@ -36,17 +35,7 @@ namespace DiscordWebhook
 
 		IList<string> RoleList = new List<string>();
 
-		private void Awake()
-		{
-			if (instance == null)
-			{
-				instance = this;
-			}
-			else
-			{
-				Destroy(this);
-			}
-		}
+		private bool loggedWebKookError = false;
 
 		private void Update()
 		{
@@ -84,13 +73,13 @@ namespace DiscordWebhook
 		void OnEnable()
 		{
 			Application.logMessageReceived += HandleLog;
-			EventManager.AddHandler(EVENT.PreRoundStarted, ResetHashSet);
+			EventManager.AddHandler(Event.PreRoundStarted, ResetHashSet);
 		}
 
 		void OnDisable()
 		{
 			Application.logMessageReceived -= HandleLog;
-			EventManager.RemoveHandler(EVENT.PreRoundStarted, ResetHashSet);
+			EventManager.RemoveHandler(Event.PreRoundStarted, ResetHashSet);
 		}
 
 		void ResetHashSet()
@@ -100,10 +89,22 @@ namespace DiscordWebhook
 
 		private IEnumerator SendQueuedMessagesToWebhooks()
 		{
-			foreach (var entry in discordWebhookURLQueueDict)
+			try
 			{
-				FormatAndSendMessage(entry.Value, entry.Key);
+				foreach (var entry in discordWebhookURLQueueDict)
+				{
+					FormatAndSendMessage(entry.Value, entry.Key);
+				}
 			}
+			catch (Exception e)
+			{
+				if (loggedWebKookError == false)
+				{
+					loggedWebKookError = true;
+					Logger.LogError(e.ToString());
+				}
+			}
+
 
 			messageSendingInProgress = false;
 
@@ -133,7 +134,8 @@ namespace DiscordWebhook
 			}
 		}
 
-		public void AddWebHookMessageToQueue(DiscordWebhookURLs urlToUse, string msg, string username, string mentionID = null)
+		public void AddWebHookMessageToQueue(DiscordWebhookURLs urlToUse, string msg, string username,
+			string mentionID = null)
 		{
 			var urlAndQueue = GetUrl(urlToUse);
 
@@ -227,7 +229,7 @@ namespace DiscordWebhook
 
 		private (string, Queue<string>) GetUrl(DiscordWebhookURLs url)
 		{
-			switch(url)
+			switch (url)
 			{
 				case DiscordWebhookURLs.DiscordWebhookOOCURL:
 					return (ServerData.ServerConfig?.DiscordWebhookOOCURL, OOCMessageQueue);
@@ -248,11 +250,16 @@ namespace DiscordWebhook
 
 		void HandleLog(string logString, string stackTrace, LogType type)
 		{
-			if ((type == LogType.Exception || type == LogType.Error) && !ErrorMessageHashSet.Contains(stackTrace))
+			if (type == LogType.Exception || type == LogType.Error)
 			{
+				GameManager.Instance.errorCounter++;
+				if (ErrorMessageHashSet.Contains(stackTrace))
+					return;
+				GameManager.Instance.uniqueErrorCounter++;
+
 				ErrorMessageHashSet.Add(stackTrace);
 
-				if(logString.Contains("Can't get home directory!")) return;
+				if (logString.Contains("Can't get home directory!")) return;
 
 				var logToSend = $"{logString}\n{stackTrace}";
 

@@ -7,6 +7,8 @@ using UI.CharacterCreator;
 using UnityEngine;
 using UnityEngine.Serialization;
 using NaughtyAttributes;
+using Managers;
+using StationObjectives;
 
 namespace GameModes
 {
@@ -67,13 +69,13 @@ namespace GameModes
 		public float AntagRatio => antagRatio;
 
 		[Tooltip("The minimum amount of antags needed for the game mode to be possible. " +
-		         "If requiresMinAntags is false, the number of chosen antags will be rounded up to this number.")]
+		         "If forceMinAntags is true, the number of chosen antags will be rounded up to this number.")]
 		[SerializeField]
 		[Min(0)]
 		private int minAntags = 0;
 		/// <summary>
 		/// The minimum amount of antags needed for the game mode to be possible.
-		/// If <see cref="requiresMinAntags"/> is false, the number of chosen antags will be rounded up to this number.
+		/// If <see cref="forceMinAntags"/> is true, the number of chosen antags will be rounded up to this number.
 		/// </summary>
 		public int MinAntags => minAntags;
 
@@ -83,19 +85,22 @@ namespace GameModes
 		private int maxAntags = 100;
 		/// <summary>
 		/// The maximum amount of antags spawned in the gamemode.
-		/// If <see cref="requiresMinAntags"/> is false, the number of chosen antags will be rounded up to this number.
+		/// If <see cref="forceMinAntags"/> is true, the number of chosen antags will be rounded up to this number.
 		/// </summary>
 		public int MaxAntags => maxAntags;
 
+		[FormerlySerializedAs("requiresMinAntags")]
 		[Tooltip("Is the game mode possible if the player count multiplied by the antagRatio doesn't meet the minAntags? " +
-		         "E.g. If true, when antagRatio is 0.2 and minAntags is 1, you need at least 5 players to start the game mode.")]
+		         "E.g. If true, when antagRatio is 0.2 and minAntags is 1, you need at least 5 players to start the game mode." +
+		         "If false then it will force minAntags so 1, and then every 5 players after that if antagRatio is 0.2")]
 		[SerializeField]
-		private bool requiresMinAntags = false;
+		private bool forceMinAntags = false;
 		/// <summary>
 		/// Is the game mode possible if the <see cref="antagRatio"/> doesn't meet the <see cref="minAntags"/>?
 		/// E.g. If true, when antagRatio is 0.2 and minAntags is 1, then you need at least 5 players to start the game mode.
+		/// If false then it will force minAntags so 1, and then every 5 players after that if antagRatio is 0.2
 		/// </summary>
-		public bool RequiresMinAntags => requiresMinAntags;
+		public bool ForceMinAntags => forceMinAntags;
 
 		[Tooltip("Are antags on the same team or are they lone wolves?" +
 		         "Used for the end of round antag report.")]
@@ -114,6 +119,14 @@ namespace GameModes
 		/// Can antags spawn during the round?
 		/// </summary>
 		public bool MidRoundAntags => midRoundAntags;
+
+		[Tooltip("The chance for for every possible mid round antag to spawn after start" +
+		         "E.G If the gamemode needs another antag say we need two but only have one currently, " +
+		         "then every time a player joins they will roll this chance for it. " +
+		         "It is multiplied by the amount of open antag slots." +
+		         "This stops the players from guessing by player numbers when they should join to get the antag")]
+		[SerializeField]
+		private int midRoundAntagsChance = 25;
 
 		[Tooltip("The possible antagonists for this game mode")]
 		[SerializeField]
@@ -143,6 +156,7 @@ namespace GameModes
 			JobType.WARDEN,
 			JobType.SECURITY_OFFICER,
 			JobType.DETECTIVE,
+			JobType.AI
 		};
 		/// <summary>
 		/// The JobTypes that cannot be chosen as antagonists for this game mode
@@ -160,7 +174,7 @@ namespace GameModes
 		public virtual bool IsPossible()
 		{
 			int players = PlayerList.Instance.ReadyPlayers.Count;
-			return players >= MinPlayers && (!RequiresMinAntags ||
+			return players >= MinPlayers && (!ForceMinAntags ||
 			                                 (Math.Floor(players * antagRatio) >= MinAntags));
 		}
 
@@ -224,7 +238,20 @@ namespace GameModes
 			// Are there enough antags already?
 			int newPlayerCount = PlayerList.Instance.InGamePlayers.Count + 1;
 			var expectedAntagCount = Math.Min((int)Math.Floor(newPlayerCount * AntagRatio), maxAntags);
-			return AntagManager.Instance.AntagCount < expectedAntagCount;
+
+			if (AntagManager.Instance.AntagCount < expectedAntagCount)
+			{
+				//We times the percentage based on the amount of open antag spaces
+				//E.g if traitor with two open slots it will be 25 * 2 = 50% chance on spawn to get the antag
+				//This prevents midround players from guessing when they can join the game to guarantee antag status
+				var percentage = midRoundAntagsChance * (expectedAntagCount - AntagManager.Instance.AntagCount);
+				if (DMMath.Prob(percentage))
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 		/// <summary>
@@ -240,7 +267,7 @@ namespace GameModes
 			if (PossibleAntags.Count <= 0)
 			{
 				Logger.LogError("PossibleAntags is empty! Game mode must have some if spawning antags.",
-					Category.GameMode);
+					Category.Antags);
 				return;
 			}
 
@@ -250,7 +277,7 @@ namespace GameModes
 			if (antagPool.Count < 1)
 			{
 				Logger.LogErrorFormat("No possible antags! Either PossibleAntags is empty or this player hasn't enabled " +
-				                      "any antags and they were spawned as one anyways.", Category.GameMode);
+				                      "any antags and they were spawned as one anyways.", Category.Antags);
 			}
 
 			var antag = antagPool.PickRandom();
@@ -258,7 +285,7 @@ namespace GameModes
 			{
 				Logger.LogErrorFormat("AllocateJobsToAntags is false but {0} AntagOccupation is null! " +
 				                      "Game mode must either set AllocateJobsToAntags or possible antags neeed an AntagOccupation.",
-					Category.GameMode, antag.AntagName);
+					Category.Antags, antag.AntagName);
 				return;
 			}
 			AntagManager.Instance.ServerSpawnAntag(antag, playerSpawnRequest);
@@ -357,8 +384,13 @@ namespace GameModes
 			{
 				SpawnAntag(spawnReq);
 			}
+
+			var msg =
+				$"{PlayerList.Instance.ReadyPlayers.Count} players ready, {antagsToSpawn} antags to spawn. {playerSpawnRequests.Count} players spawned (excludes antags), {antagSpawnRequests.Count} antags spawned";
+
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAdminLogURL, msg, "[GameMode]");
 			GameManager.Instance.CurrentRoundState = RoundState.Started;
-			EventManager.Broadcast(EVENT.RoundStarted);
+			EventManager.Broadcast(Event.RoundStarted, true);
 		}
 
 		/// <summary>
@@ -368,7 +400,7 @@ namespace GameModes
 		{
 			var antagCount = Math.Min((int)Math.Floor(playerCount * antagRatio), maxAntags);
 			// If RequiresMinAntags is true then round up to MinAntags if antagCount is below
-			return RequiresMinAntags ? Math.Max(MinAntags, antagCount) : antagCount;
+			return ForceMinAntags ? Math.Max(MinAntags, antagCount) : antagCount;
 		}
 
 		/// <summary>
@@ -382,15 +414,21 @@ namespace GameModes
 		/// <summary>
 		/// End the round and display any relevant reports
 		/// </summary>
-		public virtual void EndRound()
+		public void EndRoundReport()
 		{
+			var roundDuration = GameManager.Instance.stationTime.AddHours(-12);
+			var output = $"A round has ended. Round duration: {roundDuration.ToString("HH:mm")}.";
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookOOCURL, $"`{output}`", "");
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookErrorLogURL, $"```{output} Total errors: {GameManager.Instance.errorCounter}. Unique errors: {GameManager.Instance.uniqueErrorCounter}```", "");
+			GameManager.Instance.errorCounter = 0;
+			GameManager.Instance.uniqueErrorCounter = 0;
+
 			Logger.LogFormat("Ending {0} round!", Category.GameMode, Name);
+			StationObjectiveManager.Instance.ShowStationStatusReport();
 			AntagManager.Instance.ShowAntagStatusReport();
 
 			var msg = $"The round will restart in {GameManager.Instance.RoundEndTime} seconds.";
 			Chat.AddGameWideSystemMsgToChat(msg);
-
-			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookOOCURL, "\n	A round has ended	\n", "");
 		}
 
 		#endregion

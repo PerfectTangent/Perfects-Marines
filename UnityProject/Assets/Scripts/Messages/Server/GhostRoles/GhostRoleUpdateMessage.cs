@@ -1,93 +1,94 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Systems.GhostRoles;
 using Mirror;
-using Systems.GhostRoles;
 
-namespace Messages.Server
+namespace Messages.Server.GhostRoles
 {
 	/// <summary>
 	/// Sends a message to clients, informing them about a new ghost role that has become available.
 	/// </summary>
-	public class GhostRoleUpdateMessage : ServerMessage
+	public class GhostRoleUpdateMessage : ServerMessage<GhostRoleUpdateMessage.NetMessage>
 	{
-		public uint roleID;
-		public int roleType;
-		public int minPlayers;
-		public int maxPlayers;
-		public int playerCount;
-		public float timeRemaining;
+		public struct NetMessage : NetworkMessage
+		{
+			public uint roleID;
+			public int roleType;
+			public int minPlayers;
+			public int maxPlayers;
+			public int playerCount;
+			public float timeRemaining;
+		}
 
 		// To be run on client
-		public override void Process()
+		public override void Process(NetMessage msg)
 		{
-			if (CustomNetworkManager.isHeadless || PlayerManager.LocalPlayer == null) return;
+			if (PlayerManager.LocalPlayer == null) return;
 
-			if (!MatrixManager.IsInitialized) return;
+			if (MatrixManager.IsInitialized == false) return;
 
-			GhostRoleManager.Instance.ClientAddOrUpdateRole(roleID, roleType, minPlayers, maxPlayers, playerCount, timeRemaining);
+			GhostRoleManager.Instance.ClientAddOrUpdateRole(msg.roleID, msg.roleType, msg.minPlayers, msg.maxPlayers, msg.playerCount, msg.timeRemaining);
 		}
 
 		/// <summary>
 		/// Sends a message to all dead, informing them about a new ghost role that has become available.
 		/// </summary>
-		public static GhostRoleUpdateMessage SendToDead(uint key)
+		public static NetMessage SendToDead(uint key)
 		{
-			GhostRoleServer role = GhostRoleManager.Instance.serverAvailableRoles[key];
-
-			foreach (ConnectedPlayer player in PlayerList.Instance.AllPlayers)
+			if (GhostRoleManager.Instance != null)
 			{
-				if (player.Script.IsDeadOrGhost == false) continue;
-				SendTo(player, key, role);
+				GhostRoleServer role = GhostRoleManager.Instance.serverAvailableRoles[key];
+
+				foreach (ConnectedPlayer player in PlayerList.Instance.InGamePlayers)
+				{
+					if (player?.Script == null)
+					{
+						Logger.LogError("SendToDead, player?.Script == null", Category.Ghosts);
+						continue;
+					}
+					if (player.Script.IsDeadOrGhost == false) continue;
+					SendTo(player, key, role);
+				}
+				return GetMessage(key, role);
+			}
+			else
+			{
+				Logger.LogError("SendToDead, GhostRoleManager.Instance == null", Category.Ghosts);
 			}
 
-			return GetMessage(key, role);
+			return new NetMessage();
 		}
 
 		/// <summary>
 		/// Sends a message to the specific player, informing them about a new ghost role that has become available.
 		/// </summary>
-		public static GhostRoleUpdateMessage SendTo(ConnectedPlayer player, uint key, GhostRoleServer role)
+		public static NetMessage SendTo(ConnectedPlayer player, uint key, GhostRoleServer role)
 		{
-			GhostRoleUpdateMessage msg = GetMessage(key, role);
-			msg.SendTo(player);
+			NetMessage msg = GetMessage(key, role);
+
+			SendTo(player, msg);
 			return msg;
 		}
 
-		public override void Deserialize(NetworkReader reader)
+		private static NetMessage GetMessage(uint key, GhostRoleServer role)
 		{
-			base.Deserialize(reader);
-
-			roleID = reader.ReadUInt32();
-			roleType = reader.ReadInt32();
-			minPlayers = reader.ReadInt32();
-			maxPlayers = reader.ReadInt32();
-			playerCount = reader.ReadInt32();
-			timeRemaining = reader.ReadSingle();
-		}
-
-		public override void Serialize(NetworkWriter writer)
-		{
-			base.Serialize(writer);
-
-			writer.WriteUInt32(roleID);
-			writer.WriteInt32(roleType);
-			writer.WriteInt32(minPlayers);
-			writer.WriteInt32(maxPlayers);
-			writer.WriteInt32(playerCount);
-			writer.WriteSingle(timeRemaining);
-		}
-
-		private static GhostRoleUpdateMessage GetMessage(uint key, GhostRoleServer role)
-		{
-			return new GhostRoleUpdateMessage
+			var MSG =  new NetMessage
 			{
 				roleID = key,
 				roleType = role.RoleListIndex,
 				minPlayers = role.MinPlayers,
 				maxPlayers = role.MaxPlayers,
-				playerCount = role.WaitingPlayers.Count,
+				playerCount = role.PlayersSpawned,
 				timeRemaining = role.TimeRemaining,
 			};
+			if (MSG.minPlayers > 0 && role.PlayersSpawned == 0)
+			{
+				MSG.playerCount = role.WaitingPlayers.Count;
+			}
+			else
+			{
+				MSG.playerCount = role.PlayersSpawned;
+			}
+
+			return MSG;
 		}
 	}
 }

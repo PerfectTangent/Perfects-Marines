@@ -7,16 +7,15 @@ using System.Linq;
 using Mirror;
 using Newtonsoft.Json;
 using System.Globalization;
+using Managers;
 using Messages.Client;
+using Messages.Client.Admin;
+using Messages.Server;
 
 namespace AdminTools
 {
-	public class KickBanEntryPage : MonoBehaviour
+	public class KickBanEntryPage : SingletonManager<KickBanEntryPage>
 	{
-		private static KickBanEntryPage instance;
-
-		public static KickBanEntryPage Instance => instance;
-
 		[SerializeField] private GameObject kickPage = null;
 		[SerializeField] private GameObject banPage = null;
 		[SerializeField] private GameObject jobBanPage = null;
@@ -72,24 +71,12 @@ namespace AdminTools
 				jobBanMinutesField.text = "";
 				jobBanPermaBanToggle.isOn = false;
 
-				ClientJobBanDataAdminMessage.Send(DatabaseAPI.ServerData.UserID, PlayerList.Instance.AdminToken, playerToKick.uid);
+				ClientJobBanDataAdminMessage.Send(playerToKick.uid);
 
 				jobBanActionAfterDropDown.value = 0;
 			}
 
 			gameObject.SetActive(true);
-		}
-
-		private void Awake()
-		{
-			if (instance == null)
-			{
-				instance = this;
-			}
-			else
-			{
-				Destroy(this);
-			}
 		}
 
 		private void Start()
@@ -120,8 +107,7 @@ namespace AdminTools
 				return;
 			}
 
-			RequestKickMessage.Send(ServerData.UserID, PlayerList.Instance.AdminToken, playerToKickCache.uid,
-				kickReasonField.text, announceBan: kickAnnounceToggle.isOn);
+			RequestKickMessage.Send(playerToKickCache.uid, kickReasonField.text, announceBan: kickAnnounceToggle.isOn);
 
 			ClosePage();
 		}
@@ -142,8 +128,7 @@ namespace AdminTools
 
 			int minutes;
 			int.TryParse(minutesField.text, out minutes);
-			RequestKickMessage.Send(ServerData.UserID, PlayerList.Instance.AdminToken, playerToKickCache.uid,
-				banReasonField.text, true, minutes, announceBan: banAnnounceToggle.isOn);
+			RequestKickMessage.Send(playerToKickCache.uid, banReasonField.text, true, minutes, announceBan: banAnnounceToggle.isOn);
 			ClosePage();
 		}
 
@@ -188,12 +173,13 @@ namespace AdminTools
 
 				if(!jobTypeBool) continue;
 
-				PlayerList.RequestJobBan.Send(ServerData.UserID, PlayerList.Instance.AdminToken, playerToKickCache.uid,
-					jobBanReasonField.text, jobBanPermaBanToggle.isOn, minutes, jobType, ghost, kick);
+				PlayerList.RequestJobBan.Send(
+						playerToKickCache.uid, jobBanReasonField.text, jobBanPermaBanToggle.isOn, minutes, jobType, ghost, kick);
 			}
 
 			ClosePage();
 		}
+
 		public void ClosePage()
 		{
 			gameObject.SetActive(false);
@@ -206,48 +192,49 @@ namespace AdminTools
 			UIManager.PreventChatInput = false;
 		}
 
-		public class ClientJobBanDataAdminMessage : ClientMessage
+		public class ClientJobBanDataAdminMessage : ClientMessage<ClientJobBanDataAdminMessage.NetMessage>
 		{
-			public string AdminID;
-			public string AdminToken;
-			public string PlayerID;
-
-			public override void Process()
+			public struct NetMessage : NetworkMessage
 			{
-				var admin = PlayerList.Instance.GetAdmin(AdminID, AdminToken);
-				if (admin == null) return;
-
-				//Server Stuff here
-
-				var jobBanEntries = PlayerList.Instance.ListOfBanEntries(PlayerID);
-
-				ServerSendsJobBanDataAdminMessage.Send(SentByPlayer.Connection, jobBanEntries);
+				public string PlayerID;
 			}
 
-			public static ClientJobBanDataAdminMessage Send(string adminID, string adminToken, string playerID)
+			public override void Process(NetMessage msg)
 			{
-				ClientJobBanDataAdminMessage msg = new ClientJobBanDataAdminMessage
+				//Server Stuff here
+				if (PlayerList.Instance.IsAdmin(SentByPlayer))
 				{
-					AdminID = adminID,
-					AdminToken = adminToken,
+					var jobBanEntries = PlayerList.Instance.ListOfBanEntries(msg.PlayerID);
+
+					ServerSendsJobBanDataAdminMessage.Send(SentByPlayer.Connection, jobBanEntries);
+				}
+			}
+
+			public static NetMessage Send(string playerID)
+			{
+				NetMessage msg = new NetMessage
+				{
 					PlayerID = playerID
 				};
-				msg.Send();
+
+				Send(msg);
 				return msg;
 			}
 		}
 
-		public class ServerSendsJobBanDataAdminMessage : ServerMessage
+		public class ServerSendsJobBanDataAdminMessage : ServerMessage<ServerSendsJobBanDataAdminMessage.NetMessage>
 		{
-			public string JobBanEntries;
+			public struct NetMessage : NetworkMessage
+			{
+				public string JobBanEntries;
+			}
 
-			public override void Process()
+			public override void Process(NetMessage msg)
 			{
 				//client Stuff here
+				var bans = JsonConvert.DeserializeObject<List<JobBanEntry>>(msg.JobBanEntries);
 
-				var bans = JsonConvert.DeserializeObject<List<JobBanEntry>>(JobBanEntries);
-
-				foreach (var jobObject in KickBanEntryPage.instance.jobBanJobTypeListObjects)
+				foreach (var jobObject in Instance.jobBanJobTypeListObjects)
 				{
 					jobObject.toBeBanned.isOn = false;
 
@@ -264,21 +251,21 @@ namespace AdminTools
 						{
 							jobObject.bannedStatus.SetActive(true);
 
-							var msg = "";
+							var banMsg = "";
 
 							if (jobsBanned.isPerma)
 							{
-								msg = "Perma Banned";
+								banMsg = "Perma Banned";
 							}
 							else
 							{
 								var entryTime = DateTime.ParseExact(jobsBanned.dateTimeOfBan,"O",CultureInfo.InvariantCulture);
 								var totalMins = Mathf.Abs((float)(entryTime - DateTime.Now).TotalMinutes);
 
-								msg = $"{Mathf.RoundToInt((float)jobsBanned.minutes - totalMins)} minutes left";
+								banMsg = $"{Mathf.RoundToInt((float)jobsBanned.minutes - totalMins)} minutes left";
 							}
 
-							jobObject.banTime.text = msg;
+							jobObject.banTime.text = banMsg;
 							jobObject.unbannedStatus.SetActive(false);
 							break;
 						}
@@ -289,13 +276,14 @@ namespace AdminTools
 				}
 			}
 
-			public static ServerSendsJobBanDataAdminMessage Send(NetworkConnection requestee, List<JobBanEntry> jobBanEntries)
+			public static NetMessage Send(NetworkConnection requestee, List<JobBanEntry> jobBanEntries)
 			{
-				ServerSendsJobBanDataAdminMessage msg = new ServerSendsJobBanDataAdminMessage
+				NetMessage msg = new NetMessage
 				{
 					JobBanEntries = JsonConvert.SerializeObject(jobBanEntries)
 				};
-				msg.SendTo(requestee);
+
+				SendTo(requestee, msg);
 				return msg;
 			}
 		}

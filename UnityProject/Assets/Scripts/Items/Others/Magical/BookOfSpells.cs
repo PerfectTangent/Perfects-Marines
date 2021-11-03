@@ -5,11 +5,17 @@ using Systems.Spells;
 using ScriptableObjects.Systems.Spells;
 using ScriptableObjects.Items.SpellBook;
 using InGameEvents;
+using AddressableReferences;
+using Objects;
 
 namespace Items.Magical
 {
 	public class BookOfSpells : MonoBehaviour, IExaminable, IServerInventoryMove, ICheckedInteractable<HandActivate>
 	{
+		[SerializeField] private AddressableAudioSource learningSound = null;
+
+		[SerializeField] private AddressableAudioSource summonItemSound = null;
+
 		[Tooltip("If checked, will only be usable by wizards.")]
 		[SerializeField]
 		private bool isForWizardsOnly = false;
@@ -75,8 +81,8 @@ namespace Items.Magical
 		{
 			points -= spellEntry.Cost;
 
-			SoundManager.PlayNetworkedAtPos("Blind", player.Script.WorldPos, sourceObj: player.GameObject);
-			Chat.AddChatMsgToChat(player, spellEntry.Incantation, ChatChannel.Local);
+			SoundManager.PlayNetworkedAtPos(learningSound, player.Script.WorldPos, sourceObj: player.GameObject);
+			Chat.AddChatMsgToChat(player, spellEntry.Incantation, ChatChannel.Local, Loudness.SCREAMING);
 
 			Spell spellInstance = player.Script.mind.GetSpellInstance(spellEntry.Spell);
 
@@ -100,17 +106,16 @@ namespace Items.Magical
 			if (spawnResult.Successful)
 			{
 				points -= artifactEntry.Cost;
-				SoundManager.PlayNetworkedAtPos("SummonItemsGeneric", playerScript.WorldPos, sourceObj: playerScript.gameObject);
+				SoundManager.PlayNetworkedAtPos(summonItemSound, playerScript.WorldPos, sourceObj: playerScript.gameObject);
 
-				var closetControl = spawnResult.GameObject.GetComponent<ClosetControl>();
+				var objectContainer = spawnResult.GameObject.GetComponent<ObjectContainer>();
 
 				foreach (GameObject artifactPrefab in artifactEntry.Artifacts)
 				{
 					spawnResult = Spawn.ServerPrefab(artifactPrefab);
 					if (spawnResult.Successful)
 					{
-						ObjectBehaviour artifactBehaviour = spawnResult.GameObject.GetComponent<ObjectBehaviour>();
-						closetControl.ServerAddInternalItem(artifactBehaviour);
+						objectContainer.StoreObject(spawnResult.GameObject);
 					}
 				}
 			}
@@ -124,7 +129,7 @@ namespace Items.Magical
 
 			if (ritualEntry.InvocationMessage != default)
 			{
-				Chat.AddChatMsgToChat(player, ritualEntry.InvocationMessage, ChatChannel.Local);
+				Chat.AddChatMsgToChat(player, ritualEntry.InvocationMessage, ChatChannel.Local, Loudness.LOUD);
 			}
 
 			if (ritualEntry.CastSound != default)
@@ -132,7 +137,8 @@ namespace Items.Magical
 				SoundManager.PlayNetworkedAtPos(ritualEntry.CastSound, player.Script.WorldPos, sourceObj: player.GameObject);
 			}
 
-			InGameEventsManager.Instance.TriggerSpecificEvent(ritualEntry.EventIndex, ritualEntry.EventType, announceEvent: false);
+			InGameEventsManager.Instance.TriggerSpecificEvent(ritualEntry.EventIndex, ritualEntry.EventType,
+				adminName: $"[Wizard] {player.Username}, {player.Name}", announceEvent: false);
 
 			points -= ritualEntry.Cost;
 		}

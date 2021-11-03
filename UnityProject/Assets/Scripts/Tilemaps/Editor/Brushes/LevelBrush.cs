@@ -83,7 +83,7 @@ public class LevelBrush : GridBrush
 		{
 			if (metaTileMap)
 			{
-				metaTileMap.RemoveTile(position,  false);
+				metaTileMap.RemoveTile(position);
 			}
 			else
 			{
@@ -94,7 +94,7 @@ public class LevelBrush : GridBrush
 
 	public override void Flip(FlipAxis flip, GridLayout.CellLayout layout)
 	{
-		if (Event.current.character == '>')
+		if (UnityEngine.Event.current.character == '>')
 		{
 			// TODO flip?
 		}
@@ -115,7 +115,7 @@ public class LevelBrush : GridBrush
 		foreach (LayerTile tile in metaTile.GetTiles())
 		{
 			//metaTileMap.RemoveTileWithlayer(position, tile.LayerType);
-			metaTileMap.SetTile(position, tile, cells[0].matrix);
+			metaTileMap.SetTile(position, tile, cells[0].matrix, isPlaying: false);
 		}
 	}
 
@@ -132,6 +132,6 @@ public class LevelBrush : GridBrush
 			SetTile(metaTileMap, position, requiredTile);
 		}
 
-		metaTileMap.SetTile(position, tile, cells[0].matrix, cells[0].color);
+		metaTileMap.SetTile(position, tile, cells[0].matrix, cells[0].color, isPlaying: false);
 	}
 }

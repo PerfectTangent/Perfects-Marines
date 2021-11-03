@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Messages.Server;
+using UI.Objects.Shuttles;
 using UnityEngine;
 
 /// all server only
@@ -8,6 +10,7 @@ public class RadarList : NetUIDynamicList {
 
 	private List<RadarEntry> OutOfRangeEntries = new List<RadarEntry>();
 	private List<RadarEntry> ToRestore = new List<RadarEntry>();
+	[SerializeField] private GUI_ShuttleControl shuttleControl;
 
 	public void RefreshTrackedPos(bool update = true) {
 		Vector2 originPos = Origin.ServerState.Position;
@@ -40,6 +43,7 @@ public class RadarList : NetUIDynamicList {
 //				Logger.Log( $"Unhiding {item} as it's in range again" );
 				ToRestore.Add( item );
 				item.gameObject.SetActive( true );
+				shuttleControl.PlayRadarDetectionSound();
 			}
 		}
 
@@ -93,7 +97,6 @@ public class RadarList : NetUIDynamicList {
 
 		//rescan elements and notify
 		NetworkTabManager.Instance.Rescan( MasterTab.NetTabDescriptor );
-		RefreshTrackedPos();
 
 		return true;
 	}

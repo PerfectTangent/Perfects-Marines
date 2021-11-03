@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Core.Editor.Attributes;
+using Systems.Interaction;
 
 
 	[RequireComponent(typeof(Integrity))]
@@ -11,6 +13,7 @@
 
 		private TileChangeManager tileChangeManager;
 
+		[PrefabModeOnly]
 		public bool OneDirectionRestricted;
 
 		[SerializeField]
@@ -60,6 +63,30 @@
 		        scatterRadius: Spawn.DefaultScatterRadius, cancelIfImpassable: true);
 		}
 
+
+		public override bool DoesNotBlockClick(Vector3Int reachingFrom, bool isServer)
+		{
+			if (OneDirectionRestricted)
+			{
+				// OneDirectionRestricted is hardcoded to only be from the negative y position
+				Vector3Int v = Vector3Int.RoundToInt(transform.localRotation * Vector3.down);
+
+				// Returns false if player is bumping door from the restricted direction
+				var position = isServer? LocalPositionServer : LocalPositionClient;
+				var direction = reachingFrom - position;
+
+				//Use Directional component if it exists
+				var tryGetDir = GetComponent<Directional>();
+				if (tryGetDir != null)
+				{
+					return CheckViaDirectional(tryGetDir, direction);
+				}
+
+				return !direction.y.Equals(v.y) || !direction.x.Equals(v.x);
+			}
+
+			return true;
+		}
 
 		public override bool IsPassableFromInside(Vector3Int leavingTo, bool isServer, GameObject context = null)
 		{

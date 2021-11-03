@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Systems.MobAIs;
 using System.Text.RegularExpressions;
+using Systems.Ai;
+using Messages.Server;
 
 /// <summary>
 /// ChatRelay is only to be used internally via Chat.cs
@@ -16,7 +18,6 @@ public class ChatRelay : NetworkBehaviour
 	public static ChatRelay Instance;
 
 	private ChatChannel namelessChannels;
-	public List<ChatEvent> ChatLog { get; } = new List<ChatEvent>();
 	private LayerMask layerMask;
 	private LayerMask npcMask;
 
@@ -34,7 +35,6 @@ public class ChatRelay : NetworkBehaviour
 		if (Instance == null)
 		{
 			Instance = this;
-			Chat.RegisterChatRelay(Instance, PropagateChatToClients, AddToChatLogClient, AddPrivMessageToClient);
 		}
 		else
 		{
@@ -53,9 +53,10 @@ public class ChatRelay : NetworkBehaviour
 	}
 
 	[Server]
-	private void PropagateChatToClients(ChatEvent chatEvent)
+	public void PropagateChatToClients(ChatEvent chatEvent)
 	{
 		List<ConnectedPlayer> players = PlayerList.Instance.AllPlayers;
+		Loudness loud = chatEvent.VoiceLevel;
 
 		//Local chat range checks:
 		if (chatEvent.channels.HasFlag(ChatChannel.Local)
@@ -71,7 +72,13 @@ public class ChatRelay : NetworkBehaviour
 					continue;
 				}
 
-				if (players[i].Script.IsGhost)
+				if (players[i].Script.gameObject == chatEvent.originator)
+				{
+					//Always send the originator chat to themselves
+					continue;
+				}
+
+				if (players[i].Script.IsGhost && players[i].Script.IsPlayerSemiGhost == false)
 				{
 					//send all to ghosts
 					continue;
@@ -83,21 +90,53 @@ public class ChatRelay : NetworkBehaviour
 					continue;
 				}
 
-				var playerPosition = players[i].GameObject.AssumedWorldPosServer();
-				if (Vector2.Distance(chatEvent.position, playerPosition) > 14f)
+				//Send chat to PlayerChatLocation pos, usually just the player object but for AI is its vessel
+				var playerPosition = players[i].Script.PlayerChatLocation.OrNull()?.AssumedWorldPosServer()
+					?? players[i].Script.gameObject.AssumedWorldPosServer();
+
+				//Do player position to originator distance check
+				if (DistanceCheck(playerPosition) == false)
 				{
-					//Player in the list is too far away for local chat, remove them:
+					//Distance check failed so if we are Ai, then try send action and combat messages to their camera location
+					//as well as if possible
+					if (chatEvent.channels.HasFlag(ChatChannel.Local) == false &&
+					    players[i].Script.PlayerState == PlayerScript.PlayerStates.Ai &&
+					    players[i].Script.TryGetComponent<AiPlayer>(out var aiPlayer) &&
+					    aiPlayer.IsCarded == false)
+					{
+						playerPosition = players[i].Script.gameObject.AssumedWorldPosServer();
+
+						//Check camera pos
+						if (DistanceCheck(playerPosition))
+						{
+							//Camera can see player, allow Ai to see action/combat messages
+							continue;
+						}
+					}
+
+					//Player failed distance checks remove them
 					players.RemoveAt(i);
 				}
-				else
+
+				bool DistanceCheck(Vector3 playerPos)
 				{
-					//within range, but check if they are in another room or hiding behind a wall
-					if (MatrixManager.Linecast(chatEvent.position, LayerTypeSelection.Walls
-						 , layerMask,playerPosition).ItHit)
+					//TODO maybe change this to (chatEvent.position - playerPos).sqrMagnitude > 196f to avoid square root for performance?
+					if (Vector2.Distance(chatEvent.position, playerPos) > 14f)
 					{
-						//if it hit a wall remove that player
-						players.RemoveAt(i);
+						//Player in the list is too far away for local chat, remove them:
+						return false;
 					}
+
+					//Within range, but check if they are in another room or hiding behind a wall
+					if (MatrixManager.Linecast(chatEvent.position, LayerTypeSelection.Walls,
+						layerMask, playerPos).ItHit)
+					{
+						//If it hit a wall remove that player
+						return false;
+					}
+
+					//Player can see the position
+					return true;
 				}
 			}
 
@@ -127,10 +166,11 @@ public class ChatRelay : NetworkBehaviour
 				channels.HasFlag(ChatChannel.System) || channels.HasFlag(ChatChannel.Examine) ||
 				channels.HasFlag(ChatChannel.Action))
 			{
-				if (!channels.HasFlag(ChatChannel.Binary) || players[i].Script.IsGhost)
+				//Binary check here to avoid speaking in local when speaking on binary
+				if (!channels.HasFlag(ChatChannel.Binary) || (players[i].Script.IsGhost && players[i].Script.IsPlayerSemiGhost == false))
 				{
-					UpdateChatMessage.Send(players[i].GameObject, channels, chatEvent.modifiers, chatEvent.message, chatEvent.messageOthers,
-						chatEvent.originator, chatEvent.speaker);
+					UpdateChatMessage.Send(players[i].GameObject, channels, chatEvent.modifiers, chatEvent.message, loud, chatEvent.messageOthers,
+						chatEvent.originator, chatEvent.speaker, chatEvent.stripTags);
 
 					continue;
 				}
@@ -148,8 +188,8 @@ public class ChatRelay : NetworkBehaviour
 			//if the mask ends up being a big fat 0 then don't do anything
 			if (channels != ChatChannel.None)
 			{
-				UpdateChatMessage.Send(players[i].GameObject, channels, chatEvent.modifiers, chatEvent.message, chatEvent.messageOthers,
-					chatEvent.originator, chatEvent.speaker);
+				UpdateChatMessage.Send(players[i].GameObject, channels, chatEvent.modifiers, chatEvent.message, loud, chatEvent.messageOthers,
+					chatEvent.originator, chatEvent.speaker, chatEvent.stripTags);
 			}
 		}
 
@@ -165,14 +205,9 @@ public class ChatRelay : NetworkBehaviour
 		}
 	}
 
-	[Client]
-	private void AddToChatLogClient(string message, ChatChannel channels)
-	{
-		UpdateClientChat(message, channels);
-	}
 
 	[Client]
-	private void AddPrivMessageToClient(string message)
+	public void AddAdminPrivMessageToClient(string message)
 	{
 		trySendingTTS(message);
 
@@ -180,7 +215,15 @@ public class ChatRelay : NetworkBehaviour
 	}
 
 	[Client]
-	private void UpdateClientChat(string message, ChatChannel channels)
+	public void AddMentorPrivMessageToClient(string message)
+	{
+		trySendingTTS(message);
+
+		ChatUI.Instance.AddMentorPrivEntry(message);
+	}
+
+	[Client]
+	public void UpdateClientChat(string message, ChatChannel channels, bool isOriginator, GameObject recipient, Loudness loudness)
 	{
 		if (string.IsNullOrEmpty(message)) return;
 
@@ -196,11 +239,9 @@ public class ChatRelay : NetworkBehaviour
 			// replace action messages with chat bubble
 			if(channels.HasFlag(ChatChannel.Combat) || channels.HasFlag(ChatChannel.Action) || channels.HasFlag(ChatChannel.Examine))
 			{
-				string cleanMessage = Regex.Replace(message, "<.*?>", string.Empty);
-				if(cleanMessage.StartsWith("You"))
+				if(isOriginator)
 				{
-					ChatBubbleManager.ShowAction(Regex.Replace(message, "<.*?>", string.Empty));
-					return;
+					ChatBubbleManager.Instance.ShowAction(Regex.Replace(message, "<.*?>", string.Empty), recipient);
 				}
 			}
 

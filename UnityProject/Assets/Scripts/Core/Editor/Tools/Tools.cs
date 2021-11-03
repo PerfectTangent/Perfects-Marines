@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Mirror;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Objects.Wallmounts;
+using Object = UnityEngine.Object;
+
 
 public class Tools : Editor
 {
@@ -13,26 +18,20 @@ public class Tools : Editor
 		public Connection wireEndA = Connection.East;
 		public Connection wireEndB = Connection.East;
 		public PowerTypeCategory wireType = PowerTypeCategory.Transformer;
-
 	}
 
-	[MenuItem("Tools/Refresh Directionals")]
+	[MenuItem("Mapping/Refresh Directionals")]
 	private static void RefreshDirectionals()
 	{
 		var allDirs = FindObjectsOfType<Directional>();
-
-		for (int i = allDirs.Length - 1; i > 0; i--)
+		foreach (var directional in allDirs)
 		{
-			if(allDirs[i].onEditorDirectionChange != null)
-				allDirs[i].onEditorDirectionChange.Invoke();
-
-			allDirs[i].transform.localEulerAngles = Vector3.zero;
+			directional.ChangeDirectionInEditor();
 		}
-
-		Debug.Log($"Refreshed {allDirs.Length} directionals");
+		Logger.Log($"Refreshed {allDirs.Length} directionals", Category.Editor);
 	}
 
-	[MenuItem("Networking/Set all sceneids to 0")]
+	[MenuItem("Mapping/Set all sceneids to 0")]
 	private static void SetAllSceneIdsToNull()
 	{
 		var allNets = FindObjectsOfType<NetworkIdentity>();
@@ -43,7 +42,120 @@ public class Tools : Editor
 			EditorUtility.SetDirty(allNets[i]);
 		}
 
-		Debug.Log($"Set {allNets.Length} scene ids");
+		Logger.Log($"Set {allNets.Length} scene ids", Category.Editor);
+	}
+
+	[MenuItem("Networking/Find all network identities without visibility component (Scene Check)")]
+	private static void FindNetWithoutVis()
+	{
+		var allNets = FindObjectsOfType<NetworkIdentity>();
+
+		for (int i = allNets.Length - 1; i > 0; i--)
+		{
+			var net = allNets[i].GetComponent<CustomNetSceneChecker>();
+
+			if (net == null)
+			{
+				Debug.Log($"{allNets[i].name} prefab has no visibility component");
+			}
+		}
+
+		Debug.Log($"{allNets.Length} net components found in the scene");
+	}
+
+	[MenuItem("Networking/Find all network identities without visibility component (Prefab Check)")]
+	private static void FindNetWithoutVisScene()
+	{
+		var allNets = LoadPrefabsContaining<NetworkIdentity>("Assets/Prefabs");
+
+		for (int i = allNets.Count - 1; i > 0; i--)
+		{
+			var net = allNets[i].GetComponent<CustomNetSceneChecker>();
+
+			if (net == null)
+			{
+				Debug.Log($"{allNets[i].name} prefab has no visibility component");
+			}
+		}
+
+		Debug.Log($"{allNets.Count} net components found in prefabs");
+	}
+
+	[MenuItem("Networking/Find all asset Ids (Prefab Check)")]
+    private static void FindAssetIdsPrefab()
+    {
+    	var allNets = LoadPrefabsContaining<NetworkIdentity>("Assets/Prefabs");
+
+        for (int i = allNets.Count - 1; i > 0; i--)
+        {
+            var net = allNets[i].GetComponent<NetworkIdentity>();
+
+            if (net.assetId == Guid.Empty)
+            {
+            	Debug.Log($"{allNets[i].name} has empty asset id");
+            }
+        }
+
+        Debug.Log($"{allNets.Count} net components found in prefabs");
+    }
+
+    [MenuItem("Mapping/Save all scenes")]
+    private static void SaveAllScenes()
+    {
+	    var scenesGUIDs = AssetDatabase.FindAssets("t:Scene",new string[] {"Assets/Scenes"});
+	    var scenesPaths = scenesGUIDs.Select(AssetDatabase.GUIDToAssetPath);
+
+	    foreach (var scene in scenesPaths)
+	    {
+		    if (scene.Contains("DevScenes") || scene.StartsWith("Packages")) continue;
+
+		    var openScene = EditorSceneManager.OpenScene(scene);
+
+		    EditorSceneManager.MarkSceneDirty(openScene);
+		    EditorSceneManager.SaveScene(openScene);
+		    EditorSceneManager.CloseScene(openScene, true);
+	    }
+    }
+
+    /// <summary>
+	/// Find all prefabs containing a specific component (T)
+	/// </summary>
+	/// <typeparam name="T">The type of component</typeparam>
+	public static List<GameObject> LoadPrefabsContaining<T>(string path) where T : UnityEngine.Component
+	{
+		List<GameObject> result = new List<GameObject>();
+
+		var networkObjectsGUIDs = AssetDatabase.FindAssets("t:prefab", new string[] {path});
+		var objectsPaths = networkObjectsGUIDs.Select(AssetDatabase.GUIDToAssetPath);
+		foreach (var objectsPath in objectsPaths)
+		{
+			var obj = AssetDatabase.LoadAssetAtPath<GameObject>(objectsPath);
+			if (obj != null && obj.GetComponent<T>() != null)
+			{
+				result.Add(obj);
+			}
+		}
+		return result;
+	}
+
+	[MenuItem("Networking/Check for duplicate net Ids (Scene Check)")]
+	private static void FindNetIds()
+	{
+		var allNets = FindObjectsOfType<NetworkIdentity>();
+
+		var netIds = new HashSet<uint>();
+
+		for (int i = allNets.Length - 1; i > 0; i--)
+		{
+			var net = allNets[i].GetComponent<NetworkIdentity>();
+
+			if (netIds.Add(net.netId) == false)
+			{
+				Debug.Log($"{allNets[i]} has a duplicate net Id");
+			}
+		}
+
+		Debug.Log($"{allNets.Length} net ids found in the scene");
 	}
 
 	//this is just for migrating from old way of setting wallmount directions to the new way
@@ -178,5 +290,54 @@ public class Tools : Editor
 		}
 
 		return null;
+	}
+
+	/// <summary>Snap all allowed objects to the middle of the nearest tile.</summary>
+	[MenuItem("Tools/Mapping/Snap to Grid All Applicable Objects")]
+	private static void CenterObjects()
+	{
+		int count = 0;
+		foreach (GameObject gameObject in SceneManager.GetActiveScene().GetRootGameObjects())
+		{
+			foreach (var cnt in gameObject.GetComponentsInChildren<CustomNetTransform>())
+			{
+				if (cnt.SnapToGridOnStart == false) continue;
+
+				var initialPosition = cnt.transform.position;
+				cnt.transform.position = cnt.transform.position.RoundToInt();
+				if (cnt.transform.position != initialPosition)
+				{
+					count++;
+				}
+			}
+		}
+
+		Logger.Log($"Centered {count} objects!");
+	}
+
+	[MenuItem("Tools/Remove Missing Scripts")]
+	/// Courtesy of <see cref="https://answers.unity.com/questions/15225/how-do-i-remove-null-components-ie-missingmono-scr.html?childToView=1614734#answer-1614734"/> 
+	private static void RemoveMissingScripts()
+	{
+		int compCount = 0;
+		int goCount = 0;
+
+		foreach (var o in AssetDatabase.FindAssets("t:Prefab")
+					.Select(guid => AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid))))
+		{
+			if (o is GameObject go)
+			{
+				int count = GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(go);
+				if (count > 0)
+				{
+					// Edit: use undo record object, since undo destroy wont work with missing
+					Undo.RegisterCompleteObjectUndo(go, "Remove missing scripts");
+					GameObjectUtility.RemoveMonoBehavioursWithMissingScript(go);
+					compCount += count;
+					goCount++;
+				}
+			}
+		}
+		Debug.Log($"Found and removed {compCount} missing scripts from {goCount} GameObjects");
 	}
 }

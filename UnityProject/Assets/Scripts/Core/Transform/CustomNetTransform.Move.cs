@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HealthV2;
 using UnityEngine;
 using Mirror;
 using Objects;
+using Objects.Disposals;
 using Random = UnityEngine.Random;
+using Messages.Server.SoundMessages;
 
 public enum SpinMode
 {
@@ -69,7 +72,7 @@ public partial class CustomNetTransform
 	/// Push this thing in provided direction
 	/// </summary>
 	/// <param name="direction"></param>
-	/// <param name="speed"></param>
+	/// <param name="speed">tiles per second</param>
 	/// <param name="followMode">flag used when object is following its puller
 	/// (turns on tile snapping and removes player collision check)</param>
 	/// <returns>true if push was successful</returns>
@@ -183,10 +186,10 @@ public partial class CustomNetTransform
 
 	private void Stop( bool notify )
 	{
-		Logger.LogTraceFormat(STOPPED_FLOATING, Category.Transform, gameObject.name);
+		Logger.LogTraceFormat(STOPPED_FLOATING, Category.Movement, gameObject.name);
         if (IsTileSnap)
         {
-        	serverState.Position = Vector3Int.RoundToInt(serverState.Position);
+        	serverState.LocalPosition = Vector3Int.RoundToInt(serverState.LocalPosition);
         }
         else
         {
@@ -200,6 +203,7 @@ public partial class CustomNetTransform
         {
 			OnThrowEnd.Invoke(serverState.ActiveThrow);
         }
+
         serverState.ActiveThrow = ThrowInfo.NoThrow;
         if ( notify )
         {
@@ -269,7 +273,7 @@ public partial class CustomNetTransform
 		else
 		{
 			//stop
-			Logger.LogTraceFormat(PREDICTIVE_STOP_TO, Category.Transform, gameObject.name, worldPos, intGoal);
+			Logger.LogTraceFormat(PREDICTIVE_STOP_TO, Category.Movement, gameObject.name, worldPos, intGoal);
 			//			clientState.Speed = 0f;
 			predictedState.WorldImpulse = Vector2.zero;
 			predictedState.SpinFactor = 0;
@@ -287,7 +291,7 @@ public partial class CustomNetTransform
 	private void Lerp()
 	{
 		var worldPos = predictedState.WorldPosition;
-		Vector3 targetPos = worldPos.ToLocal(matrix);
+		Vector2 targetPos = MatrixManager.WorldToLocal(worldPos, MatrixManager.Get(matrix));
 		//Set position immediately if not moving
 		if (predictedState.Speed.Equals(0))
 		{
@@ -298,7 +302,7 @@ public partial class CustomNetTransform
 		transform.localPosition =
 			Vector3.MoveTowards(transform.localPosition, targetPos,
 				predictedState.Speed * Time.deltaTime * transform.localPosition.SpeedTo(targetPos));
-		if (transform.localPosition == targetPos)
+		if ((Vector2)transform.localPosition == targetPos)
 		{
 			OnClientTileReached().Invoke(predictedState.WorldPosition.RoundToInt());
 		}
@@ -307,20 +311,19 @@ public partial class CustomNetTransform
 	/// Serverside lerping
 	private void ServerLerp()
 	{
-		Vector3 worldPos = serverState.WorldPosition;
-		Vector3 targetPos = worldPos.ToLocal(matrix);
+		var targetPos = serverState.LocalPosition;
 		//Set position immediately if not moving
 		if (serverState.Speed.Equals(0))
 		{
 			serverLerpState = serverState;
-			ServerOnTileReached(worldPos.RoundToInt());
+			ServerOnTileReached(serverState.WorldPosition.RoundToInt());
 			return;
 		}
-		serverLerpState.Position =
-			Vector3.MoveTowards(serverLerpState.Position, targetPos,
-				serverState.Speed * Time.deltaTime * serverLerpState.Position.SpeedTo(targetPos));
 
-		if (serverLerpState.Position == targetPos)
+		var deltaMaxDistance = serverState.Speed * Time.deltaTime * serverLerpState.LocalPosition.SpeedTo(targetPos);
+		serverLerpState.LocalPosition = Vector3.MoveTowards(serverLerpState.LocalPosition, targetPos, deltaMaxDistance);
+
+		if (serverLerpState.LocalPosition == targetPos)
 		{
 			ServerOnTileReached(serverState.WorldPosition.RoundToInt());
 		}
@@ -404,7 +407,7 @@ public partial class CustomNetTransform
 			serverState.SpinFactor = (sbyte)(Mathf.Clamp(info.InitialSpeed * info.SpinMultiplier, sbyte.MinValue, sbyte.MaxValue) *
 				(info.SpinMode == SpinMode.Clockwise ? 1 : -1));
 		}
-		Logger.LogTraceFormat(NUDGE, Category.Transform, info, serverState);
+		Logger.LogTraceFormat(NUDGE, Category.Movement, info, serverState);
 		NotifyPlayers();
 	}
 
@@ -520,6 +523,15 @@ public partial class CustomNetTransform
 			{
 				Stop();
 			}
+
+			//Process any objects that we might have bumped into
+			foreach (var objectBehaviour in MatrixManager.GetAt<ObjectBehaviour>(intGoal, true))
+			{
+				foreach (var bump in objectBehaviour.GetComponents<IBumpableObject>())
+				{
+					bump.OnBump(gameObject);
+				}
+			}
 		}
 
 		if (distance > 1)
@@ -608,19 +620,23 @@ public partial class CustomNetTransform
 	[Server]
 	private bool ValidateFloating(Vector3 origin, Vector3 goal)
 	{
+
 		//		Logger.Log( $"{gameObject.name} check {origin}->{goal}. Speed={serverState.Speed}" );
 		var startPosition = Vector3Int.RoundToInt(origin);
 		var targetPosition = Vector3Int.RoundToInt(goal);
 
+		var Matrix = MatrixManager.AtPoint(targetPosition, CustomNetworkManager.Instance._isServer);
+		var Localposition = MatrixManager.WorldToLocalInt(targetPosition, Matrix);
+
 		var info = serverState.ActiveThrow;
-		IReadOnlyCollection<LivingHealthBehaviour> creaturesToHit =
+		IReadOnlyCollection<LivingHealthMasterBase> creaturesToHit =
 			Vector3Int.RoundToInt(serverState.ActiveThrow.OriginWorldPos) == targetPosition ?
-				null : LivingCreaturesInPosition(targetPosition);
+				null : LivingCreaturesInPosition(Localposition, Matrix);
 
 		if (serverState.Speed > SpeedHitThreshold)
 		{
 			OnHit(targetPosition, info, creaturesToHit);
-			DamageTile( goal,MatrixManager.GetDamageableTilemapsAt(targetPosition));
+			DamageTile( goal,Matrix.Matrix.TilemapsDamage);
 		}
 
 		if (CanDriftTo(startPosition, targetPosition, isServer : true))
@@ -630,17 +646,35 @@ public partial class CustomNetTransform
 			return (creaturesToHit == null || creaturesToHit.Count == 0) ||  (registerTile && registerTile.IsPassable(true));
 		}
 
+		var bins = Matrix.Matrix.Get<DisposalBin>(Localposition, isServer: true).Where(CanHitObject).ToArray();
+		if (bins.Length > 0)
+		{
+			bins.First().OnFlyingObjectHit(gameObject);
+		}
+
 		return false;
 	}
 
 	/// Lists objects to be damaged on given tile. Prob should be moved elsewhere
-	private IReadOnlyCollection<LivingHealthBehaviour> LivingCreaturesInPosition(Vector3Int position)
+	private IReadOnlyCollection<LivingHealthMasterBase> LivingCreaturesInPosition(Vector3Int Localposition, MatrixInfo Matrix) //TODO Needs to be expanded to include mobs with only a simple cast
 	{
-		return MatrixManager.GetAt<LivingHealthBehaviour>(position, isServer: true)?
-				.Where(creature =>
-					creature.IsDead == false &&
-					CanHitObject(creature))
-				.ToArray();
+		List<LivingHealthMasterBase> ListHealth = new List<LivingHealthMasterBase>();
+		List<RegisterPlayer> RegisterPlayers = new List<RegisterPlayer>();
+
+		RegisterPlayers.AddRange(Matrix.Matrix.GetAs<RegisterPlayer>(Localposition, isServer));
+		foreach (var registerPlayer in RegisterPlayers)
+		{
+			var playerScript = registerPlayer.PlayerScript;
+			if (playerScript.IsGhost == false && playerScript.playerHealth.IsDead == false)
+			{
+				if (CanHitObject(registerPlayer))
+				{
+					ListHealth.Add(registerPlayer.PlayerScript.playerHealth);
+				}
+			}
+		}
+
+		return ListHealth;
 	}
 
 	private bool CanHitObject(Component obj)
@@ -660,7 +694,7 @@ public partial class CustomNetTransform
 	/// <summary>
 	/// Hit for thrown (non-tile-snapped) items
 	/// </summary>
-	private void OnHit(Vector3Int pos, ThrowInfo info, IReadOnlyCollection<LivingHealthBehaviour> hitCreatures)
+	private void OnHit(Vector3Int pos, ThrowInfo info, IReadOnlyCollection<LivingHealthMasterBase> hitCreatures)
 	{
 		if (ItemAttributes == null) return;
 		if (hitCreatures == null || hitCreatures.Count <= 0) return;
@@ -671,9 +705,10 @@ public partial class CustomNetTransform
 			//Remove cast to int when moving health values to float
 			var damage = (int)(ItemAttributes.ServerThrowDamage);
 			var hitZone = info.Aim.Randomize();
-			creature.ApplyDamageToBodypart(info.ThrownBy, damage, AttackType.Melee, DamageType.Brute, hitZone);
+			creature.ApplyDamageToBodyPart(info.ThrownBy, damage, AttackType.Melee, DamageType.Brute, hitZone);
 			Chat.AddThrowHitMsgToChat(gameObject,creature.gameObject, hitZone);
-			SoundManager.PlayNetworkedAtPos(SingletonSOSounds.Instance.GenericHit, transform.position, 1f, sourceObj: gameObject);
+			AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: 1f);
+			SoundManager.PlayNetworkedAtPos(CommonSounds.Instance.GenericHit, transform.position, audioSourceParameters, sourceObj: gameObject);
 		}
 	}
 

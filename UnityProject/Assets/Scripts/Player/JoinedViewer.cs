@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
-using System.Linq;
 using System.Net.NetworkInformation;
+using Systems;
 using Mirror;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Globalization;
+using Messages.Server;
 using Messages.Client;
+using Messages.Client.NewPlayer;
+using UI;
 
 /// <summary>
 /// This is the Viewer object for a joined player.
@@ -46,7 +48,7 @@ public class JoinedViewer : NetworkBehaviour
 			Category.Connections,
 			unverifiedClientId, unverifiedUsername);
 
-		//Register player to player list (logging code exists in PlayerList so no need for extra logging here)
+		// Register player to player list (logging code exists in PlayerList so no need for extra logging here)
 		var unverifiedConnPlayer = PlayerList.Instance.AddOrUpdate(new ConnectedPlayer
 		{
 			Connection = connectionToClient,
@@ -57,23 +59,24 @@ public class JoinedViewer : NetworkBehaviour
 			UserId = unverifiedUserid
 		});
 
+		// this validates Userid and Token
 		var isValidPlayer = await PlayerList.Instance.ValidatePlayer(unverifiedClientId, unverifiedUsername,
 			unverifiedUserid, unverifiedClientVersion, unverifiedConnPlayer, unverifiedToken);
-		if (!isValidPlayer) return; //this validates Userid and Token
 
-		// Check if they have a player to rejoin. If not, assign them a new client ID.
-		var loggedOffPlayer = PlayerList.Instance.TakeLoggedOffPlayerbyClientId(unverifiedClientId);
-
-		// If the player does not yet have an in-game object to control, they'll probably have a
-		// JoinedViewer assigned as they were only in the lobby. If so, destroy it and use the new one.
-		if (loggedOffPlayer != null)
+		if (isValidPlayer == false)
 		{
-			var checkForViewer = loggedOffPlayer.GetComponent<JoinedViewer>();
-			if (checkForViewer)
-			{
-				Destroy(loggedOffPlayer);
-				loggedOffPlayer = null;
-			}
+			Logger.LogWarning($"Set up new player: invalid player. For {unverifiedUsername}", Category.Connections);
+			return;
+		}
+
+		//Send to client their job ban entries
+		var jobBanEntries = PlayerList.Instance.ClientAskingAboutJobBans(unverifiedConnPlayer);
+		PlayerList.ServerSendsJobBanDataMessage.Send(unverifiedConnPlayer.Connection, jobBanEntries);
+
+		//Send to client the current crew job counts
+		if (CrewManifestManager.Instance != null)
+		{
+			SetJobCountsMessage.SendToPlayer(CrewManifestManager.Instance.Jobs, unverifiedConnPlayer);
 		}
 
 		UpdateConnectedPlayersMessage.Send();
@@ -91,36 +94,57 @@ public class JoinedViewer : NetworkBehaviour
 			}
 		}
 
-		// If there's a logged off player, we will force them to rejoin. Previous logic allowed client to re-enter
-		// their body or not, which should not be up to the client!
-		if (loggedOffPlayer != null)
+		// Check if they have a player to rejoin before creating a new ConnectedPlayer
+		var loggedOffPlayer = PlayerList.Instance.RemovePlayerbyClientId(unverifiedClientId, unverifiedUserid, unverifiedConnPlayer);
+		var checkForViewer = loggedOffPlayer?.GameObject.GetComponent<JoinedViewer>();
+		if (checkForViewer)
 		{
-			StartCoroutine(WaitForLoggedOffObserver(loggedOffPlayer));
+			Destroy(loggedOffPlayer.GameObject);
+			loggedOffPlayer = null;
 		}
-		else
+
+		// If there's a logged off player, we will force them to rejoin their body
+		if (loggedOffPlayer == null)
 		{
 			TargetLocalPlayerSetupNewPlayer(connectionToClient, GameManager.Instance.CurrentRoundState);
 		}
+		else
+		{
+			StartCoroutine(WaitForLoggedOffObserver(loggedOffPlayer.GameObject));
+		}
 
 		PlayerList.Instance.CheckAdminState(unverifiedConnPlayer, unverifiedUserid);
-
-		PlayerList.ClientJobBanDataMessage.Send(unverifiedUserid);
+		PlayerList.Instance.CheckMentorState(unverifiedConnPlayer, unverifiedUserid);
 	}
 
 	/// <summary>
 	/// Waits for the client to be an observer of the player before continuing
 	/// </summary>
-	IEnumerator WaitForLoggedOffObserver(GameObject loggedOffPlayer)
+	private IEnumerator WaitForLoggedOffObserver(GameObject loggedOffPlayer)
 	{
 		TargetLocalPlayerRejoinUI(connectionToClient);
-		//TODO When we have scene network culling we will need to allow observers
+		// TODO: When we have scene network culling we will need to allow observers
 		// for the whole specific scene and the body before doing the logic below:
 		var netIdentity = loggedOffPlayer.GetComponent<NetworkIdentity>();
-		while (!netIdentity.observers.ContainsKey(this.connectionToClient.connectionId))
+		if (netIdentity == null)
+		{
+			Logger.LogError($"No {nameof(NetworkIdentity)} component on {loggedOffPlayer}! " +
+			                "Cannot rejoin that player. Was original player object improperly created? "+
+			                "Did we get runtime error while creating it?", Category.Connections);
+			// TODO: if this issue persists, should probably send the poor player a message about failing to rejoin.
+			yield break;
+		}
+
+		while (!netIdentity.observers.ContainsKey(connectionToClient.connectionId))
 		{
 			yield return WaitFor.EndOfFrame;
+			if (connectionToClient == null)
+			{
+				//disconnected while we were waiting
+				yield break;
+			}
 		}
-		yield return WaitFor.EndOfFrame;
+
 		TargetLocalPlayerRejoinUI(connectionToClient);
 		PlayerSpawn.ServerRejoinPlayer(this, loggedOffPlayer);
 	}
@@ -136,12 +160,10 @@ public class JoinedViewer : NetworkBehaviour
 	/// and tells them what round state the game is on
 	/// </summary>
 	/// <param name="target">this connection</param>
-	/// <param name="serverClientID">client ID server</param>
-	/// <param name="roundState"></param>
 	[TargetRpc]
 	private void TargetLocalPlayerSetupNewPlayer(NetworkConnection target, RoundState roundState)
 	{
-		//clear our UI because we're about to change it based on the round state
+		// clear our UI because we're about to change it based on the round state
 		UIManager.ResetAllUI();
 
 		// Determine what to do depending on the state of the round
@@ -162,7 +184,12 @@ public class JoinedViewer : NetworkBehaviour
 	{
 		var jsonCharSettings = JsonConvert.SerializeObject(PlayerManager.CurrentCharacterSettings);
 
-		if (!PlayerList.Instance.ClientCheck(job)) return;
+		if (PlayerList.Instance.ClientJobBanCheck(job) == false)
+		{
+			Logger.LogWarning($"Client failed local job-ban check for {job}.", Category.Jobs);
+			UIManager.Display.jobSelectWindow.GetComponent<GUI_PlayerJobs>().ShowFailMessage(JobRequestError.JobBanned);
+			return;
+		}
 
 		ClientRequestJobMessage.Send(job, jsonCharSettings, DatabaseAPI.ServerData.UserID);
 	}
@@ -198,7 +225,7 @@ public class JoinedViewer : NetworkBehaviour
 		var nics = NetworkInterface.GetAllNetworkInterfaces();
 		foreach (var n in nics)
 		{
-			if (!string.IsNullOrEmpty(n.GetPhysicalAddress().ToString()))
+			if (string.IsNullOrEmpty(n.GetPhysicalAddress().ToString()) == false)
 			{
 				return n.GetPhysicalAddress().ToString();
 			}
@@ -231,101 +258,5 @@ public class JoinedViewer : NetworkBehaviour
 			charSettings = JsonConvert.DeserializeObject<CharacterSettings>(jsonCharSettings);
 		}
 		PlayerList.Instance.SetPlayerReady(player, isReady, charSettings);
-	}
-
-	/// <summary>
-	/// Used for requesting a job at round start.
-	/// Assigns the occupation to the player and spawns them on the station.
-	/// Fails if no more slots for that occupation are available.
-	/// </summary>
-	public class ClientRequestJobMessage : ClientMessage
-	{
-		public string PlayerID;
-		public JobType JobType;
-		public string JsonCharSettings;
-
-		public override void Process()
-		{
-			// Server stuff here
-			if (SentByPlayer == null || SentByPlayer.ViewerScript == null) return;
-
-			if (SentByPlayer.UserId == null)
-			{
-				SentByPlayer.ViewerScript.NotifyJobRequestFailed(JobRequestError.InvalidUserID);
-				Logger.Log("User ID was null, cant spawn job.", Category.Admin);
-				return;
-			}
-
-			if (SentByPlayer.UserId != PlayerID)
-			{
-				SentByPlayer.ViewerScript.NotifyJobRequestFailed(JobRequestError.InvalidPlayerID);
-				Logger.Log($"User: {SentByPlayer.Username} ID: {SentByPlayer.UserId} used a different ID: {PlayerID} to request a job.", Category.Admin);
-				return;
-			}
-
-			var characterSettings = JsonConvert.DeserializeObject<CharacterSettings>(JsonCharSettings);
-			if (GameManager.Instance.CurrentRoundState != RoundState.Started)
-			{
-				SentByPlayer.ViewerScript.NotifyJobRequestFailed(JobRequestError.RoundNotReady);
-				Logger.LogWarningFormat("Round hasn't started yet, can't request job {0} for {1}", Category.Jobs, JobType, characterSettings);
-				return;
-			}
-
-			if (PlayerList.Instance.FindPlayerJobBanEntryServer(PlayerID, JobType, true) != null)
-			{
-				SentByPlayer.ViewerScript.NotifyJobRequestFailed(JobRequestError.JobBanned);
-				return;
-			}
-
-			int slotsTaken = GameManager.Instance.GetOccupationsCount(JobType);
-			int slotsMax = GameManager.Instance.GetOccupationMaxCount(JobType);
-			if (slotsTaken >= slotsMax)
-			{
-				SentByPlayer.ViewerScript.NotifyJobRequestFailed(JobRequestError.PositionsFilled);
-				return;
-			}
-
-			var spawnRequest = PlayerSpawnRequest.RequestOccupation(
-					SentByPlayer.ViewerScript, GameManager.Instance.GetRandomFreeOccupation(JobType), characterSettings, SentByPlayer.UserId);
-
-			GameManager.Instance.SpawnPlayerRequestQueue.Enqueue(spawnRequest);
-
-			GameManager.Instance.ProcessSpawnPlayerQueue();
-		}
-
-		public static ClientRequestJobMessage Send(JobType jobType, string jsonCharSettings, string playerID)
-		{
-			ClientRequestJobMessage msg = new ClientRequestJobMessage
-			{
-				JobType = jobType,
-				JsonCharSettings = jsonCharSettings,
-				PlayerID = playerID
-			};
-			msg.Send();
-			return msg;
-		}
-	}
-
-	[Server]
-	private void NotifyJobRequestFailed(JobRequestError failReason)
-	{
-		TargetNotifyJobRequestFailed(connectionToClient, failReason);
-	}
-
-	[TargetRpc]
-	private void TargetNotifyJobRequestFailed(NetworkConnection target, JobRequestError failReason)
-	{
-		var jobWindow = UIManager.Display.jobSelectWindow.GetComponent<GUI_PlayerJobs>();
-		jobWindow.ShowFailMessage(failReason);
-	}
-
-	public enum JobRequestError
-	{
-		None = 0,
-		InvalidUserID = 1,
-		InvalidPlayerID = 2,
-		RoundNotReady = 3,
-		JobBanned = 4,
-		PositionsFilled = 5
 	}
 }

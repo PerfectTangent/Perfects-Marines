@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Profiling;
 
 namespace Systems.Radiation
@@ -13,21 +14,7 @@ namespace Systems.Radiation
 		public List<RadiationPulse> PulseQueue = new List<RadiationPulse>();
 		private List<RadiationPulse> WorkingPulseQueue = new List<RadiationPulse>();
 
-		public static RadiationManager Instance
-		{
-			get
-			{
-				if (instance == null)
-				{
-					instance = FindObjectOfType<RadiationManager>();
-				}
-
-				return instance;
-			}
-			set { instance = value; }
-		}
-
-		private static RadiationManager instance;
+		public static RadiationManager Instance {get; private set;}
 
 		public bool Running { get; private set; }
 		public float MSSpeed = 100;
@@ -36,17 +23,17 @@ namespace Systems.Radiation
 		{
 			StopSim();
 		}
-
 		void OnEnable()
 		{
-			EventManager.AddHandler(EVENT.RoundStarted, StartSim);
-			EventManager.AddHandler(EVENT.RoundEnded, StopSim);
+			Instance = this;
+			EventManager.AddHandler(Event.PostRoundStarted, StartSim);
+			EventManager.AddHandler(Event.RoundEnded, StopSim);
 		}
 
 		void OnDisable()
 		{
-			EventManager.RemoveHandler(EVENT.RoundStarted, StartSim);
-			EventManager.RemoveHandler(EVENT.RoundEnded, StopSim);
+			EventManager.RemoveHandler(Event.PostRoundStarted, StartSim);
+			EventManager.RemoveHandler(Event.RoundEnded, StopSim);
 		}
 
 		public void StopSim()
@@ -172,7 +159,7 @@ namespace Systems.Radiation
 			CircleArea.Clear();
 
 			StopWatchlog.Stop();
-			Logger.Log("StopWatchlog ElapsedMilliseconds time " + StopWatchlog.ElapsedMilliseconds);
+			Logger.Log("StopWatchlog ElapsedMilliseconds time " + StopWatchlog.ElapsedMilliseconds, Category.Radiation);
 		}
 
 		//https://www.geeksforgeeks.org/bresenhams-circle-drawing-algorithm/
@@ -233,11 +220,15 @@ namespace Systems.Radiation
 				var RadiationNode = NodePoint?.RadiationNode;
 				if (RadiationNode != null)
 				{
-					if (NodePoint.IsOccupied)
+					foreach (var Layer in Pulse.Matrix.MetaTileMap.Layers)
 					{
-						RadiationOnStep *= 0.15f;
+						if (Layer.Key == LayerType.Underfloor) continue;
+						var BasicTile_ = Pulse.Matrix.MetaTileMap.GetTile(new Vector2Int(x0, y0).To3Int(), Layer.Key ) as BasicTile;
+						if (BasicTile_ != null)
+						{
+							RadiationOnStep *= BasicTile_.RadiationPassability;
+						}
 					}
-					//RadiationOnStep *= RadiationNode.RadiationPassability;
 
 					CircleArea.Add(RadiationNode);
 					RadiationNode.MidCalculationNumbers += RadiationOnStep;
@@ -257,7 +248,6 @@ namespace Systems.Radiation
 				}
 			}
 		}
-
 		public void RequestPulse(Matrix Matrix, Vector3Int Location, float Strength, int InSourceID)
 		{
 			lock (PulseQueue)

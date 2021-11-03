@@ -1,11 +1,12 @@
 ﻿using AdminCommands;
-using DatabaseAPI;
 using Health.Sickness;
 using InGameEvents;
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 namespace AdminTools
 {
@@ -56,7 +57,8 @@ namespace AdminTools
 			eventParameters.PlayerToInfect = result;
 			eventParameters.SicknessIndex = sicknessDropdown.value;
 
-			ServerCommandVersionFourMessageClient.Send(ServerData.UserID, PlayerList.Instance.AdminToken, index, fakeEvent, announceEvent, eventType, "CmdTriggerGameEvent", eventParameters);
+			AdminCommandsManager.Instance.CmdTriggerGameEvent(
+					index, fakeEvent, announceEvent, eventType, JsonConvert.SerializeObject(eventParameters));
 
 			// We hide the panel
 			gameObject.SetActive(false);

@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using Doors;
 using UnityEditor;
 using UnityEngine;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Reflection;
-using Systems.Botany;
-using Items.Botany;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Items;
+using Items.Botany;
 
+/// <summary>
+/// Used for random ass editor scripts, Has all the functions you need in a pinch
+/// </summary>
 public class GenerateSpriteSO : EditorWindow
 {
 	public static List<string> ToDel = new List<string>();
@@ -23,12 +25,12 @@ public class GenerateSpriteSO : EditorWindow
 	{
 		var path = Application.dataPath.Remove(Application.dataPath.IndexOf("/Assets"));
 		path = path + "/AddressablePackingProjects/SoundAndMusic/ServerData"; //Make OS agnostic
-		Logger.Log(path);
+		Logger.Log(path, Category.Editor);
 		var Files = System.IO.Directory.GetFiles(path);
 		string FoundFile = "";
 		foreach (var File in Files)
 		{
-			Logger.Log(File);
+			Logger.Log(File, Category.Editor);
 			if (File.EndsWith(".json"))
 			{
 				FoundFile = File;
@@ -37,7 +39,7 @@ public class GenerateSpriteSO : EditorWindow
 
 		if (FoundFile == "")
 		{
-			Logger.LogWarning("missing json file");
+			Logger.LogWarning("missing json file", Category.Editor);
 			return;
 		}
 
@@ -46,7 +48,7 @@ public class GenerateSpriteSO : EditorWindow
 		var ListIDs = IDs.ToObject<List<string>>().Where(x => x.Contains(".bundle") == false);
 		foreach (var ListID in ListIDs)
 		{
-			Logger.Log(ListID);
+			Logger.Log(ListID, Category.Editor);
 		}
 
 	}
@@ -58,13 +60,20 @@ public class GenerateSpriteSO : EditorWindow
 		return;
 	}
 
+	[MenuItem("Tools/StartAssetEditing")]
+	public static void StartAssetEditing()
+	{
+		AssetDatabase.StartAssetEditing();
+		return;
+	}
+
 
 	[MenuItem("Tools/Convert Json Sprites")]
 	public static void ConvertJsonSprites()
 	{
 		spriteCatalogue =
 			AssetDatabase.LoadAssetAtPath<SpriteCatalogue>(
-				"Assets/Resources/ScriptableObjects/SOs singletons/SpriteCatalogueSingleton.asset");
+				"Assets/Resources/ScriptableObjectsSingletons/SpriteCatalogueSingleton.asset");
 		ToSeve.Clear();
 		ToDel.Clear();
 		DirSearch_ex3(Application.dataPath + "/SpriteJsonToSO");
@@ -113,12 +122,62 @@ public class GenerateSpriteSO : EditorWindow
 	{
 		//AssetDatabase.StopAssetEditing();
 		//spriteCatalogue = AssetDatabase.LoadAssetAtPath<SpriteCatalogue>(
-		//	"Assets/Resources/ScriptableObjects/SOs singletons/SpriteCatalogueSingleton.asset");
+		//	"Assets/Resources/ScriptableObjectsSingletons/SpriteCatalogueSingleton.asset");
 		//
 		//	DirSearch_ex3Prefab(Application.dataPath + "/Resources/Prefabs/Items"); //
 		//
+
+
 		AssetDatabase.StartAssetEditing();
-		DirSearch_ex3(Application.dataPath + "/Textures");
+		AssetDatabase.ForceReserializeAssets();
+		//FindInGo
+		var doors = LoadAllPrefabsOfType<DoorController>("");
+
+		foreach (var door in doors)
+		{
+			FindInGo(door.gameObject);
+			EditorUtility.SetDirty( door.gameObject);
+		}
+		// var stuff = FindAssetsByType<PlayerSlotStoragePopulator>();
+		//
+		// foreach (var PSSP in stuff)
+		// {
+		// 	bool NOID = true;
+		// 	foreach (var Entry in PSSP.Entries)
+		// 	{
+		// 		if (Entry.NamedSlot == NamedSlot.id)
+		// 		{
+		// 			NOID = false;
+		// 		}
+		//
+		// 		if (Entry.NamedSlot == NamedSlot.uniform)
+		// 		{
+		// 			Entry.ReplacementStrategy = ReplacementStrategy.DespawnOther;
+		// 		}
+		//
+		// 		if (Entry.NamedSlot == NamedSlot.back)
+		// 		{
+		// 			Entry.ReplacementStrategy = ReplacementStrategy.DespawnOther;
+		// 		}
+		//
+		// 		if (Entry.NamedSlot == NamedSlot.ear)
+		// 		{
+		// 			Entry.ReplacementStrategy = ReplacementStrategy.DespawnOther;
+		// 		}
+		// 	}
+		//
+		// 	if (NOID)
+		// 	{
+		// 		var ID = Spawn.GetPrefabByName("IDCardAutoInit");
+		// 		var all = new SlotPopulatorEntry();
+		// 		all.Prefab = ID;
+		// 		all.NamedSlot = NamedSlot.id;
+		// 		PSSP.Entries.Add(all);
+		// 	}
+		// 	EditorUtility.SetDirty( PSSP);
+		// }
+
+		// DirSearch_ex3(Application.dataPath + "/Textures");
 		AssetDatabase.StopAssetEditing();
 		AssetDatabase.SaveAssets();
 		return;
@@ -152,7 +211,7 @@ public class GenerateSpriteSO : EditorWindow
 			}
 			catch
 			{
-				Logger.Log(GetRoot(SH.gameObject).name + "Not root apparently");
+				Logger.Log(GetRoot(SH.gameObject).name + "Not root apparently", Category.Editor);
 			}
 		}
 
@@ -307,63 +366,35 @@ public class GenerateSpriteSO : EditorWindow
 		*/
 	}
 
-	public static GameObject FindSeedPacket(DefaultPlantData defaultPlantData)
+	private static void FindInGo(GameObject g)
 	{
-		var DD = LoadAllPrefabsOfType<SeedPacket>(Application.dataPath + "/Resources/Prefabs/Items/Botany");
-		foreach (var D in DD)
+		var components = g.GetComponents<Component>();
+
+		var r = 0;
+
+		for (var i = 0; i < components.Length; i++)
 		{
-			//if (D.defaultPlantData == defaultPlantData)
-			//{
-			//return D.gameObject;
-			//}
-		}
-
-		return null;
-	}
-
-
-	public static GameObject FindProduce(SeedPacket seedPacket)
-	{
-		var DD = LoadAllPrefabsOfType<GrownFood>(Application.dataPath + "/Resources/Prefabs/Items/Botany");
-		foreach (var D in DD)
-		{
-			if (D.seedPacket.GetComponent<SeedPacket>() == seedPacket)
+			if (components[i] != null) continue;
+			var s = g.name;
+			var t = g.transform;
+			while (t.parent != null)
 			{
-				return D.gameObject;
+				s = t.parent.name +"/"+s;
+				t = t.parent;
 			}
+
+			Debug.Log ($"{s} has a missing script at {i}", g);
+
+			var serializedObject = new SerializedObject(g);
+
+			var prop = serializedObject.FindProperty("m_Component");
+
+			prop.DeleteArrayElementAtIndex(i-r);
+			r++;
+
+			serializedObject.ApplyModifiedProperties();
 		}
-
-		return null;
 	}
-
-
-	public static GameObject GenerateDummySeedPacket(DefaultPlantData plantData)
-	{
-		AssetDatabase.CopyAsset("Assets/Resources/Prefabs/Items/Botany/Seeds/AutoGenerated/seed packet Variant.prefab",
-			"Assets/Resources/Prefabs/Items/Botany/Seeds/AutoGenerated/" + plantData.plantData.Name + ".prefab");
-		var gameObject =
-			AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Items/Botany/Seeds/AutoGenerated/" +
-			                                          plantData.plantData.Name + ".prefab");
-		var DDA = gameObject.GetComponent<SeedPacket>();
-
-		//DDA.defaultPlantData= plantData;
-		PrefabUtility.SavePrefabAsset(gameObject);
-		return gameObject;
-	}
-
-	public static GameObject GenerateDummyProduce(PlantData plantData, GameObject Seepdpakes)
-	{
-		AssetDatabase.CopyAsset("Assets/Resources/Prefabs/Items/Botany/Produce/AutoGenerated/base.prefab",
-			"Assets/Resources/Prefabs/Items/Botany/Produce/AutoGenerated/" + plantData.Name + ".prefab");
-		var gameObject = AssetDatabase.LoadAssetAtPath<GameObject>(
-			"Assets/Resources/Prefabs/Items/Botany/Produce/AutoGenerated/" +
-			plantData.Name + ".prefab");
-		gameObject.GetComponent<GrownFood>().seedPacket = Seepdpakes;
-		PrefabUtility.SavePrefabAsset(gameObject);
-		return gameObject;
-		//seedPacket
-	}
-
 
 	public static List<T> FindAssetsByType<T>() where T : UnityEngine.Object
 	{
@@ -425,6 +456,7 @@ public class GenerateSpriteSO : EditorWindow
 		}
 	 */
 
+	/*
 	public static EquippedData PullOutEquippedData(EquippedData ToProcess)
 	{
 		//ToProcess.SpriteEquipped = PullOutSO(ToProcess.Equipped.Texture);
@@ -433,6 +465,7 @@ public class GenerateSpriteSO : EditorWindow
 		//ToProcess.SpriteInHandsRight = PullOutSO(ToProcess.InHandsRight.Texture);
 		return ToProcess;
 	}
+	*/
 
 	public static SpriteDataSO PullOutSO(Texture2D In2D)
 	{

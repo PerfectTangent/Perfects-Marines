@@ -162,7 +162,7 @@ MonoBehaviour:
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 28ac62a70bb9bd54d852232bcd67e25b
-    m_Address: Assets/Prefabs/AmbientTracks/Ambient03.prefab
+    m_Address: Assets/Prefabs/AmbientTracks/AmbiGen8.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -437,12 +437,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 6aadf708b4f32874983cc1a5cfe9aed0
-    m_Address: Assets/Prefabs/Effects/armbomb.prefab
+  - m_GUID: 5fcd4102900e7a0428a0ca3fafb2a3c2
+    m_Address: Assets/Prefabs/Weapons/ArmBomb.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 5980427736843416930, guid: 5fcd4102900e7a0428a0ca3fafb2a3c2, type: 3}
+    m_TargetAsset: {fileID: 5980427736843416930, guid: 5fcd4102900e7a0428a0ca3fafb2a3c2, type: 3}
   - m_GUID: 04d72908cdbeb5843a41f90104f2a2e7
     m_Address: Assets/Prefabs/Effects/Sparks04.prefab
     m_ReadOnly: 0
@@ -475,12 +475,6 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 787ac0b860c54d9418ded5f163c09efc
     m_Address: Assets/Prefabs/Effects/saberoff.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 636f24b87a8e2c442bbd87e6d02bbbb4
-    m_Address: Assets/Prefabs/Effects/EmptyGunClick.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -547,12 +541,6 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 81a85af9c091e484592f345be21127a7
     m_Address: Assets/Prefabs/Effects/GlassBreak02.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d1dee50a25d131b4d8a34c418c3afda3
-    m_Address: Assets/Prefabs/Effects/ReloadKinetic.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -767,434 +755,434 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 9ac0a3513fcff174eb6540415531628c
-    m_Address: Assets/Prefabs/footsteps/wood/wood2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ec4b86c1e9edb204ca17f886edfa59fc
-    m_Address: Assets/Prefabs/footsteps/wood/wood5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 2f1f55b3f9823db4eb7c3346a09390ee
-    m_Address: Assets/Prefabs/footsteps/wood/woodbarefoot2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 5e28c594fff6fa84f9f8f21f4736ad83
-    m_Address: Assets/Prefabs/footsteps/wood/woodbarefoot1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 4208d9b4bde397d429eff9482834bfa6
-    m_Address: Assets/Prefabs/footsteps/wood/woodbarefoot5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 8a58d6698c117d246917f61bd957c78d
-    m_Address: Assets/Prefabs/footsteps/wood/wood4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 3206d54c808da9d4cb20b19e2b0ad1c5
-    m_Address: Assets/Prefabs/footsteps/wood/woodbarefoot3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: eb10b36cab803e942823b3ac13602df8
-    m_Address: Assets/Prefabs/footsteps/wood/woodbarefoot4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: a3497eeca83e4864680bad7d7ed65c29
-    m_Address: Assets/Prefabs/footsteps/wood/wood3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: bb73795dccc099c499323304b03972c4
-    m_Address: Assets/Prefabs/footsteps/wood/wood1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: bfac5ce2618953c4db1821af242e12e8
-    m_Address: Assets/Prefabs/footsteps/water/water3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 2194fe77eb1f48a4e98d65f9b5a7c3fe
-    m_Address: Assets/Prefabs/footsteps/water/water2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 1449d9f9613c6744ba0fab564ca2b64f
-    m_Address: Assets/Prefabs/footsteps/water/water1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d507384b20a01a342a12ebc12cda23c9
-    m_Address: Assets/Prefabs/footsteps/water/water4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ed8db049b7dd3394898afb143da0a01a
-    m_Address: Assets/Prefabs/footsteps/plating/plating3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6ce9b44a3cf91794b93101c0a83619d1
-    m_Address: Assets/Prefabs/footsteps/plating/plating2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d2a6f00c3222f6f42aae6692c3bedf70
-    m_Address: Assets/Prefabs/footsteps/plating/plating5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: f03ecebd66e1e394495493ca8a0323f2
-    m_Address: Assets/Prefabs/footsteps/plating/plating4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6a2efe6f3e259cd47ac5ffc73ede8dcc
-    m_Address: Assets/Prefabs/footsteps/plating/plating1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6b2aaa55d1226c5448396370d0925248
-    m_Address: Assets/Prefabs/footsteps/lava/lava2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: eec2676b40225ab42b1849b28ec7e06b
-    m_Address: Assets/Prefabs/footsteps/lava/lava1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: e1bfc25cffe9b4044a45cbc2aaf59162
-    m_Address: Assets/Prefabs/footsteps/lava/lava3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: f8ce6a03e0467524c8623fe5a32ebf81
-    m_Address: Assets/Prefabs/footsteps/heavy/heavy1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 7a23afdd96bdac445b362227446971ae
-    m_Address: Assets/Prefabs/footsteps/heavy/heavy2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 980a8d00c5afaf74baa2a406cb79305f
-    m_Address: Assets/Prefabs/footsteps/hardsuit/suitstep2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 7700c78013f8be44889d6b732881344d
-    m_Address: Assets/Prefabs/footsteps/hardsuit/suitstep3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d1fc88b0e2e9c6949a02478be085b868
-    m_Address: Assets/Prefabs/footsteps/hardsuit/suitstep1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 80f8d9e1e20befc43bd491834a4a4eaa
-    m_Address: Assets/Prefabs/footsteps/hardsuit/suitstep5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 903e3148f82bdbe43aaa1518155eb417
-    m_Address: Assets/Prefabs/footsteps/hardsuit/suitstep4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: cf829f09dd524e8498fa5850e1a9e3ce
-    m_Address: Assets/Prefabs/footsteps/grass/grass4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6147014aee361ea47a21fecc8af95d3b
-    m_Address: Assets/Prefabs/footsteps/grass/grass2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: eab9793c76164ec4098adc0c11f210e7
-    m_Address: Assets/Prefabs/footsteps/grass/grass3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6d641d4ecb0c7a247b2d892d83e85de8
-    m_Address: Assets/Prefabs/footsteps/grass/grass1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 210e0f309380f7447a0f74a0b2b4c0a9
-    m_Address: Assets/Prefabs/footsteps/floor/floor1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 782945800efb5e94faf47c9bdc67940c
-    m_Address: Assets/Prefabs/footsteps/floor/floor3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 8c6fd703f21bf3943b16058a59a923b0
-    m_Address: Assets/Prefabs/footsteps/floor/hardbarefoot1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 155b2766c59b2f541b5cf4ce6faab49f
-    m_Address: Assets/Prefabs/footsteps/floor/floor4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 37528296d713c5e4ca96d525e03da60e
-    m_Address: Assets/Prefabs/footsteps/floor/hardbarefoot3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 28af2a189bd41a44bacadc1f773c86f8
-    m_Address: Assets/Prefabs/footsteps/floor/hardbarefoot5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 14f320482ba9b7f42a74f0b2f1c94af7
-    m_Address: Assets/Prefabs/footsteps/floor/floor2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: b7c6292b8ef2b404a9ae2f2417333f4a
-    m_Address: Assets/Prefabs/footsteps/floor/hardbarefoot2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 46cead4f25cc86c4ca3f7983a5ac0848
-    m_Address: Assets/Prefabs/footsteps/floor/floor5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d6a10a9fb3f390f47bd93646bd6e32d4
-    m_Address: Assets/Prefabs/footsteps/floor/hardbarefoot4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 022468a1573d74e41bdfaccd11500037
-    m_Address: Assets/Prefabs/footsteps/clownstep/clownstep1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 6ac36ce116f7a0f4798c96e684a9d10c
-    m_Address: Assets/Prefabs/footsteps/clownstep/clownstep2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: eb6603c1191938142b7b10a050a3fe12
-    m_Address: Assets/Prefabs/footsteps/claw/hardclaw2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d0899a73e049d4849ace046520b8a780
-    m_Address: Assets/Prefabs/footsteps/claw/hardclaw1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: d1782b75facf5a84b8945dfa7ce84dfe
-    m_Address: Assets/Prefabs/footsteps/claw/woodclaw3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 7b62eef5a02607040bc88a1712778318
-    m_Address: Assets/Prefabs/footsteps/claw/hardclaw4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 9c7410f6154361a48aa7519c1f6dab19
-    m_Address: Assets/Prefabs/footsteps/claw/woodclaw1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ad0e2ad90932ffe4280cccf4ee6e4dea
-    m_Address: Assets/Prefabs/footsteps/claw/woodclaw2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 07cb05cb2a6bcb94c998604eb4dd45e3
-    m_Address: Assets/Prefabs/footsteps/claw/hardclaw3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: fa029a645691dc24f8b37bc6e5bf9cc1
-    m_Address: Assets/Prefabs/footsteps/catwalk/catwalk1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ba9c23a5f53ecd947ad6a3b7f881ed71
-    m_Address: Assets/Prefabs/footsteps/catwalk/catwalk4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 73f5adb67a02e9743b4e08566eb03011
-    m_Address: Assets/Prefabs/footsteps/catwalk/catwalk3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: cf79cd2c33d63c94b8faa9edcc5ca903
-    m_Address: Assets/Prefabs/footsteps/catwalk/catwalk2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: fa697dbdcb4128a49aec45f343e83d38
-    m_Address: Assets/Prefabs/footsteps/catwalk/catwalk5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 4437b6313b382e94189b0713f210404f
-    m_Address: Assets/Prefabs/footsteps/carpet/carpet2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ec3fe362d64bd9945b6f8e8cf21817d2
-    m_Address: Assets/Prefabs/footsteps/carpet/carpet3.prefab
+  - m_GUID: 83e8cb0fa4416364cbf30c0cb0bff968
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpet4.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 4e5910b216230e24db6cb67c4d65fcab
-    m_Address: Assets/Prefabs/footsteps/carpet/carpet1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 1ec06be2efc701f40bd2be2cdc91dee4
-    m_Address: Assets/Prefabs/footsteps/carpet/carpetbarefoot2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: ca78b7f4a03751144831113b7fc6a685
-    m_Address: Assets/Prefabs/footsteps/carpet/carpet5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: c5e3da75808b784469b094d7370be230
-    m_Address: Assets/Prefabs/footsteps/carpet/carpetbarefoot4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: dcfb3076ce79e0f4ab4802c16d7c1963
-    m_Address: Assets/Prefabs/footsteps/carpet/carpetbarefoot1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 4a1a68cae0dae1647916e342c6f443e6
-    m_Address: Assets/Prefabs/footsteps/carpet/carpetbarefoot3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 4c0e461b3c421bf4197957d5296af636
-    m_Address: Assets/Prefabs/footsteps/carpet/carpetbarefoot5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 83e8cb0fa4416364cbf30c0cb0bff968
-    m_Address: Assets/Prefabs/footsteps/carpet/carpet4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 27c9ced4c0041804988e705bf4c9de0c
-    m_Address: Assets/Prefabs/footsteps/asteroid/asteroid5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: adabac85e8a76304a897878469cc86b8
-    m_Address: Assets/Prefabs/footsteps/asteroid/asteroid1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 02566327d9e009c498b65c2520925176
-    m_Address: Assets/Prefabs/footsteps/asteroid/asteroid3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: f1d4a5cda78cbe643ae71f1e33b1dd57
-    m_Address: Assets/Prefabs/footsteps/asteroid/asteroid2.prefab
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpet1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: e6a3bd1e816485c478c5825953b154c5
-    m_Address: Assets/Prefabs/footsteps/asteroid/asteroid4.prefab
+    m_Address: Assets/Prefabs/footsteps/asteroid/FootstepAsteroid4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 27c9ced4c0041804988e705bf4c9de0c
+    m_Address: Assets/Prefabs/footsteps/asteroid/FootstepAsteroid5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: adabac85e8a76304a897878469cc86b8
+    m_Address: Assets/Prefabs/footsteps/asteroid/FootstepAsteroid1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4437b6313b382e94189b0713f210404f
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpet2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 02566327d9e009c498b65c2520925176
+    m_Address: Assets/Prefabs/footsteps/asteroid/FootstepAsteroid3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f1d4a5cda78cbe643ae71f1e33b1dd57
+    m_Address: Assets/Prefabs/footsteps/asteroid/FootstepAsteroid2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ec3fe362d64bd9945b6f8e8cf21817d2
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpet3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ca78b7f4a03751144831113b7fc6a685
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpet5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1ec06be2efc701f40bd2be2cdc91dee4
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpetBarefoot2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4a1a68cae0dae1647916e342c6f443e6
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpetBarefoot3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c5e3da75808b784469b094d7370be230
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpetBarefoot4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: dcfb3076ce79e0f4ab4802c16d7c1963
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpetBarefoot1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fa697dbdcb4128a49aec45f343e83d38
+    m_Address: Assets/Prefabs/footsteps/catwalk/FootstepCatwalk5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d0899a73e049d4849ace046520b8a780
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepHardClaw1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 73f5adb67a02e9743b4e08566eb03011
+    m_Address: Assets/Prefabs/footsteps/catwalk/FootstepCatwalk3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ba9c23a5f53ecd947ad6a3b7f881ed71
+    m_Address: Assets/Prefabs/footsteps/catwalk/FootstepCatwalk4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: eb6603c1191938142b7b10a050a3fe12
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepHardClaw2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fa029a645691dc24f8b37bc6e5bf9cc1
+    m_Address: Assets/Prefabs/footsteps/catwalk/FootstepCatwalk1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cf79cd2c33d63c94b8faa9edcc5ca903
+    m_Address: Assets/Prefabs/footsteps/catwalk/FootstepCatwalk2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4c0e461b3c421bf4197957d5296af636
+    m_Address: Assets/Prefabs/footsteps/carpet/FootstepCarpetBarefoot5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7b62eef5a02607040bc88a1712778318
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepHardClaw4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 07cb05cb2a6bcb94c998604eb4dd45e3
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepHardClaw3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 46cead4f25cc86c4ca3f7983a5ac0848
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepFloor5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 155b2766c59b2f541b5cf4ce6faab49f
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepFloor4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8c6fd703f21bf3943b16058a59a923b0
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepHardBarefoot1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 14f320482ba9b7f42a74f0b2f1c94af7
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepFloor2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 782945800efb5e94faf47c9bdc67940c
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepFloor3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9c7410f6154361a48aa7519c1f6dab19
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepWoodClaw1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d1782b75facf5a84b8945dfa7ce84dfe
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepWoodClaw3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ad0e2ad90932ffe4280cccf4ee6e4dea
+    m_Address: Assets/Prefabs/footsteps/claw/FootstepWoodClaw2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 210e0f309380f7447a0f74a0b2b4c0a9
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepFloor1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6d641d4ecb0c7a247b2d892d83e85de8
+    m_Address: Assets/Prefabs/footsteps/grass/FootstepGrass1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 903e3148f82bdbe43aaa1518155eb417
+    m_Address: Assets/Prefabs/footsteps/hardsuit/FootstepSuitStep4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d1fc88b0e2e9c6949a02478be085b868
+    m_Address: Assets/Prefabs/footsteps/hardsuit/FootstepSuitStep1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7700c78013f8be44889d6b732881344d
+    m_Address: Assets/Prefabs/footsteps/hardsuit/FootstepSuitStep3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 022468a1573d74e41bdfaccd11500037
+    m_Address: Assets/Prefabs/footsteps/clownstep/FootstepClownStep1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d6a10a9fb3f390f47bd93646bd6e32d4
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepHardBarefoot4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 80f8d9e1e20befc43bd491834a4a4eaa
+    m_Address: Assets/Prefabs/footsteps/hardsuit/FootstepSuitStep5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6ac36ce116f7a0f4798c96e684a9d10c
+    m_Address: Assets/Prefabs/footsteps/clownstep/FootstepClownStep2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 980a8d00c5afaf74baa2a406cb79305f
+    m_Address: Assets/Prefabs/footsteps/hardsuit/FootstepSuitStep2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 28af2a189bd41a44bacadc1f773c86f8
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepHardBarefoot5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 37528296d713c5e4ca96d525e03da60e
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepHardBarefoot3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b7c6292b8ef2b404a9ae2f2417333f4a
+    m_Address: Assets/Prefabs/footsteps/floor/FootstepHardBarefoot2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6a2efe6f3e259cd47ac5ffc73ede8dcc
+    m_Address: Assets/Prefabs/footsteps/plating/FootstepPlating1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6ce9b44a3cf91794b93101c0a83619d1
+    m_Address: Assets/Prefabs/footsteps/plating/FootstepPlating2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6147014aee361ea47a21fecc8af95d3b
+    m_Address: Assets/Prefabs/footsteps/grass/FootstepGrass2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f8ce6a03e0467524c8623fe5a32ebf81
+    m_Address: Assets/Prefabs/footsteps/heavy/FootstepHeavy1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cf829f09dd524e8498fa5850e1a9e3ce
+    m_Address: Assets/Prefabs/footsteps/grass/FootstepGrass4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: eab9793c76164ec4098adc0c11f210e7
+    m_Address: Assets/Prefabs/footsteps/grass/FootstepGrass3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7a23afdd96bdac445b362227446971ae
+    m_Address: Assets/Prefabs/footsteps/heavy/FootstepHeavy2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6b2aaa55d1226c5448396370d0925248
+    m_Address: Assets/Prefabs/footsteps/lava/FootstepLava2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f03ecebd66e1e394495493ca8a0323f2
+    m_Address: Assets/Prefabs/footsteps/plating/FootstepPlating4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d2a6f00c3222f6f42aae6692c3bedf70
+    m_Address: Assets/Prefabs/footsteps/plating/FootstepPlating5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: eec2676b40225ab42b1849b28ec7e06b
+    m_Address: Assets/Prefabs/footsteps/lava/FootstepLava1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ed8db049b7dd3394898afb143da0a01a
+    m_Address: Assets/Prefabs/footsteps/plating/FootstepPlating3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8a58d6698c117d246917f61bd957c78d
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWood4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a3497eeca83e4864680bad7d7ed65c29
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWood3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ec4b86c1e9edb204ca17f886edfa59fc
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWood5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2194fe77eb1f48a4e98d65f9b5a7c3fe
+    m_Address: Assets/Prefabs/footsteps/water/FootstepWater2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bb73795dccc099c499323304b03972c4
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWood1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d507384b20a01a342a12ebc12cda23c9
+    m_Address: Assets/Prefabs/footsteps/water/FootstepWater4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1449d9f9613c6744ba0fab564ca2b64f
+    m_Address: Assets/Prefabs/footsteps/water/FootstepWater1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bfac5ce2618953c4db1821af242e12e8
+    m_Address: Assets/Prefabs/footsteps/water/FootstepWater3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e1bfc25cffe9b4044a45cbc2aaf59162
+    m_Address: Assets/Prefabs/footsteps/lava/FootstepLava3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9ac0a3513fcff174eb6540415531628c
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWood2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5e28c594fff6fa84f9f8f21f4736ad83
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWoodBarefoot1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4208d9b4bde397d429eff9482834bfa6
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWoodBarefoot5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3206d54c808da9d4cb20b19e2b0ad1c5
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWoodBarefoot3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: eb10b36cab803e942823b3ac13602df8
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWoodBarefoot4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2f1f55b3f9823db4eb7c3346a09390ee
+    m_Address: Assets/Prefabs/footsteps/wood/FootstepWoodBarefoot2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -1295,80 +1283,56 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: ace575518080b7c42833d9cc883f3d87
-    m_Address: Assets/Prefabs/GunShots/ShootTazer.prefab
+  - m_GUID: e88b050a44cb5d64281d5f409a594720
+    m_Address: Assets/Prefabs/Weapons/PlasmaCutter.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: fe0d97b1e1cabcb4ab239859499f6a70
-    m_Address: Assets/Prefabs/GunShots/PlasmaCutter.prefab
+  - m_GUID: f354f2d6341c1db4993db9c09a67d413
+    m_Address: Assets/Prefabs/Weapons/Laser1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 683094d5bfc3d3e43bc31b62263dca2b
-    m_Address: Assets/Prefabs/GunShots/ShootLMG.prefab
+  - m_GUID: 1abbd515b56edd84d870b487881e9a89
+    m_Address: Assets/Prefabs/Weapons/TaserHit.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 34234166629869d4192096b57344bcfd
-    m_Address: Assets/Prefabs/GunShots/ShootSyringe.prefab
+  - m_GUID: 492b8fce91eaaa64188bab166734d96c
+    m_Address: Assets/Prefabs/Weapons/Taser2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 305cb907a9c4a6f40935b6a1c74d87ea
-    m_Address: Assets/Prefabs/GunShots/ShootGun04.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 5c59f927cbc69a94eb88155ae665df54
-    m_Address: Assets/Prefabs/GunShots/ShootSMG.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 920341478e99231449a5794a21a7fdf8
-    m_Address: Assets/Prefabs/GunShots/ShootGun01.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 30f0b318962c405418aee76b781bf11f
-    m_Address: Assets/Prefabs/GunShots/ShootKinetic.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: accf86d84f1d66c4f80e5d2f1681e7c6
-    m_Address: Assets/Prefabs/GunShots/ShootGunUzi.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 84c1dfab17572d24c98b44a362a4e9c0
-    m_Address: Assets/Prefabs/GunShots/ShootLaser.prefab
+  - m_GUID: 958b315a205eab048afdc598b0086abb
+    m_Address: Assets/Prefabs/Weapons/Taser1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 7b699d4d690884d4ca2b83ee49baa65b
-    m_Address: Assets/Prefabs/GunShots/ShootPulse.prefab
+    m_Address: Assets/Prefabs/Weapons/Pulse.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: b4d5a65d5afc28740a76da3e06589da5
-    m_Address: Assets/Prefabs/GunShots/ShootHeavySuppressed.prefab
+  - m_GUID: 2672d4ec653a41c4ca7a3f042b7d5af4
+    m_Address: Assets/Prefabs/Weapons/LaserCannonFire.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: eb2b19aebe21f1e45be989344c91af75
-    m_Address: Assets/Prefabs/GunShots/ShootTommy.prefab
+  - m_GUID: f068125dbb2905d45946fbcebed251a8
+    m_Address: Assets/Prefabs/Weapons/Laser3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c3a74fe2992338947af89092fb0b06df
+    m_Address: Assets/Prefabs/Weapons/Laser2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -1847,7 +1811,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: ee20a4f05fde27045a6128bc1f624896
+  - m_GUID: 7f1b8a37cb666d646b5e7bb5a5e5c922
     m_Address: Assets/Prefabs/UI/Click01.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -1865,6 +1829,936 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 2ab3e27a209697e4bb91409b3f1d8f98
+    m_Address: Assets/Prefabs/Machines/MachineVend.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7ad4799aa1a24be43bd9c929a1e2873d
+    m_Address: Assets/Prefabs/Machines/FireAlarm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9e090a6c11acc4245b37d9b9d524d5a7
+    m_Address: Assets/Prefabs/Machines/Copier.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5a1d226254f50324394bad4d9c30f01c
+    m_Address: Assets/Prefabs/Machines/Click.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d22a50001283fcd4fa5b54c4f6faed9d
+    m_Address: Assets/Prefabs/Machines/Beep.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 266d93fa54a1c3443a32ba9fdbec2302
+    m_Address: Assets/Prefabs/Machines/APCPowerOff.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5fa992479c878cb4390a8c3477363d17
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 33950e286ba09bb46996f99d755866dc
+    m_Address: Assets/Prefabs/Weapons/Gun/Shotgun/ShotgunInsertShell.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 893bf901765517b428b7be752e1b8f76
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverSpin3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ba6e864b44523a4498a87edbfedc9b07
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverSpin2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 52e44f899471bb54baa450016e05d677
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverSpin1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 90d7cc4cc2023da499580114825cc26f
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverShotAlt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8c943764218dfe54dbc6e24e7239d629
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7eba4c2cc5170c248ae06f3a424e32d2
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverLoadBullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4458c811d858e194f81ddceb16a860b1
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverEmpty.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6534c00b1d48492488abfc6485a471ec
+    m_Address: Assets/Prefabs/Weapons/Gun/Revolver/RevolverDryFire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4242e2c5cbe17f04db33db4de5bef3e2
+    m_Address: Assets/Prefabs/Weapons/Gun/LMG/LMGShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6785392e3f30e184d810a99635e35be9
+    m_Address: Assets/Prefabs/Weapons/Gun/LMG/LMGRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ee3abb684a43e914788f5d214b4d84ab
+    m_Address: Assets/Prefabs/Weapons/Gun/LMG/LMGDoor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4513251ad42181d4b9bdba6f07b8a42a
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralSlideLock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 614292fa448aa8e40bb62a38c2bc6d72
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralRocketLaunch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 722028defe3112d4d91919ec2551426a
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagRemoveFull.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3df5b56d8678b5048b39d6a70a397f38
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolSlideLock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 58f8df9a390e0494f940a2857982d4e2
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolSlideDrop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ab8d12fa5065abe4c9871ec3d84b39ba
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolShotAlt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6fbedaaf3b61f8c40983ad91a9690ae5
+    m_Address: Assets/Prefabs/Explosion/ExplosionDistant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9e559870726ea8e42a8a39e1c6407fea
+    m_Address: Assets/Prefabs/Explosion/ExplosionFar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2664e872b513ca746a8247eb2e10dc10
+    m_Address: Assets/Prefabs/Explosion/Explosion3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 80c97347545f24144b7dab993d68b4c5
+    m_Address: Assets/Prefabs/Explosion/ExplosionCreak2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 311bfb3e1d37b1445a0d110bff7a989f
+    m_Address: Assets/Prefabs/Explosion/ExplosionCreak1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 49a7b72cf3413b9458ad319816134bb8
+    m_Address: Assets/Prefabs/Weapons/sizzle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8ea0d048c6aeb7f4c94f19abda785c60
+    m_Address: Assets/Prefabs/Explosion/ExplosionCreak3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 395abaa16649ba24dab55ae2ce81cdf9
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolShotSuppressed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 285979103930a3a42b7af3a9a2c0f0ec
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolRackSmall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: afdeb3c4e7eca4144b4ac945fae46044
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolDropSmall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3ecb88d1340c11c4684594fee2f44d3c
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4edaa49115449db46912883f915b0486
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolMagRelease.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: dc31d5e1db4001f43b52bb44f0509d48
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolMagInsert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3f2132db703cdc44585b0b672896d492
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolLockSmall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6cb286d1c87e4134fb1e956a64666820
+    m_Address: Assets/Prefabs/Weapons/Gun/Pistol/PistolDryFire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fc14fb31c66cb414ca61098c25810de6
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagRemoveEmpty.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4da24536bb9bc13419a942899eced0ea
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagInsertFull.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e9a6469137b7c214ca4c3cb150bf2b0b
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagInsertEmpty.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2645230257bef854091f906a856fffee
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagBulletRemove.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e29e739666e262b45b0e5e4d28effd02
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralMagBulletInsert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f33a126935ee436439b34e24d44f5701
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralHeavyShotSuppressed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ecc82866ae85bd94ca9f091cae6d8aee
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralGrenadeLaunch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5f3627a99bb49314a9b4901468455ebb
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralBoltDrop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 98030717c8a94284ea047574b6a93fc1
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralEmptyAlarm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0bcebf2a88ee7974c8092e1e1d23d83c
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralDryFire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2d577524dbbaa744997c5abc8b04631d
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralChunkyRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3ee776e4e47e18c4cb5fd0e37b8ee262
+    m_Address: Assets/Prefabs/Weapons/Gun/General/GeneralBoltRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 82760c9bcac7da04390d683ee6b93c6d
+    m_Address: Assets/Prefabs/Weapons/Gun/Shotgun/ShotgunRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a2a73f148f4a5e64dbf33e7822a7ef4e
+    m_Address: Assets/Prefabs/Weapons/Gun/Shotgun/ShotgunShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3bc16ec53fe28ed41a838e4de46fb60b
+    m_Address: Assets/Prefabs/Weapons/Gun/Shotgun/ShotgunShotAlt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f49fec64c1772c1459206c4f1483d60f
+    m_Address: Assets/Prefabs/Weapons/Gun/Rifle/RifleBoltIn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1d33f561c864ef54ca82ade225ab5b56
+    m_Address: Assets/Prefabs/Weapons/Gun/Rifle/RifleBoltOut.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8f6a9a010c259d449b3da3eabc72d303
+    m_Address: Assets/Prefabs/Weapons/Gun/Rifle/RifleShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4f70f58a57ca4a442b8af597c2440cff
+    m_Address: Assets/Prefabs/Weapons/Gun/SMG/SMGRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3aa6699b3630d5046bac4b2d26179d23
+    m_Address: Assets/Prefabs/Weapons/Gun/SMG/SMGShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ba929ac85e21188409e5af7e4d567531
+    m_Address: Assets/Prefabs/Weapons/Gun/SMG/SMGShotAlt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d5d1627baedfa8144a94f9a4dbf3a85a
+    m_Address: Assets/Prefabs/Weapons/Gun/SMG/SMGShotSuppressed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 691b7fe9e3a75b24e9671b73f45db5f4
+    m_Address: Assets/Prefabs/Weapons/Gun/Sniper/SniperMagInsert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 315ccc5c5134fc345aa521d527818a46
+    m_Address: Assets/Prefabs/Weapons/Gun/Sniper/SniperRack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7f16e6ed522671e4fb0bd3e15a362e7f
+    m_Address: Assets/Prefabs/Weapons/Gun/Sniper/SniperShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 67498b08406ff0e42bbcabdc3614bccd
+    m_Address: Assets/Prefabs/Weapons/ResonatorBlast.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 566a238436b1d554ab8deeac31a46d3c
+    m_Address: Assets/Prefabs/Weapons/ResonatorFire.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d5926706010e17949b06ee4a19bca5b7
+    m_Address: Assets/Prefabs/Weapons/Emitter2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8d82b32d5ae17a54b9547635694b4f01
+    m_Address: Assets/Prefabs/Weapons/Emitter1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d1dee50a25d131b4d8a34c418c3afda3
+    m_Address: Assets/Prefabs/Weapons/KineticReload.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 30f0b318962c405418aee76b781bf11f
+    m_Address: Assets/Prefabs/Weapons/KineticShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 34234166629869d4192096b57344bcfd
+    m_Address: Assets/Prefabs/Weapons/Gun/SyringeShot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 49ec92c95ce0385489ffd0567c3cc815
+    m_Address: Assets/Prefabs/Effects/WoodHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fad0ff97a54aff74cb3edf37d049e165
+    m_Address: Assets/Prefabs/Weapons/BatonExtend.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1b85f656e4aa52b4392ba0a87e21a754
+    m_Address: Assets/Prefabs/Effects/GenHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 164234783973a5f40b98d5b8b7823980
+    m_Address: Assets/Prefabs/Effects/AttackBlob.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0af12596fb691b340b770fc057dbb5f4
+    m_Address: Assets/Prefabs/Effects/ServiceBell.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a4d42454e72d3f14f8c4a279fcc11658
+    m_Address: Assets/Prefabs/Items/DrillHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0bc66770f6460654e86f66c6af10d0d5
+    m_Address: Assets/Prefabs/Items/DrillUse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3c36e7df9658eba418a8264e502a5ef1
+    m_Address: Assets/Prefabs/Items/ChangeDrill.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 901d8ff27c6f304449ae027bb4d132cd
+    m_Address: Assets/Prefabs/Items/JawsPry.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 10c6a42a238580448836729a6c121712
+    m_Address: Assets/Prefabs/Items/JawsCut.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cd4d403f27a0439408ec695fe193547d
+    m_Address: Assets/Prefabs/Items/ChangeJaws.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 85011587a72b5124c9fb0556492a2718
+    m_Address: Assets/Prefabs/Magic/TeleportAppear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6758054f85d5e6f4096a09615ebcbf69
+    m_Address: Assets/Prefabs/Magic/TeleportDisappear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1aad8eb93b836174fa757b0806abd46e
+    m_Address: Assets/Prefabs/Magic/SummonGuns.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b4592d5bdb254e04b968816f165e73f4
+    m_Address: Assets/Prefabs/Magic/SummonItemsGeneric.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4976b755fe392cf4c898e2811c0cfeb3
+    m_Address: Assets/Prefabs/Magic/Blind.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a7fd06aea1457974eac2d3939223d0c1
+    m_Address: Assets/Prefabs/Weapons/IonRifle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4e720e57223314b49807b476bf47f7df
+    m_Address: Assets/Prefabs/Machines/GeneratorEnd.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 66b2ae9c58655a54e85531ea4c7f55e9
+    m_Address: Assets/Prefabs/Machines/GeneratorRun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1ab3924e0c41680429c382bc3f8989c4
+    m_Address: Assets/Prefabs/Effects/TrashDunk/TrashDunk1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 72afd9daf6d6cb2499b8ba5bc033b10f
+    m_Address: Assets/Prefabs/Effects/TrashDunk/TrashDunk2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6ff21de943137bf4ebdf20321c41286c
+    m_Address: Assets/Prefabs/Effects/TrashDunk/TrashDunk3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d15fa824e29845146b5eccc989d7f7d3
+    m_Address: Assets/Prefabs/Effects/TrashDunk/DunkMiss.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d936d8309d5b8d34e822d0535b006486
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/Ling_alert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f49795c9817cbaa41a824f9d577e7ad2
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/Ops.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: eab07e9e3b7b8b440b9b0d130bd67d05
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/Tatoralert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c45cdd85ee92890478c9108aa35f8447
+    m_Address: Assets/Prefabs/Magic/Blink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 235400cb0c5f1434399137ff83c9f4af
+    m_Address: Assets/Prefabs/Magic/Fireball.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c62006f45c963e34986c3723c54c78c8
+    m_Address: Assets/Prefabs/Magic/ForceWall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 55bc860615799994c83ea29863dbfc92
+    m_Address: Assets/Prefabs/Effects/SuperMatter.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 26ebb37e819db2f4db6aa950fcdc8659
+    m_Address: Assets/Prefabs/Machines/SuperMatter/SuperMatterDelamLoop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 491ffc6efd271a448a1968ba47308354
+    m_Address: Assets/Prefabs/Machines/SuperMatter/SuperMatterNormalLoop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 55d8872cc838d564c962829b01dca4fb
+    m_Address: Assets/Prefabs/Machines/SuperMatter/SuperMatterOther.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 324e6005528780f41932bbcc72e443f0
+    m_Address: Assets/Prefabs/Machines/TerminalAlert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b61a638a5be9c4740bf1c94b172c33b7
+    m_Address: Assets/Prefabs/Machines/SuperMatter/EngineAlertTwo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0b2a7463bd8b85746828312a53ba5989
+    m_Address: Assets/Prefabs/Machines/SuperMatter/EngineAlertOne.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3dc9ec371de10ad459ba52006825433a
+    m_Address: Assets/Prefabs/Machines/BlobAlarm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e3293a4ef69de0b4e8406a1fc6014f10
+    m_Address: Assets/Prefabs/Machines/Closet/closet_open.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cf364443e69d0b34cb2bb6f935d26b08
+    m_Address: Assets/Prefabs/Machines/Closet/closet_close.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9a2961993bc219343b621c9906a57bb8
+    m_Address: Assets/Prefabs/Machines/Crate/crate_open.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 819ff10c1118b5048a91fddd65a0e9eb
+    m_Address: Assets/Prefabs/Machines/Crate/crate_close.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fab582363ff3d7c478a69bc0da678df2
+    m_Address: Assets/Prefabs/AI/captain_announcement.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6735490b9542cf946acfe77ea47d63a8
+    m_Address: Assets/Prefabs/AI/centcomm_announcement.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ce304fb3c7989714c9feb4048ad2513c
+    m_Address: Assets/Prefabs/Effects/Snap.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 67072c6b497644c4cb27195a65fba383
+    m_Address: Assets/Prefabs/Items/Pshoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 57c0b9980fc5f1f4db4f7457a311c0a5
+    m_Address: Assets/Prefabs/Weapons/SonicJackhammer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a35a5327684febd4a9bb76a5dd366983
+    m_Address: Assets/Prefabs/Weapons/Drill.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 028cc5455f82924448915d968bcac626
+    m_Address: Assets/Prefabs/Weapons/CircularSawHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d0004fd6f104b934580d7d79f6baa801
+    m_Address: Assets/Prefabs/Effects/Empulse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1b9e7ec9cf0101a4aaa279eb882f1325
+    m_Address: Assets/Prefabs/footsteps/Shuffle/Craw1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 64aa200b335f1a549b750949a45b9d9f
+    m_Address: Assets/Prefabs/AmbientTracks/AmbiGen4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 54e3731e132f35c4c9471a741ae25376
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Synthetic_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 268152103487ac94aac44e366c251201
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Service_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7f29a13d59c31584ea628ba653abf56d
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/special roles/Deathsquad_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ed065f3534f5ccc4b8d9482a82efe600
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/special roles/ERT_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 658890d5f714c2f49a2c32b68fce532d
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Cargo_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8da9c309522101b458b327047f282f49
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Command_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 11b8e17fd0bb53747819e606e6a5920e
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Engineering_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 26fa0ac9484360848b8d6beb0506c735
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Medical_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 26aa6456c8eb1e4439f1bc61163d4d2d
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Research_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 70b9ad02013ca504eabf8b0dd35ff9c7
+    m_Address: Assets/Prefabs/AmbientTracks/SpawnSounds/departments/Security_Spawn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b85c1d043a63bd84bbf96ac0105a5e99
+    m_Address: Assets/Prefabs/UI/Select.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 62c173b3a5f115043b13618e1fede7ab
+    m_Address: Assets/Prefabs/UI/Bloop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 243eb06f0f7427d4d829c2b278809316
+    m_Address: Assets/Prefabs/UI/Blip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a4a7d461411a720498576a7df73afbb7
+    m_Address: Assets/Prefabs/Doors/DoorPry.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c768bd1ffa62d254db99ac76a8927d3b
+    m_Address: Assets/Prefabs/Machines/Juicer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3a37db1cd6dcedb47bf25befc8e9e407
+    m_Address: Assets/Prefabs/Doors/AirlockBoltDown.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 600ae61d42ce56b4b8ba16c2273f0869
+    m_Address: Assets/Prefabs/Doors/AirlockBoltUp.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e8b73091eb97a7f4e8c7c7f4a0e8479b
+    m_Address: Assets/Prefabs/Effects/WeldFinish.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9bff9745c8aaab04b84bd9dac23bcc80
+    m_Address: Assets/Prefabs/Effects/Cablecuff.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bc07b13fd4f64374587df323b2729083
+    m_Address: Assets/Prefabs/Effects/Bang.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 53a73c3262987744690dcf2bf5a1652e
+    m_Address: Assets/Prefabs/Magic/UnlimtedPwah.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 29d7ad7aeaa6dcb4a9bd20c18431db96
+    m_Address: Assets/Prefabs/Magic/FleshToStone.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b822bf9795e05744f8f8c95a93188b74
+    m_Address: Assets/Prefabs/Effects/PageTurn3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 06a74f2c55835a44e8901e6ccba2444c
+    m_Address: Assets/Prefabs/Effects/PageTurn2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bcb77408a7db1df4fbd3dc6dcba4f6ec
+    m_Address: Assets/Prefabs/Effects/PageTurn1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 55a2cb36f88f1da4ea8ee27fd08fce32
+    m_Address: Assets/Prefabs/Magic/SummonMagic.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c426903ed0854d5468da915c6ab3aa9a
+    m_Address: Assets/Prefabs/Magic/Summon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cecb5a789809d174fa8f4d761a9d5688
+    m_Address: Assets/Prefabs/Machines/ClickOnOff.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 466aa3e82ffc0bb4ca40e923088467d2
+    m_Address: Assets/Prefabs/Machines/GrillSizzle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 038fb3bf4c099a440a22a21818e10d7f
+    m_Address: Assets/Prefabs/Machines/Oven/OvenOpen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6414679774157193392, guid: 038fb3bf4c099a440a22a21818e10d7f, type: 3}
+    m_TargetAsset: {fileID: 6414679774157193392, guid: 038fb3bf4c099a440a22a21818e10d7f, type: 3}
+  - m_GUID: 64a4f531e3d668b4ca669c673435efa1
+    m_Address: Assets/Prefabs/Machines/Oven/OvenClose.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6414679774157193392, guid: 64a4f531e3d668b4ca669c673435efa1, type: 3}
+    m_TargetAsset: {fileID: 6414679774157193392, guid: 64a4f531e3d668b4ca669c673435efa1, type: 3}
+  - m_GUID: 1a0688163d61e4d46a72cd4cc23b87f1
+    m_Address: Assets/Prefabs/Machines/Oven/OvenLoop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6414679774157193392, guid: 1a0688163d61e4d46a72cd4cc23b87f1, type: 3}
+    m_TargetAsset: {fileID: 6414679774157193392, guid: 1a0688163d61e4d46a72cd4cc23b87f1, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f95b0aa2a9e50074595f5a4dc19fbb1a, type: 2}
   m_SchemaSet:

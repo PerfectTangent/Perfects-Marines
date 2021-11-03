@@ -1,28 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Systems.Atmospherics;
+using Managers;
+using ScriptableObjects.Atmospherics;
+using Strings;
 using UnityEngine;
 
 namespace InGameEvents
 {
 	public class EventOxyToPlasma : EventScriptBase
 	{
+		private GasReactions? currentReaction;
+
 		public override void OnEventStart()
 		{
+			//Dont add another reaction if one is already going on
+			if(currentReaction != null) return;
+
 			if (AnnounceEvent)
 			{
 				var text = "It appears the chemistry of the universe has been broken, damn those science nerds.";
 
-				CentComm.MakeAnnouncement(CentComm.CentCommAnnounceTemplate, text, CentComm.UpdateSound.alert);
+				CentComm.MakeAnnouncement(ChatTemplates.CentcomAnnounce, text, CentComm.UpdateSound.Alert);
 			}
 
 			if (FakeEvent) return;
 
-			new GasReactions(
+			currentReaction = new GasReactions(
 
 				reaction: new OxyToPlasma(),
 
-				gasReactionData: new Dictionary<Gas, GasReactionData>()
+				gasReactionData: new Dictionary<GasSO, GasReactionData>()
 				{
 					{
 						Gas.Oxygen,
@@ -44,6 +52,15 @@ namespace InGameEvents
 
 			base.OnEventStart();
 		}
+
+		public override void OnEventEnd()
+		{
+			if (currentReaction != null)
+			{
+				GasReactions.RemoveReaction(currentReaction.Value);
+				currentReaction = null;
+			}
+		}
 	}
 
 	public class OxyToPlasma : Reaction
@@ -53,11 +70,12 @@ namespace InGameEvents
 			throw new System.NotImplementedException();
 		}
 
-		public void React(GasMix gasMix, Vector3 tilePos)
+		public void React(GasMix gasMix, MetaDataNode node)
 		{
-			gasMix.AddGas(Gas.Plasma, 1f);
+			var oxyMoles = gasMix.GetMoles(Gas.Oxygen);
 
-			gasMix.RemoveGas(Gas.Oxygen, 1f);
+			gasMix.AddGas(Gas.Plasma, oxyMoles);
+			gasMix.RemoveGas(Gas.Oxygen, oxyMoles);
 		}
 	}
 }

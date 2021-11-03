@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Player.Movement;
 using UnityEngine;
 
 namespace Objects
@@ -14,7 +15,18 @@ namespace Objects
 		private OccupiableDirectionalSprite occupiableDirectionalSprite;
 		private Integrity integrity;
 
+		/// <summary>
+		/// The time that a mob will spend trying to unbuckle himself from a chair when he is handcuffed.
+		/// </summary>
+		[SerializeField]
+		private float resistTime = 60;
+		public float ResistTime => resistTime;
+
 		public bool forceLayingDown;
+
+		[SerializeField]
+		[Tooltip("Whether the object you can trying to buckle to is impassable, therefore should bypass the push check")]
+		private bool allowImpassable;
 
 		private void Start()
 		{
@@ -57,7 +69,7 @@ namespace Objects
 			var registerPlayer = playerMove.GetComponent<RegisterPlayer>();
 			// Determine if a push into the tile would be necessary or insufficient.
 
-			if (IsPushEnough(interaction, side, registerPlayer.PlayerScript, out _, out _) == false) return false;
+			if (allowImpassable == false && IsPushEnough(interaction, side, registerPlayer.PlayerScript, out _, out _) == false) return false;
 
 			//if there are any restrained players already here, we can't restrain another one here
 			if (MatrixManager.GetAt<PlayerMove>(interaction.TargetObject, side)
@@ -91,7 +103,7 @@ namespace Objects
 
 			if (sameSquare == false)
 			{
-				playerScript.pushPull.QueuePush(dir);
+				playerScript.pushPull.QueuePush(dir, forcePush: allowImpassable);
 			}
 
 			BucklePlayer(playerScript);
@@ -102,7 +114,7 @@ namespace Objects
 		/// </summary>
 		public void BucklePlayer(PlayerScript playerScript)
 		{
-			SoundManager.PlayNetworkedAtPos(SingletonSOSounds.Instance.Click01, gameObject.WorldPosServer(), sourceObj: gameObject);
+			SoundManager.PlayNetworkedAtPos(CommonSounds.Instance.Click01, gameObject.WorldPosServer(), sourceObj: gameObject);
 
 			playerScript.playerMove.ServerBuckle(gameObject, OnUnbuckle);
 
@@ -125,7 +137,7 @@ namespace Objects
 
 		public void ServerPerformInteraction(HandApply interaction)
 		{
-			SoundManager.PlayNetworkedAtPos(SingletonSOSounds.Instance.Click01, interaction.TargetObject.WorldPosServer(), sourceObj: gameObject);
+			SoundManager.PlayNetworkedAtPos(CommonSounds.Instance.Click01, interaction.TargetObject.WorldPosServer(), sourceObj: gameObject);
 
 			Unbuckle();
 		}

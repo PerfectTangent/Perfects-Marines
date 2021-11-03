@@ -1,90 +1,77 @@
 ﻿using System;
-using System.Collections;
-using UnityEngine;
+using Systems.ElectricalArcs;
 using Mirror;
+using UnityEngine;
 
-namespace Systems.ElectricalArcs
+namespace Messages.Server
 {
 	/// <summary>
 	/// Sends a message to all clients, informing them to create an electrical arc with the given settings.
 	/// </summary>
-	public class ElectricalArcMessage : ServerMessage
+	public class ElectricalArcMessage : ServerMessage<ElectricalArcMessage.NetMessage>
 	{
-		public Guid prefabAssetID;
-		public GameObject startObject;
-		public GameObject endObject;
-		public Vector3 startPosition;
-		public Vector3 endPosition;
-		public int arcCount;
-		public float duration;
+		public struct NetMessage : NetworkMessage
+		{
+			public Guid prefabAssetID;
+			public GameObject startObject;
+			public GameObject endObject;
+			public Vector3 startPosition;
+			public Vector3 endPosition;
+			public int arcCount;
+			public float duration;
+			public bool reachCheck;
+			public bool addRandomness;
+		}
 
 		// To be run on client
-		public override void Process()
+		public override void Process(NetMessage msg)
 		{
 			if (CustomNetworkManager.IsServer) return; // Run extra logic for server, handled in ElectricalArc.
+			if (MatrixManager.IsInitialized == false) return;
+			if (PlayerManager.LocalPlayer == null) return;
 
-			if (!MatrixManager.IsInitialized) return;
-
-			if (CustomNetworkManager.IsServer == false && PlayerManager.LocalPlayer == null) return;
-
-			if (ClientScene.prefabs.TryGetValue(prefabAssetID, out var prefab))
+			if (ClientScene.prefabs.TryGetValue(msg.prefabAssetID, out var prefab) == false)
 			{
-				var settings = new ElectricalArcSettings(prefab, startObject, endObject, startPosition, endPosition, arcCount, duration);
-				new ElectricalArc().CreateArcs(settings);
+				Logger.LogError(
+						$"Couldn't spawn {nameof(ElectricalArc)}; client doesn't know about this {nameof(msg.prefabAssetID)}: {msg.prefabAssetID}.",
+						Category.Firearms);
+				return;
 			}
+
+			var settings = new ElectricalArcSettings(prefab, msg.startObject, msg.endObject,
+				msg.startPosition, msg.endPosition, msg.arcCount,
+				msg.duration, msg.reachCheck, msg.addRandomness);
+			new ElectricalArc().CreateArcs(settings);
 		}
 
 		/// <summary>
 		/// Sends a message to all clients, informing them to create an electrical arc with the given settings.
 		/// </summary>
-		public static ElectricalArcMessage SendToAll(ElectricalArcSettings arcSettings)
+		public static NetMessage SendToAll(ElectricalArcSettings arcSettings)
 		{
-			if (arcSettings.arcEffectPrefab.TryGetComponent<NetworkIdentity>(out var identity))
+			if (arcSettings.arcEffectPrefab.TryGetComponent<NetworkIdentity>(out var identity) == false)
 			{
-				var msg = new ElectricalArcMessage
-				{
-					prefabAssetID = identity.assetId,
-					startObject = arcSettings.startObject,
-					endObject = arcSettings.endObject,
-					startPosition = arcSettings.startPosition,
-					endPosition = arcSettings.endPosition,
-					arcCount = arcSettings.arcCount,
-					duration = arcSettings.duration,
-				};
-				msg.SendToAll();
-				return msg;
-			}
-			else
-			{
-				Logger.LogError($"No {nameof(NetworkIdentity)} found on {arcSettings.arcEffectPrefab}!", Category.NetMessage);
+				Logger.LogError(
+						$"No {nameof(NetworkIdentity)} found on {arcSettings.arcEffectPrefab}!",
+						Category.Electrical);
 				return default;
 			}
-		}
 
-		public override void Deserialize(NetworkReader reader)
-		{
-			base.Deserialize(reader);
+			var msg = new NetMessage
+			{
+				prefabAssetID = identity.assetId,
+				startObject = arcSettings.startObject,
+				endObject = arcSettings.endObject,
+				startPosition = arcSettings.startPosition,
+				endPosition = arcSettings.endPosition,
+				arcCount = arcSettings.arcCount,
+				duration = arcSettings.duration,
+				reachCheck = arcSettings.reachCheck,
+				addRandomness = arcSettings.addRandomness
+			};
 
-			prefabAssetID = reader.ReadGuid();
-			startObject = reader.ReadGameObject();
-			endObject = reader.ReadGameObject();
-			startPosition = reader.ReadVector3();
-			endPosition = reader.ReadVector3();
-			arcCount = reader.ReadInt32();
-			duration = reader.ReadSingle();
-		}
-
-		public override void Serialize(NetworkWriter writer)
-		{
-			base.Serialize(writer);
-
-			writer.WriteGuid(prefabAssetID);
-			writer.WriteGameObject(startObject);
-			writer.WriteGameObject(endObject);
-			writer.WriteVector3(startPosition);
-			writer.WriteVector3(endPosition);
-			writer.WriteInt32(arcCount);
-			writer.WriteSingle(duration);
+			SendToAll(msg);
+			return msg;
 		}
 	}
 }

@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 using ScriptableObjects;
+using Strings;
 
 namespace InGameEvents
 {
@@ -24,7 +26,7 @@ namespace InGameEvents
 		{
 			if (gunList == null || gunList.GameObjectPrefabs.Length == 0)
 			{
-				Logger.LogError($"No guns in gun list! Cannot spawn guns for {nameof(EventGiveGuns)}.");
+				Logger.LogError($"No guns in gun list! Cannot spawn guns for {nameof(EventGiveGuns)}.", Category.Event);
 				return;
 			}
 
@@ -46,7 +48,7 @@ namespace InGameEvents
 			GameObject gun = Spawn.ServerPrefab(gunList.GetRandom(),
 						player.Script.WorldPos, player.Script.transform.parent, player.Script.transform.rotation).GameObject;
 
-			ItemSlot slot = player.Script.ItemStorage.GetBestHandOrSlotFor(gun);
+			ItemSlot slot = player.Script.DynamicItemStorage.GetBestHandOrSlotFor(gun);
 			if (slot != null && slot.IsEmpty)
 			{
 				Inventory.ServerAdd(gun, slot);
@@ -59,7 +61,7 @@ namespace InGameEvents
 			{
 				var text = "Incoming Report:\nA weapons convoy got caught in a blue space anomaly near your location. ";
 
-				CentComm.MakeAnnouncement(CentComm.CentCommAnnounceTemplate, text, CentComm.UpdateSound.alert);
+				CentComm.MakeAnnouncement(ChatTemplates.CentcomAnnounce, text, CentComm.UpdateSound.Alert);
 			}
 		}
 	}

@@ -46,12 +46,12 @@ namespace Items.Magical
 		{
 			if (GhostRoleManager.Instance.serverAvailableRoles.ContainsKey(createdRoleKey))
 			{
-				Logger.LogWarning("A wizard apprentice ghost role already exists.");
+				Logger.LogWarning("A wizard apprentice ghost role already exists.", Category.Spells);
 				return;
 			}
 			else if (WasUsed)
 			{
-				Logger.LogWarning("This contract has already been used. Cannot spawn another apprentice.");
+				Logger.LogWarning("This contract has already been used. Cannot spawn another apprentice.", Category.Spells);
 				return;
 			}
 
@@ -88,7 +88,7 @@ namespace Items.Magical
 					foreach (GameObject prefab in spellArtifact.Artifacts)
 					{
 						GameObject item = Spawn.ServerPrefab(prefab, player.Script.WorldPos).GameObject;
-						player.Script.ItemStorage.GetBestHandOrSlotFor(item);
+						player.Script.DynamicItemStorage.GetBestHandOrSlotFor(item);
 					}
 				}
 			}

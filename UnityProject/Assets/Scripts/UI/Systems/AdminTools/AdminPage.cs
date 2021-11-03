@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DatabaseAPI;
+using Messages.Client.Admin;
 using UnityEngine;
 
 namespace AdminTools
@@ -21,7 +22,7 @@ namespace AdminTools
 
 		public void RefreshPage()
 		{
-			RequestAdminPageRefresh.Send(ServerData.UserID, PlayerList.Instance.AdminToken);
+			RequestAdminPageRefresh.Send();
 		}
 
 		public virtual void OnPageRefresh(AdminPageRefreshData adminPageData)

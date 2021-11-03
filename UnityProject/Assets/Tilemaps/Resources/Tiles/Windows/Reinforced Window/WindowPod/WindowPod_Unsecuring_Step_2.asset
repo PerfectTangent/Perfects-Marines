@@ -16,16 +16,26 @@ MonoBehaviour:
   LayerType: 1
   TileType: 2
   RequiredTiles: []
-  floorTileType: 0
+  floorTileSounds: {fileID: 0}
+  CanSoundOverride: 0
   atmosPassable: 0
   isSealed: 0
   SpawnWithNoAir: 0
   passable: 0
   mineable: 0
+  miningTime: 5
+  constructable: 0
+  RadiationPassability: 1
+  ThermalConductivity: 0.05
+  HeatCapacity: 10000
+  doesReflectBullet: 0
+  indestructible: 0
+  ExplosionImpassable: 0
   passableException:
     m_keys: 
     m_values: 
   maxHealth: 150
+  damageDeflection: 0
   armor:
     Melee: 90
     Bullet: 0
@@ -33,10 +43,11 @@ MonoBehaviour:
     Energy: 0
     Bomb: 50
     Rad: 100
-    Fire: 99
+    Fire: 80
     Acid: 100
     Magic: 0
     Bio: 100
+    DismembermentProtectionChance: 0
   tileInteractions:
   - {fileID: 11400000, guid: 65936f6bc3f7c0e4cb30479ee1e1803d, type: 2}
   - {fileID: 11400000, guid: d94475462acd3824e95d5df80d7af60b, type: 2}
@@ -44,7 +55,17 @@ MonoBehaviour:
   spawnOnDeconstruct: {fileID: 0}
   spawnAmountOnDeconstruct: 0
   lootOnDespawn: {fileID: 11400000, guid: a7650f85d1f8f0545a4d7da9d6435cb2, type: 2}
-  soundOnHit: GlassHit
+  toTileWhenDestroyed: {fileID: 0}
+  spawnOnDestroy: {fileID: 0}
+  damageOverlayList: {fileID: 11400000, guid: a9338e07e1ad66d48bf05e214ab1f02e, type: 2}
+  soundOnHit:
+    SetLoadSetting: 0
+    AssetAddress: Assets/Prefabs/Effects/GlassHit.prefab
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  SoundOnDestroy: []
   connectCategory: 1
   connectType: 1
   spriteSheet:

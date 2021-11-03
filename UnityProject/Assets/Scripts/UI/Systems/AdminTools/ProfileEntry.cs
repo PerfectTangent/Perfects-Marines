@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using DatabaseAPI;
 using AdminCommands;
+
 
 namespace AdminTools
 {
@@ -12,7 +12,7 @@ namespace AdminTools
 
 		public void DeleteButton()
 		{
-			ServerCommandVersionTwoMessageClient.Send(ServerData.UserID, PlayerList.Instance.AdminToken, fileName.text, "CmdDeleteProfile");
+			AdminCommandsManager.Instance.CmdDeleteProfile(fileName.text);
 		}
 
 	}

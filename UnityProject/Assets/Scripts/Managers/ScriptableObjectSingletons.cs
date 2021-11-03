@@ -1,8 +1,12 @@
+using Systems.CraftingV2;
+using HealthV2;
 using Items.PDA;
 using UnityEngine;
-using Machines;
-using Pipes;
 using ScriptableObjects;
+using ScriptableObjects.Atmospherics;
+using Machines;
+using Objects.Atmospherics;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// In order for the SingletonScriptableObject to work, the singleton instance must
@@ -17,9 +21,7 @@ public class ScriptableObjectSingletons : MonoBehaviour
 	public DepartmentList DepartmentList;
 	public OccupationList OccupationList;
 	public BestSlotForTrait BestSlotForTrait;
-	public PlayerCustomisationDataSOs PlayerCustomisationDataSOs;
 	public PlayerTextureDataSOs PlayerTextureDataSOs;
-	public DefaultPlantDataSOs DefaultPlantDataSOs;
 	public CommonPrefabs CommonPrefabs;
 	public CommonCooldowns CommonCooldowns;
 	public UIActionSOSingleton UIActionSOSingleton;
@@ -33,5 +35,11 @@ public class ScriptableObjectSingletons : MonoBehaviour
 	public PipeTileSingleton PipeTileSingleton;
 	public AlcoholicDrinksSOScript AlcoholicDrinksSOScript;
 	public SpriteCatalogue SpriteCatalogue;
-	public SingletonSOSounds SingletonSOSounds;
+	[FormerlySerializedAs("SingletonSOSounds")] public CommonSounds commonSounds;
+	public RaceSOSingleton RaceSOSingleton;
+	public GAS2ReagentSingleton GAS2ReagentSingleton;
+	public SurgeryProcedureBaseSingleton SurgeryProcedureBaseSingleton;
+	public GasesSingleton GasesSingleton;
+	public GasMixesSingleton GasMixesSingleton;
+	public CraftingRecipeSingleton CraftingRecipeSingleton;
 }

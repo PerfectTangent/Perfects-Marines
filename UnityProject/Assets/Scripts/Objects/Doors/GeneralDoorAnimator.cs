@@ -21,7 +21,7 @@ namespace Doors
 		[Tooltip("A list of frame numbers for the open/close animation, not including the openFrame and closeFrame")]
 		public int[] animFrames;
 
-		public int animLength;
+		private int animLength;
 		public int closeFrame;
 		public int deniedFrame;
 		public int openFrame;
@@ -51,19 +51,6 @@ namespace Doors
 				if (cn.Contains("DOORBASE")) doorbase = child.gameObject.GetComponent<SpriteRenderer>();
 			}
 			tileChangeManager = GetComponentInParent<TileChangeManager>();
-		}
-
-		public void Start()
-		{
-			//Call doorController after awake so it has a chance to init
-			if (doorController.IsClosed)
-			{
-				doorbase.sprite = sprites[closeFrame + (int)direction];
-			}
-			else
-			{
-				doorbase.sprite = sprites[openFrame + (int)direction];
-			}
 		}
 
 		public override void OpenDoor(bool skipAnimation)
@@ -97,7 +84,7 @@ namespace Doors
 			}
 
 			doorController.isPerformingAction = true;
-			SoundManager.PlayAtPosition(SingletonSOSounds.Instance.AccessDenied, transform.position, gameObject);
+			_ = SoundManager.PlayAtPosition(CommonSounds.Instance.AccessDenied, transform.position, gameObject);
 			StartCoroutine(PlayDeniedAnim());
 		}
 

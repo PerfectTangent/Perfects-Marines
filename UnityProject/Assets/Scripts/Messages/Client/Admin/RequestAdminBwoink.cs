@@ -1,64 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using AdminTools;
-using Messages.Client;
-using Mirror;
+﻿using Mirror;
+using Messages.Server.AdminTools;
 
-public class RequestAdminBwoink : ClientMessage
+
+namespace Messages.Client.Admin
 {
-	public string Userid;
-	public string AdminToken;
-	public string UserToBwoink;
-	public string Message;
-
-	public override void Process()
+	public class RequestAdminBwoink : ClientMessage<RequestAdminBwoink.NetMessage>
 	{
-		VerifyAdminStatus();
-	}
-
-	void VerifyAdminStatus()
-	{
-		var player = PlayerList.Instance.GetAdmin(Userid, AdminToken);
-		if (player != null)
+		public struct NetMessage : NetworkMessage
 		{
-			var recipient = PlayerList.Instance.GetAllByUserID(UserToBwoink);
-			foreach (var r in recipient)
+			public string UserToBwoink;
+			public string Message;
+		}
+
+		public override void Process(NetMessage msg)
+		{
+			VerifyAdminStatus(msg);
+		}
+
+		private void VerifyAdminStatus(NetMessage msg)
+		{
+			if (IsFromAdmin())
 			{
-				AdminBwoinkMessage.Send(r.GameObject, Userid, "<color=red>" + Message + "</color>");
-				UIManager.Instance.adminChatWindows.adminPlayerChat.ServerAddChatRecord(Message, UserToBwoink, Userid);
+				var recipient = PlayerList.Instance.GetAllByUserID(msg.UserToBwoink);
+				foreach (var r in recipient)
+				{
+					AdminBwoinkMessage.Send(r.GameObject, SentByPlayer.UserId, $"<color=red>{msg.Message}</color>");
+					UIManager.Instance.adminChatWindows.adminPlayerChat.ServerAddChatRecord(
+							msg.Message, msg.UserToBwoink, SentByPlayer.UserId);
+				}
 			}
 		}
-	}
 
-	public static RequestAdminBwoink Send(string userId, string adminToken, string userIDToBwoink, string message)
-	{
-		RequestAdminBwoink msg = new RequestAdminBwoink
+		public static NetMessage Send(string userIDToBwoink, string message)
 		{
-			Userid = userId,
-			AdminToken = adminToken,
-			UserToBwoink = userIDToBwoink,
-			Message = message
-		};
-		msg.Send();
-		return msg;
-	}
+			NetMessage msg = new NetMessage
+			{
+				UserToBwoink = userIDToBwoink,
+				Message = message
+			};
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Userid = reader.ReadString();
-		AdminToken = reader.ReadString();
-		UserToBwoink = reader.ReadString();
-		Message = reader.ReadString();
-	}
-
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteString(Userid);
-		writer.WriteString(AdminToken);
-		writer.WriteString(UserToBwoink);
-		writer.WriteString(Message);
+			Send(msg);
+			return msg;
+		}
 	}
 }

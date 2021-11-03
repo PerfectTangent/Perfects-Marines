@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using DatabaseAPI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Items;
+using Messages.Client.DevSpawner;
+
 
 /// <summary>
 /// Main logic for the UI for cloning objects
@@ -38,6 +39,7 @@ public class GUI_DevCloner : MonoBehaviour
 	private EscapeKeyTarget escapeKeyTarget;
 
 	private LightingSystem lightingSystem;
+	private bool cachedLightingState;
 
 	void Awake()
 	{
@@ -94,6 +96,7 @@ public class GUI_DevCloner : MonoBehaviour
 		{
 			statusText.text = "Click to select object to clone (ESC to Cancel)";
 			UIManager.IsMouseInteractionDisabled = true;
+			cachedLightingState = lightingSystem.enabled;
 			lightingSystem.enabled = false;
 
 		}
@@ -106,13 +109,14 @@ public class GUI_DevCloner : MonoBehaviour
 			SpriteRenderer cursorRenderer = cursorObject.GetComponent<SpriteRenderer>();
 			cursorRenderer.sprite = toClone.GetComponentInChildren<SpriteRenderer>().sprite;
 			CheckAndApplyPalette(ref cursorRenderer);
+			cachedLightingState = lightingSystem.enabled;
 			lightingSystem.enabled = false;
 		}
 		else if (newState == State.INACTIVE)
 		{
 			statusText.text = "Click to select object to clone (ESC to Cancel)";
 			UIManager.IsMouseInteractionDisabled = false;
-			lightingSystem.enabled = true;
+			lightingSystem.enabled = cachedLightingState;
 			gameObject.SetActive(false);
 		}
 
@@ -169,7 +173,7 @@ public class GUI_DevCloner : MonoBehaviour
 						                        " did not match one of our existing prefabs " +
 						                        "therefore cannot be cloned (because we wouldn't know which prefab to instantiate). " +
 						                        "Please attach this component to the object and specify the prefab" +
-						                        " to allow it to be cloned.", Category.ItemSpawn, nonPooled.name);
+						                        " to allow it to be cloned.", Category.Admin, nonPooled.name);
 					}
 				}
 
@@ -185,11 +189,10 @@ public class GUI_DevCloner : MonoBehaviour
 		}
 		else if (state == State.DRAWING)
 		{
-			cursorObject.transform.position = Camera.main.ScreenToWorldPoint(CommonInput.mousePosition);
+			cursorObject.transform.position = MouseUtils.MouseToWorldPos();
 			if (CommonInput.GetMouseButtonDown(0))
 			{
 				Vector3Int position = cursorObject.transform.position.RoundToInt();
-				position.z = 0;
 				if (MatrixManager.IsPassableAtAllMatricesOneTile(position, false))
 				{
 					if (CustomNetworkManager.IsServer)
@@ -198,7 +201,7 @@ public class GUI_DevCloner : MonoBehaviour
 					}
 					else
 					{
-						DevCloneMessage.Send(toClone, (Vector3) position, ServerData.UserID, PlayerList.Instance.AdminToken);
+						DevCloneMessage.Send(toClone, (Vector3) position);
 					}
 				}
 			}

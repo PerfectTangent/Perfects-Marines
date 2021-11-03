@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Chemistry.Components;
+using Items;
 
 namespace Objects.Kitchen
 {
@@ -43,7 +44,7 @@ namespace Objects.Kitchen
 				{
 					grinder.SetServerStackAmount(count);
 					grinder.ServerSetOutputMeal(meal.name);
-					Despawn.ServerSingle(interaction.HandObject);
+					_ = Despawn.ServerSingle(interaction.HandObject);
 					Chat.AddExamineMsgFromServer(interaction.Performer, $"You grind the {attr.ArticleName}.");
 					GetComponent<AIOGrinder>().GrindFood();
 				}

@@ -78,7 +78,7 @@ public class StandardProgressAction : IProgressAction
 		{
 			Logger.LogError("Attempted to reuse a StandardProgressAction that has already been used." +
 			                      " Please create a new StandardProgressAction each time you start a new action.",
-				Category.Interaction);
+				Category.ProgressAction);
 			return false;
 		}
 		startProgressInfo = info;
@@ -173,8 +173,8 @@ public class StandardProgressAction : IProgressAction
 			eventRegistry.Register(startProgressInfo.Target.Target.OnDespawnedServer, OnDespawned);
 		}
 		//interrupt if active hand slot changes
-		var activeSlot = playerScript.ItemStorage?.GetActiveHandSlot();
-		eventRegistry.Register(activeSlot.OnSlotContentsChangeServer, OnSlotContentsChanged);
+		var activeSlot = playerScript.DynamicItemStorage?.GetActiveHandSlot();
+		eventRegistry.Register(activeSlot?.OnSlotContentsChangeServer, OnSlotContentsChanged);
 		usedSlot = activeSlot;
 		//interrupt if cuffed
 		eventRegistry.Register(playerScript.playerMove.OnCuffChangeServer, OnCuffChange);
@@ -262,15 +262,15 @@ public class StandardProgressAction : IProgressAction
 	{
 		//note: doesn't check cross matrix situations.
 		return playerScript.playerHealth.ConsciousState == initialConsciousState &&
-		       !playerScript.playerMove.IsCuffed &&
-		       !playerScript.registerTile.IsSlippingServer &&
+		       playerScript.playerMove.IsCuffed == false &&
+		       playerScript.registerTile.IsSlippingServer == false &&
+			   playerScript.playerNetworkActions.IsRolling == false &&
 		       (progressActionConfig.AllowTurning ||
 		        playerScript.playerDirectional.CurrentDirection != initialDirection) &&
-		       !playerScript.PlayerSync.IsMoving &&
+		       playerScript.PlayerSync.IsMoving == false &&
 		       //make sure we're still in range
 		       Validations.IsInReachDistanceByPositions(playerScript.registerTile.WorldPositionServer,
 			       startProgressInfo.Target.TargetWorldPosition);
-			;
 	}
 
 	private void OnWelderOff()

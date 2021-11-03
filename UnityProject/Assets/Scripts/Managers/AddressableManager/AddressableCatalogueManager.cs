@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using DatabaseAPI;
 using Initialisation;
+using Messages.Client.Addressable;
+using Messages.Server.Addressable;
 using Mirror;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -13,7 +18,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 using UnityEngine.ResourceManagement.Util;
 
-public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
+public class AddressableCatalogueManager : MonoBehaviour, IInitialise
 {
 	//TODO
 	//Cleanup errors
@@ -46,7 +51,6 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 			LoadCatalogue(cool, false);
 			return;
 		}
-
 		LoadCatalogue(cool);
 	}
 
@@ -85,9 +89,22 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 		Instance.ToloadeCount = LoadCatalogues.Count;
 		foreach (var Catalogue in LoadCatalogues)
 		{
-			var Task = Addressables.LoadContentCatalogAsync(Catalogue);
-			await Task.Task;
-			Instance.AssetBundleDownloadDependencies(Task, RegisterComplete);
+
+			if (Catalogue.Contains("http"))
+			{
+				HttpClient client = new HttpClient();
+				string result = await client.GetStringAsync(Catalogue);
+				var Task = Addressables.LoadContentCatalogAsync(result);
+				await Task.Task;
+				Instance.AssetBundleDownloadDependencies(Task, RegisterComplete);
+			}
+			else
+			{
+				var Task = Addressables.LoadContentCatalogAsync(Catalogue);
+				await Task.Task;
+				Instance.AssetBundleDownloadDependencies(Task, RegisterComplete);
+			}
+
 		}
 	}
 
@@ -162,7 +179,7 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 
 	public IEnumerator WaitForLoad()
 	{
-		yield return WaitFor.Seconds(2f);
+		yield return WaitFor.Seconds(5f);
 		ClientRequestCatalogues.RequestCatalogue();
 	}
 
@@ -183,7 +200,7 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 		var path = Application.dataPath.Remove(Application.dataPath.IndexOf("/Assets"));
 		//path = path + "/AddressablePackingProjects/SoundAndMusic/ServerData"; //Make OS agnostic
 		path = path + "/AddressablePackingProjects";
-		Logger.Log(path);
+		//Logger.Log(path);
 		var Directories = System.IO.Directory.GetDirectories(path);
 		var FoundFiles = new List<string>();
 		foreach (var Directori in Directories)
@@ -201,7 +218,7 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 					{
 						if (FoundFile != "")
 						{
-							Logger.LogError("two catalogues present please only ensure one");
+							Logger.LogError("two catalogues present please only ensure one", Category.Addressables);
 						}
 
 						FoundFile = File;
@@ -210,7 +227,7 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 
 				if (FoundFile == "")
 				{
-					Logger.LogWarning("missing json file");
+					Logger.LogWarning("missing json file", Category.Addressables);
 				}
 				else
 				{
@@ -228,15 +245,18 @@ public class AddressableCatalogueManager : NetworkBehaviour, IInitialise
 		var pathss = Application.streamingAssetsPath + "/AddressableCatalogues";
 		var Directories = System.IO.Directory.GetDirectories(pathss);
 		var Catalogues = new List<string>();
-
 		foreach (var Directorie in Directories)
 		{
 			var newpaths = Directorie.Replace(@"\", "/");
-			var directory_info = new DirectoryInfo(newpaths);
-			var cataloguePath = newpaths + "/" + directory_info.Name + ".json";
-			if (File.Exists(cataloguePath))
+			var newDirectories = System.IO.Directory.GetFiles(newpaths);
+
+			foreach (var pathST in newDirectories)
 			{
-				Catalogues.Add(cataloguePath);
+				if (pathST.Contains(".json"))
+				{
+					Catalogues.Add(pathST);
+				}
+
 			}
 		}
 

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AddressableReferences;
+using Items;
 using Mirror;
 using UnityEngine;
 using UI.Objects.Cargo;
@@ -10,20 +12,25 @@ namespace Objects.Cargo
 {
 	public class CargoConsole : NetworkBehaviour, ICheckedInteractable<HandApply>
 	{
-		private bool correctID;
-		public bool CorrectID => correctID;
+		public bool CorrectID;
+		public bool Emagged;
 
-		private GUI_Cargo associatedTab;
+		public GUI_Cargo cargoGUI;
 
 		[SerializeField]
 		private List<JobType> allowedTypes = null;
 
+		[SerializeField] private AddressableAudioSource creditArrivalSound;
+
 		public bool WillInteract(HandApply interaction, NetworkSide side)
 		{
-			return DefaultWillInteract.Default(interaction, side) &&
-				   Validations.HasComponent<IDCard>(interaction.HandObject);
-
-
+			if (!DefaultWillInteract.Default(interaction, side))
+				return false;
+			if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.Id))
+				return true;
+			if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.Emag))
+				return true;
+			return false;
 		}
 
 		/// <summary>
@@ -32,46 +39,51 @@ namespace Objects.Cargo
 		[Server]
 		public void ResetID()
 		{
-			correctID = false;
+			CorrectID = false;
 		}
 
 		public void ServerPerformInteraction(HandApply interaction)
 		{
-			CheckID(interaction.HandSlot.Item.GetComponent<IDCard>().JobType, interaction.Performer);
+			if (interaction.HandSlot.Item.TryGetComponent<IDCard>(out var id))
+			{
+				CheckID(id.JobType, interaction.Performer);
+				return;
+			}
+			Emag mag = interaction.HandSlot.Item.GetComponent<Emag>();
+			if (mag == null || Emagged) return;
+			if (mag.UseCharge(interaction))
+			{
+				Emagged = true;
+				CorrectID = true;
+				if (cargoGUI) cargoGUI.pageCart.UpdateTab();
+			}
 		}
 
 		[Server]
 		private void CheckID(JobType usedID, GameObject playeref)
 		{
-			// Null checks people, always need them in the weirdest of places
-			if (associatedTab == null) return;
+			if (cargoGUI == null)
+				return;
 			foreach (var aJob in allowedTypes.Where(aJob => usedID == aJob))
 			{
-				correctID = true;
-				associatedTab.UpdateId();
+				CorrectID = true;
+				cargoGUI.pageCart.UpdateTab();
 				break;
 			}
-			// Not "optimized" for readability
-			if (correctID)
-			{
-				Chat.AddActionMsgToChat(playeref, "You swipe your ID through the supply console's ID slot, t" +
-												  "he console accepts your ID",
-					"swiped their ID through the supply console's ID slot");
-			}
-			else
-			{
-				Chat.AddActionMsgToChat(playeref, "You swipe your ID through the supply console's ID slot, " +
-												  "the console denies your ID",
-					$"{playeref.ExpensiveName()} swiped their ID through the supply console's ID slot");
 
+			var denyString = "the console denies your ID";
+			if (CorrectID)
+			{
+				denyString = "the console accepts your ID";
 			}
+			Chat.AddActionMsgToChat(playeref, $"You swipe your ID through the supply console's ID slot, {denyString}",
+				$"{playeref.ExpensiveName()} swiped their ID through the supply console's ID slot");
 
 		}
 
-
-		public void NetTabRef(GameObject netTab)
+		public void PlayBudgetUpdateSound()
 		{
-			associatedTab = netTab.GetComponent<GUI_Cargo>();
+			_ = SoundManager.PlayNetworkedAtPosAsync(creditArrivalSound, gameObject.WorldPosServer());
 		}
 	}
 }

@@ -1,13 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Core.Chat;
+using DatabaseAPI;
 using Mirror;
 using ScriptableObjects;
 using Tilemaps.Behaviours.Meta;
+using Unitystation.Options;
+using WebSocketSharp;
+using Random = UnityEngine.Random;
 
 public partial class Chat
 {
@@ -35,12 +41,14 @@ public partial class Chat
 	public Color scienceColor;
 	public Color securityColor;
 	public Color serviceColor;
+	public Color syndicateColor;
 	public Color localColor;
 	public Color combatColor;
 	public Color warningColor;
 	public Color blobColor;
 	public Color defaultColor;
 
+	private static bool playedSound;
 
 	/// <summary>
 	/// This channels can't be heared as sound by other players (like binary or changeling hivemind)
@@ -88,6 +96,12 @@ public partial class Chat
 			playerConsciousState = sentByPlayer.Script.playerHealth.ConsciousState;
 		}
 
+		//Semi should be able to speak as health shouldnt affect them
+		if (sentByPlayer.Script.IsPlayerSemiGhost)
+		{
+			playerConsciousState = ConsciousState.CONSCIOUS;
+		}
+
 		if (playerConsciousState == ConsciousState.UNCONSCIOUS || playerConsciousState == ConsciousState.DEAD)
 		{
 			// Only the Mute modifier matters if the player cannot speak. We can skip everything else.
@@ -99,6 +113,15 @@ public partial class Chat
 		{
 			message = message.Replace("/me", ""); // note that there is no space here as compared to the above if
 			message = message.Substring(1); // so that this substring can properly cut off both * and the space
+
+			if(CheckForEmoteAction(message, Instance.emoteActionManager))
+			{
+				DoEmoteAction(message, sentByPlayer.GameObject, Instance.emoteActionManager);
+
+				//Message is done in DoEmoteAction()
+				message = "";
+			}
+
 			chatModifiers |= ChatModifier.Emote;
 		}
 		// Whisper
@@ -130,12 +153,18 @@ public partial class Chat
 		// Question
 		else if (message.EndsWith("?"))
 		{
-			chatModifiers |= ChatModifier.Question;
+			chatModifiers |= sentByPlayer.Script.PlayerState == PlayerScript.PlayerStates.Ai ?
+				ChatModifier.Query : ChatModifier.Question;
 		}
 		// Exclaim
 		else if (message.EndsWith("!"))
 		{
 			chatModifiers |= ChatModifier.Exclaim;
+		}
+		//Ai state message
+		else if (sentByPlayer.Script.PlayerState == PlayerScript.PlayerStates.Ai)
+		{
+			chatModifiers |= ChatModifier.State;
 		}
 
 		// Assign character trait speech mods
@@ -159,8 +188,15 @@ public partial class Chat
 	/// </summary>
 	/// <returns>The chat message, formatted to suit the chat log.</returns>
 	public static string ProcessMessageFurther(string message, string speaker, ChatChannel channels,
-		ChatModifier modifiers)
+		ChatModifier modifiers, Loudness loudness, uint originatorUint = 0, bool stripTags = true)
 	{
+		playedSound = false;
+		//Highlight in game name by bolding and underlining if possible
+		//Dont play sound here as it could be examine or action, we only play sound for someone speaking
+		message = HighlightInGameName(message, false);
+
+		string voiceTag;
+
 		//Skip everything if system message
 		if (channels.HasFlag(ChatChannel.System))
 		{
@@ -175,8 +211,9 @@ public partial class Chat
 
 		//Skip everything if it is an action or examine message or if it is a local message
 		//without a speaker (which is used by machines)
-		if (channels.HasFlag(ChatChannel.Examine) || channels.HasFlag(ChatChannel.Action)
-			|| channels.HasFlag(ChatChannel.Local) && string.IsNullOrEmpty(speaker))
+		if (channels.HasFlag(ChatChannel.Examine) ||
+		    channels.HasFlag(ChatChannel.Action) ||
+		    channels.HasFlag(ChatChannel.Local) && string.IsNullOrEmpty(speaker))
 		{
 			return AddMsgColor(channels, $"<i>{message}</i>");
 		}
@@ -187,15 +224,21 @@ public partial class Chat
 			return AddMsgColor(channels, $"<i>{message}</i>");
 		}
 
-		message = StripTags(message);
+		if (stripTags)
+		{
+			message = StripTags(message);
+
+			//Bold names again after tag stripping
+			message = HighlightInGameName(message);
+		}
 
 		//Check for emote. If found skip chat modifiers, make sure emote is only in Local channel
 		if ((modifiers & ChatModifier.Emote) == ChatModifier.Emote)
 		{
 			// /me message
 			channels = ChatChannel.Local;
-			speaker = AddMsgColor(channels, speaker);
-			message = $"<b>{speaker}</b>| <i>{message}</i>";
+
+			message = AddMsgColor(channels, $"<i><b>{speaker}</b> {message}</i>");
 			return message;
 		}
 
@@ -208,8 +251,11 @@ public partial class Chat
 			{
 				name = "nerd";
 			}
-			speaker = AddMsgColor(ChatChannel.OOC, speaker);
-			message = $"[ooc] <b>{speaker}</b>|:<b>{message}</b>";
+
+			//highlight OOC name by bolding and underlining if possible
+			message = HighlightName(message, ServerData.Auth.CurrentUser.DisplayName);
+
+			message = AddMsgColor(channels, $"[ooc] <b>{name}: {message}</b>");
 			return message;
 		}
 
@@ -217,8 +263,7 @@ public partial class Chat
 		if (channels.HasFlag(ChatChannel.Ghost))
 		{
 			string[] _ghostVerbs = {"cries", "moans"};
-			speaker = AddMsgColor(ChatChannel.Ghost, speaker);
-			return  $"[dead] <b>{speaker}</b>| {_ghostVerbs.PickRandom()}: {message}";
+			return AddMsgColor(channels, $"[dead] <b>{speaker}</b> {_ghostVerbs.PickRandom()}: {message}");
 		}
 		string verb = "says,";
 
@@ -242,6 +287,10 @@ public partial class Chat
 			verb = "yells,";
 			message = $"<b>{message}</b>";
 		}
+		else if ((modifiers & ChatModifier.Query) == ChatModifier.Query)
+		{
+			verb = "queries,";
+		}
 		else if ((modifiers & ChatModifier.State) == ChatModifier.State)
 		{
 			verb = "states,";
@@ -250,31 +299,59 @@ public partial class Chat
 		{
 			verb = "coldly states,";
 		}
-		else if (message.EndsWith("!"))
+		else if ((modifiers & ChatModifier.Exclaim) == ChatModifier.Exclaim)
 		{
 			verb = "exclaims,";
 		}
-		else if (message.EndsWith("?"))
+		else if ((modifiers & ChatModifier.Question) == ChatModifier.Question)
 		{
 			verb = "asks,";
 		}
 
-		// var chan = $"[{channels.ToString().ToLower().Substring(0, 3)}] ";
+		var chan = $"[{channels.ToString().ToLower().Substring(0, 3)}] ";
 
-		// if (channels.HasFlag(ChatChannel.Command))
-		// {
-		// 	chan = "[cmd] ";
-		// }
+		if (channels.HasFlag(ChatChannel.Command))
+		{
+			chan = "[cmd] ";
+		}
 
-		// if (channels.HasFlag(ChatChannel.Local))
-		// {
-		// 	chan = "";
-		// }
+		if (channels.HasFlag(ChatChannel.Local))
+		{
+			chan = "";
+		}
 
-		return
-			$"<b>{AddMsgColor(channels, speaker)}</b>| {verb}"    // [cmd] Username says,
-			+ "  "                              // Two hair spaces. This triggers Text-to-Speech.
-			+ "\"" + message + "\"";           // "This text will be spoken by TTS!"
+		switch (loudness)
+		{
+			case Loudness.QUIET:
+				voiceTag = "<size=32>";
+				break;
+			case Loudness.LOUD:
+				voiceTag = "<size=64>";
+				break;
+			case Loudness.SCREAMING:
+				voiceTag = "<size=82>";
+				break;
+			case Loudness.EARRAPE:
+				voiceTag = "<size=128>";
+				break;
+			default:
+				if (message.Contains("!!")){ voiceTag = "<size=64>";}
+				else { voiceTag = "<size=48>"; }
+				break;
+		}
+
+		return AddMsgColor(channels,
+			$"{chan}<b>{speaker}</b> {verb}" // [cmd]  Username says,
+			+ "  " // Two hair spaces. This triggers Text-to-Speech.
+			+ $"{voiceTag}" + "\"" +  message + "\"" + "</size>"); // "This text will be spoken by TTS!"
+	}
+
+	private static string StripAll(string input)
+	{
+		string output = StripTags(input);
+		output = StripSquareBrackets(output);
+
+		return output;
 	}
 
 	private static string StripTags(string input)
@@ -286,8 +363,70 @@ public partial class Chat
 		return output;
 	}
 
+	private static string StripSquareBrackets(string input)
+	{
+		//Regex - find "[" followed by any number of not "]" and ending in "]". Matches any HTML tags.
+		Regex rx = new Regex("[[][^]]+[]]");
+		string output = rx.Replace(input, "");
 
-//TODO move all these methods to a proper SpeechModifier SO
+		return output;
+	}
+
+	private static string HighlightInGameName(string input, bool playSound = true)
+	{
+		if(ThemeManager.ChatHighlight == false && ThemeManager.MentionSound == false)
+		{
+			return input;
+		}
+
+		var boldedName = input;
+
+		//Do in game name if possible
+		if (PlayerManager.LocalPlayerScript != null)
+		{
+			foreach (var nameSplit in PlayerManager.LocalPlayerScript.playerName.Split(' '))
+			{
+				boldedName = HighlightName(boldedName, nameSplit, playSound);
+			}
+		}
+
+		return boldedName;
+	}
+
+	private static string HighlightName(string input, string name, bool playSound = true)
+	{
+		if ((ThemeManager.ChatHighlight == false && ThemeManager.MentionSound == false) || name.IsNullOrEmpty())
+		{
+			return input;
+		}
+
+		var output = input.Split(' ');
+
+		for (int i = 0; i < output.Count(); i++)
+		{
+			if (Regex.IsMatch(output[i], $@"(?:^|\W){name}(?:$|\W)", RegexOptions.IgnoreCase))
+			{
+				// Bold and underline it
+				output[i] = $"<u><b>{output[i]}</b></u>";
+
+				if (ThemeManager.MentionSound && playedSound == false && playSound)
+				{
+					_ = SoundManager.Play(ThemeManager.CurrentMentionSound);
+					playedSound = true;
+
+					if (ThemeManager.ChatHighlight == false)
+					{
+						return input;
+					}
+				}
+			}
+		}
+
+		return string.Join(" ", output);
+	}
+
+
+// TODO move all these methods to a proper SpeechModifier SO
 	private static string Hiss(Match m)
 	{
 		string x = m.ToString();
@@ -382,31 +521,33 @@ public partial class Chat
 	/// This should only be called via UpdateChatMessage
 	/// on the client. Do not use for anything else!
 	/// </summary>
-	public static void ProcessUpdateChatMessage(uint recipient, uint originator, string message,
-		string messageOthers, ChatChannel channels, ChatModifier modifiers, string speaker)
+	public static void ProcessUpdateChatMessage(uint recipientUint, uint originatorUint, string message,
+		string messageOthers, ChatChannel channels, ChatModifier modifiers, string speaker, GameObject recipient, Loudness loudness, bool stripTags = true)
 	{
-		//If there is a message in MessageOthers then determine
-		//if it should be the main message or not.
-		if (!string.IsNullOrEmpty(messageOthers))
+
+		var isOriginator = true;
+		if (recipientUint != originatorUint)
 		{
-			//This is not the originator so use the messageOthers
-			if (recipient != originator)
+			isOriginator = false;
+			if (!string.IsNullOrEmpty(messageOthers))
 			{
+				//If there is a message in MessageOthers then determine
+				//if it should be the main message or not.
 				message = messageOthers;
 			}
 		}
 
-		if (GhostValidationRejection(originator, channels)) return;
+		if (GhostValidationRejection(originatorUint, channels)) return;
 
-		var msg = ProcessMessageFurther(message, speaker, channels, modifiers);
-		Instance.addChatLogClient.Invoke(msg, channels);
+		var msg = ProcessMessageFurther(message, speaker, channels, modifiers, loudness, originatorUint, stripTags);
+		ChatRelay.Instance.UpdateClientChat(msg, channels, isOriginator, recipient, loudness);
 	}
 
 	private static bool GhostValidationRejection(uint originator, ChatChannel channels)
 	{
 		if (PlayerManager.PlayerScript == null) return false;
-		if (!PlayerManager.PlayerScript.IsGhost) return false;
-		if (Instance.GhostHearAll && !PlayerManager.PlayerScript.IsPlayerSemiGhost) return false;
+		if (PlayerManager.PlayerScript.IsGhost == false) return false;
+		if (Instance.GhostHearAll && PlayerManager.PlayerScript.IsPlayerSemiGhost == false) return false;
 
 		if (NetworkIdentity.spawned.ContainsKey(originator))
 		{
@@ -464,6 +605,7 @@ public partial class Chat
 		if (channel.HasFlag(ChatChannel.Science)) return ColorUtility.ToHtmlStringRGBA(Instance.scienceColor);
 		if (channel.HasFlag(ChatChannel.Security)) return ColorUtility.ToHtmlStringRGBA(Instance.securityColor);
 		if (channel.HasFlag(ChatChannel.Service)) return ColorUtility.ToHtmlStringRGBA(Instance.serviceColor);
+		if (channel.HasFlag(ChatChannel.Syndicate)) return ColorUtility.ToHtmlStringRGBA(Instance.syndicateColor);
 		if (channel.HasFlag(ChatChannel.Local)) return ColorUtility.ToHtmlStringRGBA(Instance.localColor);
 		if (channel.HasFlag(ChatChannel.Combat)) return ColorUtility.ToHtmlStringRGBA(Instance.combatColor);
 		if (channel.HasFlag(ChatChannel.Warning)) return ColorUtility.ToHtmlStringRGBA(Instance.warningColor);
@@ -549,7 +691,7 @@ public partial class Chat
 					}
 					else
 					{
-						Debug.LogWarning("Chat context is null - can't resolve :h tag");
+						Logger.LogWarning("Chat context is null - can't resolve :h tag", Category.Chat);
 						extractedChanel = ChatChannel.None;
 					}
 
@@ -587,4 +729,13 @@ public partial class Chat
 		{Speech.Stutter, ChatModifier.Stutter},
 		{Speech.Scotsman, ChatModifier.Scotsman}
 	};
+
+	private static bool CheckForEmoteAction(string emote, EmoteActionManager data)
+	{
+		return EmoteActionManager.HasEmote(emote, data);
+	}
+	private static void DoEmoteAction(string emoteName, GameObject player, EmoteActionManager data)
+	{
+		EmoteActionManager.DoEmote(emoteName, player, data);
+	}
 }

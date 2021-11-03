@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using DatabaseAPI;
 using Mirror;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using DiscordWebhook;
 using Messages.Client;
+using Messages.Server;
+using Messages.Server.AdminTools;
 using Newtonsoft.Json;
+using UI;
+
 
 /// <summary>
 /// Admin Controller for players
@@ -19,10 +21,14 @@ using Newtonsoft.Json;
 public partial class PlayerList
 {
 	private FileSystemWatcher adminListWatcher;
+	private FileSystemWatcher mentorListWatcher;
 	private FileSystemWatcher WhiteListWatcher;
 	private List<string> adminUsers = new List<string>();
+	private List<string> mentorUsers = new List<string>();
 	private Dictionary<string, string> loggedInAdmins = new Dictionary<string, string>();
+	private Dictionary<string, string> loggedInMentors = new Dictionary<string, string>();
 	private BanList banList;
+	private string mentorsPath;
 	private string adminsPath;
 	private string banPath;
 	private List<string> whiteListUsers = new List<string>();
@@ -35,10 +41,15 @@ public partial class PlayerList
 
 	public string AdminToken { get; private set; }
 
+	//does the client think he's an admin
+	public bool IsClientAdmin;
+	public string MentorToken { get; private set; }
+
 	[Server]
 	void InitAdminController()
 	{
 		adminsPath = Path.Combine(Application.streamingAssetsPath, "admin", "admins.txt");
+		mentorsPath = Path.Combine(Application.streamingAssetsPath, "admin", "mentors.txt");
 		banPath = Path.Combine(Application.streamingAssetsPath, "admin", "banlist.json");
 		whiteListPath = Path.Combine(Application.streamingAssetsPath, "admin", "whitelist.txt");
 		jobBanPath = Path.Combine(Application.streamingAssetsPath, "admin", "jobBanlist.json");
@@ -46,6 +57,11 @@ public partial class PlayerList
 		if (!File.Exists(adminsPath))
 		{
 			File.CreateText(adminsPath).Close();
+		}
+
+		if (!File.Exists(mentorsPath))
+		{
+			File.CreateText(mentorsPath).Close();
 		}
 
 		if (!File.Exists(banPath))
@@ -70,6 +86,13 @@ public partial class PlayerList
 		adminListWatcher.Changed += LoadCurrentAdmins;
 		adminListWatcher.EnableRaisingEvents = true;
 
+		mentorListWatcher = new FileSystemWatcher();
+		mentorListWatcher.Path = Path.GetDirectoryName(mentorsPath);
+		mentorListWatcher.Filter = Path.GetFileName(mentorsPath);
+		mentorListWatcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+		mentorListWatcher.Changed += LoadCurrentMentors;
+		mentorListWatcher.EnableRaisingEvents = true;
+
 		WhiteListWatcher = new FileSystemWatcher();
 		WhiteListWatcher.Path = Path.GetDirectoryName(whiteListPath);
 		WhiteListWatcher.Filter = Path.GetFileName(whiteListPath);
@@ -79,6 +102,7 @@ public partial class PlayerList
 
 		LoadBanList();
 		LoadCurrentAdmins();
+		LoadCurrentMentors();
 		LoadWhiteList();
 		LoadJobBanList();
 	}
@@ -105,6 +129,16 @@ public partial class PlayerList
 	void LoadCurrentAdmins()
 	{
 		StartCoroutine(LoadAdmins());
+	}
+
+	void LoadCurrentMentors(object source, FileSystemEventArgs e)
+	{
+		LoadCurrentMentors();
+	}
+
+	void LoadCurrentMentors()
+	{
+		StartCoroutine(LoadMentors());
 	}
 
 	void LoadJobBanList()
@@ -140,6 +174,14 @@ public partial class PlayerList
 		yield return WaitFor.EndOfFrame;
 		adminUsers.Clear();
 		adminUsers = new List<string>(File.ReadAllLines(adminsPath));
+	}
+
+	IEnumerator LoadMentors()
+	{
+		//ensure any writing has finished
+		yield return WaitFor.EndOfFrame;
+		mentorUsers.Clear();
+		mentorUsers = new List<string>(File.ReadAllLines(mentorsPath));
 	}
 
 	[Server]
@@ -186,9 +228,64 @@ public partial class PlayerList
 	}
 
 	[Server]
+	public bool IsAdmin(ConnectedPlayer player)
+	{
+		return IsAdmin(player.UserId);
+	}
+
+	[Server]
 	public bool IsAdmin(string userID)
 	{
 		return adminUsers.Contains(userID);
+	}
+
+	[Server]
+	public GameObject GetMentor(string userID, string token)
+	{
+
+		if (string.IsNullOrEmpty(userID))
+		{
+			//allow null mentor when doing offline testing
+			if (GameData.Instance.OfflineMode)
+			{
+				return PlayerManager.LocalPlayer;
+			}
+			Logger.LogError("The User ID for Mentor is null!", Category.Mentor);
+			if (string.IsNullOrEmpty(token))
+			{
+				Logger.LogError("The AdminToken value is null!", Category.Mentor);
+			}
+
+			return null;
+		}
+
+		if (!loggedInMentors.ContainsKey(userID)) return null;
+
+		if (loggedInMentors[userID] != token) return null;
+
+		return GetByUserID(userID).GameObject;
+	}
+
+	[Server]
+	public List<ConnectedPlayer> GetAllMentors()
+	{
+		List<ConnectedPlayer> mentors = new List<ConnectedPlayer>();
+		foreach (var a in loggedInMentors)
+		{
+			var getConn = GetByUserID(a.Key);
+			if (getConn != null)
+			{
+				mentors.Add(getConn);
+			}
+		}
+
+		return mentors;
+	}
+
+	[Server]
+	public bool IsMentor(string userID)
+	{
+		return mentorUsers.Contains(userID);
 	}
 
 	public async Task<bool> ValidatePlayer(string unverifiedClientId, string unverifiedUsername,
@@ -296,9 +393,6 @@ public partial class PlayerList
 			return false;
 		}
 		var Userid = unverifiedUserid;
-		var Token = unverifiedToken;
-		//whitelist checking:
-		var lines = File.ReadAllLines(whiteListPath);
 
 		//Adds server to admin list if not already in it.
 		if (Userid == ServerData.UserID && !adminUsers.Contains(Userid))
@@ -313,13 +407,16 @@ public partial class PlayerList
 
 			if (user == null) return false;
 
-			var newToken = System.Guid.NewGuid().ToString();
+			var newToken = Guid.NewGuid().ToString();
 			if (!loggedInAdmins.ContainsKey(Userid))
 			{
 				loggedInAdmins.Add(Userid, newToken);
-				AdminEnableMessage.Send(user.Connection, newToken);
+				AdminEnableMessage.SendMessage(user, newToken);
 			}
 		}
+
+		//whitelist checking:
+		var lines = File.ReadAllLines(whiteListPath);
 
 		//Checks whether the userid is in either the Admins or whitelist AND that the whitelist file has something in it.
 		//Whitelist only activates if whitelist is populated.
@@ -333,8 +430,7 @@ public partial class PlayerList
 			return false;
 		}
 
-
-		//banlist checking:
+		// banlist checking:
 		var banEntry = banList?.CheckForEntry(Userid, unverifiedConnPlayer.Connection.address, unverifiedClientId);
 		if (banEntry != null)
 		{
@@ -371,6 +467,9 @@ public partial class PlayerList
 
 	#region JobBans
 
+	/// <summary>
+	/// Checks job ban state, FALSE if banned
+	/// </summary>
 	public bool CheckJobBanState(string userID, JobType jobType)
 	{
 		//jobbanlist checking:
@@ -460,11 +559,11 @@ public partial class PlayerList
 	/// </summary>
 	/// <param name="connPlayer"></param>
 	/// <returns></returns>
-	private List<JobBanEntry> ClientAskingAboutJobBans(ConnectedPlayer connPlayer)
+	public List<JobBanEntry> ClientAskingAboutJobBans(ConnectedPlayer connPlayer)
 	{
 		if (connPlayer.Equals(ConnectedPlayer.Invalid))
 		{
-			Logger.LogError($"Attempted to check job-ban for invalid player.");
+			Logger.LogError($"Attempted to check job-ban for invalid player.", Category.Jobs);
 			return default;
 		}
 
@@ -490,7 +589,7 @@ public partial class PlayerList
 		var index = jobBanPlayerEntry.Value.Item2;
 
 		//Check each job to see if expired
-		foreach (var jobBan in jobBanPlayerEntry.Value.Item1.jobBanEntry)
+		foreach (var jobBan in jobBanPlayerEntry.Value.Item1.jobBanEntry.ToArray())
 		{
 			var entryTime = DateTime.ParseExact(jobBan.dateTimeOfBan, "O", CultureInfo.InvariantCulture);
 			var totalMins = Mathf.Abs((float)(entryTime - DateTime.Now).TotalMinutes);
@@ -561,7 +660,7 @@ public partial class PlayerList
 	/// </summary>
 	/// <param name="job"></param>
 	/// <returns></returns>
-	public bool ClientCheck(JobType job)
+	public bool ClientJobBanCheck(JobType job)
 	{
 		if (Instance.clientSideBanEntries == null || Instance.clientSideBanEntries.Count == 0)
 		{
@@ -636,88 +735,60 @@ public partial class PlayerList
 
 	#region JobBanNetMessages
 
-	public class ClientJobBanDataMessage : ClientMessage
+	public class ServerSendsJobBanDataMessage : ServerMessage<ServerSendsJobBanDataMessage.NetMessage>
 	{
-		public string PlayerID;
-
-		public override void Process()
+		public struct NetMessage : NetworkMessage
 		{
-			//Server Stuff here
-
-			var conn = PlayerList.Instance.GetByUserID(PlayerID);
-
-			if (conn == null)
-			{
-				Debug.LogError("Connection was NULL");
-				return;
-			}
-
-			var jobBanEntries = PlayerList.Instance.ClientAskingAboutJobBans(conn);
-
-			ServerSendsJobBanDataMessage.Send(conn.Connection, jobBanEntries);
+			public string JobBanEntries;
 		}
 
-		public static ClientJobBanDataMessage Send(string playerID)
-		{
-			ClientJobBanDataMessage msg = new ClientJobBanDataMessage
-			{
-				PlayerID = playerID
-			};
-			msg.Send();
-			return msg;
-		}
-	}
-
-	public class ServerSendsJobBanDataMessage : ServerMessage
-	{
-		public string JobBanEntries;
-
-		public override void Process()
+		public override void Process(NetMessage msg)
 		{
 			//client Stuff here
-
-			PlayerList.Instance.clientSideBanEntries = JsonConvert.DeserializeObject<List<JobBanEntry>>(JobBanEntries);
+			PlayerList.Instance.clientSideBanEntries = JsonConvert.DeserializeObject<List<JobBanEntry>>(msg.JobBanEntries);
 		}
 
-		public static ServerSendsJobBanDataMessage Send(NetworkConnection requestee, List<JobBanEntry> jobBanEntries)
+		public static NetMessage Send(NetworkConnection requestee, List<JobBanEntry> jobBanEntries)
 		{
-			ServerSendsJobBanDataMessage msg = new ServerSendsJobBanDataMessage
+			NetMessage msg = new NetMessage
 			{
 				JobBanEntries = JsonConvert.SerializeObject(jobBanEntries)
 			};
-			msg.SendTo(requestee);
+
+			SendTo(requestee, msg);
 			return msg;
 		}
 	}
 
-	public class RequestJobBan : ClientMessage
+	public class RequestJobBan : ClientMessage<RequestJobBan.NetMessage>
 	{
-		public string AdminID;
-		public string AdminToken;
-		public string PlayerID;
-		public string Reason;
-		public bool IsPerma;
-		public int Minutes;
-		public JobType JobType;
-		public bool KickAfter;
-		public bool GhostAfter;
-
-		public override void Process()
+		public struct NetMessage : NetworkMessage
 		{
-			var admin = PlayerList.Instance.GetAdmin(AdminID, AdminToken);
-			if (admin == null) return;
-
-			//Server Stuff here
-
-			PlayerList.Instance.ProcessJobBanRequest(AdminID, PlayerID, Reason, IsPerma, Minutes, JobType, KickAfter, GhostAfter);
+			public string PlayerID;
+			public string Reason;
+			public bool IsPerma;
+			public int Minutes;
+			public JobType JobType;
+			public bool KickAfter;
+			public bool GhostAfter;
 		}
 
-		public static RequestJobBan Send(string adminID, string adminToken, string playerID, string reason, bool isPerma, int minutes, JobType jobType, bool kickAfter, bool ghostAfter)
+		public override void Process(NetMessage msg)
 		{
-			RequestJobBan msg = new RequestJobBan
+			if (IsFromAdmin() == false) return;
+
+			// Server Stuff here
+
+			Instance.ProcessJobBanRequest(
+					SentByPlayer.UserId, msg.PlayerID, msg.Reason,
+					msg.IsPerma, msg.Minutes, msg.JobType, msg.KickAfter, msg.GhostAfter);
+		}
+
+		public static NetMessage Send(
+				string playerID, string reason, bool isPerma, int minutes, JobType jobType, bool kickAfter, bool ghostAfter)
+		{
+			NetMessage msg = new NetMessage
 			{
-				AdminID = adminID,
-				AdminToken = adminToken,
 				PlayerID = playerID,
 				Reason = reason,
 				IsPerma = isPerma,
@@ -726,7 +797,8 @@ public partial class PlayerList
 				KickAfter = kickAfter,
 				GhostAfter = ghostAfter
 			};
-			msg.Send();
+
+			Send(msg);
 			return msg;
 		}
 	}
@@ -741,13 +813,26 @@ public partial class PlayerList
 		if (adminUsers.Contains(userid) || (GameData.Instance.OfflineMode && playerConn.GameObject == PlayerManager.LocalViewerScript.gameObject))
 		{
 			//This is an admin, send admin notify to the users client
-			Logger.Log($"{playerConn.Username} logged in as Admin. " +
-					   $"IP: {playerConn.Connection.address}");
+			Logger.Log($"{playerConn.Username} logged in as Admin. IP: {playerConn.Connection.address}", Category.Admin);
 			var newToken = System.Guid.NewGuid().ToString();
 			if (!loggedInAdmins.ContainsKey(userid))
 			{
 				loggedInAdmins.Add(userid, newToken);
-				AdminEnableMessage.Send(playerConn.Connection, newToken);
+				AdminEnableMessage.SendMessage(playerConn, newToken);
+			}
+		}
+	}
+
+	public void CheckMentorState(ConnectedPlayer playerConn, string userid)
+	{
+		if (mentorUsers.Contains(userid) && !adminUsers.Contains(userid))
+		{
+			Logger.Log($"{playerConn.Username} logged in as Mentor. IP: {playerConn.Connection.address}", Category.Admin);
+			var newToken = System.Guid.NewGuid().ToString();
+			if (!loggedInMentors.ContainsKey(userid))
+			{
+				loggedInMentors.Add(userid, newToken);
+				MentorEnableMessage.Send(playerConn.Connection, newToken);
 			}
 		}
 	}
@@ -756,7 +841,7 @@ public partial class PlayerList
 	{
 		if (loggedInAdmins.ContainsKey(userid))
 		{
-			Logger.Log($"Admin {userName} logged off.");
+			Logger.Log($"Admin {userName} logged off.", Category.Admin);
 			loggedInAdmins.Remove(userid);
 		}
 	}
@@ -764,8 +849,15 @@ public partial class PlayerList
 	public void SetClientAsAdmin(string _adminToken)
 	{
 		AdminToken = _adminToken;
+		IsClientAdmin = true;
 		ControlTabs.Instance.ToggleOnAdminTab();
-		Logger.Log("You have logged in as an admin. Admin tools are now available.");
+		Logger.Log("You have logged in as an admin. Admin tools are now available.", Category.Admin);
+	}
+
+	public void SetClientAsMentor(string _mentorToken)
+	{
+		MentorToken = _mentorToken;
+		Logger.Log("You have logged in as a mentor. Mentor tools are now available.", Category.Admin);
 	}
 
 	public void ProcessAdminEnableRequest(string admin, string userToPromote)
@@ -774,7 +866,7 @@ public partial class PlayerList
 		if (adminUsers.Contains(userToPromote)) return;
 
 		Logger.Log(
-			$"{admin} has promoted {userToPromote} to admin. Time: {DateTime.Now}");
+			$"{admin} has promoted {userToPromote} to admin. Time: {DateTime.Now}", Category.Admin);
 
 		File.AppendAllLines(adminsPath, new string[]
 		{
@@ -790,7 +882,7 @@ public partial class PlayerList
 		if (!loggedInAdmins.ContainsKey(userToPromote))
 		{
 			loggedInAdmins.Add(userToPromote, newToken);
-			AdminEnableMessage.Send(user.Connection, newToken);
+			AdminEnableMessage.SendMessage(user, newToken);
 		}
 	}
 	#endregion
@@ -809,7 +901,7 @@ public partial class PlayerList
 			{
 				string message = $"A kick/ban has been processed by {adminPlayer.Username}: Username: {p.Username} Player: {p.Name} IsBan: {isBan} BanMinutes: {banMinutes} Time: {DateTime.Now}";
 
-				Logger.Log(message);
+				Logger.Log(message, Category.Admin);
 
 				StartCoroutine(KickPlayer(p, reason, isBan, banMinutes,adminPlayer));
 
@@ -833,7 +925,44 @@ public partial class PlayerList
 		}
 		else
 		{
-			Logger.Log($"Kick ban failed, can't find player: {userToKick}. Requested by {adminPlayer.Username}");
+			Logger.Log($"Kick ban failed, can't find player: {userToKick}. Requested by {adminPlayer.Username}", Category.Admin);
+		}
+	}
+
+	public void ServerKickPlayer(string userToKick, string reason, bool isBan, int banMinutes, bool announceBan)
+	{
+		List<ConnectedPlayer> players = GetAllByUserID(userToKick, true);
+		if (players.Count != 0)
+		{
+			foreach (var p in players)
+			{
+				string message = $"A kick/ban has been processed by the Server: Username: {p.Username} Player: {p.Name} IsBan: {isBan} BanMinutes: {banMinutes} Time: {DateTime.Now}";
+
+				Logger.Log(message, Category.Admin);
+
+				StartCoroutine(KickPlayer(p, reason, isBan, banMinutes));
+
+				DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAdminLogURL, message + $"\nReason: {reason}", "");
+
+				UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(message, null);
+
+				if (!announceBan || !ServerData.ServerConfig.DiscordWebhookEnableBanKickAnnouncement) return;
+
+				if (isBan)
+				{
+					message = $"{ServerData.ServerConfig.ServerName}\nPlayer: {p.Username}, has been banned for {banMinutes} minutes.";
+				}
+				else
+				{
+					message = $"{ServerData.ServerConfig.ServerName}\nPlayer: {p.Username}, has been kicked.";
+				}
+
+				DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAnnouncementURL, message, "");
+			}
+		}
+		else
+		{
+			Logger.Log($"Server Kick/ban failed, can't find player: {userToKick}", Category.Admin);
 		}
 	}
 
@@ -844,8 +973,8 @@ public partial class PlayerList
 				   + "UserId " + connPlayer?.UserId + "\n"
 				   + "Username " + connPlayer?.Username + "\n"
 				   + "address " + connPlayer?.Connection?.address + "\n"
-				   + "clientId " + connPlayer?.ClientId + "\n"
-				   );
+				   + "clientId " + connPlayer?.ClientId + "\n",
+				   Category.Admin);
 
 		string message = "";
 		if (ban)
@@ -856,7 +985,7 @@ public partial class PlayerList
 			int index = banList.banEntries.FindIndex(x => x.userId == connPlayer.UserId);
 			if (index != -1)
 			{
-				Logger.Log("removing pre-existing ban entry for userId of" + connPlayer.UserId);
+				Logger.Log("removing pre-existing ban entry for userId of" + connPlayer.UserId, Category.Admin);
 				banList.banEntries.RemoveAt(index);
 			}
 
@@ -876,7 +1005,7 @@ public partial class PlayerList
 			SaveBanList();
 			if (banList.banEntries.Count != 0)
 			{
-				Logger.Log(banList.banEntries[banList.banEntries.Count - 1].ToString());
+				Logger.Log(banList.banEntries[banList.banEntries.Count - 1].ToString(), Category.Admin);
 			}
 		}
 		else
@@ -889,17 +1018,16 @@ public partial class PlayerList
 
 		if (connPlayer.Connection == null)
 		{
-			Logger.Log($"Not kicking, already disconnected: {connPlayer.Name}");
+			Logger.Log($"Not kicking, already disconnected: {connPlayer.Name}", Category.Admin);
 			yield break;
 		}
 
-		Logger.Log($"Kicking client {connPlayer.Username} : {message}");
+		Logger.Log($"Kicking client {connPlayer.Username} : {message}", Category.Admin);
 		InfoWindowMessage.Send(connPlayer.GameObject, message, "Disconnected");
 
 		yield return WaitFor.Seconds(1f);
 
 		connPlayer.Connection.Disconnect();
-		connPlayer.Connection.Dispose();
 
 		while (!loggedOff.Contains(connPlayer))
 		{
@@ -914,7 +1042,7 @@ public partial class PlayerList
 		if (!adminUsers.Contains(adminId)) return;
 
 		ConnectedPlayer adminPlayer = PlayerList.Instance.GetByUserID(adminId);
-		List<ConnectedPlayer> players = GetAllByUserID(userToJobBan);
+		List<ConnectedPlayer> players = GetAllByUserID(userToJobBan, true);
 		if (players.Count != 0)
 		{
 			foreach (var p in players)
@@ -930,7 +1058,7 @@ public partial class PlayerList
 					message = $"A job ban has been processed by {adminPlayer.Username}: Username: {p.Username} Player: {p.Name} Job: {jobType} BanMinutes: {banMinutes} Time: {DateTime.Now}";
 				}
 
-				Logger.Log(message);
+				Logger.Log(message, Category.Admin);
 
 				StartCoroutine(JobBanPlayer(p, reason, isPerma, banMinutes, jobType, adminPlayer));
 
@@ -951,12 +1079,17 @@ public partial class PlayerList
 				{
 					reason = "Player was kicked after job ban process.";
 					StartCoroutine(KickPlayer(p, reason, false));
+					continue;
 				}
+
+				//Send update if they are still in the game
+				if(p.Connection == null) continue;
+				ServerSendsJobBanDataMessage.Send(p.Connection, ClientAskingAboutJobBans(p));
 			}
 		}
 		else
 		{
-			Logger.Log($"job ban failed, can't find player: {userToJobBan}. Requested by {adminPlayer.Username}");
+			Logger.Log($"job ban failed, can't find player: {userToJobBan}. Requested by {adminPlayer.Username}", Category.Admin);
 		}
 	}
 
@@ -964,7 +1097,7 @@ public partial class PlayerList
 	{
 		if (jobBanList == null)
 		{
-			Debug.LogError("The job ban list loaded from the json was null, cant add new ban to it.");
+			Logger.LogError("The job ban list loaded from the json was null, cant add new ban to it.", Category.Admin);
 			yield break;
 		}
 
@@ -973,7 +1106,7 @@ public partial class PlayerList
 													+ "Username " + connPlayer?.Username + "\n"
 													+ "address " + connPlayer?.Connection?.address + "\n"
 													+ "clientId " + connPlayer?.ClientId + "\n"
-													+ "jobType " + jobType + "\n"
+													+ "jobType " + jobType + "\n", Category.Admin
 		);
 
 		//jobbanlist checking:
@@ -999,7 +1132,7 @@ public partial class PlayerList
 
 		if (jobBanPlayerEntry.Value.Item1 == null)
 		{
-			Debug.LogError("New job ban list was null even though new one was generated");
+			Logger.LogError("New job ban list was null even though new one was generated", Category.Admin);
 			yield break;
 		}
 

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 using Objects.Disposals;
+using AddressableReferences;
 
 namespace Systems.Disposals
 {
@@ -19,13 +20,13 @@ namespace Systems.Disposals
 		public bool CurrentlyDelayed = false;
 		public bool TraversalFinished = false;
 
-		bool justStarted;
-		DisposalPipe currentPipe;
-		Vector3Int currentPipeLocalPos;
-		Orientation currentPipeOutputSide;
+		private bool justStarted;
+		private DisposalPipe currentPipe;
+		private Vector3Int currentPipeLocalPos;
+		private Orientation currentPipeOutputSide;
 
-		Vector3Int NextPipeVector => currentPipeOutputSide.VectorInt.To3Int();
-		Vector3Int NextPipeLocalPosition => currentPipeLocalPos + NextPipeVector;
+		private Vector3Int NextPipeVector => currentPipeOutputSide.VectorInt.To3Int();
+		private Vector3Int NextPipeLocalPosition => currentPipeLocalPos + NextPipeVector;
 
 		/// <summary>
 		/// Create a new disposal instance.
@@ -65,7 +66,7 @@ namespace Systems.Disposals
 			ReadyToTraverse = false;
 
 			// Check if just started so we don't end the traversal at the disposal machine we started from.
-			if (!justStarted && currentPipe.PipeType == DisposalPipeType.Terminal)
+			if (justStarted == false && currentPipe.PipeType == DisposalPipeType.Terminal)
 			{
 				EjectViaDisposalPipeTerminal();
 				return;
@@ -90,13 +91,13 @@ namespace Systems.Disposals
 			ReadyToTraverse = true;
 		}
 
-		DisposalPipe GetPipeAt(Vector3Int localPosition, DisposalPipeType? type = null, OrientationEnum? requiredSide = null)
+		private DisposalPipe GetPipeAt(Vector3Int localPosition, DisposalPipeType? type = null, OrientationEnum? requiredSide = null)
 		{
 			// Gets the first disposal pipe that meets the criteria.
 			foreach (DisposalPipe pipe in matrix.GetDisposalPipesAt(localPosition))
 			{
 				if (type != null && pipe.PipeType != type.Value) continue;
-				if (requiredSide != null && !pipe.ConnectablePoints.ContainsKey(requiredSide.Value)) continue;
+				if (requiredSide != null && pipe.ConnectablePoints.ContainsKey(requiredSide.Value) == false) continue;
 
 				return pipe;
 			}
@@ -104,7 +105,7 @@ namespace Systems.Disposals
 			return default;
 		}
 
-		Orientation GetConnectedSide(Orientation side)
+		private Orientation GetConnectedSide(Orientation side)
 		{
 			switch (side.AsEnum())
 			{
@@ -117,7 +118,7 @@ namespace Systems.Disposals
 			return Orientation.Left;
 		}
 
-		OrientationEnum GetPipeLeavingSide(DisposalPipe pipe, OrientationEnum sideEntered)
+		private OrientationEnum GetPipeLeavingSide(DisposalPipe pipe, OrientationEnum sideEntered)
 		{
 			switch (pipe.PipeType)
 			{
@@ -144,22 +145,22 @@ namespace Systems.Disposals
 			return default;
 		}
 
-		void TransferContainerToVector(Vector3Int nextPipePosition)
+		private void TransferContainerToVector(Vector3Int nextPipePosition)
 		{
 			containerTransform.Push(nextPipePosition.To2Int(), ignorePassable: true);
 		}
 
-		void EjectViaPipeEnd()
+		private void EjectViaPipeEnd()
 		{
 			TryDamageTileFromEjection(NextPipeLocalPosition);
 			var worldPos = MatrixManager.LocalToWorld(NextPipeLocalPosition, matrix);
-			SoundManager.PlayNetworkedAtPos("DisposalEjectionHiss", worldPos);
+			SoundManager.PlayNetworkedAtPos(DisposalsManager.Instance.DisposalEjectionHiss, worldPos);
 			TransferContainerToVector(NextPipeVector);
-			virtualContainer.EjectContentsAndThrow(currentPipeOutputSide.Vector);
+			virtualContainer.EjectContentsWithVector(currentPipeOutputSide.Vector);
 			DespawnContainerAndFinish();
 		}
 
-		void EjectViaDisposalPipeTerminal()
+		private void EjectViaDisposalPipeTerminal()
 		{
 			var disposalMachine = matrix.GetFirst<DisposalMachine>(currentPipeLocalPos, true);
 			if (disposalMachine != null && disposalMachine.MachineSecured)
@@ -171,12 +172,12 @@ namespace Systems.Disposals
 				// Ended at a pipe terminal, but no disposal machinery was detected at its location. Ejecting upwards...
 				TryDamageTileFromEjection(currentPipeLocalPos);
 				// Eject contents with zero vector to give spin on contents.
-				virtualContainer.EjectContentsAndThrow(Vector3.zero);
+				virtualContainer.EjectContentsWithVector(Vector3.zero);
 				DespawnContainerAndFinish();
 			}
 		}
 
-		void EjectViaDisposalMachine(DisposalMachine machine)
+		private void EjectViaDisposalMachine(DisposalMachine machine)
 		{
 			if (machine is DisposalOutlet)
 			{
@@ -195,18 +196,18 @@ namespace Systems.Disposals
 			}
 		}
 
-		void TryDamageTileFromEjection(Vector3Int localPosition)
+		private void TryDamageTileFromEjection(Vector3Int localPosition)
 		{
-			if (!matrix.TileChangeManager.MetaTileMap.HasTile(localPosition, LayerType.Floors)) return;
+			if (matrix.TileChangeManager.MetaTileMap.HasTile(localPosition, LayerType.Floors) == false) return;
 			matrix.TileChangeManager.UpdateTile(localPosition, TileType.Floor, "damaged3");
 		}
 
 		/// <summary>
 		/// If container still has contents, they will be ejected with no direction.
 		/// </summary>
-		void DespawnContainerAndFinish()
+		private void DespawnContainerAndFinish()
 		{
-			Despawn.ServerSingle(virtualContainer.gameObject);
+			_ = Despawn.ServerSingle(virtualContainer.gameObject);
 			TraversalFinished = true;
 		}
 	}

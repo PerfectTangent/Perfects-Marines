@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using ScriptableObjects.Systems.Spells;
+using UI.Action;
 
 namespace Systems.Spells
 {
@@ -83,7 +84,7 @@ namespace Systems.Spells
 
 				if (SpellData.InvocationType == SpellInvocationType.Shout)
 				{
-					Chat.AddChatMsgToChat(sentByPlayer, FormatInvocationMessage(sentByPlayer, modPrefix), ChatChannel.Local);
+					Chat.AddChatMsgToChat(sentByPlayer, FormatInvocationMessage(sentByPlayer, modPrefix), ChatChannel.Local, Loudness.NORMAL);
 				}
 			}
 
@@ -151,7 +152,7 @@ namespace Systems.Spells
 						IEnumerator DespawnAfterDelay()
 						{
 							yield return WaitFor.Seconds(SpellData.SummonLifespan);
-							Despawn.ServerSingle(spawnResult.GameObject);
+							_ = Despawn.ServerSingle(spawnResult.GameObject);
 						}
 					}
 				}
@@ -179,7 +180,7 @@ namespace Systems.Spells
 						IEnumerator DespawnAfterDelay()
 						{
 							yield return WaitFor.Seconds(SpellData.SummonLifespan);
-							matrixInfo.TileChangeManager.RemoveTile(localPos, tileToSummon.LayerType, false);
+							matrixInfo.TileChangeManager.RemoveTile(localPos, tileToSummon.LayerType);
 						}
 					}
 				}
@@ -207,7 +208,7 @@ namespace Systems.Spells
 			if (!caster.Script.mind.Spells.Contains(this))
 			{
 				Logger.LogWarningFormat("Illegal spell access: {0} tried to call spell they don't possess ({1})",
-					Category.Security, caster, this);
+					Category.Exploits, caster, this);
 				return false;
 			}
 
@@ -239,18 +240,23 @@ namespace Systems.Spells
 
 		private bool CheckWizardGarb(Equipment casterEquipment)
 		{
-			var outerwear = casterEquipment.ItemStorage.GetNamedItemSlot(NamedSlot.outerwear);
-			if (outerwear.IsEmpty || outerwear.ItemAttributes.HasTrait(CommonTraits.Instance.WizardGarb) == false)
+			foreach (var outerwear in casterEquipment.ItemStorage.GetNamedItemSlots(NamedSlot.outerwear))
 			{
-				Chat.AddExamineMsg(casterEquipment.gameObject, "<color=red>You don't feel strong enough without your robe!</color>");
-				return false;
+				if (outerwear.IsEmpty || outerwear.ItemAttributes.HasTrait(CommonTraits.Instance.WizardGarb) == false)
+				{
+					Chat.AddExamineMsg(casterEquipment.gameObject, "<color=red>You don't feel strong enough without your robe!</color>");
+					return false;
+				}
 			}
 
-			var headwear = casterEquipment.ItemStorage.GetNamedItemSlot(NamedSlot.head);
-			if (headwear.IsEmpty || headwear.ItemAttributes.HasTrait(CommonTraits.Instance.WizardGarb) == false)
+			foreach (var headwear in casterEquipment.ItemStorage.GetNamedItemSlots(NamedSlot.head))
 			{
-				Chat.AddExamineMsg(casterEquipment.gameObject, "<color=red>You don't feel strong enough without your hat!</color>");
-				return false;
+				if (headwear.IsEmpty || headwear.ItemAttributes.HasTrait(CommonTraits.Instance.WizardGarb) == false)
+				{
+					Chat.AddExamineMsg(casterEquipment.gameObject,
+						"<color=red>You don't feel strong enough without your hat!</color>");
+					return false;
+				}
 			}
 
 			return true;
@@ -265,6 +271,7 @@ namespace Systems.Spells
 		{
 			return SpellData.InvocationMessageSelf;
 		}
+
 		protected virtual string FormatStillRechargingMessage(ConnectedPlayer caster)
 		{
 			return SpellData.StillRechargingMessage;

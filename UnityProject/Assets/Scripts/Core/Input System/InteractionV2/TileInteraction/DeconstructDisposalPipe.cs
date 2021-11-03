@@ -1,5 +1,5 @@
 using UnityEngine;
-using WebSocketSharp;
+using Systems.DisposalPipes;
 
 namespace Objects.Disposals
 {
@@ -18,7 +18,7 @@ namespace Objects.Disposals
 
 		public override bool WillInteract(TileApply interaction, NetworkSide side)
 		{
-			if (!DefaultWillInteract.Default(interaction, side)) return false;
+			if (DefaultWillInteract.Default(interaction, side) == false) return false;
 
 			return Validations.HasUsedActiveWelder(interaction);
 		}
@@ -44,8 +44,8 @@ namespace Objects.Disposals
 				if (disposalMachine != null && disposalMachine.MachineAttachedOrGreater)
 				{
 					string machineName = disposalMachine.name;
-					if (disposalMachine.TryGetComponent(out ObjectAttributes attributes) &&
-						!attributes.InitialName.IsNullOrEmpty())
+					if (disposalMachine.TryGetComponent<ObjectAttributes>(out var attributes) &&
+						string.IsNullOrWhiteSpace(attributes.InitialName) == false)
 					{
 						machineName = attributes.InitialName;
 					}
@@ -74,23 +74,42 @@ namespace Objects.Disposals
 
 		private void DeconstructPipe(TileApply interaction)
 		{
-			DisposalPipe pipe = interaction.BasicTile as DisposalPipe;
+			DisposalPipe pipeTile = interaction.BasicTile as DisposalPipe;
 
 			// Despawn pipe tile
 			var matrix = MatrixManager.AtPoint(interaction.WorldPositionTarget.NormalizeTo3Int(), true).Matrix;
-			matrix.RemoveUnderFloorTile(interaction.TargetCellPos, pipe);
+			MetaDataNode metaDataNode = matrix.GetMetaDataNode(interaction.TargetCellPos, false);
+			DisposalPipeNode disPipeNode = null;
+			for (var i = 0; i < metaDataNode.DisposalPipeData.Count; i++)
+			{
+				if (metaDataNode.DisposalPipeData[i].DisposalPipeTile == pipeTile)
+				{
+					disPipeNode = metaDataNode.DisposalPipeData[i];
+				}
+			}
+			if(disPipeNode == null)
+			{
+				Logger.LogError($"Impossible to deconstruct the disposal pipe at {interaction.TargetCellPos} in {matrix.gameObject.scene.name} - {matrix.name}. Disposal pipe node wasn't found",
+					Category.Pipes);
+				return;
+			}
+			matrix.TileChangeManager.RemoveTile(disPipeNode.NodeLocation, LayerType.Underfloor);
 
 			// Spawn pipe GameObject
 			if (interaction.BasicTile.SpawnOnDeconstruct == null) return;
 
 			var spawn = Spawn.ServerPrefab(interaction.BasicTile.SpawnOnDeconstruct, interaction.WorldPositionTarget);
-			if (!spawn.Successful) return;
+			if (spawn.Successful == false) return;
 
-			if (!spawn.GameObject.TryGetComponent(out Directional directional)) return;
-			directional.FaceDirection(Orientation.FromEnum(pipe.DisposalPipeObjectOrientation));
+			if (spawn.GameObject.TryGetComponent<Directional>(out var directional))
+			{
+				directional.FaceDirection(Orientation.FromEnum(pipeTile.DisposalPipeObjectOrientation));
+			}
 
-			if (!spawn.GameObject.TryGetComponent(out ObjectBehaviour behaviour)) return;
-			behaviour.ServerSetPushable(false);
+			if (spawn.GameObject.TryGetComponent<ObjectBehaviour>(out var behaviour))
+			{
+				behaviour.ServerSetPushable(false);
+			}
 		}
 
 		#endregion Deconstruction

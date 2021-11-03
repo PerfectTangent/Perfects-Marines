@@ -1,3 +1,6 @@
+using Hacking;
+using Messages.Server;
+using Messages.Server.SoundMessages;
 using UnityEngine;
 
 namespace Objects.Construction
@@ -7,7 +10,6 @@ namespace Objects.Construction
 	/// </summary>
 	public class Computer : MonoBehaviour, ICheckedInteractable<HandApply>
 	{
-
 		[Tooltip("Frame prefab this computer should deconstruct into.")]
 		[SerializeField]
 		private GameObject framePrefab = null;
@@ -27,36 +29,83 @@ namespace Objects.Construction
 
 		private Integrity integrity;
 
+		private bool panelopen = false;
+
+		private HackingProcessBase HackingProcessBase;
+
+		private void Awake()
+		{
+			HackingProcessBase = GetComponent<HackingProcessBase>();
+			if (CustomNetworkManager.IsServer == false) return;
+
+			integrity = GetComponent<Integrity>();
+
+			integrity.OnWillDestroyServer.AddListener(WhenDestroyed);
+		}
+
 		public bool WillInteract(HandApply interaction, NetworkSide side)
 		{
 			if (!DefaultWillInteract.Default(interaction, side)) return false;
 
 			if (!Validations.IsTarget(gameObject, interaction)) return false;
 
-			return Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver);
+			if (HackingProcessBase != null)
+			{
+				return Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver) ||
+				       Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Crowbar) || //Should probably network if it is open or not
+				       Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Cable) ||
+				       Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Wirecutter);
+			}
+			else
+			{
+				return Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver) ||
+				       Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Crowbar);
+			}
 		}
 
 		public void ServerPerformInteraction(HandApply interaction)
 		{
-			//unscrew
-			ToolUtils.ServerUseToolWithActionMessages(interaction, secondsToScrewdrive,
-				"You start to disconnect the monitor...",
-				$"{interaction.Performer.ExpensiveName()} starts to disconnect the monitor...",
-				"You disconnect the monitor.",
-				$"{interaction.Performer.ExpensiveName()} disconnects the monitor.",
-				() =>
+			if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Screwdriver))
+			{
+				AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: UnityEngine.Random.Range(0.8f, 1.2f));
+				SoundManager.PlayNetworkedAtPos(CommonSounds.Instance.screwdriver, interaction.Performer.AssumedWorldPosServer(), audioSourceParameters, sourceObj: gameObject);
+				//Unscrew panel
+				panelopen = !panelopen;
+				if (panelopen)
 				{
-					WhenDestroyed(null);
-				});
-		}
+					Chat.AddActionMsgToChat(interaction.Performer,
+						$"You unscrews the {gameObject.ExpensiveName()}'s cable panel.",
+						$"{interaction.Performer.ExpensiveName()} unscrews {gameObject.ExpensiveName()}'s cable panel.");
+					return;
+				}
+				else
+				{
+					Chat.AddActionMsgToChat(interaction.Performer,
+						$"You screw in the {gameObject.ExpensiveName()}'s cable panel.",
+						$"{interaction.Performer.ExpensiveName()} screws in {gameObject.ExpensiveName()}'s cable panel.");
+					return;
+				}
+			}
 
-		private void Awake()
-		{
-			if (!CustomNetworkManager.IsServer) return;
+			if (HackingProcessBase != null)
+			{
+				if (panelopen && (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Cable) ||
+				                  Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Wirecutter)))
+				{
+					TabUpdateMessage.Send(interaction.Performer, gameObject, NetTabType.HackingPanel, TabAction.Open);
+				}
+			}
 
-			integrity = GetComponent<Integrity>();
-
-			integrity.OnWillDestroyServer.AddListener(WhenDestroyed);
+			//unsecure
+			if (Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Crowbar) && panelopen)
+			{
+				ToolUtils.ServerUseToolWithActionMessages(interaction, secondsToScrewdrive,
+					"You start to disconnect the monitor...",
+					$"{interaction.Performer.ExpensiveName()} starts to disconnect the monitor...",
+					"You disconnect the monitor.",
+					$"{interaction.Performer.ExpensiveName()} disconnects the monitor.",
+					() => { WhenDestroyed(null); });
+			}
 		}
 
 		public void WhenDestroyed(DestructionInfo info)
@@ -74,7 +123,7 @@ namespace Objects.Construction
 			}
 			var frame = Spawn.ServerPrefab(framePrefab, SpawnDestination.At(gameObject)).GameObject;
 			frame.GetComponent<ComputerFrame>().ServerInitFromComputer(this);
-			Despawn.ServerSingle(gameObject);
+			_ = Despawn.ServerSingle(gameObject);
 
 			integrity.OnWillDestroyServer.RemoveListener(WhenDestroyed);
 		}

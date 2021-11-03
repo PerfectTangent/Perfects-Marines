@@ -6,6 +6,7 @@ using Mirror;
 using Systems.Botany;
 using Chemistry;
 using Chemistry.Components;
+using Items;
 using Items.Botany;
 
 namespace Objects.Botany
@@ -13,7 +14,7 @@ namespace Objects.Botany
 	/// <summary>
 	/// Where the magic happens in botany. This tray grows all of the plants
 	/// </summary>
-	public class HydroponicsTray : ManagedNetworkBehaviour, IInteractable<HandApply>
+	public class HydroponicsTray : ManagedNetworkBehaviour, IInteractable<HandApply>, IServerSpawn
 	{
 		public bool HasPlant => plantData?.FullyGrownSpriteSO != null;
 		public bool ReadyToHarvest => plantCurrentStage == PlantSpriteStage.FullyGrown;
@@ -28,12 +29,15 @@ namespace Objects.Botany
 
 		[SerializeField] private RegisterTile registerTile;
 		[SerializeField] private bool isSoilPile = false;
-
 		[Tooltip("If this is set the plant will not grow/die over time, use it to keep wild findable plants alive")]
 		[SerializeField]
 		private bool isWild = false;
 
-		[SerializeField] private List<DefaultPlantData> potentialWeeds = new List<DefaultPlantData>();
+		[Tooltip("Chooses what plants to place in the tray if the weed level gets too high.")]
+		[SerializeField] private List<SeedPacket> potentialWeeds = new List<SeedPacket>();
+		[Tooltip("Chooses what plants to place in the tray if it is a wild tray.")]
+		[SerializeField] private List<SeedPacket> potentialWildPlants = new List<SeedPacket>();
+
 		[SerializeField] private PlantTrayModification modification = PlantTrayModification.None;
 		[SerializeField] private ReagentContainer reagentContainer = null;
 		[SerializeField] private Chemistry.Reagent nutriment = null;
@@ -55,6 +59,8 @@ namespace Objects.Botany
 		private float tickCount;
 		private float weedLevel;
 
+		#region Lifecycle
+
 		public void Start()
 		{
 			waterNotifier.PushClear();
@@ -67,17 +73,20 @@ namespace Objects.Botany
 		{
 			base.OnStartServer();
 			EnsureInit();
+		}
+
+		public void OnSpawnServer(SpawnInfo info)
+		{
+			EnsureInit();
 			ServerInit();
 		}
 
 		public void ServerInit()
 		{
-			if (isSoilPile)
+			if (isWild)
 			{
-				//only select plants that have valid produce
-				plantData = PlantData.CreateNewPlant(DefaultPlantData.PlantDictionary.Values
-					.Where(plant => plant.plantData.ProduceObject != null).PickRandom());
-				UpdatePlant(null, plantData.Name);
+				var data = potentialWildPlants[random.Next(potentialWildPlants.Count)];
+				plantData = PlantData.CreateNewPlant(data.plantData);
 				UpdatePlantStage(PlantSpriteStage.None, PlantSpriteStage.FullyGrown);
 				UpdatePlantGrowthStage(growingPlantStage, plantData.GrowthSpritesSOs.Count - 1);
 				ProduceCrop();
@@ -95,7 +104,6 @@ namespace Objects.Botany
 			UpdateNutrimentFlag(showNutrimenetFlag, false);
 		}
 
-
 		private void EnsureInit()
 		{
 			if (registerTile != null) return;
@@ -107,13 +115,30 @@ namespace Objects.Botany
 			harvestNotifier.PushClear();
 		}
 
+		private void OnEnable()
+		{
+			if(CustomNetworkManager.IsServer == false) return;
+
+			UpdateManager.Add(CallbackType.UPDATE, UpdateMe);
+		}
+
+		private void OnDisable()
+		{
+			if(CustomNetworkManager.IsServer == false) return;
+
+			UpdateManager.Remove(CallbackType.UPDATE, UpdateMe);
+		}
+
+		#endregion Lifecycle
+
 		/// <summary>
 		/// Server updates plant status and updates clients as needed
+		/// Server Side Only
 		/// </summary>
-		public override void UpdateMe()
+		private void UpdateMe()
 		{
 			//Only server checks plant status, wild plants do not grow
-			if (!isServer || isWild) return;
+			if (isWild) return;
 
 			//Only update at set rate
 			tickCount += Time.deltaTime;
@@ -133,7 +158,7 @@ namespace Objects.Botany
 				//Weeds checks
 				if (weedLevel < 10)
 				{
-					weedLevel = weedLevel + ((0.1f) * (plantData.WeedGrowthRate / 100f));
+					weedLevel = weedLevel + ((0.1f) * (plantData.WeedGrowthRate / 10f));
 					if (weedLevel > 10)
 					{
 						weedLevel = 10;
@@ -223,9 +248,10 @@ namespace Objects.Botany
 					}
 				}
 
-				if (plantData != null)
+				// If there is no living plant in the tray and weed level is at least 10, choose a seed from the "Potential Weeds" list to grow in the tray.
+				if (plantData == null)
 				{
-					if (weedLevel >= 10 && !plantData.PlantTrays.Contains(PlantTrays.Weed_Adaptation))
+					if (weedLevel >= 10)
 					{
 						var data = potentialWeeds[random.Next(potentialWeeds.Count)];
 						plantData = PlantData.CreateNewPlant(data.plantData);
@@ -327,7 +353,6 @@ namespace Objects.Botany
 			}
 		}
 
-
 		private void UpdatePlant(string oldPlantSyncString, string newPlantSyncString)
 		{
 			UpdateSprite();
@@ -372,7 +397,7 @@ namespace Objects.Botany
 					if (growingPlantStage >= plantData.GrowthSpritesSOs.Count)
 					{
 						Logger.Log(
-							$"Plant data does not contain growthsprites for index: {growingPlantStage} in plantData.GrowthSprites. Plant: {plantData.Plantname}");
+							$"Plant data does not contain growthsprites for index: {growingPlantStage} in plantData.GrowthSprites. Plant: {plantData.PlantName}", Category.Botany);
 						return;
 					}
 
@@ -380,7 +405,6 @@ namespace Objects.Botany
 					break;
 			}
 		}
-
 
 		private void CropDeath()
 		{
@@ -396,10 +420,10 @@ namespace Objects.Botany
 
 			growingPlantStage = 0;
 			plantCurrentStage = PlantSpriteStage.Dead;
+			UpdateSprite();
 			plantData = null;
 			readyProduce.Clear();
 			UpdateHarvestFlag(showHarvestFlag, false);
-			UpdateSprite();
 		}
 
 		/// <summary>
@@ -408,6 +432,7 @@ namespace Objects.Botany
 		/// </summary>
 		private void ProduceCrop()
 		{
+			//Divides the yield value by 10 and then rounds it to the nearest integer to get the amount of objects harvested.
 			for (int i = 0;
 				i < (int)Math.Round(plantData.Yield / 10f);
 				i++)
@@ -435,7 +460,6 @@ namespace Objects.Botany
 			}
 		}
 
-
 		/// <summary>
 		/// Server handles hand interaction with tray
 		/// </summary>
@@ -449,7 +473,7 @@ namespace Objects.Botany
 			{
 				if (plantData.MutatesInToGameObject.Count > 0)
 				{
-					var objectContainer = slot?.Item?.GetComponent<ReagentContainer>();
+					var objectContainer = slot?.Item.OrNull()?.GetComponent<ReagentContainer>();
 					if (objectContainer != null)
 					{
 						objectContainer.MoveReagentsTo(5, reagentContainer);
@@ -467,7 +491,7 @@ namespace Objects.Botany
 			}
 
 
-			var objectItemAttributes = slot?.Item?.GetComponent<ItemAttributesV2>();
+			var objectItemAttributes = slot?.Item.OrNull()?.GetComponent<ItemAttributesV2>();
 			if (objectItemAttributes != null)
 			{
 				//If hand slot contains Cultivator remove weeds
@@ -512,7 +536,7 @@ namespace Objects.Botany
 
 			//If hand slot contains grown food, plant the food
 			//This temporarily replaces the seed machine until it is implemented, see commented code for original compost behavior
-			var foodObject = slot?.Item?.GetComponent<GrownFood>();
+			var foodObject = slot?.Item.OrNull()?.GetComponent<GrownFood>();
 			if (foodObject != null)
 			{
 				if (HasPlant)
@@ -521,16 +545,16 @@ namespace Objects.Botany
 						$"You compost the {foodObject.name} in the {gameObject.ExpensiveName()}.",
 						$"{interaction.Performer.name} composts {foodObject.name} in the {gameObject.ExpensiveName()}.");
 					reagentContainer.Add(new ReagentMix(nutriment, foodObject.GetPlantData().Potency));
-					Despawn.ServerSingle(interaction.HandObject);
+					_ = Despawn.ServerSingle(interaction.HandObject);
 					return;
 				}
 				else
 				{
 					PlantData _plantData = foodObject.GetPlantData();
 					plantData = PlantData.CreateNewPlant(_plantData);
-					UpdatePlant(null, plantData.Name);
 					UpdatePlantGrowthStage(0, 0);
 					UpdatePlantStage(PlantSpriteStage.None, PlantSpriteStage.Growing);
+					UpdateHarvestFlag(showHarvestFlag, false);
 					Inventory.ServerVanish(slot);
 					Chat.AddActionMsgToChat(interaction.Performer,
 						$"You plant the {foodObject.name} in the {gameObject.ExpensiveName()}.",
@@ -539,13 +563,13 @@ namespace Objects.Botany
 			}
 
 			//If hand slot contains seeds, plant the seeds
-			var Object = slot?.Item?.GetComponent<SeedPacket>();
+			var Object = slot?.Item.OrNull()?.GetComponent<SeedPacket>();
 			if (Object != null)
 			{
 				plantData = PlantData.CreateNewPlant(slot.Item.GetComponent<SeedPacket>().plantData);
-				UpdatePlant(null, plantData.Name);
 				UpdatePlantGrowthStage(0, 0);
 				UpdatePlantStage(PlantSpriteStage.None, PlantSpriteStage.Growing);
+				UpdateHarvestFlag(showHarvestFlag, false);
 				Inventory.ServerVanish(slot);
 				Chat.AddActionMsgToChat(interaction.Performer,
 					$"You plant the {Object.name} in the {gameObject.ExpensiveName()}.",

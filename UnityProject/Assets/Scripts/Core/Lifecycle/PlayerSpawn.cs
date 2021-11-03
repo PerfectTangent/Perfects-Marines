@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using UnityEngine;
 using Mirror;
-using Objects.Security;
 using Systems;
+using Systems.Spawns;
+using Managers;
+using Messages.Server;
+using Messages.Server.LocalGuiMessages;
+using UI.CharacterCreator;
 
 /// <summary>
 /// Main API for dealing with spawning players and related things.
@@ -22,16 +24,22 @@ public static class PlayerSpawn
 	/// is not in control of any mobs. Spawns the joined viewer as the indicated occupation and transfers control to it.
 	/// Note that this doesn't take into account game mode or antags, it just spawns whatever is requested.
 	/// </summary>
+	/// <param name="request">holds the request data</param>
 	/// <param name="joinedViewer">viewer who should control the player</param>
 	/// <param name="occupation">occupation to spawn as</param>
 	/// <param name="characterSettings">settings to use for the character</param>
 	/// <returns>the game object of the spawned player</returns>
-	public static GameObject ServerSpawnPlayer(JoinedViewer joinedViewer, Occupation occupation, CharacterSettings characterSettings)
+	public static GameObject ServerSpawnPlayer(PlayerSpawnRequest request, JoinedViewer joinedViewer, Occupation occupation, CharacterSettings characterSettings, bool showBanner = true)
 	{
+		if(ValidateCharacter(request) == false)
+		{
+			return null;
+		}
+
 		NetworkConnection conn = joinedViewer.connectionToClient;
 
 		// TODO: add a nice cutscene/animation for the respawn transition
-		var newPlayer = ServerSpawnInternal(conn, occupation, characterSettings, null);
+		var newPlayer = ServerSpawnInternal(conn, occupation, characterSettings, null, showBanner: showBanner);
 		if (newPlayer != null && occupation.IsCrewmember)
 		{
 			CrewManifestManager.Instance.AddMember(newPlayer.GetComponent<PlayerScript>(), occupation.JobType);
@@ -46,6 +54,50 @@ public static class PlayerSpawn
 		return newPlayer;
 	}
 
+	private static bool ValidateCharacter(PlayerSpawnRequest request)
+	{
+		var isOk = true;
+		var message = "";
+
+		//Disable this until we fix skin tone checks.
+		/*
+		if(ServerValidations.HasIllegalSkinTone(request.CharacterSettings))
+		{
+			message += " Invalid player skin tone.";
+			isOk = false;
+		}
+
+
+		if(ServerValidations.HasIllegalCharacterName(request.CharacterSettings.Name))
+		{
+			message += " Invalid player character name.";
+			isOk = false;
+		}
+		*/
+		if(ServerValidations.HasIllegalCharacterAge(request.CharacterSettings.Age))
+		{
+			message += " Invalid character age.";
+			isOk = false;
+		}
+
+		if (isOk == false)
+		{
+			message += " Please change and resave character.";
+			ValidateFail(request.JoinedViewer, request.UserID, message);
+		}
+
+		return isOk;
+	}
+
+	private static void ValidateFail(JoinedViewer joinedViewer, string userId, string message)
+	{
+		PlayerList.Instance.ServerKickPlayer(userId, message, false, 1, false);
+		if(joinedViewer.isServer || joinedViewer.isLocalPlayer)
+		{
+			joinedViewer.Spectate();
+		}
+	}
+
 	/// <summary>
 	/// Server-side only. For use when a player has only joined (as a JoinedViewer) and
 	/// is not in control of any mobs. Spawns the joined viewer as the indicated occupation and transfers control to it.
@@ -55,7 +107,7 @@ public static class PlayerSpawn
 	/// <returns>the game object of the spawned player</returns>
 	public static GameObject ServerSpawnPlayer(PlayerSpawnRequest spawnRequest)
 	{
-		return ServerSpawnPlayer(spawnRequest.JoinedViewer, spawnRequest.RequestedOccupation,
+		return ServerSpawnPlayer(spawnRequest, spawnRequest.JoinedViewer, spawnRequest.RequestedOccupation,
 			spawnRequest.CharacterSettings);
 	}
 
@@ -74,13 +126,11 @@ public static class PlayerSpawn
 
 		var player = oldBody.Player();
 		var oldGhost = forMind.ghost;
-		forMind.stepType = GetStepType(player.Script);
-
 		ServerSpawnInternal(connection, occupation, settings, forMind, willDestroyOldBody: oldGhost != null);
 
 		if (oldGhost)
 		{
-			Despawn.ServerSingle(oldGhost.gameObject);
+			_ = Despawn.ServerSingle(oldGhost.gameObject);
 		}
 	}
 
@@ -91,7 +141,7 @@ public static class PlayerSpawn
 	/// </summary>
 	/// <param name="forMind"></param>
 	/// <param name="worldPosition"></param>
-	public static void ServerClonePlayer(Mind forMind, Vector3Int worldPosition)
+	public static GameObject ServerClonePlayer(Mind forMind, Vector3Int worldPosition)
 	{
 		//TODO: Can probably remove characterSettings from cloningrecord
 		//determine previous occupation / settings
@@ -99,9 +149,8 @@ public static class PlayerSpawn
 		var occupation = forMind.occupation;
 		var connection = oldBody.GetComponent<NetworkIdentity>().connectionToClient;
 		var settings = oldBody.GetComponent<PlayerScript>().characterSettings;
-		forMind.stepType = GetStepType(forMind.body);
 
-		ServerSpawnInternal(connection, occupation, settings, forMind, worldPosition, false);
+		return ServerSpawnInternal(connection, occupation, settings, forMind, worldPosition, false, showBanner: false);
 	}
 
 	//Time to start spawning players at arrivals
@@ -125,7 +174,7 @@ public static class PlayerSpawn
 	///
 	/// <returns>the spawned object</returns>
 	private static GameObject ServerSpawnInternal(NetworkConnection connection, Occupation occupation, CharacterSettings characterSettings,
-		Mind existingMind, Vector3Int? spawnPos = null, bool spawnItems = true, bool willDestroyOldBody = false)
+		Mind existingMind, Vector3Int? spawnPos = null, bool spawnItems = true, bool willDestroyOldBody = false, bool showBanner = true)
 	{
 		//determine where to spawn them
 		if (spawnPos == null)
@@ -134,15 +183,15 @@ public static class PlayerSpawn
 			//Spawn normal location for special jobs or if less than 2 minutes passed
 			if (GameManager.Instance.stationTime < ARRIVALS_SPAWN_TIME || occupation.LateSpawnIsArrivals == false)
 			{
-				 spawnTransform = GetSpawnForJob(occupation.JobType);
+				spawnTransform = SpawnPoint.GetRandomPointForJob(occupation.JobType);
 			}
 			else
 			{
-				spawnTransform = GetSpawnForLateJoin(occupation.JobType);
+				spawnTransform = SpawnPoint.GetRandomPointForLateSpawn();
 				//Fallback to assistant spawn location if none found for late join
-				if(spawnTransform == null && occupation.JobType != JobType.NULL)
+				if (spawnTransform == null && occupation.JobType != JobType.NULL)
 				{
-					spawnTransform = GetSpawnForJob(JobType.ASSISTANT);
+					spawnTransform = SpawnPoint.GetRandomPointForJob(JobType.ASSISTANT);
 				}
 			}
 
@@ -150,7 +199,7 @@ public static class PlayerSpawn
 			{
 				Logger.LogErrorFormat(
 					"Unable to determine spawn position for connection {0} occupation {1}. Cannot spawn player.",
-					Category.ItemSpawn,
+					Category.EntitySpawn,
 					connection.address, occupation.DisplayName);
 				return null;
 			}
@@ -159,15 +208,14 @@ public static class PlayerSpawn
 		}
 
 		//create the player object
-		var newPlayer = ServerCreatePlayer(spawnPos.GetValueOrDefault());
+		var newPlayer = ServerCreatePlayer(spawnPos.GetValueOrDefault(), occupation.SpecialPlayerPrefab);
 		var newPlayerScript = newPlayer.GetComponent<PlayerScript>();
 
 		//get the old body if they have one.
 		var oldBody = existingMind?.GetCurrentMob();
 
 		//transfer control to the player object
-		ServerTransferPlayer(connection, newPlayer, oldBody, EVENT.PlayerSpawned, characterSettings, willDestroyOldBody);
-
+		ServerTransferPlayer(connection, newPlayer, oldBody, Event.PlayerSpawned, characterSettings, willDestroyOldBody);
 
 		if (existingMind == null)
 		{
@@ -192,6 +240,22 @@ public static class PlayerSpawn
 			SpawnDestination.At(spawnPos), spawnItems: spawnItems);
 		Spawn._ServerFireClientServerSpawnHooks(SpawnResult.Single(info, newPlayer));
 
+		if (occupation != null && showBanner)
+		{
+			SpawnBannerMessage.Send(
+				newPlayer,
+				occupation.DisplayName,
+				occupation.SpawnSound.AssetAddress,
+				occupation.TextColor,
+				occupation.BackgroundColor,
+				occupation.PlaySound);
+		}
+		if (info.SpawnItems)
+		{
+			newPlayer.GetComponent<DynamicItemStorage>()?.SetUpOccupation(occupation);
+		}
+
+
 		return newPlayer;
 	}
 
@@ -210,15 +274,14 @@ public static class PlayerSpawn
 		var mind = ps.mind;
 		var occupation = mind.occupation;
 		var settings = ps.characterSettings;
-		ServerTransferPlayer(forConnection, body, fromObject, EVENT.PlayerRejoined, settings, oldGhost != null);
+		ServerTransferPlayer(forConnection, body, fromObject, Event.PlayerSpawned, settings, oldGhost != null);
 		body.GetComponent<PlayerScript>().playerNetworkActions.ReenterBodyUpdates();
 
 		if (oldGhost)
 		{
-			Despawn.ServerSingle(oldGhost.gameObject);
+			_ = Despawn.ServerSingle(oldGhost.gameObject);
 		}
 	}
-
 
 	/// <summary>
 	/// Use this when a player rejoins the game and already has a logged-out body in the game.
@@ -232,8 +295,10 @@ public static class PlayerSpawn
 		var mind = ps.mind;
 		var occupation = mind.occupation;
 		var settings = ps.characterSettings;
-		ServerTransferPlayer(viewer.connectionToClient, body, viewer.gameObject, EVENT.PlayerRejoined, settings);
-		body.GetComponent<PlayerScript>().playerNetworkActions.ReenterBodyUpdates();
+		ServerTransferPlayer(viewer.connectionToClient, body, viewer.gameObject, Event.PlayerRejoined, settings);
+		ps = body.GetComponent<PlayerScript>();
+		ps.playerNetworkActions.ReenterBodyUpdates();
+		ps.mind.ResendSpellActions();
 	}
 
 	/// <summary>
@@ -248,7 +313,7 @@ public static class PlayerSpawn
 	{
 		if (forMind == null)
 		{
-			Logger.LogError("Mind was null for ServerSpawnGhost", Category.Server);
+			Logger.LogError("Mind was null for ServerSpawnGhost", Category.Ghosts);
 			return;
 		}
 		//determine where to spawn the ghost
@@ -256,7 +321,7 @@ public static class PlayerSpawn
 
 		if (body == null)
 		{
-			Logger.LogError("Body was null for ServerSpawnGhost", Category.Server);
+			Logger.LogError("Body was null for ServerSpawnGhost", Category.Ghosts);
 			return;
 		}
 
@@ -265,7 +330,7 @@ public static class PlayerSpawn
 		var registerTile = body.GetComponent<RegisterTile>();
 		if (registerTile == null)
 		{
-			Logger.LogErrorFormat("Cannot spawn ghost for body {0} because it has no registerTile", Category.ItemSpawn,
+			Logger.LogErrorFormat("Cannot spawn ghost for body {0} because it has no registerTile", Category.Ghosts,
 				body.name);
 			return;
 		}
@@ -277,10 +342,10 @@ public static class PlayerSpawn
 		if (spawnPosition == TransformState.HiddenPos)
 		{
 			//spawn ghost at occupation location if we can't determine where their body is
-			Transform spawnTransform = GetSpawnForJob(forMind.occupation.JobType);
+			Transform spawnTransform = SpawnPoint.GetRandomPointForJob(forMind.occupation.JobType, true);
 			if (spawnTransform == null)
 			{
-				Logger.LogErrorFormat("Unable to determine spawn position for occupation {1}. Cannot spawn ghost.", Category.ItemSpawn,
+				Logger.LogErrorFormat("Unable to determine spawn position for occupation {1}. Cannot spawn ghost.", Category.Ghosts,
 					forMind.occupation.DisplayName);
 				return;
 			}
@@ -289,24 +354,29 @@ public static class PlayerSpawn
 		}
 
 		var matrixInfo = MatrixManager.AtPoint(spawnPosition, true);
-		var parentNetId = matrixInfo.NetID;
 		var parentTransform = matrixInfo.Objects;
 
 		//using parentTransform.rotation rather than Quaternion.identity because objects should always
 		//be upright w.r.t.  localRotation, NOT world rotation
 		var ghost = UnityEngine.Object.Instantiate(CustomNetworkManager.Instance.ghostPrefab, spawnPosition, parentTransform.rotation,
 			parentTransform);
-		ghost.GetComponent<PlayerScript>().registerTile.ServerSetNetworkedMatrixNetID(parentNetId);
 
 		forMind.Ghosting(ghost);
 
-		ServerTransferPlayer(connection, ghost, body, EVENT.GhostSpawned, settings);
+		ServerTransferPlayer(connection, ghost, body, Event.GhostSpawned, settings);
 
 
 		//fire all hooks
 		var info = SpawnInfo.Ghost(forMind.occupation, settings, CustomNetworkManager.Instance.ghostPrefab,
 			SpawnDestination.At(spawnPosition, parentTransform));
 		Spawn._ServerFireClientServerSpawnHooks(SpawnResult.Single(info, ghost));
+
+		if (PlayerList.Instance.IsAdmin(forMind.ghost.connectedPlayer))
+		{
+			var adminItemStorage = AdminManager.Instance.GetItemSlotStorage(forMind.ghost.connectedPlayer);
+			adminItemStorage.ServerAddObserverPlayer(ghost);
+			ghost.GetComponent<GhostSprites>().SetAdminGhost();
+		}
 	}
 
 	/// <summary>
@@ -315,35 +385,41 @@ public static class PlayerSpawn
 	public static void ServerSpawnGhost(JoinedViewer joinedViewer, CharacterSettings characterSettings)
 	{
 		//Hard coding to assistant
-		Vector3Int spawnPosition = GetSpawnForJob(JobType.ASSISTANT).transform.position.CutToInt();
+		Vector3Int spawnPosition = SpawnPoint.GetRandomPointForJob(JobType.ASSISTANT).transform.position.CutToInt();
 
 		//Get spawn location
 		var matrixInfo = MatrixManager.AtPoint(spawnPosition, true);
-		var parentNetId = matrixInfo.NetID;
 		var parentTransform = matrixInfo.Objects;
 		var newPlayer = UnityEngine.Object.Instantiate(CustomNetworkManager.Instance.ghostPrefab, spawnPosition, parentTransform.rotation, parentTransform);
-		newPlayer.GetComponent<PlayerScript>().registerTile.ServerSetNetworkedMatrixNetID(parentNetId);
 
 		//Create the mind without a job refactor this to make it as a ghost mind
 		Mind.Create(newPlayer);
-		ServerTransferPlayer(joinedViewer.connectionToClient, newPlayer, null, EVENT.GhostSpawned, characterSettings);
+		ServerTransferPlayer(joinedViewer.connectionToClient, newPlayer, null, Event.GhostSpawned, characterSettings);
+
+		if (PlayerList.Instance.IsAdmin(PlayerList.Instance.Get(joinedViewer.connectionToClient)))
+		{
+			newPlayer.GetComponent<GhostSprites>().SetAdminGhost();
+		}
 	}
 
 	/// <summary>
 	/// Spawns an assistant dummy
 	/// </summary>
-	public static void ServerSpawnDummy()
+	public static void ServerSpawnDummy(Transform spawnTransform = null)
 	{
-		Transform spawnTransform = GetSpawnForJob(JobType.ASSISTANT);
+		if(spawnTransform == null)
+			spawnTransform = SpawnPoint.GetRandomPointForJob(JobType.ASSISTANT);
 		if (spawnTransform != null)
 		{
 			var dummy = ServerCreatePlayer(spawnTransform.position.RoundToInt());
 
-			ServerTransferPlayer(null, dummy, null, EVENT.PlayerSpawned, new CharacterSettings());
+			CharacterSettings randomSettings = CharacterSettings.RandomizeCharacterSettings();
+
+			ServerTransferPlayer(null, dummy, null, Event.PlayerSpawned, randomSettings);
 
 
 			//fire all hooks
-			var info = SpawnInfo.Player(OccupationList.Instance.Get(JobType.ASSISTANT), new CharacterSettings(), CustomNetworkManager.Instance.humanPlayerPrefab,
+			var info = SpawnInfo.Player(OccupationList.Instance.Get(JobType.ASSISTANT), randomSettings, CustomNetworkManager.Instance.humanPlayerPrefab,
 				SpawnDestination.At(spawnTransform.gameObject));
 			Spawn._ServerFireClientServerSpawnHooks(SpawnResult.Single(info, dummy));
 		}
@@ -357,29 +433,30 @@ public static class PlayerSpawn
 	/// <param name="spawnWorldPosition">world pos to spawn at</param>
 	/// <param name="occupation">occupation to spawn as</param>
 	/// <param name="characterSettings">settings to use for the character</param>
+	/// <param name="playerPrefab">prefab to spawn for the player</param>
 	/// <returns></returns>
-	private static GameObject ServerCreatePlayer(Vector3Int spawnWorldPosition)
+	private static GameObject ServerCreatePlayer(Vector3Int spawnWorldPosition, GameObject playerPrefab = null)
 	{
 		//player is only spawned on server, we don't sync it to other players yet
 		var spawnPosition = spawnWorldPosition;
 		var matrixInfo = MatrixManager.AtPoint(spawnPosition, true);
-		var parentNetId = matrixInfo.NetID;
 		var parentTransform = matrixInfo.Objects;
+
+		if (playerPrefab == null)
+		{
+			playerPrefab = CustomNetworkManager.Instance.humanPlayerPrefab;
+		}
 
 		//using parentTransform.rotation rather than Quaternion.identity because objects should always
 		//be upright w.r.t.  localRotation, NOT world rotation
-		var player = UnityEngine.Object.Instantiate(CustomNetworkManager.Instance.humanPlayerPrefab,
-			spawnPosition, parentTransform.rotation,
+		var player = UnityEngine.Object.Instantiate(playerPrefab, spawnPosition, parentTransform.rotation,
 			parentTransform);
-		player.GetComponent<PlayerScript>().registerTile.ServerSetNetworkedMatrixNetID(parentNetId);
-
-
 
 		return player;
 	}
 
 	public static void ServerTransferPlayerToNewBody(NetworkConnection conn, GameObject newBody, GameObject oldBody,
-		EVENT eventType, CharacterSettings characterSettings, bool willDestroyOldBody = false)
+		Event eventType, CharacterSettings characterSettings, bool willDestroyOldBody = false)
 	{
 		ServerTransferPlayer(conn, newBody, oldBody, eventType, characterSettings, willDestroyOldBody);
 	}
@@ -395,7 +472,7 @@ public static class PlayerSpawn
 	/// <param name="willDestroyOldBody">if true, indicates the old body is going to be destroyed rather than pooled,
 	/// thus we shouldn't send any network message which reference's the old body's ID since it won't exist.</param>
 	private static void ServerTransferPlayer(NetworkConnection conn, GameObject newBody, GameObject oldBody,
-		EVENT eventType, CharacterSettings characterSettings, bool willDestroyOldBody = false)
+		Event eventType, CharacterSettings characterSettings, bool willDestroyOldBody = false)
 	{
 		if (oldBody)
 		{
@@ -406,7 +483,13 @@ public static class PlayerSpawn
 			}
 
 			//no longer can observe their inventory
-			oldBody.GetComponent<ItemStorage>()?.ServerRemoveObserverPlayer(oldBody);
+			oldBody.GetComponent<DynamicItemStorage>()?.ServerRemoveObserverPlayer(oldBody);
+		}
+
+		var netIdentity = newBody.GetComponent<NetworkIdentity>();
+		if (netIdentity.connectionToClient != null)
+		{
+			CustomNetworkManager.Instance.OnServerDisconnect(netIdentity.connectionToClient);
 		}
 
 		var connectedPlayer = PlayerList.Instance.Get(conn);
@@ -427,16 +510,16 @@ public static class PlayerSpawn
 			// {
 			// 	NetworkServer.ReplacePlayerForConnection(new NetworkConnectionToClient(0), oldBody);
 			// }
-			TriggerEventMessage.Send(newBody, eventType);
+			TriggerEventMessage.SendTo(newBody, eventType);
 
 			//can observe their new inventory
-			newBody.GetComponent<ItemStorage>()?.ServerAddObserverPlayer(newBody);
-		}
+			var dynamicItemStorage = newBody.GetComponent<DynamicItemStorage>();
+			if (dynamicItemStorage != null)
+			{
+				dynamicItemStorage.ServerAddObserverPlayer(newBody);
+				PlayerPopulateInventoryUIMessage.Send(dynamicItemStorage, newBody);
+			}
 
-		var playerScript = newBody.GetComponent<PlayerScript>();
-		if (playerScript.PlayerSync != null)
-		{
-			playerScript.PlayerSync.NotifyPlayers(true);
 		}
 
 		// If the player is inside a container, send a ClosetHandlerMessage.
@@ -449,8 +532,9 @@ public static class PlayerSpawn
 
 		if (characterSettings != null)
 		{
+			var playerScript = newBody.GetComponent<PlayerScript>();
 			playerScript.characterSettings = characterSettings;
-			playerScript.playerName = characterSettings.Name;
+			playerScript.playerName = playerScript.PlayerState != PlayerScript.PlayerStates.Ai ? characterSettings.Name : characterSettings.AiName;
 			newBody.name = characterSettings.Name;
 			var playerSprites = newBody.GetComponent<PlayerSprites>();
 			if (playerSprites)
@@ -458,67 +542,5 @@ public static class PlayerSpawn
 				playerSprites.OnCharacterSettingsChange(characterSettings);
 			}
 		}
-		var healthStateMonitor = newBody.GetComponent<HealthStateMonitor>();
-		if (healthStateMonitor)
-		{
-			healthStateMonitor.ProcessClientUpdateRequest(newBody);
-		}
-	}
-
-	private static Transform GetSpawnForLateJoin(JobType jobType)
-	{
-		if (jobType == JobType.NULL)
-		{
-			return null;
-		}
-		List<SpawnPoint> spawnPoints = CustomNetworkManager.startPositions.Select(x => x.GetComponent<SpawnPoint>())
-			.Where(x => x.Department == JobDepartment.LateJoin).ToList();
-
-		return spawnPoints.Count == 0 ? null : spawnPoints.PickRandom().transform;
-	}
-	public static Transform GetSpawnForJob(JobType jobType)
-	{
-		if (jobType == JobType.NULL)
-		{
-			return null;
-		}
-
-		var spawns = CustomNetworkManager.startPositions.Select(x => x.GetComponent<SpawnPoint>()).ToList();
-
-		var spawnPoints = spawns.Where(x => x.JobRestrictions.Contains(jobType)).ToList();
-		if (spawnPoints.Count != 0)
-		{
-			return spawnPoints.PickRandom().transform;
-		}
-
-		// Default to arrivals if there is no mapped spawn point for this job!
-		// Will still return null if there is no arrivals spawn points set (and people will just not spawn!).
-
-		var arrivals = spawns.Where(x => x.Department == JobDepartment.LateJoin).ToList();
-		if (arrivals.Count != 0)
-		{
-			return arrivals.PickRandom().transform;
-		}
-
-		return default;
-	}
-
-	private static StepType GetStepType(PlayerScript player)
-	{
-		if (player == null || player.Equipment == null)
-		{
-			return StepType.Barefoot;
-		}
-
-		if (player.Equipment.GetClothingItem(NamedSlot.outerwear)?.gameObject.GetComponent<StepChanger>() != null)
-		{
-			return StepType.Suit;
-		}
-		else if (player.Equipment.GetClothingItem(NamedSlot.feet) != null)
-		{
-			return StepType.Shoes;
-		}
-
-		return StepType.Barefoot;
 	}
 }

@@ -4,7 +4,6 @@ using UnityEditor;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
 using UnityEngine;
-using System.Linq;
 
 //The scene list on the server
 public partial class SubSceneManager
@@ -12,10 +11,7 @@ public partial class SubSceneManager
 	private string serverChosenAwaySite = "loading";
 	private string serverChosenMainStation = "loading";
 
-	public static string ServerChosenMainStation
-	{
-		get { return Instance.serverChosenMainStation; }
-	}
+	public static string ServerChosenMainStation => Instance.serverChosenMainStation;
 
 	public static string AdminForcedMainStation = "Random";
 	public static string AdminForcedAwaySite = "Random";
@@ -46,15 +42,14 @@ public partial class SubSceneManager
 			yield return StartCoroutine(ServerLoadCentCom(loadTimer));
 			//Load Additional Scenes:
 			yield return StartCoroutine(ServerLoadAdditionalScenes(loadTimer));
-
 		}
 
 		netIdentity.isDirty = true;
 
 		yield return WaitFor.Seconds(0.1f);
 		UIManager.Display.preRoundWindow.CloseMapLoadingPanel();
-
-		Logger.Log($"Server has loaded {serverChosenAwaySite} away site", Category.SubScenes);
+		EventManager.Broadcast( Event.ScenesLoadedServer, false);
+		Logger.Log($"Server has loaded {serverChosenAwaySite} away site", Category.Round);
 	}
 
 	//Choose and load a main station on the server
@@ -63,7 +58,7 @@ public partial class SubSceneManager
 		MainStationLoaded = true;
 		//Auto scene load stuff in editor:
 		var prevEditorScene = GetEditorPrevScene();
-		if (mainStationList.MainStations.Contains(prevEditorScene) && AdminForcedMainStation == "Random")
+		if ((prevEditorScene != "") && AdminForcedMainStation == "Random")
 		{
 			serverChosenMainStation = prevEditorScene;
 		}
@@ -87,6 +82,7 @@ public partial class SubSceneManager
 			SceneName = serverChosenMainStation,
 			SceneType = SceneType.MainStation
 		});
+		netIdentity.isDirty = true;
 	}
 
 	//Load all the asteroids on the server
@@ -103,6 +99,7 @@ public partial class SubSceneManager
 				SceneName = asteroid,
 				SceneType = SceneType.Asteroid
 			});
+			netIdentity.isDirty = true;
 		}
 	}
 
@@ -128,7 +125,7 @@ public partial class SubSceneManager
 				SceneName = centComData.CentComSceneName,
 				SceneType = SceneType.AdditionalScenes
 			});
-
+			netIdentity.isDirty = true;
 			yield break;
 		}
 
@@ -142,6 +139,7 @@ public partial class SubSceneManager
 			SceneName = pickedMap,
 			SceneType = SceneType.AdditionalScenes
 		});
+		netIdentity.isDirty = true;
 	}
 
 	//Load all the asteroids on the server
@@ -179,6 +177,7 @@ public partial class SubSceneManager
 				SceneName = additionalScene,
 				SceneType = SceneType.AdditionalScenes
 			});
+			netIdentity.isDirty = true;
 		}
 	}
 
@@ -216,6 +215,7 @@ public partial class SubSceneManager
 				SceneName = serverChosenAwaySite,
 				SceneType = SceneType.AwaySite
 			});
+			netIdentity.isDirty = true;
 		}
 	}
 
@@ -243,26 +243,10 @@ public partial class SubSceneManager
 			SceneName = pickedMap,
 			SceneType = SceneType.AdditionalScenes
 		});
+		netIdentity.isDirty = true;
 
-		PokeClientSubScene.SendToAll( pickedMap);
-		yield return StartCoroutine(RunOnSpawnServer(pickedMap));
+		SyndicateScene = SceneManager.GetSceneByName(pickedMap);
 		SyndicateLoaded = true;
-	}
-
-	private IEnumerator RunOnSpawnServer(string map)
-	{
-		if (GameManager.Instance.CurrentRoundState == RoundState.Started) // the game started long ago!
-		{
-			yield return new WaitForEndOfFrame(); //let the matrix initialize first
-			var loadedScene = SceneManager.GetSceneByName(map);
-
-			var rootObjects = loadedScene.GetRootGameObjects();
-			foreach (var matrix in rootObjects) //different matrix of a scene, ex: syndie outpost and shuttle
-			{
-				var iserverspawnlist = matrix.GetComponentsInChildren<IServerSpawn>();
-				GameManager.Instance.MappedOnSpawnServer(iserverspawnlist);
-			}
-		}
 	}
 
 	public IEnumerator LoadWizard()
@@ -278,9 +262,8 @@ public partial class SubSceneManager
 			SceneName = pickedScene,
 			SceneType = SceneType.AdditionalScenes
 		});
+		netIdentity.isDirty = true;
 
-		PokeClientSubScene.SendToAll(pickedScene);
-		yield return StartCoroutine(RunOnSpawnServer(pickedScene));
 		WizardLoaded = true;
 	}
 

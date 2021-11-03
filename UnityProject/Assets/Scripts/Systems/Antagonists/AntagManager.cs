@@ -7,6 +7,8 @@ using System.Linq;
 using DiscordWebhook;
 using DatabaseAPI;
 using Messages.Server.LocalGuiMessages;
+using Objects.Command;
+using UnityEngine.SceneManagement;
 
 namespace Antagonists
 {
@@ -23,7 +25,9 @@ namespace Antagonists
 		/// <summary>
 		/// All active antagonists
 		/// </summary>
-		private List<SpawnedAntag> ActiveAntags = new List<SpawnedAntag>();
+		private List<SpawnedAntag> activeAntags = new List<SpawnedAntag>();
+
+		public List<SpawnedAntag> ActiveAntags => activeAntags;
 
 		/// <summary>
 		/// Keeps track of which players have already been targeted for objectives
@@ -34,6 +38,8 @@ namespace Antagonists
 		/// Keeps track of which items have already been targeted for objectives
 		/// </summary>
 		[NonSerialized] public List<GameObject> TargetedItems = new List<GameObject>();
+
+		public static int SyndiNukeCode;
 
 		public GameObject blobPlayerViewer = null;
 
@@ -51,12 +57,19 @@ namespace Antagonists
 
 		void OnEnable()
 		{
-			EventManager.AddHandler(EVENT.RoundEnded, OnRoundEnd);
+			SceneManager.activeSceneChanged += OnSceneChange;
+			EventManager.AddHandler(Event.RoundEnded, OnRoundEnd);
 		}
 
 		void OnDisable()
 		{
-			EventManager.RemoveHandler(EVENT.RoundEnded, OnRoundEnd);
+			SceneManager.activeSceneChanged -= OnSceneChange;
+			EventManager.RemoveHandler(Event.RoundEnded, OnRoundEnd);
+		}
+
+		void OnSceneChange(Scene oldScene, Scene newScene)
+		{
+			SyndiNukeCode = Nuke.CodeGenerator();
 		}
 
 		void OnRoundEnd()
@@ -67,7 +80,7 @@ namespace Antagonists
 		/// <summary>
 		/// Returns the number of active antags
 		/// </summary>
-		public int AntagCount => ActiveAntags.Count;
+		public int AntagCount => activeAntags.Count;
 
 		/// <summary>
 		/// Server only. Spawn the joined viewer as the indicated antag, includes creating their player object
@@ -79,11 +92,9 @@ namespace Antagonists
 		public void ServerSpawnAntag(Antagonist chosenAntag, PlayerSpawnRequest spawnRequest)
 		{
 			//spawn the antag using their custom spawn logic
-			var spawnedPlayer = chosenAntag.ServerSpawn(spawnRequest);
+			ConnectedPlayer spawnedPlayer = chosenAntag.ServerSpawn(spawnRequest).Player();
 
-			var connectedPlayer = PlayerList.Instance.Get(spawnedPlayer);
-
-			ServerFinishAntag(chosenAntag, connectedPlayer, spawnedPlayer);
+			ServerFinishAntag(chosenAntag, spawnedPlayer);
 		}
 
 		public IEnumerator ServerRespawnAsAntag(ConnectedPlayer connectedPlayer, Antagonist antagonist)
@@ -93,6 +104,12 @@ namespace Antagonists
 			if (antagOccupation != null)
 			{
 				connectedPlayer.Script.mind.occupation = antagonist.AntagOccupation;
+			}
+
+			//Can be null if respawning spectator ghost as they dont have an occupation and their antag occupation is null too
+			if (connectedPlayer.Script.mind.occupation == null)
+			{
+				yield break;
 			}
 
 			if (antagonist.AntagJobType == JobType.SYNDICATE)
@@ -108,7 +125,7 @@ namespace Antagonists
 			}
 
 			PlayerSpawn.ServerRespawnPlayer(connectedPlayer.Script.mind);
-			ServerFinishAntag(antagonist, connectedPlayer, connectedPlayer.GameObject);
+			ServerFinishAntag(antagonist, connectedPlayer);
 		}
 
 		private SpawnedAntag SetAntagDetails(Antagonist chosenAntag, ConnectedPlayer connectedPlayer)
@@ -121,30 +138,46 @@ namespace Antagonists
 			return spawnedAntag;
 		}
 
-		public void ServerFinishAntag(Antagonist chosenAntag, ConnectedPlayer connectedPlayer, GameObject spawnedPlayer)
+		public void ServerFinishAntag(Antagonist chosenAntag, ConnectedPlayer connectedPlayer)
 		{
 			var spawnedAntag = SetAntagDetails(chosenAntag, connectedPlayer);
-			ActiveAntags.Add(spawnedAntag);
-			ShowAntagBanner(spawnedPlayer, chosenAntag);
+			activeAntags.Add(spawnedAntag);
+			ShowAntagBanner(connectedPlayer, chosenAntag);
+			chosenAntag.AfterSpawn(connectedPlayer);
 
 			Logger.Log(
 				$"Created new antag. Made {connectedPlayer.Name} a {chosenAntag.AntagName} with objectives:\n{spawnedAntag.GetObjectivesForLog()}",
 				Category.Antags);
 		}
 
-
+		/// <summary>
+		/// Searches for the first PDA on the given player and installs an uplink.
+		/// </summary>
+		/// <param name="player">The player that should receive an uplink in the first PDA found on them.</param>
+		/// <param name="tcCount">The amount of telecrystals the uplink should be given.</param>
+		public static void TryInstallPDAUplink(ConnectedPlayer player, int tcCount, bool isNukeOps)
+		{
+			foreach (ItemSlot slot in player.Script.DynamicItemStorage.GetItemSlotTree())
+			{
+				if (slot.IsEmpty) continue;
+				if (slot.Item.TryGetComponent<Items.PDA.PDALogic>(out var pda))
+				{
+					pda.InstallUplink(player, tcCount, isNukeOps);
+				}
+			}
+		}
 
 		/// <summary>
 		/// Sends a message to the antag player and tells it to start the antag banner animation.
 		/// </summary>
 		/// <param name="player">Who</param>
 		/// <param name="antag">What antag data</param>
-		private static void ShowAntagBanner(GameObject player, Antagonist antag)
+		private static void ShowAntagBanner(ConnectedPlayer player, Antagonist antag)
 		{
-			AntagBannerMessage.Send(
-				player,
+			SpawnBannerMessage.Send(
+				player.GameObject,
 				antag.AntagName,
-				antag.SpawnSound,
+				antag.SpawnSound.AssetAddress,
 				antag.TextColor,
 				antag.BackgroundColor,
 				antag.PlaySound);
@@ -155,7 +188,7 @@ namespace Antagonists
 		/// </summary>
 		public void RemindAntags()
 		{
-			foreach (var activeAntag in ActiveAntags)
+			foreach (var activeAntag in activeAntags)
 			{
 				activeAntag.Owner?.ShowObjectives();
 			}
@@ -166,14 +199,14 @@ namespace Antagonists
 		/// </summary>
 		public void ShowAntagStatusReport()
 		{
-			StringBuilder statusSB = new StringBuilder($"<color=white><size=60><b>End of Round Report</b></size></color>\n\n", 200);
+			StringBuilder statusSB = new StringBuilder();
 
-			var message = $"End of Round Report on {ServerData.ServerConfig.ServerName}\n";
+			var message = $"";
 
-			if (ActiveAntags.Count > 0)
+			if (activeAntags.Count > 0)
 			{
 				// Group all the antags by type and list them together
-				foreach (var antagType in ActiveAntags.GroupBy(t => t.GetType()))
+				foreach (var antagType in activeAntags.GroupBy(t => t.GetType()))
 				{
 					statusSB.AppendLine($"<size=48>The <b>{antagType.First().Antagonist.AntagName}s</b> were:\n</size>");
 					message += $"The {antagType.First().Antagonist.AntagName}s were:\n";
@@ -210,7 +243,7 @@ namespace Antagonists
 		/// </summary>
 		public void ResetAntags()
 		{
-			ActiveAntags.Clear();
+			activeAntags.Clear();
 			TargetedPlayers.Clear();
 			TargetedItems.Clear();
 		}

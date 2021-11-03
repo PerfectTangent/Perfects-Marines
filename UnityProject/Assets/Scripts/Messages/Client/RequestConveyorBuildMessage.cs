@@ -1,50 +1,54 @@
-
-using System.Collections;
 using System.Linq;
 using Construction;
-using Messages.Client;
+using Construction.Conveyors;
+using Mirror;
 using UnityEngine;
 
-namespace Construction.Conveyors
+namespace Messages.Client
 {
 	/// <summary>
 	/// Client requests to construct a conveyor belt using the material in their active hand.
 	/// Yes its a big old cut and paste from RequestBuildMessage
 	/// </summary>
-	public class RequestConveyorBuildMessage : ClientMessage
+	public class RequestConveyorBuildMessage : ClientMessage<RequestConveyorBuildMessage.NetMessage>
 	{
-		//index of the entry in the ConstructionList.
-		public byte EntryIndex;
-		public ConveyorBelt.ConveyorDirection Direction;
-
-		public override void Process()
+		public struct NetMessage : NetworkMessage
 		{
-			var clientStorage = SentByPlayer.Script.ItemStorage;
+			//index of the entry in the ConstructionList.
+			public byte EntryIndex;
+			public ConveyorBelt.ConveyorDirection Direction;
+		}
+
+		public override void Process(NetMessage msg)
+		{
+			var playerScript = SentByPlayer.Script;
+			var playerObject = SentByPlayer.GameObject;
+			var clientStorage = playerScript.DynamicItemStorage;
 			var usedSlot = clientStorage.GetActiveHandSlot();
 			if (usedSlot == null || usedSlot.ItemObject == null) return;
 
 			var hasConstructionMenu = usedSlot.ItemObject.GetComponent<BuildingMaterial>();
 			if (hasConstructionMenu == null) return;
 
-			var entry = hasConstructionMenu.BuildList.Entries.ToArray()[EntryIndex];
+			var entry = hasConstructionMenu.BuildList.Entries.ToArray()[msg.EntryIndex];
 
 			if (!entry.CanBuildWith(hasConstructionMenu)) return;
 
 			//check if the space to construct on is passable
-			if (!MatrixManager.IsPassableAtAllMatricesOneTile((Vector3Int)SentByPlayer.GameObject.TileWorldPosition(), true, includingPlayers: false))
+			if (!MatrixManager.IsPassableAtAllMatricesOneTile((Vector3Int)playerObject.TileWorldPosition(), true, includingPlayers: false))
 			{
-				Chat.AddExamineMsg(SentByPlayer.GameObject, "It won't fit here.");
+				Chat.AddExamineMsg(playerObject, "It won't fit here.");
 				return;
 			}
 
 			//if we are building something impassable, check if there is anything on the space other than the performer.
 			var atPosition =
-				MatrixManager.GetAt<RegisterTile>((Vector3Int)SentByPlayer.GameObject.TileWorldPosition(), true);
+				MatrixManager.GetAt<RegisterTile>((Vector3Int)playerObject.TileWorldPosition(), true);
 
 			if (entry.Prefab == null)
 			{
 				//requires immediate attention, show it regardless of log filter:
-				Logger.Log($"Construction entry is missing prefab for {entry.Name}");
+				Logger.Log($"Construction entry is missing prefab for {entry.Name}", Category.Construction);
 				return;
 			}
 
@@ -61,7 +65,7 @@ namespace Construction.Conveyors
 					//can only build one of this on a given tile
 					if (entry.Prefab.Equals(Spawn.DeterminePrefab(thingAtPosition.gameObject)))
 					{
-						Chat.AddExamineMsg(SentByPlayer.GameObject, $"There's already one here.");
+						Chat.AddExamineMsg(playerObject, $"There's already one here.");
 						return;
 					}
 				}
@@ -70,44 +74,45 @@ namespace Construction.Conveyors
 				{
 					//if the object we are building is itself impassable, we should check if anything blocks construciton.
 					//otherwise it's fine to add it to the pile on the tile
-					if (ServerValidations.IsConstructionBlocked(SentByPlayer.GameObject, null,
-						SentByPlayer.GameObject.TileWorldPosition())) return;
+					if (ServerValidations.IsConstructionBlocked(playerObject, null,
+						playerObject.TileWorldPosition())) return;
 				}
 			}
 
 			//build and consume
 			void ProgressComplete()
 			{
-				var spawnedObj = entry.ServerBuild(SpawnDestination.At(SentByPlayer.Script.registerTile), hasConstructionMenu);
+				var spawnedObj = entry.ServerBuild(SpawnDestination.At(playerScript.registerTile), hasConstructionMenu);
 				if (spawnedObj)
 				{
 					var conveyorBelt = spawnedObj.GetComponent<ConveyorBelt>();
-					if (conveyorBelt != null) conveyorBelt.SetBeltFromBuildMenu(Direction);
+					if (conveyorBelt != null) conveyorBelt.SetBeltFromBuildMenu(msg.Direction);
 
-					Chat.AddActionMsgToChat(SentByPlayer.GameObject, $"You finish building the {entry.Name}.",
-						$"{SentByPlayer.GameObject.ExpensiveName()} finishes building the {entry.Name}.");
+					Chat.AddActionMsgToChat(playerObject, $"You finish building the {entry.Name}.",
+						$"{playerObject.ExpensiveName()} finishes building the {entry.Name}.");
 				}
 			}
 
-			Chat.AddActionMsgToChat(SentByPlayer.GameObject, $"You begin building the {entry.Name}...",
-				$"{SentByPlayer.GameObject.ExpensiveName()} begins building the {entry.Name}...");
-			ToolUtils.ServerUseTool(SentByPlayer.GameObject, usedSlot.ItemObject,
-				ActionTarget.Tile(SentByPlayer.Script.registerTile.WorldPositionServer), entry.BuildTime,
+			Chat.AddActionMsgToChat(playerObject, $"You begin building the {entry.Name}...",
+				$"{playerObject.ExpensiveName()} begins building the {entry.Name}...");
+			ToolUtils.ServerUseTool(playerObject, usedSlot.ItemObject,
+				ActionTarget.Tile(playerScript.registerTile.WorldPositionServer), entry.BuildTime,
 				ProgressComplete);
 		}
 
-		public static RequestConveyorBuildMessage Send(BuildList.Entry entry, BuildingMaterial hasMenu,
+		public static NetMessage Send(BuildList.Entry entry, BuildingMaterial hasMenu,
 			ConveyorBelt.ConveyorDirection direction)
 		{
 			var entryIndex = hasMenu.BuildList.Entries.ToList().IndexOf(entry);
-			if (entryIndex == -1) return null;
+			if (entryIndex == -1) return new NetMessage();
 
-			var msg = new RequestConveyorBuildMessage
+			var msg = new NetMessage
 			{
 				EntryIndex = (byte)entryIndex,
 				Direction = direction
 			};
-			msg.Send();
+
+			Send(msg);
 			return msg;
 		}
 	}

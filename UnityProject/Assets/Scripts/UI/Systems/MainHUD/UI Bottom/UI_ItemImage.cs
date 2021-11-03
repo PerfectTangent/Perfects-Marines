@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Items;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -80,7 +81,7 @@ public class UI_ItemImage
 			var image = ConnectFreeImageToHandler(handler);
 
 			// check if handler is hidden
-			image.gameObject.SetActive(!handler.IsHiden);
+			image.gameObject.SetActive(!handler.IsHidden);
 
 			// set sprite
 			var sprite = handler.CurrentSprite;
@@ -200,7 +201,7 @@ public class UI_ItemImage
 		rt.localScale = Vector3.one;
 
 		var img = go.AddComponent<Image>();
-		var imgMat = Resources.Load<Material>("Materials/Palettable UI");
+		var imgMat = Resources.Load<Material>("Materials/Maskable Palettable UI");
 		img.material = Object.Instantiate(imgMat);
 		img.alphaHitTestMinimumThreshold = 0.5f;
 

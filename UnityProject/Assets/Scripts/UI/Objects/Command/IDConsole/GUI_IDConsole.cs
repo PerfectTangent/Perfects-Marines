@@ -37,6 +37,7 @@ public class GUI_IDConsole : NetTab
 
 	private void Awake()
 	{
+		mainPage.SetActive(true);
 		//cache the entries for quick lookup
 		foreach (var entry in GetComponentsInChildren<GUI_IDConsoleEntry>())
 		{
@@ -49,6 +50,7 @@ public class GUI_IDConsole : NetTab
 				occupationToEntry.Add(entry.Occupation, entry);
 			}
 		}
+		mainPage.SetActive(false);
 	}
 
 	public override void OnEnable()
@@ -175,25 +177,25 @@ public class GUI_IDConsole : NetTab
 		}
 	}
 
-	public void ServerRemoveTargetCard()
+	public void ServerRemoveTargetCard(ConnectedPlayer player)
 	{
 		if (console.TargetCard == null)
 		{
 			return;
 		}
-		console.EjectCard(console.TargetCard);
+		console.EjectCard(console.TargetCard, player);
 		pageSwitcher.SetActivePage(usercardPage);
 	}
 
-	public void ServerRemoveAccessCard()
+	public void ServerRemoveAccessCard(ConnectedPlayer player)
 	{
 		if (console.AccessCard == null)
 		{
 			return;
 		}
-		console.EjectCard(console.AccessCard);
+		console.EjectCard(console.AccessCard, player);
 		ServerRefreshCardNames();
-		ServerLogOut();
+		ServerLogOut(player);
 	}
 
 	public void ServerLogin()
@@ -207,12 +209,12 @@ public class GUI_IDConsole : NetTab
 		}
 	}
 
-	public void ServerLogOut()
+	public void ServerLogOut(ConnectedPlayer player)
 	{
-		ServerRemoveTargetCard();
+		ServerRemoveTargetCard(player);
 		console.LoggedIn = false;
 		pageSwitcher.SetActivePage(loginPage);
 		ServerUpdateLoginCardName();
-		ServerRemoveAccessCard();
+		ServerRemoveAccessCard(player);
 	}
 }

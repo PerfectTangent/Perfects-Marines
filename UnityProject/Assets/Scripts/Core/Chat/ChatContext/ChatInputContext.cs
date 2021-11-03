@@ -19,8 +19,14 @@ public class ChatInputContext : IChatInputContext
 				return ChatChannel.None;
 			}
 
+			// Player is Ai?
+			if (PlayerManager.LocalPlayerScript.PlayerState == PlayerScript.PlayerStates.Ai)
+			{
+				return ChatChannel.Binary;
+			}
+
 			// Player is blob?
-			if (PlayerManager.LocalPlayerScript.IsPlayerSemiGhost)
+			if (PlayerManager.LocalPlayerScript.PlayerState == PlayerScript.PlayerStates.Blob)
 			{
 				return ChatChannel.Blob;
 			}
@@ -42,7 +48,7 @@ public class ChatInputContext : IChatInputContext
 			var key = playerHeadset.EncryptionKey;
 			if (!EncryptionKey.DefaultChannel.ContainsKey(key))
 			{
-				Logger.LogError($"Can't find default channel for a {key}");
+				Logger.LogError($"Can't find default channel for a {key}", Category.Chat);
 				return ChatChannel.None;
 			}
 
@@ -53,30 +59,20 @@ public class ChatInputContext : IChatInputContext
 	// TODO: need to move it to Inventory.cs?
 	private Headset GetPlayerHeadset()
 	{
-		var playerStorage = PlayerManager.LocalPlayerScript.GetComponent<ItemStorage>();
-
-		// Player doesn't have any storage? That's bad
-		if (!playerStorage)
-		{
-			Debug.LogError("Can't find current headset, becouse local player storage doesn't exist");
-			return null;
-		}
-
-		// Player doesn't have ears?
-		if (!playerStorage.HasSlot(NamedSlot.ear))
-		{
-			return null;
-		}
+		var playerStorage = PlayerManager.LocalPlayerScript.GetComponent<DynamicItemStorage>();
 
 		// Player has something in his ear?
-		var earSlotItem = playerStorage.GetNamedItemSlot(NamedSlot.ear).ItemObject;
-		if (!earSlotItem)
+		var itemSlotList = playerStorage.GetNamedItemSlots(NamedSlot.ear);
+		foreach (var itemSlot in itemSlotList)
 		{
-			return null;
+			if (itemSlot.ItemObject)
+			{
+				var headset = itemSlot.ItemObject.GetComponent<Headset>();
+				return headset;
+			}
 		}
 
-		var headset = earSlotItem.GetComponent<Headset>();
-		return headset;
+		return null;
 	}
 
 }

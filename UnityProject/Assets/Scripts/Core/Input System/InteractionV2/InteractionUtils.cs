@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Messages.Client.Interaction;
 using UnityEngine;
 
 /// <summary>
@@ -50,7 +51,7 @@ public static class InteractionUtils
 				// we defer to the server for deciding what interaction was triggered, unless this is
 				// an AimApply in which case there's no reason for such a thing (no shooting-like interactions
 				// should have multiple interactable AimApply components)
-				RequestInteract(interaction, typeof(T) == typeof(AimApply) ? interactable : null);
+				RequestInteract(interaction, typeof(T) == typeof(AimApply) ?  interactable : null );
 			}
 
 			return true;
@@ -93,7 +94,7 @@ public static class InteractionUtils
 		wasClientInteractable = false;
 		//interactions targeting an object at hiddenpos are NEVER allowed (except for inventory actions,
 		//since they can target an object in inventory which means its at hiddenpos)
-		if (!(interaction is InventoryApply) && interaction is TargetedInteraction targetedInteraction)
+		if (!(interaction is InventoryApply) && interaction is TargetedInteraction targetedInteraction && !(interaction is ContextMenuApply))
 		{
 			if (targetedInteraction.TargetObject != null &&
 			    targetedInteraction.TargetObject.IsAtHiddenPos())

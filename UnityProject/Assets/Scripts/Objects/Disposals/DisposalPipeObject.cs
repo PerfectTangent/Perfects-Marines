@@ -6,45 +6,45 @@ namespace Objects.Disposals
 {
 	public class DisposalPipeObject : NetworkBehaviour, IExaminable, ICheckedInteractable<HandApply>
 	{
-		[SerializeField] float wrenchTime = 0;
-		[SerializeField] float weldTime = 3;
+		[SerializeField]
+		private float wrenchTime = 0;
+		[SerializeField]
+		private float weldTime = 3;
 
-		RegisterTile registerTile;
-		TileChangeManager tileChangeManager;
-		ObjectBehaviour behaviour;
+		private RegisterTile registerTile;
+		private ObjectBehaviour behaviour;
 
 		[SerializeField]
 		[Tooltip("Tile to spawn when pipe is welded in the Up orientation.")]
-		DisposalPipe disposalPipeTileUp = null;
+		private DisposalPipe disposalPipeTileUp = null;
 
 		[SerializeField]
 		[Tooltip("Tile to spawn when pipe is welded in the Down orientation.")]
-		DisposalPipe disposalPipeTileDown = null;
+		private DisposalPipe disposalPipeTileDown = null;
 
 		[SerializeField]
 		[Tooltip("Tile to spawn when pipe is welded in the Left orientation.")]
-		DisposalPipe disposalPipeTileLeft = null;
+		private DisposalPipe disposalPipeTileLeft = null;
 
 		[SerializeField]
 		[Tooltip("Tile to spawn when pipe is welded in the Right orientation.")]
-		DisposalPipe disposalPipeTileRight = null;
+		private DisposalPipe disposalPipeTileRight = null;
 
-		string objectName;
-		HandApply currentInteraction;
+		private string objectName;
+		private HandApply currentInteraction;
 
-		public bool Anchored => !behaviour.IsPushable;
+		public bool Anchored => behaviour.IsPushable == false;
 
-		void Awake()
+		private void Awake()
 		{
 			registerTile = gameObject.RegisterTile();
-			tileChangeManager = registerTile.TileChangeManager;
 			behaviour = GetComponent<ObjectBehaviour>();
 		}
 
 		public override void OnStartServer()
 		{
 			objectName = gameObject.ExpensiveName();
-			if (gameObject.TryGetComponent(out ObjectAttributes attributes))
+			if (gameObject.TryGetComponent<ObjectAttributes>(out var attributes))
 			{
 				objectName = attributes.InitialName;
 			}
@@ -54,7 +54,7 @@ namespace Objects.Disposals
 
 		public bool WillInteract(HandApply interaction, NetworkSide side)
 		{
-			if (!DefaultWillInteract.Default(interaction, side)) return false;
+			if (DefaultWillInteract.Default(interaction, side) == false) return false;
 
 			return Validations.HasUsedItemTrait(interaction, CommonTraits.Instance.Wrench)
 				|| Validations.HasUsedActiveWelder(interaction);
@@ -84,26 +84,30 @@ namespace Objects.Disposals
 
 		#region Construction
 
-		void TryWrench()
+		private void TryWrench()
 		{
-			if (!VerboseFloorExists()) return;
-			if (!VerbosePlatingExposed()) return;
-			if (VerbosePipeExists()) return;
+			if (Anchored == false)
+			{
+				// Try anchor
+				if (VerboseFloorExists() == false) return;
+				if (VerbosePlatingExposed() == false) return;
+				if (VerbosePipeExists()) return;
+			}
 
 			Wrench();
 		}
 
-		void TryWeld()
+		private void TryWeld()
 		{
-			if (!VerboseFloorExists()) return;
-			if (!VerbosePlatingExposed()) return;
+			if (VerboseFloorExists() == false) return;
+			if (VerbosePlatingExposed() == false) return;
 			if (VerbosePipeExists()) return;
-			if (!VerboseSecured()) return;
+			if (VerboseSecured() == false) return;
 
 			Weld();
 		}
 
-		bool PipeExists()
+		private bool PipeExists()
 		{
 			// Check for pipe tile.
 			if (registerTile.Matrix.GetDisposalPipesAt(registerTile.LocalPositionServer).Any()) return true;
@@ -119,17 +123,19 @@ namespace Objects.Disposals
 			return false;
 		}
 
-		bool VerboseFloorExists()
+		private bool VerboseFloorExists()
 		{
-			if (!MatrixManager.IsSpaceAt(registerTile.WorldPositionServer, true)) return true;
-
+			if (MatrixManager.IsConstructable(registerTile.WorldPositionServer, registerTile.Matrix.MatrixInfo))
+			{
+				return true;
+			}
 			Chat.AddExamineMsg(currentInteraction.Performer, $"A floor must be present to secure the {objectName}!");
 			return false;
 		}
 
-		bool VerbosePlatingExposed()
+		private bool VerbosePlatingExposed()
 		{
-			if (!tileChangeManager.MetaTileMap.HasTile(registerTile.LocalPositionServer, LayerType.Floors)) return true;
+			if (registerTile.TileChangeManager.MetaTileMap.HasTile(registerTile.LocalPositionServer, LayerType.Floors) == false) return true;
 
 			Chat.AddExamineMsg(
 					currentInteraction.Performer,
@@ -137,15 +143,15 @@ namespace Objects.Disposals
 			return false;
 		}
 
-		bool VerbosePipeExists()
+		private bool VerbosePipeExists()
 		{
-			if (!PipeExists()) return false;
+			if (PipeExists() == false) return false;
 
 			Chat.AddExamineMsgFromServer(currentInteraction.Performer, "A disposal pipe already exists here!");
 			return true;
 		}
 
-		bool VerboseSecured()
+		private bool VerboseSecured()
 		{
 			if (Anchored) return true;
 
@@ -153,13 +159,19 @@ namespace Objects.Disposals
 			return false;
 		}
 
-		void Wrench()
+		private void Wrench()
 		{
-			if (Anchored) Unsecure();
-			else Secure();
+			if (Anchored)
+			{
+				Unsecure();
+			}
+			else
+			{
+				Secure();
+			}
 		}
 
-		void Secure()
+		private void Secure()
 		{
 			ToolUtils.ServerUseToolWithActionMessages(currentInteraction, wrenchTime,
 					wrenchTime == 0 ? "" : $"You start securing the {objectName} to the floor...",
@@ -170,7 +182,7 @@ namespace Objects.Disposals
 			);
 		}
 
-		void Unsecure()
+		private void Unsecure()
 		{
 			ToolUtils.ServerUseToolWithActionMessages(currentInteraction, wrenchTime,
 					wrenchTime == 0 ? "" : $"You start unsecuring the {objectName} from the floor...",
@@ -181,7 +193,7 @@ namespace Objects.Disposals
 			);
 		}
 
-		void Weld()
+		private void Weld()
 		{
 			ToolUtils.ServerUseToolWithActionMessages(currentInteraction, weldTime,
 					$"You start welding the {objectName} to the floor...",
@@ -192,7 +204,7 @@ namespace Objects.Disposals
 			);
 		}
 
-		void ChangePipeObjectToTile()
+		private void ChangePipeObjectToTile()
 		{
 			Orientation orientation = GetComponent<Directional>().CurrentDirection;
 
@@ -202,17 +214,18 @@ namespace Objects.Disposals
 			{
 				var matrixTransform = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
 				Color pipeColor = GetComponentInChildren<SpriteRenderer>().color;
-				registerTile.Matrix.AddUnderFloorTile(registerTile.LocalPositionServer, pipeTileToSpawn, matrixTransform, pipeColor);
-				tileChangeManager.UpdateTile(registerTile.LocalPositionServer, pipeTileToSpawn);
-				Despawn.ServerSingle(gameObject);
+				Vector3Int searchVec = registerTile.Matrix.TileChangeManager.UpdateTile(registerTile.LocalPositionServer, pipeTileToSpawn, matrixTransform, pipeColor);
+				pipeTileToSpawn.InitialiseNode(searchVec, registerTile.Matrix);
+				_ = Despawn.ServerSingle(gameObject);
 			}
 			else
 			{
-				Logger.LogError($"Failed to spawn disposal pipe tile! Is {name} missing reference to tile asset for {orientation}?");
+				Logger.LogError($"Failed to spawn disposal pipe tile! Is {name} missing reference to tile asset for {orientation}?",
+					Category.Pipes);
 			}
 		}
 
-		DisposalPipe GetPipeTileByOrientation(Orientation orientation)
+		private DisposalPipe GetPipeTileByOrientation(Orientation orientation)
 		{
 			switch (orientation.AsEnum())
 			{

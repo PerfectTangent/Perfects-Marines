@@ -44,7 +44,7 @@ public class AddressablePicker : EditorWindow
 	{
 		var path = Application.dataPath.Remove(Application.dataPath.IndexOf("/Assets"));
 		path += "/AddressablePackingProjects";
-		Logger.Log(path);
+		Logger.Log(path, Category.Addressables);
 		var Directories = Directory.GetDirectories(path);
 		var FoundFiles = new List<string>();
 		foreach (var Directori in Directories)
@@ -62,7 +62,7 @@ public class AddressablePicker : EditorWindow
 					{
 						if (FoundFile != "")
 						{
-							Logger.LogError("two catalogues present please only ensure one");
+							Logger.LogError("two catalogues present please only ensure one", Category.Addressables);
 						}
 
 						FoundFile = File;
@@ -71,7 +71,7 @@ public class AddressablePicker : EditorWindow
 
 				if (FoundFile == "")
 				{
-					Logger.LogWarning("missing json file");
+					Logger.LogWarning("missing json file", Category.Addressables);
 				}
 				else
 				{
@@ -82,7 +82,6 @@ public class AddressablePicker : EditorWindow
 
 		return FoundFiles;
 	}
-
 
 	public static void Refresh()
 	{
@@ -95,7 +94,9 @@ public class AddressablePicker : EditorWindow
 
 			catalogueData = AssetDatabase.LoadAssetAtPath<CatalogueData>("Assets/CachedData/CatalogueData.asset");
 			var flip = new FileInfo(FoundFile);
-			catalogueData.Data[flip.Directory.Parent.Name] = ListIDs.ToList();
+			var ToPutInList = ListIDs.ToList();
+			ToPutInList .Insert(0, "null");
+			catalogueData.Data[flip.Directory.Parent.Name] = ToPutInList;
 
 		}
 
@@ -106,5 +107,5 @@ public class AddressablePicker : EditorWindow
 		}
 
 		EditorUtility.SetDirty(catalogueData);
-	}
+    }
 }

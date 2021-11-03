@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Light2D;
 using Mirror;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Systems.Radiation
 		private GameObject mLightRendererObject;
 		private ObjectBehaviour objectBehaviour;
 		private RegisterObject registerObject;
+		[NonSerialized]
 		public int ObjectID = 0;
 		private LightSprite lightSprite;
 		public Sprite DotSprite;
@@ -50,11 +52,15 @@ namespace Systems.Radiation
 
 		private void OnEnable()
 		{
+			if(CustomNetworkManager.IsServer == false) return;
+
 			UpdateManager.Add(RequestPulse, 5);
 		}
 
 		private void OnDisable()
 		{
+			if(CustomNetworkManager.IsServer == false) return;
+
 			UpdateManager.Remove(CallbackType.PERIODIC_UPDATE, RequestPulse);
 		}
 
@@ -68,22 +74,30 @@ namespace Systems.Radiation
 			}
 		}*/
 
-		public void Setlevel(float Invalue)
+		public void SetLevel(float Invalue)
 		{
 			SynchStrength(SynchroniseStrength, Invalue);
 		}
 
 		private void UpdateValues(float Invalue)
 		{
-			OutPuttingRadiation = Invalue;
-			float LightPower = OutPuttingRadiation / 24000;
-			if (LightPower > 1)
+			try
 			{
-				mLightRendererObject.transform.localScale = Vector3.one * 7 *  LightPower ;
-				LightPower = 1;
-			}
+				OutPuttingRadiation = Invalue;
+				float LightPower = OutPuttingRadiation / 24000;
+				if (LightPower > 1)
+				{
+					mLightRendererObject.transform.localScale = Vector3.one * 7 * LightPower;
+					LightPower = 1;
+				}
 
-			lightSprite.Color.a = LightPower;
+				lightSprite.Color.a = LightPower;
+			}
+			catch (NullReferenceException exception)
+			{
+				Logger.LogError("Caught NRE with RadiationProducer UpdateValues " + exception.Message,
+					Category.Electrical);
+			}
 		}
 
 		private void RequestPulse()

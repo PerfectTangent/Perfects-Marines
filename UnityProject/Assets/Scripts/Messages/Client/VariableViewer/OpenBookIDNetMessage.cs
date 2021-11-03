@@ -1,51 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Messages.Client;
-using Mirror;
-using UnityEngine;
+﻿using Mirror;
 
-public class OpenBookIDNetMessage : ClientMessage
+namespace Messages.Client.VariableViewer
 {
-	public ulong BookID;
-	public string AdminId;
-	public string AdminToken;
-
-	public override void Process()
+	public class OpenBookIDNetMessage : ClientMessage<OpenBookIDNetMessage.NetMessage>
 	{
-		ValidateAdmin();
-	}
+		public struct NetMessage : NetworkMessage
+		{
+			public ulong BookID;
+		}
 
-	void ValidateAdmin()
-	{
-		var admin = PlayerList.Instance.GetAdmin(AdminId, AdminToken);
-		if (admin == null) return;
-		VariableViewer.RequestSendBook(BookID, SentByPlayer.GameObject);
-	}
+		public override void Process(NetMessage msg)
+		{
+			ValidateAdmin(msg);
+		}
 
+		private void ValidateAdmin(NetMessage msg)
+		{
+			if (IsFromAdmin() == false) return;
 
-	public static OpenBookIDNetMessage Send(ulong BookID, string adminId, string adminToken)
-	{
-		OpenBookIDNetMessage msg = new OpenBookIDNetMessage();
-		msg.BookID = BookID;
-		msg.AdminId = adminId;
-		msg.AdminToken = adminToken;
-		msg.Send();
-		return msg;
-	}
+			global::VariableViewer.RequestSendBook(msg.BookID, SentByPlayer.GameObject);
+		}
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		BookID = reader.ReadUInt64();
-		AdminId = reader.ReadString();
-		AdminToken = reader.ReadString();
-	}
+		public static NetMessage Send(ulong bookId)
+		{
+			NetMessage msg = new NetMessage
+			{
+				BookID = bookId
+			};
 
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteUInt64(BookID);
-		writer.WriteString(AdminId);
-		writer.WriteString(AdminToken);
+			Send(msg);
+			return msg;
+		}
 	}
 }

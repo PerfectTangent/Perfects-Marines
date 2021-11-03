@@ -31,11 +31,11 @@ public class Synth : MonoBehaviour, IInitialise
 			Instance = this;
 			if (!Initialized)
 			{
-				if (CustomNetworkManager.isHeadless)
+				if (CustomNetworkManager.IsHeadless)
 				{
 					enabled = false;
 					Disabled = true;
-					Logger.Log("Headless Detected: Disabling Synth", Category.Server);
+					Logger.Log("Headless Detected: Disabling Synth", Category.Audio);
 				}
 			}
 		} //else gets destroyed by parent

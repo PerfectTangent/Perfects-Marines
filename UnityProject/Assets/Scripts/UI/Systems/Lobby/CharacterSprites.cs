@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Lobby
+namespace UI.CharacterCreator
 {
 	public class CharacterSprites : MonoBehaviour
 	{
-		private CharacterDir currentDir = CharacterDir.down;
+		private CharacterCustomization.CharacterDir currentDir = CharacterCustomization.CharacterDir.down;
 		public SpriteHandler sprites = null;
 
 		private int referenceOffset;
@@ -15,28 +15,33 @@ namespace Lobby
 
 		public Image image;
 
-		void Awake()
+		private void Awake()
 		{
 			sprites = GetComponent<SpriteHandler>();
 			if(!sprites)
-				Logger.LogWarning("SpriteHandler component is missing!");
+				Logger.LogWarning("SpriteHandler component is missing!", Category.Sprites);
 		}
+
 		private void Start()
 		{
 			UpdateSprite();
 		}
 
-		void OnEnable()
+		private void OnEnable()
 		{
 			characterView = GetComponentInParent<CharacterView>();
 			characterView.dirChangeEvent.AddListener(OnDirChange);
 		}
 
-		void OnDisable()
+		private void OnDisable()
 		{
 			characterView.dirChangeEvent.RemoveListener(OnDirChange);
 		}
 
+		private void OnDestroy()
+		{
+			characterView.dirChangeEvent.RemoveListener(OnDirChange);
+		}
 		public void OnDirChange()
 		{
 			currentDir = characterView.currentDir;
@@ -45,19 +50,19 @@ namespace Lobby
 
 		private void UpdateReferenceOffset()
 		{
-			if (currentDir == CharacterDir.down)
+			if (currentDir == CharacterCustomization.CharacterDir.down)
 			{
 				referenceOffset = 0;
 			}
-			if (currentDir == CharacterDir.up)
+			if (currentDir == CharacterCustomization.CharacterDir.up)
 			{
 				referenceOffset = 1;
 			}
-			if (currentDir == CharacterDir.right)
+			if (currentDir == CharacterCustomization.CharacterDir.right)
 			{
 				referenceOffset = 2;
 			}
-			if (currentDir == CharacterDir.left)
+			if (currentDir == CharacterCustomization.CharacterDir.left)
 			{
 				referenceOffset = 3;
 			}
@@ -70,8 +75,7 @@ namespace Lobby
 			// It's possible that UpdateSprite gets called before Awake
 			// so try to grab the image here just in case that happens
 			if(sprites != null || TryGetComponent(out sprites))
-				sprites.ChangeSpriteVariant(referenceOffset , NetWork:false);
+				sprites.ChangeSpriteVariant(referenceOffset , networked:false);
 		}
-
 	}
 }

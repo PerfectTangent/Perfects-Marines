@@ -74,6 +74,14 @@ namespace Core.Directionals
 			return IsPassableAtSide(GetSideFromVector(leavingTo), leavableSides);
 		}
 
+		public override bool DoesNotBlockClick(Vector3Int reachingFrom, bool isServer)
+		{
+			if (IsLeavableOnAll) return true;
+			if (Passable == false) return true;
+
+			return IsPassableAtSide(GetSideFromVector(reachingFrom), leavableSides);
+		}
+
 		public override bool IsAtmosPassable(Vector3Int enteringFrom, bool isServer)
 		{
 			if (IsAtmosPassableOnAll) return true;
@@ -93,18 +101,18 @@ namespace Core.Directionals
 			{
 				case PassType.Entering:
 					isEnterableOnAll = true;
-					Passable = true;
+					SetPassable(false, true);
 					break;
 				case PassType.Leaving:
 					isLeavableOnAll = true;
-					Passable = true;
+					SetPassable(false, true);
 					break;
 				case PassType.Atmospheric:
 					isAtmosPassableOnAll = true;
 					AtmosPassable = true;
 					break;
 				default:
-					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Direction);
+					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Directionals);
 					break;
 			}
 		}
@@ -118,18 +126,18 @@ namespace Core.Directionals
 			{
 				case PassType.Entering:
 					isEnterableOnAll = false;
-					Passable = false;
+					SetPassable(false, false);
 					break;
 				case PassType.Leaving:
 					isLeavableOnAll = false;
-					Passable = false;
+					SetPassable(false, false);
 					break;
 				case PassType.Atmospheric:
 					isAtmosPassableOnAll = false;
 					AtmosPassable = false;
 					break;
 				default:
-					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Direction);
+					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Directionals);
 					break;
 			}
 		}
@@ -143,18 +151,18 @@ namespace Core.Directionals
 			{
 				case PassType.Entering:
 					isEnterableOnAll = false;
-					Passable = true;
+					SetPassable(false, true);
 					break;
 				case PassType.Leaving:
 					isLeavableOnAll = false;
-					Passable = true;
+					SetPassable(false, true);
 					break;
 				case PassType.Atmospheric:
 					isAtmosPassableOnAll = false;
 					AtmosPassable = true;
 					break;
 				default:
-					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Direction);
+					Logger.LogWarning("Unknown DirectionalPassable PassType. Doing nothing.", Category.Directionals);
 					break;
 			}
 		}
@@ -169,7 +177,7 @@ namespace Core.Directionals
 			EnsureInit();
 			if (Directional == null)
 			{
-				Logger.LogError($"No {nameof(Directional)} component found on {this}?");
+				Logger.LogError($"No {nameof(Directional)} component found on {this}?", Category.Directionals);
 				return false;
 			}
 
@@ -203,7 +211,7 @@ namespace Core.Directionals
 					else if (sideToCross == Vector2Int.right) return sides.Down;
 					break;
 				default:
-					Logger.LogWarning("Unknown orientation. Returning false.", Category.Direction);
+					Logger.LogWarning("Unknown orientation. Returning false.", Category.Directionals);
 					break;
 			}
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using NaughtyAttributes;
 using ScriptableObjects.Gun;
 using Weapons.Projectiles.Behaviours;
@@ -27,6 +28,9 @@ namespace Weapons.Projectiles
 		public LayerMaskData MaskData => maskData;
 
 		private GameObject shooter;
+
+		private bool destroyed;
+		public bool Destroyed => destroyed;
 
 		public bool WillHurtShooter { get; set; }
 
@@ -79,12 +83,13 @@ namespace Weapons.Projectiles
 		/// </summary>
 		/// <param name="distanceTraveled"></param>
 		/// <param name="worldPosition"> Actual world position of the moving projectile </param>
+		/// <param name="previousWorldPosition"> Previous world position of the moving projectile</param>
 		/// <returns> Is despawning bullet? </returns>
-		public bool ProcessMove(Vector3 distanceTraveled, Vector3 worldPosition)
+		public bool ProcessMove(Vector3 distanceTraveled, Vector3 worldPosition, Vector3 previousWorldPosition)
 		{
 			foreach (var behaviour in behavioursOnMove)
 			{
-				if (behaviour.OnMove(distanceTraveled))
+				if (behaviour.OnMove(distanceTraveled, previousWorldPosition))
 				{
 					DespawnThis(new MatrixManager.CustomPhysicsHit(), worldPosition);
 					return false;
@@ -127,6 +132,8 @@ namespace Weapons.Projectiles
 		/// </summary>
 		private void DespawnThis(MatrixManager.CustomPhysicsHit  hit, Vector2 point)
 		{
+			destroyed = true;
+
 			foreach (var behaviour in behavioursOnBulletDespawn)
 			{
 				behaviour.OnDespawn(hit, point);
@@ -134,7 +141,7 @@ namespace Weapons.Projectiles
 
 			if (CustomNetworkManager.IsServer)
 			{
-				Despawn.ServerSingle(gameObject);
+				_ = Despawn.ServerSingle(gameObject);
 			}
 			else
 			{
@@ -149,6 +156,7 @@ namespace Weapons.Projectiles
 		{
 			shooter = null;
 			WillHurtShooter = false;
+			destroyed = false;
 		}
 	}
 }

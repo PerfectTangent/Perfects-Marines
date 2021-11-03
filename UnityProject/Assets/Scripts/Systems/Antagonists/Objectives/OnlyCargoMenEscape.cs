@@ -8,7 +8,7 @@ namespace Antagonists
 	/// <summary>
 	/// An objective to set off the nuke on the station
 	/// </summary>
-	[CreateAssetMenu(menuName="ScriptableObjects/Objectives/OnlyCargoMenEscape")]
+	[CreateAssetMenu(menuName="ScriptableObjects/AntagObjectives/OnlyCargoMenEscape")]
 	public class OnlyCargoMenEscape : Objective
 	{
 		protected override void Setup()
@@ -18,7 +18,13 @@ namespace Antagonists
 		protected override bool CheckCompletion()
 		{
 			int playersFound = 0;
-			foreach (Transform t in GameManager.Instance.PrimaryEscapeShuttle.MatrixInfo.Objects.transform)
+			var primaryEscape = GameManager.Instance.PrimaryEscapeShuttle;
+			var objects = primaryEscape.OrNull()?.MatrixInfo?.Objects;
+			var objectsTransform = objects.OrNull()?.transform;
+
+			if (objectsTransform == null) return false;
+
+			foreach (Transform t in objectsTransform)
 			{
 				var player = t.GetComponent<PlayerScript>();
 				if (player != null)

@@ -1,4 +1,5 @@
 using System.Collections;
+using Messages.Server;
 using UnityEngine;
 using WebSocketSharp;
 
@@ -48,7 +49,7 @@ namespace Systems.MobAIs
 		public override void ExplorePeople(PlayerScript player)
 		{
 			if (player.IsGhost) return;
-			var inventory = player.GetComponent<ItemStorage>();
+			var inventory = player.GetComponent<DynamicItemStorage>();
 			var thingInHand = inventory.GetActiveHandSlot();
 
 			if (thingInHand != null && thingInHand.Item != null)
@@ -74,8 +75,8 @@ namespace Systems.MobAIs
 			Chat.AddLocalMsgToChat(
 				text,
 				gameObject,
-				mobNameCap);
-			ChatBubbleManager.ShowAChatBubble(gameObject.transform, text);
+				MobName);
+			ShowChatBubbleMessage.SendToNearby(gameObject, text);
 		}
 		private void SayRandomThing()
 		{
@@ -102,8 +103,8 @@ namespace Systems.MobAIs
 			string[]  _sounds = {"squawks", "screeches"};
 			Chat.AddActionMsgToChat(
 				gameObject,
-				$"{mobNameCap} {_sounds.PickRandom()}!",
-				$"{mobNameCap} {_sounds.PickRandom()}!");
+				$"{MobName} {_sounds.PickRandom()}!",
+				$"{MobName} {_sounds.PickRandom()}!");
 		}
 
 		protected override void DoRandomAction()

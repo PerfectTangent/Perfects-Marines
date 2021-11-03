@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mirror;
+using Tilemaps.Behaviours.Layers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,10 +24,15 @@ public partial class SubSceneManager
 	{
 		if (NetworkServer.observerSceneList.ContainsKey(conn))
 		{
-			NetworkServer.observerSceneList.Remove(conn);
+			RemoveSceneObserver(conn);
 		}
 
 		NetworkServer.observerSceneList.Add(conn, new List<Scene> {SceneManager.GetActiveScene()});
+	}
+
+	public void RemoveSceneObserver(NetworkConnection conn)
+	{
+		NetworkServer.observerSceneList.Remove(conn);
 	}
 
 	/// <summary>
@@ -59,21 +65,25 @@ public partial class SubSceneManager
 	IEnumerator AddObserversForClient(NetworkConnection connToAdd, Scene sceneContext)
 	{
 		//Activate the matrices on the client first
-		for (int i = 0; i < MatrixManager.Instance.ActiveMatrices.Count; i++)
+		foreach (var matrixInfo in MatrixManager.Instance.ActiveMatrices.Values)
 		{
-			var matrix = MatrixManager.Instance.ActiveMatrices[i].Matrix;
-			if (matrix.gameObject.scene == sceneContext)
+			if (matrixInfo.Matrix.gameObject.scene == sceneContext)
 			{
-				matrix.GetComponentInParent<NetworkIdentity>().AddPlayerObserver(connToAdd);
+				matrixInfo.Matrix.GetComponentInParent<NetworkedMatrix>().MatrixSync.netIdentity.AddPlayerObserver(connToAdd);
 			}
 		}
+
+		yield return WaitFor.EndOfFrame;
 
 		var objCount = 0;
 		var netIds = NetworkIdentity.spawned.Values.ToList();
 		foreach (var n in netIds)
 		{
-			if (n == null || n.gameObject == null ||
-			n.gameObject.scene != sceneContext) continue;
+			if (n == null || n.gameObject == null || n.gameObject.scene != sceneContext)
+				continue;
+
+			if (connToAdd.identity == null) //connection dc midway, we're out
+				yield break;
 
 			n.AddPlayerObserver(connToAdd);
 			objCount++;

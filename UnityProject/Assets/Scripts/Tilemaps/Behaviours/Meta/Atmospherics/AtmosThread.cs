@@ -19,6 +19,8 @@ public static class AtmosThread
 
 	private static CustomSampler sampler;
 
+	public static List<ReactionManager> reactionManagerList {get; private set;} = new List<ReactionManager>();
+
 	static AtmosThread()
 	{
 		simulation = new AtmosSimulation();
@@ -44,15 +46,15 @@ public static class AtmosThread
 	{
 		if (!running)
 		{
-			new Thread(Run).Start();
-
 			running = true;
+			new Thread(Run).Start();
 		}
 	}
 
 	public static void Stop()
 	{
 		running = false;
+		reactionManagerList.Clear();
 
 		lock (lockGetWork)
 		{
@@ -72,6 +74,11 @@ public static class AtmosThread
 	public static void RunStep()
 	{
 		simulation.Run();
+		AtmosManager.Instance.DoTick();
+		foreach (var reactionManger in reactionManagerList)
+		{
+			reactionManger.DoTick();
+		}
 	}
 
 	private static void Run()
@@ -79,24 +86,14 @@ public static class AtmosThread
 		Profiler.BeginThreadProfiling("Unitystation", "Atmospherics");
 		while (running)
 		{
-			if (!simulation.IsIdle)
+			sampler.Begin();
+			StopWatch.Restart();
+			RunStep();
+			StopWatch.Stop();
+			sampler.End();
+			if (StopWatch.ElapsedMilliseconds < MillieSecondDelay)
 			{
-				sampler.Begin();
-				StopWatch.Restart();
-				RunStep();
-				StopWatch.Stop();
-				sampler.End();
-				if (StopWatch.ElapsedMilliseconds < MillieSecondDelay)
-				{
-					Thread.Sleep(MillieSecondDelay - (int)StopWatch.ElapsedMilliseconds);
-				}
-			}
-			else
-			{
-				lock (lockGetWork)
-				{
-					Monitor.Wait(lockGetWork);
-				}
+				Thread.Sleep(MillieSecondDelay - (int)StopWatch.ElapsedMilliseconds);
 			}
 		}
 		Profiler.EndThreadProfiling();

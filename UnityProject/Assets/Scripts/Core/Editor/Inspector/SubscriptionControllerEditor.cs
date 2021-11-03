@@ -1,9 +1,10 @@
 ﻿using System.Linq;
-using Electricity.Inheritance;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
+using Systems.ObjectConnection;
+
 
 [CustomEditor(typeof(SubscriptionController), true)]
 public class SubscriptionControllerEditor : Editor
@@ -49,7 +50,7 @@ public class SubscriptionControllerEditor : Editor
 		if (!isSelecting || controller == null)
 			return;
 
-		Event e = Event.current;
+		UnityEngine.Event e = UnityEngine.Event.current;
 		if (e == null)
 			return;
 
@@ -88,12 +89,12 @@ public class SubscriptionControllerEditor : Editor
 		Selection.activeGameObject = controller.gameObject;
 	}
 
-	private bool HasPressedEscapeKey(Event e)
+	private bool HasPressedEscapeKey(UnityEngine.Event e)
 	{
 		return e.type == EventType.KeyDown && e.keyCode == KeyCode.Escape;
 	}
 
-	private bool HasPressedLeftClick(Event e)
+	private bool HasPressedLeftClick(UnityEngine.Event e)
 	{
 		return e.type == EventType.MouseDown && e.button == 0;
 	}

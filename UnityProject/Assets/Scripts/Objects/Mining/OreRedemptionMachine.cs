@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.Serialization;
+using Items;
+using Objects.Machines;
 
 namespace Objects.Mining
 {
@@ -10,47 +11,115 @@ namespace Objects.Mining
 	/// Causes object to consume ore on the tile above it and produce materials on the tile below it. Temporary
 	/// until ORM UI is implemented.
 	/// </summary>
-	public class OreRedemptionMachine : MonoBehaviour, IInteractable<HandApply>
+	public class OreRedemptionMachine : MonoBehaviour, ICheckedInteractable<HandApply>
 	{
-		[FormerlySerializedAs("ExpectedOres")]
-		[SerializeField]
-		private List<OreToMaterial> expectedOres = null;
-
 		private RegisterObject registerObject;
+		public MaterialStorageLink materialStorageLink;
+		public GUI_OreRedemptionMachine oreRedemptiomMachineGUI;
+		public int laborPoints;
 
-		public void OnEnable()
+		private void Awake()
 		{
 			registerObject = GetComponent<RegisterObject>();
+			materialStorageLink = GetComponent<MaterialStorageLink>();
 		}
 
-		public void ServerPerformInteraction(HandApply interaction)
+		public void LoadNearbyOres()
 		{
-			var localPosInt = MatrixManager.Instance.WorldToLocalInt(registerObject.WorldPositionServer, registerObject.Matrix);
-			var OreItems = registerObject.Matrix.Get<ItemAttributesV2>(localPosInt + Vector3Int.up, true);
-
-			foreach (var Ore in OreItems)
+			var nearbyObjects = MatrixManager.GetAdjacent<ObjectBehaviour>(registerObject.WorldPosition, true);
+			foreach (var objectBehaviour in nearbyObjects)
 			{
-				foreach (var exOre in expectedOres)
+				var item = objectBehaviour.gameObject;
+				if (Validations.HasItemTrait(item, CommonTraits.Instance.OreGeneral))
 				{
-					if (Ore != null)
+					AddOre(item);
+				}
+				else
+				{
+					var oreBox = item.GetComponent<OreBox>();
+					if (oreBox != null)
 					{
-						if (Ore.HasTrait(exOre.Trait))
+						var itemStorage = oreBox.GetComponent<ItemStorage>();
+						var itemSlotList = itemStorage.GetItemSlots();
+						foreach (var itemSlot in itemSlotList)
 						{
-							var inStackable = Ore.gameObject.GetComponent<Stackable>();
-							Spawn.ServerPrefab(exOre.Material, registerObject.WorldPositionServer + Vector3Int.down, transform.parent, count: inStackable.Amount);
-							Despawn.ServerSingle(Ore.transform.gameObject);
+							if (itemSlot.IsEmpty)
+							{
+								continue;
+							}
+							AddOre(itemSlot.ItemObject);
 						}
 					}
 				}
 			}
-		}
-	}
 
-	[Serializable]
-	public class OreToMaterial
-	{
-		[FormerlySerializedAs("Tray")]
-		public ItemTrait Trait;
-		public GameObject Material;
+			UpdateLaborPointsUI();
+		}
+
+		public bool WillInteract(HandApply interaction, NetworkSide side)
+		{
+			if (!DefaultWillInteract.Default(interaction, side))
+				return false;
+			if (!Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.OreGeneral))
+				return false;
+			return true;
+		}
+		public void ServerPerformInteraction(HandApply interaction)
+		{
+			var localPosInt = MatrixManager.WorldToLocalInt(registerObject.WorldPositionServer, registerObject.Matrix);
+			var itemsOnFloor = registerObject.Matrix.Get<ItemAttributesV2>(localPosInt + Vector3Int.up, true);
+
+			if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.OreGeneral))
+				AddOre(interaction.HandObject);
+
+			foreach (var item in itemsOnFloor)
+			{
+				if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.OreGeneral))
+				{
+					AddOre(item.gameObject);
+				}
+			}
+
+			UpdateLaborPointsUI();
+		}
+
+		void UpdateLaborPointsUI()
+		{
+			if (oreRedemptiomMachineGUI)
+			{
+				oreRedemptiomMachineGUI.UpdateLaborPoints(laborPoints);
+			}
+		}
+
+		private void AddOre(GameObject ore)
+		{
+			foreach (var materialSheet in CraftingManager.MaterialSheetData.Values)
+			{
+				if (Validations.HasItemTrait(ore, materialSheet.oreTrait))
+				{
+					var inStackable = ore.GetComponent<Stackable>();
+					laborPoints += inStackable.Amount * materialSheet.laborPoint;
+					materialStorageLink.TryAddSheet(materialSheet.materialTrait, inStackable.Amount);
+					_ = Despawn.ServerSingle(ore);
+				}
+			}
+		}
+
+		public void ClaimLaborPoints(GameObject player)
+		{
+			var playerStorage = player.GetComponent<DynamicItemStorage>();
+			var itemSlotList = playerStorage.GetNamedItemSlots(NamedSlot.id);
+			foreach (var itemSlot in itemSlotList)
+			{
+				if (itemSlot.ItemObject)
+				{
+					var idCard = AccessRestrictions.GetIDCard(itemSlot.ItemObject);
+					idCard.currencies[(int)CurrencyType.LaborPoints] += laborPoints;
+					laborPoints = 0;
+					oreRedemptiomMachineGUI.UpdateLaborPoints(laborPoints);
+					return;
+				}
+			}
+		}
 	}
 }

@@ -5,7 +5,7 @@ using Systems.Spells;
 using ScriptableObjects.Systems.Spells;
 using Items.Bureaucracy;
 
-namespace Items.Others.Magical
+namespace Items.Magical
 {
 	/// <summary>
 	/// Allows the player to learn the referenced spell when activated.
@@ -30,7 +30,7 @@ namespace Items.Others.Magical
 				{
 					Chat.AddExamineMsgFromServer(player.GameObject, "You already know this spell!");
 				}
-				
+
 				return false;
 			}
 
@@ -58,7 +58,7 @@ namespace Items.Others.Magical
 		private void LearnSpell(ConnectedPlayer player)
 		{
 			// TODO: Play "Blind" SFX once sound freeze is lifted.
-			Chat.AddChatMsgToChat(player, spell.InvocationMessage, ChatChannel.Local);
+			Chat.AddChatMsgToChat(player, spell.InvocationMessage, ChatChannel.Local, Loudness.SCREAMING);
 			Chat.AddExamineMsgFromServer(player.GameObject, $"You feel like you've experienced enough to cast <b>{spell.Name}</b>!");
 
 			var learnedSpell = spell.AddToPlayer(player.Script);

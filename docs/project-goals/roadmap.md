@@ -75,11 +75,11 @@ note: goals that are crossed out are goals that have been completed
           <li>Role Management</li>
           <li><del>Piping of Atmospherics</del></li>
           <li><del>Disposals</del></li>
-          <li>Addressable system</li>
-          <li>Races support</li>
-          <li>Wizard</li>
+          <li><del>Addressable system</del></li>
+          <li><del>Races support</del></li>
+          <li><del>Wizard</del></li>
           <li>Mapping revamp</li>
-          <li>Add one of the other ss13 engines (Singulo)</li>
+          <li><del>Add one of the other ss13 engines (Singulo)</del></li>
         </ul>
       </td>
     </tr>
@@ -88,16 +88,24 @@ note: goals that are crossed out are goals that have been completed
        <td>
           <ul>
               <li>Language support (Localisation )</li>
-              <li>Crafting menu</li>
+              <li><del>Crafting menu</del></li>
               <li>Research Gameplay</li>
               <li>Admin tool remapping(could be in 0.5)</li>
               <li>Gravity generator for station</li>
-              <li>Tesla engine</li>
+              <li><del>Tesla engine</del></li>
               <li>Tile and Item overlays</li>
               <li>Pills/medical chemistry</li>
           </ul>
        </td>
     </tr>
+    <tr>
+        <td>Candidates for prerelease or post-release</td>
+           <td>
+              <ul>
+                  <li>3D walls (Was tested relatively easy to implement)</li>
+              </ul>
+           </td>
+        </tr>
     <tr>
         <td> to be continued... </td>
         <td></td>

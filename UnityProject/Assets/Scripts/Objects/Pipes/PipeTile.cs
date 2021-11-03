@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Systems.Pipes;
 
-namespace Pipes
+
+namespace Objects.Atmospherics
 {
 	[CreateAssetMenu(fileName = "PipeTile_Tile", menuName = "Tiles/PipeTile")]
 	public class PipeTile : BasicTile
@@ -19,30 +20,38 @@ namespace Pipes
 		public Sprite sprite;
 		public override Sprite PreviewSprite => sprite;
 
-		public override bool AreUnderfloorSame(Matrix4x4 thisTransformMatrix,BasicTile basicTile, Matrix4x4 TransformMatrix)
+		public static Connections GetRotatedConnection(PipeTile pipeTile, Matrix4x4 matrixStruct)
 		{
-			if ((basicTile as PipeTile) != null)
+			var offset = PipeFunctions.GetOffsetAngle(matrixStruct.rotation.eulerAngles.z);
+			var connection = pipeTile.Connections.Copy();
+			connection.Rotate(offset);
+			return connection;
+		}
+
+		public static bool CanAddPipe(MetaDataNode metaData, Connections incomingConnection)
+		{
+			foreach (var pipeNode in metaData.PipeData)
 			{
-				var TilePipeTile = (PipeTile) basicTile;
-				var TheConnection = TilePipeTile.Connections.Copy();
-				int Offset = PipeFunctions.GetOffsetAngle(TransformMatrix.rotation.eulerAngles.z);
-				TheConnection.Rotate(Offset);
-
-				var thisConnection = Connections.Copy();
-				int thisOffset = PipeFunctions.GetOffsetAngle(thisTransformMatrix.rotation.eulerAngles.z);
-				thisConnection.Rotate(thisOffset);
-
-				for (int i = 0; i < thisConnection.Directions.Length; i++)
+				var existingConnection = pipeNode.pipeData.Connections;
+				for (var i = 0; i < incomingConnection.Directions.Length; i++)
 				{
-					if (thisConnection.Directions[i].Bool && TheConnection.Directions[i].Bool)
+					if (incomingConnection.Directions[i].Bool && existingConnection.Directions[i].Bool)
 					{
-						return true;
+						return false;
 					}
 				}
-				return false;
 			}
+			return true;
+		}
 
-			return base.AreUnderfloorSame(thisTransformMatrix, basicTile, TransformMatrix);
+		public override bool IsTileRepeated(Matrix4x4 thisTransformMatrix,BasicTile basicTile, Matrix4x4 TransformMatrix, MetaDataNode metaDataNode)
+		{
+			var incomingConnection = GetRotatedConnection(this, thisTransformMatrix);
+			if (CanAddPipe(metaDataNode, incomingConnection) == false)
+			{
+				return true;
+			}
+			return false;
 		}
 
 		public void InitialiseNodeNew(Vector3Int Location, Matrix matrix, Matrix4x4 Matrix4x4)
@@ -52,7 +61,7 @@ namespace Pipes
 			var pipeNode = new PipeNode();
 			var rotation = Matrix4x4;
 			int Offset = PipeFunctions.GetOffsetAngle(rotation.rotation.eulerAngles.z);
-			pipeNode.Initialise(this, metaData, ZeroedLocation, matrix, Offset);
+			pipeNode.Initialise(this, metaData, Location, matrix, Offset);
 			metaData.PipeData.Add(pipeNode);
 		}
 
@@ -63,7 +72,7 @@ namespace Pipes
 			var pipeNode = new PipeNode();
 			var rotation = matrix.UnderFloorLayer.Tilemap.GetTransformMatrix(Location);
 			int Offset = PipeFunctions.GetOffsetAngle(rotation.rotation.eulerAngles.z);
-			pipeNode.Initialise(this, metaData, ZeroedLocation, matrix, Offset);
+			pipeNode.Initialise(this, metaData, Location, matrix, Offset);
 			metaData.PipeData.Add(pipeNode);
 		}
 	}

@@ -8,7 +8,8 @@ using System.IO;
 using System;
 using Initialisation;
 using Messages.Client;
-using UnityEngine.UI;
+using Messages.Server;
+using UI;
 
 namespace ServerInfo
 {
@@ -54,13 +55,9 @@ namespace ServerInfo
 
         private void LoadLinks()
         {
-	        var path = Path.Combine(Application.streamingAssetsPath, "config", "serverDescLinks.json");
+	        if (string.IsNullOrEmpty(ServerData.ServerConfig.DiscordLinkID)) return;
 
-	        if (!File.Exists(path)) return;
-
-	        var linkList = JsonUtility.FromJson<ServerInfoLinks>(File.ReadAllText(path));
-
-	        serverDiscordID = linkList.DiscordLinkID;
+	        serverDiscordID = ServerData.ServerConfig.DiscordLinkID;
         }
 
         public void ClientSetValues(string newName, string newDesc, string newDiscordID)
@@ -69,9 +66,9 @@ namespace ServerInfo
 	        ServerDesc.text = newDesc;
 	        serverDiscordID = newDiscordID;
 
-	        if(string.IsNullOrEmpty(newDesc)) return;
+	        if (string.IsNullOrEmpty(newDesc)) return;
 	        ServerInfoUILobbyObject.SetActive(true);
-	        if(string.IsNullOrEmpty(newDiscordID)) return;
+	        if (string.IsNullOrEmpty(newDiscordID)) return;
 	        DiscordButton.SetActive(true);
 	        DiscordButton.GetComponent<OpenURL>().url = "https://discord.gg/" + newDiscordID;
         }
@@ -83,48 +80,51 @@ namespace ServerInfo
         }
     }
 
-	public class ServerInfoLobbyMessageServer : ServerMessage
+	public class ServerInfoLobbyMessageServer : ServerMessage<ServerInfoLobbyMessageServer.NetMessage>
 	{
-		public string ServerName;
-
-		public string ServerDesc;
-
-		public string ServerDiscordID;
-
-		public override void Process()
+		public struct NetMessage : NetworkMessage
 		{
-			GUI_PreRoundWindow.Instance.GetComponent<ServerInfoUILobby>().ClientSetValues(ServerName, ServerDesc, ServerDiscordID);
+			public string ServerName;
+			public string ServerDesc;
+			public string ServerDiscordID;
 		}
 
-		public static ServerInfoLobbyMessageServer Send(NetworkConnection clientConn,string serverName, string serverDesc, string serverDiscordID)
+		public override void Process(NetMessage msg)
 		{
-			ServerInfoLobbyMessageServer msg = new ServerInfoLobbyMessageServer
+			GUI_PreRoundWindow.Instance.GetComponent<ServerInfoUILobby>().ClientSetValues(
+					msg.ServerName, msg.ServerDesc, msg.ServerDiscordID);
+		}
+
+		public static NetMessage Send(NetworkConnection clientConn,string serverName, string serverDesc, string serverDiscordID)
+		{
+			NetMessage msg = new NetMessage
 			{
 				ServerName = serverName,
 				ServerDesc = serverDesc,
 				ServerDiscordID = serverDiscordID
 			};
-			msg.SendTo(clientConn);
+
+			SendTo(clientConn, msg);
 			return msg;
 		}
 	}
 
-	public class ServerInfoLobbyMessageClient : ClientMessage
+	public class ServerInfoLobbyMessageClient : ClientMessage<ServerInfoLobbyMessageClient.NetMessage>
 	{
-		public string PlayerId;
+		public struct NetMessage : NetworkMessage { }
 
-		public override void Process()
+		public override void Process(NetMessage msg)
 		{
-			ServerInfoLobbyMessageServer.Send(SentByPlayer.Connection, ServerData.ServerConfig.ServerName, ServerInfoUILobby.serverDesc, ServerInfoUILobby.serverDiscordID);
+			ServerInfoLobbyMessageServer.Send(
+					SentByPlayer.Connection, ServerData.ServerConfig.ServerName,
+					ServerInfoUILobby.serverDesc, ServerInfoUILobby.serverDiscordID);
 		}
 
-		public static ServerInfoLobbyMessageClient Send(string playerId)
+		public static NetMessage Send()
 		{
-			ServerInfoLobbyMessageClient msg = new ServerInfoLobbyMessageClient
-			{
-				PlayerId = playerId,
-			};
-			msg.Send();
+			NetMessage msg = new NetMessage();
+
+			Send(msg);
 			return msg;
 		}
 	}

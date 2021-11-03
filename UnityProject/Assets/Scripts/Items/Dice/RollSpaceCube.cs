@@ -1,20 +1,25 @@
-﻿public class RollSpaceCube : RollDie
+﻿using Items;
+
+namespace Items.Dice
 {
-	ItemAttributesV2 itemAttributes;
-
-	protected override void Awake()
+	public class RollSpaceCube : RollDie
 	{
-		base.Awake();
-		itemAttributes = GetComponent<ItemAttributesV2>();
-	}
+		ItemAttributesV2 itemAttributes;
 
-	protected override void Start()
-	{
-		base.Start();
-
-		if (GetProbability(10))
+		protected override void Awake()
 		{
-			itemAttributes.ServerSetArticleName("spess cube");
+			base.Awake();
+			itemAttributes = GetComponent<ItemAttributesV2>();
+		}
+
+		protected override void Start()
+		{
+			base.Start();
+
+			if (DMMath.Prob(10))
+			{
+				itemAttributes.ServerSetArticleName("spess cube");
+			}
 		}
 	}
 }

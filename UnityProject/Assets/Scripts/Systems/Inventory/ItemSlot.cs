@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Items;
+using Messages.Server;
 using Mirror;
 using UnityEngine;
 using UnityEngine.Events;
+using UI;
 
 /// <summary>
 /// Represents a slot which can store an item (from a particular ItemStorage).
@@ -22,7 +25,7 @@ using UnityEngine.Events;
 /// </summary>
 public class ItemSlot
 {
-	//object pool. Maps from the ItemStorage object's instance ID, to the Slot Identifier, to the actual item slot
+	// object pool. Maps from the ItemStorage object's instance ID, to the Slot Identifier, to the actual item slot
 	private static Dictionary<int, Dictionary<SlotIdentifier, ItemSlot>> slots =
 		new Dictionary<int, Dictionary<SlotIdentifier, ItemSlot>>();
 
@@ -66,14 +69,14 @@ public class ItemSlot
 	/// RegisterPlayer this slot is in the top-level inventory of. Null if not on a player or
 	/// in something like a backpack.
 	/// </summary>
-	public RegisterPlayer Player => itemStorage != null ? itemStorage.GetComponent<RegisterPlayer>() : null;
+	public RegisterPlayer Player => itemStorage != null ? itemStorage.Player : null;
 
 	/// <summary>
 	/// RegisterPlayer this slot is in the slot tree of (i.e. even if in a backpack). Null if not on a player at all.
 	/// </summary>
 	public RegisterPlayer RootPlayer()
 	{
-		var root = GetRootStorage();
+		var root = GetRootStorageOrPlayer();
 		if (root == null) return null;
 		return root.GetComponent<RegisterPlayer>();
 	}
@@ -115,8 +118,6 @@ public class ItemSlot
 	public bool Invalid => invalid;
 	private bool invalid;
 
-
-
 	/// <summary>
 	/// Server-side only. Players server thinks are currently looking at this slot (and thus will receive
 	/// updates when the slot changes and can be allowed to perform transfers).
@@ -142,17 +143,13 @@ public class ItemSlot
 		this.slotIdentifier = slotIdentifier;
 	}
 
-
 	/// <summary>
 	/// Gets the specified slot from the specified storage. Null if this item storage does not have
 	/// a slot with the given identifier.
 	/// </summary>
-	/// <param name="itemStorage"></param>
-	/// <param name="slotIdentifier"></param>
-	/// <returns></returns>
 	public static ItemSlot Get(ItemStorage itemStorage, SlotIdentifier slotIdentifier)
 	{
-		if (!itemStorage.HasSlot(slotIdentifier)) return null;
+		if (itemStorage.HasSlot(slotIdentifier) == false) return null;
 
 		var instanceID = itemStorage.GetInstanceID();
 		slots.TryGetValue(instanceID, out var dict);
@@ -176,11 +173,9 @@ public class ItemSlot
 	/// Gets the specified named slot from the specified storage. Null if this item storage does not have
 	/// a slot with the given name.
 	/// </summary>
-	/// <param name="itemStorage"></param>
-	/// <param name="named"></param>
-	/// <returns></returns>
 	public static ItemSlot GetNamed(ItemStorage itemStorage, NamedSlot named)
 	{
+		if (itemStorage == null) return null;
 		return Get(itemStorage, SlotIdentifier.Named(named));
 	}
 
@@ -188,9 +183,6 @@ public class ItemSlot
 	/// Gets the specified indexed slot from the specified storage. Null if this item storage does not have
 	/// a slot with the given name.
 	/// </summary>
-	/// <param name="itemStorage"></param>
-	/// <param name="slotIndex"></param>
-	/// <returns></returns>
 	public static ItemSlot GetIndexed(ItemStorage itemStorage, int slotIndex)
 	{
 		return Get(itemStorage, SlotIdentifier.Indexed(slotIndex));
@@ -201,10 +193,9 @@ public class ItemSlot
 	/// informs this observer of the current state of the slot. This observer will be informed of any updates
 	/// to this slot.
 	/// </summary>
-	/// <param name="observerPlayer"></param>
 	public void ServerAddObserverPlayer(GameObject observerPlayer)
 	{
-		if (!CustomNetworkManager.IsServer) return;
+		if (CustomNetworkManager.IsServer == false) return;
 		serverObserverPlayers.Add(observerPlayer);
 		UpdateItemSlotMessage.Send(observerPlayer, this);
 	}
@@ -213,35 +204,30 @@ public class ItemSlot
 	/// Server only (can be called client side but has no effect). Remove this player from the list of players currently observing this slot.
 	/// This observer will not longer recieve updates as they happen to this slot.
 	/// </summary>
-	/// <param name="observerPlayer"></param>
 	public void ServerRemoveObserverPlayer(GameObject observerPlayer)
 	{
-		if (!CustomNetworkManager.IsServer) return;
+		if (CustomNetworkManager.IsServer == false) return;
 		serverObserverPlayers.Remove(observerPlayer);
-		//tell the client the slot is now empty
+		// tell the client the slot is now empty
 		UpdateItemSlotMessage.Send(observerPlayer, this, true);
 	}
-
 
 	/// <summary>
 	/// Server side only. Returns true if this player is observing this slot.
 	/// </summary>
-	/// <param name="observerPlayer"></param>
-	/// <returns></returns>
 	public bool ServerIsObservedBy(GameObject observerPlayer)
 	{
-		if (!CustomNetworkManager.IsServer) return false;
+		if (CustomNetworkManager.IsServer == false) return false;
 		return serverObserverPlayers.Contains(observerPlayer);
 	}
 
 	/// <summary>
 	/// Gets the top-level ItemStorage containing this slot. I.e. if this
-	/// is inside a crate in a backpack, will return the backpack ItemStorage.
+	/// is inside a crate in a backpack, will return the crate ItemStorage.
 	/// </summary>
-	/// <returns></returns>
-	public ItemStorage GetRootStorage()
+	public GameObject GetRootStorageOrPlayer()
 	{
-		return itemStorage.GetRootStorage();
+		return itemStorage.GetRootStorageOrPlayer();
 	}
 
 	public override string ToString()
@@ -261,12 +247,14 @@ public class ItemSlot
 		item = newItem;
 		OnSlotContentsChangeServer.Invoke();
 
-		//server has to call their own client side hooks because by the time the message is received,
-		//the server will not be able to determine what slot the item came from.
+		itemStorage.OnInventorySlotSet(removedItem, newItem);
+
+		// server has to call their own client side hooks because by the time the message is received,
+		// the server will not be able to determine what slot the item came from.
 		OnSlotContentsChangeClient.Invoke();
 		if (removedItem != null)
 		{
-			//we displaced an item
+			// we displaced an item
 			var info = ClientInventoryMove.OfType(ClientInventoryMoveType.Removed);
 			foreach (var hook in removedItem.GetComponents<IClientInventoryMove>())
 			{
@@ -276,7 +264,7 @@ public class ItemSlot
 
 		if (newItem != null)
 		{
-			//we are adding an item to this slot
+			// we are adding an item to this slot
 			var info = ClientInventoryMove.OfType(ClientInventoryMoveType.Added);
 			foreach (var hook in newItem.GetComponents<IClientInventoryMove>())
 			{
@@ -302,7 +290,6 @@ public class ItemSlot
 	/// Update these slot contents in response to message from server, firing appropriate
 	/// hooks.
 	/// </summary>
-	/// <param name="newContents"></param>
 	public void ClientUpdate(Pickupable newContents)
 	{
 		item = newContents;
@@ -312,10 +299,8 @@ public class ItemSlot
 	/// <summary>
 	/// Checks if the indicated item can fit in this slot.
 	/// </summary>
-	/// <param name="toStore"></param>
 	/// <param name="ignoreOccupied">if true, does not check if an item is already in the slot</param>
 	/// <param name="examineRecipient">if not null, when validation fails, will output an appropriate examine message to this recipient</param>
-	/// <returns></returns>
 	public bool CanFit(Pickupable toStore, bool ignoreOccupied = false, GameObject examineRecipient = null)
 	{
 		if (toStore == null) return false;
@@ -324,7 +309,7 @@ public class ItemSlot
 		ItemStorage storageToCheck = itemStorage;
 		StorageIdentifier storeIdentifier = toStore.GetComponent<StorageIdentifier>();
 
-		//Check if there is a deny entry for this toStore item
+		// Check if there is a deny entry for this toStore item
 		if (storageToCheck != null && storeIdentifier != null)
 		{
 			InteractableStorage interactiveStorage = storageToCheck.GetComponent<InteractableStorage>();
@@ -343,8 +328,8 @@ public class ItemSlot
 			}
 		}
 
-		//go through this slot's ancestors and make sure none of them ARE toStore,
-		//as that would create a loop in the inventory hierarchy
+		// go through this slot's ancestors and make sure none of them ARE toStore,
+		// as that would create a loop in the inventory hierarchy
 		int count = 0;
 		while (storageToCheck != null)
 		{
@@ -359,7 +344,7 @@ public class ItemSlot
 				}
 				return false;
 			}
-			//get parent item storage if it exists
+			// get parent item storage if it exists
 			var pickupable = storageToCheck.GetComponent<Pickupable>();
 			if (pickupable != null && pickupable.ItemSlot != null)
 			{
@@ -409,7 +394,7 @@ public class ItemSlot
 		if (examineRecipient)
 		{
 			//if this is going in a player's inventory, use a more appropriate message.
-			var targetPlayerScript = ItemStorage.GetComponent<PlayerScript>();
+			var targetPlayerScript = ItemStorage.GetRootStorageOrPlayer().GetComponent<PlayerScript>();
 			if (targetPlayerScript != null)
 			{
 				//going into a top-level inventory slot of a player
@@ -430,7 +415,6 @@ public class ItemSlot
 	/// </summary>
 	/// <param name="pickupable">pickupable item</param>
 	/// <param name="ignoreOccupied">if true, does not check if an item is already in the slot</param>
-	/// <returns></returns>
 	public bool CanFit(GameObject pickupable, bool ignoreOccupied = false)
 	{
 		var pu = pickupable.GetComponent<Pickupable>();
@@ -442,7 +426,6 @@ public class ItemSlot
 		}
 
 		return CanFit(pu, ignoreOccupied);
-
 	}
 
 	/// <summary>
@@ -450,13 +433,11 @@ public class ItemSlot
 	/// slots in this storage. Should be called when storage is going to be destroyed or
 	/// will be no longer known by the client. On server side, also destroys all the items in the slot.
 	/// </summary>
-	/// <param name="storageToFree"></param>
 	public static void Free(ItemStorage storageToFree)
 	{
-		if (CustomNetworkManager.Instance != null &&
-		    CustomNetworkManager.Instance._isServer)
+		if (CustomNetworkManager.Instance != null && CustomNetworkManager.Instance._isServer)
 		{
-			//destroy all items in the slots
+			// destroy all items in the slots
 			foreach (var slot in storageToFree.GetItemSlots())
 			{
 				if (slot.Item != null)
@@ -466,12 +447,15 @@ public class ItemSlot
 			}
 		}
 
-		var instanceID = storageToFree.GetComponent<NetworkIdentity>().GetInstanceID();
-		slots.TryGetValue(instanceID, out var dict);
-		if (dict != null)
+		if (storageToFree.GetComponent<NetworkIdentity>())
 		{
-			dict.Clear();
-			slots.Remove(instanceID);
+			var instanceID = storageToFree.GetComponent<NetworkIdentity>().GetInstanceID();
+			slots.TryGetValue(instanceID, out var dict);
+			if (dict != null)
+			{
+				dict.Clear();
+				slots.Remove(instanceID);
+			}
 		}
 	}
 
@@ -483,7 +467,7 @@ public class ItemSlot
 	public static void Cleanup()
 	{
 		var instanceIdsToRemove = new List<int>();
-		//find existing storage instance IDs which have no slots or which are for no longer existing objects
+		// find existing storage instance IDs which have no slots or which are for no longer existing objects
 		foreach (var instanceIdToSlots in slots)
 		{
 			var instanceID = instanceIdToSlots.Key;
@@ -493,17 +477,17 @@ public class ItemSlot
 				continue;
 			}
 
-			//The dictionary doesn't have a mapping to ItemStorage objects, and
-			//we can't use the instance ID to look up the game object except in editor,
-			//so we instead figure out which game object this instance ID maps to by looking at
-			//one of its slots and getting its item storage field
+			// The dictionary doesn't have a mapping to ItemStorage objects, and
+			// we can't use the instance ID to look up the game object except in editor,
+			// so we instead figure out which game object this instance ID maps to by looking at
+			// one of its slots and getting its item storage field
 			var slotWithStorage = instanceIdToSlots.Value.Values
 				.Where(slot => slot.itemStorage != null)
 				.Select(slot => slot.itemStorage).FirstOrDefault();
 
-			//we only keep the slot if it is for an object that actually exists,
-			//i.e. the ItemStorage is not null and the ItemStorage gameObject is not null
-			//since unity null check on game objects will tell us if object still exists.
+			// we only keep the slot if it is for an object that actually exists,
+			// i.e. the ItemStorage is not null and the ItemStorage gameObject is not null
+			// since unity null check on game objects will tell us if object still exists.
 			if (slotWithStorage == null || slotWithStorage.gameObject == null)
 			{
 				instanceIdsToRemove.Add(instanceID);
@@ -511,16 +495,16 @@ public class ItemSlot
 			}
 		}
 
-		//now perform the actual removals and mark removed slots as invalid.
+		// now perform the actual removals and mark removed slots as invalid.
 		foreach (var instanceId in instanceIdsToRemove)
 		{
 			var slotDict = slots[instanceId];
-			//mark the slots as invalid
+			// mark the slots as invalid
 			foreach (var slot in slotDict.Values)
 			{
 				slot.invalid = true;
 			}
-			//delete
+			// delete
 			slotDict.Clear();
 			slots.Remove(instanceId);
 		}
@@ -529,10 +513,9 @@ public class ItemSlot
 	/// <summary>
 	/// Links this item slot to the given client side UI slot.
 	/// </summary>
-	/// <param name="toLink"></param>
 	public void LinkLocalUISlot(UI_ItemSlot toLink)
 	{
-		this.localUISlot = toLink;
+		localUISlot = toLink;
 	}
 
 	/// <summary>
@@ -540,17 +523,13 @@ public class ItemSlot
 	/// named. If slotIndex == -1, will try to get it as a named slot, otherwise will get it
 	/// as an indexed slot.
 	/// </summary>
-	/// <param name="itemStorage"></param>
-	/// <param name="namedSlot"></param>
-	/// <param name="slotIndex"></param>
-	/// <returns></returns>
 	public static ItemSlot Get(ItemStorage itemStorage, NamedSlot namedSlot, int slotIndex)
 	{
 		if (slotIndex == -1)
 		{
-			return ItemSlot.GetNamed(itemStorage, namedSlot);
+			return GetNamed(itemStorage, namedSlot);
 		}
-		return ItemSlot.GetIndexed(itemStorage, slotIndex);
+		return GetIndexed(itemStorage, slotIndex);
 	}
 
 	public static NamedSlotFlagged GetFlaggedSlot(NamedSlot slot)

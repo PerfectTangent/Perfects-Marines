@@ -5,15 +5,12 @@ using UnityEngine;
 
 namespace Antagonists
 {
-	[CreateAssetMenu(menuName="ScriptableObjects/Objectives/BlobDestroyStation")]
+	[CreateAssetMenu(menuName="ScriptableObjects/AntagObjectives/BlobDestroyStation")]
 	public class BlobDestroyStation : Objective
 	{
 		protected override void Setup()
 		{
-			if (Owner.body.gameObject.GetComponent<BlobStarter>() == null)
-			{
-				Owner.body.gameObject.AddComponent<BlobStarter>();
-			}
+
 		}
 
 		protected override bool CheckCompletion()

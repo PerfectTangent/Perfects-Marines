@@ -27,6 +27,12 @@ namespace Antagonists
 		private List<Objective> EscapeObjectives = new List<Objective>();
 
 		/// <summary>
+		/// Gimmick objectives, these objectives will always succeed.
+		/// </summary>
+		[SerializeField]
+		private List<Objective> GimmickObjectives = new List<Objective>();
+
+		/// <summary>
 		/// Returns a new instance of a random antag type.
 		/// </summary>
 		public Antagonist GetRandomAntag()
@@ -97,7 +103,21 @@ namespace Antagonists
 			{
 				// Add one escape type objective if needed
 				// Be careful not to remove all escape objectives from AntagData
-				newObjective = PickRandomObjective(ref EscapeObjectives, false);
+				var allowedEscapes = EscapeObjectives.Where(obj => obj.IsPossible(player)).ToList();
+				//TODO since checkUnique is false we dont need to remove the chosen object from EscapeObjectives
+				//TODO but we would if we ever want to allow for unique escape objectives
+				newObjective = PickRandomObjective(ref allowedEscapes, false);
+				newObjective.DoSetup(player.mind);
+				generatedObjs.Add(newObjective);
+			}
+
+			if (antag.ChanceForGimmickObjective != 0 && DMMath.Prob(antag.ChanceForGimmickObjective))
+			{
+				// Add one gimmick objective
+				var allowedGimmicks = GimmickObjectives.Where(obj => obj.IsPossible(player)).ToList();
+				//TODO since checkUnique is false we dont need to remove the chosen object from EscapeObjectives
+				//TODO but we would if we ever want to allow for unique gimmick objectives
+				newObjective = PickRandomObjective(ref allowedGimmicks, false);
 				newObjective.DoSetup(player.mind);
 				generatedObjs.Add(newObjective);
 			}

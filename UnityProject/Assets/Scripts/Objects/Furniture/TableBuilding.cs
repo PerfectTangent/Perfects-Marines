@@ -1,8 +1,11 @@
 ﻿using System;
 using Mirror;
+using AddressableReferences;
+using Messages.Server.SoundMessages;
 using UnityEngine;
 using ScriptableObjects;
 using Random = UnityEngine.Random;
+
 
 namespace Objects.Construction
 {
@@ -46,6 +49,8 @@ namespace Objects.Construction
 			//only care about interactions targeting us
 			if (interaction.TargetObject != gameObject) return false;
 
+			if (interaction.HandObject == null) return false;
+
 			if (interaction.HandObject.GetComponent<Stackable>().Amount < 2) return false;
 
 			//only try to interact if the user has a wrench, screwdriver in their hand
@@ -68,28 +73,28 @@ namespace Objects.Construction
 					$"{interaction.Performer.ExpensiveName()} starts deconstructing the table frame...",
 					"You finish deconstructing the table frame.",
 					$"{interaction.Performer.ExpensiveName()} deconstructs the table frame.",
-					() => Disassemble(interaction));
+					Disassemble);
 				ToolUtils.ServerPlayToolSound(interaction);
 			}
 			else if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.MetalSheet))
 			{
-				Assemble(interaction, "metal", metalTable, "Deconstruct");
+				Assemble(interaction, "metal", metalTable, CommonSounds.Instance.Deconstruct);
 			}
 			else if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.GlassSheet))
 			{
-				Assemble(interaction, "glass", glassTable, "GlassHit");
+				Assemble(interaction, "glass", glassTable, CommonSounds.Instance.GlassHit);
 			}
 			else if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.WoodenPlank))
 			{
-				Assemble(interaction, "wooden", woodTable, "wood3");
+				Assemble(interaction, "wooden", woodTable, CommonSounds.Instance.wood3);
 			}
 			else if (Validations.HasItemTrait(interaction.HandObject, CommonTraits.Instance.PlasteelSheet))
 			{
-				Assemble(interaction, "reinforced", reinforcedTable, "Deconstruct");
+				Assemble(interaction, "reinforced", reinforcedTable, CommonSounds.Instance.Deconstruct);
 			}
 		}
 
-		private void Assemble(HandApply interaction, string tableType, LayerTile layerTile, string soundName)
+		private void Assemble(HandApply interaction, string tableType, LayerTile layerTile, AddressableAudioSource assemblySound)
 		{
 			ToolUtils.ServerUseToolWithActionMessages(interaction, 0.5f,
 				$"You start constructing a {tableType} table...",
@@ -97,13 +102,14 @@ namespace Objects.Construction
 				$"You finish assembling the {tableType} table.",
 				$"{interaction.Performer.ExpensiveName()} assembles a {tableType} table.",
 				() => SpawnTable(interaction, layerTile));
-			SoundManager.PlayNetworkedAtPos(soundName, gameObject.WorldPosServer(), 1f, sourceObj: gameObject);
+			AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: 1f);
+			SoundManager.PlayNetworkedAtPos(assemblySound, gameObject.WorldPosServer(), audioSourceParameters, sourceObj: gameObject);
 		}
 
-		private void Disassemble(HandApply interaction)
+		private void Disassemble()
 		{
 			Spawn.ServerPrefab(CommonPrefabs.Instance.MetalRods, gameObject.WorldPosServer(), count: 2);
-			Despawn.ServerSingle(gameObject);
+			_ = Despawn.ServerSingle(gameObject);
 		}
 
 		private void SpawnTable(HandApply interaction, LayerTile tableToSpawn)
@@ -113,7 +119,7 @@ namespace Objects.Construction
 			interaction.HandObject.GetComponent<Stackable>().ServerConsume(2);
 			interactableTiles.TileChangeManager.UpdateTile(cellPos, tableToSpawn);
 			interactableTiles.TileChangeManager.SubsystemManager.UpdateAt(cellPos);
-			Despawn.ServerSingle(gameObject);
+			_ = Despawn.ServerSingle(gameObject);
 		}
 	}
 }

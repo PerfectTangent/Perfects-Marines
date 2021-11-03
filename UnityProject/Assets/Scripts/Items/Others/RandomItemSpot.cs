@@ -8,23 +8,25 @@ namespace Items
 {
 	public class RandomItemSpot : NetworkBehaviour, IServerSpawn
 	{
-		[Tooltip("Amout of items we could get from this pool")] [SerializeField]
+		[Tooltip("Amount of items we could get from this pool")] [SerializeField]
 		private int lootCount = 1;
 		[Tooltip("Should we spread the items in the tile once spawned?")][SerializeField]
 		private bool fanOut = false;
 		[Tooltip("List of possible pools of items to choose from")][SerializeField]
 		private List<PoolData> poolList = null;
 
+		public GameObject spawnedItem = null;
+
 		private const int MaxAmountRolls = 5;
 
-		public override void OnStartServer()
+		public void OnSpawnServer(SpawnInfo info)
 		{
-			var registerTile = GetComponent<RegisterTile>();
-			registerTile.WaitForMatrixInit(RollRandomPool);
+			RollRandomPool(true);
 		}
 
-		private void RollRandomPool(MatrixInfo matrixInfo)
+		public void RollRandomPool(bool UnrestrictedAndspawn)
 		{
+			var RegisterTile = this.GetComponent<RegisterTile>();
 			for (int i = 0; i < lootCount; i++)
 			{
 				PoolData pool = null;
@@ -53,18 +55,22 @@ namespace Items
 
 				if (pool == null)
 				{
-					// didn't spawned anything - just destroy spawner
-					Despawn.ServerSingle(gameObject);
-					return;
+					continue;
 				}
 
-				SpawnItems(pool);
+				GenerateItem(pool, UnrestrictedAndspawn);
+				if (UnrestrictedAndspawn == false) return;
 			}
 
-			Despawn.ServerSingle(gameObject);
+			if (UnrestrictedAndspawn)
+			{
+				RegisterTile.Matrix.MetaDataLayer.InitialObjects[this.gameObject] = this.transform.localPosition;
+				this.GetComponent<CustomNetTransform>().DisappearFromWorldServer(true);
+				this.GetComponent<RegisterTile>().UpdatePositionServer();
+			}
 		}
 
-		private void SpawnItems(PoolData poolData)
+		private void GenerateItem(PoolData poolData, bool spawn)
 		{
 			if (poolData == null) return;
 
@@ -72,7 +78,7 @@ namespace Items
 
             if (itemPool == null)
 			{
-				Debug.LogError($"Item pool was null in {gameObject.name}");
+				Logger.LogError($"Item pool was null in {gameObject.name}", Category.ItemSpawn);
 				return;
 			}
 
@@ -85,21 +91,13 @@ namespace Items
 			}
 
 			var maxAmt = Random.Range(1, item.MaxAmount+1);
-			var worldPos = gameObject.RegisterTile().WorldPositionServer;
 
-			Spawn.ServerPrefab(
-				item.Prefab,
-				worldPos,
-				count: maxAmt,
-				scatterRadius: spread);
-		}
+			this.spawnedItem = item.Prefab;
+			if (spawn == false) return;
 
-		public void OnSpawnServer(SpawnInfo info)
-		{
-			if (info.SpawnType != SpawnType.Mapped)
-			{
-				OnStartServer();
-			}
+			var worldPos = gameObject.AssumedWorldPosServer();
+			var pushPull = GetComponent<PushPull>();
+			Spawn.ServerPrefab(item.Prefab, worldPos, count: maxAmt, scatterRadius: spread, sharePosition: pushPull);
 		}
 	}
 

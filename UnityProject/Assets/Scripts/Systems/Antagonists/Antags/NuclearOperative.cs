@@ -1,5 +1,5 @@
+using Messages.Server;
 using UnityEngine;
-using Objects.Command;
 
 namespace Antagonists
 {
@@ -7,25 +7,16 @@ namespace Antagonists
 	public class NuclearOperative : Antagonist
 	{
 		[Tooltip("For use in Syndicate Uplinks")]
-		public int initialTC = 20;
+		[SerializeField]
+		private int initialTC = 25;
 
-		// add any NuclearOperative specific logic here
-		public override GameObject ServerSpawn(PlayerSpawnRequest spawnRequest)
+		public override void AfterSpawn(ConnectedPlayer player)
 		{
-			//spawn as a nuke op regardless of the requested occupation
-			var newPlayer = PlayerSpawn.ServerSpawnPlayer(spawnRequest.JoinedViewer, AntagOccupation,
-				spawnRequest.CharacterSettings);
+			player.Job = JobType.SYNDICATE;
+			UpdateChatMessage.Send(player.GameObject, ChatChannel.Syndicate, ChatModifier.None,
+				$"We have intercepted the code for the nuclear weapon: <b>{AntagManager.SyndiNukeCode}</b>.", Loudness.LOUD);
 
-			//send the code:
-			//Check to see if there is a nuke and communicate the nuke code:
-			Nuke nuke = Object.FindObjectOfType<Nuke>();
-			if (nuke != null)
-			{
-				UpdateChatMessage.Send(newPlayer, ChatChannel.Syndicate, ChatModifier.None,
-					"We have intercepted the code for the nuclear weapon: " + nuke.NukeCode);
-			}
-
-			return newPlayer;
+			AntagManager.TryInstallPDAUplink(player, initialTC, true);
 		}
 	}
 }

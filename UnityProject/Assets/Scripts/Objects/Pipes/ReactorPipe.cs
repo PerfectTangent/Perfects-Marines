@@ -1,23 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using Chemistry;
 
-namespace Pipes
+
+namespace Objects.Atmospherics
 {
 	public class ReactorPipe : MonoPipe
 	{
-		public Chemistry.Reagent Water;
+		public Reagent Water;
 		public List<ReactorPipe> ConnectedCores = new List<ReactorPipe>(); //needs To check properly
-		public override void Start()
+		public override void OnSpawnServer(SpawnInfo info)
 		{
 			pipeData.PipeAction = new ReservoirAction();
 			pipeData.GetMixAndVolume.GetReagentMix().Add(Water, 100);
-			base.Start();
+			base.OnSpawnServer(info);
 		}
 
-		public override void TickUpdate()
-		{
-
-		}
+		public override void TickUpdate() { }
 	}
 }

@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Objects;
 using Items;
@@ -42,6 +43,20 @@ namespace Systems.Cargo
 			mm.SetAccuracy(2);
 		}
 
+		private void OnEnable()
+		{
+			if(CustomNetworkManager.IsServer == false) return;
+
+			UpdateManager.Add(CallbackType.UPDATE, UpdateMe);
+		}
+
+		private void OnDisable()
+		{
+			if(CustomNetworkManager.IsServer == false) return;
+
+			UpdateManager.Remove(CallbackType.UPDATE, UpdateMe);
+		}
+
 		/// <summary>
 		/// Send Shuttle to the station.
 		/// Server only.
@@ -70,13 +85,9 @@ namespace Systems.Cargo
 			mm.AutopilotTo(destination);
 		}
 
-		private void Update()
+		//Server Side Only
+		private void UpdateMe()
 		{
-			if (!CustomNetworkManager.Instance._isServer)
-			{
-				return;
-			}
-
 			if (moving && Vector2.Distance(transform.position, destination) < 2)    //arrived to dest
 			{
 				moving = false;
@@ -132,18 +143,28 @@ namespace Systems.Cargo
 		/// Calls CargoManager.DestroyItem() for all items on the shuttle.
 		/// Server only.
 		/// </summary>
-		void UnloadCargo()
+		private void UnloadCargo()
 		{
 			Transform objectHolder = SearchForObjectsOnShuttle();
 			//track what we've already sold so it's not sold twice.
 			HashSet<GameObject> alreadySold = new HashSet<GameObject>();
 			for (int i = 0; i < objectHolder.childCount; i++)
 			{
-				ObjectBehaviour item = objectHolder.GetChild(i).GetComponent<ObjectBehaviour>();
+				var item = objectHolder.GetChild(i).gameObject;
+				if (item == null) continue;
+
 				//need VisibleState check because despawned objects still stick around on their matrix transform
-				if (item != null && item.VisibleState)
+				if (item.TryGetComponent<ObjectBehaviour>(out var behaviour) && behaviour.VisibleState)
 				{
-					CargoManager.Instance.DestroyItem(item, alreadySold);
+					if (item.TryGetComponent<Attributes>(out var attributes))
+					{
+						if (attributes.ExportType == Attributes.CargoExportType.Never) continue;
+
+						// Don't sell secured objects e.g. conveyors.
+						if (attributes.ExportType != Attributes.CargoExportType.Always && behaviour.IsNotPushable) continue;
+					}
+
+					CargoManager.Instance.ProcessCargo(item, alreadySold);
 				}
 			}
 		}
@@ -162,7 +183,7 @@ namespace Systems.Cargo
 		/// Server only.
 		/// </summary>
 		/// <param name="order">Order to spawn.</param>
-		public bool SpawnOrder(CargoOrder order)
+		public bool SpawnOrder(CargoOrderSO order)
 		{
 			Vector3 pos = GetRandomFreePos();
 			if (pos == TransformState.HiddenPos)
@@ -172,14 +193,14 @@ namespace Systems.Cargo
 			Dictionary<GameObject, Stackable> stackableItems = new Dictionary<GameObject, Stackable>();
 			//error occurred trying to spawn, just ignore this order.
 			if (crate == null) return true;
-			if (crate.TryGetComponent<ClosetControl>(out var closetControl))
+			if (crate.TryGetComponent<ObjectContainer>(out var container))
 			{
 				for (int i = 0; i < order.Items.Count; i++)
 				{
 					var entryPrefab = order.Items[i];
 					if (entryPrefab == null)
 					{
-						Logger.Log($"Error with order fulfilment. Can't add items index: {i} for {order.OrderName} as the prefab is null. Skipping..");
+						Logger.Log($"Error with order fulfilment. Can't add items index: {i} for {order.OrderName} as the prefab is null. Skipping..", Category.Cargo);
 						continue;
 					}
 
@@ -189,7 +210,7 @@ namespace Systems.Cargo
 						if (orderedItem == null)
 						{
 							//let the shuttle still be able to complete the order empty otherwise it will be stuck permantly
-							Logger.Log($"Can't add ordered item to create because it doesn't have a GameObject", Category.ItemSpawn);
+							Logger.Log($"Can't add ordered item to create because it doesn't have a GameObject", Category.Cargo);
 							continue;
 						}
 
@@ -199,7 +220,7 @@ namespace Systems.Cargo
 							stackableItems.Add(entryPrefab, stackableItem);
 						}
 
-						AddItemToCrate(closetControl, orderedItem);
+						AddItemToCrate(container, orderedItem);
 					}
 					else
 					{
@@ -214,23 +235,23 @@ namespace Systems.Cargo
 							if (orderedItem == null)
 							{
 								//let the shuttle still be able to complete the order empty otherwise it will be stuck permantly
-								Logger.Log($"Can't add ordered item to create because it doesn't have a GameObject", Category.ItemSpawn);
+								Logger.Log($"Can't add ordered item to create because it doesn't have a GameObject", Category.Cargo);
 								continue;
 							}
 
 							var stackableItem = orderedItem.GetComponent<Stackable>();
 							stackableItems[entryPrefab] = stackableItem;
 
-							AddItemToCrate(closetControl, orderedItem);
+							AddItemToCrate(container, orderedItem);
 						}
 					}
 				}
 			}
 			else
 			{
-				Logger.LogWarning($"{crate.ExpensiveName()} does not have ClosetControl. Please fix CargoData" +
-								  $" to ensure that the crate prefab is actually a crate (with ClosetControl component)." +
-								  $" This order will be ignored.");
+				Logger.LogWarning($"{crate.ExpensiveName()} does not have {nameof(ObjectBehaviour)}. Please fix CargoData" +
+								  $" to ensure that the crate prefab is actually a crate (with {nameof(ObjectBehaviour)} component)." +
+								  $" This order will be ignored.", Category.Cargo);
 				return true;
 			}
 
@@ -238,17 +259,20 @@ namespace Systems.Cargo
 			return (true);
 		}
 
-		void AddItemToCrate(ClosetControl crate, GameObject obj)
+		private void AddItemToCrate(ObjectContainer container, GameObject obj)
 		{
-			if (obj.TryGetComponent<ObjectBehaviour>(out var objectBehaviour))
+			//ensure it is added to crate
+			if (obj.TryGetComponent<RandomItemSpot>(out var randomItem))
 			{
-				//ensure it is added to crate
-				crate.ServerAddInternalItem(objectBehaviour);
+				var registerTile = container.gameObject.RegisterTile();
+				var items = registerTile.Matrix.Get<ObjectBehaviour>(registerTile.LocalPositionServer, ObjectType.Item, true)
+						.Select(ob => ob.gameObject).Where(go => go != obj);
+
+				container.StoreObjects(items);
 			}
 			else
 			{
-				Logger.LogWarning($"Can't add ordered item {obj.ExpensiveName()} to create because" +
-								  $" it doesn't have an ObjectBehavior component.");
+				container.StoreObject(obj);
 			}
 		}
 

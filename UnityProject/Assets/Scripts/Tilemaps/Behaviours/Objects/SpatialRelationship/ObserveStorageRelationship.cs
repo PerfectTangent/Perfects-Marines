@@ -1,5 +1,7 @@
 
 using System;
+using HealthV2;
+using Player.Movement;
 
 /// <summary>
 /// Relationship where one player is observing some interactable storage, which ends when they go out of
@@ -10,7 +12,7 @@ public class ObserveStorageRelationship : RangeRelationship
 {
 	private readonly PlayerMove observedPlayerMove;
 	private readonly RegisterPlayer observedRegisterPlayer;
-	private readonly PlayerHealth observedPlayerHealth;
+	private readonly PlayerHealthV2 observedPlayerHealth;
 	public readonly RegisterPlayer ObserverPlayer;
 	public readonly InteractableStorage ObservedStorage;
 
@@ -21,13 +23,13 @@ public class ObserveStorageRelationship : RangeRelationship
 		this.ObservedStorage = observedStorage;
 		this.ObserverPlayer = observer;
 		//check if the observed storage is in a player's inventory, and if so, populate the fields / event hooks
-		var rootStorage = observedStorage.ItemStorage.GetRootStorage();
+		var rootStorage = observedStorage.ItemStorage.GetRootStorageOrPlayer();
 		this.observedPlayerMove = rootStorage.GetComponent<PlayerMove>();
 		if (observedPlayerMove != null)
 		{
 			this.observedRegisterPlayer = rootStorage.GetComponent<RegisterPlayer>();
 
-			this.observedPlayerHealth = rootStorage.GetComponent<PlayerHealth>();
+			this.observedPlayerHealth = rootStorage.GetComponent<PlayerHealthV2>();
 
 			//add listeners for non-range-based ways in which the relationship can end
 			observedPlayerMove.OnCuffChangeServer.AddListener(OnCuffChangeServer);

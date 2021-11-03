@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AddressableReferences;
+using Random = UnityEngine.Random;
+using Messages.Server.SoundMessages;
+using Player.Movement;
 
 /// <summary>
 /// Used for restraining a player (with handcuffs or zip ties etc)
@@ -34,8 +38,9 @@ public class Restraint : MonoBehaviour, ICheckedInteractable<HandApply>
 	/// <summary>
 	/// Sound to be played when applying restraints
 	/// </summary>
-	[SerializeField]
-	private string sound = "Handcuffs";
+	[SerializeField] private AddressableAudioSource applySound = null;
+
+	private float RandomPitch => Random.Range( 0.8f, 1.2f );
 
 	public bool WillInteract(HandApply interaction, NetworkSide side)
 	{
@@ -68,7 +73,8 @@ public class Restraint : MonoBehaviour, ICheckedInteractable<HandApply>
 			.ServerStartProgress(target.RegisterTile(), applyTime, performer);
 		if (bar != null)
 		{
-			SoundManager.PlayNetworkedAtPos(sound, target.transform.position, sourceObj: target.gameObject);
+			AudioSourceParameters soundParameters = new AudioSourceParameters(pitch: RandomPitch);
+			SoundManager.PlayNetworkedAtPos(applySound, target.transform.position, soundParameters, sourceObj: target.gameObject);
 			Chat.AddActionMsgToChat(performer,
 				$"You begin restraining {target.ExpensiveName()}...",
 				$"{performer.ExpensiveName()} begins restraining {target.ExpensiveName()}...");

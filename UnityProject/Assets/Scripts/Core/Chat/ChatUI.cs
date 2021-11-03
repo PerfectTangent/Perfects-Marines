@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System;
 using AdminTools;
-using System.Linq;
+using UI;
+using NaughtyAttributes;
 
+// TODO: namespace me
 public class ChatUI : MonoBehaviour
 {
 	public static ChatUI Instance;
@@ -25,7 +27,15 @@ public class ChatUI : MonoBehaviour
 	[SerializeField] private InputField InputFieldChat = null;
 	[SerializeField] private Transform thresholdMarkerBottom = null;
 	[SerializeField] private Transform thresholdMarkerTop = null;
+
+	[SerializeField, BoxGroup("Scroll Bar")] private Image scrollHandle = null;
+	[SerializeField, BoxGroup("Scroll Bar")] private Image scrollBackground = null;
+
 	[SerializeField] private AdminHelpChat adminHelpChat = null;
+	[SerializeField] private MentorHelpChat mentorHelpChat = null;
+
+	[SerializeField] private PlayerPrayerWindow playerPrayerWindow = null;
+	[SerializeField] private GameObject helpSelectionPanel = null;
 	[SerializeField] private RectTransform safeArenaRect = default;
 
 	public RectTransform SafeArenaRect => safeArenaRect;
@@ -150,13 +160,13 @@ public class ChatUI : MonoBehaviour
 		// Make sure the window and channel panel start disabled
 		chatInputWindow.SetActive(false);
 		//channelPanel.gameObject.SetActive(false);
-		EventManager.AddHandler(EVENT.UpdateChatChannels, OnUpdateChatChannels);
+		EventManager.AddHandler(Event.UpdateChatChannels, OnUpdateChatChannels);
 		chatFilter = GetComponent<ChatFilter>();
 	}
 
 	private void OnDestroy()
 	{
-		EventManager.RemoveHandler(EVENT.UpdateChatChannels, OnUpdateChatChannels);
+		EventManager.RemoveHandler(Event.UpdateChatChannels, OnUpdateChatChannels);
 	}
 
 	private void Update()
@@ -164,7 +174,7 @@ public class ChatUI : MonoBehaviour
 		// TODO add events to inventory slot changes to trigger channel refresh
 		if (chatInputWindow.activeInHierarchy && !isChannelListUpToDate())
 		{
-			Logger.Log("Channel list is outdated!", Category.UI);
+			Logger.Log("Channel list is outdated!", Category.Chat);
 			RefreshChannelPanel();
 		}
 
@@ -200,14 +210,11 @@ public class ChatUI : MonoBehaviour
 	/// </summary>
 	public void AddChatEntry(string message)
 	{
-		//Check for chat entry dupes:
-		if (allEntries.Count != 0)
+		// Check for chat entry duplication
+		if (allEntries.Count > 0 && message.Equals(allEntries[allEntries.Count - 1].Message))
 		{
-			if (message.Equals(allEntries[allEntries.Count - 1].Message))
-			{
-				allEntries[allEntries.Count - 1].AddChatDuplication();
-				return;
-			}
+			allEntries[allEntries.Count - 1].AddChatDuplication();
+			return;
 		}
 
 		GameObject entry = entryPool.GetChatEntry();
@@ -249,6 +256,12 @@ public class ChatUI : MonoBehaviour
 		adminHelpChat.AddChatEntry(message);
 	}
 
+	public void AddMentorPrivEntry(string message)
+	{
+		mentorHelpChat.gameObject.SetActive(true);
+		mentorHelpChat.AddChatEntry(message);
+	}
+
 	void SetEntryTransform(GameObject entry)
 	{
 		entry.transform.SetParent(content, false);
@@ -275,12 +288,9 @@ public class ChatUI : MonoBehaviour
 
 	private void DetermineScrollBarState(bool coolDownFade)
 	{
-		// TODO revisit when we work on chat system v2
-		/*
 		if ((allEntries.Count - hiddenEntries) < 20)
 		{
-			float fadeTime = 0f;
-			if (coolDownFade) fadeTime = 3f;
+			float fadeTime = coolDownFade ? 3f : 0f;
 			scrollBackground.CrossFadeAlpha(0.01f, fadeTime, false);
 			scrollHandle.CrossFadeAlpha(0.01f, fadeTime, false);
 		}
@@ -289,7 +299,6 @@ public class ChatUI : MonoBehaviour
 			scrollBackground.CrossFadeAlpha(1f, 0f, false);
 			scrollHandle.CrossFadeAlpha(1f, 0f, false);
 		}
-		*/
 	}
 
 	//This is an editor interface trigger event, do not delete
@@ -327,7 +336,7 @@ public class ChatUI : MonoBehaviour
 		parsedInput = Chat.ParsePlayerInput(InputFieldChat.text, chatContext);
 		if (Chat.IsValidToSend(parsedInput.ClearMessage))
 		{
-			SoundManager.Play(SingletonSOSounds.Instance.Click01);
+			_ = SoundManager.Play(CommonSounds.Instance.Click01);
 			PlayerSendChat(parsedInput.ClearMessage);
 		}
 
@@ -336,6 +345,7 @@ public class ChatUI : MonoBehaviour
 
 	private void PlayerSendChat(string sendMessage)
 	{
+		sendMessage = sendMessage.Replace("\n", " ").Replace("\r", " ");  // We don't want users to spam chat vertically
 		if(selectedVoiceLevel == -1)
 			sendMessage = "#" + sendMessage;
 		if(selectedVoiceLevel == 1)
@@ -351,7 +361,7 @@ public class ChatUI : MonoBehaviour
 
 	public void OnChatCancel()
 	{
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
+		_ = SoundManager.Play(CommonSounds.Instance.Click01);
 		InputFieldChat.text = "";
 		CloseChatWindow();
 	}
@@ -387,7 +397,7 @@ public class ChatUI : MonoBehaviour
 		}
 		// Otherwise use the previously selected channels again
 
-		EventManager.Broadcast(EVENT.ChatFocused);
+		EventManager.Broadcast(Event.ChatFocused);
 		chatInputWindow.SetActive(true);
 		background.SetActive(true);
 		UIManager.IsInputFocus = true; // should work implicitly with InputFieldFocus
@@ -402,7 +412,7 @@ public class ChatUI : MonoBehaviour
 		StartCoroutine(WindowCoolDown());
 		UIManager.IsInputFocus = false;
 		chatInputWindow.SetActive(false);
-		EventManager.Broadcast(EVENT.ChatUnfocused);
+		EventManager.Broadcast(Event.ChatUnfocused);
 		background.SetActive(false);
 		UIManager.PreventChatInput = false;
 
@@ -425,8 +435,8 @@ public class ChatUI : MonoBehaviour
 	/// </summary>
 	private void RefreshChannelPanel()
 	{
-		Logger.LogTrace("Refreshing channel panel!", Category.UI);
-		Logger.Log("Selected channels: " + ListChannels(SelectedChannels), Category.UI);
+		Logger.LogTrace("Refreshing channel panel!", Category.Chat);
+		Logger.Log("Selected channels: " + ListChannels(SelectedChannels), Category.Chat);
 		RefreshToggles();
 		RefreshRadioChannelPanel();
 		UpdateInputLabel();
@@ -435,7 +445,7 @@ public class ChatUI : MonoBehaviour
 	public void Toggle_ChannelPanel()
 	{
 		showChannels = !showChannels;
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
+		_ = SoundManager.Play(CommonSounds.Instance.Click01);
 		if (showChannels)
 		{
 			channelPanel.gameObject.SetActive(true);
@@ -484,7 +494,7 @@ public class ChatUI : MonoBehaviour
 		// Check a channel toggle doesn't already exist
 		if (ChannelToggles.ContainsKey(channel))
 		{
-			Logger.LogWarning($"Channel toggle already exists for {channel}!", Category.UI);
+			Logger.LogWarning($"Channel toggle already exists for {channel}!", Category.Chat);
 			return;
 		}
 
@@ -503,7 +513,7 @@ public class ChatUI : MonoBehaviour
 	/// </summary>
 	private void CreateActiveRadioEntry(ChatChannel channel)
 	{
-		Logger.Log($"Creating radio channel entry for {channel}", Category.UI);
+		Logger.Log($"Creating radio channel entry for {channel}", Category.Chat);
 		// Create the template object which is hidden in the list but deactivated
 		GameObject radioEntry = Instantiate(activeChannelTemplate, activeChannelTemplate.transform.parent, false);
 
@@ -511,7 +521,7 @@ public class ChatUI : MonoBehaviour
 		radioEntry.GetComponentInChildren<Text>().text = channel.ToString();
 		radioEntry.GetComponentInChildren<Button>().onClick.AddListener(() =>
 		{
-			SoundManager.Play(SingletonSOSounds.Instance.Click01);
+			_ = SoundManager.Play(CommonSounds.Instance.Click01);
 			DisableChannel(channel);
 		});
 		// Add it to a list for easy access later
@@ -579,7 +589,7 @@ public class ChatUI : MonoBehaviour
 
 	public void Toggle_Channel(bool turnOn)
 	{
-		SoundManager.Play(SingletonSOSounds.Instance.Click01);
+		_ = SoundManager.Play(CommonSounds.Instance.Click01);
 		GameObject curObject = EventSystem.current.currentSelectedGameObject;
 		if (!curObject)
 		{
@@ -636,7 +646,7 @@ public class ChatUI : MonoBehaviour
 
 	private void ClearActiveRadioChannels()
 	{
-		Logger.Log("Clearing active radio channel panel", Category.UI);
+		Logger.Log("Clearing active radio channel panel", Category.Chat);
 		foreach (var channelEntry in ActiveChannels)
 		{
 			channelEntry.Value.SetActive(false);
@@ -689,7 +699,7 @@ public class ChatUI : MonoBehaviour
 	/// </summary>
 	private void EnableChannel(ChatChannel channel)
 	{
-		Logger.Log($"Enabling {channel}", Category.UI);
+		Logger.Log($"Enabling {channel}", Category.Chat);
 
 		if (ChannelToggles.ContainsKey(channel))
 		{
@@ -697,7 +707,7 @@ public class ChatUI : MonoBehaviour
 		}
 		else
 		{
-			Logger.LogWarning($"Can't enable {channel} because it isn't in ChannelToggles!");
+			Logger.LogWarning($"Can't enable {channel} because it isn't in ChannelToggles!", Category.Chat);
 		}
 
 		//Deselect all other channels in UI if it's a main channel
@@ -757,7 +767,7 @@ public class ChatUI : MonoBehaviour
 	/// </summary>
 	private void DisableChannel(ChatChannel channel)
 	{
-		Logger.Log($"Disabling {channel}", Category.UI);
+		Logger.Log($"Disabling {channel}", Category.Chat);
 
 		// Special behaviour for main channels
 		if (MainChannels.Contains(channel))
@@ -826,7 +836,7 @@ public class ChatUI : MonoBehaviour
 			else
 			{
 				// TODO: need some addition UX indication that channel is not avaliable
-				Logger.Log($"Player trying to write message to channel {inputChannel}, but there are only {availChannels} avaliable;", Category.UI);
+				Logger.Log($"Player trying to write message to channel {inputChannel}, but there are only {availChannels} avaliable;", Category.Chat);
 			}
 
 			// delete all tags from input
@@ -834,6 +844,38 @@ public class ChatUI : MonoBehaviour
 		}
 
 		OnChatInputChanged?.Invoke(rawInput, selectedChannels);
+	}
+
+	/// <summary>
+	/// Opens a panel to select whether admin or mentor help is needed
+	/// </summary>
+	public void OnHelpButton()
+	{
+		CloseChatWindow();
+		if (helpSelectionPanel.gameObject.activeInHierarchy)
+		{
+			helpSelectionPanel.gameObject.SetActive(false);
+		}
+		else
+		{
+			helpSelectionPanel.gameObject.SetActive(true);
+		}
+	}
+
+	/// <summary>
+	/// Opens the prayer window to pray to the gods (admins).
+	/// </summary>
+	public void OnPlayerPrayerButton()
+	{
+		CloseChatWindow();
+		if (playerPrayerWindow.gameObject.activeInHierarchy)
+		{
+			playerPrayerWindow.gameObject.SetActive(false);
+		}
+		else
+		{
+			playerPrayerWindow.gameObject.SetActive(true);
+		}
 	}
 
 	/// <summary>
@@ -849,6 +891,30 @@ public class ChatUI : MonoBehaviour
 		else
 		{
 			adminHelpChat.gameObject.SetActive(true);
+			if (helpSelectionPanel != null && helpSelectionPanel.activeInHierarchy)
+			{
+				helpSelectionPanel.gameObject.SetActive(false);
+			}
+		}
+	}
+
+	/// <summary>
+	/// Opens the mentor help window to talk to the mentors
+	/// </summary>
+	public void OnMentorHelpButton()
+	{
+		CloseChatWindow();
+		if (mentorHelpChat.gameObject.activeInHierarchy)
+		{
+			mentorHelpChat.gameObject.SetActive(false);
+		}
+		else
+		{
+			mentorHelpChat.gameObject.SetActive(true);
+			if (helpSelectionPanel != null && helpSelectionPanel.activeInHierarchy)
+			{
+				helpSelectionPanel.gameObject.SetActive(false);
+			}
 		}
 	}
 }

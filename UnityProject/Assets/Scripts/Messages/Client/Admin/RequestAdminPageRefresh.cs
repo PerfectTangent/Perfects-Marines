@@ -1,53 +1,30 @@
-﻿using System.Collections;
-using Messages.Client;
-using UnityEngine;
-using Utility = UnityEngine.Networking.Utility;
+﻿using Messages.Server.AdminTools;
 using Mirror;
 
-/// <summary>
-///     Request admin page data from the server
-/// </summary>
-public class RequestAdminPageRefresh : ClientMessage
+
+namespace Messages.Client.Admin
 {
-	public string Userid;
-	public string AdminToken;
-
-	public override void Process()
+	/// <summary>
+	///     Request admin page data from the server
+	/// </summary>
+	public class RequestAdminPageRefresh : ClientMessage<RequestAdminPageRefresh.NetMessage>
 	{
-		VerifyAdminStatus();
-	}
+		public struct NetMessage : NetworkMessage { }
 
-	void VerifyAdminStatus()
-	{
-		var player = PlayerList.Instance.GetAdmin(Userid, AdminToken);
-		if (player != null)
+		public override void Process(NetMessage msg)
 		{
-			AdminToolRefreshMessage.Send(player, Userid);
+			if (IsFromAdmin())
+			{
+				AdminToolRefreshMessage.Send(SentByPlayer.GameObject, SentByPlayer.UserId);
+			}
 		}
-	}
 
-	public static RequestAdminPageRefresh Send(string userId, string adminToken)
-	{
-		RequestAdminPageRefresh msg = new RequestAdminPageRefresh
+		public static NetMessage Send()
 		{
-			Userid = userId,
-			AdminToken = adminToken
-		};
-		msg.Send();
-		return msg;
-	}
+			NetMessage msg = new NetMessage();
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Userid = reader.ReadString();
-		AdminToken = reader.ReadString();
-	}
-
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteString(Userid);
-		writer.WriteString(AdminToken);
+			Send(msg);
+			return msg;
+		}
 	}
 }

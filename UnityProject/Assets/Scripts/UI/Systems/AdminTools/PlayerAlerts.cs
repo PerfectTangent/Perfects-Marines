@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using DatabaseAPI;
+using Messages.Client.Admin;
+using Messages.Server.AdminTools;
 using Mirror;
 using UnityEngine;
 
@@ -13,13 +15,9 @@ namespace AdminTools
 		[SerializeField] private GUI_Notification notifications = null;
 		private const string NotificationKey = "playeralert";
 
+		private readonly List<PlayerAlertData> serverPlayerAlerts = new List<PlayerAlertData>();
 
-		private List<PlayerAlertData> serverPlayerAlerts
-			= new List<PlayerAlertData>();
-
-		private List<PlayerAlertData> clientPlayerAlerts
-			= new List<PlayerAlertData>();
-
+		private readonly List<PlayerAlertData> clientPlayerAlerts = new List<PlayerAlertData>();
 
 		public void LoadAllEntries(List<PlayerAlertData> alertEntries)
 		{
@@ -31,7 +29,7 @@ namespace AdminTools
 			playerAlertsScroll.AppendAlertEntries(alertEntries);
 		}
 
-		void OnEnable()
+		private void OnEnable()
 		{
 			playerAlertsWindow.SetActive(false);
 		}
@@ -85,9 +83,10 @@ namespace AdminTools
 				return;
 			}
 
-			PlayerAlertsUpdate update = new PlayerAlertsUpdate();
-
-			update.playerAlerts = serverPlayerAlerts;
+			PlayerAlertsUpdate update = new PlayerAlertsUpdate
+			{
+				playerAlerts = serverPlayerAlerts
+			};
 
 			PlayerAlertsUpdateMessage.SendLogUpdateToAdmin(requestee, update);
 			if (notifications.notifications.ContainsKey(NotificationKey))
@@ -96,8 +95,7 @@ namespace AdminTools
 			}
 		}
 
-		public void ServerAddNewEntry(string incidentTime, PlayerAlertTypes alertType, ConnectedPlayer perp,
-			string message)
+		public void ServerAddNewEntry(string incidentTime, PlayerAlertTypes alertType, ConnectedPlayer perp, string message)
 		{
 			var netId = NetId.Invalid;
 
@@ -111,11 +109,13 @@ namespace AdminTools
 				netId = perp.Connection.identity.netId;
 			}
 
-			var entry = new PlayerAlertData();
-			entry.roundTime = incidentTime;
-			entry.playerNetId = netId;
-			entry.playerAlertType = alertType;
-			entry.Message = message;
+			var entry = new PlayerAlertData
+			{
+				roundTime = incidentTime,
+				playerNetId = netId,
+				playerAlertType = alertType,
+				Message = message
+			};
 			serverPlayerAlerts.Add(entry);
 			PlayerAlertNotifications.SendToAll(1);
 			ServerSendEntryToAllAdmins(entry);
@@ -126,8 +126,9 @@ namespace AdminTools
 			PlayerAlertsUpdateMessage.SendSingleEntryToAdmins(entry);
 		}
 
-		public void ServerProcessActionRequest(string adminId, PlayerAlertActions actionRequest,
-			string roundTimeOfIncident, uint perpId, string adminToken)
+		public void ServerProcessActionRequest(
+				string adminId, PlayerAlertActions actionRequest,
+				string roundTimeOfIncident, uint perpId, string adminToken)
 		{
 			if (!PlayerList.Instance.IsAdmin(adminId)) return;
 
@@ -138,13 +139,13 @@ namespace AdminTools
 				x.playerNetId == perpId && x.roundTime == roundTimeOfIncident);
 			if (index == -1)
 			{
-				Logger.Log($"Could not find perp id {perpId} with roundTime incident: {roundTimeOfIncident}");
+				Logger.Log($"Could not find perp id {perpId} with roundTime incident: {roundTimeOfIncident}", Category.Admin);
 				return;
 			}
 
 			if (!NetworkIdentity.spawned.ContainsKey(perpId))
 			{
-				Logger.Log($"Perp id {perpId} not found in Spawnlist");
+				Logger.Log($"Perp id {perpId} not found in Spawnlist", Category.Admin);
 				return;
 			}
 
@@ -172,7 +173,7 @@ namespace AdminTools
 					$"{admin.Player().Username} BRUTALLY GIBBED player {perpPlayer.Name} ({perpPlayer.Username}) for a " +
 			        $"{alertEntry.playerAlertType.ToString()} incident that happened at roundtime: {alertEntry.roundTime}", adminId);
 
-			playerScript.playerHealth.ServerGibPlayer();
+			playerScript.playerHealth.Gib();
 
 			alertEntry.gibbed = true;
 			ServerSendEntryToAllAdmins(alertEntry);
@@ -189,7 +190,7 @@ namespace AdminTools
 			ConnectedPlayer perpPlayer = perp.Player();
 			UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(
 					$"{admin.Player().Username} is talking to or monitoring player {perpPlayer.Name} ({perpPlayer.Username}) for a " +
-			        $"{alertEntry.playerAlertType.ToString()} incident that happened at roundtime: {alertEntry.roundTime}", adminId);
+			        $"{alertEntry.playerAlertType} incident that happened at roundtime: {alertEntry.roundTime}", adminId);
 
 			alertEntry.takenCareOf = true;
 			ServerSendEntryToAllAdmins(alertEntry);
@@ -203,7 +204,7 @@ namespace AdminTools
 			{
 				playerAlertsWindow.SetActive(true);
 				notifications.ClearAll();
-				AdminCheckPlayerAlerts.Send(ServerData.UserID, clientPlayerAlerts.Count);
+				AdminCheckPlayerAlerts.Send(clientPlayerAlerts.Count);
 			}
 			else
 			{

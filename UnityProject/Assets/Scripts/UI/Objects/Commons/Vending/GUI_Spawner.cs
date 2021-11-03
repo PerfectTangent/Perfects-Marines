@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using HealthV2;
 using UnityEngine;
 using UI.Objects.Shuttles;
 
@@ -63,7 +64,7 @@ public class GUI_Spawner : NetTab
 				PrefabEntryList.AddItem( item );
 			}
 
-			SpawnedObjectList.AddObjects( GUI_ShuttleControl.GetObjectsOf<LivingHealthBehaviour>() );
+			SpawnedObjectList.AddObjects( GUI_ShuttleControl.GetObjectsOf<LivingHealthMasterBase>() );
 
 			//		Done via editor in this example, but can be done via code as well, like this:
 			//		NestedSwitcher.OnPageChange.AddListener( RefreshSubpageLabel );
@@ -189,7 +190,7 @@ public class GUI_Spawner : NetTab
 		var mob = GetMob( index );
 		if ( mob )
 		{
-			SoundManager.PlayNetworkedAtPos( SingletonSOSounds.Instance.Notice1, Provider.transform.position );
+			SoundManager.PlayNetworkedAtPos( CommonSounds.Instance.Notice1, Provider.transform.position );
 			//Get mob's gameobject and do something good to it
 			Chat.AddActionMsgToChat(mob.TrackedObject, $"You hugged {mob.name}", $"{mob.TrackedObject.name} hugged {mob.name}");
 		}
@@ -199,11 +200,11 @@ public class GUI_Spawner : NetTab
 		var mob = GetMob( index );
 		if ( mob )
 		{
-			SoundManager.PlayNetworkedAtPos( SingletonSOSounds.Instance.Notice1, Provider.transform.position );
+			SoundManager.PlayNetworkedAtPos( CommonSounds.Instance.Notice1, Provider.transform.position );
 
 			//Get mob's gameobject and do something bad to it
-			mob.TrackedObject.GetComponent<LivingHealthBehaviour>().ApplyDamageToBodypart( null, 500, AttackType.Internal, DamageType.Brute, BodyPartType.Head );
-			SoundManager.PlayNetworkedAtPos( "Smash", mob.TrackedObject.transform.position );
+			mob.TrackedObject.GetComponent<LivingHealthBehaviour>().ApplyDamageToBodyPart( null, 500, AttackType.Internal, DamageType.Brute, BodyPartType.Head );
+			SoundManager.PlayNetworkedAtPos( CommonSounds.Instance.Smash, mob.TrackedObject.transform.position );
 
 			SpawnedObjectList.Remove( index );
 		}

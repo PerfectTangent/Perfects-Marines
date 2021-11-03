@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Items;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using AdminCommands;
+using HealthV2;
+using Managers;
+using UI;
 
 /// <summary>
 /// Represents an item slot rendered in the UI.
@@ -16,29 +21,29 @@ using UnityEngine.UI;
 [Serializable]
 public class UI_ItemSlot : TooltipMonoBehaviour
 {
-
 	[SerializeField]
 	[FormerlySerializedAs("NamedSlot")]
 	[Tooltip("For player inventory, named slot in player's ItemStorage that this UI slot corresponds to.")]
-	private NamedSlot namedSlot = NamedSlot.back;
+	protected NamedSlot namedSlot = NamedSlot.back;
+
 	public NamedSlot NamedSlot => namedSlot;
 
 	[Tooltip("whether this is for the local player's top level inventory or will be instead used" +
 	         " for another player's inventory.")]
 	[SerializeField]
-	private bool forLocalPlayer = false;
+	protected bool forLocalPlayer = false;
 
-	[Tooltip("Name to display when hovering over this slot in the UI")]
-	[SerializeField]
-	private string hoverName = null;
+	[Tooltip("Name to display when hovering over this slot in the UI")] [SerializeField]
+	protected string hoverName = null;
 
-	[Tooltip("Whether this slot is initially visible in the UI.")]
-	[SerializeField]
-	private bool initiallyHidden = false;
+	[Tooltip("Whether this slot is initially visible in the UI.")] [SerializeField]
+	protected bool initiallyHidden = false;
 
-	[Tooltip("Placeholder image that will be disabled when there is an item in slot")]
-	[SerializeField]
-	private Image placeholderImage = null;
+	[Tooltip("Placeholder image that will be disabled when there is an item in slot")] [SerializeField]
+	protected Image placeholderImage = null;
+
+	[Tooltip("From where the item slot is linked from")]
+	public ItemStorageLinkOrigin ItemStorageLinkOrigin = ItemStorageLinkOrigin.localPlayer;
 
 	/// pointer is over the actual item in the slot due to raycast target. If item ghost, return slot tooltip
 	public override string Tooltip => Item == null ? ExitTooltip : Item.GetComponent<ItemAttributesV2>().ArticleName;
@@ -71,16 +76,19 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 
 	public Image MoreInventoryImage;
 	public HasSubInventory HasSubInventory;
+
 	private void Awake()
 	{
 		if (amountText)
 		{
 			amountText.enabled = false;
 		}
+
 		if (MoreInventoryImage)
 		{
 			MoreInventoryImage.enabled = false;
 		}
+
 		image = new UI_ItemImage(gameObject);
 		hidden = initiallyHidden;
 	}
@@ -109,10 +117,25 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 	{
 		if (namedSlot != NamedSlot.none && forLocalPlayer)
 		{
-			LinkSlot(ItemSlot.GetNamed(PlayerManager.LocalPlayerScript.ItemStorage, namedSlot));
+			var linkedSlot = ItemSlot.GetNamed(GetItemStorage(), namedSlot);
+			if (linkedSlot != null)
+			{
+				LinkSlot(linkedSlot);
+			}
 		}
 	}
 
+	private ItemStorage GetItemStorage()
+	{
+		if (ItemStorageLinkOrigin == ItemStorageLinkOrigin.localPlayer)
+		{
+			return null;
+		}
+		else
+		{
+			return AdminManager.Instance.LocalAdminGhostStorage;
+		}
+	}
 
 	/// <summary>
 	/// Link this item slot to display the contents of the indicated slot, updating whenever the contents change.
@@ -126,6 +149,7 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 			itemSlot.LinkLocalUISlot(null);
 			itemSlot.OnSlotContentsChangeClient.RemoveListener(OnClientSlotContentsChange);
 		}
+
 		//start observing the new slot
 		itemSlot = linkedSlot;
 		if (itemSlot != null)
@@ -135,6 +159,29 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		}
 
 		RefreshImage();
+	}
+
+
+	/// <summary>
+	///  any relation to any slot on client
+	/// </summary>
+	/// <param name="linkedSlot"></param>
+	public void UnLinkSlot()
+	{
+		if (itemSlot != null)
+		{
+			//stop observing this slot
+			itemSlot.LinkLocalUISlot(null);
+			itemSlot.OnSlotContentsChangeClient.RemoveListener(OnClientSlotContentsChange);
+			itemSlot = null;
+		}
+	}
+
+	public void SetUp(BodyPartUISlots.StorageCharacteristics storageCharacteristics)
+	{
+		if (placeholderImage != null)placeholderImage.sprite = storageCharacteristics.placeholderSprite;
+		namedSlot = storageCharacteristics.namedSlot;
+		hoverName = storageCharacteristics.hoverName;
 	}
 
 	private void OnClientSlotContentsChange()
@@ -156,7 +203,7 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 	/// </summary>
 	public void RefreshImage()
 	{
-		if(itemSlot != null)
+		if (itemSlot != null)
 			UpdateImage(ItemObject);
 	}
 
@@ -174,21 +221,22 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		bool forceColor = color != null;
 
 		if (nullItem && Item != null)
-		{ // Case for when we have a hovered image and insert, then stop hovering
+		{
+			// Case for when we have a hovered image and insert, then stop hovering
 			return;
 		}
 
 		// If player is cuffed, a special icon appears on his hand slots, exit without changing it.
 		if ((namedSlot == NamedSlot.leftHand || namedSlot == NamedSlot.rightHand) &&
-			PlayerManager.LocalPlayerScript.playerMove.IsCuffed)
+		    PlayerManager.LocalPlayerScript.playerMove.IsCuffed)
 		{
 			return;
 		}
 
 		if (!nullItem)
 		{
-			image.ShowItem(item, color);
-			if(placeholderImage)
+			image?.ShowItem(item, color);
+			if (placeholderImage)
 				placeholderImage.color = new Color(1, 1, 1, 0);
 
 			//determine if we should show an amount
@@ -218,8 +266,6 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 					MoreInventoryImage.enabled = false;
 				}
 			}
-
-
 		}
 		else
 		{
@@ -244,22 +290,26 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 			return;
 		}
 
-		image.ClearAll();
+		image?.ClearAll();
 		if (amountText)
 		{
 			amountText.enabled = false;
 		}
-		if(placeholderImage)
+
+		if (placeholderImage)
 		{
 			placeholderImage.color = Color.white;
+		}
+		
+		if (HasSubInventory)
+		{
+			HasSubInventory.itemStorage = null;
 		}
 
 		if (MoreInventoryImage)
 		{
-			HasSubInventory.itemStorage = null;
 			MoreInventoryImage.enabled = false;
 		}
-
 	}
 
 	public void Reset()
@@ -269,18 +319,63 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		{
 			amountText.enabled = false;
 		}
-		if(placeholderImage)
+
+		if (placeholderImage)
 		{
 			placeholderImage.color = Color.white;
 		}
+
 		if (MoreInventoryImage)
 		{
 			HasSubInventory.itemStorage = null;
 			MoreInventoryImage.enabled = false;
 		}
+
 		ControlTabs.CheckTabClose();
 	}
 
+	private bool isValidPlayer()
+	{
+		if (PlayerManager.LocalPlayerScript == null) return false;
+
+		// TODO tidy up this if statement once it's working correctly
+		if (!PlayerManager.LocalPlayerScript.playerMove.allowInput ||
+		    PlayerManager.LocalPlayerScript.IsGhost)
+		{
+			Logger.Log("Invalid player, cannot perform action!", Category.Interaction);
+			return false;
+		}
+
+		return true;
+	}
+
+	public bool SwapItem(UI_ItemSlot itemSlot)
+	{
+		if (isValidPlayer())
+		{
+			var CurrentSlot = PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot();
+			if (CurrentSlot != itemSlot.itemSlot)
+			{
+				if (CurrentSlot.Item == null)
+				{
+					if (itemSlot.Item != null)
+					{
+						Inventory.ClientRequestTransfer(itemSlot.ItemSlot, CurrentSlot);
+						return true;
+					}
+				}
+				else
+				{
+					if (itemSlot.Item == null)
+					{
+						Inventory.ClientRequestTransfer(CurrentSlot, itemSlot.ItemSlot);
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 	/// <summary>
 	/// Check if item has an interaction with a an item in a slot
@@ -288,10 +383,17 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 	/// </summary>
 	public void TryItemInteract(bool swapIfEmpty = true)
 	{
-
-		var slotName = itemSlot.SlotIdentifier.NamedSlot;
 		// Clicked on another slot other than our own hands
-		if (itemSlot != UIManager.Hands.LeftHand.ItemSlot && itemSlot != UIManager.Hands.RightHand.itemSlot)
+		bool IsHandSlots = false;
+		foreach (var HadnitemSlot in PlayerManager.LocalPlayerScript.DynamicItemStorage.GetHandSlots())
+		{
+			if (HadnitemSlot == itemSlot)
+			{
+				IsHandSlots = true;
+			}
+		}
+
+		if (IsHandSlots == false)
 		{
 			// If full, attempt to interact the two, otherwise swap
 			if (Item != null)
@@ -300,19 +402,20 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 				//both are occupied)
 				if (TryIF2InventoryApply()) return;
 
-				if(swapIfEmpty)
-					UIManager.Hands.SwapItem(this);
+				if (swapIfEmpty)
+					SwapItem(this);
 				return;
 			}
 			else
 			{
-				if(swapIfEmpty)
-					UIManager.Hands.SwapItem(this);
+				if (swapIfEmpty)
+					SwapItem(this);
 				return;
 			}
 		}
+
 		// If there is an item and the hand is interacting in the same slot
-		if (Item != null && UIManager.Hands.CurrentSlot.ItemSlot == itemSlot)
+		if (Item != null && PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot() == itemSlot)
 		{
 			//check IF2 logic first
 			var interactables = Item.GetComponents<IBaseInteractable<HandActivate>>()
@@ -322,15 +425,11 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		}
 		else
 		{
-			if (UIManager.Hands.CurrentSlot.ItemSlot != itemSlot)
+			if (PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot() != itemSlot)
 			{
-				//Clicked on item with otherslot selected
-				if (UIManager.Hands.OtherSlot.Item != null)
-				{
-					if (TryIF2InventoryApply()) return;
-					if(swapIfEmpty)
-						UIManager.Hands.SwapItem(this);
-				}
+				if (TryIF2InventoryApply()) return;
+				if (swapIfEmpty)
+					SwapItem(this);
 			}
 		}
 	}
@@ -342,11 +441,12 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		//target slot is occupied, but it's okay if active hand slot is not occupied)
 		if (Item != null)
 		{
-			var combine = InventoryApply.ByLocalPlayer(itemSlot, UIManager.Hands.CurrentSlot.itemSlot);
+			var combine = InventoryApply.ByLocalPlayer(itemSlot, PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot());
 			//check interactables in the active hand (if active hand occupied)
-			if (UIManager.Hands.CurrentSlot.Item != null)
+			if (PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot().Item != null)
 			{
-				var handInteractables = UIManager.Hands.CurrentSlot.Item.GetComponents<IBaseInteractable<InventoryApply>>()
+				var handInteractables = PlayerManager.LocalPlayerScript.DynamicItemStorage.GetActiveHandSlot().Item
+					.GetComponents<IBaseInteractable<InventoryApply>>()
 					.Where(mb => mb != null && (mb as MonoBehaviour).enabled);
 				if (InteractionUtils.ClientCheckAndTrigger(handInteractables, combine) != null) return true;
 			}
@@ -364,7 +464,7 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 	[ContextMenu("Debug Slot")]
 	void DebugItem()
 	{
-		Logger.Log(itemSlot.ToString(), Category.Inventory);
+		Logger.Log(itemSlot.ToString(), Category.PlayerInventory);
 	}
 
 	/// <summary>
@@ -382,7 +482,7 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 		else if (!hidden)
 		{
 			//show if we have something stackable.
-			if ( itemSlot?.ItemObject != null)
+			if (itemSlot?.ItemObject != null)
 			{
 				if (amountText)
 				{
@@ -392,6 +492,7 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 						amountText.enabled = true;
 					}
 				}
+
 				if (MoreInventoryImage != null)
 				{
 					var Storage = itemSlot.ItemObject.GetComponent<InteractableStorage>();
@@ -407,11 +508,17 @@ public class UI_ItemSlot : TooltipMonoBehaviour
 					}
 				}
 			}
-			if(Item && placeholderImage)
-			{
-				placeholderImage.color = new Color(1,1,1,0);
-			}
 
+			if (Item && placeholderImage)
+			{
+				placeholderImage.color = new Color(1, 1, 1, 0);
+			}
 		}
 	}
+}
+
+public enum ItemStorageLinkOrigin
+{
+	localPlayer = 0,
+	adminGhost = 1,
 }

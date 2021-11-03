@@ -1,51 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Messages.Client;
+﻿using UnityEngine;
 using Mirror;
-using UnityEngine;
 
-public class RequestToViewObjectsAtTile : ClientMessage
+
+namespace Messages.Client.VariableViewer
 {
-	public Vector3 Location;
-	public string AdminId;
-	public string AdminToken;
-
-	public override void Process()
+	public class RequestToViewObjectsAtTile : ClientMessage<RequestToViewObjectsAtTile.NetMessage>
 	{
-		ValidateAdmin();
-	}
+		public struct NetMessage : NetworkMessage
+		{
+			public Vector3 Location;
+			public string AdminId;
+			public string AdminToken;
+		}
 
-	void ValidateAdmin()
-	{
-		var admin = PlayerList.Instance.GetAdmin(AdminId, AdminToken);
-		if (admin == null) return;
+		public override void Process(NetMessage msg)
+		{
+			ValidateAdmin(msg);
+		}
 
-		VariableViewer.ProcessTile(Location,SentByPlayer.GameObject);
-	}
+		private void ValidateAdmin(NetMessage msg)
+		{
+			if (IsFromAdmin() == false) return;
 
-	public static RequestToViewObjectsAtTile Send(Vector3 _Location, string adminId, string adminToken)
-	{
-		RequestToViewObjectsAtTile msg = new RequestToViewObjectsAtTile();
-		msg.Location = _Location;
-		msg.AdminId = adminId;
-		msg.AdminToken = adminToken;
-		msg.Send();
-		return msg;
-	}
+			global::VariableViewer.ProcessTile(msg.Location, SentByPlayer.GameObject);
+		}
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Location = reader.ReadVector3();
-		AdminId = reader.ReadString();
-		AdminToken = reader.ReadString();
-	}
+		public static NetMessage Send(Vector3 _Location)
+		{
+			NetMessage msg = new NetMessage();
+			msg.Location = _Location;
 
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteVector3(Location);
-		writer.WriteString(AdminId);
-		writer.WriteString(AdminToken);
+			Send(msg);
+			return msg;
+		}
 	}
 }

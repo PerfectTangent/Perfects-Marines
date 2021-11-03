@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Initialisation;
+using Managers.SettingsManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,9 +36,33 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 
 	void IInitialise.Initialise()
 	{
-		if (!PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubbleSize))
+		if (PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubbleSize) == false)
 		{
-			PlayerPrefs.SetFloat(PlayerPrefKeys.ChatBubbleSize, 2f);
+			PlayerPrefs.SetFloat(PlayerPrefKeys.ChatBubbleSize, DisplaySettings.DEFAULT_CHATBUBBLESIZE);
+			PlayerPrefs.Save();
+		}
+
+		if (PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubbleInstant) == false)
+		{
+			PlayerPrefs.SetInt(PlayerPrefKeys.ChatBubbleInstant, DisplaySettings.DEFAULT_CHATBUBBLEINSTANT);
+			PlayerPrefs.Save();
+		}
+
+		if (PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubblePopInSpeed) == false)
+		{
+			PlayerPrefs.SetFloat(PlayerPrefKeys.ChatBubblePopInSpeed, DisplaySettings.DEFAULT_CHATBUBBLEPOPINSPEED);
+			PlayerPrefs.Save();
+		}
+
+		if (PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubbleAdditionalTime) == false)
+		{
+			PlayerPrefs.SetFloat(PlayerPrefKeys.ChatBubbleAdditionalTime, DisplaySettings.DEFAULT_CHATBUBBLEADDITIONALTIME);
+			PlayerPrefs.Save();
+		}
+
+		if (PlayerPrefs.HasKey(PlayerPrefKeys.ChatBubbleClownColour) == false)
+		{
+			PlayerPrefs.SetInt(PlayerPrefKeys.ChatBubbleClownColour, DisplaySettings.DEFAULT_CHATBUBBLECLOWNCOLOUR);
 			PlayerPrefs.Save();
 		}
 
@@ -63,6 +88,13 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 	public static void ShowAChatBubble(Transform followTarget, string msg,
 		ChatModifier chatModifier = ChatModifier.None)
 	{
+		//TODO this will prevent emotes from appearing as speech. We should streamline it and simply don't use
+		// the chat api when the message is an emote, instead generate an action message.
+		if ((chatModifier & ChatModifier.Emote) == ChatModifier.Emote)
+		{
+			return;
+		}
+
 		var index = Instance.chatBubblePool.FindIndex(x => x.Target == followTarget);
 
 		if (index != -1)
@@ -82,28 +114,22 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 	/// Display a chat bubble and make it follow a transform target
 	/// </summary>
 	/// <param name="msg">Text to show in the Action</param>
-	public static void ShowAction(string msg)
+	public void ShowAction(string msg, GameObject recipient)
 	{
-
-		var index = Instance.actionPool.FindIndex(x => x.Text.text == msg);
+		var index = actionPool.FindIndex(x => x.Text.text == msg);
 
 		if (index != -1)
 		{
-			if (Instance.actionPool[index].gameObject.activeInHierarchy)
-			{
-				Instance.actionPool[index].AddCopy();
-				return;
-			}
+			actionPool[index].AddMultiplier();
+			return;
 		}
-
-
-		Instance.GetChatBubbleActionText().SetUp(msg);
+		GetChatBubbleActionText().SetUp(msg, recipient);
 	}
 
 
 	ActionText GetChatBubbleActionText()
 	{
-		var index = actionPool.FindIndex(x => !x.gameObject.activeInHierarchy);
+		var index = actionPool.FindIndex(x => x.OrNull()?.gameObject.activeInHierarchy == false);
 
 		if (index != -1)
 		{
@@ -120,9 +146,7 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 	ActionText SpawnNewActionText()
 	{
 		var obj = Instantiate(ActionPrefab, Vector3.zero, Quaternion.identity);
-		obj.transform.SetParent(transform,
-			false); // Suggestion by compiler, instead of obj.transform.parent = transform;
-		obj.transform.localScale = Vector3.one * 2f;
+		obj.transform.SetParent(transform, false);
 		obj.SetActive(false);
 		return obj.GetComponent<ActionText>();
 	}
@@ -130,7 +154,7 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 
 	ChatBubble GetChatBubbleFromPool()
 	{
-		var index = chatBubblePool.FindIndex(x => !x.gameObject.activeInHierarchy);
+		var index = chatBubblePool.FindIndex(x => x.gameObject.OrNull()?.activeInHierarchy == false);
 
 		if (index != -1)
 		{
@@ -149,7 +173,6 @@ public class ChatBubbleManager : MonoBehaviour, IInitialise
 		var obj = Instantiate(chatBubblePrefab, Vector3.zero, Quaternion.identity);
 		obj.transform.SetParent(transform,
 			false); // Suggestion by compiler, instead of obj.transform.parent = transform;
-		obj.transform.localScale = Vector3.one * 2f;
 		obj.SetActive(false);
 		return obj.GetComponent<ChatBubble>();
 	}

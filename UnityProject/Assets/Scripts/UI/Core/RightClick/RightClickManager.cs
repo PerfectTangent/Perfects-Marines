@@ -5,10 +5,13 @@ using System.Reflection;
 using System.Threading.Tasks;
 using DatabaseAPI;
 using Doors;
+using Items;
+using Messages.Client.VariableViewer;
 using Objects.Wallmounts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UI.Core.RightClick;
+using UI;
 
 /// <summary>
 /// Main logic for managing right click behavior.
@@ -19,9 +22,17 @@ using UI.Core.RightClick;
 ///
 /// Refer to documentation at https://github.com/unitystation/unitystation/wiki/Right-Click-Menu
 /// </summary>
-public class RightClickManager : MonoBehaviour
+public class RightClickManager : MonoBehaviourSingleton<RightClickManager>
 {
 	public static readonly Color ButtonColor = new Color(0.3f, 0.55f, 0.72f, 0.7f);
+
+	private static readonly BranchWorldPosition BranchWorldPosition = new BranchWorldPosition();
+
+	private static readonly BranchScreenPosition BranchScreenPosition = new BranchScreenPosition();
+
+	[SerializeField]
+	private ScriptableObjects.RightClickOptionsList rightClickOptions = default;
+	public RightClickOption[] RightClickOptions => rightClickOptions.RightClickOptions;
 
 	[Tooltip("Ordering to use for right click options.")]
 	public RightClickOptionOrder rightClickOptionOrder;
@@ -32,7 +43,7 @@ public class RightClickManager : MonoBehaviour
 	/// saved reference to lighting sytem, for checking FOV occlusion
 	private LightingSystem lightingSystem;
 
-	//cached methods attributed with RightClickMethod
+	// cached methods attributed with RightClickMethod
 	private static List<RightClickAttributedComponent> attributedTypes = new List<RightClickAttributedComponent>();
 	private List<RaycastResult> raycastResults = new List<RaycastResult>();
 
@@ -62,9 +73,10 @@ public class RightClickManager : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+	public override void Awake()
 	{
-		//cache all known usages of the RightClickMethod annotation
+		base.Awake();
+		// cache all known usages of the RightClickMethod annotation
 		if (attributedTypes.Count == 0)
 		{
 			new Task(GetRightClickAttributedMethods).Start();
@@ -115,10 +127,24 @@ public class RightClickManager : MonoBehaviour
 			var objects = GetGameObjects(mousePos, out var isUI);
 			//Generates menus
 			var options = Generate(objects);
-			if (options != null && options.Count > 0)
+
+			if (options == null || options.Count <= 0)
 			{
-				MenuController.SetupMenu(options, Camera.main.ScreenToWorldPoint(mousePos), !isUI);
+				return;
 			}
+
+			IBranchPosition branchPosition = BranchScreenPosition.SetPosition(mousePos);
+
+			if (isUI == false)
+			{
+				var tile = objects.Select(o => o.RegisterTile()).FirstOrDefault();
+				if (tile)
+				{
+					branchPosition = BranchWorldPosition.SetTile(tile);
+				}
+			}
+
+			MenuController.SetupMenu(options, branchPosition);
 		}
 	}
 
@@ -164,8 +190,7 @@ public class RightClickManager : MonoBehaviour
 			return null;
 		}
 
-		var position = Camera.main.ScreenToWorldPoint(mousePosition);
-		position.z = 0f;
+		var position = MouseUtils.MouseToWorldPos();
 		var objects = UITileList.GetItemsAtPosition(position);
 
 		//special case, remove wallmounts that are transparent
@@ -241,8 +266,10 @@ public class RightClickManager : MonoBehaviour
 
 				if (!string.IsNullOrEmpty(PlayerList.Instance.AdminToken))
 				{
-					Action VVAction = () => RequestBookshelfNetMessage.Send(curObject, ServerData.UserID, PlayerList.Instance.AdminToken);
-					subMenus.Add(VariableViewerOption.AsMenu(VVAction));
+					subMenus.Add(VariableViewerOption.AsMenu(() =>
+					{
+						RequestBookshelfNetMessage.Send(curObject);
+					}));
 				}
 			}
 
@@ -307,7 +334,7 @@ public class RightClickManager : MonoBehaviour
 		{
 			Logger.LogWarningFormat("Could not determine sprite to use for right click menu" +
 					" for object {0}. Please manually configure a sprite in a RightClickAppearance component" +
-					" on this object.", Category.UI, forObject.name);
+					" on this object.", Category.UserInput, forObject.name);
 		}
 
 		return RightClickMenuItem.CreateObjectMenuItem(ButtonColor, sprite, null, label, subMenus, spriteRenderer.color, palette);

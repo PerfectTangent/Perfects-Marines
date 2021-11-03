@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
-using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Threading.Tasks;
 using DatabaseAPI;
 using Firebase.Auth;
 using Firebase.Extensions;
 using Lobby;
-using Mirror;
+using Managers;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
@@ -71,8 +67,9 @@ public class GameData : MonoBehaviour
 
 	public bool DevBuild = false;
 
+	#region Lifecycle
 
-	void Awake()
+	private void Start()
 	{
 		Init();
 	}
@@ -103,10 +100,79 @@ public class GameData : MonoBehaviour
 		{
 			if (FirebaseAuth.DefaultInstance.CurrentUser != null)
 			{
-				AttemptAutoJoin();
+				AttemptAutoJoin(LobbyManager.Instance.lobbyDialogue.LoginSuccess);
 			}
 		}
 	}
+
+	private void OnEnable()
+	{
+		Logger.RefreshPreferences();
+
+		SceneManager.activeSceneChanged += OnLevelFinishedLoading;
+	}
+
+	private void OnDisable()
+	{
+		SceneManager.activeSceneChanged -= OnLevelFinishedLoading;
+	}
+
+	private IEnumerator WaitToStartServer()
+	{
+		yield return WaitFor.Seconds(0.1f);
+		CustomNetworkManager.Instance.StartHost();
+	}
+
+	private void OnLevelFinishedLoading(Scene oldScene, Scene newScene)
+	{
+		Resources.UnloadUnusedAssets();
+		if (newScene.name == "Lobby")
+		{
+			IsInGame = false;
+			GameScreenManager.Instance.SetScreenForLobby();
+		}
+		else
+		{
+			IsInGame = true;
+			GameScreenManager.Instance.SetScreenForGame();
+		}
+
+		if (CustomNetworkManager.Instance.isNetworkActive)
+		{
+			//Reset stuff
+			CheckHeadlessState();
+
+			if (IsInGame && GameManager.Instance != null && CustomNetworkManager.Instance._isServer)
+			{
+				GameManager.Instance.ResetRoundTime();
+			}
+
+			return;
+		}
+
+		//Check if running in batchmode (headless server)
+		if (CheckHeadlessState())
+		{
+			//			float calcFrameRate = 1f / Time.deltaTime;
+			//			Application.targetFrameRate = (int) calcFrameRate;
+			//			Logger.Log($"Starting server in HEADLESS mode. Target framerate is {Application.targetFrameRate}",
+			//				Category.Server);
+
+			Logger.Log($"FrameRate limiting has been disabled on Headless Server",
+				Category.Server);
+			IsHeadlessServer = true;
+			StartCoroutine(WaitToStartServer());
+
+			if (rconManager == null)
+			{
+				GameObject rcon = Instantiate(Resources.Load("Rcon/RconManager") as GameObject, null) as GameObject;
+				rconManager = rcon.GetComponent<RconManager>();
+				Logger.Log("Start rcon server", Category.Rcon);
+			}
+		}
+	}
+
+	#endregion
 
 	private bool CheckCommandLineArgs()
 	{
@@ -117,7 +183,7 @@ public class GameData : MonoBehaviour
 		string uid = GetArgument("-uid");
 
 		//This is a hub message, attempt to login and connect to server
-		if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(uid))
+		if (!string.IsNullOrEmpty(serverIp) && !string.IsNullOrEmpty(port))
 		{
 			HubToServerConnect(serverIp, port, uid, token);
 			return true;
@@ -126,7 +192,7 @@ public class GameData : MonoBehaviour
 		return false;
 	}
 
-	private async void AttemptAutoJoin()
+	private async void AttemptAutoJoin(Action<String> OnLoginSuccess)
 	{
 		await Task.Delay(TimeSpan.FromSeconds(0.1));
 
@@ -146,7 +212,7 @@ public class GameData : MonoBehaviour
 			});
 
 		await ServerData.ValidateUser(FirebaseAuth.DefaultInstance.CurrentUser,
-			LobbyManager.Instance.lobbyDialogue.LoginSuccess,
+			OnLoginSuccess,
 			LobbyManager.Instance.lobbyDialogue.LoginError);
 	}
 
@@ -154,131 +220,86 @@ public class GameData : MonoBehaviour
 	{
 		await Task.Delay(TimeSpan.FromSeconds(0.1));
 
-		LobbyManager.Instance.lobbyDialogue.ShowLoggingInStatus("Verifying account details..");
-
 		LobbyManager.Instance.lobbyDialogue.serverAddressInput.text = ip;
 		LobbyManager.Instance.lobbyDialogue.serverPortInput.text = port;
-		Managers.instance.serverIP = ip;
+		LobbyManager.Instance.hostToggle.isOn = false;
 
-		var refreshToken = new RefreshToken();
-		refreshToken.refreshToken = token;
-		refreshToken.userID = uid;
+		GameScreenManager.Instance.serverIP = ip;
 
-		var response = await ServerData.ValidateToken(refreshToken);
-
-		if (response == null)
+		if (!String.IsNullOrEmpty(token))
 		{
-			LobbyManager.Instance.lobbyDialogue.LoginError(
-				$"Unknown server error. Please check your logs for more information by press F5");
-			return;
-		}
+			LobbyManager.Instance.lobbyDialogue.ShowLoggingInStatus("Verifying account details..");
+			var refreshToken = new RefreshToken();
+			refreshToken.refreshToken = token;
+			refreshToken.userID = uid;
 
-		if (!string.IsNullOrEmpty(response.errorMsg))
-		{
-			Logger.LogError($"Something went wrong with hub token validation {response.errorMsg}", Category.Hub);
-			LobbyManager.Instance.lobbyDialogue.LoginError($"Could not verify your details {response.errorMsg}");
-			return;
-		}
+			var response = await ServerData.ValidateToken(refreshToken);
 
-		await FirebaseAuth.DefaultInstance.SignInWithCustomTokenAsync(response.message).ContinueWithOnMainThread(
-			async task =>
+			if (response == null)
 			{
-				if (task.IsCanceled)
-				{
-					Logger.LogError("Custom token sign in was canceled.", Category.Hub);
-					LobbyManager.Instance.lobbyDialogue.LoginError($"Sign in was cancelled");
-					return;
-				}
+				LobbyManager.Instance.lobbyDialogue.LoginError(
+					$"Unknown server error. Please check your logs for more information by press F5");
+				return;
+			}
 
-				if (task.IsFaulted)
-				{
-					Logger.LogError("Task Faulted: " + task.Exception, Category.Hub);
-					LobbyManager.Instance.lobbyDialogue.LoginError($"Task Faulted: " + task.Exception);
-					return;
-				}
+			if (!string.IsNullOrEmpty(response.errorMsg))
+			{
+				Logger.LogError($"Something went wrong with hub token validation {response.errorMsg}", Category.DatabaseAPI);
+				LobbyManager.Instance.lobbyDialogue.LoginError($"Could not verify your details {response.errorMsg}");
+				return;
+			}
 
-				var success = await ServerData.ValidateUser(task.Result, null, null);
+			await FirebaseAuth.DefaultInstance.SignInWithCustomTokenAsync(response.message).ContinueWithOnMainThread(
+				async task =>
+				{
+					if (task.IsCanceled)
+					{
+						Logger.LogError("Custom token sign in was canceled.", Category.DatabaseAPI);
+						LobbyManager.Instance.lobbyDialogue.LoginError($"Sign in was cancelled");
+						return;
+					}
 
-				if (success)
-				{
-					Logger.Log("Signed in successfully with valid token", Category.Hub);
-					LobbyManager.Instance.lobbyDialogue.ShowCharacterEditor(OnCharacterScreenCloseFromHubConnect);
-				}
-				else
-				{
-					LobbyManager.Instance.lobbyDialogue.LoginError(
-						"Unknown error occured when verifying character settings on the server");
-				}
-			});
+					if (task.IsFaulted)
+					{
+						Logger.LogError("Task Faulted: " + task.Exception, Category.DatabaseAPI);
+						LobbyManager.Instance.lobbyDialogue.LoginError($"Task Faulted: " + task.Exception);
+						return;
+					}
+
+					var success = await ServerData.ValidateUser(task.Result, null, null);
+
+					if (success)
+					{
+						Logger.Log("Signed in successfully with valid token", Category.DatabaseAPI);
+						LobbyManager.Instance.lobbyDialogue.ShowCharacterEditor(OnCharacterScreenCloseFromHubConnect);
+					}
+					else
+					{
+						LobbyManager.Instance.lobbyDialogue.LoginError(
+							"Unknown error occured when verifying character settings on the server");
+					}
+				});
+		}
+		else
+		{
+			if (FirebaseAuth.DefaultInstance.CurrentUser != null)
+			{
+				AttemptAutoJoin(OnHubConnectAutoJoinSuccess);
+			}
+		}
 	}
 
-	void OnCharacterScreenCloseFromHubConnect()
+	private void OnHubConnectAutoJoinSuccess(string msg)
+	{
+		LobbyManager.Instance.lobbyDialogue.ShowCharacterEditor(OnCharacterScreenCloseFromHubConnect);
+	}
+
+	private void OnCharacterScreenCloseFromHubConnect()
 	{
 		LobbyManager.Instance.lobbyDialogue.OnStartGameFromHub();
 	}
 
-	private void OnEnable()
-	{
-		Logger.RefreshPreferences();
-
-		SceneManager.activeSceneChanged += OnLevelFinishedLoading;
-	}
-
-	private void OnDisable()
-	{
-		SceneManager.activeSceneChanged -= OnLevelFinishedLoading;
-	}
-
-	private void OnLevelFinishedLoading(Scene oldScene, Scene newScene)
-	{
-		Resources.UnloadUnusedAssets();
-		if (newScene.name == "Lobby")
-		{
-			IsInGame = false;
-			Managers.instance.SetScreenForLobby();
-		}
-		else
-		{
-			IsInGame = true;
-			Managers.instance.SetScreenForGame();
-		}
-
-		if (CustomNetworkManager.Instance.isNetworkActive)
-		{
-			//Reset stuff
-			CheckHeadlessState();
-
-			if (IsInGame && GameManager.Instance != null && CustomNetworkManager.Instance._isServer)
-			{
-				GameManager.Instance.ResetRoundTime();
-			}
-
-			return;
-		}
-
-		//Check if running in batchmode (headless server)
-		if (CheckHeadlessState())
-		{
-//			float calcFrameRate = 1f / Time.deltaTime;
-//			Application.targetFrameRate = (int) calcFrameRate;
-//			Logger.Log($"Starting server in HEADLESS mode. Target framerate is {Application.targetFrameRate}",
-//				Category.Server);
-
-			Logger.Log($"FrameRate limiting has been disabled on Headless Server",
-				Category.Server);
-			IsHeadlessServer = true;
-			StartCoroutine(WaitToStartServer());
-
-			if (rconManager == null)
-			{
-				GameObject rcon = Instantiate(Resources.Load("Rcon/RconManager") as GameObject, null) as GameObject;
-				rconManager = rcon.GetComponent<RconManager>();
-				Logger.Log("Start rcon server", Category.Rcon);
-			}
-		}
-	}
-
-	bool CheckHeadlessState()
+	private bool CheckHeadlessState()
 	{
 		if (SystemInfo.graphicsDeviceType == GraphicsDeviceType.Null || Instance.testServer)
 		{
@@ -287,12 +308,6 @@ public class GameData : MonoBehaviour
 		}
 
 		return false;
-	}
-
-	private IEnumerator WaitToStartServer()
-	{
-		yield return WaitFor.Seconds(0.1f);
-		CustomNetworkManager.Instance.StartHost();
 	}
 
 	private string GetArgument(string name)

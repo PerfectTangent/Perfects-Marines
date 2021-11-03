@@ -1,44 +1,44 @@
-﻿using System.Collections;
-using Messages.Client;
+﻿using Doors;
 using Mirror;
-using Doors;
 
-public class DoorNewPlayer: ClientMessage
+namespace Messages.Client.NewPlayer
 {
-	public uint Door;
-
-	public override void Process()
+	public class DoorNewPlayer : ClientMessage<DoorNewPlayer.NetMessage>
 	{
-		// LoadNetworkObject returns bool, so it can be used to check if object is loaded correctly
-		if (LoadNetworkObject(Door))
+		public struct NetMessage : NetworkMessage
 		{
-			// https://docs.unity3d.com/2019.3/Documentation/ScriptReference/Component.TryGetComponent.html
-			if (NetworkObject.TryGetComponent(out DoorController doorController))
+			public uint Door;
+		}
+
+		public override void Process(NetMessage msg)
+		{
+			// LoadNetworkObject returns bool, so it can be used to check if object is loaded correctly
+			if (LoadNetworkObject(msg.Door))
 			{
-				doorController.UpdateNewPlayer(SentByPlayer.Connection);
+				// Old doors
+				if (NetworkObject.TryGetComponent(out DoorController doorController))
+				{
+					doorController.UpdateNewPlayer(SentByPlayer.Connection);
+					return;
+				}
+
+				// New doors
+				if (NetworkObject.TryGetComponent(out DoorMasterController doorMasterController))
+				{
+					doorMasterController.UpdateNewPlayer(SentByPlayer.Connection);
+				}
 			}
 		}
-	}
 
-	public static DoorNewPlayer Send(uint netId)
-	{
-		DoorNewPlayer msg = new DoorNewPlayer
+		public static NetMessage Send(uint netId)
 		{
-			Door = netId
-		};
-		msg.Send();
-		return msg;
-	}
+			NetMessage msg = new NetMessage
+			{
+				Door = netId
+			};
 
-	public override void Deserialize(NetworkReader reader)
-	{
-		base.Deserialize(reader);
-		Door = reader.ReadUInt32();
-	}
-
-	public override void Serialize(NetworkWriter writer)
-	{
-		base.Serialize(writer);
-		writer.WriteUInt32(Door);
+			Send(msg);
+			return msg;
+		}
 	}
 }

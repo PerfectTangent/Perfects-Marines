@@ -1,41 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using InGameEvents;
-using UnityEngine;
+using Mirror;
 using DiscordWebhook;
-using Messages.Client;
+using InGameEvents;
 
-public class RequestRandomEventAllowedChange : ClientMessage
+
+namespace Messages.Client.Admin
 {
-	public string Userid;
-	public string AdminToken;
-	public bool RandomEventsAllowed = true;
-
-	public override void Process()
+	public class RequestRandomEventAllowedChange : ClientMessage<RequestRandomEventAllowedChange.NetMessage>
 	{
-		var admin = PlayerList.Instance.GetAdmin(Userid, AdminToken);
-		if (admin == null) return;
-
-		if(InGameEventsManager.Instance.RandomEventsAllowed == RandomEventsAllowed) return;
-
-		InGameEventsManager.Instance.RandomEventsAllowed = RandomEventsAllowed;
-
-		var state = RandomEventsAllowed ? "ON" : "OFF";
-		var msg = $"Admin: {PlayerList.Instance.GetByUserID(Userid).Username}, Turned random events {state}";
-
-		UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(msg, null);
-		DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAdminLogURL, msg, "");
-	}
-
-	public static RequestRandomEventAllowedChange Send(string userId, string adminToken, bool randomEventsAllowed)
-	{
-		RequestRandomEventAllowedChange msg = new RequestRandomEventAllowedChange
+		public struct NetMessage : NetworkMessage
 		{
-			Userid = userId,
-			AdminToken = adminToken,
-			RandomEventsAllowed = randomEventsAllowed
-		};
-		msg.Send();
-		return msg;
+			public bool RandomEventsAllowed;
+		}
+
+		public override void Process(NetMessage netMsg)
+		{
+			if (IsFromAdmin() == false) return;
+
+			if (InGameEventsManager.Instance.RandomEventsAllowed == netMsg.RandomEventsAllowed) return;
+
+			InGameEventsManager.Instance.RandomEventsAllowed = netMsg.RandomEventsAllowed;
+
+			var state = netMsg.RandomEventsAllowed ? "ON" : "OFF";
+			var msg = $"Admin: {SentByPlayer.Username}, turned random events {state}";
+
+			UIManager.Instance.adminChatWindows.adminToAdminChat.ServerAddChatRecord(msg, null);
+			DiscordWebhookMessage.Instance.AddWebHookMessageToQueue(DiscordWebhookURLs.DiscordWebhookAdminLogURL, msg, "");
+		}
+
+		public static NetMessage Send(bool randomEventsAllowed = true)
+		{
+			NetMessage msg = new NetMessage
+			{
+				RandomEventsAllowed = randomEventsAllowed
+			};
+
+			Send(msg);
+			return msg;
+		}
 	}
 }
+ 

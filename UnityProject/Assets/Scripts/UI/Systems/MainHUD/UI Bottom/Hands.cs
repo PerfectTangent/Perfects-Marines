@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using HealthV2;
+using Mirror;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -30,86 +32,46 @@ public class Hands : MonoBehaviour
 	/// sprite that will be displayed in leftHandImage or rightHandImage (depending on which hand is used) when hand isn't used
 	/// </summary>
 	[SerializeField] private Sprite unusedHandSprite = default;
+
 	/// <summary>
 	/// Active slot
 	/// </summary>
-	public UI_ItemSlot CurrentSlot => IsRight ? RightHand : LeftHand;
+	public UI_ItemSlot CurrentSlot;// => PlayerManager.LocalPlayerScript.ItemStorage.GetActiveHandSlot();
+
+
 	/// <summary>
 	/// Non active slot
 	/// </summary>
-	public UI_ItemSlot OtherSlot => IsRight ? LeftHand : RightHand;
-	public UI_ItemSlot LeftHand =>
-		PlayerManager.LocalPlayerScript?.ItemStorage?.GetNamedItemSlot(NamedSlot.leftHand)?.LocalUISlot;
-	public UI_ItemSlot RightHand =>
-		PlayerManager.LocalPlayerScript?.ItemStorage?.GetNamedItemSlot(NamedSlot.rightHand)?.LocalUISlot;
+
 	/// <summary>
 	/// True iff right hand is active hand
 	/// </summary>
-	public bool IsRight { get; private set; }
 	public bool UsingBothHands { get; private set; }
-	public bool hasSwitchedHands;
 
-	private void Start()
-	{
-		IsRight = true;
-		hasSwitchedHands = false;
-	}
-
-	/// <summary>
-	/// Action to swap hands
-	/// </summary>
-	public void Swap()
-	{
-		if (isValidPlayer())
-		{
-			SetHand(!IsRight);
-		}
-	}
 
 	/// <summary>
 	/// Sets the current active hand (true for right, false for left)
 	/// </summary>
-	public void SetHand(bool right)
+	public void SetHand(NamedSlot namedSlot, GameObject gamebodypPart)
 	{
-		if (isValidPlayer())
+		if (!isValidPlayer()) return;
+		var Slot = PlayerManager.LocalPlayerScript.DynamicItemStorage.GetNamedItemSlot(gamebodypPart, namedSlot);
+		if (Slot == null) return;
+
+		var bodyPartUISlots = gamebodypPart.GetComponent<BodyPartUISlots>();
+		if (UIManager.Instance.UI_SlotManager.BodyPartToSlot.ContainsKey(bodyPartUISlots) == false) return;
+
+
+
+		PlayerManager.LocalPlayerScript.playerNetworkActions.CmdSetActiveHand(gamebodypPart.NetId(), namedSlot);
+		PlayerManager.LocalPlayerScript.playerNetworkActions.activeHand = gamebodypPart;
+		PlayerManager.LocalPlayerScript.playerNetworkActions.CurrentActiveHand = namedSlot;
+
+		// If player was using both hands - flip images back
+		if (UsingBothHands)
 		{
-			if (right)
-			{
-				if (right != IsRight || UsingBothHands)
-				{
-					hasSwitchedHands = true;
-				}
-				PlayerManager.LocalPlayerScript.playerNetworkActions.CmdSetActiveHand(NamedSlot.rightHand);
-				PlayerManager.LocalPlayerScript.playerNetworkActions.activeHand = NamedSlot.rightHand;
-
-				rightHandImage.sprite = usedHandSprite;
-				leftHandImage.sprite = unusedHandSprite;
-			}
-			else
-			{
-				if (right != IsRight || UsingBothHands)
-				{
-					hasSwitchedHands = true;
-				}
-				PlayerManager.LocalPlayerScript.playerNetworkActions.CmdSetActiveHand(NamedSlot.leftHand);
-				PlayerManager.LocalPlayerScript.playerNetworkActions.activeHand = NamedSlot.leftHand;
-
-				rightHandImage.sprite = unusedHandSprite;
-				leftHandImage.sprite = usedHandSprite;
-			}
-			
-			// If player was using both hands - flip images back
-			if (UsingBothHands)
-			{
-				UsingBothHands = false;
-				FlipHandsNArrows();
-			}
-
-			// activate correct selector
-			rightHandSelector.SetActive(right);
-			leftHandSelector.SetActive(!right);
-
-			IsRight = right;
+			UsingBothHands = false;
+			FlipHandsNArrows();
 		}
 	}
 
@@ -123,13 +85,13 @@ public class Hands : MonoBehaviour
 			UsingBothHands = !UsingBothHands;
 			if (UsingBothHands)
 			{
-				hasSwitchedHands = true;
+
 
 				FlipHandsNArrows();
 
 				// TODO: use 2 hands
-				PlayerManager.LocalPlayerScript.playerNetworkActions.CmdSetActiveHand(NamedSlot.rightHand);
-				PlayerManager.LocalPlayerScript.playerNetworkActions.activeHand = NamedSlot.rightHand;
+				// PlayerManager.LocalPlayerScript.playerNetworkActions.CmdSetActiveHand(NamedSlot.rightHand);
+				// PlayerManager.LocalPlayerScript.playerNetworkActions.activeHand = NamedSlot.rightHand;
 
 				rightHandImage.sprite = usedHandSprite;
 				leftHandImage.sprite = usedHandSprite;
@@ -141,7 +103,7 @@ public class Hands : MonoBehaviour
 			else
 			{
 				FlipHandsNArrows();
-				SetHand(IsRight);
+				//SetHand(IsRight);
 			}
 		}
 	}
@@ -234,7 +196,7 @@ public class Hands : MonoBehaviour
 
 		//This checks which UI slot the item can be equiped to and swaps it there
 		//Try to equip the item into the appropriate slot
-		var bestSlot = BestSlotForTrait.Instance.GetBestSlot(CurrentSlot.Item, PlayerManager.LocalPlayerScript.ItemStorage);
+		var bestSlot = BestSlotForTrait.Instance.GetBestSlot(CurrentSlot.Item, PlayerManager.LocalPlayerScript.DynamicItemStorage);
 		if (bestSlot == null)
 		{
 			Chat.AddExamineMsg(PlayerManager.LocalPlayerScript.gameObject, "There is no available slot for that");
@@ -248,7 +210,7 @@ public class Hands : MonoBehaviour
 	/// Check if the player is allowed to interact with objects
 	/// </summary>
 	/// <returns>True if they can, false if they cannot</returns>
-	private bool isValidPlayer()
+	public static bool isValidPlayer()
 	{
 		if (PlayerManager.LocalPlayerScript == null) return false;
 
@@ -256,7 +218,7 @@ public class Hands : MonoBehaviour
 		if (!PlayerManager.LocalPlayerScript.playerMove.allowInput ||
 				PlayerManager.LocalPlayerScript.IsGhost)
 		{
-			Logger.Log("Invalid player, cannot perform action!", Category.UI);
+			Logger.Log("Invalid player, cannot perform action!", Category.Interaction);
 			return false;
 		}
 
