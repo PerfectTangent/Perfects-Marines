@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1796e5cfb0bb4f9b81661d07e7794f1d, type: 3}
+  m_Name: beachcorner_3
+  m_EditorClassIdentifier: 
+  displayName: Lava
+  LayerType: 4
+  TileType: 7
+  RequiredTiles: []
+  floorTileSounds: {fileID: 0}
+  CanSoundOverride: 0
+  atmosPassable: 1
+  isSealed: 1
+  SpawnWithNoAir: 0
+  passable: 0
+  mineable: 0
+  doesReflectBullet: 0
+  indestructible: 0
+  passableException:
+    m_keys: 
+    m_values: 
+  maxHealth: 0
+  damageDeflection: 0
+  armor:
+    Melee: 90
+    Bullet: 90
+    Laser: 90
+    Energy: 90
+    Bomb: 90
+    Rad: 100
+    Fire: 100
+    Acid: 90
+    Magic: 0
+    Bio: 100
+  tileInteractions: []
+  spawnOnDeconstruct: {fileID: 0}
+  spawnAmountOnDeconstruct: 1
+  lootOnDespawn: {fileID: 0}
+  soundOnHit:
+    SetLoadSetting: 0
+    AssetAddress: null
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  Sprites:
+  - {fileID: 5484858848471933464, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: 3300930592143472707, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: -1131477282733092103, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: -5159338491772317616, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: -5727111805738246609, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: 4947217288173322106, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: -5283528073823744586, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  - {fileID: -749631197063419819, guid: 5855a4f225f885440b412266949a7b49, type: 3}
+  AnimationSpeed: 1
+  AnimationStartTime: 0
+  randomizeStartTime: 0

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad263680d73c8c54ba53262044a57d04, type: 3}
+  m_Name: HangarWindowFrame
+  m_EditorClassIdentifier: 
+  displayName: window frame
+  LayerType: 9
+  TileType: 4
+  RequiredTiles:
+  - {fileID: 11400000, guid: 83855008e43a2674d8d6a006ce94326f, type: 2}
+  floorTileSounds: {fileID: 0}
+  CanSoundOverride: 0
+  atmosPassable: 1
+  isSealed: 0
+  SpawnWithNoAir: 0
+  passable: 0
+  mineable: 0
+  miningTime: 5
+  RadiationPassability: 1
+  doesReflectBullet: 0
+  indestructible: 0
+  passableException:
+    m_keys: 02000000
+    m_values: 01
+  maxHealth: 200
+  damageDeflection: 0
+  armor:
+    Melee: 0
+    Bullet: 0
+    Laser: 0
+    Energy: 0
+    Bomb: 0
+    Rad: 0
+    Fire: 50
+    Acid: 50
+    Magic: 0
+    Bio: 0
+  tileInteractions:
+  - {fileID: 11400000, guid: d27fd166098cf084abd6ebb4f8b2dd25, type: 2}
+  spawnOnDeconstruct: {fileID: 0}
+  spawnAmountOnDeconstruct: 0
+  lootOnDespawn: {fileID: 0}
+  toTileWhenDestroyed: {fileID: 0}
+  spawnOnDestroy: {fileID: 0}
+  damageOverlayList: {fileID: 0}
+  soundOnHit:
+    SetLoadSetting: 0
+    AssetAddress: null
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  connectCategory: 2
+  connectType: 1
+  spriteSheet:
+    Texture: {fileID: 2800000, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    Sprites:
+    - {fileID: 7306291769947738015, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2163875309357032787, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 6062862164346294505, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 3283094283114916969, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 3510157578133790558, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1951132145731270207, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -8638946265820013632, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 5886542015572639539, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4169435870185810628, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2820330711363928448, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -6496205215233244701, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1531993099802422177, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4013664591862249978, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -4597067606132489820, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 738069972004030729, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 5016572485792323943, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4723092937364174983, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -1728442259534894938, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -7832718356597828894, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 139207066616067827, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 9055509535607451954, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4358854051528957895, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4381846068896221134, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -2816181281399893825, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -7656886040772649587, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 7901080334050307709, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -2235280451564145698, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 6782393397714538730, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2136339834844127466, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -6557076732412475556, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2498699697413325468, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 7035920533090992340, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 3998532717590080106, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 8867320780548243294, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4977728709452381457, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2153803131184494536, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 2745266475211813693, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -3526172512721984384, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -6125758576604304134, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1139309611960235073, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1713618903717164022, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1568884743045750850, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 4914821377674797580, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -5474029048329977870, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 573592068151285082, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -7596766934631908990, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: 1166261041855414325, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    - {fileID: -9108071503243943718, guid: 860bf4510376e514a8d6e65951f310e8, type: 3}
+    EquippedData: {fileID: 0}
+  texturePath: Tables
