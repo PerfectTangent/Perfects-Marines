@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1373470633858057649
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 13298
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialName
+      value: M3-G4 grenadier armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialDescription
+      value: A custom set of M3 armor packed to the brim with padding, plating, and
+        every form of ballistic protection under the sun. Used exclusively by USCM
+        Grenadiers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780864519192951915, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885587950584562143, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Name
+      value: M3G4GrenadierArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971493428935832195, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49ed21c4d543f594aab537171763b59f,
+        type: 3}
+    - target: {fileID: 6965518931188726360, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b52b7bb4cebb5794cad592fd553cd456,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bd451e3fde8746448be2c75990eb1ed,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bd451e3fde8746448be2c75990eb1ed,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f707efdd569cdbf4b95154fe6ff6bf4c,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b44c6fb57f3efe46a94df342694494a, type: 3}

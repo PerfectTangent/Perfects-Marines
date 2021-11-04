@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2365371596766863343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 80235067053808351, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d08b0081bca9f745b4f6a7c710e1100,
+        type: 2}
+    - target: {fileID: 100520823414045700, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: initialName
+      value: HG 37-12 pump shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 100520823414045700, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: initialDescription
+      value: A nine-round pump action shotgun with internal tube magazine allowing
+        for quick reloading and highly accurate fire. Used exclusively by Colonial
+        Marshals.
+      objectReference: {fileID: 0}
+    - target: {fileID: 100520823414045700, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f0861f21dacd8a43bffe08521cc0070,
+        type: 2}
+    - target: {fileID: 100520823414045700, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: bdda1e9cbd84dcd42b4d1ddb396369e9,
+        type: 2}
+    - target: {fileID: 394469591255310394, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3acf61f7d51c8cd45aadbd8a37f7e891,
+        type: 3}
+    - target: {fileID: 440420395148668626, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 542830660240429926, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_Name
+      value: HG3712PumpShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548040284143234578, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966876618347571425, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 3312f67b329c78f41890052d8bdbc7cb,
+        type: 2}
+    - target: {fileID: 6150721666540291430, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2eb965eea33cfa14ca17b6f0aa8c409e,
+        type: 2}
+    - target: {fileID: 7097261307425548993, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: FireDelay
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097261307425548993, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 4082021077711533759, guid: 84e57014b607d2f4bbdecb9582e6d8cb,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb4cc0c4bfc99d84781eb0cbe2bb177d, type: 3}

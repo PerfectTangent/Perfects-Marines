@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &625825939586872234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1894309626355665351, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c43fb0e9cd3e1ec48990315a671982fd,
+        type: 2}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialName
+      value: M39 HV magazine (10x20mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialDescription
+      value: A 10x20mm caseless high-velocity submachinegun magazine. Powerful propellant
+        allows the bullet increased velocity and minor penetration capabilities,
+        noticeably improving its efficacy at medium ranges, although it still suffers
+        significantly compared to a rifle bullet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 463bbcd0ffcb0fa48922a91f9a952aa0,
+        type: 2}
+    - target: {fileID: 5619958225304535324, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5762300bae2574dbeffce7ce7518b4,
+        type: 3}
+    - target: {fileID: 5664360916810256372, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697035550803554880, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_Name
+      value: M39HVMagazine10x20mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477393515128980377, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: ammoType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477393515128980377, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: magazineSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477393515128980377, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 161996304767515657, guid: c90fbbb78a33a054c822b85a6ab1914b,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a958f17bef6bf448a14fc25de0beedd, type: 3}

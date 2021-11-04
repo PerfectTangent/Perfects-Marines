@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9114670442086943322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585329258295273144, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 23f63bca2f21918429c96cdfe4547159,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialName
+      value: Basira-Armstrong rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialDescription
+      value: Named after its eccentric designers, the Basira-Armstrong is a civilian
+        semi-automatic rifle frequently found in the outer colonies. Despite its
+        legally-mandated limited magazine capacity, its light weight and legendary
+        accuracy makes it popular among hunters and competitive shooters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 18590545453b88a47ba6f235241d1bb8,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 459a0ec92e339854791978b466b0ce9a,
+        type: 2}
+    - target: {fileID: 899590200603696221, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85267a52089111349b8972e8df05dd93,
+        type: 3}
+    - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Name
+      value: BasiraArmstrongRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: dedeb90339372fe4d888e719d3113a04,
+        type: 2}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoType
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 8973837106942222865, guid: 16bd87fedf398cd4780966a1aeb378a9,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2384922382569747864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 294770401350797690, guid: cd025510146917b40b7282b83dfc9628,
+        type: 3}
+    - target: {fileID: 3608952087187573367, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b6a5a870986ab384faa79f2544b542ed,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialName
+      value: Korovin PK-9 pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialDescription
+      value: An updated variant of an old eastern design, dating back to from the
+        20th century. Commonly found among mercenary companies due to its reliability,
+        but also issued to UPP armed forces. Features an integrated silencer, and
+        chambered in the razor small .22 rounds. This one is usually loaded with
+        the more common .22 hollowpoint rounds and appears to be a mercenary version.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 38cea4a8913699a40828dbf61829c1fb,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd084d0f20a8a14781059fbf67d219d,
+        type: 2}
+    - target: {fileID: 7045324407447566409, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 36e4965c80e135a4eb9fb92f1cdc222e,
+        type: 2}
+    - target: {fileID: 7323548323850207916, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aaa112772aca91144ade306e26b2e16e,
+        type: 3}
+    - target: {fileID: 7406090846831168580, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445450717140808176, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Name
+      value: KorovinPK9Pistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6506bef5c76704983f5d0f44887370, type: 3}

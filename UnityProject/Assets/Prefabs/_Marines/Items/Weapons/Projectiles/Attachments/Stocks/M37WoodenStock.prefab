@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7375035042366462911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5765464331694148094, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: initialName
+      value: M37 wooden stock
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765464331694148094, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: initialDescription
+      value: A non-standard heavy wooden stock for the M37 Shotgun. More cumbersome
+        than the standard issue stakeout, but reduces recoil and improves accuracy.
+        Allegedly makes a pretty good club in a fight too.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765464331694148094, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c0623b960e53e845a0b732a97fd8216,
+        type: 2}
+    - target: {fileID: 6264104623089215132, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_Name
+      value: M37WoodenStock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268188071871192040, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6303531426707102504, guid: b8c2cd41f5c23f1449886ca1dda316c8,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8c2cd41f5c23f1449886ca1dda316c8, type: 3}

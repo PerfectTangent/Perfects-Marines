@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6262146433572391753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: initialName
+      value: Type 71 flamethrower pulse rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: initialDescription
+      value: This appears to be a less common variant of the Type 71 with an integrated
+        undermounted flamethrower.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048218448068486988, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: a641331c02f74244d93bc42d2655a654,
+        type: 2}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231607907040489205, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Type71FlamethrowerPulseRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264212378434392897, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2372cafe86195d44bc9445e554c04a2, type: 3}

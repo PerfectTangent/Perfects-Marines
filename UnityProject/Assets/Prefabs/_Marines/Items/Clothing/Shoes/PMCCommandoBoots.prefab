@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6102082774208137373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5949553093908010744, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5953345895025457848, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: Resistances.UnAcidable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982252123311090508, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_Name
+      value: PMCCommandoBoots
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987175873318278712, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190373783057286190, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: initialName
+      value: PMC commando boots
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190373783057286190, guid: 7d2c0fb11e70d064c80922cd7a73b72e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A pair of heavily armored, acid-resistant boots.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d2c0fb11e70d064c80922cd7a73b72e, type: 3}

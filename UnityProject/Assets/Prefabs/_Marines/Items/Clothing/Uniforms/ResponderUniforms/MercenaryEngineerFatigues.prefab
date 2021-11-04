@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3414824502367005208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 502e0fb3adc46fa48abe99d1b8e3d199,
+        type: 2}
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 502e0fb3adc46fa48abe99d1b8e3d199,
+        type: 2}
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b299d6e7323e7146a29b9fae1f40e62,
+        type: 2}
+    - target: {fileID: 4215225010058332560, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: efdff118a720f3645a1e09b1fc293d22,
+        type: 2}
+    - target: {fileID: 7625994206606122357, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: initialName
+      value: mercenary engineer fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625994206606122357, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: initialDescription
+      value: A blue suit with yellow accents, used by engineers. There is an unknown
+        symbol is emblazed on the suit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910738201820070219, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8840120465080638874, guid: fa4877e27eb4cf0429dfb9da98c108b9,
+        type: 3}
+    - target: {fileID: 7975125621007323043, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014546858342625815, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_Name
+      value: MercenaryEngineerFatigues
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4057715a28c80d42a29ea85ec0e1e8f, type: 3}

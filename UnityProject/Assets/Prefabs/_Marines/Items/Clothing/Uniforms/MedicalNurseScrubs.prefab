@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4718414338280633706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1422182425913388140, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: initialName
+      value: medical nurse scrubs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422182425913388140, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: initialDescription
+      value: It's made of a special fiber that provides minor protection against
+        biohazards. This one features an orange armband.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496659958885596858, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531931913709125242, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536010964910146318, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_Name
+      value: MedicalNurseScrubs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702629254844788818, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd91a38da7a2bb94a8dac9a356035ef5,
+        type: 3}
+    - target: {fileID: 4618193899934038153, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 39a234fcc8d62fd42bf8292c6c6f9bd1,
+        type: 2}
+    - target: {fileID: 5560884915985928331, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a72edeab62fd1334fa298d76cac67fb3,
+        type: 2}
+    - target: {fileID: 5560884915985928331, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a72edeab62fd1334fa298d76cac67fb3,
+        type: 2}
+    - target: {fileID: 5560884915985928331, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560884915985928331, guid: 43858e317b7f2b34aab3d21bff64d7b7,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94c1316c527d6fc41bc28f1f0aaa7f2e,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43858e317b7f2b34aab3d21bff64d7b7, type: 3}

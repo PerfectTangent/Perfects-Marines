@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8766793547766297797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialName
+      value: freelancer fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialDescription
+      value: A set of loose fitting fatigues, perfect for an informal mercenary.
+        Smells like gunpowder, apple pie, and covered in grease and sake stains.
+      objectReference: {fileID: 0}
+    - target: {fileID: 403421380365023489, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6798755703832392362, guid: 61f1a2a4ef63ece4783c97de6204c6eb,
+        type: 3}
+    - target: {fileID: 503556119423055849, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 533896490227157597, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Name
+      value: FreelancerFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921907164774134234, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 1daaf311e4ff8e447a73da5c4bc2de30,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a943258bd72211d43b0ebb4e95cd4ddc,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a943258bd72211d43b0ebb4e95cd4ddc,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e41d826cbc04d53429ffe9e4d1ec3843,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2cb622ead5f1f14cb939306783f63a3, type: 3}

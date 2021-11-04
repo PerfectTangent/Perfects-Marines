@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1265940416880172071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7080397616495988669, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194101858866704905, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: m_Name
+      value: LargeIncineratorTankB
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294440730212687211, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: initialName
+      value: large incinerator tank (B)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294440730212687211, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: initialDescription
+      value: A large fuel tank of Ultra Thick Napthal Fuel type B, a wide-spreading
+        sticky combustable liquid chemical that burns up fast with a low temperature,
+        for use in the M240-T incinerator unit. Handle with care.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea7d18e591ac4d24a9fdea99393e63e8, type: 3}

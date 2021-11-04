@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &9003275833201952668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985049463300821011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e15827970984ba78808f03bc3f01586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  allClothingData:
+  - {fileID: 11400000, guid: ce56ead487590ab4ca25eb7ec5466fba, type: 2}
+  CurrentClothIndex: 0
+  randomInitialClothData: 0
+  hidesIdentity: 0
+  hidesSlots: 0
+  hideClothingFlags: 0
+--- !u!1001 &6608723514430951867
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1670252429045839887, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670252429045839887, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 6686167337168025960, guid: e8252036ec82f9a40ae22c300087f808,
+        type: 3}
+    - target: {fileID: 2854717675572771375, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: eb97300fe3c941f47ac8492dcc205f07,
+        type: 2}
+    - target: {fileID: 8082294689082684148, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 032a6681a64451544b223a4a2d3d97ba,
+        type: 3}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276456879700935080, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_Name
+      value: MOU53BreakActionShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309093167678340124, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialName
+      value: MOU53 break action shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialDescription
+      value: A limited production Kerchner MOU53 triple break action classic. Respectable
+        damage output at medium ranges, while the ARMAT M37 is the king of CQC, the
+        Kerchner MOU53 is what hits the broadside of that barn. This specific model
+        cannot safely fire buckshot shells.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: bb7f7221a0ee24a418030e10857210c7,
+        type: 2}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b05bab692e98c487eb4996a0614d143d,
+        type: 2}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ce1c8226af0df0499bd45eee84fdedf,
+        type: 2}
+    - target: {fileID: 8380751870032758801, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 55fa9bba25552d14c9dc3e0104a109d3,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4097fecce39fde342ac847342eab5852, type: 3}
+--- !u!1 &2985049463300821011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8276456879700935080, guid: 4097fecce39fde342ac847342eab5852,
+    type: 3}
+  m_PrefabInstance: {fileID: 6608723514430951867}
+  m_PrefabAsset: {fileID: 0}

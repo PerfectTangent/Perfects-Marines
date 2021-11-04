@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1396476077819954167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 273835249198966466, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: initialName
+      value: PMC command fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 273835249198966466, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: initialDescription
+      value: A white set of fatigues, designed for private security operators. The
+        symbol of the Weston-Yamada corporation is emblazed on the suit. This particular
+        suit looks like it belongs to a high-ranking officer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 339305548552860692, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 369648118376024480, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_Name
+      value: PMCCommandFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 563148542006590204, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5600952625710987179, guid: d3286027cc20cdf4a8fd200a871bffa6,
+        type: 3}
+    - target: {fileID: 5793703035688677927, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d311d44a2497e0a4fb947ca012ef5e6d,
+        type: 2}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: f75cdaf44f6122c4f91a8ab4397029e8,
+        type: 2}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: f75cdaf44f6122c4f91a8ab4397029e8,
+        type: 2}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2027d4b2ae0acc54a938c2bd0d8e30ed,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32df992117d214b45a5f283faaeefd80, type: 3}

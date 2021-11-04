@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2352688529290522451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialName
+      value: M30 ammo drum (10x28mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialDescription
+      value: An ammo drum of 500 10x28mm caseless rounds for the UA 571-C Sentry
+        Gun. Just feed it into the sentry gun's ammo port when its ammo is depleted.
+      objectReference: {fileID: 0}
+    - target: {fileID: 871165662502838036, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 973680313005892256, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_Name
+      value: M30AmmoDrum10x28mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113163753297596924, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42a8ef9d45d5dc9428b4db31934dd71f,
+        type: 3}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: ammoType
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: magazineSize
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 1270785672278885836, guid: 6110259307fe8cc499f28e63f9d98100,
+        type: 3}
+    - target: {fileID: 6396565172850481447, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 981527b48a17aa74b89ab8e3c141dd84,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9cc4258b000c9645be079789c27ea4b, type: 3}

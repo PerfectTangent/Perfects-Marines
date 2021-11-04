@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8775384022394151039
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2921455617318233883, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: initialName
+      value: USCM technician chestrig
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921455617318233883, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heavy-duty chestrig used by some USCM technicians.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213168040744745765, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9d75bf63bc16174da96c05ca7f9944e,
+        type: 3}
+    - target: {fileID: 3343503619501541497, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMTechnicianChestrig
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455025400552453581, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 31f8d49f84de2b84cbb4a8be951b51de,
+        type: 2}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 31f8d49f84de2b84cbb4a8be951b51de,
+        type: 2}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 762c86cacd3721f4cb037aae8d185480,
+        type: 2}
+    - target: {fileID: 8872264870284620798, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: f1adcc3449f00834ab188b1302dba25c,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 521e98a45c5e9b64aa31bbb612813d86, type: 3}

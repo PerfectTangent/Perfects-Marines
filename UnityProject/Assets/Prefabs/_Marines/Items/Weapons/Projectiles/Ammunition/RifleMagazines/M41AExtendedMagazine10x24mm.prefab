@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1021813698394375092
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4752478038436307, guid: 09e528c0a8ebd89439fd5e51c91e9841, type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 109449521690743911, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_Name
+      value: M41AExtendedMagazine10x24mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654747005479187, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249143142661728059, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d72b7e34af68bf64fb697cb8a24f702e,
+        type: 3}
+    - target: {fileID: 534043202537880325, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: initialName
+      value: M41A extended magazine (10x24mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 534043202537880325, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: initialDescription
+      value: A 10mm extended assault rifle magazine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976371020024178110, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: magazineSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107665000180232160, guid: 09e528c0a8ebd89439fd5e51c91e9841,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 54bf0804810c83d4e915eb3cde3be06b,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09e528c0a8ebd89439fd5e51c91e9841, type: 3}

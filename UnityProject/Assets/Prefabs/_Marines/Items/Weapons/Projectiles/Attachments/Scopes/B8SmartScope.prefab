@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7922815027544586718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1800183814057749180, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c9159a3d5831cd9419629cbc1aad12b1,
+        type: 2}
+    - target: {fileID: 5426850915787128409, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: initialName
+      value: B8 Smart-Scope
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426850915787128409, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: initialDescription
+      value: An experimental B8 Smart-Scope. Based on the technologies used in the
+        Smart Gun by ARMAT, this sight has integrated IFF systems. It can only attach
+        to the L42A Battle Rifle, M44 Combat Revolver, and M46C Pulse Rifle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426850915787128409, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 907d47831c5aa5d41ba0f9b11a610486,
+        type: 2}
+    - target: {fileID: 5488096891466771599, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597434148627622991, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601799072788992315, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_Name
+      value: B8SmartScope
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714050945132159591, guid: dbcb989992104134b9d69e176acc9efc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbabcf3df8a74ca4d90232af7835bcdf,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbcb989992104134b9d69e176acc9efc, type: 3}

@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5288664105732592727
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4129536741000373923, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7d6e3732e939f4409d2892544b69e2a,
+        type: 3}
+    - target: {fileID: 4191390885408893003, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305153539877197311, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Name
+      value: DoubleBarrelShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407742657429937222, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 00d0a0094eb347f45930ab9b66230749,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialName
+      value: double barrel shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialDescription
+      value: A double barreled shotgun of archaic, but sturdy design. Uses 12 Gauge
+        Special slugs, but can only hold 2 at a time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: cebe72fa7983e5d45a6e31c759b7db14,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fb47d4abd9a23449930ffaca7d91a25,
+        type: 2}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 5061737593144674354, guid: fc76be8861333af4c885079e5be83fba,
+        type: 3}
+    - target: {fileID: 7996393347801935480, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cc577fd4adfab7a4c87e4b36291fd292,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3da8873fd78218546ae68a3f84918848, type: 3}

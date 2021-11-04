@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1240964664051680718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3578975257659953224, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: c555d9cd5646cce4eb4a5e728b087b7f,
+        type: 2}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialName
+      value: MAC-15 submachinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialDescription
+      value: A cheap, reliable design and manufacture make this ubiquitous submachinegun
+        useful despite the age. Turn on burst mode for maximum firepower.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 683d87af0ab9fe144b2fa1b0ad0b0455,
+        type: 2}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c2edcdd4694d87f44bbd9aa4f934015a,
+        type: 2}
+    - target: {fileID: 3877439121035700909, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f66d0ba6a859abf459cebbcae1a305a0,
+        type: 3}
+    - target: {fileID: 3939152493553001541, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980790415047268849, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_Name
+      value: MAC15Submachinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: ammoType
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 3737809710836434921, guid: 187e21fb099cad24db91bc89a1f38f40,
+        type: 3}
+    - target: {fileID: 7095567435986543222, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 6515a44553b8f69448321b50af671c37,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91ec1c26c9dd97743a6348a1ddbcd276, type: 3}

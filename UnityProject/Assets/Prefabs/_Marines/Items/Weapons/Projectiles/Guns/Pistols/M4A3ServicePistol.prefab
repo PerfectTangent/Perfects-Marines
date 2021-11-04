@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4647023449763689999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoType
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 5802937588647369627, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+    - target: {fileID: 3608952087187573367, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f14b245e81a5bb4ebba1397f0b8ea5f,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialName
+      value: M4A3 service pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialDescription
+      value: An M4A3 Service Pistol, the standard issue sidearm of the Colonial Marines.
+        Fires 9mm pistol rounds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 46feabd4ab2535046bb4158c689e5a35,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: cb745f4d65a6cd94bbfa2d528b04707e,
+        type: 2}
+    - target: {fileID: 7045324407447566409, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ec1f4f754e06b4585be31a725a99d4,
+        type: 2}
+    - target: {fileID: 7323548323850207916, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ee92711737fe62479f27c5ebae39fe5,
+        type: 3}
+    - target: {fileID: 7406090846831168580, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445450717140808176, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Name
+      value: M4A3ServicePistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254856133050293319, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254856133050293319, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 16c94bb9281cd5842be308753b93fd94,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6506bef5c76704983f5d0f44887370, type: 3}

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1985618490197345494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3082522023416177629, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0aa0dd2ed5ecff84195506667b863bc3,
+        type: 2}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialName
+      value: bipod
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialDescription
+      value: A simple set of telescopic poles to keep a weapon stabilized during
+        firing. \nGreatly increases accuracy and reduces recoil when properly placed,
+        but also increases weapon size and slows firing speed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1662d46e99146884e8fdbc207a06f0f4,
+        type: 2}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ccfdcb16a1b107446b5bfc3383714c88,
+        type: 3}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187710774849083482, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Name
+      value: Bipod
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d07740a6daa37147b793a13fbf4f68b, type: 3}

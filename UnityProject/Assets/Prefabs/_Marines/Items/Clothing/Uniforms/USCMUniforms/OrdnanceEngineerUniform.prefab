@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2976511719580869557
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4102985665491571255, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107067568661347959, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137411306722952131, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_Name
+      value: OrdnanceEngineerUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141213280121945783, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295022500478005407, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cf076ed8a9a80d49bad988a8c9887f2,
+        type: 3}
+    - target: {fileID: 4577507826618199201, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: initialName
+      value: ordnance engineer uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577507826618199201, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: initialDescription
+      value: A uniform for a professional bomb maker. It has shards of light Kevlar
+        to help protect against stabbing weapons, bullets, and shrapnel from explosions.
+        Padded with extra plates to take the brunt force of an explosion.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995835293401108550, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: e7e7b2dd40f6674479bc325eab49f0df,
+        type: 2}
+    - target: {fileID: 6995835293401108550, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: e7e7b2dd40f6674479bc325eab49f0df,
+        type: 2}
+    - target: {fileID: 6995835293401108550, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a37dc28df283f9242aa8e5ca53f35631,
+        type: 2}
+    - target: {fileID: 7794911398865844292, guid: 207d8aadad88b5247b65680604fc9ab2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 60780a04522537a49b78872c97821ff7,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 207d8aadad88b5247b65680604fc9ab2, type: 3}

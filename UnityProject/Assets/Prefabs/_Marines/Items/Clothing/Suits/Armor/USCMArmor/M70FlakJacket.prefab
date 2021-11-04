@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5894428311105167383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: c7ce6164b9204304fb31bd8825328a5d,
+        type: 2}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: c7ce6164b9204304fb31bd8825328a5d,
+        type: 2}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 402a4a96e41728746be2f0c17b03298b,
+        type: 2}
+    - target: {fileID: 2961741670957096338, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c519d29e655a3c94db7dc253b6d9acf6,
+        type: 2}
+    - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: initialName
+      value: M70 flak jacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: initialDescription
+      value: A flak jacket used by dropship pilots to protect themselves while flying
+        in the cockpit. Excels in protecting the wearer against high-velocity solid
+        projectiles.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961080704280307221, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_Name
+      value: M70FlakJacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063515089906310049, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128183951869416777, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 01cfcf4c3054c1849b10eb3e9a02629a,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 900572ab8ed9030429b12eaa3974a43f, type: 3}

@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6305969059548820184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1206818366776133214, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ba4582bd5070f54ead9a1bb367abc23,
+        type: 3}
+    - target: {fileID: 1319149476991923458, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_Name
+      value: M5RPG
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323228527790295158, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430661362433968310, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: hitDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: initialName
+      value: M5 RPG
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: initialSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: initialDescription
+      value: The M5 RPG is the primary anti-armor weapon of the USCM. Used to take
+        out light-tanks and enemy structures, the M5 RPG is a dangerous weapon with
+        a variety of combat uses.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 10141a8fb91c71b4884d7a0fec96b4ec,
+        type: 2}
+    - target: {fileID: 1487056224082139744, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c052ca3e46dc60540a796f7ab043cf22,
+        type: 2}
+    - target: {fileID: 1502803385486228667, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: f782f4ac939355241818cab14acf7e61,
+        type: 2}
+    - target: {fileID: 5118499591500353157, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d6fa225544a5ab40a654fe19e00c9a4,
+        type: 2}
+    - target: {fileID: 8626789567490804901, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: ammoType
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626789567490804901, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: FireDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626789567490804901, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 2313378757258054623, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+    - target: {fileID: 8626789567490804901, guid: 7a12598da4288d345872a4d8f448ebf7,
+        type: 3}
+      propertyPath: SpawnsCasing
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a12598da4288d345872a4d8f448ebf7, type: 3}

@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7292900243303561709
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1803090746138428279, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d099325281fe8cd49b6cec665f476a74,
+        type: 2}
+    - target: {fileID: 3005535234720104791, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461912552616699972, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d7cb12eab8bd126468b6d3fc20adc1db,
+        type: 2}
+    - target: {fileID: 5381336432806680466, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: initialName
+      value: M240-T incinerator unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381336432806680466, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: initialDescription
+      value: An improved version of the M240A1 incinerator unit, the M240-T model
+        is capable of dispersing a larger variety of fuel types.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381336432806680466, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 704eb282a7e959440afe2914141b2c83,
+        type: 2}
+    - target: {fileID: 5381336432806680466, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 11da0e252a6c00e43811f0ad878ed505,
+        type: 2}
+    - target: {fileID: 5392579582200475977, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b861e312bcb9ac40a8ff9c87908d864,
+        type: 2}
+    - target: {fileID: 5495449607876032752, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_Name
+      value: M240ATincineratorUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498965982999659908, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609224356438508868, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670656254002301868, guid: f9f3529345dadb64a9154f96ecadea82,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ebe9d8181f238c43b53562c417f53b1,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9f3529345dadb64a9154f96ecadea82, type: 3}

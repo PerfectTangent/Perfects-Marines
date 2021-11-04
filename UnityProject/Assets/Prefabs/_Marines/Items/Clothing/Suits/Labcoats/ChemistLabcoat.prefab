@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1941434927257041152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1711002944022603435, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 689b005490217ee4dbaa55dcc94cf74b,
+        type: 2}
+    - target: {fileID: 1911093736411467433, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: bdfa2a147461c14459c2ff68d99820aa,
+        type: 2}
+    - target: {fileID: 4614323436282113648, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b2aea647f320f344af2ec391404818d,
+        type: 3}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825795203577142572, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_Name
+      value: ChemistLabcoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858432591600148632, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905881929723818574, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: initialName
+      value: chemist labcoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905881929723818574, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: initialDescription
+      value: A suit that protects against minor chemical spills. Has an orange stripe
+        on the shoulder.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d25035f0e9abc354cbf13ceec20411b6, type: 3}

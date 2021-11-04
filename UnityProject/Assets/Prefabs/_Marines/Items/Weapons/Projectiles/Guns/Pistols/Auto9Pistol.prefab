@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3246678422111660010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoType
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 3493246453454850356, guid: a7a9fe397b92d5f4d9e235b7ef78cd28,
+        type: 3}
+    - target: {fileID: 3608952087187573367, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 6eb2bb9156fef164bb3b838729b287e1,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialName
+      value: Auto-9 pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: throwDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialDescription
+      value: An advanced, select-fire machine pistol capable of three round burst.
+        Last seen cleaning up the mean streets of Detroit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 40061af4e3847014bb233ec658291b52,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 111422676a5a392429c182dd9576eff4,
+        type: 2}
+    - target: {fileID: 7045324407447566409, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c63d3138330ce344be19a4fb602da53,
+        type: 2}
+    - target: {fileID: 7323548323850207916, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fbc38cae8628be48beeac638dae5736,
+        type: 3}
+    - target: {fileID: 7406090846831168580, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445450717140808176, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Name
+      value: Auto9Pistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6506bef5c76704983f5d0f44887370, type: 3}

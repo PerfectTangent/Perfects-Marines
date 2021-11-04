@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &10342612369425136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 9200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialName
+      value: M3-H pattern heavy armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heavier version of the standard M3 pattern armor, cladded with additional
+        plates. It sacrifices speed for more durability.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780864519192951915, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885587950584562143, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Name
+      value: M3HPatternMarineArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971493428935832195, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7810c125b29d1cf43a827b1b3e325a12,
+        type: 3}
+    - target: {fileID: 4671990286718046650, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
+        type: 2}
+    - target: {fileID: 6965518931188726360, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a58748ca69ddf2340a6e6d171d23f61b,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: randomInitialClothData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ab29df80440ff8488051d1674ce7f6b,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 921fdc30997f8b44299e7186669daa91,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3dd50e42642e4cb4c8774550ec3f0e76,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ff29e12611b3e4940833454b014e600c,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b5e13abfc5f05a4cac8d217650101ba,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: d75e5a33ff4dc3d4db07869b2b3fd57b,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b44c6fb57f3efe46a94df342694494a, type: 3}

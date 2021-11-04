@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9209369887485541797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 533914595742451460, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 6015f31bea304c24da20ea9a7e86455d,
+        type: 2}
+    - target: {fileID: 5827432335563788255, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f01f4e3792529e5478e2ca696a56224e,
+        type: 3}
+    - target: {fileID: 5921889677866089603, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_Name
+      value: L42ALEMagazine10x24mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925969003144462839, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033401631490212151, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107828862338421729, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: initialName
+      value: L42A LE magazine (10x24mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107828862338421729, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A 10mm battle rifle armor shredding magazine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855239221208337754, guid: 754d1786bf8e2dc46b6b13018988d94e,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 5689486836359915468, guid: 061c0ee6dbeeeb845a931e0ea5febb04,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 754d1786bf8e2dc46b6b13018988d94e, type: 3}

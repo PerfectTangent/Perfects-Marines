@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1028832020819194611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialName
+      value: XM4 pattern intelligence officer plate armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialDescription
+      value: A well tinkered and crafted hybrid of Smart-Gunner mesh and M3 pattern
+        plates. Robust, yet nimble, with room for all your pouches.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780864519192951915, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885587950584562143, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Name
+      value: XM4PatternIntelligenceOfficerPlateArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971493428935832195, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1db7e5ba2607a0c46830ba348fbae6b3,
+        type: 3}
+    - target: {fileID: 4671990286718046650, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fdde641eac38ad4da32ccc0eeea50fc,
+        type: 2}
+    - target: {fileID: 6965518931188726360, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d343797a953d6bb44a20dfb315d0750e,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 22e28d0ad9e894149af0906f63ac7d5f,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 22e28d0ad9e894149af0906f63ac7d5f,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b646e597d9912c9468c87ece9d9f1674,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b44c6fb57f3efe46a94df342694494a, type: 3}

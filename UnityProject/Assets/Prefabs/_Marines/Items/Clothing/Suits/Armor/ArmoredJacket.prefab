@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &582651776409965541
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 31c44f25b5a2f0a4eb623eb111514851,
+        type: 2}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fffa5d65576aedc41abe217bce054472,
+        type: 2}
+    - target: {fileID: 2961741670957096338, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ff74f5d0d808ec4ab0a4ffc0145dca1,
+        type: 2}
+    - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: initialName
+      value: armored jacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: initialDescription
+      value: It's hot in the jungle. Sometimes it's hot and heavy, and sometimes
+        it's hell on earth.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961080704280307221, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_Name
+      value: ArmoredJacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063515089906310049, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128183951869416777, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a950a4a9710464446b714343bded0489,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 900572ab8ed9030429b12eaa3974a43f, type: 3}

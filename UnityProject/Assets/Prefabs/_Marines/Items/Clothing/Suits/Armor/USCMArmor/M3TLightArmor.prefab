@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1198332424853403904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialName
+      value: M3-T light armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialDescription
+      value: A custom set of M3 armor designed for users of long ranged explosive
+        weaponry.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Resistances.UnAcidable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780864519192951915, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885587950584562143, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Name
+      value: M3TLightArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971493428935832195, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec59d50757ffc9b43b04f1759a1e87bd,
+        type: 3}
+    - target: {fileID: 6965518931188726360, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cc0e84d299da6441a9d2771ea262de6,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ae639688a5485b4aa52f9ce33498568,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ae639688a5485b4aa52f9ce33498568,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a62b0f752374f6498f606adcfac2520,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b44c6fb57f3efe46a94df342694494a, type: 3}

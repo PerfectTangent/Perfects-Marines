@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &164813520865625085
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialName
+      value: PMC fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialDescription
+      value: A white set of fatigues, designed for private security operators. The
+        symbol of the Weston-Yamada corporation is emblazed on the suit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 403421380365023489, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4519946363880959258, guid: 44c87561b6b26f940aa0f2d759e995a1,
+        type: 3}
+    - target: {fileID: 503556119423055849, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 533896490227157597, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Name
+      value: PMCFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921907164774134234, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a9bc51893ed29564aa12082fefc955c1,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e760f72933b29e458e1865f0bb130ea,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e760f72933b29e458e1865f0bb130ea,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b3d2697acdd2a1140bcbac5899b717e9,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2cb622ead5f1f14cb939306783f63a3, type: 3}

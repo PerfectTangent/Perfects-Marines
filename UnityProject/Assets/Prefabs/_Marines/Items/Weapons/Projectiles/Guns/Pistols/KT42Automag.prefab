@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5574789478253327355
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: FireDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 294770401350797690, guid: 3ea5c39989d58df4f9a3276dc0f78e18,
+        type: 3}
+    - target: {fileID: 3608952087187573367, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cfeb3f13934df04a86c342379ab7d97,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialName
+      value: KT-42 automag
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialDescription
+      value: The KT-42 Automag is an archaic but reliable design, going back many
+        decades. There have been many versions and variations, but the 42 is by far
+        the most common. You can't go wrong with this handcannon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 1339ba6ca84e78e41ae3c9321f3c29cc,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 5392a0e2af2882045a3218c4bf1915e9,
+        type: 2}
+    - target: {fileID: 7045324407447566409, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: bfa377d1b90290c41b2dd4e6fe6ff85a,
+        type: 2}
+    - target: {fileID: 7323548323850207916, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5231fb6cafc2a92428159fe4da720b0b,
+        type: 3}
+    - target: {fileID: 7406090846831168580, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445450717140808176, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Name
+      value: KT42Automag
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6506bef5c76704983f5d0f44887370, type: 3}

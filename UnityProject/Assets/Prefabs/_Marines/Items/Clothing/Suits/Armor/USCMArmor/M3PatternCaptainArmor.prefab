@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8545521434797773995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2411966560550646415, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6d9fcb7a4d90f044b52371ba7f23e69,
+        type: 3}
+    - target: {fileID: 2455377977577689127, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458058067563445351, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560563921976607187, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_Name
+      value: M3PatternCaptainArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565769147363146919, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694676388930465457, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: initialName
+      value: M3 pattern captain armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694676388930465457, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: initialDescription
+      value: A well-crafted suit of M3 Pattern Armor typically found in the hands
+        of higher-ranking officers. Useful for letting your men know who is in charge
+        when taking to the field.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561039863199726164, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d7e34992004f224ea3eec2159e6671f,
+        type: 2}
+    - target: {fileID: 8932267373203853910, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 98f0620e30f535d4890d1d859fa6d873,
+        type: 2}
+    - target: {fileID: 8932267373203853910, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 98f0620e30f535d4890d1d859fa6d873,
+        type: 2}
+    - target: {fileID: 8932267373203853910, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: eb94b885cc57a5f4e9c953e0354739ab,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2863b1c3192ee342b22b3aa186865fa, type: 3}

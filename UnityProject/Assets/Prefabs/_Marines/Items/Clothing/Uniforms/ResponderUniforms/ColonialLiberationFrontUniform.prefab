@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2070042983128591372
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3960895783586719909, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e47ef4d0b15a6b4ea5e242c80c512f4,
+        type: 2}
+    - target: {fileID: 4309038874910097575, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: df99ca0a28f1dd643bd8d923de4e5c18,
+        type: 2}
+    - target: {fileID: 4309038874910097575, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: df99ca0a28f1dd643bd8d923de4e5c18,
+        type: 2}
+    - target: {fileID: 4309038874910097575, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 10647f51272cc1c40ae95adbad274df7,
+        type: 2}
+    - target: {fileID: 7007608793261465726, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d110cbe8ecb4e445839ebf6d729c98d,
+        type: 3}
+    - target: {fileID: 7072277683108572822, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179424644326338134, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183789568555340578, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: m_Name
+      value: ColonialLiberationFrontUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303827290216479808, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: initialName
+      value: Colonial Liberation Front uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303827290216479808, guid: a5b693ff143a3d5439e26e16fd08cacc,
+        type: 3}
+      propertyPath: initialDescription
+      value: A stylish grey-green jumpsuit - standard issue for colonists. This version
+        appears to have the symbol of the Colonial Liberation Front emblazoned in
+        select areas.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5b693ff143a3d5439e26e16fd08cacc, type: 3}

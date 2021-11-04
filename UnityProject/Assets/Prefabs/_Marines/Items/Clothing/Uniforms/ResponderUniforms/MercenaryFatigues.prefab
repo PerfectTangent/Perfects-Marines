@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7516978235543746634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialName
+      value: mercenary fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialDescription
+      value: A thick, beige suit with a red armband. There is an unknown symbol is
+        emblazed on the suit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 403421380365023489, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3590649267564121329, guid: e2bd600ca6c4dbe49b5e3da2b11bb7ef,
+        type: 3}
+    - target: {fileID: 503556119423055849, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 533896490227157597, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Name
+      value: MercenaryFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921907164774134234, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e489cc9385219e41920062a75a7f55a,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a570187ea7886614f94dbde938ca11fd,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: a570187ea7886614f94dbde938ca11fd,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ec7374d29e1f1464d998e13e73cb6da2,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2cb622ead5f1f14cb939306783f63a3, type: 3}

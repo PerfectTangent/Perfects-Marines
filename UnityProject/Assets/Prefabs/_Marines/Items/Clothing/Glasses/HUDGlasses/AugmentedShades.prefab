@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7197043005790009806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 644422697860150237, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 677024970242068073, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_Name
+      value: AugmentedShades
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681948720517706525, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834488657627594037, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fba8ce1b48abbc74594925990dcb3c33,
+        type: 3}
+    - target: {fileID: 1119386587186389259, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: initialName
+      value: augmented shades
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119386587186389259, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: initialDescription
+      value: Polarized bioneural eyewear, designed to augment your vision.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843556943194578412, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0da7a3c8b8c512d41b65a93214d19a33,
+        type: 2}
+    - target: {fileID: 5843556943194578412, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0da7a3c8b8c512d41b65a93214d19a33,
+        type: 2}
+    - target: {fileID: 5843556943194578412, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843556943194578412, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4174d4f3357b42a4e9403a69d27b745b,
+        type: 2}
+    - target: {fileID: 5843556943194578412, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4174d4f3357b42a4e9403a69d27b745b,
+        type: 2}
+    - target: {fileID: 6639248854648337902, guid: 94f3299fdfbffef4f998b031587376d5,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: f13b8d3f75b9ba24996d10513768264f,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94f3299fdfbffef4f998b031587376d5, type: 3}

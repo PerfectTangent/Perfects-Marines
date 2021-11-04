@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3329785048212701233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1886855504042391771, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: initialName
+      value: liaison's white suit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886855504042391771, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: initialDescription
+      value: A formal, white suit. Looks like something you'd wear to a funeral,
+        a Weston-Yamada corporate dinner, or both. Stiff as a board, but makes you
+        feel like rolling out of a Rolls-Royce.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072482255395231673, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_Name
+      value: LiaisonsWhiteSuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114117015262997005, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176111897156723941, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b779ed0925d65c54d96cbba97b8e660a,
+        type: 3}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aaad7e12f25bbd40b3b5b4e44212180,
+        type: 2}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aaad7e12f25bbd40b3b5b4e44212180,
+        type: 2}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6de152e8008f53844abad034c198d5ae,
+        type: 2}
+    - target: {fileID: 5297623592484252734, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: fbe24edac29e84a4795ae08444f8c78c,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55f3604f3a96380408b543411ac4e910, type: 3}

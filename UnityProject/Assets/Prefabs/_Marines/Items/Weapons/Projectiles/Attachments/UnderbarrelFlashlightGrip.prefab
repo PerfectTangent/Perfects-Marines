@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8925945547637162446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3699351517479380309, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: aff5fe1ab936179488cffb4fdd5257b7,
+        type: 2}
+    - target: {fileID: 6988804977519391152, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: initialName
+      value: underbarrel flashlight grip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988804977519391152, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: initialDescription
+      value: Holy smokes RO man, they put a grip on a flashlight! \nReduces recoil
+        and scatter by a tiny amount. Boosts accuracy by a tiny amount. Works as
+        a light source.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988804977519391152, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: aac037ead3ff97c46bdd6544c01104b9,
+        type: 2}
+    - target: {fileID: 7269186044571856270, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb6b24279ab16fa4594fa2d5f75cf2a1,
+        type: 3}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350755907739837350, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354558156150382290, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_Name
+      value: UnderbarrelFlashlightGrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459252038706504550, guid: 1923afeb6891a1746af04d26bc6604dd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1923afeb6891a1746af04d26bc6604dd, type: 3}

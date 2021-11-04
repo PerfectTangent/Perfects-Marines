@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6150721666540291430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542830660240429926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e15827970984ba78808f03bc3f01586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  allClothingData:
+  - {fileID: 11400000, guid: 8ecc09c3b324dd441b66179022083fb4, type: 2}
+  CurrentClothIndex: 0
+  randomInitialClothData: 0
+  hidesIdentity: 0
+  hidesSlots: 0
+  hideClothingFlags: 0
+--- !u!1001 &4338795795289933465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4129536741000373923, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66dd08a3e4b0b994fb4a771b2c262e3c,
+        type: 3}
+    - target: {fileID: 4191390885408893003, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305153539877197311, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Name
+      value: M37A2PumpShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407742657429937222, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: fadab671096e3ba4fabc6f8041ed91e6,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialName
+      value: M37A2 pump shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialDescription
+      value: An Armat Battlefield Systems classic design, the M37A2 combines close-range
+        firepower with long term reliability. Requires a pump, which is a Unique
+        Action.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: af44d50b7547e734890f81c664b3cb78,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b05bab692e98c487eb4996a0614d143d,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: cc8027bf010a3414a8cd63ebeac7b1cb,
+        type: 2}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: FireDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 7240088718600112651, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
+        type: 3}
+    - target: {fileID: 7996393347801935480, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 49f3e8b195189fc4da884020e4f0f96b,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3da8873fd78218546ae68a3f84918848, type: 3}
+--- !u!1 &542830660240429926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4305153539877197311, guid: 3da8873fd78218546ae68a3f84918848,
+    type: 3}
+  m_PrefabInstance: {fileID: 4338795795289933465}
+  m_PrefabAsset: {fileID: 0}

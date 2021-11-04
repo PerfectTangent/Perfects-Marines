@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2247074791730151947
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoType
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 190701395420235863, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 8690065206271997630, guid: 3ca2c8ecc3ece8e4c8dea61a6888c701,
+        type: 3}
+    - target: {fileID: 3608952087187573367, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 483a83da4fc97a94dbf246964ae16a81,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialName
+      value: 88 Mod 4 combat pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: throwDamage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: initialDescription
+      value: A powerful sidearm issued mainly to Weston-Yamada response teams, but
+        issued to the USCM in small numbers, based on the original VP70 more than
+        a century ago. Fires 9mm armor shredding rounds and is capable of 3-round
+        burst.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: fcd6c25a1c4880a40af9fb393c7cc31d,
+        type: 2}
+    - target: {fileID: 7043092494301994642, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: b5b40035b4256b74581d9a7d21c1baab,
+        type: 2}
+    - target: {fileID: 7045324407447566409, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 45ec0e251c647c9448d12a79760bf02c,
+        type: 2}
+    - target: {fileID: 7323548323850207916, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edf389df44019cf4abfae7203862c53e,
+        type: 3}
+    - target: {fileID: 7406090846831168580, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439964017117793412, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445450717140808176, guid: 8f6506bef5c76704983f5d0f44887370,
+        type: 3}
+      propertyPath: m_Name
+      value: 88Mod4CombatPistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f6506bef5c76704983f5d0f44887370, type: 3}

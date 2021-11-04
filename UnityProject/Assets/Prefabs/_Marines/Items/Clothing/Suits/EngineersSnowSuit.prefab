@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6943599457120049387
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4109460078179980883, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: initialName
+      value: engineer's snow suit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403345073811081837, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9c091016dabefd438de8ce6c7befa6a,
+        type: 3}
+    - target: {fileID: 4503057598238606469, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605536033589492017, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_Name
+      value: EngineersSnowSuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464465783018793652, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 819bd1b778931244c91d9efee77bd5ed,
+        type: 2}
+    - target: {fileID: 7686582060713919158, guid: 0d60ed99dd12a82439e6ea32161956b3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 1dbbedaf311163d42b90c30ef6cddbc5,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d60ed99dd12a82439e6ea32161956b3, type: 3}

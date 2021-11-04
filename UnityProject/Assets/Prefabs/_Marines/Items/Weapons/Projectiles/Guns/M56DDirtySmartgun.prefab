@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6682423516174623593
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3144221739306110973, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: initialName
+      value: M56D 'Dirty' smartgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144221739306110973, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: initialDescription
+      value: The actual firearm in the 4-piece M56D Smartgun System. If you have
+        this, you're about to bring some serious pain to anyone in your way.\nYou
+        may toggle firing restrictions by using a special action.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160004617593219366, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: d9af4423f7dd3ff40a3566e802b1d3c0,
+        type: 2}
+    - target: {fileID: 3232223540175772971, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264863127227539615, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_Name
+      value: M56DDirtySmartgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268660702580006379, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240241241840425272, guid: 9ddcf8d26035d8c4c8f115a08216b678,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 1170141335317549943, guid: 3b8cc22ddd135954d8980bd7c09df273,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ddcf8d26035d8c4c8f115a08216b678, type: 3}

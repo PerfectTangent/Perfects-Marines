@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7171136946668315143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2401586375638376259, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 64b9e29b693e95341a50a691373e81af,
+        type: 2}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialName
+      value: M276 pattern M39 holster rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialDescription
+      value: The M276 is the standard load-bearing equipment of the USCM. It consists
+        of a modular belt with various clips. This version is designed for the M39
+        SMG, and features a larger frame to support the gun. Due to its unorthodox
+        design, it isn't a very common sight, and is only specially issued.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialTraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eafba0d7388d428c8e08ed1b5d5d260,
+        type: 2}
+    - target: {fileID: 3199951510179964357, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c79ab3b31c9063479c58695f42bd5c1,
+        type: 3}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357846307609073305, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Name
+      value: M276PatternM39HolsterRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390439714633509677, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 81d75c1cdba48bd418a6d2dd80447443,
+        type: 2}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 81d75c1cdba48bd418a6d2dd80447443,
+        type: 2}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6b47cdfed45f8042adc26264cd25bf2,
+        type: 2}
+    - target: {fileID: 8925967725256764702, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 805789a1d8e3d4d4e91a356cc34e2fc4,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 643b42a9bbcccc54194e9aded6df93bb, type: 3}

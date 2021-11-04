@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4190903106115738443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1220038302629701180, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: bd295c5ca36443f40be710adf2d21cc9,
+        type: 2}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: initialName
+      value: plasma pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: initialDescription
+      value: Its a gA plasma pistol capable of rapid fire. It has an integrated battery.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f304a70ae896a74b9461e2689177e20,
+        type: 2}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eafba0d7388d428c8e08ed1b5d5d260,
+        type: 2}
+    - target: {fileID: 4847553102153413337, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ae0d224a6b611944b7c6cdeb61e4793,
+        type: 2}
+    - target: {fileID: 4916902685208322063, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019382082099453371, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_Name
+      value: PlasmaPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024872905895043279, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141308624346984167, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4eba20d678d29144099c9764ae16f142,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 325cfa9ffdd55a84abe16fdd7fdf0fb2, type: 3}

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2473306724925112820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585329258295273144, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 84a791c999e630a468a11eccf190e456,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialName
+      value: Type 71 pulse rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialDescription
+      value: The primary service rifle of the UPP space forces, the Type 71 is an
+        ergonomic, lightweight pulse rifle chambered in 5.45x39mm. In accordance
+        with doctrinal principles of overmatch and suppression, the rifle has a high
+        rate of fire and a high-capacity casket magazine. Despite lackluster precision,
+        an integrated recoil-dampening mechanism makes the rifle surprisingly controllable
+        in bursts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a92127842f782e49967d5cddf9dcf3f,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 720b43b6bf38888499136f47f6bbbc59,
+        type: 2}
+    - target: {fileID: 899590200603696221, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 537d04730f32bca45ba76f1310e90d1e,
+        type: 3}
+    - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Name
+      value: Type71PulseRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c6cd075d8cffdd140b28b8ef4cf02372,
+        type: 2}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoType
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 8064299371964876451, guid: bc60b05854f021d419f35fb20c3adf90,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

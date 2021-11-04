@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7745405154262050373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 127818199160819822, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: initialName
+      value: heat absorbent coif
+      objectReference: {fileID: 0}
+    - target: {fileID: 127818199160819822, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: initialDescription
+      value: A close-fitting cap that covers the top, back, and sides of the head.
+        Can also be adjusted to cover the lower part of the face so it keeps the
+        user warm in harsh conditions.
+      objectReference: {fileID: 0}
+    - target: {fileID: 421780156301397072, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 371b57718eb6c3442ad3a6e6bd45051a,
+        type: 3}
+    - target: {fileID: 486308312946328248, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 516650951482965772, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_Name
+      value: HeatAbsorbentCoif
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520167326942102136, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939575532308972683, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 92bbfc815b065494bb7e74795d2d2116,
+        type: 2}
+    - target: {fileID: 6869882542942203017, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e2821f1e83aee146ba5fa1d437d4650,
+        type: 2}
+    - target: {fileID: 6869882542942203017, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: hideClothingFlags
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869882542942203017, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869882542942203017, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0031bbef829f9994881db8aa90c56aa8,
+        type: 2}
+    - target: {fileID: 8039818594359113683, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ffeda75262b62f4ebeda277f7ebebef, type: 3}

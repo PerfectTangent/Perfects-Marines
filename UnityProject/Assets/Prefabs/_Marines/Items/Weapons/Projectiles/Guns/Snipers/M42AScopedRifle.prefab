@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2142450776281790069
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 641764619188118837, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679962443245774325, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 683478543893600385, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_Name
+      value: M42AScopedRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 832534268575230941, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cea9f0ca601ccbe44bae9635349e352b,
+        type: 3}
+    - target: {fileID: 1121869824351074275, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: hitDamage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121869824351074275, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: initialName
+      value: M42A scoped rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121869824351074275, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heavy sniper rifle manufactured by Armat Systems. It has a scope system
+        and fires armor penetrating rounds out of a 15-round magazine.\n'Peace Through
+        Superior Firepower'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121869824351074275, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 457a14abeb4993e4eb841492610d490c,
+        type: 2}
+    - target: {fileID: 1121869824351074275, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: ca83c18389807e644ba18df426fdbcdd,
+        type: 2}
+    - target: {fileID: 1146655246223069496, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: dffe586e1ee14cb42a6ae2b4dc6da7c5,
+        type: 2}
+    - target: {fileID: 6645671663545590534, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c664127bb07efeb41bea72e1fd1d3f21,
+        type: 2}
+    - target: {fileID: 7821125340688425254, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: ammoType
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821125340688425254, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: FireDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821125340688425254, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 7021780435180706231, guid: 40e3776b9595f654daba5f057e124de3,
+        type: 3}
+    - target: {fileID: 7821125340688425254, guid: f7a45247b53ab0547b06d01fddc08bdc,
+        type: 3}
+      propertyPath: SpawnsCasing
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7a45247b53ab0547b06d01fddc08bdc, type: 3}

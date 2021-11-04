@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6435497371731416110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 44155453462962640, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 600b8e9db381afa41a18af729e94ed47,
+        type: 2}
+    - target: {fileID: 984030586657343954, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: e3cbeb38a08dfe44997deecc11e4bbeb,
+        type: 2}
+    - target: {fileID: 6404652678407139925, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_Name
+      value: M8PatternArmoredBalaclava
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409299076601499425, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446287369552793569, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489704868625973513, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5792660953211290159, guid: 296212b6ce5f7fe438aaad4b6b0d7bad,
+        type: 3}
+    - target: {fileID: 6776931286767099191, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: initialName
+      value: M8 pattern armored balaclava
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776931286767099191, guid: 996d62bfe3bf26c4e95c2a77cadabbd2,
+        type: 3}
+      propertyPath: initialDescription
+      value: An armored balaclava designed to conceal both the identity of the operator
+        and act as an air-filter.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 996d62bfe3bf26c4e95c2a77cadabbd2, type: 3}

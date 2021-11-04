@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5359859513459197479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4109792286726826724, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: initialName
+      value: formal commanding officer's white uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109792286726826724, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: initialDescription
+      value: The well-ironed formal uniform of a USCM officer. Even looking at it
+        the wrong way could result in you, and your platoon being court-marshalled.
+        It has shards of light Kevlar to help protect against stabbing weapons, bullets,
+        and shrapnel from explosions, a small EMF distributor to help null energy-based
+        weapons, and a hazmat chemical filter weave to ward off biological and radiation
+        hazards
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401289416356067034, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a785a50e92159245b97732aa9f477d8,
+        type: 3}
+    - target: {fileID: 4499453796208736306, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604210419109971334, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_Name
+      value: FormalCommandingOfficersWhiteUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609138293086861554, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: c85f4ebfca62594439b62f7945e6cd7c,
+        type: 2}
+    - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: c85f4ebfca62594439b62f7945e6cd7c,
+        type: 2}
+    - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a5dc5d7346b67b41a8c02446b124949,
+        type: 2}
+    - target: {fileID: 7684108314507050497, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 266441c333d88e14c83b484f79a03712,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 634bbb9f92ffc824c9b95465ce1d266a, type: 3}

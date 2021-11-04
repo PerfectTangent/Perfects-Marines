@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1603922354861927851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 740886783991452473, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: initialName
+      value: colonial militia brace
+      objectReference: {fileID: 0}
+    - target: {fileID: 740886783991452473, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: initialDescription
+      value: The hauberk of a colonist militia member, created from boiled leather
+        and some modern armored plates. While not the most powerful form of armor,
+        and primitive compared to most modern suits of armor, it gives the wearer
+        almost perfect mobility, which suits the needs of the local colonists. It
+        is also quick to don, easy to hide, and cheap to produce in large workshops.
+        This extremely light variant has some of the chest pieces removed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 911330413645560923, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_Name
+      value: ColonialMilitiaBrace
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915972414469177647, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950690215765492207, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032529044874153735, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d6c47b97e55c30f498bf4eacd6697860,
+        type: 3}
+    - target: {fileID: 3542597504205901604, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 992
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113786736723242974, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 922ef417cfa86af4bbcad189cdd835ec,
+        type: 2}
+    - target: {fileID: 6113786736723242974, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113786736723242974, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 46f689a83f7918d4299d0a95580f8b79,
+        type: 2}
+    - target: {fileID: 6477211013748410332, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a51d171f4508c2145bdca14febe176f2,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7728804a55a110a43bb3f514a43bfc75, type: 3}

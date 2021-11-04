@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5078530147577862542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3821789188117098331, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a53271063a4fc1e40b269b8d4167ff83,
+        type: 2}
+    - target: {fileID: 4049471333065492313, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e3e8094b2a55aa448294fa0a80a1e5b,
+        type: 2}
+    - target: {fileID: 6939948289710576860, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_Name
+      value: M11PatternLeaderHelmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051392004893796712, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115216476241553280, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dc672ef4c12c184ebba93071dee1848,
+        type: 3}
+    - target: {fileID: 7395540089537477566, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: initialName
+      value: M11 pattern leader helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395540089537477566, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: initialDescription
+      value: A slightly fancier helmet for marine leaders. This one contains a small
+        built-in camera and has cushioning to project your fragile brain.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4c061a68c9ca7c44b11df9d566ebdb4, type: 3}

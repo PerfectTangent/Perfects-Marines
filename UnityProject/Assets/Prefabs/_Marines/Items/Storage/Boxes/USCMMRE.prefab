@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7373461374212676904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c3a9752f85329c40ab8bd2649d243c3,
+        type: 2}
+    - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: SubCatalogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c3a9752f85329c40ab8bd2649d243c3,
+        type: 2}
+    - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88bce7cf933ce7841831961521b1173d,
+        type: 2}
+    - target: {fileID: 8159390639885615672, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: initialName
+      value: USCM MRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159390639885615672, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: initialSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159390639885615672, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: initialDescription
+      value: Meal Ready-to-Eat, property of the US Colonial Marines. Meant to be
+        consumed in the field, and has an expiration that is at least two decades
+        past your combat life expectancy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441880568126201350, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ab0a97eaf476d747b4efa4aeea57d46,
+        type: 3}
+    - target: {fileID: 8521467601672753390, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635195139948178778, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMMRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654565269348869248, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fdde641eac38ad4da32ccc0eeea50fc,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e5919f639f566c4590d07d54ef256dd, type: 3}

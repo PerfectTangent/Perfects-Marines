@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5658143230301833811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 698176856212991572, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520668212151141357, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 06baeee1534474844b7e2185e017a8f7,
+        type: 3}
+    - target: {fileID: 3614728628629303473, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_Name
+      value: K12CeramicHelmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619093826792459717, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724945944143159621, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724945944143159621, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728467093295484165, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803151609852043219, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: initialName
+      value: K12 ceramic helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803151609852043219, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: initialDescription
+      value: A sturdy helmet worn by an unknown mercenary group.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452339998684138294, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a2defec42587203418a1dd0b27af79fc,
+        type: 2}
+    - target: {fileID: 7662630686810579764, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: hideClothingFlags
+      value: 1008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662630686810579764, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 727ac47c3efcaa749b9c20bbf9af24bc,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c26ad2f80b1e6944387277a196b8de04, type: 3}

@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4492866431925768725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 80039529567037729, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 57feaa36803cea040903cc618467bec5,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: ad84f4739eb513648a62e3f713419b43,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: ad84f4739eb513648a62e3f713419b43,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99eda1a30c043ee4686a639557b4aa52,
+        type: 2}
+    - target: {fileID: 5960476742974602692, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: initialName
+      value: USCM support uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960476742974602692, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: initialDescription
+      value: A simple uniform made for Synthetic crewmembers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078246172147290790, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMSupportUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183003757660974866, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245280112385892858, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd35a2e764008ce4c85bad7847ea9b24,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 05e855837ef8d8e42bbf69291ca79ac2, type: 3}

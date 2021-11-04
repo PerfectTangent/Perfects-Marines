@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7970723570266990284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668260725655402721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e15827970984ba78808f03bc3f01586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  allClothingData:
+  - {fileID: 11400000, guid: a44f7876b1dde7546b5fdcb6bbd52fa9, type: 2}
+  CurrentClothIndex: 0
+  randomInitialClothData: 0
+  hidesIdentity: 0
+  hidesSlots: 0
+  hideClothingFlags: 0
+--- !u!1001 &4501550534781886736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3578975257659953224, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 1756f85efc91c8e46a63d99cc8927e5b,
+        type: 2}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialName
+      value: M39 submachinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialDescription
+      value: The Armat Battlefield Systems M-39 submachinegun. Occasionally carried
+        by light-infantry, scouts, engineers and medics. A lightweight, lower caliber
+        alternative to the various Pulse weapons used the USCM. Fires 10x20mm rounds
+        out of 48 round magazines.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: d4b1b13779d1244409e6555f93df8f35,
+        type: 2}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b05bab692e98c487eb4996a0614d143d,
+        type: 2}
+    - target: {fileID: 3590214971153315475, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: fb4000ce6854ff542bcb81b2f1785fdc,
+        type: 2}
+    - target: {fileID: 3877439121035700909, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf05b191a2153947a81594c244c108f,
+        type: 3}
+    - target: {fileID: 3939152493553001541, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975862541133309061, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980790415047268849, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: m_Name
+      value: M39Submachinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: ammoType
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 5161282155667915242, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+    - target: {fileID: 5965184664477311062, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: SpawnsCasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095567435986543222, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 62a27ccd856710e4b8d41411ec109f98,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91ec1c26c9dd97743a6348a1ddbcd276, type: 3}
+--- !u!1 &668260725655402721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3980790415047268849, guid: 91ec1c26c9dd97743a6348a1ddbcd276,
+    type: 3}
+  m_PrefabInstance: {fileID: 4501550534781886736}
+  m_PrefabAsset: {fileID: 0}

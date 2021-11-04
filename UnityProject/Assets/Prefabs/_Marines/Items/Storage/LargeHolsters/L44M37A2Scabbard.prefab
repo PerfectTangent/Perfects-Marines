@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6576835864713518611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2401586375638376259, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 793d30bc6dd15544393b785e7631a001,
+        type: 2}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialName
+      value: L44 M37A2 scabbard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialDescription
+      value: A large leather holster allowing the storage of an M37A2 Shotgun. It
+        contains harnesses that allow it to be secured to the back for easy storage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199951510179964357, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 561e288fcfcbcc54da86fac95511b7a0,
+        type: 3}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357846307609073305, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Name
+      value: L44M37A2Scabbard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390439714633509677, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: be8f4fac79f00a74fb49f6213dd1212c,
+        type: 2}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 98da4d3757c98564899743ffbc7778ce,
+        type: 2}
+    - target: {fileID: 8925967725256764702, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b826ddfc4dd240b4b9a09e243e213cbf,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 643b42a9bbcccc54194e9aded6df93bb, type: 3}

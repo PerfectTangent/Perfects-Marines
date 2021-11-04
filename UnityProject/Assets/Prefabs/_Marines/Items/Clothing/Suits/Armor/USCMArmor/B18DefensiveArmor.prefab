@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &70472397971960543
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 13296
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508849286059769522, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialName
+      value: B18 defensive armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heavy, rugged set of armor plates for when you really, really need
+        to not die horribly. Slows you down though.\nComes with two tricord injectors
+        in each arm guard.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780723197262729259, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780864519192951915, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885587950584562143, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Name
+      value: B18DefensiveArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891078774649126059, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971493428935832195, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6939643fb994f8b4e9992db68771ed24,
+        type: 3}
+    - target: {fileID: 4671990286718046650, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
+        type: 2}
+    - target: {fileID: 6965518931188726360, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: e1c1013b5e488de4a92a295b68cd0dc2,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: f55b3f182b3c2594fbaccbc3531edac0,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: f55b3f182b3c2594fbaccbc3531edac0,
+        type: 2}
+    - target: {fileID: 7895191867813909082, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f6dc8feae4543e346933181c3671a11d,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b44c6fb57f3efe46a94df342694494a, type: 3}

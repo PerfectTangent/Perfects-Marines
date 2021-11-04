@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4324583411584217273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2199490774642226943, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 989cdd74c4f1ea54db30c166fd2520f0,
+        type: 2}
+    - target: {fileID: 5274211729365794340, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 098a322d2eb145444a38fe17d0a5142e,
+        type: 3}
+    - target: {fileID: 5274211729365794340, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355909823098581196, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458422136608574840, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_Name
+      value: M11ThrowingKnife
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463908837369753612, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: hitDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: throwSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialName
+      value: M11 throwing knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: throwDamage
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialDescription
+      value: A military knife designed to be thrown at the enemy. Much quieter than
+        a firearm, but requires a steady hand to be used optimally, although you
+        should probably just use a gun instead.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[0]
+      value: slashed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[1]
+      value: stabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[2]
+      value: sliced
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[3]
+      value: torn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[4]
+      value: ripped
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[5]
+      value: diced
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: attackVerbs.Array.data[6]
+      value: cut
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d066d0c615702a4ab2682ced71a5a20,
+        type: 2}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 482c0fca4ed776f4c8008e69bfb533b8,
+        type: 2}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3858899698cc1425f86b8b93032ca57d,
+        type: 2}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: initialTraits.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ed946b910c993490a8fc6dbcce8d23e2,
+        type: 2}
+    - target: {fileID: 5561291018569196058, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 67df351637fdabe48950fbf951c9f4ca,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5bd0935334132e4fab6e432b5fe63bf, type: 3}

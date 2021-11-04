@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5356014143883354775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1595527395133040477, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 60ce9fa186fa14a81a4296e68b10babf,
+        type: 2}
+    - target: {fileID: 1595527395133040477, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 54cbb4402f813441cb503dcd1d440082,
+        type: 2}
+    - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867061792278949511, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_Name
+      value: M276PatternSecurityRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871985542549853171, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952547185784036827, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b824a93bbfc041848adb882fbc1e6c6f,
+        type: 3}
+    - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: initialName
+      value: M276 pattern security rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: initialDescription
+      value: The M276 is the standard load-bearing equipment of the USCM. It consists
+        of a modular belt with various clips. This configuration is commonly seen
+        among USCM Military Police and peacekeepers, though it can hold some light
+        munitions.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525703409436398848, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 43b457c05105c284db40616637a9180d,
+        type: 2}
+    - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: e8aa293c9ecccaa409932c4e74b32816,
+        type: 2}
+    - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8080ad3b2bae8fb409379b27b2e6c864,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51c105fae1f0b074abf4c80745d8b129, type: 3}

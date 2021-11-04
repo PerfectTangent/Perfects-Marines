@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7173820695879799555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982252123311090508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdce8a163088453ca593c0e98f2c5f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemStorageStructure: {fileID: 11400000, guid: 263bf834f99424f12bda19d67c3ab5fc,
+    type: 2}
+  itemStorageCapacity: {fileID: 11400000, guid: 9ead0167a3241b648bfd604f9cdef582,
+    type: 2}
+  itemStoragePopulator: {fileID: 0}
+--- !u!1001 &2272983323488270778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1509623270496223603, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1509623270496223603, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 025061bd27e03ac4c93144e942498c5d,
+        type: 2}
+    - target: {fileID: 1857849065674221937, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b66881066e766bc40a449c42d1800f7d,
+        type: 2}
+    - target: {fileID: 5360376893761846676, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: initialName
+      value: polished shoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360376893761846676, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: initialDescription
+      value: The height of fashion, but these look to be woven with protective fiber.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516479455808131830, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_Name
+      value: PolishedShoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520844654709010306, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554568669782213378, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555838089702747970, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656395009047011754, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82750edc4ba628346b517c0274910c1a,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43b5134397273884098fbc8b5dca2800, type: 3}
+--- !u!1 &5982252123311090508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5516479455808131830, guid: 43b5134397273884098fbc8b5dca2800,
+    type: 3}
+  m_PrefabInstance: {fileID: 2272983323488270778}
+  m_PrefabAsset: {fileID: 0}

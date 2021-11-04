@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5771286203799467202
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3025732205117961624, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 43acf9e7563cd4749aa208499055defb,
+        type: 2}
+    - target: {fileID: 7715921484515741906, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: b634f112b8ce8d84c901b1a39e4ab5b6,
+        type: 2}
+    - target: {fileID: 7715921484515741906, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: b634f112b8ce8d84c901b1a39e4ab5b6,
+        type: 2}
+    - target: {fileID: 7715921484515741906, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715921484515741906, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ec2f0409ea12a46aaad704894bf421,
+        type: 2}
+    - target: {fileID: 8815245327015387517, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: initialName
+      value: lightweight IMP backpack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815245327015387517, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: initialDescription
+      value: The standard-issue pack of the USCM forces. Designed to lug gear into
+        the battlefield.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982449795243520875, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987936220996783647, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_Name
+      value: LightweightIMPBackpack
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020610854443250603, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100197888029654339, guid: 6fdb43db19eedc84ab031aa637204114,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 332baf9e7656fcd448840529d4182b9a,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fdb43db19eedc84ab031aa637204114, type: 3}

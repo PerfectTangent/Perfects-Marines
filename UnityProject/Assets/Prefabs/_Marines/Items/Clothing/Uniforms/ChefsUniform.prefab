@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5467819716558405165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 80039529567037729, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cdad7c4137e5fe945a0818119732946c,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 55669a7c19c1a9942b6299be55f895d8,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 55669a7c19c1a9942b6299be55f895d8,
+        type: 2}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 875807445833728291, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b2e093174df9c44ae5d82e588885b4,
+        type: 2}
+    - target: {fileID: 5960476742974602692, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: initialName
+      value: chef's uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960476742974602692, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: initialDescription
+      value: It's an apron which is given only to the most hardcore chefs in space.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073603896714194898, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078246172147290790, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_Name
+      value: ChefsUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183003757660974866, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245280112385892858, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76932d7d40588c24dad7970765d3ad37,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 05e855837ef8d8e42bbf69291ca79ac2, type: 3}

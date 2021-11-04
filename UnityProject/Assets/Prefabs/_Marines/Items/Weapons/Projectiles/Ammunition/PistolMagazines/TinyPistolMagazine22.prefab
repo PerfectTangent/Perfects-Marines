@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1747355706092272020
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418328760131264540, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: ee6c28d40e3c8074681e712b0d025574,
+        type: 2}
+    - target: {fileID: 5802937588647369627, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Name
+      value: TinyPistolMagazine22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844574341381531183, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943020194073127111, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b9167f7eea73084c90ff20a397f7ff8,
+        type: 3}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialName
+      value: tiny pistol magazine (.22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialDescription
+      value: A surprisingly small magazine, holding .22 bullets. No Kolibri, but
+        it's getting there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialTraits.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4885307d6619bc94fb7d8b7d92bfc5b8,
+        type: 2}
+    - target: {fileID: 8665711366066072130, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: ammoType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665711366066072130, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: magazineSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665711366066072130, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 4622773063367051532, guid: aea30db70b7623a40bdf81e0e9b8cd48,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40001f0cf25e54044a30a0d5089fcbec, type: 3}

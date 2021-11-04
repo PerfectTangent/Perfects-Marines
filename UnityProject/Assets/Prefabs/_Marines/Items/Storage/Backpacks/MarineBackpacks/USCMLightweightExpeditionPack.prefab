@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8688565592665817855
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2426265557804106147, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: e8b6fa61b6bdb4b8aa2833a751dfc487,
+        type: 2}
+    - target: {fileID: 2921455617318233883, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: initialName
+      value: USCM lightweight expedition pack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921455617318233883, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heavy-duty IMP based backpack that can be slung around the front or
+        to the side, and can quickly be accessed with only one hand. Usually issued
+        to USCM intelligence officers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213168040744745765, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcd72cd5d2d6b424f89e87aa15ca4c72,
+        type: 3}
+    - target: {fileID: 3343503619501541497, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMLightweightExpeditionPack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347582945316254989, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455025400552453581, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7acba80bd874d6b41a4edb17742ba4bf,
+        type: 2}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7acba80bd874d6b41a4edb17742ba4bf,
+        type: 2}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163972825572677300, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 97df9df4278155c498a39dedacab4f78,
+        type: 2}
+    - target: {fileID: 8872264870284620798, guid: 521e98a45c5e9b64aa31bbb612813d86,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: ad3eaf98101e32a4eb3bd8490c31a926,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 521e98a45c5e9b64aa31bbb612813d86, type: 3}
