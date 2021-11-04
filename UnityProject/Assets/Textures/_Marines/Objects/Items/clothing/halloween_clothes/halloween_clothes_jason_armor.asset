@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: halloween_clothes_jason_armor
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 2578630299356870724, guid: 635552adf09a8d24ebc3a60a52654d5c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 974105710457922972, guid: 635552adf09a8d24ebc3a60a52654d5c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 176187155754343167, guid: 635552adf09a8d24ebc3a60a52654d5c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3636976414917411095, guid: 635552adf09a8d24ebc3a60a52654d5c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26729

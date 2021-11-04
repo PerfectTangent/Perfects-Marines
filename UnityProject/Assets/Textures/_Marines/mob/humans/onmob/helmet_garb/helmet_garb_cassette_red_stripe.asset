@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_cassette_red_stripe
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5777501229910841255, guid: 330be37f5a0968b4f84c12050544115b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7944804034606865068, guid: 330be37f5a0968b4f84c12050544115b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4305228142641385242, guid: 330be37f5a0968b4f84c12050544115b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1248893891579400935, guid: 330be37f5a0968b4f84c12050544115b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28683

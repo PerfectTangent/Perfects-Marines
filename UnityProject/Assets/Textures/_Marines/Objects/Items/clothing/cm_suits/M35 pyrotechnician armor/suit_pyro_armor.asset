@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_pyro_armor
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3995436131493164477, guid: 526883909a8dc07499169c7b235cc3b5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4055875264817094757, guid: 526883909a8dc07499169c7b235cc3b5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1980934045662138271, guid: 526883909a8dc07499169c7b235cc3b5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8988382135848681354, guid: 526883909a8dc07499169c7b235cc3b5,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29261

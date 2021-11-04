@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_hydrosecurebroken
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -9020334417689239625, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4683515279894542225, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 702568889247216755, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6265002298002555618, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5510469251711607736, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5032828117189473573, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2740681229171507043, guid: 414e21387c440fe4c8c55ae311dc64a2,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31103
+  DisplayName: 

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: hands_robocop_gloves
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3040516533195273748, guid: 8a66a545f75610e4d98f3ce8f4a50d5b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5272693455891685430, guid: 8a66a545f75610e4d98f3ce8f4a50d5b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 222088139582288241, guid: 8a66a545f75610e4d98f3ce8f4a50d5b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3672158763334233044, guid: 8a66a545f75610e4d98f3ce8f4a50d5b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28220

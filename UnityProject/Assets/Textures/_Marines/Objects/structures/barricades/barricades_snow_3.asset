@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: barricades_snow_3
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3323483716392527449, guid: 05bcad84661141347bca37799d20e8ef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -353593132291068241, guid: 05bcad84661141347bca37799d20e8ef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -446054956335406079, guid: 05bcad84661141347bca37799d20e8ef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6413750515060317371, guid: 05bcad84661141347bca37799d20e8ef,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31010
+  DisplayName: 

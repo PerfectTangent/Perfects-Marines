@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: human_face_camo_brown_s
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -2667338121584036380, guid: 7cb5f31392af1f243aab9fbc9f301086,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4357748966523619352, guid: 7cb5f31392af1f243aab9fbc9f301086,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1561501801904243320, guid: 7cb5f31392af1f243aab9fbc9f301086,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -274784135726075797, guid: 7cb5f31392af1f243aab9fbc9f301086,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28783

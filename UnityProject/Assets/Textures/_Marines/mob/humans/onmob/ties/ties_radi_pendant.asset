@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ties_radi_pendant
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3502912542664488867, guid: b383acd8a0d802348b1fc1421c64baea,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6224486007543263559, guid: b383acd8a0d802348b1fc1421c64baea,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6565227841909620693, guid: b383acd8a0d802348b1fc1421c64baea,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8012795836991375724, guid: b383acd8a0d802348b1fc1421c64baea,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29540

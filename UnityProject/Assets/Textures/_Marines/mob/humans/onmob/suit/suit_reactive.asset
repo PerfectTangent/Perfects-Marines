@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_reactive
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5289503060972040284, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6738661583917107179, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3152683116200716887, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 148693543737741226, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1508440703540978578, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5187838058322531959, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3244188348069029034, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -8833142690958707384, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6519372452502272085, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -367780488441917543, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3404180282466955576, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1364103818198833626, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6922119871104471507, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8330826236641733230, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -1059060203797214983, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5730170767522347946, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5990525977873726553, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6166519921676896425, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7383281216397271087, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1983168728767436846, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6253699020076426890, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 2788309010030345284, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1204747594781985369, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1063542553592774435, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7603816834570892856, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3449819684091294248, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8232522465961245732, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 60862958208100538, guid: aa47bd39b798900468a8388f76f9e685,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 29266

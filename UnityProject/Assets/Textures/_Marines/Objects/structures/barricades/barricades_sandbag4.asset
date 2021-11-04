@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: barricades_sandbag4
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6013454488392542328, guid: 4561571f0c654f8499ddf3ca31b49c54,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2028853647798911726, guid: 4561571f0c654f8499ddf3ca31b49c54,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7356854398054324834, guid: 4561571f0c654f8499ddf3ca31b49c54,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1508849893820273210, guid: 4561571f0c654f8499ddf3ca31b49c54,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31000
+  DisplayName: 

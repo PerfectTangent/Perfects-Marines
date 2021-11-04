@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_spikelauncher_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 4027684564103394809, guid: 0b86ea67cd9b2fc41aea494ac4a741f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3290263476930322479, guid: 0b86ea67cd9b2fc41aea494ac4a741f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3475378273912700893, guid: 0b86ea67cd9b2fc41aea494ac4a741f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4068333314209435202, guid: 0b86ea67cd9b2fc41aea494ac4a741f5,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25397

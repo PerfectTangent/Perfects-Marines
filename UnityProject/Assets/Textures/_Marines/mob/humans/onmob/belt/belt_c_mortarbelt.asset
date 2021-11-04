@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: belt_c_mortarbelt
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5919201358018898225, guid: c34a6e5e0f7813d438aea748ebfb9927,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5657203334325496846, guid: c34a6e5e0f7813d438aea748ebfb9927,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7580505430303344219, guid: c34a6e5e0f7813d438aea748ebfb9927,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2813983374904668878, guid: c34a6e5e0f7813d438aea748ebfb9927,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27984

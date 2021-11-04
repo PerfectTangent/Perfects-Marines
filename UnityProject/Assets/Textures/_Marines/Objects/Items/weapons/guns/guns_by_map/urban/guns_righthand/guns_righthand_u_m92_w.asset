@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: guns_righthand_u_m92_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7960674468978841317, guid: 93fe41447c059bb49bc61c1d9b70591e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7657985008270674389, guid: 93fe41447c059bb49bc61c1d9b70591e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8904413619834788266, guid: 93fe41447c059bb49bc61c1d9b70591e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7625912567727565088, guid: 93fe41447c059bb49bc61c1d9b70591e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 30426
+  DisplayName: 

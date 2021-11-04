@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: mask_glasses
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6642189541005656643, guid: 232f335f98d95c741b549984b22a64e7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2133336611599222907, guid: 232f335f98d95c741b549984b22a64e7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3191919920537426591, guid: 232f335f98d95c741b549984b22a64e7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5411544064171494043, guid: 232f335f98d95c741b549984b22a64e7,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28835

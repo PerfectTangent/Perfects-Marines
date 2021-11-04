@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_slot_s_g8pouch
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3175990852527076122, guid: 3aaff0bfe48b67d4a88ebf1add0c42b4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5234029423507847025, guid: 3aaff0bfe48b67d4a88ebf1add0c42b4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 774231423993699067, guid: 3aaff0bfe48b67d4a88ebf1add0c42b4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7340826292826055089, guid: 3aaff0bfe48b67d4a88ebf1add0c42b4,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29510

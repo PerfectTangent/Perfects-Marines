@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_r_feet
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3347377679408544617, guid: 7f9fbb2a9cb7add49a1b6fc7bd3ca3ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3722638058812005558, guid: 7f9fbb2a9cb7add49a1b6fc7bd3ca3ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4537717675306702626, guid: 7f9fbb2a9cb7add49a1b6fc7bd3ca3ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6079623910435045712, guid: 7f9fbb2a9cb7add49a1b6fc7bd3ca3ee,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24450

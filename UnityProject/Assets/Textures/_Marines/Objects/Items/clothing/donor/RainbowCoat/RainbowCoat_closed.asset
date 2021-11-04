@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: RainbowCoat_closed
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3330984756735713963, guid: 096b74bf5d3cdff448cfa4ee9e61f94f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 766872800579703222, guid: 096b74bf5d3cdff448cfa4ee9e61f94f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7044581498207460050, guid: 096b74bf5d3cdff448cfa4ee9e61f94f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 336847636405699237, guid: 096b74bf5d3cdff448cfa4ee9e61f94f,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26564

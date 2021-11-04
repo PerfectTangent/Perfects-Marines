@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_stripper_g_over
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 2583429896420645060, guid: cda165d55c7ae6542a05819035aa7a92,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3940421834475171343, guid: cda165d55c7ae6542a05819035aa7a92,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3880505173231285457, guid: cda165d55c7ae6542a05819035aa7a92,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4694110019611290336, guid: cda165d55c7ae6542a05819035aa7a92,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29322

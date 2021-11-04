@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ears_walkman
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7037264532800876183, guid: 53ada62fae3301b4890d3936ca2de41a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9473073518537977, guid: 53ada62fae3301b4890d3936ca2de41a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7716750463808049117, guid: 53ada62fae3301b4890d3936ca2de41a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5228173220537878058, guid: 53ada62fae3301b4890d3936ca2de41a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28150

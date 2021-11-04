@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: HEAD_redhelm
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6959391338935365373, guid: 8cfa8bb41b2e05849a9e32ddd6c48ba8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3717111763958171315, guid: 8cfa8bb41b2e05849a9e32ddd6c48ba8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 141309564080967508, guid: 8cfa8bb41b2e05849a9e32ddd6c48ba8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3110977717411410395, guid: 8cfa8bb41b2e05849a9e32ddd6c48ba8,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26547

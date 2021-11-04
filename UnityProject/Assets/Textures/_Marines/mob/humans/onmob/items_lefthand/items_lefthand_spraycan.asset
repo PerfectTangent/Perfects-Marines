@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_spraycan
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5710212660444155790, guid: 8fc8eea8d9b0c0240963ba694e57e1a2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7308403780668724708, guid: 8fc8eea8d9b0c0240963ba694e57e1a2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2949051918908072893, guid: 8fc8eea8d9b0c0240963ba694e57e1a2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1791803178102981535, guid: 8fc8eea8d9b0c0240963ba694e57e1a2,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24516

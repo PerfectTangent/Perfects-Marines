@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_t_smartpack_p
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3759845492635166239, guid: 73c1a454384d13049af6d7fcc5655433,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8541210985224483133, guid: 73c1a454384d13049af6d7fcc5655433,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5475749453264770011, guid: 73c1a454384d13049af6d7fcc5655433,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -866244014110719117, guid: 73c1a454384d13049af6d7fcc5655433,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27950

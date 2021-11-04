@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_red_reverse
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7969361630731944906, guid: 661298f211567aa4db57c2d4e49b3756,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8958780696904355756, guid: 661298f211567aa4db57c2d4e49b3756,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6531168451984580368, guid: 661298f211567aa4db57c2d4e49b3756,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3133888138520532009, guid: 661298f211567aa4db57c2d4e49b3756,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28761

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_c_CO_jumpsuit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -479914513608884935, guid: ceb8e4fbed5fc2443b83aa17dfffc24e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 973368983589551595, guid: ceb8e4fbed5fc2443b83aa17dfffc24e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6719854044874832397, guid: ceb8e4fbed5fc2443b83aa17dfffc24e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9180486296398416273, guid: ceb8e4fbed5fc2443b83aa17dfffc24e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29625

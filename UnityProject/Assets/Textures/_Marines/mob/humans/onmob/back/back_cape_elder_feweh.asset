@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_cape_elder_feweh
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6698748849281836733, guid: d420fe85910f0b54ab612d3d33a64a4c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6107131932919680205, guid: d420fe85910f0b54ab612d3d33a64a4c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1572125888129984685, guid: d420fe85910f0b54ab612d3d33a64a4c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3930010491370855413, guid: d420fe85910f0b54ab612d3d33a64a4c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27790

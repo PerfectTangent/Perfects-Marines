@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_bandana
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5440146050597846734, guid: 655d38813ea6e3044b77283488c41c3d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6534813875118106403, guid: 655d38813ea6e3044b77283488c41c3d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7531212058679453348, guid: 655d38813ea6e3044b77283488c41c3d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1503578904238807311, guid: 655d38813ea6e3044b77283488c41c3d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28236

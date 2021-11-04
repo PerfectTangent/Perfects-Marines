@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_cassette_ocean
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7744660583053153111, guid: e6f6b0c6056f8c549a01102e2ebd4fa2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7307524348251956038, guid: e6f6b0c6056f8c549a01102e2ebd4fa2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1286958875569935513, guid: e6f6b0c6056f8c549a01102e2ebd4fa2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3373345674562131156, guid: e6f6b0c6056f8c549a01102e2ebd4fa2,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28676

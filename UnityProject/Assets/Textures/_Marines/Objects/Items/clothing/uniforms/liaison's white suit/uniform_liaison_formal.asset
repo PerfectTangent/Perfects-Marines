@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_liaison_formal
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 4174770623505721502, guid: 6b4d716ecd92d8d4a9ca92a27c5a7602,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 925659126142816442, guid: 6b4d716ecd92d8d4a9ca92a27c5a7602,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2974469055011216376, guid: 6b4d716ecd92d8d4a9ca92a27c5a7602,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4747944702196343244, guid: 6b4d716ecd92d8d4a9ca92a27c5a7602,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29708

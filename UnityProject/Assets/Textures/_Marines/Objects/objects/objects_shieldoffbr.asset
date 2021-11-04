@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: objects_shieldoffbr
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7017209086137736267, guid: 5f748db2b09df874fab5469b68e72172,
+        type: 3}
+      secondDelay: 0.3
+    - sprite: {fileID: -6166724414169404035, guid: 5f748db2b09df874fab5469b68e72172,
+        type: 3}
+      secondDelay: 0.3
+  IsPalette: 0
+  setID: 30909
+  DisplayName: 

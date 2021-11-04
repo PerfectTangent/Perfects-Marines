@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_eleanorstone
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -4249663700765200865, guid: 293a5a45412057c4d8e8b8fe7e66f978,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1070291825351936353, guid: 293a5a45412057c4d8e8b8fe7e66f978,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -125232682241211724, guid: 293a5a45412057c4d8e8b8fe7e66f978,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2415531805714669639, guid: 293a5a45412057c4d8e8b8fe7e66f978,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24258

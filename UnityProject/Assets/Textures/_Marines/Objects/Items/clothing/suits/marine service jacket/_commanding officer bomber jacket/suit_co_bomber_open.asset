@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_co_bomber_open
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6361913607751237458, guid: 48a93ee69150ebb4885e775b2e68dc46,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4666776248489154671, guid: 48a93ee69150ebb4885e775b2e68dc46,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7171755173847585902, guid: 48a93ee69150ebb4885e775b2e68dc46,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2458614213552026477, guid: 48a93ee69150ebb4885e775b2e68dc46,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29029

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_lighter_c
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -9002982684163581432, guid: fed5465226604e24da7dc96105da5959,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8239456078376015884, guid: fed5465226604e24da7dc96105da5959,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6105224466689810329, guid: fed5465226604e24da7dc96105da5959,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8739955488024570737, guid: fed5465226604e24da7dc96105da5959,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28742

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_co_formalhat_black
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8460903008550672987, guid: 4a8a7febee56c5647b64a7cb9f58dc63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2302296244483973685, guid: 4a8a7febee56c5647b64a7cb9f58dc63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1373382690754703331, guid: 4a8a7febee56c5647b64a7cb9f58dc63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6236195479549606629, guid: 4a8a7febee56c5647b64a7cb9f58dc63,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28305

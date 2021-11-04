@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_shovel
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3766519690804746565, guid: 3a0506f855d43244b9ae4a3db184dc0b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1561744515682506265, guid: 3a0506f855d43244b9ae4a3db184dc0b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5609685118542978755, guid: 3a0506f855d43244b9ae4a3db184dc0b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 431514570762737072, guid: 3a0506f855d43244b9ae4a3db184dc0b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25138

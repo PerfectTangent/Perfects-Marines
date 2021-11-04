@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: barricades_plasteel_closed_connection_8
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1216446621079648815, guid: a727087b4132db24691a8e69e6ebd73a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9205965655256137807, guid: a727087b4132db24691a8e69e6ebd73a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2517895930931257952, guid: a727087b4132db24691a8e69e6ebd73a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2672406491199903521, guid: a727087b4132db24691a8e69e6ebd73a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 30990
+  DisplayName: 

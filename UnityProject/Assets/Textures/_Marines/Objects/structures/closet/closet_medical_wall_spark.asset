@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_medical_wall_spark
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7353428741816022599, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5562957043274254277, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4120171603103760863, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2831516544638217960, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1853235876959969252, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 2
+    - sprite: {fileID: -9052932790893616037, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2951251756213127700, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7314427487987747833, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -9216006515168774349, guid: 362422d4f0de07a40aaa7508d4cee559,
+        type: 3}
+      secondDelay: 6
+  IsPalette: 0
+  setID: 31109
+  DisplayName: 

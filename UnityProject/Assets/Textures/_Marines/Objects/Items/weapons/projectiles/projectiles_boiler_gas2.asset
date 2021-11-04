@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: projectiles_boiler_gas2
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3200163172199212615, guid: 11c65af7f9b03024e92937f76adcdbd0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -7013871809369821481, guid: 11c65af7f9b03024e92937f76adcdbd0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 865115260345144657, guid: 11c65af7f9b03024e92937f76adcdbd0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 8033908523175440045, guid: 11c65af7f9b03024e92937f76adcdbd0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 6305098485574266135, guid: 11c65af7f9b03024e92937f76adcdbd0,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 30492
+  DisplayName: 

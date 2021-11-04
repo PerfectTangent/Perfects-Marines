@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_black_tango
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1468975409648342477, guid: c4f3b2ff7b6491c48bab60011b52a99d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9207719496813910929, guid: c4f3b2ff7b6491c48bab60011b52a99d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5573091236863974227, guid: c4f3b2ff7b6491c48bab60011b52a99d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7426906148681751961, guid: c4f3b2ff7b6491c48bab60011b52a99d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29576

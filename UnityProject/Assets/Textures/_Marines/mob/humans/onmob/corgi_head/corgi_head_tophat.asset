@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: corgi_head_tophat
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6806837381666845446, guid: 20e6fee1f8d1bef49b87926c464de0ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6217227106685906847, guid: 20e6fee1f8d1bef49b87926c464de0ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6771643827723453022, guid: 20e6fee1f8d1bef49b87926c464de0ee,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4667610085776003783, guid: 20e6fee1f8d1bef49b87926c464de0ee,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28136

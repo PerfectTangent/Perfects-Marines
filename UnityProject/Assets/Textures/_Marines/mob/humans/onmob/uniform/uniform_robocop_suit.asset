@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_robocop_suit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6594258096531738722, guid: e42b5e2b4940283408eb22efef9f4253,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7522555679685402191, guid: e42b5e2b4940283408eb22efef9f4253,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6715241951511038892, guid: e42b5e2b4940283408eb22efef9f4253,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3995460412984065540, guid: e42b5e2b4940283408eb22efef9f4253,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29795

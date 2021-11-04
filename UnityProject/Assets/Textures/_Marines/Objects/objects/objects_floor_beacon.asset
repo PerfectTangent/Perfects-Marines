@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: objects_floor_beacon
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8760911842713142622, guid: 759fe91f82fc0dc40b4d3b6c0859e328,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 1227150669024151424, guid: 759fe91f82fc0dc40b4d3b6c0859e328,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 5743106023782030167, guid: 759fe91f82fc0dc40b4d3b6c0859e328,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -7475330192422372698, guid: 759fe91f82fc0dc40b4d3b6c0859e328,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 3101714952947524785, guid: 759fe91f82fc0dc40b4d3b6c0859e328,
+        type: 3}
+      secondDelay: 0.5
+  IsPalette: 0
+  setID: 30864
+  DisplayName: 

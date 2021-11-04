@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_henrick_jumpsuit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5692201588260162220, guid: fac067321ea5c6048bac48e8897b4b82,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5941330809448980729, guid: fac067321ea5c6048bac48e8897b4b82,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -962725969051110233, guid: fac067321ea5c6048bac48e8897b4b82,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6827528794670330871, guid: fac067321ea5c6048bac48e8897b4b82,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29691

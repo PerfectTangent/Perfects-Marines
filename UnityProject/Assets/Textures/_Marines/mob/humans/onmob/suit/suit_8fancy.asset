@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_8fancy
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -367540432128863938, guid: 5fe04fd660f894c4c9f5296d76147390,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4076999725840053714, guid: 5fe04fd660f894c4c9f5296d76147390,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2396672993551945038, guid: 5fe04fd660f894c4c9f5296d76147390,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7976272505995397277, guid: 5fe04fd660f894c4c9f5296d76147390,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28964

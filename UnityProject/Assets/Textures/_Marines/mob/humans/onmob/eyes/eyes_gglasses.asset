@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: eyes_gglasses
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7083616506749410915, guid: 263c98477ad0ca84bb4b12cf3af1b0b3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4824413947980610289, guid: 263c98477ad0ca84bb4b12cf3af1b0b3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3386515594123208527, guid: 263c98477ad0ca84bb4b12cf3af1b0b3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8577785130929279757, guid: 263c98477ad0ca84bb4b12cf3af1b0b3,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28160

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_d_band2
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7349646676772738734, guid: 6407c73929f1ff142a8709db6370295c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 384758100884649752, guid: 6407c73929f1ff142a8709db6370295c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 380955686795608397, guid: 6407c73929f1ff142a8709db6370295c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6077200307274167231, guid: 6407c73929f1ff142a8709db6370295c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28363

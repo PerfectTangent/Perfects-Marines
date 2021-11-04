@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: military warden jumpsuit
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: 268106f89c13c7747bc989bd7211adf3, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: 3789130262752e34594529bb17330ac2, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: 38321ac1d66bb234c88fcca2793af616, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: b2b9757169c57a44f98c4db9dcf7119f, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

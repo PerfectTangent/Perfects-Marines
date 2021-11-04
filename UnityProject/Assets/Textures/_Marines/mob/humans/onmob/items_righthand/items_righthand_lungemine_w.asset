@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_lungemine_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6105572772105320127, guid: 4d77a4b0312a0414c8b9cfb870afdba9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5517442422458377324, guid: 4d77a4b0312a0414c8b9cfb870afdba9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9193976561816824144, guid: 4d77a4b0312a0414c8b9cfb870afdba9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4348472571904441348, guid: 4d77a4b0312a0414c8b9cfb870afdba9,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25021

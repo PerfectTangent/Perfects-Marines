@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_breacher_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8747510052232615528, guid: 48d57f8e9047659458cd2a8d476d6cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8074670490699259173, guid: 48d57f8e9047659458cd2a8d476d6cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4515932691889633611, guid: 48d57f8e9047659458cd2a8d476d6cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8459696700187440516, guid: 48d57f8e9047659458cd2a8d476d6cef,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24813

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_redcoat
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -119230620670220795, guid: bfe1bbfb1a03f6145ba428f1620416d9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1056195170442041003, guid: bfe1bbfb1a03f6145ba428f1620416d9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 839388340559075577, guid: bfe1bbfb1a03f6145ba428f1620416d9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8374162506578972648, guid: bfe1bbfb1a03f6145ba428f1620416d9,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28510

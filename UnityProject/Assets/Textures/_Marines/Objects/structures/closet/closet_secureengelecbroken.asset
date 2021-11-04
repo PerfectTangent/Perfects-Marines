@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_secureengelecbroken
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7446312205272576489, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -29515604236177244, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6838737789489270145, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8299171598304383713, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3145618797432863357, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7253504450798890664, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2511675033302178642, guid: bf643699f63431e4cbf3497d68321d4f,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31197
+  DisplayName: 

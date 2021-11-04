@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_chemistry
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8502586319564254704, guid: 8a67dd6cb42686d46b08bbd5e5f8ee27,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6339365137900711218, guid: 8a67dd6cb42686d46b08bbd5e5f8ee27,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8970858029200202232, guid: 8a67dd6cb42686d46b08bbd5e5f8ee27,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3607489504376278407, guid: 8a67dd6cb42686d46b08bbd5e5f8ee27,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29604

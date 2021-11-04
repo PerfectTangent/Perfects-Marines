@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ties_cargo
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 4244246678225918853, guid: e09f8cdb4b8ce4c44b4ae75346d76d8b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -871274254737221100, guid: e09f8cdb4b8ce4c44b4ae75346d76d8b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1656896209662732164, guid: e09f8cdb4b8ce4c44b4ae75346d76d8b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 626874307464294791, guid: e09f8cdb4b8ce4c44b4ae75346d76d8b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29524

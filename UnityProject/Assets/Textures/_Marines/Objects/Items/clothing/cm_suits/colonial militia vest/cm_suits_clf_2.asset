@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: cm_suits_clf_2
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7368055492052900321, guid: 8044516b78890f84bb67ed4ba58ad0d8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3436540967770469553, guid: 8044516b78890f84bb67ed4ba58ad0d8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4867940254471686125, guid: 8044516b78890f84bb67ed4ba58ad0d8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4742381914940653242, guid: 8044516b78890f84bb67ed4ba58ad0d8,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26302

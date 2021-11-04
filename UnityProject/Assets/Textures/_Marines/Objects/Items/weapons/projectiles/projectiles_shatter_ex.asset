@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: projectiles_shatter_ex
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8348198781015720462, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1673898776685248392, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6727409874659285027, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6537337055717101811, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 253826225177230155, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 33636049054036903, guid: b845b4e8ad47df54793285b696d79414,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30538
+  DisplayName: 

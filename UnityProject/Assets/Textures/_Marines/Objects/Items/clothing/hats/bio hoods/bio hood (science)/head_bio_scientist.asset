@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_bio_scientist
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1686246173521171345, guid: 2f7092a6272ffbd42a64a06737b70bb6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6053461216029046443, guid: 2f7092a6272ffbd42a64a06737b70bb6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6205159558782840338, guid: 2f7092a6272ffbd42a64a06737b70bb6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3098863855689563849, guid: 2f7092a6272ffbd42a64a06737b70bb6,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28252

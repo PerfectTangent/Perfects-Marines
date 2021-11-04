@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: mask_pmc_mask
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5792660953211290159, guid: 2540b47e8264d9445bcb7c61d0223fdf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -366337239691557757, guid: 2540b47e8264d9445bcb7c61d0223fdf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1408464851243757520, guid: 2540b47e8264d9445bcb7c61d0223fdf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3843797374358936382, guid: 2540b47e8264d9445bcb7c61d0223fdf,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28862

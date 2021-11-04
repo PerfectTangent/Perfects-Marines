@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_secureqmbroken
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -4317657854356223423, guid: 772c0cf2651e8704785827bdb2d1e2a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3203979324799637295, guid: 772c0cf2651e8704785827bdb2d1e2a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3062205742006167184, guid: 772c0cf2651e8704785827bdb2d1e2a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6261960723705642733, guid: 772c0cf2651e8704785827bdb2d1e2a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6966954867520001704, guid: 772c0cf2651e8704785827bdb2d1e2a8,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31213
+  DisplayName: 

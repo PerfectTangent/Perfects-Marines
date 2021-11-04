@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: objects_hotseat_new_folding
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -2915979420461648294, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1631244036404729721, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1670792146967250000, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4022238144636707410, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5093639303831192774, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -7152557087402296781, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2728355143477114628, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7216446428727210968, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4071513818784673000, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3218462031281389187, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -7874520421111847075, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4699351422658183671, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8468057416937020224, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4178223230872933042, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3133747725429902112, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -7797058295557782632, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8154066080427419409, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8492765860649804314, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 867320513369442501, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2472770657431537908, guid: a8776b831cd13d848b40dd785ccd2de1,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30875
+  DisplayName: 

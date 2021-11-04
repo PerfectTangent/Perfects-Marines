@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: feet_jackboots
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8521358286805909138, guid: 20e2ab4031fafb647bcae8d39e1ea1d7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6676186866537319468, guid: 20e2ab4031fafb647bcae8d39e1ea1d7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3113589533028739598, guid: 20e2ab4031fafb647bcae8d39e1ea1d7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -493559780106179419, guid: 20e2ab4031fafb647bcae8d39e1ea1d7,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24043

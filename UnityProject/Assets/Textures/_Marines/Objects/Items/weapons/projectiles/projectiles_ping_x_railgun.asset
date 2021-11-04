@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: projectiles_ping_x_railgun
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 291746783688101419, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7929298755673171476, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7558168688302830237, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3509560711641022928, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6049081093033002542, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3690322061151960996, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2458765206573010655, guid: 2aeacd542ba1da7468bd5f8fd9336610,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30531
+  DisplayName: 

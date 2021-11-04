@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_boba_jumpsuit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8319935179404376018, guid: 54d8ec504883adf4ebfa6377577032aa,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6810558576725533414, guid: 54d8ec504883adf4ebfa6377577032aa,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4653112176495314428, guid: 54d8ec504883adf4ebfa6377577032aa,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8553738130539833563, guid: 54d8ec504883adf4ebfa6377577032aa,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29581

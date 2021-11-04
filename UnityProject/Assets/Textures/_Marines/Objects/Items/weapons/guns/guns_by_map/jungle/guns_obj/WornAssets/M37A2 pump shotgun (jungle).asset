@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: M37A2 pump shotgun (jungle)
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: 0172748a73080df4bb2ede0e8049dc96, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: af44d50b7547e734890f81c664b3cb78, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: cc8027bf010a3414a8cd63ebeac7b1cb, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 49f3e8b195189fc4da884020e4f0f96b, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: SUITS_merc_armor
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8155575848273320429, guid: 0d9946a3c6606694fb62e8c0ab906afe,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3679604462173556297, guid: 0d9946a3c6606694fb62e8c0ab906afe,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1923036088986933150, guid: 0d9946a3c6606694fb62e8c0ab906afe,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7684384018712943486, guid: 0d9946a3c6606694fb62e8c0ab906afe,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26596

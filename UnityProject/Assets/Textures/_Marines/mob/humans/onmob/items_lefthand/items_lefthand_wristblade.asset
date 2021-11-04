@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_wristblade
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 1762034988700448554, guid: 225c105d1a3158d4486eeeef1a2a863d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3275780687712976147, guid: 225c105d1a3158d4486eeeef1a2a863d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6807798102237295978, guid: 225c105d1a3158d4486eeeef1a2a863d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5459938431743539516, guid: 225c105d1a3158d4486eeeef1a2a863d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24599

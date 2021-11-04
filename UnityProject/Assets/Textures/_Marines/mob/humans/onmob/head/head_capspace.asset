@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_capspace
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6883636152240329474, guid: 29907f4a13b88f04d89a7e08fdb79928,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6150990224828518466, guid: 29907f4a13b88f04d89a7e08fdb79928,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3040063881268120663, guid: 29907f4a13b88f04d89a7e08fdb79928,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1572272950998919993, guid: 29907f4a13b88f04d89a7e08fdb79928,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28274

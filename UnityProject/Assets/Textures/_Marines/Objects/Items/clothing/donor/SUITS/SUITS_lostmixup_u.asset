@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: SUITS_lostmixup_u
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5065440300848163426, guid: 1253bf063b357674b90e18d1794f7161,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5191155936477953443, guid: 1253bf063b357674b90e18d1794f7161,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2127264086594611106, guid: 1253bf063b357674b90e18d1794f7161,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7189264136032713879, guid: 1253bf063b357674b90e18d1794f7161,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26591

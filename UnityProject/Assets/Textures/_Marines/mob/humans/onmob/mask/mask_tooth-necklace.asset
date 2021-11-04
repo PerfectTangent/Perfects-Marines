@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: mask_tooth-necklace
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 1554922437280000995, guid: d94051c2f0463f540b68b8e31f0bd5ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3480896115419891379, guid: d94051c2f0463f540b68b8e31f0bd5ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6452743188376451024, guid: d94051c2f0463f540b68b8e31f0bd5ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2195098193242500060, guid: d94051c2f0463f540b68b8e31f0bd5ba,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28899

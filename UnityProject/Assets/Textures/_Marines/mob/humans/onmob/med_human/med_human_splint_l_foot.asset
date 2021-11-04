@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: med_human_splint_l_foot
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -400390202229344601, guid: 9bb26b2a770a2e745993fcd265925810,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8625563048411894468, guid: 9bb26b2a770a2e745993fcd265925810,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 252484087577562381, guid: 9bb26b2a770a2e745993fcd265925810,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -301925208289819712, guid: 9bb26b2a770a2e745993fcd265925810,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28933

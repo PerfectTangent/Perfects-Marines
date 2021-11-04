@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_d_sadar_helmet
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6272065821041489967, guid: e74fd248ff546ee429d7e94c9a9f093d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4524071106445312976, guid: e74fd248ff546ee429d7e94c9a9f093d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6433303078571414817, guid: e74fd248ff546ee429d7e94c9a9f093d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6160512270064636810, guid: e74fd248ff546ee429d7e94c9a9f093d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28392

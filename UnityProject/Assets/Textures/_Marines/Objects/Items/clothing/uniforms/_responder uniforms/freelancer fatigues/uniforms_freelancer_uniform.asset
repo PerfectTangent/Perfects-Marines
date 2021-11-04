@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniforms_freelancer_uniform
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6798755703832392362, guid: 61f1a2a4ef63ece4783c97de6204c6eb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 293081676624921671, guid: 61f1a2a4ef63ece4783c97de6204c6eb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6739132727743312655, guid: 61f1a2a4ef63ece4783c97de6204c6eb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7309753645642877831, guid: 61f1a2a4ef63ece4783c97de6204c6eb,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27594

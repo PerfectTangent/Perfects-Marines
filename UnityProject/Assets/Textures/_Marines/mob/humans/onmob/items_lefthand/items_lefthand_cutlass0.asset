@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_cutlass0
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3574586892749513921, guid: fa8dce8a0aec2c549a3912f3c5d209dd,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1201278524337974838, guid: fa8dce8a0aec2c549a3912f3c5d209dd,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4673075868312022476, guid: fa8dce8a0aec2c549a3912f3c5d209dd,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9087423979298719324, guid: fa8dce8a0aec2c549a3912f3c5d209dd,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24220

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_g_deagle
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 31778526829040611, guid: 28344850824b25f498837fe2f0fbf4de,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3022292882205965598, guid: 28344850824b25f498837fe2f0fbf4de,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8120361688216222816, guid: 28344850824b25f498837fe2f0fbf4de,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1584126411886409671, guid: 28344850824b25f498837fe2f0fbf4de,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25296

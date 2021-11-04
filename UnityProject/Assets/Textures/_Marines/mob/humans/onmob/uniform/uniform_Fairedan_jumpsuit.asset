@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_Fairedan_jumpsuit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8247430525590149352, guid: d7969492aca530e4e94bc6b6cd51d2b2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5437588084453493975, guid: d7969492aca530e4e94bc6b6cd51d2b2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4331644960701293803, guid: d7969492aca530e4e94bc6b6cd51d2b2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6794866466021465326, guid: d7969492aca530e4e94bc6b6cd51d2b2,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29673

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_helmet_cig_redman
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 1850016022474536881, guid: 3bde44be3022085409c07b7e4682d59b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 636350641002221352, guid: 3bde44be3022085409c07b7e4682d59b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5948340145700704662, guid: 3bde44be3022085409c07b7e4682d59b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3693777176860276836, guid: 3bde44be3022085409c07b7e4682d59b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28726

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_fire_suit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 9153115591052022220, guid: 7b39424eee459d745ab9db3425267ead,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5832225265560258415, guid: 7b39424eee459d745ab9db3425267ead,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3025724515097870882, guid: 7b39424eee459d745ab9db3425267ead,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4912820074816518153, guid: 7b39424eee459d745ab9db3425267ead,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24926

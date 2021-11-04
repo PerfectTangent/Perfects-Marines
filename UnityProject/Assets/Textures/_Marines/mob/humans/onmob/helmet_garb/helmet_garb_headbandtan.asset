@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_headbandtan
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7383654022452735122, guid: 5c34d377f83f5b74f887bd87cac5ea45,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -479053917918848391, guid: 5c34d377f83f5b74f887bd87cac5ea45,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7612853314229800401, guid: 5c34d377f83f5b74f887bd87cac5ea45,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1366467775781290235, guid: 5c34d377f83f5b74f887bd87cac5ea45,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28716

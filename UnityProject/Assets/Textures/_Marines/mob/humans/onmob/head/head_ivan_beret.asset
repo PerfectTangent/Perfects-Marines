@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_ivan_beret
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3997064642586145644, guid: 92b9c7c3d12b34745ad42cc4096371c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7338160178268286804, guid: 92b9c7c3d12b34745ad42cc4096371c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2294831195156841303, guid: 92b9c7c3d12b34745ad42cc4096371c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2594568314208963014, guid: 92b9c7c3d12b34745ad42cc4096371c9,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28458

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: floors_red
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 1147289676766425063, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6543392429895298836, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1392698015518543509, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5398510257761526103, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8908761679038407722, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4230484944364976939, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9199230729726820568, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4289160815563495715, guid: 4bf7d7fd55481424c9f9debebd5facb8,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31425
+  DisplayName: 

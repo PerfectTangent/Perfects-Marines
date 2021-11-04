@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ties_platinum
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7316551590515498952, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 12
+    - sprite: {fileID: 2559461492012070561, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5537623387580866243, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7213174930473276141, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -9129124289551137278, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4724357110912240936, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6041235456698258600, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2752883754230627426, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -9103704195466228806, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5581300150094661960, guid: dfe91dca0d5e20f41a8c59760bb8d94e,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 27461

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_buildpipe
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5163578692642991641, guid: 190d780119b9db548b4879c727291a47,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4981034604831766813, guid: 190d780119b9db548b4879c727291a47,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1849703612106764216, guid: 190d780119b9db548b4879c727291a47,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5815243587038194447, guid: 190d780119b9db548b4879c727291a47,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24171
