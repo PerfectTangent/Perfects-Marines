@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c909446621c41cd975e26eab73860a6, type: 3}
+  m_Name: BasiraArmstrongAttachments
+  m_EditorClassIdentifier: 
+  MaxItemSize: 5
+  Whitelist:
+  - {fileID: 11400000, guid: 4abfade533d3a194f957cf19a92b9ce1, type: 2}
+  - {fileID: 11400000, guid: dd2be8f193e2293b6a13e612f3d65b23, type: 2}
+  - {fileID: 11400000, guid: 0b640ce0027c5934e8422036ca82bdaf, type: 2}
+  - {fileID: 11400000, guid: af46ba027078c6341adf1fa719cfce5f, type: 2}
+  - {fileID: 11400000, guid: 475432c86e14bf94f82170357c1cde54, type: 2}
+  - {fileID: 11400000, guid: a439c6695f0d3684481ffbafb0acc20b, type: 2}
+  - {fileID: 11400000, guid: d4e02602f863fdc4d9802c03ec7190e6, type: 2}
+  - {fileID: 11400000, guid: f36761dbc0b56cf42be8daad193262be, type: 2}
+  - {fileID: 11400000, guid: 804e56e9bf92da44cbc32dfb4fbd2290, type: 2}
+  - {fileID: 11400000, guid: 1690879081cbc474da409b0648b50e2f, type: 2}
+  - {fileID: 11400000, guid: 6a91a7f708bcc504c8b97a6852d0ed95, type: 2}
+  - {fileID: 11400000, guid: 95288b76198291e4c9380bf221dba578, type: 2}
+  - {fileID: 11400000, guid: f22b1b07eaf4e494288f2e9ebf399974, type: 2}
+  - {fileID: 11400000, guid: 907d47831c5aa5d41ba0f9b11a610486, type: 2}
+  - {fileID: 11400000, guid: 0f3d5297ca64b684987634953050bc9b, type: 2}
+  Required: []
+  Blacklist: []

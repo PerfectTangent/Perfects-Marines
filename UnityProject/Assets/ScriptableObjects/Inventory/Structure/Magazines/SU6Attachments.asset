@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c909446621c41cd975e26eab73860a6, type: 3}
+  m_Name: SU6Attachments
+  m_EditorClassIdentifier: 
+  MaxItemSize: 5
+  Whitelist:
+  - {fileID: 11400000, guid: 97d951b15546b4840a617411c3581547, type: 2}
+  - {fileID: 11400000, guid: 475432c86e14bf94f82170357c1cde54, type: 2}
+  - {fileID: 11400000, guid: a439c6695f0d3684481ffbafb0acc20b, type: 2}
+  - {fileID: 11400000, guid: d4e02602f863fdc4d9802c03ec7190e6, type: 2}
+  - {fileID: 11400000, guid: e9bd6f95e83d8ee4c89ad98a5f5e85de, type: 2}
+  - {fileID: 11400000, guid: 1690879081cbc474da409b0648b50e2f, type: 2}
+  - {fileID: 11400000, guid: f36761dbc0b56cf42be8daad193262be, type: 2}
+  - {fileID: 11400000, guid: 0946cc94b72fe844a8225ca4e7d16bea, type: 2}
+  - {fileID: 11400000, guid: f04f53adaea2ead4d8cb52c8f867fda6, type: 2}
+  - {fileID: 11400000, guid: 42bfeaa5d245eff46aedd70be0562ef6, type: 2}
+  Required: []
+  Blacklist: []

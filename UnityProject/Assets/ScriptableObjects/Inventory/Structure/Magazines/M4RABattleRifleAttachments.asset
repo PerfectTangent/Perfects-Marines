@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c909446621c41cd975e26eab73860a6, type: 3}
+  m_Name: M4RABattleRifleAttachments
+  m_EditorClassIdentifier: 
+  MaxItemSize: 5
+  Whitelist:
+  - {fileID: 11400000, guid: 22a395ed4f780a74587474203e6e6d37, type: 2}
+  - {fileID: 11400000, guid: dd2be8f193e2293b6a13e612f3d65b23, type: 2}
+  - {fileID: 11400000, guid: c0fa776870601514b91d79716e5e7504, type: 2}
+  - {fileID: 11400000, guid: 181b4a230a0e1974da0097c6181625e3, type: 2}
+  - {fileID: 11400000, guid: 1662d46e99146884e8fdbc207a06f0f4, type: 2}
+  - {fileID: 11400000, guid: e9bd6f95e83d8ee4c89ad98a5f5e85de, type: 2}
+  - {fileID: 11400000, guid: dccc090227a556142b3d8122d2377efb, type: 2}
+  - {fileID: 11400000, guid: 6a91a7f708bcc504c8b97a6852d0ed95, type: 2}
+  Required: []
+  Blacklist: []
