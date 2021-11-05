@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: foreverID
+      value: Qcl5kU6w4mRh9wDC4rcrQBj6uObq6jFR
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 2de6fa37f6939da4395e35f27fdc0f06
+      objectReference: {fileID: 0}
     - target: {fileID: 9187710774849083482, guid: 9d07740a6daa37147b793a13fbf4f68b,
         type: 3}
       propertyPath: m_Name
-      value: _AttachmentBase
+      value: _AttachedGunBase
       objectReference: {fileID: 0}
     - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
         type: 3}

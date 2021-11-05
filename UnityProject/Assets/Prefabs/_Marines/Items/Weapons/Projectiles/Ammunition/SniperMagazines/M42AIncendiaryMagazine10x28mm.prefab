@@ -13,16 +13,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: aad7a5cad4011964085adc27843161e1,
         type: 2}
+    - target: {fileID: 4163817542391977434, guid: 40e3776b9595f654daba5f057e124de3,
+        type: 3}
+      propertyPath: foreverID
+      value: AMMOa7abba22M42AIn9f0bf9b9b219f3
+      objectReference: {fileID: 0}
     - target: {fileID: 5312143595887896686, guid: 40e3776b9595f654daba5f057e124de3,
         type: 3}
       propertyPath: initalProjectile
       value: 
       objectReference: {fileID: 1279823064774468785, guid: fb08ac0f48000034cac6935eb180018e,
         type: 3}
+    - target: {fileID: 6982324484366972971, guid: 40e3776b9595f654daba5f057e124de3,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 8575109144568553475}
     - target: {fileID: 6982362290222130179, guid: 40e3776b9595f654daba5f057e124de3,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 9e8f40bcff29fe24b897737ec082acf5
       objectReference: {fileID: 0}
     - target: {fileID: 7017138434491786435, guid: 40e3776b9595f654daba5f057e124de3,
         type: 3}
@@ -92,3 +102,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e3776b9595f654daba5f057e124de3, type: 3}
+--- !u!114 &8575109144568553475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6982777736188359783, guid: 40e3776b9595f654daba5f057e124de3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1722388329065157732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

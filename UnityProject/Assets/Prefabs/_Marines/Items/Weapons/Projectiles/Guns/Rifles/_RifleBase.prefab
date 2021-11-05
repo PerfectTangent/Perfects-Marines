@@ -27,6 +27,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1631402179261302548, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: foreverID
+      value: Wz34wdJkOkYE41ShApkAFLSDbpf92PMx
+      objectReference: {fileID: 0}
     - target: {fileID: 3165839588915393246, guid: 358db724cb0b4f34788e76966262c97d,
         type: 3}
       propertyPath: FireDelay

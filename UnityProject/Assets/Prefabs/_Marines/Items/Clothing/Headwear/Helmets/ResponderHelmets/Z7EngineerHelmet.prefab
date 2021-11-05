@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2600092280272844431, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9ccZ7E
+      objectReference: {fileID: 0}
     - target: {fileID: 2653430833422412135, guid: d759a52c00bd0dc40a693b69fd91b566,
         type: 3}
       propertyPath: allClothingData.Array.data[0]
@@ -84,10 +89,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9023956665472457598, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 1313071507758166456}
     - target: {fileID: 9024068353495418710, guid: d759a52c00bd0dc40a693b69fd91b566,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 3ed631087337fd04198f475e0d765113
       objectReference: {fileID: 0}
     - target: {fileID: 9105766485890648510, guid: d759a52c00bd0dc40a693b69fd91b566,
         type: 3}
@@ -97,3 +107,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d759a52c00bd0dc40a693b69fd91b566, type: 3}
+--- !u!114 &1313071507758166456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9023652911799260978, guid: d759a52c00bd0dc40a693b69fd91b566,
+    type: 3}
+  m_PrefabInstance: {fileID: 7999100026203301514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

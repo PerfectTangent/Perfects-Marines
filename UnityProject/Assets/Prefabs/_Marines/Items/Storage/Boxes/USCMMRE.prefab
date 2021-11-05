@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
-      objectReference: {fileID: 11400000, guid: 0c3a9752f85329c40ab8bd2649d243c3,
+      objectReference: {fileID: 11400000, guid: fe2d0e83b9e22b64c9632efe90845479,
         type: 2}
     - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
         type: 3}
@@ -22,14 +22,17 @@ PrefabInstance:
         type: 3}
       propertyPath: SubCatalogue.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 0c3a9752f85329c40ab8bd2649d243c3,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2490630288303511261, guid: 3e5919f639f566c4590d07d54ef256dd,
         type: 3}
       propertyPath: SubCatalogue.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 88bce7cf933ce7841831961521b1173d,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417345767468294455, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: foreverID
+      value: arJRnHg8Zr9CFtWmXoeNkYOadLaNmcpV
+      objectReference: {fileID: 0}
     - target: {fileID: 8159390639885615672, guid: 3e5919f639f566c4590d07d54ef256dd,
         type: 3}
       propertyPath: initialName
@@ -51,12 +54,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2ab0a97eaf476d747b4efa4aeea57d46,
+      objectReference: {fileID: 21300000, guid: e206fb5f7645b5444b94dafa681dfe9b,
         type: 3}
+    - target: {fileID: 8441880568126201350, guid: 3e5919f639f566c4590d07d54ef256dd,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8521467601672753390, guid: 3e5919f639f566c4590d07d54ef256dd,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 67a9d83fcb50e374da6a3f22879b6164
       objectReference: {fileID: 0}
     - target: {fileID: 8630552864855298094, guid: 3e5919f639f566c4590d07d54ef256dd,
         type: 3}

@@ -32,13 +32,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 21d542142e12d474fad216c3525cdb1c,
+      objectReference: {fileID: 21300000, guid: db781f6a6767c794d937e112b68652ab,
         type: 3}
-    - target: {fileID: 3486338153467046959, guid: e46ba34aab52d654787ef10d896b0874,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3639895484745261575, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: m_RootOrder
@@ -102,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 3676122640429376199, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 6fdb43db19eedc84ab031aa637204114
       objectReference: {fileID: 0}
     - target: {fileID: 3678228788835208839, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
@@ -123,6 +118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initialDescription
       value: You wear this on your back and put items into it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: hitSound.AssetAddress
+      value: Assets/Prefabs/Effects/Tap.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
@@ -150,8 +150,13 @@ PrefabInstance:
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
-      objectReference: {fileID: 11400000, guid: ce2952176a62f2249b3cddfa60dcd25c,
+      objectReference: {fileID: 11400000, guid: e07a1695600317a45bf6a5b746449fc1,
         type: 2}
+    - target: {fileID: 7650131893140443934, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: foreverID
+      value: 6fdb43db19eedc84ab031aa637204114
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46ba34aab52d654787ef10d896b0874, type: 3}
 --- !u!1 &8987936220996783647 stripped

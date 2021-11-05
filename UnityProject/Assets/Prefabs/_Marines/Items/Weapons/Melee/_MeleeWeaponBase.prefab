@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 0f092453fa12e264da5e029d8bc997b6,
+        type: 3}
+      propertyPath: foreverID
+      value: a7Mela22164ce49f0bf9b9b219f39298
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 0f092453fa12e264da5e029d8bc997b6,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d5bd0935334132e4fab6e432b5fe63bf
+      objectReference: {fileID: 0}
     - target: {fileID: 9187710774849083482, guid: 0f092453fa12e264da5e029d8bc997b6,
         type: 3}
       propertyPath: m_Name
-      value: _WeaponBase
+      value: _MeleeWeaponBase
       objectReference: {fileID: 0}
     - target: {fileID: 9192634525590283566, guid: 0f092453fa12e264da5e029d8bc997b6,
         type: 3}

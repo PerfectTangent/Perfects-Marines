@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemStorageStructure: {fileID: 11400000, guid: 263bf834f99424f12bda19d67c3ab5fc,
     type: 2}
-  itemStorageCapacity: {fileID: 11400000, guid: 9ead0167a3241b648bfd604f9cdef582,
-    type: 2}
+  itemStorageCapacity: {fileID: 0}
   itemStoragePopulator: {fileID: 0}
+  forceSpawnContents: 0
+  dropItemsOnDespawn: 0
+  UesAddlistPopulater: 0
+  Populater:
+    SlotContents: []
+    DeprecatedContents: []
+  ashPrefab: {fileID: 0}
 --- !u!1001 &7665521999000145784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,7 +33,7 @@ PrefabInstance:
     - target: {fileID: 1762207313667118248, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: cfbf1bedee4f79d40a2216455927960a
       objectReference: {fileID: 0}
     - target: {fileID: 1764031991386896616, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
@@ -146,12 +152,16 @@ PrefabInstance:
       value: Standard issue combat boots for combat scenarios or combat situations.
         All combat, all the time.
       objectReference: {fileID: 0}
+    - target: {fileID: 4709096474333209969, guid: 502f496beb9034b9b9c97868e845ed7e,
+        type: 3}
+      propertyPath: foreverID
+      value: 502f496beMAR34b9b9c97868e845ed7e
+      objectReference: {fileID: 0}
     - target: {fileID: 4728094771363396249, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: a4321281d5ed3054f92f4e5ef1a85768,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4728094771363396249, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
       propertyPath: allClothingData.Array.size

@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 4205699285175995195, guid: 14591980b51ed1042988c011e7f29b89,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f58f7d7573a811a42bd5b0ca2436c3b0
       objectReference: {fileID: 0}
     - target: {fileID: 4308133602089612943, guid: 14591980b51ed1042988c011e7f29b89,
         type: 3}
@@ -83,18 +83,21 @@ PrefabInstance:
       propertyPath: initialName
       value: M4 pattern PMC sniper armor
       objectReference: {fileID: 0}
+    - target: {fileID: 7166116836978866914, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: foreverID
+      value: Arcw9a11d2c864b7982u65bb340eed03
+      objectReference: {fileID: 0}
     - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: a01c671e406288f4281b61a348b821ee,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: a01c671e406288f4281b61a348b821ee,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
         type: 3}
       propertyPath: hideClothingFlags

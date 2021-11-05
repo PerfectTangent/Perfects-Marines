@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 928020063382675147, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d793cfdz42599c9c8726207f217
+      objectReference: {fileID: 0}
     - target: {fileID: 5960476742974602692, guid: 05e855837ef8d8e42bbf69291ca79ac2,
         type: 3}
       propertyPath: initialName
@@ -75,17 +80,22 @@ PrefabInstance:
     - target: {fileID: 6078246172147290790, guid: 05e855837ef8d8e42bbf69291ca79ac2,
         type: 3}
       propertyPath: m_Name
-      value: LawyerSuit
+      value: _LawyerSuitBase
       objectReference: {fileID: 0}
     - target: {fileID: 6183003757660974866, guid: 05e855837ef8d8e42bbf69291ca79ac2,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 2f6c49c4569008642bb2a243f2711b48
       objectReference: {fileID: 0}
     - target: {fileID: 6245280112385892858, guid: 05e855837ef8d8e42bbf69291ca79ac2,
         type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245280112385892858, guid: 05e855837ef8d8e42bbf69291ca79ac2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e855837ef8d8e42bbf69291ca79ac2, type: 3}

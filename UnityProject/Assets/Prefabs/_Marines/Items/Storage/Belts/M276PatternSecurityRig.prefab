@@ -22,8 +22,13 @@ PrefabInstance:
     - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 0c2ee0b3b98be9a47b3eaf08b0748b17
       objectReference: {fileID: 0}
+    - target: {fileID: 1764691747351482139, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 5920245536109601216}
     - target: {fileID: 1867061792278949511, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: m_Name
@@ -93,15 +98,17 @@ PrefabInstance:
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialName
-      value: M276 pattern security rig
+      value: security belt
       objectReference: {fileID: 0}
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialDescription
-      value: The M276 is the standard load-bearing equipment of the USCM. It consists
-        of a modular belt with various clips. This configuration is commonly seen
-        among USCM Military Police and peacekeepers, though it can hold some light
-        munitions.
+      value: Can hold security gear like handcuffs and flashes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: foreverID
+      value: 0c2ee0b3b98be9a47b3eaf08b0748b17
       objectReference: {fileID: 0}
     - target: {fileID: 5525703409436398848, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
@@ -118,8 +125,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: e8aa293c9ecccaa409932c4e74b32816,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: allClothingData.Array.size
@@ -133,3 +139,15 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c105fae1f0b074abf4c80745d8b129, type: 3}
+--- !u!114 &5920245536109601216 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1764440796268135255, guid: 51c105fae1f0b074abf4c80745d8b129,
+    type: 3}
+  m_PrefabInstance: {fileID: 5356014143883354775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

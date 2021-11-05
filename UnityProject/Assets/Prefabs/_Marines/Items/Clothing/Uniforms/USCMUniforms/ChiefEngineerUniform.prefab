@@ -29,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 4499453796208736306, guid: 634bbb9f92ffc824c9b95465ce1d266a,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 51f0036723fe07f4ca0407468724fb90
       objectReference: {fileID: 0}
     - target: {fileID: 4503250994590569586, guid: 634bbb9f92ffc824c9b95465ce1d266a,
         type: 3}
@@ -101,18 +101,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7448893444821895659, guid: 634bbb9f92ffc824c9b95465ce1d266a,
+        type: 3}
+      propertyPath: foreverID
+      value: U7xemrNEXN6ylWDNE5RVFPcSg3Cnz4Da
+      objectReference: {fileID: 0}
     - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: ec0db1afa241e7d4e8d2ad7782fd5732,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: ec0db1afa241e7d4e8d2ad7782fd5732,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7464798230460208643, guid: 634bbb9f92ffc824c9b95465ce1d266a,
         type: 3}
       propertyPath: allClothingData.Array.size

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 983b3f8b38cab824994150dd77978e8d
       objectReference: {fileID: 0}
     - target: {fileID: 1867061792278949511, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
@@ -90,6 +90,11 @@ PrefabInstance:
         of a modular belt with various clips. This version is the standard variant
         designed for bulk ammunition-carrying operations.
       objectReference: {fileID: 0}
+    - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: foreverID
+      value: I3UqvkNFxivuKdpXPoCskehPgFJGWwSU
+      objectReference: {fileID: 0}
     - target: {fileID: 5525703409436398848, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -100,14 +105,12 @@ PrefabInstance:
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: 712f7e8cb3e0f9a4d87c997ea2f50b81,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: 712f7e8cb3e0f9a4d87c997ea2f50b81,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: allClothingData.Array.size

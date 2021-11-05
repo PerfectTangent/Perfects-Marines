@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 3624108766457723485, guid: 187e21fb099cad24db91bc89a1f38f40,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 7bf47ab2d6ff93d4790930588501e757
       objectReference: {fileID: 0}
     - target: {fileID: 3732600087135468189, guid: 187e21fb099cad24db91bc89a1f38f40,
         type: 3}
@@ -81,6 +81,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initialName
       value: MAC-15 extended magazine (9mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738846367833049988, guid: 187e21fb099cad24db91bc89a1f38f40,
+        type: 3}
+      propertyPath: foreverID
+      value: AMMaS15bba22164ceExf0bf9b9b219f3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187e21fb099cad24db91bc89a1f38f40, type: 3}

@@ -17,4 +17,5 @@ MonoBehaviour:
     - sprite: {fileID: 21300000, guid: ab8a6f2fd37623b4b99c5a06a69ec826, type: 3}
       secondDelay: 0
   IsPalette: 0
-  setID: 26044
+  setID: 26911
+  DisplayName: 

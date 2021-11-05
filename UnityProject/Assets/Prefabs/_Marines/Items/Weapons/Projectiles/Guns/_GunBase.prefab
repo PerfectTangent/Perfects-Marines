@@ -24,8 +24,6 @@ MonoBehaviour:
   SpawnsCasing: 1
   MagInternal: 0
   SmartGun: 0
-  CurrentRecoilVariance: 0
-  FireCountDown: 0
   FiringSoundA:
     SetLoadSetting: 0
     AssetAddress: Assets/Prefabs/Weapons/Gun/Pistol/PistolShot.prefab
@@ -48,6 +46,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   FireDelay: 0.6
+  AllowSuicide: 0
   MaxRecoilVariance: 0
   ProjectileVelocity: 20
   CameraRecoilConfig:
@@ -74,10 +73,13 @@ MonoBehaviour:
     type: 2}
   itemStorageCapacity: {fileID: 0}
   itemStoragePopulator: {fileID: 0}
+  forceSpawnContents: 0
+  dropItemsOnDespawn: 0
   UesAddlistPopulater: 0
   Populater:
-    MergeMode: 0
-    Contents: []
+    SlotContents: []
+    DeprecatedContents: []
+  ashPrefab: {fileID: 0}
 --- !u!1001 &3573623906154058531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +87,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 0f092453fa12e264da5e029d8bc997b6,
+        type: 3}
+      propertyPath: foreverID
+      value: urYVfUJLagtoLhJEiZMGzIZszLPE3tvD
+      objectReference: {fileID: 0}
     - target: {fileID: 3082522023416177629, guid: 0f092453fa12e264da5e029d8bc997b6,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -151,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 9085304014447748590, guid: 0f092453fa12e264da5e029d8bc997b6,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 358db724cb0b4f34788e76966262c97d
       objectReference: {fileID: 0}
     - target: {fileID: 9187710774849083482, guid: 0f092453fa12e264da5e029d8bc997b6,
         type: 3}

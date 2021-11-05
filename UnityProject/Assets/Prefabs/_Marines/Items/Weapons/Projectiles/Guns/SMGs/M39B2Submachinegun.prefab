@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 635594750865884501, guid: a93887f3c688180459678f6076272495,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f9655ab720037a74f97f70c39dd3d9cd
       objectReference: {fileID: 0}
     - target: {fileID: 668260725655402721, guid: a93887f3c688180459678f6076272495,
         type: 3}
@@ -107,6 +107,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 288703f433e9ec5429c0dc7431e261ba,
         type: 2}
+    - target: {fileID: 5907766628847940748, guid: a93887f3c688180459678f6076272495,
+        type: 3}
+      propertyPath: foreverID
+      value: 0lQdXsWoEFiOa7pmpyeyNzZKRDNjooGd
+      objectReference: {fileID: 0}
     - target: {fileID: 6629365314782643046, guid: a93887f3c688180459678f6076272495,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -117,8 +122,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ammoPrefab
       value: 
-      objectReference: {fileID: 874027216891794632, guid: f9655ab720037a74f97f70c39dd3d9cd,
-        type: 3}
+      objectReference: {fileID: 874027216891794632}
     - target: {fileID: 7970723570266990284, guid: a93887f3c688180459678f6076272495,
         type: 3}
       propertyPath: allClothingData.Array.data[0]
@@ -127,3 +131,9 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93887f3c688180459678f6076272495, type: 3}
+--- !u!1 &874027216891794632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 668260725655402721, guid: a93887f3c688180459678f6076272495,
+    type: 3}
+  m_PrefabInstance: {fileID: 389289279858355241}
+  m_PrefabAsset: {fileID: 0}

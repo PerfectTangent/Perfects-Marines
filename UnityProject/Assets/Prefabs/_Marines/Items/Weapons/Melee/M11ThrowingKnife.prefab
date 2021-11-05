@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403592457333326101, guid: d5bd0935334132e4fab6e432b5fe63bf,
+        type: 3}
+      propertyPath: foreverID
+      value: a7Mela22164ce49f0M11TKb219f39298
+      objectReference: {fileID: 0}
     - target: {fileID: 2199490774642226943, guid: d5bd0935334132e4fab6e432b5fe63bf,
         type: 3}
       propertyPath: PresentSpriteSet

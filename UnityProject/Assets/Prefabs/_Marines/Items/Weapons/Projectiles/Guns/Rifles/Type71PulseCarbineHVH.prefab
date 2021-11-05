@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2785887722182355180, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 54c61eef727755c49bb87cebb18d6f70
+      objectReference: {fileID: 0}
     - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 2827490390585840984, guid: e39546655d2bd4e409e1e8f17f1a93ae,
         type: 3}
       propertyPath: m_Name
-      value: Type71PulseCarbine
+      value: Type71PulseCarbineHVH
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189588870782032181, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: foreverID
+      value: 7Ea3zDzotkkq74KMdyAo991pFwVFgffI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39546655d2bd4e409e1e8f17f1a93ae, type: 3}

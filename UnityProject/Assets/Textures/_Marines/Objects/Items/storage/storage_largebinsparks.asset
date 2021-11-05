@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: storage_largebinsparks
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6568345693540572005, guid: f47c9fd86763fbb4389657fdee680fd9,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6181004495504711264, guid: f47c9fd86763fbb4389657fdee680fd9,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3966094757141766925, guid: f47c9fd86763fbb4389657fdee680fd9,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7921343995944919963, guid: f47c9fd86763fbb4389657fdee680fd9,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 355755706362399598, guid: f47c9fd86763fbb4389657fdee680fd9,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31543
+  DisplayName: 

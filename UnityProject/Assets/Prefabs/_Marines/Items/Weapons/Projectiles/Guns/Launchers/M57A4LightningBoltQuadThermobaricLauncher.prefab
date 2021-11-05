@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3fbf5899bb90c1c418669b47dc9d91e4,
         type: 2}
+    - target: {fileID: 2123301964498832311, guid: cf9108ed60aa27842a33d6ed518da6bb,
+        type: 3}
+      propertyPath: foreverID
+      value: JTJMqxuzbtBI7pqm1M90Lv5lFSsEIqGE
+      objectReference: {fileID: 0}
     - target: {fileID: 2322676623861038717, guid: cf9108ed60aa27842a33d6ed518da6bb,
         type: 3}
       propertyPath: ammoType
@@ -62,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4925239930361363054, guid: cf9108ed60aa27842a33d6ed518da6bb,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: c17fe1e09e70ddc4381873a864e44627
       objectReference: {fileID: 0}
     - target: {fileID: 5029889695014455258, guid: cf9108ed60aa27842a33d6ed518da6bb,
         type: 3}

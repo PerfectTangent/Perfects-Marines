@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014683455203709934, guid: 29b4f449b3187e34ab6187840e260c7d,
+        type: 3}
+      propertyPath: foreverID
+      value: P7fRMwhyBC89kbd43YbI0Tkr6srVA0r3
+      objectReference: {fileID: 0}
     - target: {fileID: 5781443380674188858, guid: 29b4f449b3187e34ab6187840e260c7d,
         type: 3}
       propertyPath: itemStorageCapacity
@@ -88,7 +93,7 @@ PrefabInstance:
     - target: {fileID: 6285456376440791607, guid: 29b4f449b3187e34ab6187840e260c7d,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 9e84d5f9899f349439fd559b6ca7aaf4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b4f449b3187e34ab6187840e260c7d, type: 3}

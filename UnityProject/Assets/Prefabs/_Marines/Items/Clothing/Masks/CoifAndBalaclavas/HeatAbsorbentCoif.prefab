@@ -28,7 +28,7 @@ PrefabInstance:
     - target: {fileID: 486308312946328248, guid: 8ffeda75262b62f4ebeda277f7ebebef,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: c13bf9b27d22a9b41858a6387ad8ec2f
       objectReference: {fileID: 0}
     - target: {fileID: 516650951482965772, guid: 8ffeda75262b62f4ebeda277f7ebebef,
         type: 3}
@@ -100,8 +100,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: 1e2821f1e83aee146ba5fa1d437d4650,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6869882542942203017, guid: 8ffeda75262b62f4ebeda277f7ebebef,
         type: 3}
       propertyPath: hideClothingFlags
@@ -118,6 +117,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0031bbef829f9994881db8aa90c56aa8,
         type: 2}
+    - target: {fileID: 6886349805810479969, guid: 8ffeda75262b62f4ebeda277f7ebebef,
+        type: 3}
+      propertyPath: foreverID
+      value: 0COIF5eab68164d34bb02b82fff3Bde0
+      objectReference: {fileID: 0}
     - target: {fileID: 8039818594359113683, guid: 8ffeda75262b62f4ebeda277f7ebebef,
         type: 3}
       propertyPath: bodyPartsCovered

@@ -81,12 +81,17 @@ PrefabInstance:
     - target: {fileID: 3713559619824330684, guid: ab65ebf1eb26f3943b436906ee1a879d,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: e75bbb40fe1482945b4f0d31ca45b7d1
       objectReference: {fileID: 0}
     - target: {fileID: 3814718074275165546, guid: ab65ebf1eb26f3943b436906ee1a879d,
         type: 3}
       propertyPath: initialName
       value: revolver cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685316557257872997, guid: ab65ebf1eb26f3943b436906ee1a879d,
+        type: 3}
+      propertyPath: foreverID
+      value: h4hV9giRUX3oGLevyRcygXOi0rN5EaG6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab65ebf1eb26f3943b436906ee1a879d, type: 3}

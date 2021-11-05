@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3549479581640830887, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5SWAT3bdfe2fc9ccdd0
+      objectReference: {fileID: 0}
     - target: {fileID: 3568482238077595727, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
       propertyPath: allClothingData.Array.data[0]
@@ -54,10 +59,15 @@ PrefabInstance:
       propertyPath: Armor.Energy
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7524567465537356374, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 172253966925609263}
     - target: {fileID: 7524605284256423550, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 19cf95e6b1aebef4dbfe20d139b12e55
       objectReference: {fileID: 0}
     - target: {fileID: 7632320555952889534, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
@@ -137,3 +147,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fceccba0296eb5b4983bdfe2fc9ccdd0, type: 3}
+--- !u!114 &172253966925609263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7524774435281636890, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7642228595651753781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

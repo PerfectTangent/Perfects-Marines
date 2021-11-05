@@ -109,20 +109,23 @@ PrefabInstance:
     - target: {fileID: 3390439714633509677, guid: 643b42a9bbcccc54194e9aded6df93bb,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: b275dbb94ebdcad4582c04b3d1d700fc
       objectReference: {fileID: 0}
     - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: a343a1c9cab0ea1468ced2597ab89f0b,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: a343a1c9cab0ea1468ced2597ab89f0b,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512874809356376820, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: foreverID
+      value: hKhla1PTrFQ6h79diofCmDRaXZAQui9t
+      objectReference: {fileID: 0}
     - target: {fileID: 8925967725256764702, guid: 643b42a9bbcccc54194e9aded6df93bb,
         type: 3}
       propertyPath: PresentSpriteSet

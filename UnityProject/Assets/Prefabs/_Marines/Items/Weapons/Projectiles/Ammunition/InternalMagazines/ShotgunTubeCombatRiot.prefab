@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4378430881477592678, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
+        type: 3}
+      propertyPath: foreverID
+      value: L91OvpxG5F7vhdmHVOvTjl8WRhop3bIL
+      objectReference: {fileID: 0}
     - target: {fileID: 5526779012145314770, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
         type: 3}
       propertyPath: initalProjectile
@@ -76,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 7344741849963640767, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 2cf21983cd53e7648bb51fa10d9cf437
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dcc7dfe58b06340a44ebe2c2b33399, type: 3}

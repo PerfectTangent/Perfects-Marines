@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 808789361038696447, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 019db60e1d1f9a0429b381888329e37e
       objectReference: {fileID: 0}
     - target: {fileID: 882928244949536041, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
         type: 3}
@@ -81,6 +81,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initialDescription
       value: A protective band worn by some seriously experienced mercs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915453782527192614, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9DUTDo
       objectReference: {fileID: 0}
     - target: {fileID: 5967386811655647694, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
         type: 3}

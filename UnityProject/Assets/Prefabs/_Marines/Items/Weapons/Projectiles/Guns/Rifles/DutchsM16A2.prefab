@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1880112872154972333, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 700b76624e3bc014f8d1054bcda5e132
       objectReference: {fileID: 0}
     - target: {fileID: 1982627453940661529, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
         type: 3}
@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: initialDescription
       value: A modified M16 employed by Dutch's Dozen mercenaries. It has 'CLOAKER
         KILLER' printed on a label on the side. Chambered in 5.56x45mm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843916953527153012, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: foreverID
+      value: jDWGsfacvDiUIhQCLtihABOLwQT2FPCO
       objectReference: {fileID: 0}
     - target: {fileID: 9112393072800089278, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
         type: 3}

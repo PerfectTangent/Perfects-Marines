@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 2a3ef8ef5809560438c38eb444d70ebe
       objectReference: {fileID: 0}
     - target: {fileID: 1867061792278949511, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
@@ -88,6 +88,11 @@ PrefabInstance:
       propertyPath: initialDescription
       value: A belt-holster assembly that allows one to hold a pistol and two magazines.
       objectReference: {fileID: 0}
+    - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: foreverID
+      value: 9FaeIV7gV8EKEADYRJ2SWo0BqIKMOOgQ
+      objectReference: {fileID: 0}
     - target: {fileID: 5525703409436398848, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -98,7 +103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: 2417dec427d9f0342940a7933fe6afc6,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c105fae1f0b074abf4c80745d8b129, type: 3}

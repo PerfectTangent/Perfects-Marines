@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4281846146983378532, guid: ea7d18e591ac4d24a9fdea99393e63e8,
+        type: 3}
+      propertyPath: foreverID
+      value: AInTa7abba22164ce49fBbf9b9b21La3
+      objectReference: {fileID: 0}
     - target: {fileID: 7080397616495988669, guid: ea7d18e591ac4d24a9fdea99393e63e8,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: ec2a12d8c49443243941c8938cf95fd2
       objectReference: {fileID: 0}
     - target: {fileID: 7189178383268204413, guid: ea7d18e591ac4d24a9fdea99393e63e8,
         type: 3}

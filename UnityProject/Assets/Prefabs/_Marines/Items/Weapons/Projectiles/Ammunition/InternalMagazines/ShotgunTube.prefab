@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 3713559619824330684, guid: ab65ebf1eb26f3943b436906ee1a879d,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: e0dcc7dfe58b06340a44ebe2c2b33399
       objectReference: {fileID: 0}
     - target: {fileID: 3814718074275165546, guid: ab65ebf1eb26f3943b436906ee1a879d,
         type: 3}
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initialDescription
       value: An internal magazine. It is not supposed to be seen or removed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685316557257872997, guid: ab65ebf1eb26f3943b436906ee1a879d,
+        type: 3}
+      propertyPath: foreverID
+      value: bo4CXP1BEK5T0os5O2FXmV11R8N9Lbaj
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab65ebf1eb26f3943b436906ee1a879d, type: 3}

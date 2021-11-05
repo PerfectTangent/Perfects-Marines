@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3549479581640830887, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4WARbdfe2fc9ccdd0
+      objectReference: {fileID: 0}
     - target: {fileID: 3568482238077595727, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
       propertyPath: hideClothingFlags
@@ -24,10 +29,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ffe952c8b585c7f429696889591d4b8d,
         type: 2}
+    - target: {fileID: 7524567465537356374, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 7207621502794253793}
     - target: {fileID: 7524605284256423550, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 4b57d48f7ad7b8445b317efa18c5b60c
       objectReference: {fileID: 0}
     - target: {fileID: 7632320555952889534, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
         type: 3}
@@ -108,3 +118,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fceccba0296eb5b4983bdfe2fc9ccdd0, type: 3}
+--- !u!114 &7207621502794253793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7524774435281636890, guid: fceccba0296eb5b4983bdfe2fc9ccdd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 895024363578051579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

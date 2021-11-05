@@ -62,6 +62,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -100,19 +101,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638153431175506142}
   m_Mesh: {fileID: 0}
---- !u!114 &3223114289915014952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9067015217173369846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7277dcc993463cb6c7f79b663f36fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NetTabType: 0
 --- !u!114 &1251273809191474752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +114,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restriction: 0
+--- !u!114 &3223114289915014952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067015217173369846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7277dcc993463cb6c7f79b663f36fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetTabType: 0
+  aiInteractable: 1
 --- !u!114 &4813939428406103474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ PrefabInstance:
     - target: {fileID: 7153803037707514078, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 1ea1a870e06f2224c9070dbc25483d78
       objectReference: {fileID: 0}
     - target: {fileID: 7887620515462466081, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}

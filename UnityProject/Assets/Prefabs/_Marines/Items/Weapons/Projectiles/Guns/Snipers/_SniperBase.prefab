@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
         type: 3}
       propertyPath: m_Name
-      value: _RifleBase
+      value: _SniperBase
       objectReference: {fileID: 0}
     - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
         type: 3}
@@ -66,6 +66,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: f7a45247b53ab0547b06d01fddc08bdc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210658489462252396, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: foreverID
+      value: AKwW612cUpUYYnsbhlZSkwjiZtjh8kBt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

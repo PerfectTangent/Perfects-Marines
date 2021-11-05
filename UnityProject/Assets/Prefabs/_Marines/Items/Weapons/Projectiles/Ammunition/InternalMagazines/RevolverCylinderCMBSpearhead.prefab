@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4137722272881687702, guid: e75bbb40fe1482945b4f0d31ca45b7d1,
+        type: 3}
+      propertyPath: foreverID
+      value: La6cCkpDNmVCPEmlRPLRaRBoAtwLr1hI
+      objectReference: {fileID: 0}
     - target: {fileID: 5268221964388286754, guid: e75bbb40fe1482945b4f0d31ca45b7d1,
         type: 3}
       propertyPath: ammoType
@@ -21,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 6936291095068282191, guid: e75bbb40fe1482945b4f0d31ca45b7d1,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 0d1dc4057aac9a94cad23d881638d99f
       objectReference: {fileID: 0}
     - target: {fileID: 7045072068066037135, guid: e75bbb40fe1482945b4f0d31ca45b7d1,
         type: 3}

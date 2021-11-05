@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3041887588507786341, guid: b1dd0009eb4240f4e99c2e6afa121be9,
+        type: 3}
+      propertyPath: foreverID
+      value: h2mAUcCEE9hhNUuJM6AyayRlImmzB7tD
+      objectReference: {fileID: 0}
     - target: {fileID: 8254057158728388616, guid: b1dd0009eb4240f4e99c2e6afa121be9,
         type: 3}
       propertyPath: m_Name
-      value: Type71CommandoPulseCarbine
+      value: Type71CommandoPulseCarbineHVH
       objectReference: {fileID: 0}
     - target: {fileID: 8259548257607413116, guid: b1dd0009eb4240f4e99c2e6afa121be9,
         type: 3}
@@ -66,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293511587570429372, guid: b1dd0009eb4240f4e99c2e6afa121be9,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9dd95b4d1a1f6ae4d814893dcbcaa368
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1dd0009eb4240f4e99c2e6afa121be9, type: 3}

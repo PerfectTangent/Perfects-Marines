@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4500128755549525099, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7c3cfd842599c9c8726207f217
+      objectReference: {fileID: 0}
     - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
         type: 3}
       propertyPath: allClothingData.Array.size
@@ -81,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 7448152508601034162, guid: e576e96fb687f66458a87add8ef2a2dd,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f2cb622ead5f1f14cb939306783f63a3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e576e96fb687f66458a87add8ef2a2dd, type: 3}

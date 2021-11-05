@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1762207313667118248, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 718bea265a2e6a2418e7832d3cd7053d
       objectReference: {fileID: 0}
     - target: {fileID: 1864679013969520924, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}
@@ -88,6 +88,11 @@ PrefabInstance:
       propertyPath: initialDescription
       value: Only a small amount of monkeys, kittens, and orphans were killed in
         making this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709096474333209969, guid: 502f496beb9034b9b9c97868e845ed7e,
+        type: 3}
+      propertyPath: foreverID
+      value: 502f496beb903DRSb9c97868e845ed7e
       objectReference: {fileID: 0}
     - target: {fileID: 4728094771363396249, guid: 502f496beb9034b9b9c97868e845ed7e,
         type: 3}

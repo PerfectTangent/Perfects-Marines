@@ -11,20 +11,54 @@ PrefabInstance:
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: ff64f4a8e42e1c546af57ba11c26fe18,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2603394941573166480, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: allClothingData.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 1893a9262c95b39498d4c8e7439163de,
         type: 2}
+    - target: {fileID: 2658986937302887032, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: foreverID
+      value: dbfef72a303adaa489b990c1ac8a96da
+      objectReference: {fileID: 0}
     - target: {fileID: 2961741670957096338, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
       objectReference: {fileID: 11400000, guid: 007f964188f111e40bb0008826873400,
         type: 2}
+    - target: {fileID: 4742361789441152362, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bomb
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742361789441152362, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Laser
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742361789441152362, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Melee
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742361789441152362, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bullet
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742361789441152362, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Energy
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: initialName
@@ -33,8 +67,8 @@ PrefabInstance:
     - target: {fileID: 8841056279837395319, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: initialDescription
-      value: A vest that excels in protecting the wearer against high-velocity solid
-        projectiles.
+      value: A Type III heavy bulletproof vest that excels in protecting the wearer
+        against traditional projectile weaponry and explosives to a minor extent.
       objectReference: {fileID: 0}
     - target: {fileID: 8957559930371988321, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
@@ -98,19 +132,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9063377138319701985, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
+      propertyPath: Armor.Bomb
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063377138319701985, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063377138319701985, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
       propertyPath: Armor.Melee
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9063377138319701985, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: Armor.Bullet
-      value: 30
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063377138319701985, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9063515089906310049, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: dbfef72a303adaa489b990c1ac8a96da
       objectReference: {fileID: 0}
+    - target: {fileID: 9063622246596298633, guid: 900572ab8ed9030429b12eaa3974a43f,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 1436077833132505135}
     - target: {fileID: 9128183951869416777, guid: 900572ab8ed9030429b12eaa3974a43f,
         type: 3}
       propertyPath: m_Sprite
@@ -119,3 +173,15 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 900572ab8ed9030429b12eaa3974a43f, type: 3}
+--- !u!114 &1436077833132505135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9063925450447031237, guid: 900572ab8ed9030429b12eaa3974a43f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7936592699172877290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

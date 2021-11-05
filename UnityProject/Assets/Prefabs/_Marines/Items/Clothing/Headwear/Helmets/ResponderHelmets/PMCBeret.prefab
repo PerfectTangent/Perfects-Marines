@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 81126934a77bc88418922a4c6cd984a3,
         type: 2}
+    - target: {fileID: 2802216329641303545, guid: b94367958a38b154fb81d9f83cbe064b,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9PMCBe
+      objectReference: {fileID: 0}
     - target: {fileID: 3107446583660685843, guid: b94367958a38b154fb81d9f83cbe064b,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -99,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 9209285761780952096, guid: b94367958a38b154fb81d9f83cbe064b,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 59393a7f56cd3114b82d9d889d8bd219
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b94367958a38b154fb81d9f83cbe064b, type: 3}

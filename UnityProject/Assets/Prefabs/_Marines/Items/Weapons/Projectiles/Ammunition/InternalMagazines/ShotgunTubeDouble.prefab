@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4378430881477592678, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
+        type: 3}
+      propertyPath: foreverID
+      value: DqeJIp7C4F6syYKqBpvsDQ5U2qPP98rh
+      objectReference: {fileID: 0}
     - target: {fileID: 5526779012145314770, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
         type: 3}
       propertyPath: magazineSize
@@ -86,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 7344741849963640767, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: fc76be8861333af4c885079e5be83fba
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dcc7dfe58b06340a44ebe2c2b33399, type: 3}

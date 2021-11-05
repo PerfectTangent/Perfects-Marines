@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0d6da6c8d3af3ae4486e8578c1b402f4,
         type: 2}
+    - target: {fileID: 2229781386888464389, guid: 5ae008a2c82eb1843b9eb8b36ee16eeb,
+        type: 3}
+      propertyPath: foreverID
+      value: Cw4SLrOdAUDKN1F1YjTvyHcis6ezc3wj
+      objectReference: {fileID: 0}
     - target: {fileID: 4658662702768827146, guid: 5ae008a2c82eb1843b9eb8b36ee16eeb,
         type: 3}
       propertyPath: itemSprites.SpriteLeftHand
@@ -94,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 5178939630922660316, guid: 5ae008a2c82eb1843b9eb8b36ee16eeb,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 6a6dea4f0994a6647aeaeb1b582ade35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae008a2c82eb1843b9eb8b36ee16eeb, type: 3}

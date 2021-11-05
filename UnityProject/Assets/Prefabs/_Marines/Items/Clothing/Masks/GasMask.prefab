@@ -14,8 +14,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532393564309681412, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532393564309681412, guid: 05a135eab68164d34bb02b82fff3cde0,
+        type: 3}
       propertyPath: hideClothingFlags
-      value: 672
+      value: 736
       objectReference: {fileID: 0}
     - target: {fileID: 3532393564309681412, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
@@ -28,6 +33,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 949b2a0c3d5da3540b591c0a030e0a17,
         type: 2}
+    - target: {fileID: 3585452806818900716, guid: 05a135eab68164d34bb02b82fff3cde0,
+        type: 3}
+      propertyPath: foreverID
+      value: 996d62bfe3bf26c4e95c2a77cadabbd2
+      objectReference: {fileID: 0}
     - target: {fileID: 4341101185987976454, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -36,34 +46,19 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7557917173024864117, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
-      propertyPath: Armor.Bio
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557917173024864117, guid: 05a135eab68164d34bb02b82fff3cde0,
-        type: 3}
-      propertyPath: Armor.Rad
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557917173024864117, guid: 05a135eab68164d34bb02b82fff3cde0,
-        type: 3}
-      propertyPath: Armor.Bomb
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557917173024864117, guid: 05a135eab68164d34bb02b82fff3cde0,
-        type: 3}
-      propertyPath: Armor.Melee
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557917173024864117, guid: 05a135eab68164d34bb02b82fff3cde0,
-        type: 3}
       propertyPath: Resistances.Flammable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7560587375320734517, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 996d62bfe3bf26c4e95c2a77cadabbd2
       objectReference: {fileID: 0}
+    - target: {fileID: 7560695730306467613, guid: 05a135eab68164d34bb02b82fff3cde0,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 6445859352209170309}
     - target: {fileID: 7596215297033493493, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
       propertyPath: m_RootOrder
@@ -142,14 +137,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8040391005062056419, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
-      propertyPath: initialSize
+      propertyPath: initialDescription
+      value: A face-covering mask that can be connected to an air supply. While wearing
+        this, nobody can see your face, and it filters toxins like plasma out of
+        the air.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040391005062056419, guid: 05a135eab68164d34bb02b82fff3cde0,
+        type: 3}
+      propertyPath: initialTraits.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8040391005062056419, guid: 05a135eab68164d34bb02b82fff3cde0,
         type: 3}
-      propertyPath: initialDescription
-      value: A face-covering mask that can be connected to an air supply. While good
-        for concealing your identity, it isn't good for blocking gas flow.
-      objectReference: {fileID: 0}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e7b7749adb1fec4593ed70decb21862,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a135eab68164d34bb02b82fff3cde0, type: 3}
+--- !u!114 &6445859352209170309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7560700382122150737, guid: 05a135eab68164d34bb02b82fff3cde0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3573969270142637268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -38,6 +38,18 @@ TextureImporter:
   - first:
       213: -8709833128625411997
     second: structures_window_3
+  - first:
+      213: -789690888681122954
+    second: windows_window_0
+  - first:
+      213: 5174247600933240481
+    second: windows_window_1
+  - first:
+      213: -1369765614790839925
+    second: windows_window_2
+  - first:
+      213: -9112251950349595154
+    second: windows_window_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -69,8 +81,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -91,6 +103,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -125,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: structures_window_0
+      name: windows_window_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 684c335e5605d9360800000000000000
-      internalID: 7177981779665732742
+      spriteID: 6739cc912547a05f0800000000000000
+      internalID: -789690888681122954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_window_1
+      name: windows_window_1
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf6b1c74d8c74300800000000000000
-      internalID: 236378320401035190
+      spriteID: 1aefa8957ce9ec740800000000000000
+      internalID: 5174247600933240481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_window_2
+      name: windows_window_2
       rect:
         serializedVersion: 2
         x: 64
@@ -181,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4037e00b8fdbf6fd0800000000000000
-      internalID: -2346448005033463036
+      spriteID: b81f8d04e6d9dfce0800000000000000
+      internalID: -1369765614790839925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: structures_window_3
+      name: windows_window_3
       rect:
         serializedVersion: 2
         x: 96
@@ -202,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3686a5b8ae4702780800000000000000
-      internalID: -8709833128625411997
+      spriteID: eed4d834127ca8180800000000000000
+      internalID: -9112251950349595154
       vertices: []
       indices: 
       edges: []

@@ -36,8 +36,13 @@ PrefabInstance:
     - target: {fileID: 871165662502838036, guid: d9cc4258b000c9645be079789c27ea4b,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 909458798197cb24bbfcecce6162d5d8
       objectReference: {fileID: 0}
+    - target: {fileID: 871277273050678076, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 4668412743760667385}
     - target: {fileID: 973680313005892256, guid: d9cc4258b000c9645be079789c27ea4b,
         type: 3}
       propertyPath: m_Name
@@ -120,6 +125,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8068586330571044216, guid: b6dbacdf4ae31f74f91e4fd53096e9d1,
         type: 3}
+    - target: {fileID: 6141094537368071885, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: foreverID
+      value: AMMOa7abba2ROT4ce49f0bf9b9b219f3
+      objectReference: {fileID: 0}
     - target: {fileID: 6396565172850481447, guid: d9cc4258b000c9645be079789c27ea4b,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -128,3 +138,15 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9cc4258b000c9645be079789c27ea4b, type: 3}
+--- !u!114 &4668412743760667385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 871053269470367600, guid: d9cc4258b000c9645be079789c27ea4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5539166899897347465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

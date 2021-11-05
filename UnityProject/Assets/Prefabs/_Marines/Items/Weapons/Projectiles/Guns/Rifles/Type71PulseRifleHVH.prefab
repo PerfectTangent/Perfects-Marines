@@ -65,7 +65,17 @@ PrefabInstance:
     - target: {fileID: 3231607907040489205, guid: f2372cafe86195d44bc9445e554c04a2,
         type: 3}
       propertyPath: m_Name
-      value: Type71PulseRifle
+      value: Type71PulseRifleHVH
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264212378434392897, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 5adf565812d12e246a8dfcbb05e10f64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386339815592190616, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: foreverID
+      value: F91Hj2arR3YlbtwDIqmWyg7aHGxs3nkL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2372cafe86195d44bc9445e554c04a2, type: 3}

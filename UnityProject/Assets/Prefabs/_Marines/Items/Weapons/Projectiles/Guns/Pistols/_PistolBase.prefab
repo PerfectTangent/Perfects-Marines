@@ -27,6 +27,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1631402179261302548, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: foreverID
+      value: 5HNNnJo8wvdWZCpnOizCKBO1jbh4fvej
+      objectReference: {fileID: 0}
     - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
         type: 3}
       propertyPath: hitDamage
@@ -112,7 +117,7 @@ PrefabInstance:
     - target: {fileID: 5732356507421292237, guid: 358db724cb0b4f34788e76966262c97d,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 8f6506bef5c76704983f5d0f44887370
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 358db724cb0b4f34788e76966262c97d, type: 3}

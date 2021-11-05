@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 982181573619596036, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: foreverID
+      value: SMlOa7abba22164ce49f0bf9b9ShHAND
+      objectReference: {fileID: 0}
     - target: {fileID: 6050106436789327883, guid: add14bbfa74911d40afd7d801176a8da,
         type: 3}
       propertyPath: itemSprites.SpriteLeftHand
@@ -22,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 6093340144265464541, guid: add14bbfa74911d40afd7d801176a8da,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: d89d4daf801b3bc4f87457d762f3b725
       objectReference: {fileID: 0}
     - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
         type: 3}

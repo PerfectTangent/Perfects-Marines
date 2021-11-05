@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 3317552745358689725, guid: e6f80a7fd02e2c14ea72a1410452b690,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 7ae51c2ae85edf94fbdf441a5e959185
       objectReference: {fileID: 0}
     - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
         type: 3}
@@ -88,12 +88,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BIoMaskXRay
       objectReference: {fileID: 0}
+    - target: {fileID: 8585229615259169892, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: foreverID
+      value: e6f80a7fd02e2c14ea72a1410BIOMASK
+      objectReference: {fileID: 0}
     - target: {fileID: 8638853748845472652, guid: e6f80a7fd02e2c14ea72a1410452b690,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: 48246087f0349f44ab1dfe559a2cfd80,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8638853748845472652, guid: e6f80a7fd02e2c14ea72a1410452b690,
         type: 3}
       propertyPath: allClothingData.Array.size

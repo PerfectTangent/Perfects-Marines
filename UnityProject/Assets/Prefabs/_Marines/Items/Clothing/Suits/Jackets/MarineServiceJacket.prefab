@@ -49,7 +49,7 @@ PrefabInstance:
     - target: {fileID: 4503057598238606469, guid: 468760f129640bc44aad5c997b695abe,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 51923562cddb59743a5bbe83b52a8171
       objectReference: {fileID: 0}
     - target: {fileID: 4605536033589492017, guid: 468760f129640bc44aad5c997b695abe,
         type: 3}
@@ -110,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444625535482164572, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29a11d2c864b7982ua5b5340eeda3
       objectReference: {fileID: 0}
     - target: {fileID: 7464465783018793652, guid: 468760f129640bc44aad5c997b695abe,
         type: 3}

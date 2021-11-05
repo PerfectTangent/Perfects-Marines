@@ -109,7 +109,12 @@ PrefabInstance:
     - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f2372cafe86195d44bc9445e554c04a2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210658489462252396, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: foreverID
+      value: J0rEwQeBB8YU7skSAiAhGwzJ9mu0GLA6
       objectReference: {fileID: 0}
     - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
         type: 3}

@@ -24,7 +24,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8067fe933ec785143958aef151697ef0,
+      objectReference: {fileID: 21300000, guid: 7792ef05f343e75429a18512c597e743,
         type: 3}
     - target: {fileID: 3639895484745261575, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
@@ -89,8 +89,13 @@ PrefabInstance:
     - target: {fileID: 3676122640429376199, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 3e5919f639f566c4590d07d54ef256dd
       objectReference: {fileID: 0}
+    - target: {fileID: 3676151762921799407, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 8521883043285352586}
     - target: {fileID: 3678228788835208839, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: Resistances.Flammable
@@ -113,9 +118,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
+      propertyPath: hitSound.AssetAddress
+      value: Assets/Prefabs/Effects/Tap.prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
       propertyPath: attackVerbs.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d17044a94af1a74db692ad95f2a441b,
+        type: 2}
+    - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b28e45aac63ecd46a5eafb2c5eb189b,
+        type: 2}
     - target: {fileID: 6900997446700812531, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: denyStorageOfStorageItems
@@ -125,8 +147,13 @@ PrefabInstance:
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
-      objectReference: {fileID: 11400000, guid: 433d707275f88f348ad54d56a21a3b73,
+      objectReference: {fileID: 11400000, guid: 18adf369784f5f04ba16187ea1027f77,
         type: 2}
+    - target: {fileID: 7650131893140443934, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: foreverID
+      value: 3e5919f639f566c4590d07d54ef256dd
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46ba34aab52d654787ef10d896b0874, type: 3}
 --- !u!1 &8635195139948178778 stripped
@@ -135,3 +162,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4991786853530350121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8521883043285352586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3676534646001562275, guid: e46ba34aab52d654787ef10d896b0874,
+    type: 3}
+  m_PrefabInstance: {fileID: 4991786853530350121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8635195139948178778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

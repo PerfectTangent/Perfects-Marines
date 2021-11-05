@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1969800477718476726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296092028407999027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498378a6a03686e4fa4b6e365b6e0d42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StorageItemName: 4
 --- !u!114 &316680899660186145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,6 +20,19 @@ MonoBehaviour:
   - {fileID: 6704733875890864299, guid: efa2c04573e08dd478e4b46c23747b75, type: 3}
   assembly: {fileID: 5914959498962467419, guid: 6c3917fe0f6cb4b4b912f686cbc05d7f,
     type: 3}
+--- !u!114 &1969800477718476726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296092028407999027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498378a6a03686e4fa4b6e365b6e0d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StorageItemName: 4
 --- !u!1001 &7345430228153611584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d677d683821e3ee4287d14557d1ca787,
+      objectReference: {fileID: 21300000, guid: 35c139db46d189b4793667f6265a70ff,
         type: 3}
     - target: {fileID: 3486338153467046959, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 3676122640429376199, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: e7ac2b1f19c7a634380983f8001629da
       objectReference: {fileID: 0}
     - target: {fileID: 3782347747540316177, guid: e46ba34aab52d654787ef10d896b0874,
         type: 3}
@@ -167,8 +167,13 @@ PrefabInstance:
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
-      objectReference: {fileID: 11400000, guid: a6384c683c50cfa4abcfeabfc085c175,
+      objectReference: {fileID: 11400000, guid: 0de762a5c998a844ab5a77fe7a115cd2,
         type: 2}
+    - target: {fileID: 7650131893140443934, guid: e46ba34aab52d654787ef10d896b0874,
+        type: 3}
+      propertyPath: foreverID
+      value: LkI4MtNcyK9jKuuKmDw532zCW4sdrZG
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46ba34aab52d654787ef10d896b0874, type: 3}
 --- !u!1 &6296092028407999027 stripped

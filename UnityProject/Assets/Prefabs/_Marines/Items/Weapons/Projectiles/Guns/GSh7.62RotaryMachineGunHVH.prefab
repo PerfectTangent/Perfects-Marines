@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1755511041657802817, guid: 9e84d5f9899f349439fd559b6ca7aaf4,
+        type: 3}
+      propertyPath: foreverID
+      value: y2WOb2hEKepe5OZ57M55NyaA8aCNqzuk
+      objectReference: {fileID: 0}
     - target: {fileID: 4676541922555305004, guid: 9e84d5f9899f349439fd559b6ca7aaf4,
         type: 3}
       propertyPath: m_Name
-      value: GSh7.62RotaryMachineGun
+      value: GSh7.62RotaryMachineGunHVH
       objectReference: {fileID: 0}
     - target: {fileID: 4680902723410190680, guid: 9e84d5f9899f349439fd559b6ca7aaf4,
         type: 3}
@@ -66,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715936771615990168, guid: 9e84d5f9899f349439fd559b6ca7aaf4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 776ef115eba88124bbde9771ee58b4f3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e84d5f9899f349439fd559b6ca7aaf4, type: 3}

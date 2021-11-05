@@ -87,7 +87,12 @@ PrefabInstance:
     - target: {fileID: 4570929422148808293, guid: af7b390896796584bbd99a32b371f076,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 8f5aa64961de7af46ac4654368fa617e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368373236240359356, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: foreverID
+      value: NknoqBxTvDluR5iXJkjU6uqApniJyop5
       objectReference: {fileID: 0}
     - target: {fileID: 7763395111619340374, guid: af7b390896796584bbd99a32b371f076,
         type: 3}

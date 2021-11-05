@@ -11,8 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemStorageCapacity
       value: 
-      objectReference: {fileID: 11400000, guid: 80f05df5b1d692d48809f6a922d0bfac,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1595527395133040477, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: itemStorageStructure
@@ -22,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f78cff74100d923438f337b4f62164b0
       objectReference: {fileID: 0}
     - target: {fileID: 1867061792278949511, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
@@ -102,6 +101,11 @@ PrefabInstance:
         of a modular belt with various clips. This version is specially designed
         to store knives. Not commonly issued, but kept in service.
       objectReference: {fileID: 0}
+    - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
+        type: 3}
+      propertyPath: foreverID
+      value: uOMmbv4v3Sgzkak7Arxykf5uHNDshAiM
+      objectReference: {fileID: 0}
     - target: {fileID: 5525703409436398848, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -112,14 +116,12 @@ PrefabInstance:
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: de017753f38ac5541a8d17b69028b3ae,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: de017753f38ac5541a8d17b69028b3ae,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7968275424856731504, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: allClothingData.Array.size

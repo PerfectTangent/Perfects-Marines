@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d176d8f3814c6a446aabb3bece22f9f1,
         type: 2}
+    - target: {fileID: 2241164384817483143, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: foreverID
+      value: A10OSM39bba22164ce49f0bExb9b219f3
+      objectReference: {fileID: 0}
     - target: {fileID: 4705439667190492808, guid: cc64a3ac58023c747bd8ea89a8d9913f,
         type: 3}
       propertyPath: initialName
@@ -35,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 5058874295763614814, guid: cc64a3ac58023c747bd8ea89a8d9913f,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: eabbfc5389bc6c647a5478040296a93e
       objectReference: {fileID: 0}
     - target: {fileID: 5161282155667915242, guid: cc64a3ac58023c747bd8ea89a8d9913f,
         type: 3}

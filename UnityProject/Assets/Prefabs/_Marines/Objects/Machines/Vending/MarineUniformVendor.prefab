@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetTabType: 0
+  aiInteractable: 1
 --- !u!114 &4813939428356034143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,30 +43,48 @@ MonoBehaviour:
   - ItemName: Uniform
     Item: {fileID: 7406471568716945414, guid: e576e96fb687f66458a87add8ef2a2dd, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Boots
     Item: {fileID: 8406270145820284379, guid: 82cf3b2062ebd6d48a7ecc4a77d56f5e, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Helmet
     Item: {fileID: 6939948289710576860, guid: f4c061a68c9ca7c44b11df9d566ebdb4, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Gloves
     Item: {fileID: 7433691724623886282, guid: fcf36419a6d62584e85f134bc05de444, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Satchel
     Item: {fileID: 3343503619501541497, guid: 521e98a45c5e9b64aa31bbb612813d86, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Backpack
     Item: {fileID: 3218994455515577053, guid: 68dec3d63630d5749814a832c7d55e91, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Armor
     Item: {fileID: 3875592853425341231, guid: b9f09dad16725364f9d5cf9b5bd13c3b, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Ammor Rig
     Item: {fileID: 8878681798026525133, guid: 983b3f8b38cab824994150dd77978e8d, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   - ItemName: Shotgun Shell Loading Rig
     Item: {fileID: 7277998163801415025, guid: f63e309bd2e1a8b4f81a2e5552c2af83, type: 3}
     Stock: 99
+    Currency: 0
+    Price: 0
   HullColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   EjectObjects: 0
   EjectDirection: 0
@@ -144,6 +163,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -285,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 7153803037707514078, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 1ed68a918f7cd6c4285e5d00e4ad630b
       objectReference: {fileID: 0}
     - target: {fileID: 7887620515462466081, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}

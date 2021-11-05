@@ -31,6 +31,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resistTime: 60
   forceLayingDown: 1
+  allowImpassable: 0
 --- !u!1001 &8195128731716050843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,11 +47,16 @@ PrefabInstance:
     - target: {fileID: 136634061082832056, guid: a7af28adb717b4c44b8b2002b27670bd,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 10c632570c2f272488452c63e7925477
       objectReference: {fileID: 0}
     - target: {fileID: 929166672355850642, guid: a7af28adb717b4c44b8b2002b27670bd,
         type: 3}
       propertyPath: Passable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929166672355850642, guid: a7af28adb717b4c44b8b2002b27670bd,
+        type: 3}
+      propertyPath: initialPassable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1140667517167752775, guid: a7af28adb717b4c44b8b2002b27670bd,

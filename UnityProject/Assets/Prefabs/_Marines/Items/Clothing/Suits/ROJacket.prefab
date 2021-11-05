@@ -13,18 +13,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2e58a5a6eb9a7b742bdb56daa8634851,
         type: 2}
+    - target: {fileID: 809885012485690367, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: foreverID
+      value: a0Ro9a11d2c864b7982u65b5340eed0e
+      objectReference: {fileID: 0}
     - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
         type: 3}
       propertyPath: clothData
       value: 
-      objectReference: {fileID: 11400000, guid: 5efec95239302d44baa8390e9b6428aa,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
         type: 3}
       propertyPath: currentClothData
       value: 
-      objectReference: {fileID: 11400000, guid: 5efec95239302d44baa8390e9b6428aa,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
         type: 3}
       propertyPath: allClothingData.Array.size
@@ -48,10 +51,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d1f550405d5267742bdf9dc5f04342cc,
         type: 3}
+    - target: {fileID: 5914247487144312334, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 9092901415068336143}
     - target: {fileID: 5914288836456407590, guid: d2397c13e09f57f498dd74e297e3e432,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: d7866d6dd67c625489e64d2d9b3f97d4
       objectReference: {fileID: 0}
     - target: {fileID: 6019047452768001938, guid: d2397c13e09f57f498dd74e297e3e432,
         type: 3}
@@ -131,3 +139,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2397c13e09f57f498dd74e297e3e432, type: 3}
+--- !u!114 &9092901415068336143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5913890982743274050, guid: d2397c13e09f57f498dd74e297e3e432,
+    type: 3}
+  m_PrefabInstance: {fileID: 3180145162685248077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

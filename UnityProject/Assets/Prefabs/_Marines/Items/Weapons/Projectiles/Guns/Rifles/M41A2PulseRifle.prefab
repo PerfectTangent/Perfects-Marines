@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 2217673638823712388, guid: 181c13523db6cd64db782a16731401c6,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 8536f33e2a1fbb541b1c62e5d41648dc
       objectReference: {fileID: 0}
     - target: {fileID: 2252210845068006980, guid: 181c13523db6cd64db782a16731401c6,
         type: 3}
@@ -101,6 +101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: M41A2PulseRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181477204327950173, guid: 181c13523db6cd64db782a16731401c6,
+        type: 3}
+      propertyPath: foreverID
+      value: 3x5X6eW81xAMuLxTiCnVbi60hw1Q05Id
       objectReference: {fileID: 0}
     - target: {fileID: 5338147382796832951, guid: 181c13523db6cd64db782a16731401c6,
         type: 3}

@@ -17,10 +17,15 @@ PrefabInstance:
       propertyPath: initialDescription
       value: For some reason, seeing this helmet causes you to feel extremely distressed.
       objectReference: {fileID: 0}
+    - target: {fileID: 3807004183248465950, guid: 06cea648d39bfc74e8e61d3c92edf73a,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 7590501988662515142}
     - target: {fileID: 3807042242615585846, guid: 06cea648d39bfc74e8e61d3c92edf73a,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: f80f2b65743b3ce42a207b3118864a6e
       objectReference: {fileID: 0}
     - target: {fileID: 3808588668754526326, guid: 06cea648d39bfc74e8e61d3c92edf73a,
         type: 3}
@@ -110,5 +115,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7e5c8c1618ea8ae4b92f1b4036b2b06d,
         type: 2}
+    - target: {fileID: 7925166305447484911, guid: 06cea648d39bfc74e8e61d3c92edf73a,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9cHEFA
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cea648d39bfc74e8e61d3c92edf73a, type: 3}
+--- !u!114 &7590501988662515142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3806894528066272338, guid: 06cea648d39bfc74e8e61d3c92edf73a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6737999879595141524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

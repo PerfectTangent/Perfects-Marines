@@ -11,17 +11,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3d3c8834d13c8fa43914c42c33bc1d17,
+      objectReference: {fileID: 21300000, guid: fabb838945665294589e0636487df41a,
         type: 3}
-    - target: {fileID: 3791466462619397166, guid: ab1e465a59765f84b8691daa8693f857,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3921521694364753778, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
       propertyPath: m_Name
-      value: BioSuitVirology
+      value: VirologyBioSuit
       objectReference: {fileID: 0}
     - target: {fileID: 3927008119850082822, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
@@ -81,13 +76,13 @@ PrefabInstance:
     - target: {fileID: 4033042375367942854, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: e0c0a5beb35967748bf99e5f8dc51871
       objectReference: {fileID: 0}
     - target: {fileID: 7145545764318209269, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
       propertyPath: PresentSpriteSet
       value: 
-      objectReference: {fileID: 11400000, guid: 3815b24eeba64c3409c78cc0c26939fd,
+      objectReference: {fileID: 11400000, guid: dcdaefe929fb25b409b22cd2b1d4f65a,
         type: 2}
     - target: {fileID: 7931175119129480439, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
@@ -96,9 +91,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7931175119129480439, guid: ab1e465a59765f84b8691daa8693f857,
         type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931175119129480439, guid: ab1e465a59765f84b8691daa8693f857,
+        type: 3}
       propertyPath: allClothingData.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 40106a0f62fdac94784c5317876c70bd,
+      objectReference: {fileID: 11400000, guid: 89d7180507ba26043b36017646b90bce,
         type: 2}
+    - target: {fileID: 7986767595912221471, guid: ab1e465a59765f84b8691daa8693f857,
+        type: 3}
+      propertyPath: foreverID
+      value: e0c0a5beb35967748bf99e5f8dc51871
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1e465a59765f84b8691daa8693f857, type: 3}

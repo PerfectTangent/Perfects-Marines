@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemStorageStructure: {fileID: 11400000, guid: 263bf834f99424f12bda19d67c3ab5fc,
     type: 2}
-  itemStorageCapacity: {fileID: 11400000, guid: 9ead0167a3241b648bfd604f9cdef582,
-    type: 2}
+  itemStorageCapacity: {fileID: 0}
   itemStoragePopulator: {fileID: 0}
+  forceSpawnContents: 0
+  dropItemsOnDespawn: 0
+  UesAddlistPopulater: 0
+  Populater:
+    SlotContents: []
+    DeprecatedContents: []
+  ashPrefab: {fileID: 0}
 --- !u!1001 &2272983323488270778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24,6 +30,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1456001001185386139, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: foreverID
+      value: 502f496beb90VET9b9c97868e845ePol
+      objectReference: {fileID: 0}
     - target: {fileID: 1509623270496223603, guid: 43b5134397273884098fbc8b5dca2800,
         type: 3}
       propertyPath: allClothingData.Array.size
@@ -141,10 +152,15 @@ PrefabInstance:
       propertyPath: Armor.Energy
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5555801279086752618, guid: 43b5134397273884098fbc8b5dca2800,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 5949419883110336156}
     - target: {fileID: 5555838089702747970, guid: 43b5134397273884098fbc8b5dca2800,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 7d2c0fb11e70d064c80922cd7a73b72e
       objectReference: {fileID: 0}
     - target: {fileID: 5656395009047011754, guid: 43b5134397273884098fbc8b5dca2800,
         type: 3}
@@ -160,3 +176,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2272983323488270778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5949419883110336156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5556271608707399462, guid: 43b5134397273884098fbc8b5dca2800,
+    type: 3}
+  m_PrefabInstance: {fileID: 2272983323488270778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982252123311090508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

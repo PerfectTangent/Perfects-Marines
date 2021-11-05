@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2607336686439034363, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 47a7a420829ffb241a0355121d5cb989
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607435180188348883, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 640957307541855093}
     - target: {fileID: 2713605000496459067, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +75,24 @@ PrefabInstance:
     - target: {fileID: 2718814624466391119, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: m_Name
-      value: _GlassesBase
+      value: _GlassesHUDBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007641923583695906, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: foreverID
+      value: 28c72054b1f484ed4a6253c4feee3eZ4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c72054b1f484ed4a6253c4feee3eb4, type: 3}
+--- !u!114 &640957307541855093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2607166637791280543, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3227857692248073962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

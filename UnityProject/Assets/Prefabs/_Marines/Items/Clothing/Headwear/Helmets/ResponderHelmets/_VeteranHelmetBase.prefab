@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4104221644060154033, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9ccVET
+      objectReference: {fileID: 0}
     - target: {fileID: 6939948289710576860, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
         type: 3}
       propertyPath: m_Name
-      value: M10PatternMarineHelmet
+      value: _VeteranHelmetBase
       objectReference: {fileID: 0}
     - target: {fileID: 6943464390224193960, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
         type: 3}
@@ -66,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051392004893796712, guid: f4c061a68c9ca7c44b11df9d566ebdb4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c26ad2f80b1e6944387277a196b8de04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c061a68c9ca7c44b11df9d566ebdb4, type: 3}

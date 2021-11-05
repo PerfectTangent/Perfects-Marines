@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2791576505265868791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6019047452768001938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdce8a163088453ca593c0e98f2c5f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemStorageStructure: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
-    type: 2}
-  itemStorageCapacity: {fileID: 11400000, guid: 305f2bdfaa6a5914ca12cba2f0591ec6,
-    type: 2}
-  itemStoragePopulator: {fileID: 0}
 --- !u!114 &5118185837603393105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +15,7 @@ MonoBehaviour:
   denyStorageOfStorageItems: 0
   canClickPickup: 0
   canQuickEmpty: 0
-  actionData: {fileID: 11400000, guid: be9856a38a3b7d44198fc4fcd9df4d47, type: 2}
+  actionData: {fileID: 0}
 --- !u!114 &7340838986744258005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +101,24 @@ PrefabInstance:
     - target: {fileID: 3564945054494194852, guid: a0c29a11d2c864b7982765b5340eed0e,
         type: 3}
       propertyPath: m_AssetId
+      value: d2397c13e09f57f498dd74e297e3e432
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279701593722495436, guid: a0c29a11d2c864b7982765b5340eed0e,
+        type: 3}
+      propertyPath: itemStorageCapacity
       value: 
+      objectReference: {fileID: 11400000, guid: 305f2bdfaa6a5914ca12cba2f0591ec6,
+        type: 2}
+    - target: {fileID: 4279701593722495436, guid: a0c29a11d2c864b7982765b5340eed0e,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
+        type: 2}
+    - target: {fileID: 7518679174278335869, guid: a0c29a11d2c864b7982765b5340eed0e,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29a11d2c864b7982u65b5340eed0e
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0c29a11d2c864b7982765b5340eed0e, type: 3}

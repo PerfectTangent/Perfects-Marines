@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Variance:
   - Frames:
-    - sprite: {fileID: 7177981779665732742, guid: 353ccdbc31258e540bbb7f731b73cc13,
+    - sprite: {fileID: -789690888681122954, guid: d3f7cb73a822fa744b4f79b9f5b79040,
         type: 3}
       secondDelay: 0
   - Frames:
-    - sprite: {fileID: 236378320401035190, guid: 353ccdbc31258e540bbb7f731b73cc13,
+    - sprite: {fileID: 5174247600933240481, guid: d3f7cb73a822fa744b4f79b9f5b79040,
         type: 3}
       secondDelay: 0
   - Frames:
-    - sprite: {fileID: -2346448005033463036, guid: 353ccdbc31258e540bbb7f731b73cc13,
+    - sprite: {fileID: -1369765614790839925, guid: d3f7cb73a822fa744b4f79b9f5b79040,
         type: 3}
       secondDelay: 0
   - Frames:
-    - sprite: {fileID: -8709833128625411997, guid: 353ccdbc31258e540bbb7f731b73cc13,
+    - sprite: {fileID: -9112251950349595154, guid: d3f7cb73a822fa744b4f79b9f5b79040,
         type: 3}
       secondDelay: 0
   IsPalette: 0

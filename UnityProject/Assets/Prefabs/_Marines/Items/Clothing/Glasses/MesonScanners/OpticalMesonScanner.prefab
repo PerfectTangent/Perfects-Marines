@@ -26,14 +26,24 @@ PrefabInstance:
     - target: {fileID: 2546418124722880301, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: initialDescription
-      value: Used to shield the user's eyes from harmful electromagnetic emissions,
-        also used as general safety goggles. Not adequate as welding protection.
+      value: Used by engineering and mining staff to see basic structural and terrain
+        layouts through walls, regardless of lighting conditions.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2546418124722880301, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: hitSound.AssetAddress
+      value: Assets/Prefabs/Effects/Tap.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 2607336686439034363, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: e6f80a7fd02e2c14ea72a1410452b690
       objectReference: {fileID: 0}
+    - target: {fileID: 2607435180188348883, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 3317968190863873497}
     - target: {fileID: 2713605000496459067, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: m_RootOrder
@@ -103,7 +113,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1821019214407757572, guid: 3184d000520206a40bf60008fd48d6d1,
+      objectReference: {fileID: 5513353170905670172, guid: 3184d000520206a40bf60008fd48d6d1,
         type: 3}
     - target: {fileID: 8141721191079898056, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
@@ -111,9 +121,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cf01f90c277703c49ac5e7151ebf13f6,
         type: 2}
+    - target: {fileID: 9007641923583695906, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: foreverID
+      value: e6f80a7fd02e2c14ea72a1410452b690
+      objectReference: {fileID: 0}
     - target: {fileID: 9062951044728521674, guid: 28c72054b1f484ed4a6253c4feee3eb4,
         type: 3}
       propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062951044728521674, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+        type: 3}
+      propertyPath: currentClothData
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9062951044728521674, guid: 28c72054b1f484ed4a6253c4feee3eb4,
@@ -129,3 +149,15 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c72054b1f484ed4a6253c4feee3eb4, type: 3}
+--- !u!114 &3317968190863873497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2607166637791280543, guid: 28c72054b1f484ed4a6253c4feee3eb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 731076568007370822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

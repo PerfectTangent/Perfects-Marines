@@ -100,8 +100,13 @@ PrefabInstance:
     - target: {fileID: 3564945054494194852, guid: a0c29a11d2c864b7982765b5340eed0e,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 4ab096a3ca1f7754db12bf74fb39ae32
       objectReference: {fileID: 0}
+    - target: {fileID: 3564982001466876044, guid: a0c29a11d2c864b7982765b5340eed0e,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 8002743497090486322}
     - target: {fileID: 3611036598041473612, guid: a0c29a11d2c864b7982765b5340eed0e,
         type: 3}
       propertyPath: m_Sprite
@@ -130,6 +135,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1b93118ffcc0dfa4685afd169249152e,
         type: 2}
+    - target: {fileID: 7518679174278335869, guid: a0c29a11d2c864b7982765b5340eed0e,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29a11d2c864brad2765b5340eed0e
+      objectReference: {fileID: 0}
     - target: {fileID: 7534581208369271445, guid: a0c29a11d2c864b7982765b5340eed0e,
         type: 3}
       propertyPath: hideClothingFlags
@@ -154,3 +164,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6807143232469384434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8002743497090486322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3564775555980061888, guid: a0c29a11d2c864b7982765b5340eed0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6807143232469384434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969923901874372066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3115213240338246153, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: foreverID
+      value: 502f496beMARUPP9b9c97868e845ed7e
+      objectReference: {fileID: 0}
     - target: {fileID: 8220751108614773712, guid: cfbf1bedee4f79d40a2216455927960a,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 23a084b029c11fd4688b33f877cfbb10
       objectReference: {fileID: 0}
     - target: {fileID: 8323157938262763108, guid: cfbf1bedee4f79d40a2216455927960a,
         type: 3}
@@ -76,7 +81,6 @@ PrefabInstance:
         type: 3}
       propertyPath: itemStoragePopulator
       value: 
-      objectReference: {fileID: 11400000, guid: 97596ee52149ca146b1b869655daa176,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfbf1bedee4f79d40a2216455927960a, type: 3}

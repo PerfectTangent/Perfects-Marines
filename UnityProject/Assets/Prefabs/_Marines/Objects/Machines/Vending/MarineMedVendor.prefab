@@ -62,6 +62,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetTabType: 0
+  aiInteractable: 1
 --- !u!114 &4813939429131154508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +144,8 @@ MonoBehaviour:
   - ItemName: Stasis bag
     Item: {fileID: 3928733551089330921, guid: 0c67383025c658546b51f18a687d8759, type: 3}
     Stock: 6
+    Currency: 0
+    Price: 0
   HullColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   EjectObjects: 0
   EjectDirection: 0
@@ -261,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 7153803037707514078, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: 827acda04b54cd84ab5dbc7fed22a76b
       objectReference: {fileID: 0}
     - target: {fileID: 7887620515462466081, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}

@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2487639156064889297, guid: d7aa0667d6200a448bf5801bbd131c26,
+        type: 3}
+      propertyPath: foreverID
+      value: 4JLWgw6kZglzaOMbKMcl2Qpb5LnxL82K
+      objectReference: {fileID: 0}
     - target: {fileID: 8803663597295524040, guid: d7aa0667d6200a448bf5801bbd131c26,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 8808872945447478716, guid: d7aa0667d6200a448bf5801bbd131c26,
         type: 3}
       propertyPath: m_Name
-      value: Type71FlamethrowerPulseRifle
+      value: Type71FlamethrowerPulseRifleHVH
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911307400322750472, guid: d7aa0667d6200a448bf5801bbd131c26,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 6cde2e6ab47b19649bc61de74c2c50be
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7aa0667d6200a448bf5801bbd131c26, type: 3}

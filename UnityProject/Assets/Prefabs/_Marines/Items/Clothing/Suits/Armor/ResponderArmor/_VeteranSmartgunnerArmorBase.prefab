@@ -70,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 369273594122093022, guid: 7b7f08b2bb0289d429446da29df714c4,
         type: 3}
       propertyPath: m_AssetId
-      value: 
+      value: c954085de47dcf04ea16b284817c7c58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643196601550630919, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: foreverID
+      value: Arc29a11d2c86cv7982u65b5340eed0e
       objectReference: {fileID: 0}
     - target: {fileID: 6698791580202053615, guid: 7b7f08b2bb0289d429446da29df714c4,
         type: 3}
