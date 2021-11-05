@@ -140,12 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed381a72f1e344bb8020dc181414b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialVendorContent:
-  - ItemName: Stasis bag
-    Item: {fileID: 3928733551089330921, guid: 0c67383025c658546b51f18a687d8759, type: 3}
-    Stock: 6
-    Currency: 0
-    Price: 0
+  InitialVendorContent: []
   HullColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   EjectObjects: 0
   EjectDirection: 0
@@ -250,6 +245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MarineMedVendor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444135299207855093, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: foreverID
+      value: YdldN6iy1nazz3SEWW8AbFRJtmgixZcS
       objectReference: {fileID: 0}
     - target: {fileID: 6109775972905365350, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}

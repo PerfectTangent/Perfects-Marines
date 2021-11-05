@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EngPrepVendor
       objectReference: {fileID: 0}
+    - target: {fileID: 2444135299207855093, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: foreverID
+      value: seMn0AlR9kl3GDwx9kouIDHXx08hCnYB
+      objectReference: {fileID: 0}
     - target: {fileID: 6109775972905365350, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: PresentSpriteSet

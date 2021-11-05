@@ -105,6 +105,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 86326442f6221974c8741e31e4736b7c,
         type: 2}
+    - target: {fileID: 4848496751115757459, guid: a7af28adb717b4c44b8b2002b27670bd,
+        type: 3}
+      propertyPath: foreverID
+      value: RCUTcxNpofhTTAc5u5jMt9vwGPTlvNd7
+      objectReference: {fileID: 0}
     - target: {fileID: 8371364824666529536, guid: a7af28adb717b4c44b8b2002b27670bd,
         type: 3}
       propertyPath: m_RootOrder

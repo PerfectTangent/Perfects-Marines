@@ -80,6 +80,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 29aab78b9cf7c6e45b1e6ab1babc040b,
         type: 2}
+    - target: {fileID: 4860405152476736580, guid: 8fffba3a81d84ed4d96bd9095e9836da,
+        type: 3}
+      propertyPath: foreverID
+      value: VR51ZWZdge0GNKaAUUh97zXcDwmmkKpQ
+      objectReference: {fileID: 0}
     - target: {fileID: 4994703905846967329, guid: 8fffba3a81d84ed4d96bd9095e9836da,
         type: 3}
       propertyPath: RelatedAPC

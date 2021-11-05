@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MarineUniformVendor
       objectReference: {fileID: 0}
+    - target: {fileID: 2444135299207855093, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: foreverID
+      value: Ss5hob4DQsIMJDog64IpwWiYAsUSiliT
+      objectReference: {fileID: 0}
     - target: {fileID: 6109775972905365350, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: PresentSpriteSet

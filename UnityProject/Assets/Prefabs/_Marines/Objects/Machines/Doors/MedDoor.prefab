@@ -137,6 +137,11 @@ PrefabInstance:
       propertyPath: RelatedAPC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3807468180640734214, guid: ed01dbb56f7eaec43a7c493afa00559a,
+        type: 3}
+      propertyPath: foreverID
+      value: Z3icoDL9Zp3SGeXv0zhTVbF19MPzvK4S
+      objectReference: {fileID: 0}
     - target: {fileID: 4361044462024947031, guid: ed01dbb56f7eaec43a7c493afa00559a,
         type: 3}
       propertyPath: m_Sprite

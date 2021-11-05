@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MarineArmoryVendor
       objectReference: {fileID: 0}
+    - target: {fileID: 2444135299207855093, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: foreverID
+      value: xRofay5b5e54KUqbQeLmJi4P4VDmgWh1
+      objectReference: {fileID: 0}
     - target: {fileID: 3314592590375341583, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: m_LocalPosition.x

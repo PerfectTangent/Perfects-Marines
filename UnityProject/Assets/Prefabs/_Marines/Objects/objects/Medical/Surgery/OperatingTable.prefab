@@ -88,6 +88,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5682810388332115364, guid: b61e089f457d9cb4088c2ef2d227fb40,
         type: 3}
+    - target: {fileID: 2865297566286235552, guid: aa86a2f1735706141b988a218138c7dd,
+        type: 3}
+      propertyPath: foreverID
+      value: FjrzyQZCfeL4h3iFKXVGE8RgD6KYJ86x
+      objectReference: {fileID: 0}
     - target: {fileID: 5972490048144347955, guid: aa86a2f1735706141b988a218138c7dd,
         type: 3}
       propertyPath: PresentSpriteSet

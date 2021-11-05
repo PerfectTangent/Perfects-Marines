@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: RelatedAPC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2096953746958404174, guid: 5fd9d8acdd4f02849884dcddff5db286,
+        type: 3}
+      propertyPath: foreverID
+      value: 1sqt2U1j1T4rVGp3FEk6INzal2I00PwG
+      objectReference: {fileID: 0}
     - target: {fileID: 2956671013431119888, guid: 5fd9d8acdd4f02849884dcddff5db286,
         type: 3}
       propertyPath: m_Size.x

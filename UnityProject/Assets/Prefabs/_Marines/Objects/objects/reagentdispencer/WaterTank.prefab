@@ -43,6 +43,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -100,9 +101,8 @@ MonoBehaviour:
   PresentSpriteSet: {fileID: 11400000, guid: 12ffe521b4503a14eb3d1282f9f94d53, type: 2}
   randomInitialSprite: 0
   pushTextureOnStartUp: 1
-  variantIndex: 0
+  initialVariantIndex: 0
   palette: []
-  Sprites: []
 --- !u!1 &8278033225652881028
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 526760740479297663}
   - component: {fileID: 8929911088361798880}
   - component: {fileID: 4838474698715217177}
+  - component: {fileID: 2743417016564806821}
   m_Layer: 11
   m_Name: WaterTank
   m_TagString: Untagged
@@ -186,10 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDirty: 0
   sceneId: 0
   serverOnly: 0
-  m_AssetId: 
+  visible: 0
+  m_AssetId: c4715cfc3a5869a4fabb53c96865021c
+  hasSpawned: 0
 --- !u!114 &3834615561444462018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,9 +208,13 @@ MonoBehaviour:
   syncInterval: 0.1
   matrixDebugLogging: 0
   objectType: 1
+  customNetTransform: {fileID: 0}
+  prefabTracker: {fileID: 0}
+  CurrentsortingGroup: {fileID: 0}
   AtmosPassable: 1
-  Passable: 0
   ReachableThrough: 1
+  initialPassable: 0
+  initialCrawlPassable: 0
   passableExclusionsToThis: []
 --- !u!114 &1243041059618357730
 MonoBehaviour:
@@ -239,14 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMeleeable: 1
-  butcherTime: 2
-  butcherSound:
-    SetLoadSetting: 0
-    AssetAddress: Assets/Prefabs/Effects/BladeSlice.prefab
-    AssetReference:
-      m_AssetGUID: 
-      m_SubObjectName: 
-      m_SubObjectType: 
 --- !u!114 &7268109114820785627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +279,7 @@ MonoBehaviour:
     Acid: 0
     Magic: 0
     Bio: 0
+    DismembermentProtectionChance: 0
   Resistances:
     LavaProof: 0
     FireProof: 0
@@ -292,6 +291,7 @@ MonoBehaviour:
     LightningDamageProof: 0
   HeatResistance: 100
   ExplosionsDamage: 100
+  doDamageMessage: 1
 --- !u!114 &4650076143496134421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   initialDescription: A tank full of industrial welding fuel. Do not consume.
   willHighlight: 1
   exportCost: 0
+  exportType: 0
   exportName: 
   exportMessage: 
 --- !u!114 &5268147705815149488
@@ -324,6 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cc3ef7cd9082443aaf3c255851d15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &8086203649174044204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteMatrixRotationBehavior: 1
   ignoreExtraRotation: []
+  RotateParent: {fileID: 0}
 --- !u!114 &3768878694547790638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +354,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6adedb9416d7b647b6c3811ff2f0824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCapacity: 1000
+  reactionSet: {fileID: 0}
+  AdditionalReactions: []
+  canPourOut: 1
+  initialReagentMix:
+    temperature: 0
+    reagents:
+      m_keys:
+      - {fileID: 11400000, guid: 522665e55a63647f6a9959f4b0a52c31, type: 2}
+      m_values:
+      - 1000
+    reagentKeys: []
+  destroyOnEmpty: 0
+  ContentsSet: 0
   UseStandardExamine: 1
   ExamineAmount: 0
   ExamineContent: 1
@@ -358,16 +376,6 @@ MonoBehaviour:
   transferMode: 2
   possibleTransferAmounts: []
   transferAmount: 20
-  maxCapacity: 1000
-  reactionSet: {fileID: 0}
-  initialReagentMix:
-    temperature: 0
-    reagents:
-      m_keys:
-      - {fileID: 11400000, guid: 522665e55a63647f6a9959f4b0a52c31, type: 2}
-      m_values:
-      - 1000
-  destroyOnEmpty: 0
 --- !u!114 &2012259112413689648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,3 +457,16 @@ MonoBehaviour:
   indexLeft: 3
   spriteHandlers:
   - {fileID: 2473010303363052228}
+--- !u!114 &2743417016564806821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278033225652881028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4629d03e356d64eb509d18a7450082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foreverID: M3GBDhKP1LXDz9eE9tjwueSSPSlxzXxb

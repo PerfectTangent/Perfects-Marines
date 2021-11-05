@@ -128,5 +128,10 @@ PrefabInstance:
       propertyPath: RelatedAPC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7793920916949222429, guid: 9fb7743a22da0f848bb747ca97642106,
+        type: 3}
+      propertyPath: foreverID
+      value: 36jCvw3oM0JmvJ423Sw2vVjSlOvgPkQU
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb7743a22da0f848bb747ca97642106, type: 3}

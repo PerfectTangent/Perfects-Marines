@@ -42,6 +42,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 18acc81d8f10581489d076307446c77c,
         type: 2}
+    - target: {fileID: 4614770738847591749, guid: 3af8db105a27a8d4ca0f16e6be0a4dbe,
+        type: 3}
+      propertyPath: foreverID
+      value: F2fvW9I5veb70YUN8NGnFMSguTvNte1H
+      objectReference: {fileID: 0}
     - target: {fileID: 8366317312139097883, guid: 3af8db105a27a8d4ca0f16e6be0a4dbe,
         type: 3}
       propertyPath: m_Sprite

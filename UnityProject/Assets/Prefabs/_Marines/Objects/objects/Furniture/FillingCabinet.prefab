@@ -73,6 +73,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 29a52d96c4d865841ba96ed24b9e9a05,
         type: 3}
+    - target: {fileID: 2865297566286235552, guid: aa86a2f1735706141b988a218138c7dd,
+        type: 3}
+      propertyPath: foreverID
+      value: eoZ1UtLvquSHYCY8ZH77q9GfWSULbYU3
+      objectReference: {fileID: 0}
     - target: {fileID: 3159003044880347738, guid: aa86a2f1735706141b988a218138c7dd,
         type: 3}
       propertyPath: m_LocalPosition.x

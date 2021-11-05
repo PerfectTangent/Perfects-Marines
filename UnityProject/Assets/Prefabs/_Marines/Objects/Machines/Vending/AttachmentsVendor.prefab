@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttachmentsVendor
       objectReference: {fileID: 0}
+    - target: {fileID: 2444135299207855093, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: foreverID
+      value: 1vUiMBUOGwPwUFrk16qLBr3PKJN3pwCo
+      objectReference: {fileID: 0}
     - target: {fileID: 6109775972905365350, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: PresentSpriteSet
@@ -282,6 +287,11 @@ PrefabInstance:
       propertyPath: initialIntegrity
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 7946340047006197236, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 900552776498477949}
     - target: {fileID: 8232375373487905420, guid: b69bfc56f39849d4ba9139d2d51bedb6,
         type: 3}
       propertyPath: initialName
@@ -306,3 +316,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3621300505252506051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &900552776498477949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4485046902360527550, guid: b69bfc56f39849d4ba9139d2d51bedb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3621300505252506051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655938094653156479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
