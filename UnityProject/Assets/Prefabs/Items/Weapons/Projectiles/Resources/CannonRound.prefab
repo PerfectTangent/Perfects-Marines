@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5608354252968233435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2620319225892522, guid: 59e1ffc6647eaad42b01989df509f420, type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 951d1f4ba427154418dd59d256942ba3,
+        type: 2}
+    - target: {fileID: 5797635805619737987, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: maxDistance
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069225660774590096, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 951d1f4ba427154418dd59d256942ba3,
+        type: 2}
+    - target: {fileID: 7248234673966703153, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a0cba9709e51c12438fdffadfe13fa47,
+        type: 2}
+    - target: {fileID: 8126410635092524291, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535058323813338645, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: visibleName
+      value: cannon round
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677400620567992675, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 348ff1ffd68d9b744a69766990b3f5a8,
+        type: 3}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834903344058212361, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_Name
+      value: CannonRound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926162813532914067, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 951d1f4ba427154418dd59d256942ba3,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59e1ffc6647eaad42b01989df509f420, type: 3}

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6359630075217539444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 591280896044672247, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: maxDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318685547332036631, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3748959374025022134, guid: 8b1b236375e88484eb1f8e0940965f97,
+        type: 3}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508263998177041473, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511337419890708861, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_Name
+      value: HighExplosiveRocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567588430541566183, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ba723ec36948d14b80043c12882e5b8,
+        type: 2}
+    - target: {fileID: 2920371813632314487, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329127183625617249, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: visibleName
+      value: high explosive rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204988295596267492, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ba723ec36948d14b80043c12882e5b8,
+        type: 2}
+    - target: {fileID: 4383997860686795589, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 040eb90c892de76439c29efbcf8915c7,
+        type: 2}
+    - target: {fileID: 6361544417241939934, guid: b343aea0e51a4c44694589195b8eae77,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ba723ec36948d14b80043c12882e5b8,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b343aea0e51a4c44694589195b8eae77, type: 3}

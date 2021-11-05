@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2475845064322994684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2620319225892522, guid: 59e1ffc6647eaad42b01989df509f420, type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 183f309c8066a2944b40fc437a87a744,
+        type: 2}
+    - target: {fileID: 5797635805619737987, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: maxDistance
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069225660774590096, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 183f309c8066a2944b40fc437a87a744,
+        type: 2}
+    - target: {fileID: 8126410635092524291, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535058323813338645, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: visibleName
+      value: white phosphorous rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677400620567992675, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5890828503606760369, guid: 8b1b236375e88484eb1f8e0940965f97,
+        type: 3}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831230162374044981, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834903344058212361, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: m_Name
+      value: WhitePhosphorousRocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926162813532914067, guid: 59e1ffc6647eaad42b01989df509f420,
+        type: 3}
+      propertyPath: damageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 183f309c8066a2944b40fc437a87a744,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59e1ffc6647eaad42b01989df509f420, type: 3}
