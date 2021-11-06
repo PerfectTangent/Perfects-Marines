@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5423396216894795666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1846724104790029551, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 029c633eb6c238746ac5e3f9c36d38a8,
+        type: 2}
+    - target: {fileID: 1846724104790029551, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 029c633eb6c238746ac5e3f9c36d38a8,
+        type: 2}
+    - target: {fileID: 3327527752797399895, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: efb9ef5702422514d9c19f52c8ec7553
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563814246919373061, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: initialName
+      value: engineering wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381651245139147298, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 90d51216e99bc3d46ac3ac5f1f014c67,
+        type: 3}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624813838982880821, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_Name
+      value: EngineeringWardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818804426710343804, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: foreverID
+      value: FzmzrstbKfi39VaUQVZZtGMwaZy0qg
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3, type: 3}

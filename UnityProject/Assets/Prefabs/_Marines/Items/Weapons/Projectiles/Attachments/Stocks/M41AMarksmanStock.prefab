@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7070569637875811431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4041588394998660275, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: initialName
+      value: M41A marksman stock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041588394998660275, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dccc090227a556142b3d8122d2377efb,
+        type: 2}
+    - target: {fileID: 4326538757526560909, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fd102283353ea4459156eb736992387,
+        type: 3}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533017814651760293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538222764891411409, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_Name
+      value: M41AMarksmanStock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570929422148808293, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 8f5aa64961de7af46ac4654368fa617e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368373236240359356, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: foreverID
+      value: NknoqBxTvDluR5iXJkjU6uqApniJyop5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763395111619340374, guid: af7b390896796584bbd99a32b371f076,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 44ca881e07b8c9a4e970e59f31bc81af,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af7b390896796584bbd99a32b371f076, type: 3}

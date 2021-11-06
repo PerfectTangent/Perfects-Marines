@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_hardhat1_pumpkin
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6466692399894998058, guid: a6b3d182e754b3f44870854dfe6f5f99,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4357298770677319429, guid: a6b3d182e754b3f44870854dfe6f5f99,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7813863004435348806, guid: a6b3d182e754b3f44870854dfe6f5f99,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3018947104373228273, guid: a6b3d182e754b3f44870854dfe6f5f99,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24153
+  DisplayName: 

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: M41A pulse rifle MK2 (desert - suit storage)
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: adce7f2db16e4304cb1327273124e03d, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: aa5764134ca01384d9f42cc494f5739e, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: 2dd6a2c3504accf4fa20936ea127e4aa, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 3e270fcd717d87045be735a3df164a03, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

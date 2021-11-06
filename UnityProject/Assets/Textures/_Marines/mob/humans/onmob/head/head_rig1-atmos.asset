@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_rig1-atmos
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5858699893193649421, guid: 2f5b71f7f8bc4b94aa450284f570cb2e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -26390375659306412, guid: 2f5b71f7f8bc4b94aa450284f570cb2e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7306938537375290213, guid: 2f5b71f7f8bc4b94aa450284f570cb2e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9039598655467225286, guid: 2f5b71f7f8bc4b94aa450284f570cb2e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24220
+  DisplayName: 

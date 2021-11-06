@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5708220243271214803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2995243741728940376, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53a6ab47d8c7d3d40bc5d8e40babed92,
+        type: 3}
+    - target: {fileID: 3095378482934067120, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 84e9da4d013b8ab4f9acfbc0efbcfd42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125722220992795140, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_Name
+      value: M44CustomCombatRevolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130927446178033520, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282369281813118310, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: initialName
+      value: M44 custom combat revolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282369281813118310, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: initialDescription
+      value: A bulky combat revolver. The handle has been polished to a pearly perfection,
+        and the body is silver plated. Fires .44 Magnum rounds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282369281813118310, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 6813ef14910a5c84e8608eeff26b317f,
+        type: 2}
+    - target: {fileID: 3282369281813118310, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a0c3e3737140184d892a65c476eaa3a,
+        type: 2}
+    - target: {fileID: 8348110378541620841, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: foreverID
+      value: MtdDfPQUsKfxYEP42XOruqO6J3A5IGwn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090187073388849539, guid: d33eebcc44d839147ab5620b22301dc4,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bd8b040df7c63642a0ce0d4b5295782,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d33eebcc44d839147ab5620b22301dc4, type: 3}

@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2271575345189021026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: foreverID
+      value: ' PwsUHjD5dwY1IdJVH6JrvZYel2SrzE3w'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082522023416177629, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cf7ed1ce8d46c8b4491944007b3fd258,
+        type: 2}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialName
+      value: standard mateba barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialDescription
+      value: A standard mateba barrel. Offers a balance between accuracy and firerate.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99124b7b32ab19c4b9d2b55e4ff7f732,
+        type: 2}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 901ae57ab2a73fd478d82ff3e96c2f69,
+        type: 3}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 02a8396bdc15f514391891de6110957e
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187710774849083482, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Name
+      value: StandardMatebaBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d07740a6daa37147b793a13fbf4f68b, type: 3}

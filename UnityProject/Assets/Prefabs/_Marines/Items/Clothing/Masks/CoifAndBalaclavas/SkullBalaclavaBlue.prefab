@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5914755216085715897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3759253573313940172, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 47effa77783f0804eb0975cc0407fddd,
+        type: 2}
+    - target: {fileID: 3813438767862977828, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: foreverID
+      value: 0COIF5eab681SKUL4bb02b82fff3BBLU
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111971767673955022, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d53c9608f1f73a44ebd47c702b3d489c,
+        type: 2}
+    - target: {fileID: 7690790313824843307, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: initialName
+      value: skull balaclava
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690790313824843307, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: initialDescription
+      value: The face of your nightmares. Heed the call of duty as the ghost in the
+        night with this metal 'clava. Additionally protects against the cold.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801700886092375101, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806629034947156297, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_Name
+      value: SkullBalaclavaBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909026999249183997, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 72346d188aa902649959124402d5171b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973414379765082645, guid: c13bf9b27d22a9b41858a6387ad8ec2f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a8ee248f4395d744b33523bbfe6cb09,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c13bf9b27d22a9b41858a6387ad8ec2f, type: 3}

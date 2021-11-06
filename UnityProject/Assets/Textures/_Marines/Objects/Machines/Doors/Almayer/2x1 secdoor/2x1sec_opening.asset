@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: 2x1sec_opening
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -876054916192176985, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4304265742925316531, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7165836706400614833, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8548406825436898702, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5183381886268808183, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5032142343054098238, guid: 2cf2ac7d56adf214795b117d86371f66,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30698
+  DisplayName: 

@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6590177847211101893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1880112872154972333, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 700b76624e3bc014f8d1054bcda5e132
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982627453940661529, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_Name
+      value: DutchsM16A2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986147952367075437, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120684831176921723, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: initialName
+      value: Dutch's M16A2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120684831176921723, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: initialDescription
+      value: A modified M16 employed by Dutch's Dozen mercenaries. It has 'CLOAKER
+        KILLER' printed on a label on the side. Chambered in 5.56x45mm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843916953527153012, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: foreverID
+      value: jDWGsfacvDiUIhQCLtihABOLwQT2FPCO
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112393072800089278, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112393072800089278, guid: 8f7d6cab7eef3fd4db3d8093155a71d5,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 8529227700516662961, guid: fdb7d27aaf5b84c488289b45040a8e45,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f7d6cab7eef3fd4db3d8093155a71d5, type: 3}

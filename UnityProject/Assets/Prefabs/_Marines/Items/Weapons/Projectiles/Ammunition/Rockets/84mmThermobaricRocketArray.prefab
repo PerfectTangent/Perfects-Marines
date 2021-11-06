@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8630402354560970038
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 635046957478672902, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: ammoType
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 635046957478672902, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: magazineSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 635046957478672902, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 728501007140504169, guid: f481f0e0dd7045e4b980d0fba034f2de,
+        type: 3}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313378757258054623, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_Name
+      value: 84mmThermobaricRocketArray
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418134074489255531, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d18d3b47d0655d74fad75e00652f6779
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516157755524921475, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd13c374c6b09ed46bd201c390809e2d,
+        type: 3}
+    - target: {fileID: 2807817402421667005, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initialName
+      value: 84mm thermobaric rocket array
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807817402421667005, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initialDescription
+      value: A thermobaric rocket tube for an M57-A4 quad launcher with 4 warheads.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807817402421667005, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 81627d996fcc8a547922dc3afed6e828,
+        type: 2}
+    - target: {fileID: 8456874506713018456, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c9c1bc4cc8b96634ca3aa6b9c3fdebb5,
+        type: 2}
+    - target: {fileID: 8692084020557023154, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: foreverID
+      value: 84mma7abba2216The49f0bf9b9b219f3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 93ecff37d05307a48b7b1b1bd9747058, type: 3}

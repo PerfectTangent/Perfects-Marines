@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: watercloset_toilet
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8243884347342347663, guid: 47f09a3a8309b5c49b1602dfc6fd2656,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4879703352707559730, guid: 47f09a3a8309b5c49b1602dfc6fd2656,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1767755706354810716, guid: 47f09a3a8309b5c49b1602dfc6fd2656,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8784545413129680212, guid: 47f09a3a8309b5c49b1602dfc6fd2656,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31409
+  DisplayName: 

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3089467526039590348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialName
+      value: Dutch's Dozen uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialDescription
+      value: A comfortable uniform worn by the Dutch's Dozen mercenaries. It's seen
+        some definite wear and tear, but is still in good condition.
+      objectReference: {fileID: 0}
+    - target: {fileID: 403421380365023489, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3897804743091909394, guid: 116605aef3cff4346bd25e7e4c71f0e0,
+        type: 3}
+    - target: {fileID: 503556119423055849, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9863929a67ccfe84189c56f290afdd51
+      objectReference: {fileID: 0}
+    - target: {fileID: 533896490227157597, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Name
+      value: DutchsDozenUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873928760721121992, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 912
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921907164774134234, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 723202048a6f8fd41985a1da12cf9feb,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b15e322c9d2d0b64d8b4c1fc21e4b0f8,
+        type: 2}
+    - target: {fileID: 6904706399905433136, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7c3cfd842599u9c8726207f217
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2cb622ead5f1f14cb939306783f63a3, type: 3}

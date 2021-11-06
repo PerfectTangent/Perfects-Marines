@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_demolitionist
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7446215096162452618, guid: 3261f9562ce0535479220263de0ae30a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5599019674331710255, guid: 3261f9562ce0535479220263de0ae30a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5744831176240963802, guid: 3261f9562ce0535479220263de0ae30a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4549216599921739027, guid: 3261f9562ce0535479220263de0ae30a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27603
+  DisplayName: 

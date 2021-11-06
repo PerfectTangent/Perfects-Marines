@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suits_standard_armor
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8136620029559732723, guid: 24fe1e5be4142a74abc87f207a84522a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6951821650965971527, guid: 24fe1e5be4142a74abc87f207a84522a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -953579066522426082, guid: 24fe1e5be4142a74abc87f207a84522a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5152851351016872028, guid: 24fe1e5be4142a74abc87f207a84522a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28721
+  DisplayName: 

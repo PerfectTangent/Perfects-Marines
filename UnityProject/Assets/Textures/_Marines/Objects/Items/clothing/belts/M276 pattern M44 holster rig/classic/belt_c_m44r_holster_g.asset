@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: belt_c_m44r_holster_g
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5833929976262705463, guid: bfda93a13d963334b89158a1133c10e0,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4096472172388074295, guid: bfda93a13d963334b89158a1133c10e0,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1419086232153599261, guid: bfda93a13d963334b89158a1133c10e0,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5296946917565520901, guid: bfda93a13d963334b89158a1133c10e0,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26830
+  DisplayName: 

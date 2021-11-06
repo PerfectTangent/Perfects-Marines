@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_bulletproofbadge
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5299367084812837379, guid: d95e900fef4783a4f82740d083c7ddbb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2806614587669244422, guid: d95e900fef4783a4f82740d083c7ddbb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 635613821685391109, guid: d95e900fef4783a4f82740d083c7ddbb,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4555806263835514586, guid: d95e900fef4783a4f82740d083c7ddbb,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28455
+  DisplayName: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_syringe_1
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8368592554861552552, guid: 16c9c66fd3589f242bc7ddaf6e14387c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1687491687233270345, guid: 16c9c66fd3589f242bc7ddaf6e14387c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4822165141381202625, guid: 16c9c66fd3589f242bc7ddaf6e14387c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5517337838659546956, guid: 16c9c66fd3589f242bc7ddaf6e14387c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25551
+  DisplayName: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_cigpacket
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3720373117731150741, guid: 6ab586d1e756c684ba1a1838c85b4d67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8943704390831551247, guid: 6ab586d1e756c684ba1a1838c85b4d67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7531120409172206483, guid: 6ab586d1e756c684ba1a1838c85b4d67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1698328201393643671, guid: 6ab586d1e756c684ba1a1838c85b4d67,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24545
+  DisplayName: 

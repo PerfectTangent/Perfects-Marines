@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3419479199291496321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 26403931958447342, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0655d2d92276f4c419af0aba4071b986,
+        type: 2}
+    - target: {fileID: 982181573619596036, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: foreverID
+      value: 1M2Oa7abba22164ce49f0bf9b9ShHAND
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050106436789327883, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: initialName
+      value: handful of shotgun buckshot shells (12g)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050106436789327883, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: bc2c944b4386d2945ab697adcbce6b5e,
+        type: 2}
+    - target: {fileID: 6050106436789327883, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 9051c3ecf484b464cbf6e2cf6cd07c79,
+        type: 2}
+    - target: {fileID: 6093340144265464541, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c4631cadcd442a64c94aef80df35ada4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127238740487719453, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132725166442821481, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_Name
+      value: HandfulOfShotgunBuckshotShells12g
+      objectReference: {fileID: 0}
+    - target: {fileID: 6334916056998020149, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -552755709370565294, guid: 1a00fab5770d00b43926f5535a37956c,
+        type: 3}
+    - target: {fileID: 9066088432200337072, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: ProjectilesFired
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066088432200337072, guid: add14bbfa74911d40afd7d801176a8da,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 8794746515736527842, guid: 685909ec0464f7a489246d6fed4dbbef,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: add14bbfa74911d40afd7d801176a8da, type: 3}

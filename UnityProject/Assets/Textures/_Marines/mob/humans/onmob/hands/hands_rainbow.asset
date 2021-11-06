@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: hands_rainbow
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 9192207241966816860, guid: 9392ab9e7cbc60643a6d5ff370d48edc,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 102699859105068259, guid: 9392ab9e7cbc60643a6d5ff370d48edc,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7809829829819639786, guid: 9392ab9e7cbc60643a6d5ff370d48edc,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7492205575879739598, guid: 9392ab9e7cbc60643a6d5ff370d48edc,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23987
+  DisplayName: 

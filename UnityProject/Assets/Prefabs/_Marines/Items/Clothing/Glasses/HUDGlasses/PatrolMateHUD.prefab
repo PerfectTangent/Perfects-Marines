@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6133734899759308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 640841139393366801, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 94f3299fdfbffef4f998b031587376d5
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680197504997897893, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_Name
+      value: PatrolMateHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 829077509669946873, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7700837327630133584, guid: 223a9a92289a9064697a7a709aeb5dd1,
+        type: 3}
+    - target: {fileID: 1125080439536245191, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: initialName
+      value: PatrolMate HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125080439536245191, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: initialDescription
+      value: A heads-up display that scans the humans in view and provides accurate
+        data about their ID status and security records.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 58a37433f5e89c4468144d8acedadb4b,
+        type: 2}
+    - target: {fileID: 5893582310450281160, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: foreverID
+      value: 28c72054b1f484eV4a6253c4feee3eZ4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644660140058545442, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a91aa6eced7b3343a5a8ed9035acfe5,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47a7a420829ffb241a0355121d5cb989, type: 3}

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_jetpack-black-on
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3141915222545642014, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 3819970297195375231, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 2843408415257947657, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 7437223968071562011, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -7656744752749070645, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -6702954570330439422, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 5538795716236310233, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -5095553842708048577, guid: d29d2348fc6947b418d51735e76f5750,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 23641
+  DisplayName: 

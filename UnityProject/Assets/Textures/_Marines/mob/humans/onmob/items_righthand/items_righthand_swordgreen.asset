@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_swordgreen
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1215327427973660659, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 7318316064219567098, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -1740931009347401001, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2320925842665465070, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 2601038909946765917, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2203630742005864575, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -668041524278100598, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 1260180673992103378, guid: d970dba7f7cdafb4bb25cd62143cafc0,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 25546
+  DisplayName: 

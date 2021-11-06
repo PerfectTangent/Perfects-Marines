@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2894998438030070985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3041773048254837739, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: initialName
+      value: light-red jumpsuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226992877338862077, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232202225889303689, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_Name
+      value: LightRedJumpsuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264867101707723069, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 381d6905dfecacc4aa007a28bf8f0906
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326721209617280981, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 438ee2e583e00ea43abdf97585ad5c2a,
+        type: 3}
+    - target: {fileID: 8386176569859657956, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d793cfd8g2599cdc8726207f217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405454439948979980, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405454439948979980, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405454439948979980, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405454439948979980, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 54b5ff7d658315d4f862292b3efa2251,
+        type: 2}
+    - target: {fileID: 8763171423838103310, guid: 4deeb01b165ccdb4a97916f3223036c0,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 92130df3eaf170149befed93f2834596,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4deeb01b165ccdb4a97916f3223036c0, type: 3}

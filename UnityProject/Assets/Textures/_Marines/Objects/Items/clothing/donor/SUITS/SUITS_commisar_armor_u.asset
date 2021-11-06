@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: SUITS_commisar_armor_u
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 496201201222235231, guid: bbbc1f01e245c444ca0cb68a316f4e8a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4035928836823349356, guid: bbbc1f01e245c444ca0cb68a316f4e8a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5877622227084584187, guid: bbbc1f01e245c444ca0cb68a316f4e8a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7158839296674897430, guid: bbbc1f01e245c444ca0cb68a316f4e8a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27712
+  DisplayName: 

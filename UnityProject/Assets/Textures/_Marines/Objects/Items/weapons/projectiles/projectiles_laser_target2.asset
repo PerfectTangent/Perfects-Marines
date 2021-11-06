@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: projectiles_laser_target2
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8432783300816889519, guid: 5836ae79394499c45bd3bb14b55b5f96,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 3007092580342644832, guid: 5836ae79394499c45bd3bb14b55b5f96,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -5453956762378546433, guid: 5836ae79394499c45bd3bb14b55b5f96,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -621849504624040699, guid: 5836ae79394499c45bd3bb14b55b5f96,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2191108325944187697, guid: 5836ae79394499c45bd3bb14b55b5f96,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 30516
+  DisplayName: 

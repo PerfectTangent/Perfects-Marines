@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_medical
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7442419206324196438, guid: 0f3e82e06ab15804f924d62ce526edaf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3112839881780100256, guid: 0f3e82e06ab15804f924d62ce526edaf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5194325988984199100, guid: 0f3e82e06ab15804f924d62ce526edaf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2992045408807158228, guid: 0f3e82e06ab15804f924d62ce526edaf,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25363
+  DisplayName: 

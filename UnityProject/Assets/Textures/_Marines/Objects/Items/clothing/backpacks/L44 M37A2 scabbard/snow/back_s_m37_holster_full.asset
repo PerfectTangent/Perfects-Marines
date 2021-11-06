@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_s_m37_holster_full
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -9085894282992911632, guid: 438a7ff851fbf9d48a78c78306c80fb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8800267677748555851, guid: 438a7ff851fbf9d48a78c78306c80fb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6871027862816959821, guid: 438a7ff851fbf9d48a78c78306c80fb8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2555776996175371810, guid: 438a7ff851fbf9d48a78c78306c80fb8,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26456
+  DisplayName: 

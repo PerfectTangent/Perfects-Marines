@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_axe1
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5231155632006949979, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2942731045316428025, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -552346468217345277, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 4725186768082047586, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -3462393352232517449, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2235935429720221952, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 7368335007568192442, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -3709798259759842259, guid: f0ba4e6b58726354b9cd651e14c03589,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 24480
+  DisplayName: 

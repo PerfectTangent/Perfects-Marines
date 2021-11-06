@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5019257003077164568
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2854717675572771375, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c4f008d73344a2a4ca61228801a03a38,
+        type: 2}
+    - target: {fileID: 3053819098711592389, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: foreverID
+      value: A6jE0MP0PEEWozGNUDlfdgz8sb32uhey
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082294689082684148, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e05809beaf50d224bab7e5f7614e6b70,
+        type: 3}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270970178935586012, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276456879700935080, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_Name
+      value: SawnOffShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309093167678340124, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 7499a6e71053a0a4c804ace33a1e6ace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialName
+      value: sawn-off shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialDescription
+      value: A double barreled shotgun whose barrel has been artificially shortened
+        to reduce range but increase damage and spread.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 4685e60d10d3f0942ae0fa69d3b4b9fc,
+        type: 2}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eafba0d7388d428c8e08ed1b5d5d260,
+        type: 2}
+    - target: {fileID: 8374015910782201546, guid: 4097fecce39fde342ac847342eab5852,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 808cbd4622dc2c143814ba2f24d454bc,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4097fecce39fde342ac847342eab5852, type: 3}

@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4659178004826593996
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1708366475460443693, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: foreverID
+      value: AMMPPsHbba22164ce49f0bf9b9b219f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894309626355665351, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 120efa4a9b0f22640af3a8efdb8a8d23,
+        type: 2}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialName
+      value: PPSh-17b drum magazine (7.62x25mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialDescription
+      value: A drum magazine for the PPSh submachinegun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323946430592130338, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: initialTraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f18758fe4e94880469abe24ff9388203,
+        type: 2}
+    - target: {fileID: 5619958225304535324, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc520fe8c300ef340a57e98b5284de48,
+        type: 3}
+    - target: {fileID: 5664360916810256372, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 855ce55239e72ca49a38f52347f0cf8a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697035550803554880, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_Name
+      value: PPSh17bDrumMagazine762x25mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700551651313487668, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477393515128980377, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: ammoType
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477393515128980377, guid: 3a958f17bef6bf448a14fc25de0beedd,
+        type: 3}
+      propertyPath: magazineSize
+      value: 35
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a958f17bef6bf448a14fc25de0beedd, type: 3}

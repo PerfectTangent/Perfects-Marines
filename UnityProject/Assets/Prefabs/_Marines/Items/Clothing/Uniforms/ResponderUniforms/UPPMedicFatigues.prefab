@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7532270801191798300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1758884982386051277, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3831773448042379392, guid: 09a830b26ce6414428780f02a68027b7,
+        type: 3}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912524808862729957, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916603860064336785, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_Name
+      value: UPPMedicFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949232451464775205, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 0c4269f2ede15d54da0118df6d013ba6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050474537531413747, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: initialName
+      value: UPP medic fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765825361607751676, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7u3cfd842599c9c8726207f2e7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820012159549220884, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820012159549220884, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820012159549220884, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 111cd5b23824af347bbec4e5f7bda7f0,
+        type: 2}
+    - target: {fileID: 5755382869545730070, guid: 50cb184724c7c1c4e862ce6c672f5fee,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: bd9a0e79a3d07614594639e41ba9f2ac,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50cb184724c7c1c4e862ce6c672f5fee, type: 3}

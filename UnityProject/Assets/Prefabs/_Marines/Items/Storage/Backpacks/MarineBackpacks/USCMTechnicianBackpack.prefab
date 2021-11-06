@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8815946949855907175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3044909243333924287, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: initialName
+      value: USCM technician backpack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044909243333924287, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: initialDescription
+      value: A standard-issue backpack worn by USCM technicians.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218994455515577053, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMTechnicianBackpack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224480880593553321, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258389510186796905, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9c9199c532f8b0d44815a10598fd6902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341072764207368577, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a323cc806a842e4ab8ca9bf3dc7c498,
+        type: 3}
+    - target: {fileID: 4252470673735803920, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252470673735803920, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252470673735803920, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b7f27ad73979124bac0059931dc9772,
+        type: 2}
+    - target: {fileID: 8365035548143695536, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: foreverID
+      value: RzwdKdGAMm3hk0matFWdLugboL1KI2hQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784892646710018394, guid: 68dec3d63630d5749814a832c7d55e91,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: dd0733bbbf949694caf20df75376dbb4,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68dec3d63630d5749814a832c7d55e91, type: 3}

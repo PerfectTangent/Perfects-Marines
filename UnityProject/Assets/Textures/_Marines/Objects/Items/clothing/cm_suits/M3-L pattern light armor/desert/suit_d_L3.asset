@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_d_L3
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 232835474596944929, guid: 6e2af2e303036dc478f06e5f1dd0a709,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2105715818932163051, guid: 6e2af2e303036dc478f06e5f1dd0a709,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6166338075211419097, guid: 6e2af2e303036dc478f06e5f1dd0a709,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1837736062158263461, guid: 6e2af2e303036dc478f06e5f1dd0a709,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27546
+  DisplayName: 

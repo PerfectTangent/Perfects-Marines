@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8602308426353439171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 602538587963560215, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed1d7baa54b229040908caac4e4aee8f,
+        type: 3}
+    - target: {fileID: 769359328144368203, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_Name
+      value: DutchsDozenCap
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 808789361038696447, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d5e078b1c281816469f1637a12da61e1
+      objectReference: {fileID: 0}
+    - target: {fileID: 882928244949536041, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: initialName
+      value: Dutch's Dozen cap
+      objectReference: {fileID: 0}
+    - target: {fileID: 882928244949536041, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: initialDescription
+      value: A protective cap worn by some seriously experienced mercs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915453782527192614, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9DUTCa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967386811655647694, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: hideClothingFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967386811655647694, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 977e299d0fb755945b2ed7250c435ae6,
+        type: 2}
+    - target: {fileID: 6911704966915627468, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 383231f0ff4f4224db7d0747570b72bf,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c33a107ac4f0af4fa19ed4b304f43bf, type: 3}

@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6174732810175481168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2425411900212042977, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 200315e002768d74db12e479ce88bb5c,
+        type: 2}
+    - target: {fileID: 2436686213898238522, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: initialName
+      value: Type 71 'Commando' pulse carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436686213898238522, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: initialDescription
+      value: A much rarer variant of the Type 71, this version contains an integrated
+        supressor, integrated scope, and extensive fine-tuning. Many parts have been
+        replaced, filed down, and improved upon. As a result, this variant is rarely
+        seen outside of commando units.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436686213898238522, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 6115028a00779ca43819981975b9a1a5,
+        type: 2}
+    - target: {fileID: 2436686213898238522, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c37352c0a02c41b4ba026cf68cab8f70,
+        type: 2}
+    - target: {fileID: 2723752102824650244, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02dafc23702ddae44a474922ea332ba4,
+        type: 3}
+    - target: {fileID: 2785887722182355180, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_AssetId
+      value: b1dd0009eb4240f4e99c2e6afa121be9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823406941803866156, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827490390585840984, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: m_Name
+      value: Type71CommandoPulseCarbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813028132293979391, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 8362912290466273928, guid: 9fc5823c94e038d42ac7b90a15d60da1,
+        type: 3}
+    - target: {fileID: 8249289054304186079, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bacf6684be72044290bcfc19e6527c9,
+        type: 2}
+    - target: {fileID: 9189588870782032181, guid: e39546655d2bd4e409e1e8f17f1a93ae,
+        type: 3}
+      propertyPath: foreverID
+      value: WlEapvukImNFY4PpyvnF6TbIO0jwGWZ5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e39546655d2bd4e409e1e8f17f1a93ae, type: 3}

@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7999100026203301514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2600092280272844431, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9ccZ7E
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653430833422412135, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 23a48e8619a5e6047a74efe2cbb7c6ae,
+        type: 2}
+    - target: {fileID: 3020161580289278309, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 16dea96911a4ca7418470b87fe28ff3d,
+        type: 2}
+    - target: {fileID: 8809675800686335360, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: initialName
+      value: Z7 engineer helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984641412436753122, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_Name
+      value: Z7EngineerHelmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988157788096694166, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023956665472457598, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 1313071507758166456}
+    - target: {fileID: 9024068353495418710, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 3ed631087337fd04198f475e0d765113
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105766485890648510, guid: d759a52c00bd0dc40a693b69fd91b566,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e10d9a0954393444086fe8ec7617e6e0,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d759a52c00bd0dc40a693b69fd91b566, type: 3}
+--- !u!114 &1313071507758166456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9023652911799260978, guid: d759a52c00bd0dc40a693b69fd91b566,
+    type: 3}
+  m_PrefabInstance: {fileID: 7999100026203301514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

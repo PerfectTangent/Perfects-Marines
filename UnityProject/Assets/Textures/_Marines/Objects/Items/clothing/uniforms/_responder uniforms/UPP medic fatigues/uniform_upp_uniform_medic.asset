@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_upp_uniform_medic
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3831773448042379392, guid: 76ca2e249c935c54cb714a6f6c56a5a5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3513047772548023431, guid: 76ca2e249c935c54cb714a6f6c56a5a5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3274671709956667640, guid: 76ca2e249c935c54cb714a6f6c56a5a5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8691801960595739580, guid: 76ca2e249c935c54cb714a6f6c56a5a5,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28854
+  DisplayName: 

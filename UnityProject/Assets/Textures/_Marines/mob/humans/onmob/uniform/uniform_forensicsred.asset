@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_forensicsred
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6841313863344953919, guid: 5eeb87348885e8d468e2a50f990f32be,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5188038051757705181, guid: 5eeb87348885e8d468e2a50f990f32be,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -475783332668523177, guid: 5eeb87348885e8d468e2a50f990f32be,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7937345777417332966, guid: 5eeb87348885e8d468e2a50f990f32be,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26144
+  DisplayName: 

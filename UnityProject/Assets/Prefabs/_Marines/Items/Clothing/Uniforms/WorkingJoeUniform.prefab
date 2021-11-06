@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4052350224710403569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3638521524085429046, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638521524085429046, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638521524085429046, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 44dc1e990c3cb754081e199347a06a83,
+        type: 2}
+    - target: {fileID: 3654991483320814814, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: foreverID
+      value: h2byeBFJTka8k2GGBUX1PfYH0QsNx7gZ
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559197189244681012, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: fe5f2d9cfcc3be04c89b5a32af7f4f5b,
+        type: 2}
+    - target: {fileID: 7562228887936365551, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60f3de2af004d3b489f41d052a86d894,
+        type: 3}
+    - target: {fileID: 7639119300749541555, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_Name
+      value: WorkingJoeUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642635675873164743, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752857834148068615, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 065f81e38d287ba4087c2bb2e2dd4a3f
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849211422797737937, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: initialName
+      value: Working Joe uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849211422797737937, guid: 58e557bd33e2a104b90b9227a22eb382,
+        type: 3}
+      propertyPath: initialDescription
+      value: A cheap uniform made for synthetic labor.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58e557bd33e2a104b90b9227a22eb382, type: 3}

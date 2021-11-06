@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_swordred
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8984647408233967000, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 3759452155006134632, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 2846541278973413285, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -5257972209460142403, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 3809607781202675674, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -640314258238047946, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 3748248921897421897, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 2401877180076255144, guid: c436c70f466ca5c40917ba8ee1b2c66d,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 24964
+  DisplayName: 

@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5539166899897347465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialName
+      value: rotating ammo drum (7.62x51mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialDescription
+      value: A huge ammo drum for a huge gun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 823788892129594818, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: fa873ee169fa6d046bef3b9477feb4c2,
+        type: 2}
+    - target: {fileID: 871165662502838036, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 909458798197cb24bbfcecce6162d5d8
+      objectReference: {fileID: 0}
+    - target: {fileID: 871277273050678076, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 4668412743760667385}
+    - target: {fileID: 973680313005892256, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_Name
+      value: RotatingAmmoDrum762x51mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977482561219829716, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113163753297596924, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 190831cecc2d0274c83047160701665c,
+        type: 3}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: ammoType
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: magazineSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686911178759312249, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 8068586330571044216, guid: b6dbacdf4ae31f74f91e4fd53096e9d1,
+        type: 3}
+    - target: {fileID: 6141094537368071885, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: foreverID
+      value: AMMOa7abba2ROT4ce49f0bf9b9b219f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396565172850481447, guid: d9cc4258b000c9645be079789c27ea4b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: df5fe1f95299cd4489985b742f7a1099,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9cc4258b000c9645be079789c27ea4b, type: 3}
+--- !u!114 &4668412743760667385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 871053269470367600, guid: d9cc4258b000c9645be079789c27ea4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5539166899897347465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

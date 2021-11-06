@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1168715277498943469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 626363702407840897, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_AssetId
+      value: a41e0ede7957be04c99f2d9a2f9be899
+      objectReference: {fileID: 0}
+    - target: {fileID: 659073588951382325, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_Name
+      value: MK1UnderslungGrenadeLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663997064617493569, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 852458457078221417, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 016c7f9cb9f59084bbea5fae3cb5be0e,
+        type: 3}
+    - target: {fileID: 1137411088917468759, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: initialName
+      value: MK1 underslung grenade launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137411088917468759, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: initialDescription
+      value: An older version of the classic underslung grenade launcher. Does not
+        have IFF capabilities but can store three grenades.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137411088917468759, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dbdffe595581db84790ed2966c0a4252,
+        type: 2}
+    - target: {fileID: 5881637392340907352, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: foreverID
+      value: 5hSGt8liBxqT1jlR06E2drTglzbjkQmI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657271156315996850, guid: 4d3e3fdde37fa064aae691db3d431599,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dc307f60fd94af42bb9ea16f85db426,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d3e3fdde37fa064aae691db3d431599, type: 3}

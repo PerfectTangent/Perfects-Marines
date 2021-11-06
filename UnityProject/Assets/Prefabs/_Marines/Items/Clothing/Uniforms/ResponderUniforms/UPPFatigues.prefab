@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2157766320078696908
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialName
+      value: UPP fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 109584696674657599, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: initialDescription
+      value: A set of UPP fatigues, mass produced for the armed-forces of the Union
+        of Progressive Peoples. A rare sight, especially in ICC zones. This particular
+        set sports the dark drab pattern of the UPP 17th battalion, 'Smoldering Sons',
+        operating in the sparse UPP frontier in the Anglo-Japanese arm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 403421380365023489, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2579966980940770546, guid: a6153221526fc684680a511fb1a379be,
+        type: 3}
+    - target: {fileID: 503556119423055849, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 50cb184724c7c1c4e862ce6c672f5fee
+      objectReference: {fileID: 0}
+    - target: {fileID: 533896490227157597, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_Name
+      value: UPPFatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 539106113525987113, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921907164774134234, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 53fe46ffe7333d74d96a4d90314f8689,
+        type: 2}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851649094149544408, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0684f83fe7a944349ad92f5b7b2ba72c,
+        type: 2}
+    - target: {fileID: 6904706399905433136, guid: f2cb622ead5f1f14cb939306783f63a3,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7u3cfd842599c9c8726207f217
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2cb622ead5f1f14cb939306783f63a3, type: 3}

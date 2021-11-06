@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_u_booniehattan
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1696434555391624217, guid: 2f2b03c806522a94ab9c2f81bb9b93e1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9181271565490102662, guid: 2f2b03c806522a94ab9c2f81bb9b93e1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6045523082052423860, guid: 2f2b03c806522a94ab9c2f81bb9b93e1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -873081322192346945, guid: 2f2b03c806522a94ab9c2f81bb9b93e1,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24280
+  DisplayName: 

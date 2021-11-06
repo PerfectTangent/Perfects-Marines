@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1515949679061439000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585329258295273144, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: cb57fb548d4cd024b90158f5d036c2a6,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialName
+      value: M16 rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialDescription
+      value: An old, reliable design first adopted by the U.S. military in the 1960s.
+        Something like this belongs in a museum of war history. It is chambered in
+        5.56x45mm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 014649817d647ca4fa1315976d8df51f,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a5127818d5c0d44aba24cc64caf6057,
+        type: 2}
+    - target: {fileID: 899590200603696221, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 502738466e2506547b14f768c0376101,
+        type: 3}
+    - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Name
+      value: M16Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 8f7d6cab7eef3fd4db3d8093155a71d5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210658489462252396, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: foreverID
+      value: TQutQnEvQEzUbkHPA3uke5VioXGXC0k6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 953bfebfad9d1f54f81814690de004a9,
+        type: 2}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoType
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 1045288732937772568, guid: 49a5623e9f68a1f42a1d9ba8413b1e4a,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: bodybag_reactivetarp_closed2
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 2883575479520552000, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 1
+    - sprite: {fileID: 8533237779785594177, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 1
+    - sprite: {fileID: -6517434866628981706, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.5
+    - sprite: {fileID: 2388390585286252165, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.5
+    - sprite: {fileID: -8953627404499167018, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.5
+    - sprite: {fileID: -6909252635469429506, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.5
+    - sprite: {fileID: -1471473610323132598, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2134168229445748978, guid: 7f52fa240bb9f694592be7b321538734,
+        type: 3}
+      secondDelay: 0.5
+  IsPalette: 0
+  setID: 31642
+  DisplayName: 

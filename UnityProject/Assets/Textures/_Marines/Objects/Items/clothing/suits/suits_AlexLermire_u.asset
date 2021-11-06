@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suits_AlexLermire_u
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8217806919857150079, guid: b2692e6dd993d1c4daf8615c58982924,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5614728062080687463, guid: b2692e6dd993d1c4daf8615c58982924,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4479927412492301839, guid: b2692e6dd993d1c4daf8615c58982924,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8848818450158987300, guid: b2692e6dd993d1c4daf8615c58982924,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28560
+  DisplayName: 

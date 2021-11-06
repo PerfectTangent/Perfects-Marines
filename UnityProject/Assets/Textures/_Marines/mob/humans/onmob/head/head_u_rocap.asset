@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_u_rocap
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7924571374762721247, guid: ed33693c1b283004f92988b4a430b008,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1608832045152639156, guid: ed33693c1b283004f92988b4a430b008,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6886431617020765573, guid: ed33693c1b283004f92988b4a430b008,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6682290811231569739, guid: ed33693c1b283004f92988b4a430b008,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24294
+  DisplayName: 

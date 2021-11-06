@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_upp_armor_commando_full
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6023238098601785712, guid: 7a286df2c0dd541469f84b56078aaa67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4118465316196909631, guid: 7a286df2c0dd541469f84b56078aaa67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 453589392104224943, guid: 7a286df2c0dd541469f84b56078aaa67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6368690441089117286, guid: 7a286df2c0dd541469f84b56078aaa67,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26002
+  DisplayName: 

@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &362062164968592952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4049294148395368505, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfb80fd339c98584e802cb297133756d,
+        type: 3}
+    - target: {fileID: 4233399104019477349, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_Name
+      value: 2xHuntingMiniScope
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238885804114300433, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275107462450220753, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 45dd62392b81714409a65a0eb02a41fa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336285543806819335, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: initialName
+      value: 2x hunting mini-scope
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336285543806819335, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: initialDescription
+      value: While the Basira-Armstrong rifle is compatible with most telescopic
+        devices, its accompanying scope is usable only with the Basira-Armstrong.
+        Fixed at a modest 2x zoom. Press the 'use rail attachment' HUD icon or use
+        the verb of the same name to zoom.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336285543806819335, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f22b1b07eaf4e494288f2e9ebf399974,
+        type: 2}
+    - target: {fileID: 7096186378960125704, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: foreverID
+      value: 6UB3nNcGk1Eq0LQBD6YWDOrU20Wxk9pA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8036129524157188322, guid: 82a1cbeca63a62641af775a715b60770,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c78823a43e7e48441be43ade91ff96fc,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82a1cbeca63a62641af775a715b60770, type: 3}

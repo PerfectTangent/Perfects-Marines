@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6386665721349736437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300234459206463975, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304036708087319699, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_Name
+      value: HME88BUnderbarrelExtinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408760139487605031, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: m_AssetId
+      value: fe48df70bf2445f4198a913e0a8e2f57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510188901997782001, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: initialName
+      value: HME-88B underbarrel extinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510188901997782001, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: initialDescription
+      value: An experimental Taiho-Technologies HME-88B underbarrel extinguisher
+        integrated with a select few gun models. It is capable of putting out the
+        strongest of flames. Point at flame before applying pressure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510188901997782001, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: acd401f6a4ac2ea4eacab2948a7fbac8,
+        type: 2}
+    - target: {fileID: 5377974834241650942, guid: cf87c7b897f9fe140a6e2c626e700eea,
+        type: 3}
+      propertyPath: foreverID
+      value: GZ5LodgGFpjbPKsOLIs4pLp5fTRJ0UrV
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf87c7b897f9fe140a6e2c626e700eea, type: 3}

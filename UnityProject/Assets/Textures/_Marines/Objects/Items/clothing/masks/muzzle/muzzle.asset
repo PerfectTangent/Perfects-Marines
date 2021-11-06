@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: muzzle
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: f9ba61db141b36f43836115675ca0d81, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: aa62629b5e7ceb947904e707746143ac, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: 7123cacdac67cb04e818915c8e635984, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 1511073570e9b1c46a7ea270858a540d, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

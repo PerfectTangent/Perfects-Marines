@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: chief medical officer's labcoat
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: ffe84f2178630154998df8bb4d45788e, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: 7bb71f61b0de2694c924e43c1d2ecc31, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: fe244f38e96eb2a46a90366e8e81e7fb, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 7bc50a1cfb83eaa4fa3295d98229aca4, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

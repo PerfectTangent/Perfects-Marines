@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4600774747188557993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1398164463910189126, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884197257006523483, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: initialName
+      value: D2 armored vest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884197257006523483, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A protective vest worn by some seriously experienced mercs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149897238655956052, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149897238655956052, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178086919656405093, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a950a4a9710464446b714343bded0489,
+        type: 3}
+    - target: {fileID: 3380831867418331961, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_Name
+      value: D2ArmoredVest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422477554214532749, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 53afcd5e77807e54bb2e098d04989802
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616209403060968284, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
+        type: 2}
+    - target: {fileID: 8525764138006333268, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: foreverID
+      value: Arc29a11d2c864b7982u65bb3x0eed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fffa5d65576aedc41abe217bce054472,
+        type: 2}
+    - target: {fileID: 8911849178580709566, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ff74f5d0d808ec4ab0a4ffc0145dca1,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8edb80f3822ab845bc1c459377f2e0e, type: 3}

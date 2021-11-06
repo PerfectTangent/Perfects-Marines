@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_flair_peace_smiley
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3529168710800576784, guid: a7aec6696e87228478c49cc30e1640d6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2255944266166036351, guid: a7aec6696e87228478c49cc30e1640d6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -598440354031509290, guid: a7aec6696e87228478c49cc30e1640d6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6044821942099959275, guid: a7aec6696e87228478c49cc30e1640d6,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24359
+  DisplayName: 

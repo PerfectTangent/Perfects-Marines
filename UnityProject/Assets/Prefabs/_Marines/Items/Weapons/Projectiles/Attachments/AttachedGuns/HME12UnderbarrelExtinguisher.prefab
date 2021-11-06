@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8367740057087674191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3710665320151347291, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a815a5337946964f9298d8b1fda55ac,
+        type: 2}
+    - target: {fileID: 4504242435235399601, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: foreverID
+      value: zOqFxtQsJVZ7wSvQkmcxURzudJp5aqj8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977601882606019774, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: initialName
+      value: HME-12 underbarrel extinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977601882606019774, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: initialSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977601882606019774, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: initialDescription
+      value: A Taiho-Technologies HME-12 underbarrel extinguisher. Attaches to the
+        underbarrel of most weapons. Point at flame before applying pressure.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977601882606019774, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977601882606019774, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 05d51e02a85953f4f81b46b4ddf7ba26,
+        type: 2}
+    - target: {fileID: 7262341207080892544, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69b04f6fbbcff014ba7efcf73911d549,
+        type: 3}
+    - target: {fileID: 7262341207080892544, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362104895144310440, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365902471301549020, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_Name
+      value: HME12UnderbarrelExtinguisher
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470562337186379368, guid: 2de6fa37f6939da4395e35f27fdc0f06,
+        type: 3}
+      propertyPath: m_AssetId
+      value: cf87c7b897f9fe140a6e2c626e700eea
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2de6fa37f6939da4395e35f27fdc0f06, type: 3}

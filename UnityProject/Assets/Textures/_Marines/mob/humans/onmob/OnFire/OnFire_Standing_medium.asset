@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: OnFire_Standing_medium
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 4676902856120030362, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2751956969681637248, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2458800826033530923, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7624926341632873097, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 4930107357803190406, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3948120858616924756, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2766104419739991337, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8312215181333255003, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 4975785056711113114, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6370899712330211129, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3771685634810916737, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7685526913205911945, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 1209132594884853319, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5228755126726950026, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8190082402731853984, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7520440855273202523, guid: 28c5b6f536dc7d04f98c6cd6b70ebc96,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 25745
+  DisplayName: 

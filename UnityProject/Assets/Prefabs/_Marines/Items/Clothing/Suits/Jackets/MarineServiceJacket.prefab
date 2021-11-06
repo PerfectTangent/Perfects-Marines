@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6242298227429494611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 172897210330401358, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109460078179980883, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: initialName
+      value: marine service jacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109460078179980883, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: initialDescription
+      value: A service jacket typically worn by officers of the USCM. It has shards
+        of light Kevlar to help protect against stabbing weapons, bullets, and shrapnel
+        from explosions, a small EMF distributor to help null energy-based weapons,
+        and a hazmat chemical filter weave to ward off biological and radiation hazards.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403345073811081837, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fecb772998517664ba1685add9b5d299,
+        type: 3}
+    - target: {fileID: 4499540848623610053, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499540848623610053, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499540848623610053, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503057598238606469, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 51923562cddb59743a5bbe83b52a8171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605536033589492017, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_Name
+      value: MarineServiceJacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609896834045346885, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444625535482164572, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29a11d2c864b7982ua5b5340eeda3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464465783018793652, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464465783018793652, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 70f30d63a3f1eaa479f6bda3807d29a1,
+        type: 2}
+    - target: {fileID: 7686582060713919158, guid: 468760f129640bc44aad5c997b695abe,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 5aeefbc37a875884e90686a174838cfa,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 468760f129640bc44aad5c997b695abe, type: 3}

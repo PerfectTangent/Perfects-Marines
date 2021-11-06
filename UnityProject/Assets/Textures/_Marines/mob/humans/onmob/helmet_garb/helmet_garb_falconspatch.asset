@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: helmet_garb_falconspatch
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 4459817850230558983, guid: 3617d6ead9b87c542b35415db11c48c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6762415165427622296, guid: 3617d6ead9b87c542b35415db11c48c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7136793708440494881, guid: 3617d6ead9b87c542b35415db11c48c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5487108091084082903, guid: 3617d6ead9b87c542b35415db11c48c9,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24356
+  DisplayName: 

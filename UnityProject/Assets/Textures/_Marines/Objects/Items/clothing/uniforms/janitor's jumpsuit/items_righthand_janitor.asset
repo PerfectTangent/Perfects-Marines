@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_janitor
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8931967407975474153, guid: 2c9738c1a5df202408999344cf408c34,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5124719479435309160, guid: 2c9738c1a5df202408999344cf408c34,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2108458532037373609, guid: 2c9738c1a5df202408999344cf408c34,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7270330615921874770, guid: 2c9738c1a5df202408999344cf408c34,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29160
+  DisplayName: 

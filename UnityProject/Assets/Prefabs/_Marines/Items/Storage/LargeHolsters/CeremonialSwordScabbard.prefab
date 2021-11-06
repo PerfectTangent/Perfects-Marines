@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7958228457494193867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055295282316855116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cbc9918f5bcf534bb1de066e9c8c03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &7543937481059668437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: hitDamage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialName
+      value: ceremonial sword holster
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialDescription
+      value: A large, vibrantly colored scabbard used to carry a ceremonial sword.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915216375476173307, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: initialTraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eafba0d7388d428c8e08ed1b5d5d260,
+        type: 2}
+    - target: {fileID: 3199951510179964357, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f10e2f113fcd0e418c45b482a1243a6,
+        type: 3}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353762583747308525, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357846307609073305, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_Name
+      value: CeremonialSwordScabbard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390439714633509677, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: m_AssetId
+      value: b275dbb94ebdcad4582c04b3d1d700fc
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517055365397537096, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512874809356376820, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: foreverID
+      value: hKhla1PTrFQ6h79diofCmDRaXZAQui9t
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925967725256764702, guid: 643b42a9bbcccc54194e9aded6df93bb,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a78c74c44f5dc3849b466e86289c2420,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 643b42a9bbcccc54194e9aded6df93bb, type: 3}
+--- !u!1 &5055295282316855116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357846307609073305, guid: 643b42a9bbcccc54194e9aded6df93bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7543937481059668437}
+  m_PrefabAsset: {fileID: 0}

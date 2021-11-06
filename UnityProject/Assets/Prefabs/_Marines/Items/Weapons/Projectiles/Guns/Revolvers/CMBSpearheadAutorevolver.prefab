@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4684671163706538275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2197965824367206156, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197965824367206156, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 1769333500576134971, guid: 0d1dc4057aac9a94cad23d881638d99f,
+        type: 3}
+    - target: {fileID: 2579449553633389254, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: foreverID
+      value: rjVAq1advYqvZO1dLqxAoC9xMN5NSBEd
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328350753962237228, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 82e27258cf7116b4c90e57231765980a,
+        type: 2}
+    - target: {fileID: 8757046938380342775, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5db3b06b92d73b4a962b425d8f44ceb,
+        type: 3}
+    - target: {fileID: 8854789144422783775, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: fe1aaa6d6fdc2374ab6bf87b9591f39a
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891566330798693343, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896494204846352043, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: m_Name
+      value: CMBSpearheadAutorevolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050872835764767177, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: hitDamage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050872835764767177, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: initialName
+      value: CMB Spearhead autorevolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050872835764767177, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: initialDescription
+      value: An automatic revolver chambered in .357. Commonly issued to Colonial
+        Marshals. It has three select fire options, safe, single, and burst.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050872835764767177, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: a4a8a6749f9f45c4abde6c21920c7c9c,
+        type: 2}
+    - target: {fileID: 9050872835764767177, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: b71150d464d79f74884556b4c042ac55,
+        type: 2}
+    - target: {fileID: 9071158489042644754, guid: 9720450a37cfc274d8cb8cdbf9def86b,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c1e259bc192e244db5e79aa9c72df92,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9720450a37cfc274d8cb8cdbf9def86b, type: 3}

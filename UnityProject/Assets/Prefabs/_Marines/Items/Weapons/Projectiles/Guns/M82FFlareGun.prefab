@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6246931989673726870
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1631402179261302548, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: foreverID
+      value: 3nzM8CGd19UjSvRYS0Go8hcpHEvwQFW6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972367115216367870, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 8efd7376b595da0478d92974714d527e,
+        type: 2}
+    - target: {fileID: 3165839588915393246, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: ammoType
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165839588915393246, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165839588915393246, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 6265410667312807859, guid: b06efe7f623dbe14aa03aac6c6b72ed0,
+        type: 3}
+    - target: {fileID: 5227789134664778432, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 8938c9cb40ffb08409b287c69845492a,
+        type: 2}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: initialName
+      value: M82-F flare gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: initialDescription
+      value: A flare gun issued to JTAC operators to use with standard flares. Cannot
+        be used with signal flares. Comes with a miniscope. One shot, one... life
+        saved?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: cf736d865e4e8bf41b6e12ef1dfe42f8,
+        type: 2}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: dfc08fceb43bf55458f2ce995799ac37,
+        type: 2}
+    - target: {fileID: 5541868300837173285, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17fdedeadceb58644a480c2f8346a25c,
+        type: 3}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627632869867293561, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_Name
+      value: M82FFlareGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732356507421292237, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_AssetId
+      value: cda5dfdeb6bc34642ad07fa41c9ab77f
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 358db724cb0b4f34788e76966262c97d, type: 3}

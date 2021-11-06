@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_s_marinesatch_techi
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1223165479286831440, guid: 6574aa5bdff8e394590b652296b36ac4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7523423333055553215, guid: 6574aa5bdff8e394590b652296b36ac4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8631554670730923287, guid: 6574aa5bdff8e394590b652296b36ac4,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9079297192928760997, guid: 6574aa5bdff8e394590b652296b36ac4,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26584
+  DisplayName: 

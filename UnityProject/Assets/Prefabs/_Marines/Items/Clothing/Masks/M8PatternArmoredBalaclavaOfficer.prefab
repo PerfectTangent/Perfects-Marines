@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6077790460069925867
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 16513522813557711, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 8a1790d7b02f17f458b907b3d8dfa5ee
+      objectReference: {fileID: 0}
+    - target: {fileID: 121209535673460347, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_Name
+      value: M8PatternArmoredBalaclavaOfficer
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125288586203405071, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243030496350688551, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8054793213324644821, guid: 3de2fae0000ad5a46ad2c0839ea1b7e5,
+        type: 3}
+    - target: {fileID: 523268416471632153, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: initialDescription
+      value: An armored balaclava designed to conceal both the identity of the operator
+        and act as an air-filter. This particular mask looks like it belongs to a
+        high-ranking officer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118281216053894652, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: de08a93fa60717d4ca6e4915b11c1e53,
+        type: 2}
+    - target: {fileID: 6418797743449270806, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: foreverID
+      value: 996d62bfe3bfM8OFF95c2a77cadabbd2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472699496413050366, guid: 4f52820100edad548b4d35f3c0e33a56,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: caf4de9c6e309f240a322c1c65931ebd,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f52820100edad548b4d35f3c0e33a56, type: 3}

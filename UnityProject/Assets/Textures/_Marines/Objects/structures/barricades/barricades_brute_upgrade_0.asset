@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: barricades_brute_upgrade_0
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3007780630719555370, guid: 80cd1a56a53e323469f632a28aa80515,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2087846313404039933, guid: 80cd1a56a53e323469f632a28aa80515,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3874391875430189927, guid: 80cd1a56a53e323469f632a28aa80515,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2775488229622931862, guid: 80cd1a56a53e323469f632a28aa80515,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 30956
+  DisplayName: 

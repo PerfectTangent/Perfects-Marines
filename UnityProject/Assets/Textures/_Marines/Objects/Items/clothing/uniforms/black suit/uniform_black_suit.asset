@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_black_suit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8400653949382700144, guid: fa4b186ec6e71a543a017a16ab51879b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2604797192132886630, guid: fa4b186ec6e71a543a017a16ab51879b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7917376325430544850, guid: fa4b186ec6e71a543a017a16ab51879b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7201361313280754172, guid: fa4b186ec6e71a543a017a16ab51879b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29054
+  DisplayName: 

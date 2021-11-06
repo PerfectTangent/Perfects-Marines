@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7900715983103786738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585329258295273144, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 776da253821b0ac4b924923251f30cfd,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialName
+      value: M46C pulse rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialDescription
+      value: A prototype M46C, an experimental rifle platform built to outperform
+        the standard M41A. Back issue only. Uses standard MK1 & MK2 rifle magazines.
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f9c9c8927c5971449d28aaf479eeb90,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cebaeab6cebb0248afc83287035114e,
+        type: 2}
+    - target: {fileID: 899590200603696221, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a0b37f5709443e4e9d79bb036d62e54,
+        type: 3}
+    - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Name
+      value: M46CPulseRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 136180b2f8cc95e46b47a7ccc7f61e07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210658489462252396, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: foreverID
+      value: 1OYMIym9Ef7AAwnvEc80eVgIvGCa9o96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a497b67f4c54e6343b90be22228ad8f6,
+        type: 2}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 3885737209190107755, guid: 43dfc96055cdcb84e8ef5632fa2be2e7,
+        type: 3}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: SpawnsCasing
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

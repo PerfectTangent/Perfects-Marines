@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_katana_holster
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 878387498956863632, guid: 3423348134ab63e428bdd383877e75f1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -602120209429887040, guid: 3423348134ab63e428bdd383877e75f1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4660917573175732616, guid: 3423348134ab63e428bdd383877e75f1,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6170765945215556312, guid: 3423348134ab63e428bdd383877e75f1,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26439
+  DisplayName: 

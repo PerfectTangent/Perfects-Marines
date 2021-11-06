@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: M240A1 incinerator unit (suit storage)
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: f8d5aafd150930a43952f5c7e28a46d2, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: b918d84d2387a6148ad3e1a5a8c36e9e, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: f57fe88800dd6ef45a75a6c46d485e18, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 95d63e6241428f24bbd5e96ef9de5ed7, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

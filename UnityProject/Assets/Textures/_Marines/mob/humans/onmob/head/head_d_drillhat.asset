@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_d_drillhat
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -4975912888184287290, guid: 5e92d95e6289ae945b8378efd222f129,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4225764616671901138, guid: 5e92d95e6289ae945b8378efd222f129,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2269989821077306718, guid: 5e92d95e6289ae945b8378efd222f129,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -130929709113085477, guid: 5e92d95e6289ae945b8378efd222f129,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24104
+  DisplayName: 

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: glasses_meson
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1821019214407757572, guid: 3184d000520206a40bf60008fd48d6d1,
+        type: 3}
+      secondDelay: 0.6
+    - sprite: {fileID: 5513353170905670172, guid: 3184d000520206a40bf60008fd48d6d1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6134958911837326954, guid: 3184d000520206a40bf60008fd48d6d1,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1280824647209793774, guid: 3184d000520206a40bf60008fd48d6d1,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 27825
+  DisplayName: 

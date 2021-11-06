@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_thirteen_loko
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 114625295187118128, guid: 86daa55c0cf708d41b75d0cb668da9f6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -676854333640050358, guid: 86daa55c0cf708d41b75d0cb668da9f6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -227447541589485268, guid: 86daa55c0cf708d41b75d0cb668da9f6,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7483314493508976466, guid: 86daa55c0cf708d41b75d0cb668da9f6,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25565
+  DisplayName: 

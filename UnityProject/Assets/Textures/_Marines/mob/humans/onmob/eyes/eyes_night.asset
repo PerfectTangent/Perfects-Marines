@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: eyes_night
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7954753313157245522, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7739181877629452727, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -480783159946373351, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5450544953364542295, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -500547406183299364, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6486485571898653864, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -3142881717756389617, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7247945050708358744, guid: 2292b3649a02c1c4abbcef36818e73a8,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 23906
+  DisplayName: 

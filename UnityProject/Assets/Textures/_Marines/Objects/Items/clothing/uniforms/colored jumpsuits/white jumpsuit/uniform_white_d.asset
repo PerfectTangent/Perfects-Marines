@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_white_d
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -4280974630281250750, guid: 6a282a66f519cf940a069f48dedc2b1d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9004028467696779130, guid: 6a282a66f519cf940a069f48dedc2b1d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2667461894429813835, guid: 6a282a66f519cf940a069f48dedc2b1d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -623687167325105972, guid: 6a282a66f519cf940a069f48dedc2b1d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29127
+  DisplayName: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_M56DE_gun_mount
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5699326757825863830, guid: b78a0913f91887548a17d9c895b1faec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7150854854567780777, guid: b78a0913f91887548a17d9c895b1faec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7402818197456239455, guid: b78a0913f91887548a17d9c895b1faec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4927461811047536441, guid: b78a0913f91887548a17d9c895b1faec,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25336
+  DisplayName: 

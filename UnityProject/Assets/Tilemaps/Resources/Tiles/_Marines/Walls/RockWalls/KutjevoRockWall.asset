@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad263680d73c8c54ba53262044a57d04, type: 3}
+  m_Name: KutjevoRockWall
+  m_EditorClassIdentifier: 
+  displayName: rock wall
+  LayerType: 0
+  TileType: 1
+  RequiredTiles: []
+  floorTileSounds: {fileID: 0}
+  CanSoundOverride: 0
+  atmosPassable: 0
+  isSealed: 0
+  SpawnWithNoAir: 0
+  passable: 0
+  mineable: 0
+  doesReflectBullet: 0
+  passableException:
+    m_keys: 
+    m_values: 
+  maxHealth: 100
+  damageDeflection: 100
+  armor:
+    Melee: 100
+    Bullet: 100
+    Laser: 100
+    Energy: 100
+    Bomb: 100
+    Rad: 100
+    Fire: 100
+    Acid: 100
+    Magic: 100
+    Bio: 100
+  tileInteractions: []
+  spawnOnDeconstruct: {fileID: 0}
+  spawnAmountOnDeconstruct: 0
+  lootOnDespawn: {fileID: 0}
+  soundOnHit:
+    SetLoadSetting: 0
+    AssetAddress: null
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  connectCategory: 0
+  connectType: 2
+  spriteSheet:
+    Texture: {fileID: 2800000, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    Sprites:
+    - {fileID: 3865545616636129585, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -7985176178686905032, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 814202647774458694, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 1561400721404795772, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -3751256328043813466, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 8191931039808267611, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 1188432122315334002, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 116916382603162581, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 4327721637720629257, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -6727626724242527909, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -8769192955474119238, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -2543566530187666299, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -468772433034788460, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -4859803237701416002, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 4254653314989073352, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 3069838851061272170, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -2001346540008767719, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -5281129281608213320, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -7902166999383866265, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 2226320041490963800, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 1466571553840025788, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 6763869924169509630, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 591020751423040714, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -7172488661196631209, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -3877670273592156963, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -1320185574747757336, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -3170343393891132389, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 1758352533966740196, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 837983216336352714, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -6936615292470683625, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -1745625580624711045, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -4413052779046421302, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 802500362571040236, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -2388790045254991888, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 2278094162768181792, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 373982592638808759, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 4038515316762649172, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -5437441941544981031, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -4231980968386847375, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -7845876787134139033, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: -9155542110149107558, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 4735872783944581683, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 2516640767049652545, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 4360505040134018746, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 113778183139025326, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 2353545268775026488, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 6771183797953957072, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    - {fileID: 395285655922981126, guid: b9fb02d5aea7e9d4aa42d64d895dad18, type: 3}
+    EquippedData: {fileID: 0}
+  texturePath: Walls

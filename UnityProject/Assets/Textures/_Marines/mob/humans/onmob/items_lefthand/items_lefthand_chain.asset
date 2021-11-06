@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_chain
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 1244476889673583485, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3555266872131656048, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5073670780158888450, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7750321907159048559, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 4658269353161318474, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5609440741330265070, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -23951986298875802, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7640955450103031828, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4631292234489620663, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3464676617416924438, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2966384216276126343, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5137547466907711980, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 6982349361813185663, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8923168007204841530, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3337868941395214522, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6840341789719736766, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 9166258870926872928, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4235521785921310597, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7144532907089137498, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6639721454204169166, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5447763052626295463, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6059705564920848236, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2204023841076739754, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6072874304858939497, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -7197777945351541877, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2429045794607788772, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7914037399581469338, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8192065331860667604, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8699089459804683861, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5281094106748317564, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7394191630372602666, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -60444773589908166, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3869474697534354489, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 9203259744992691086, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7774929705832244213, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 981762446361222038, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -1850003422784352796, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5277879733374949602, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3365465915693708272, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7148434709451084696, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8927920663148393827, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4032380586850984943, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1117518723678381588, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 470581616677264298, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -721837296428379826, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2232359333329851901, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7815473455442037562, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5389748105215945747, guid: f0f16257e2c99ba48b5eb5e7f688fc24,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 24538
+  DisplayName: 

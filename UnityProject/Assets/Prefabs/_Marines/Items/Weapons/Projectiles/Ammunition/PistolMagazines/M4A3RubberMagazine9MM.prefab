@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3612962621728360907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418328760131264540, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d03dff666b2141743aee1718535711b7,
+        type: 2}
+    - target: {fileID: 590698439964956662, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: foreverID
+      value: hKXrSy4x1CfJxUMSsvGGyUWt8BzKHSrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802937588647369627, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Name
+      value: M4A3RubberMagazine9MM
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844574341381531183, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 2346f901d60b6734a8631239979fdcdf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943020194073127111, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab5aa3a0688980b429c0c2c40386bc1f,
+        type: 3}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialName
+      value: M4A3 rubber magazine (9mm)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40001f0cf25e54044a30a0d5089fcbec, type: 3}

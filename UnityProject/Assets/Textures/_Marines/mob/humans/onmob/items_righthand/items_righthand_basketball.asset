@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_basketball
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -9197601209572012561, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4162438078008065265, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4149507794618193392, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4538679891246737644, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2329895404960640537, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -5392237839506526788, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8909268162532022739, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2573697946812982625, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 941266961003143755, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6222443958436417266, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -4947955020225365513, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2538380973701879535, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4090168456906218094, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2272720429126152522, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6443232989925270801, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 4515520962049506852, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7403597029660217895, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1767010451397853230, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6473471618830657937, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5186024496338387549, guid: 8d72e05beba4ece479f9be9fbbf35d06,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 25070
+  DisplayName: 

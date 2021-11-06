@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: weapons_bolt
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6659447077290792336, guid: 6c22ab1ce74fb8845888d09e5ad98675,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4562738803381455680, guid: 6c22ab1ce74fb8845888d09e5ad98675,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7389461531925188868, guid: 6c22ab1ce74fb8845888d09e5ad98675,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4819156964818486263, guid: 6c22ab1ce74fb8845888d09e5ad98675,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 30576
+  DisplayName: 

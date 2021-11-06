@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: corgi_head_sheet
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6530179738444782934, guid: 1600921ba7d5d5f418aa2dcda018f06f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 613435604629981061, guid: 1600921ba7d5d5f418aa2dcda018f06f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3656531271222932061, guid: 1600921ba7d5d5f418aa2dcda018f06f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3930011312167392660, guid: 1600921ba7d5d5f418aa2dcda018f06f,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23861
+  DisplayName: 

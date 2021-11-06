@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &857295549522443181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: initialName
+      value: Type 71 pulse carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: initialDescription
+      value: A carbine variant of the Type 71, intended for use by frontline support
+        roles. A reduced length makes the gun lighter and easier to handle at the
+        cost of muzzle velocity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: a2c4389617c69bf428f10af0095a4421,
+        type: 2}
+    - target: {fileID: 3041443711707775383, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 891de43ec9a8bc14494d41e16b10c17b,
+        type: 2}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227805933503091585, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231607907040489205, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Type71PulseCarbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264212378434392897, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_AssetId
+      value: e39546655d2bd4e409e1e8f17f1a93ae
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326207228127010217, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05f1c8c50e10f7f42b713da9863ce832,
+        type: 3}
+    - target: {fileID: 5273423069092173650, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386339815592190616, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: foreverID
+      value: EqiBqyiBc9ddmXayRwMk3gdQsrVSTVnv
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763694205577942386, guid: f2372cafe86195d44bc9445e554c04a2,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d3c6ce4350c2524dab60db87d253e01,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2372cafe86195d44bc9445e554c04a2, type: 3}

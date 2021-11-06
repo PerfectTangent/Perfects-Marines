@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ears_walkman_playing
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3019510549490534833, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -3072783412463577359, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 6236123622395755499, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -2482385116842023344, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -2250454529975720252, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 4884038099150621664, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -4147271127145967864, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -8983174007565634207, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -1109277873289410383, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 475511537331202880, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 4463852842005893882, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -4815307220014734668, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -6314404276410286816, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 4602327041362449373, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 3937276927438704440, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 4364830148792751529, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -1142469421429070179, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -7532193852290936631, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -290591511865714597, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -6355489566393300957, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 5773868456212752934, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 219940931512084867, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -1502640570540772793, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 1664441149394244980, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -8764550913950454203, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -7872662644237297493, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -3212121877345691065, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 8387373634726818389, guid: 5ef66d82bbc972341801a781ce7fcfc5,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 23885
+  DisplayName: 

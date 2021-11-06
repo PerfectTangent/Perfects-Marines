@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_fireaxe0100opening
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8474243467901345544, guid: bfe2f0d9bcc7e2f4e94726298148d6fe,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -5788400685373120010, guid: bfe2f0d9bcc7e2f4e94726298148d6fe,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -4456135470810321132, guid: bfe2f0d9bcc7e2f4e94726298148d6fe,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -745445700526058824, guid: bfe2f0d9bcc7e2f4e94726298148d6fe,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -8531812722292048184, guid: bfe2f0d9bcc7e2f4e94726298148d6fe,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 31063
+  DisplayName: 

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
+  m_Name: M41A pulse rifle MK2 (urban)
+  m_EditorClassIdentifier: 
+  SpriteEquipped: {fileID: 11400000, guid: db1b731bfc6b84f438cd2fb115b2d20a, type: 2}
+  SpriteInHandsLeft: {fileID: 11400000, guid: f223ca7dc32ea1a489ecfd9788efd717, type: 2}
+  SpriteInHandsRight: {fileID: 11400000, guid: 07444cd4652d5e7409969a4f12ab6b8b, type: 2}
+  SpriteItemIcon: {fileID: 11400000, guid: 0749c376cc8245d4c8f7e3c36ed8d1a6, type: 2}
+  Palette:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  IsPaletted: 0

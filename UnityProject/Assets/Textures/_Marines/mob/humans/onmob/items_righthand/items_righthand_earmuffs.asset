@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_earmuffs
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1178056296844786360, guid: 8fada25cfa0a2cd48bd0534266808c7f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4810125461566399769, guid: 8fada25cfa0a2cd48bd0534266808c7f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 221109686405826739, guid: 8fada25cfa0a2cd48bd0534266808c7f,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3513564136521716990, guid: 8fada25cfa0a2cd48bd0534266808c7f,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25181
+  DisplayName: 

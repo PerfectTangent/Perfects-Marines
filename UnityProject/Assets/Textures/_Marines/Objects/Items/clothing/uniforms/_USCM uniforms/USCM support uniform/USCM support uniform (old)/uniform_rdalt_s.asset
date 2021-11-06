@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: uniform_rdalt_s
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1701183422036058385, guid: f7152413f41511b4ebff1b7253bbb83a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8688924879783117213, guid: f7152413f41511b4ebff1b7253bbb83a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7495755744338954344, guid: f7152413f41511b4ebff1b7253bbb83a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6716763632761355539, guid: f7152413f41511b4ebff1b7253bbb83a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28990
+  DisplayName: 

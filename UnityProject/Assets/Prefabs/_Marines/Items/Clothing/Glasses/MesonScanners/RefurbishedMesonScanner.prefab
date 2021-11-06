@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1357066550546140259
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2987011942256334699, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: initialName
+      value: refurbished meson scanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987011942256334699, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: initialDescription
+      value: Used to shield the user's eyes from harmful electromagnetic emissions,
+        also used as general safety goggles. A special version with upgraded optics.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273994478765017941, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7478586440008211174, guid: 556e28092da6cfd418b1d1d4083e544b,
+        type: 3}
+    - target: {fileID: 3317552745358689725, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 73cf79f685e91fa47b69ff5e5e14c6a4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426649003253581181, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431291279286482953, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: m_Name
+      value: RefurbishedMesonScanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585229615259169892, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: foreverID
+      value: e6f80a7fd02e2c14ea72a1410452bREF
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638853748845472652, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638853748845472652, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: aec6fedb06be2534393d9e1d23f38924,
+        type: 2}
+    - target: {fileID: 8851959254138389390, guid: e6f80a7fd02e2c14ea72a1410452b690,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: bdd37dc272010934c931c4ffb4fb00a6,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6f80a7fd02e2c14ea72a1410452b690, type: 3}

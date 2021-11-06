@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_claymore
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3319814979404677772, guid: 0ed7b0f76ddb5de4cabcede3f05560cf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3599489730702486323, guid: 0ed7b0f76ddb5de4cabcede3f05560cf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4837294343510049663, guid: 0ed7b0f76ddb5de4cabcede3f05560cf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7600912101918301007, guid: 0ed7b0f76ddb5de4cabcede3f05560cf,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25132
+  DisplayName: 

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: floors_white
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8522892847701985069, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4163230386635412868, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1607537509223453314, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 377048254359067762, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3579594618136712480, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5382532336282757612, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2603503039940440302, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 589423026484089579, guid: 7d8382f5b8572eb44abdecbb7d531b1e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31427
+  DisplayName: 

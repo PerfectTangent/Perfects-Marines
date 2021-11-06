@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_d_helmet
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -2055536990115352535, guid: 2e4c6ae047ff04749aeeffa662bc61ac,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9035518976438693845, guid: 2e4c6ae047ff04749aeeffa662bc61ac,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7076379515196252264, guid: 2e4c6ae047ff04749aeeffa662bc61ac,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 201209614976150901, guid: 2e4c6ae047ff04749aeeffa662bc61ac,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27127
+  DisplayName: 

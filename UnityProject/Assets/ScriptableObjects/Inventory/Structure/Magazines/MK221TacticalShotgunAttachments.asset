@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c909446621c41cd975e26eab73860a6, type: 3}
+  m_Name: MK221TacticalShotgunAttachments
+  m_EditorClassIdentifier: 
+  MaxItemSize: 5
+  Whitelist:
+  - {fileID: 11400000, guid: 1ada82b29ea18174d8b349f1563393b0, type: 2}
+  - {fileID: 11400000, guid: af46ba027078c6341adf1fa719cfce5f, type: 2}
+  - {fileID: 11400000, guid: 0b640ce0027c5934e8422036ca82bdaf, type: 2}
+  - {fileID: 11400000, guid: 475432c86e14bf94f82170357c1cde54, type: 2}
+  - {fileID: 11400000, guid: a439c6695f0d3684481ffbafb0acc20b, type: 2}
+  - {fileID: 11400000, guid: d4e02602f863fdc4d9802c03ec7190e6, type: 2}
+  - {fileID: 11400000, guid: f36761dbc0b56cf42be8daad193262be, type: 2}
+  - {fileID: 11400000, guid: e9bd6f95e83d8ee4c89ad98a5f5e85de, type: 2}
+  - {fileID: 11400000, guid: 804e56e9bf92da44cbc32dfb4fbd2290, type: 2}
+  - {fileID: 11400000, guid: 00617757de602624295e154541fd9670, type: 2}
+  Required: []
+  Blacklist: []

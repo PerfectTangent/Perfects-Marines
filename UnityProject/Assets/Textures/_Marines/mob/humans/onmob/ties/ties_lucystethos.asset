@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ties_lucystethos
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5925570193665748776, guid: de6d809f452de9440973279aecde0106,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3008387592669409716, guid: de6d809f452de9440973279aecde0106,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2396615176961764408, guid: de6d809f452de9440973279aecde0106,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4967253547811885113, guid: de6d809f452de9440973279aecde0106,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26089
+  DisplayName: 

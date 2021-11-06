@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8359932358027862428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3715203134822671233, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 478d41bcef7172b44a593809c2444baf,
+        type: 2}
+    - target: {fileID: 4500128755549525099, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: foreverID
+      value: HJFS8Ioiblbsgz8qWXWzp4ddj1ydlSxA
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8f94b819028b16439acc55835160923,
+        type: 2}
+    - target: {fileID: 6927811740053452644, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: initialName
+      value: USCM engineer uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927811740053452644, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: initialDescription
+      value: A standard-issue Marine Engineer fatigues. It has shards of light Kevlar
+        to help protect against stabbing weapons, bullets, and shrapnel from explosions,
+        a small EMF distributor to help null energy-based weapons, and a hazmat chemical
+        filter weave to ward off biological and radiation hazards.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221776240355732314, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1285fb1fe3b545744ab7f4cca2741d99,
+        type: 3}
+    - target: {fileID: 7406471568716945414, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_Name
+      value: USCMEngineerUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448152508601034162, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: cd16576df01ab734ebe6d970415c1a58
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e576e96fb687f66458a87add8ef2a2dd, type: 3}

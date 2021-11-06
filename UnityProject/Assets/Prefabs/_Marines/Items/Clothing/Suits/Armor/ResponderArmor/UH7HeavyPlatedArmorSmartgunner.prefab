@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &222549202922584073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 132389492646626055, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132389492646626055, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172899631714767624, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: initialName
+      value: UH7 heavy plated armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 172899631714767624, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: initialDescription
+      value: An extremely heavy duty set of body armor in service with the UPP military,
+        the UH7 (Union Heavy MK5) is known for being a rugged set of armor, capable
+        of taking immesnse punishment. Although the armor doesn't protect certain
+        areas, it provides unmatchable protection from the front, which UPP engineers
+        summerized as the most likely target for enemy fire. In order to cut costs,
+        the head shielding in the MK6 has been stripped down a bit in the MK7, but
+        this comes at much more streamlined production.
+      objectReference: {fileID: 0}
+    - target: {fileID: 327595059420232810, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_Name
+      value: UH7HeavyPlatedArmorSmartgunner
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 331115558379323678, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364910215975890334, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 364910215975890334, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 364910215975890334, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 364910215975890334, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 364910215975890334, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 369273594122093022, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: dc8e3e0cd21fdf7498c7402fd1dcce62
+      objectReference: {fileID: 0}
+    - target: {fileID: 466734320926543670, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5ef646e4696dbd478541e613f29af2f,
+        type: 3}
+    - target: {fileID: 5894586080346818541, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a1257e74d4b32aa44abf35b4ffbbb507,
+        type: 2}
+    - target: {fileID: 6643196601550630919, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: foreverID
+      value: 6bGF0yFy7y27p5Kw7GlrYvUfZd5BxdjO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698791580202053615, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698791580202053615, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698791580202053615, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698791580202053615, guid: 7b7f08b2bb0289d429446da29df714c4,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e5a20293679849a4aabdf0c799671074,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b7f08b2bb0289d429446da29df714c4, type: 3}

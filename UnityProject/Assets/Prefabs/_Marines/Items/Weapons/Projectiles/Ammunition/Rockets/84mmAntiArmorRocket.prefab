@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1644576626380272689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 635046957478672902, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 712910832394972665, guid: 6a3f8b5e2fc6cbe43868e283427bd301,
+        type: 3}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308455006718228139, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313378757258054623, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_Name
+      value: 84mmAntiArmorRocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418134074489255531, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 48ec6f56ab5f9c64283bb082e9107de1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516157755524921475, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87d51a3c096d1d54da65a33c67f259ca,
+        type: 3}
+    - target: {fileID: 2807817402421667005, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initialName
+      value: 84mm anti-armor rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807817402421667005, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: initialDescription
+      value: A rocket tube loaded with an AP warhead. Capable of piercing heavily
+        armored targets. Deals very little to no splash damage. Inflicts guaranteed
+        stun to most targets. Has high accuracy within 7 meters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456874506713018456, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: bda3491a3a5dc084aaaf6a45f86a886f,
+        type: 2}
+    - target: {fileID: 8692084020557023154, guid: 93ecff37d05307a48b7b1b1bd9747058,
+        type: 3}
+      propertyPath: foreverID
+      value: 84mma7abbAA2164ce49f0bf9b9b219f3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 93ecff37d05307a48b7b1b1bd9747058, type: 3}

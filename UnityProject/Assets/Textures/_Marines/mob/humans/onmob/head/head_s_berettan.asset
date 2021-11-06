@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_s_berettan
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6621975203577017978, guid: feb7f2f4688300940a3fbb29a19426ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4429377808553177477, guid: feb7f2f4688300940a3fbb29a19426ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8693360859895558208, guid: feb7f2f4688300940a3fbb29a19426ba,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6051124362980955309, guid: feb7f2f4688300940a3fbb29a19426ba,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24230
+  DisplayName: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: marine_closet_squad_delta_emmaged
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3576630584076803546, guid: 11094d6e02cda974abe3de1f26f4ce6e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5710890949261465335, guid: 11094d6e02cda974abe3de1f26f4ce6e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8355305152932088213, guid: 11094d6e02cda974abe3de1f26f4ce6e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8902990122519688364, guid: 11094d6e02cda974abe3de1f26f4ce6e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2927252915399514276, guid: 11094d6e02cda974abe3de1f26f4ce6e,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31353
+  DisplayName: 

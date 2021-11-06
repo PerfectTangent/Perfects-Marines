@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &515906400179270591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3115213240338246153, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: foreverID
+      value: 502f496beMARKNb9b9c97868e845ed7e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220751108614773712, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 82cf3b2062ebd6d48a7ecc4a77d56f5e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323157938262763108, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_Name
+      value: MarineCombatBootsKnife
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327804611339197200, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418530570976350839, guid: cfbf1bedee4f79d40a2216455927960a,
+        type: 3}
+      propertyPath: itemStoragePopulator
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfbf1bedee4f79d40a2216455927960a, type: 3}

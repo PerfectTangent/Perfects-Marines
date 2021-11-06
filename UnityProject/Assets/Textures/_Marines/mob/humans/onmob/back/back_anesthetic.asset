@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_anesthetic
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8742071864706738356, guid: b326bf22ef90756419e508a12e649b63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -405006059486602992, guid: b326bf22ef90756419e508a12e649b63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4545880547282925856, guid: b326bf22ef90756419e508a12e649b63,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6913652774422687369, guid: b326bf22ef90756419e508a12e649b63,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23590
+  DisplayName: 

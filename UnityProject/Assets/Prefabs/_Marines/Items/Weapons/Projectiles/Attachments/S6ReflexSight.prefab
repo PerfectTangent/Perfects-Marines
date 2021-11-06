@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4696825117026926026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: foreverID
+      value: b0W9sPqvf3pFN14l4mZsz4AzpChuRIDL
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082522023416177629, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b953e1711c2a6d4ca649b9d4781cb15,
+        type: 2}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialName
+      value: S6 reflex sight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialDescription
+      value: An ARMAT S6 reflex sight. A zero magnification alternative to iron sights
+        with a more open optic window when compared to the S5 red-dot. Helps to reduce
+        scatter during automated fire.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a439c6695f0d3684481ffbafb0acc20b,
+        type: 2}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e53f0ee77e532d34c83e2666f55e085b,
+        type: 3}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: a91b6def6a4d41f439fe8644dcff4857
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187710774849083482, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Name
+      value: S6ReflexSight
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d07740a6daa37147b793a13fbf4f68b, type: 3}

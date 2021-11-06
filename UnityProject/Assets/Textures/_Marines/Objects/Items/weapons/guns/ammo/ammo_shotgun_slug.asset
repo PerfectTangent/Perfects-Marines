@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ammo_shotgun_slug
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5485502679512208535, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4304134472702801453, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7125447408611605366, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2222764603620281728, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8610972371078773374, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3955598053921624805, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5884177280779402608, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2486173234520358072, guid: 20f3e70ed5db12d4ca31ad12b9b48f62,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29591
+  DisplayName: 

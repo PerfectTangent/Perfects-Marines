@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: mask_balaclava_gray
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8671035046108753547, guid: ef0f92d073c0f4844986b8ece1223108,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4378781678581082795, guid: ef0f92d073c0f4844986b8ece1223108,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6936060244495400869, guid: ef0f92d073c0f4844986b8ece1223108,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7301518980917245641, guid: ef0f92d073c0f4844986b8ece1223108,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28133
+  DisplayName: 

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3827614524475212126
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 769359328144368203, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_Name
+      value: DutchsDozenBand
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774287201718099775, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 808789361038696447, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 019db60e1d1f9a0429b381888329e37e
+      objectReference: {fileID: 0}
+    - target: {fileID: 882928244949536041, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: initialName
+      value: Dutch's Dozen band
+      objectReference: {fileID: 0}
+    - target: {fileID: 882928244949536041, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: initialDescription
+      value: A protective band worn by some seriously experienced mercs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915453782527192614, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9DUTDo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967386811655647694, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: hideClothingFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967386811655647694, guid: 6c33a107ac4f0af4fa19ed4b304f43bf,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 483616ea85a95ab4c83dffa316cab58c,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c33a107ac4f0af4fa19ed4b304f43bf, type: 3}

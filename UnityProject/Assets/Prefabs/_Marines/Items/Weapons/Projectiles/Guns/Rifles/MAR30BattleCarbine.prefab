@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2090689180189685035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1412876187323686433, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534286675513760769, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: c6098a5c0c8f6da4092f87cdc3511acc,
+        type: 2}
+    - target: {fileID: 3375235295615773675, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: foreverID
+      value: 55I5aHDTh35YNpVhYj9jCSX12ZtndCuS
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106512101984405732, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: initialName
+      value: MAR-30 battle carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106512101984405732, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A cheap, reliable carbine chambered in 7.62x39mm. Commonly found in
+        the hands of criminals or mercenaries.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106512101984405732, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: eed464543ef8f354da28136b5ee1918a,
+        type: 2}
+    - target: {fileID: 8106512101984405732, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d73f5b43e0b1464abb2a77eb862830e,
+        type: 2}
+    - target: {fileID: 8140273610300698175, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 1774288a686c5be48af26ea7cfc9a128,
+        type: 2}
+    - target: {fileID: 8402717339875235034, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 765a53671c3706e4ea103b535876d597,
+        type: 3}
+    - target: {fileID: 8533625829121484678, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_Name
+      value: MAR30BattleCarbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538267829269830386, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645137645302471218, guid: a0bbb567e7ab88f4ca39f19f2b9c300e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9862870e0f6b6fd488b4d89df906f9c7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0bbb567e7ab88f4ca39f19f2b9c300e, type: 3}

@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2519729247018164922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349239445488300609, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: foreverID
+      value: DVqQj2WpLqosnQX6Vt2vkUhI8mBDxWWp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722599723230727176, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Name
+      value: SnowBarricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5167421734731249644, guid: fbd9cb24b0244764dbd7fe5a91869923,
+        type: 3}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialName
+      value: snow barricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialDescription
+      value: A mound of snow shaped into a sloped wall. Statistically better than
+        thin air as cover.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770606251153701226, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 728a18b8387c3984ba319ba9552e2ff0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783638386872271765, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialIntegrity
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464838265875277522, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dd59fab31da6c44f84378d98a58e032,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7aa5047a5b4192c4aaae85f21241ea00, type: 3}

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: med_human_gauze_r_arm
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8272760830719592715, guid: 4542fa5a6da161540b92701840e5d2ec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6077294975293197650, guid: 4542fa5a6da161540b92701840e5d2ec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1607438534511029303, guid: 4542fa5a6da161540b92701840e5d2ec,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5641183198219831697, guid: 4542fa5a6da161540b92701840e5d2ec,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25715
+  DisplayName: 

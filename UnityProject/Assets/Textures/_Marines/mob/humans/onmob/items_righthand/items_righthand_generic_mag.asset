@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_generic_mag
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3152809904833026678, guid: c2da970c93b87c34ab2be8a88eb22ccf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7470275875309752690, guid: c2da970c93b87c34ab2be8a88eb22ccf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7922275322903907451, guid: c2da970c93b87c34ab2be8a88eb22ccf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 957151496821019222, guid: c2da970c93b87c34ab2be8a88eb22ccf,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25226
+  DisplayName: 

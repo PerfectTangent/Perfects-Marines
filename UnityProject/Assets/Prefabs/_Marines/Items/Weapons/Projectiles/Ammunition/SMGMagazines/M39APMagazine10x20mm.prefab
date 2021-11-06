@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1713626014400829738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1361936404850195053, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b79b55a8928d02428b9a73e930a2856,
+        type: 2}
+    - target: {fileID: 2241164384817483143, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: foreverID
+      value: A10OSM39bba22164ce49fApf9b9b219f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705439667190492808, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initialName
+      value: M39 AP magazine (10x20mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705439667190492808, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initialDescription
+      value: A 10x20mm caseless armor-piercing submachinegun magazine. The bullet
+        tips are made out of high-density material, allowing them to pierce straight
+        through armor, but also reducing the raw stopping power and velocity of the
+        ammunition.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994909091219583670, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c067dba9606b614fa5821f95e38021e,
+        type: 3}
+    - target: {fileID: 5058874295763614814, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d3ce678eb987bd847aef030ee35cc218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161282155667915242, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_Name
+      value: M39APMagazine10x20mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028344359447326771, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 899008022437615619, guid: bc84d00dceaa6b64a874c6fd088770d1,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc64a3ac58023c747bd8ea89a8d9913f, type: 3}

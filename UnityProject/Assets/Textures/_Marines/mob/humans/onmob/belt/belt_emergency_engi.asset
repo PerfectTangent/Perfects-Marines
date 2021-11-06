@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: belt_emergency_engi
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6428598386474649124, guid: 1b32bc1ccab70e84d803dbd4ae65536a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3887119396854519692, guid: 1b32bc1ccab70e84d803dbd4ae65536a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2553310222914990789, guid: 1b32bc1ccab70e84d803dbd4ae65536a,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7920480359326948525, guid: 1b32bc1ccab70e84d803dbd4ae65536a,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23760
+  DisplayName: 

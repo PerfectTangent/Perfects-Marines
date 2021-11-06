@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: eyes_m56_goggles
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -2014032957437157908, guid: fb8b499ce48934d4cac98d5ebfe3a6f8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8634595737625012520, guid: fb8b499ce48934d4cac98d5ebfe3a6f8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4145131207818829595, guid: fb8b499ce48934d4cac98d5ebfe3a6f8,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1634909826023452946, guid: fb8b499ce48934d4cac98d5ebfe3a6f8,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23900
+  DisplayName: 

@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4333751725623689505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 452039090188256752, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 13296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123156729999164883, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e86f3266148b27b4ca98d3ab2f87d7ff,
+        type: 3}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202459608066074491, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: Resistances.UnAcidable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205699285175995195, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 8f9d55c6780d93a4fb87ef0195dfa7c6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308133602089612943, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_Name
+      value: M5XExoskeletonArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312780001156910075, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405657448798771693, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: initialName
+      value: M5X exoskeleton armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405657448798771693, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: initialDescription
+      value: A complex system of overlapping plates intended to render the wearer
+        all but impervious to small arms fire. A passive exoskeleton supports the
+        weight of the armor, allowing a human to carry its massive bulk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509263064773790178, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509263064773790178, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166116836978866914, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: foreverID
+      value: Arcw9811d2c864b7982u65bb340eed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184554378731316490, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c57e27f69e584c441a1fc9f0cee996e2,
+        type: 2}
+    - target: {fileID: 7966744149487193352, guid: 14591980b51ed1042988c011e7f29b89,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 68c56a23ae725da49b1c0b39535939e9,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14591980b51ed1042988c011e7f29b89, type: 3}

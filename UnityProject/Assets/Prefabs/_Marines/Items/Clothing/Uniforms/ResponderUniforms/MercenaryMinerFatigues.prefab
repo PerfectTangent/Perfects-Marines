@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5679320112030586097
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982406292093559186, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 40b4b8bebe996614ab5f2430f028cf3d,
+        type: 2}
+    - target: {fileID: 4000280603631533690, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7c3cfd84259tc9c8726207fz17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215225010058332560, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 5701a3fc649b9274ea2ac8a50b510b25,
+        type: 2}
+    - target: {fileID: 7625994206606122357, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: initialName
+      value: mercenary miner fatigues
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625994206606122357, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: initialDescription
+      value: A beige suit with a red armband. It looks a little thin, like it wasn't
+        designed for protection. There is an unknown symbol is emblazed on the suit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910738201820070219, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8130818903724251919, guid: 8ce166ae0603f484996d9aa89e663d87,
+        type: 3}
+    - target: {fileID: 7975125621007323043, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: a7639fbd6db5d58459cf39691e2d4b92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010463134212444003, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014546858342625815, guid: a4057715a28c80d42a29ea85ec0e1e8f,
+        type: 3}
+      propertyPath: m_Name
+      value: MercenaryMinerFatigues
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4057715a28c80d42a29ea85ec0e1e8f, type: 3}

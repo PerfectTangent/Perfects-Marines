@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5183142643093760961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3715203134822671233, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: af2b74f612ad23f42b075806301cd814,
+        type: 2}
+    - target: {fileID: 4500128755549525099, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: foreverID
+      value: wM40amHuLaoMBzCRQ5FI7Z00WhBpIkip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518280501321993091, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c0b64d314e976394fbbabd8206c87cf0,
+        type: 2}
+    - target: {fileID: 6927811740053452644, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: initialName
+      value: USCM medic uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927811740053452644, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: initialDescription
+      value: A standard-issue Marine Medic fatigues. It has shards of light Kevlar
+        to help protect against stabbing weapons, bullets, and shrapnel from explosions,
+        a small EMF distributor to help null energy-based weapons, and a hazmat chemical
+        filter weave to ward off biological and radiation hazards.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221776240355732314, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0af643cd8ab31354081178e7f7760ee8,
+        type: 3}
+    - target: {fileID: 7406471568716945414, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_Name
+      value: USMCMedicUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411395044445463922, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448152508601034162, guid: e576e96fb687f66458a87add8ef2a2dd,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c9a84177bf0224847a4d63c6a49591d5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e576e96fb687f66458a87add8ef2a2dd, type: 3}

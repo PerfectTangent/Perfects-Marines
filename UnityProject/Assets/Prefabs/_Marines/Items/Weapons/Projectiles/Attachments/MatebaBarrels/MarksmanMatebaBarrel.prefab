@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5792665194748987400
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3837366840628922047, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b71052849fcead54c85013c88f893c08,
+        type: 2}
+    - target: {fileID: 4088624272141316437, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: foreverID
+      value: VNHUijKVoY1G7QYxyoG6u2M7fbHwoBcf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919516913851596088, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_Name
+      value: MarksmanMatebaBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923314489471926348, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031027630519369868, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 03dcb61416c24c04499ea72b7db440d8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131162367438311012, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0c894b298bddd244ac7bafc41c3b56a,
+        type: 3}
+    - target: {fileID: 7415903893619708506, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: initialName
+      value: marksman mateba barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415903893619708506, guid: 02a8396bdc15f514391891de6110957e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A marksman mateba barrel. Offers a greater accuracy at the cost of firerate.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02a8396bdc15f514391891de6110957e, type: 3}

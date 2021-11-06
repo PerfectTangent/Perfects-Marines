@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_pk9_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 8557287214582997762, guid: 482564c1cebe84540a814c59027c83bf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1901778151322956565, guid: 482564c1cebe84540a814c59027c83bf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6598558419388650107, guid: 482564c1cebe84540a814c59027c83bf,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5337488041108025008, guid: 482564c1cebe84540a814c59027c83bf,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24823
+  DisplayName: 

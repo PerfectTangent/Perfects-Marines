@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7758319134328082874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2359725641239988831, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: foreverID
+      value: 4kVQjKgnx91Hitw9XYuRKvD0JCvHKxlZ
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261673912319393205, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d533cd67858215d4f9d1388c690b80e0,
+        type: 2}
+    - target: {fileID: 8648551840844482098, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_Name
+      value: SubmachinegunArmBrace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653198514726271814, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760030740942961542, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 33fc7112602f2c64f9076fff3a847831
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859743265389491566, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55f12c6c03cd36b40927b9b06c2c5486,
+        type: 3}
+    - target: {fileID: 9144645525895375184, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: initialName
+      value: submachinegun arm brace
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144645525895375184, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: initialDescription
+      value: A specialized stock for use on an M39 submachine gun. It makes one handing
+        more accurate at the expense of fire rate. Wielding the weapon with this
+        stock attached confers a major inaccuracy and recoil debuff."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144645525895375184, guid: 81596d1a66e538e4493e8899efb072f1,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a29b363b9e698d4fb12537475603463,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81596d1a66e538e4493e8899efb072f1, type: 3}

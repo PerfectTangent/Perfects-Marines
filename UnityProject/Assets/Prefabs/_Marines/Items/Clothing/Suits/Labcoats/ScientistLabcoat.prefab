@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2029746503659255763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1711002944022603435, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 010296604f4e6fd44b923470d9838f3b,
+        type: 2}
+    - target: {fileID: 1892095474816799041, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29av1d2c864b7al2u65b5340eed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911093736411467433, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5119846641aa0a343b614138060bb22b,
+        type: 2}
+    - target: {fileID: 4614323436282113648, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed46e56cd1953934fb4216a6a0cce70d,
+        type: 3}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821992955363172440, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825795203577142572, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_Name
+      value: ScientistLabcoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858432591600148632, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9939c9760b69dc243aee8e6c954521f0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858530978092596400, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 6865209707900176175}
+    - target: {fileID: 4905881929723818574, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: initialName
+      value: scientist labcoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905881929723818574, guid: d25035f0e9abc354cbf13ceec20411b6,
+        type: 3}
+      propertyPath: initialDescription
+      value: A suit that protects against minor chemical spills. Has a purple stripe
+        on the shoulder.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d25035f0e9abc354cbf13ceec20411b6, type: 3}
+--- !u!114 &6865209707900176175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4858544434859962620, guid: d25035f0e9abc354cbf13ceec20411b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2029746503659255763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

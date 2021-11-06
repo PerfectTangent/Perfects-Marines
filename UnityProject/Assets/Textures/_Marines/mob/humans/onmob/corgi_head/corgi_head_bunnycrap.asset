@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: corgi_head_bunnycrap
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8884053056894131942, guid: 33ec548ee1d9c6e44b52b3e059d9d699,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 793766173851245963, guid: 33ec548ee1d9c6e44b52b3e059d9d699,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1615656220653324992, guid: 33ec548ee1d9c6e44b52b3e059d9d699,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 246282826684009820, guid: 33ec548ee1d9c6e44b52b3e059d9d699,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23829
+  DisplayName: 

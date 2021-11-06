@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: belt_m39_holster_full
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -8605107119530691887, guid: 7021ead7b2a08ad42b3204734458ab43,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 424908018140335578, guid: 7021ead7b2a08ad42b3204734458ab43,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4183453533136205276, guid: 7021ead7b2a08ad42b3204734458ab43,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 826189492281777555, guid: 7021ead7b2a08ad42b3204734458ab43,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26811
+  DisplayName: 

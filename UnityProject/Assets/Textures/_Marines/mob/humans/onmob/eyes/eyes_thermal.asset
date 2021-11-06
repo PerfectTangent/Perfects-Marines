@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: eyes_thermal
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7020927429919365260, guid: 9335c8e6f42603f4b8e677b94fe1b0f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9087398985860636302, guid: 9335c8e6f42603f4b8e677b94fe1b0f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -880964114332465562, guid: 9335c8e6f42603f4b8e677b94fe1b0f5,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3956330301080739727, guid: 9335c8e6f42603f4b8e677b94fe1b0f5,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23915
+  DisplayName: 

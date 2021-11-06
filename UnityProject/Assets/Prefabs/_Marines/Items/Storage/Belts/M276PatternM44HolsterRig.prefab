@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2497262584937830634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1412758158916413638, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412758158916413638, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412758158916413638, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412758158916413638, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1aaf008c56aa89643b48ab6355d4308a,
+        type: 2}
+    - target: {fileID: 3576172229335913142, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 59fcce8a9aec20147ab2691b05787967,
+        type: 2}
+    - target: {fileID: 4349838846715110748, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: foreverID
+      value: 9FaeIV7gV8EKahoGM6exqMnB3vPo1qAnVQL9OJtvXCvMADYRJ2SWo0BqIKMOOgQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064626307509798483, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: initialName
+      value: M276 pattern M44 holster rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064626307509798483, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: initialDescription
+      value: The M276 is the standard load-bearing equipment of the USCM. It consists
+        of a modular belt with various clips. This version is for the M44 magnum
+        revolver, along with three pouches for speedloaders. It faintly smells of
+        hay.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270782899485255985, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_Name
+      value: M276PatternM44HolsterRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274580749719295045, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310247223394276485, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_AssetId
+      value: a47df5b679abe1e409226a5b81b4bafb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356338734736382573, guid: 2a3ef8ef5809560438c38eb444d70ebe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8332d731b2dbaf641ab06a2be2c036d3,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a3ef8ef5809560438c38eb444d70ebe, type: 3}

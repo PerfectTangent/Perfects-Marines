@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1994601840836605926
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4138442904445378967, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: initialName
+      value: M81 riot grenade launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138442904445378967, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: initialDescription
+      value: A lightweight, single-shot grenade launcher to launch tear gas grenades.
+        Used by the Colonial Marines Military Police during riots.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474076405402972993, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 6fceaa6db8020374d8b9a30647b4bc26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576547074920550133, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_Name
+      value: M81RiotGrenadeLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580349323733791617, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438135366778192536, guid: 27116cff2402d894bbbbd1e6e908280d,
+        type: 3}
+      propertyPath: foreverID
+      value: ' WtZNfzIsHR2bnc5aDsKCCRNSKLjgKjwd'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27116cff2402d894bbbbd1e6e908280d, type: 3}

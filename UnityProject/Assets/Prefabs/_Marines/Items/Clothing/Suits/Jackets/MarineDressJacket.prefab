@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7368902170107112001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3546027524223460839, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d1ebd8d06e0bc7c4ca8a84e1c24fb089,
+        type: 2}
+    - target: {fileID: 3598805260162513423, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: foreverID
+      value: a0c29aabd2c864b7982u65b5340eeda3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327150562278772197, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d84559fb3ac069f40a8a9b0d15b8c6b6,
+        type: 2}
+    - target: {fileID: 7552692318221739926, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552692318221739926, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552692318221739926, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: Armor.Laser
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552692318221739926, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552692318221739926, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556769888843238358, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_AssetId
+      value: bdc95320cb389b94585c0598d5078f73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7587228044824196706, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_Name
+      value: MarineDressJacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591025620243761942, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762739189061616958, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a9bf98c2cfa6684996e6dd1a1185b3f,
+        type: 3}
+    - target: {fileID: 8045299209020987648, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: initialName
+      value: marine dress jacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045299209020987648, guid: 51923562cddb59743a5bbe83b52a8171,
+        type: 3}
+      propertyPath: initialDescription
+      value: Smells like vanilla. Signifies prestige and power, if a little flashy.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51923562cddb59743a5bbe83b52a8171, type: 3}

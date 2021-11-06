@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_m44r_w_old
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5785094093196578410, guid: e1c3b9949b1783f45889bdc1ecfd9a67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4323211701648013546, guid: e1c3b9949b1783f45889bdc1ecfd9a67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -908866097370492282, guid: e1c3b9949b1783f45889bdc1ecfd9a67,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2875316930301145438, guid: e1c3b9949b1783f45889bdc1ecfd9a67,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24745
+  DisplayName: 

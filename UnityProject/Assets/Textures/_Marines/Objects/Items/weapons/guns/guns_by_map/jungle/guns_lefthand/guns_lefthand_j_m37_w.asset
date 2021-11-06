@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: guns_lefthand_j_m37_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 850461550056296124, guid: 1968966ed93c69e4ab51d7c847475e57,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 120224589274598276, guid: 1968966ed93c69e4ab51d7c847475e57,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6719526275833892144, guid: 1968966ed93c69e4ab51d7c847475e57,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3697786463369096009, guid: 1968966ed93c69e4ab51d7c847475e57,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 30265
+  DisplayName: 

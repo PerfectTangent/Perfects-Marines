@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1440253545775737852
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1886855504042391771, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: initialName
+      value: liaison's attire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886855504042391771, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: initialDescription
+      value: A collared shirt, complimented by a pair of suspenders. Worn by Weston-Yamada
+        employees who ask the tough questions. Smells faintly of cigars and bad acting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072482255395231673, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_Name
+      value: LiaisonsAttire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076561305657305805, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114117015262997005, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 0d3c53716d4b6284fbd59b7cdb29b3b5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176111897156723941, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3df61738060b25d48accc3a763ab29f5,
+        type: 3}
+    - target: {fileID: 4933788247718992852, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: foreverID
+      value: OaDGFAFf48WCwZl8azdEuZqNK7Cu1s6J
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953912494257751100, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ec7953a77aacc2442ae9dd7764e78e28,
+        type: 2}
+    - target: {fileID: 5297623592484252734, guid: 55f3604f3a96380408b543411ac4e910,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 06bfb740ec310be49851bd212b362763,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55f3604f3a96380408b543411ac4e910, type: 3}

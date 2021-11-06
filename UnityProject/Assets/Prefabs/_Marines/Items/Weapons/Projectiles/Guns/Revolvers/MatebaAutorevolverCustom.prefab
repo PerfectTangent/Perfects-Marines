@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7475155908774717351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625570804664670000, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: foreverID
+      value: x8dEXtlakjZtoRG1k8Pq3za5iiycCVJI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995809026528616666, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fa782a5820c61842bba92dd0bbf470d,
+        type: 2}
+    - target: {fileID: 8807006689968190527, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: initialName
+      value: Mateba autorevolver custom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807006689968190527, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: initialDescription
+      value: The Mateba is a powerful, fast-firing revolver that uses its own recoil
+        to rotate the cylinders. It uses heavy .454 rounds. This version is a limited
+        edition produced for the USCM, and issued in extremely small amounts. Was
+        a mail-order item back in 2172, and is highly sought after by officers across
+        many different battalions. This one is stamped 'Major Ike Saker, 7th 'Falling
+        Falcons' Battalion.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807006689968190527, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 79f01ed5c2ab5eb4b8ff022ed3bb06df,
+        type: 2}
+    - target: {fileID: 8807006689968190527, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: d3b228fecd909f04c800d36c6e2e8c3a,
+        type: 2}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991117214981776937, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995200663558757213, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_Name
+      value: MatebaAutorevolverCustom
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025612502615533289, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d50c7ea7088246e4fb419e5f76a92df3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089577709337716737, guid: d491c918768dd9a49bccf301f6ec85cb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 053ef133bb911fe4e9dbfcdca7f444e7,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d491c918768dd9a49bccf301f6ec85cb, type: 3}

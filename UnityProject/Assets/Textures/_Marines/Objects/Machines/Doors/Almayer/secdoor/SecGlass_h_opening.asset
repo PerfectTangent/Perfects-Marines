@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: SecGlass_h_opening
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7394986720500178108, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5739643543558576263, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8932180230972089797, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3863303301013128831, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3764095513315408149, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6606738780082120927, guid: 846de026608cf0246af7b5226d3c027e,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30800
+  DisplayName: 

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4252766264101146852
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1361936404850195053, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 716bc410a07613e4ab201f71ca80ae8b,
+        type: 2}
+    - target: {fileID: 2241164384817483143, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: foreverID
+      value: A10ESM39bba22164ceL9f0bf9b9b219f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705439667190492808, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initialName
+      value: M39 LE magazine (10x20mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705439667190492808, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initialDescription
+      value: A 10x20mm caseless light-explosive submachinegun magazine containing
+        special light explosive rounds, designed to rapidly decimate armor, at the
+        cost of vastly reduced damage and penetration.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994909091219583670, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c12353402d70da439268fb15e6d8b2e,
+        type: 3}
+    - target: {fileID: 5058874295763614814, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9edd1507f3164d346bda046d722dc89e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161282155667915242, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_Name
+      value: M39LEMagazine10x20mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166487381586640030, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8028344359447326771, guid: cc64a3ac58023c747bd8ea89a8d9913f,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 5222664665700784770, guid: 46b5e6ff7a32eaa44b62b80b25482e66,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc64a3ac58023c747bd8ea89a8d9913f, type: 3}

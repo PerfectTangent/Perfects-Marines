@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_w_suit
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3856758544753674324, guid: aaa8b6c23762e784abadbe62f9b73e8e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 262648477974480839, guid: aaa8b6c23762e784abadbe62f9b73e8e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1914480084000815765, guid: aaa8b6c23762e784abadbe62f9b73e8e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4543125576455373588, guid: aaa8b6c23762e784abadbe62f9b73e8e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 29124
+  DisplayName: 

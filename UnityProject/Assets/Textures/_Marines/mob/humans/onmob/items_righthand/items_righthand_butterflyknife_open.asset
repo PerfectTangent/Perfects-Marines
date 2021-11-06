@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_butterflyknife_open
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3202218550495923615, guid: 78efccbf5756e3841bc789fbb4f44b2c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3558741388140652617, guid: 78efccbf5756e3841bc789fbb4f44b2c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1775300339439923029, guid: 78efccbf5756e3841bc789fbb4f44b2c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3922877650660317201, guid: 78efccbf5756e3841bc789fbb4f44b2c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25102
+  DisplayName: 

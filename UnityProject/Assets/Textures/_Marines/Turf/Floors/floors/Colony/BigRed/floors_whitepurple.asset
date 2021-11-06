@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: floors_whitepurple
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5424052271970523068, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1147321436559051239, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2836803960996717547, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5044035986523064206, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6050751100006685573, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3307128556888348276, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4247586135443701564, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3766672363692586493, guid: 8e360173709ab8f489a7b74d3f3c9e49,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31435
+  DisplayName: 

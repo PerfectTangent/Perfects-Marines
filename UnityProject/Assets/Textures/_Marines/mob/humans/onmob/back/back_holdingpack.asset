@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_holdingpack
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6353558912681445617, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4276479516489845774, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8828674043704858265, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8143827253436696039, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1768799824084223034, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -649851328448647983, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3662943479350632847, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 7396606436476729954, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6996981721039497056, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1141142558463999053, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6533373632385727190, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7569043435870198362, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3672380490490035176, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6927540937668482196, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: -4819517345518211785, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -3133103863485244684, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -28119820231511842, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5137765868285536584, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4247112564061802054, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -8900988782551919468, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3354162126485111425, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+  - Frames:
+    - sprite: {fileID: 2410514794720334670, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -842323194889682157, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1831478729219738831, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7376856649769055849, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2688616437577023201, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -6015562229864546052, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6272595702945401561, guid: f1105b1da6f38594b8c507bb62cfc95a,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 23638
+  DisplayName: 

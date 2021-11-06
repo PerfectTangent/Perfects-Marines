@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: mask_facehugger
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7748897412370143624, guid: e698ee19c08f22f4596e34d0a068d833,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 441015990867618556, guid: e698ee19c08f22f4596e34d0a068d833,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3410468685887282785, guid: e698ee19c08f22f4596e34d0a068d833,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -9176056559074040905, guid: e698ee19c08f22f4596e34d0a068d833,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25641
+  DisplayName: 

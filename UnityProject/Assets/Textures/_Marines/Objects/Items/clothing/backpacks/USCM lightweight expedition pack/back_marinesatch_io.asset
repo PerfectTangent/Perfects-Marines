@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_marinesatch_io
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -6129195109804458755, guid: 1d76107cf4072f94aa8c6e2fc56f1013,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6532458388772245908, guid: 1d76107cf4072f94aa8c6e2fc56f1013,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4027346907520682726, guid: 1d76107cf4072f94aa8c6e2fc56f1013,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5747835913272176166, guid: 1d76107cf4072f94aa8c6e2fc56f1013,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26477
+  DisplayName: 

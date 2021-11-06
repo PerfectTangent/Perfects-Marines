@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_souto_man
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6174601166274347486, guid: e6def5ed6718fa34c9d1162b034c95c3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2501597205583256279, guid: e6def5ed6718fa34c9d1162b034c95c3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7889332285093957039, guid: e6def5ed6718fa34c9d1162b034c95c3,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8508060440502033723, guid: e6def5ed6718fa34c9d1162b034c95c3,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24258
+  DisplayName: 

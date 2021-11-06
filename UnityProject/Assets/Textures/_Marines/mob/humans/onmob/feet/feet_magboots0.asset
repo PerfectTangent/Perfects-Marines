@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: feet_magboots0
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3718110792019501851, guid: 18f99d6ac3a15394b877e4a04279794e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8150957513168122305, guid: 18f99d6ac3a15394b877e4a04279794e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1412895310956111983, guid: 18f99d6ac3a15394b877e4a04279794e,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1751624210725571420, guid: 18f99d6ac3a15394b877e4a04279794e,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23942
+  DisplayName: 

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7715786140341391212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2783319099172768203, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d915fd57eab7cb8439c7bdbb6414fe9b,
+        type: 2}
+    - target: {fileID: 3124639606881517089, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9cM8MkC
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142228607239856585, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 59f45065ece7aba46bb17a8e43077231,
+        type: 2}
+    - target: {fileID: 8149192410338378000, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf630275bc69f74682c853bd2f4b7af,
+        type: 3}
+    - target: {fileID: 8246793878927855608, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_AssetId
+      value: a297dcad0087565439fab59fbfb93ed2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351444811808666188, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_Name
+      value: M8MarksmanCowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355805612059529016, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434063953779203374, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: initialName
+      value: M8 marksman cowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434063953779203374, guid: daef28652e5f5e14ab8dd06bef9d8636,
+        type: 3}
+      propertyPath: initialDescription
+      value: A cowl worn to conceal the face of a marksman in the jungle.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: daef28652e5f5e14ab8dd06bef9d8636, type: 3}

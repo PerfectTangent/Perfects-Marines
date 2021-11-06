@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: back_electropack
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6978762731623790520, guid: 79189c2aa9050e642b6f956d048a8a07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 4245778908806194546, guid: 79189c2aa9050e642b6f956d048a8a07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7115838751821418748, guid: 79189c2aa9050e642b6f956d048a8a07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2307998644343826704, guid: 79189c2aa9050e642b6f956d048a8a07,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23616
+  DisplayName: 

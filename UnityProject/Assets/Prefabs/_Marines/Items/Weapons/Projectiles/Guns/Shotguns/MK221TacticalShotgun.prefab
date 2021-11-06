@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3556733366370915338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4129536741000373923, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60560f5068540144a960b1e47d4889b9,
+        type: 3}
+    - target: {fileID: 4191390885408893003, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 80b353e99b841c145b1e5a4df7a08f60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300225665963206795, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305153539877197311, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: m_Name
+      value: MK221TacticalShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407742657429937222, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 193b3a8fe279864478c6f5bba1dce1eb,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialName
+      value: MK221 tactical shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: initialDescription
+      value: The Weston-Yamada MK221 Shotgun, a semi-automatic shotgun with a quick
+        fire rate.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c36e35e391c8344381ea8b7aedb543e,
+        type: 2}
+    - target: {fileID: 4418982181937396381, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 97b2cb247fc551b4e8659274890c4e71,
+        type: 2}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: FireDelay
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793950826182110296, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 7240088718600112651, guid: e0dcc7dfe58b06340a44ebe2c2b33399,
+        type: 3}
+    - target: {fileID: 7134902139659147666, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: foreverID
+      value: 3dyN0KhWPoZKtrnzZczUYn7krLNBwjV0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996393347801935480, guid: 3da8873fd78218546ae68a3f84918848,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 378ba952cb9404040861febf9916f1e3,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3da8873fd78218546ae68a3f84918848, type: 3}

@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1953313249514207069
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 585329258295273144, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemStorageCapacity
+      value: 
+      objectReference: {fileID: 11400000, guid: 6002f5767838e0d41afbe7b8d73cba52,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialName
+      value: M4RA battle rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: initialDescription
+      value: The M4RA battle rifle is a designated marksman rifle in service with
+        the USCM. Only fielded in small numbers, and sporting a bullpup configuration,
+        the M4RA battle rifle is perfect for reconnaissance and fire support teams.\nIt
+        is equipped with rail scope and takes 10x24mm A19 high velocity magazines.
+      objectReference: {fileID: 0}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 197e8927593c41347b6740800e739d3a,
+        type: 2}
+    - target: {fileID: 605615049348677731, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 5971100f3a578cf479c2cb2bdf4bc73e,
+        type: 2}
+    - target: {fileID: 899590200603696221, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95facf815dd0fc44682e96721baef785,
+        type: 3}
+    - target: {fileID: 1047659869513117441, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_Name
+      value: M4RABattleRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052025067613360757, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089374687567073973, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 4f9965321bd362645a62bf6cabc6215b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210658489462252396, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: foreverID
+      value: sUnhtOInJ775HCeE5GRbG0HsNGP902uS
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614686339996603526, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ed292963eeb6554189c6ba0d253fce2,
+        type: 2}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: FireDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: ammoPrefab
+      value: 
+      objectReference: {fileID: 5187958421123923565, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+    - target: {fileID: 7745071007599810214, guid: d20a9e7da303f1e44ab947e83e272266,
+        type: 3}
+      propertyPath: SpawnsCasing
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20a9e7da303f1e44ab947e83e272266, type: 3}

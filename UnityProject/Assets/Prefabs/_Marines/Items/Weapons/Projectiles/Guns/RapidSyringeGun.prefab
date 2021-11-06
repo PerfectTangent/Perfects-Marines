@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4414708871681823630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 546953904725109693, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: db51f0764bb57d6459eca5e5753e2bb5,
+        type: 2}
+    - target: {fileID: 750849335967489111, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: foreverID
+      value: HbQshfT0U3rRMupUqbeDRHGqWgX2gqP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773826957525427046, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cf8b4c30f6e940a4e9f274dfcff43a57,
+        type: 3}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963529766880537934, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967608817478111290, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_Name
+      value: RapidSyringeGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000203187116289422, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 858cf8325cd790e4caaf85a0df7ad43c
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069917910590586712, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: initialName
+      value: rapid syringe gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069917910590586712, guid: 91c0cd1145ea6b044a0a0b658f29f440,
+        type: 3}
+      propertyPath: initialDescription
+      value: A modification of the syringe gun design, using a rotating cylinder
+        to store up to four syringes.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91c0cd1145ea6b044a0a0b658f29f440, type: 3}

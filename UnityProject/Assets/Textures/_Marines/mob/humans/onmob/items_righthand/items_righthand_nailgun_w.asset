@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_nailgun_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6384895648009039523, guid: 640c8e1329136ea43a55ebef80918199,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 861230353989688493, guid: 640c8e1329136ea43a55ebef80918199,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5564807391206752253, guid: 640c8e1329136ea43a55ebef80918199,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3086882419540306156, guid: 640c8e1329136ea43a55ebef80918199,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25381
+  DisplayName: 

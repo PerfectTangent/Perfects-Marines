@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7962201242094332973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1631402179261302548, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: foreverID
+      value: Z3oJukteKsyX4N8LkmcxxinRcHr044IC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972367115216367870, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: fdce93a9ba43d464aaf5be767fe229f3,
+        type: 2}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: initialName
+      value: Souto Slinger Supremo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: initialSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: initialDescription
+      value: This appears to be a T-shirt cannon modified to fire cans of Souto at
+        speeds fast enough to get them up into the top stands of a stadium. This
+        can't be safe. Cobbled together in Havana.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: c16c8211d211f9e4d8a5bd13d1c40d76,
+        type: 2}
+    - target: {fileID: 5257043214448026651, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c42c95e1dcc1b342b2779ff283c02ff,
+        type: 2}
+    - target: {fileID: 5541868300837173285, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ce0b94aa6a037941a922146a7c9e443,
+        type: 3}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623549420888192525, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627632869867293561, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_Name
+      value: SoutoSlingerSupremo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732356507421292237, guid: 358db724cb0b4f34788e76966262c97d,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 519e50897600f2d4aa476f4287393fc7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 358db724cb0b4f34788e76966262c97d, type: 3}

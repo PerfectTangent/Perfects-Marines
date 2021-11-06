@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8240530194723738687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 273835249198966466, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: initialName
+      value: PMC commando uniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 273835249198966466, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: initialDescription
+      value: An armored uniform worn by Weston-Yamada elite commandos. It is well
+        protected while remaining light and comfortable.
+      objectReference: {fileID: 0}
+    - target: {fileID: 339305548552860692, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c274ab9824db4714cbab1c984e88ecc8
+      objectReference: {fileID: 0}
+    - target: {fileID: 369648118376024480, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_Name
+      value: PMCCommandoUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374576266828166356, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 563148542006590204, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2764819371118965895, guid: fdf7ce83c1ac7b2429d48792a82490f4,
+        type: 3}
+    - target: {fileID: 5793703035688677927, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 58503a316b6cf504eb861fb969cb26f1,
+        type: 2}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727387778353044005, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f83ffaa14fcdaf49abb7c87f4ff0d6d,
+        type: 2}
+    - target: {fileID: 6745258531258779085, guid: 32df992117d214b45a5f283faaeefd80,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7c3efd842599c9c8726207f217
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32df992117d214b45a5f283faaeefd80, type: 3}

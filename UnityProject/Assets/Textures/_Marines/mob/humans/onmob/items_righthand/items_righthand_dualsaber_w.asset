@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_dualsaber_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5517771714791215390, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 1758661136700989030, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 5564935048721137900, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 3998552179672244487, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -5846203565200117896, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 6777164298429990707, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: 7592926721323128896, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -1756606231426020831, guid: 46c11fadc21d7504d98e718b7e983bf8,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 25180
+  DisplayName: 

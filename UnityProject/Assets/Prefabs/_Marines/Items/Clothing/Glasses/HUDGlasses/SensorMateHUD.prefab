@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5338112838111727036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 640841139393366801, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 042b745b7cebfa246b3110d3931f2731
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 676399929578867665, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680197504997897893, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_Name
+      value: SensorMateHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 829077509669946873, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6431813144029071124, guid: e37c7e036a24b2946b60c15dcafe427f,
+        type: 3}
+    - target: {fileID: 1125080439536245191, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: initialName
+      value: SensorMate HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125080439536245191, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: initialDescription
+      value: A much older heads-up display that displays the last known biometric
+        data from suit sensors of any given individual.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840525009520026912, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 46c11a631d953ab409b6119ec4a8250e,
+        type: 2}
+    - target: {fileID: 5893582310450281160, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: foreverID
+      value: 28c72054b1f484ed4a6253c4feee3eUA
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644660140058545442, guid: 47a7a420829ffb241a0355121d5cb989,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 8526454a23964584698acea8641d3406,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47a7a420829ffb241a0355121d5cb989, type: 3}

@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6631502942610467988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2465725293177184186, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: foreverID
+      value: IHh61VLCvfl6Q1QGuZXJcmb4INL0pYwW
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442054980399048784, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 34c8777107358f9439fc65796715758b,
+        type: 2}
+    - target: {fileID: 8679360552315330699, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b0e206971052e594faa326d6b327fabb,
+        type: 3}
+    - target: {fileID: 8827827071912645591, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_Name
+      value: Type80Bayonet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831910520422035107, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869426509959409251, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 76154972c3d81e84685af57287c26d0a
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966428569939213493, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: throwRange
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966428569939213493, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: throwSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966428569939213493, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: initialName
+      value: Type 80 bayonet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966428569939213493, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: throwDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966428569939213493, guid: 08aaec61a9cd69f4396c39c6a35445f9,
+        type: 3}
+      propertyPath: initialDescription
+      value: The standard-issue bayonet of the UPP, the Type 80 is balanced to also
+        function as an effective throwing knife.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08aaec61a9cd69f4396c39c6a35445f9, type: 3}

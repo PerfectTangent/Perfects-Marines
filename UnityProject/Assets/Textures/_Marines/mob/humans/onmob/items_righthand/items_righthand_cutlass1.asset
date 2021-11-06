@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_cutlass1
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -4999709494497200366, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -7077092455139692833, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -6180829851271971768, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 8901508566292274392, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -8479498625764650116, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: -9217148215167364201, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+  - Frames:
+    - sprite: {fileID: -2027860376972679546, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+    - sprite: {fileID: 7961618992611100008, guid: 6cc6bae74e68b2e42b23c1dce38dd1d9,
+        type: 3}
+      secondDelay: 0.2
+  IsPalette: 0
+  setID: 25158
+  DisplayName: 

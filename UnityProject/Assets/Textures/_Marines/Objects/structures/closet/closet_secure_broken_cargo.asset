@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: closet_secure_broken_cargo
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 6163393959240170119, guid: 5037bf4c19ca8344a8086804502415e5,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 3169111328735683541, guid: 5037bf4c19ca8344a8086804502415e5,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8454137016658359499, guid: 5037bf4c19ca8344a8086804502415e5,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7536434440813500146, guid: 5037bf4c19ca8344a8086804502415e5,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31134
+  DisplayName: 

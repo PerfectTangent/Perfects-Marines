@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_d_durag
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -1280546436197346100, guid: 11301dc852ab72e4c978c088c0f60652,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6569280192806265927, guid: 11301dc852ab72e4c978c088c0f60652,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2051978146341290551, guid: 11301dc852ab72e4c978c088c0f60652,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8665048910719261356, guid: 11301dc852ab72e4c978c088c0f60652,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 27058
+  DisplayName: 

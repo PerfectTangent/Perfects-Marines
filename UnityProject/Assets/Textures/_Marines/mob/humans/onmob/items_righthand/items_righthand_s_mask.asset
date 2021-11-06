@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_s_mask
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -222008974322316471, guid: 4d38a99d0c2c82e4dba90eb63b09cd5d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2744695039896298066, guid: 4d38a99d0c2c82e4dba90eb63b09cd5d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2834134208980854307, guid: 4d38a99d0c2c82e4dba90eb63b09cd5d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2129367624300333138, guid: 4d38a99d0c2c82e4dba90eb63b09cd5d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25450
+  DisplayName: 

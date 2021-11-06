@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: masks_cobpipeon
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7811072168721354075, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -5779287119125752720, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 6013842305412518202, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 5968422826396064063, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -7213696093768016137, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -2438281045807583974, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2120299369546854139, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 7112424823876424451, guid: f6cc0833b95d1f34a9033c3933319114,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 28199
+  DisplayName: 

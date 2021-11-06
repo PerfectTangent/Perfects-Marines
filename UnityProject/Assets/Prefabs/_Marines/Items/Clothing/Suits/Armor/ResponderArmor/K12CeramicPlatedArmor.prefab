@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3029246509195435312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2884197257006523483, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: initialName
+      value: K12 ceramic plated armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884197257006523483, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: initialDescription
+      value: A set of grey, heavy ceramic armor with dark blue highlights. It is
+        the standard uniform of a unknown mercenary group working in the sector.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149897238655956052, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: runningSpeedDebuff
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149897238655956052, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: walkingSpeedDebuff
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178086919656405093, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a412c9e572070594396185bbf69139d7,
+        type: 3}
+    - target: {fileID: 3380831867418331961, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_Name
+      value: K12CeramicPlatedArmor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3384633841492571725, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Rad
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Bomb
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418393450004306637, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: Armor.Energy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422477554214532749, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 9f3df03951d6496489e0962bc54c8d62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616209403060968284, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: itemStorageStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 74bf3e872403e488695c17ecdde194ab,
+        type: 2}
+    - target: {fileID: 8525764138006333268, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: foreverID
+      value: Arc29a11d2c864b7982u65qb340eed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545046068234164412, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8943ada0ecc2aaf4897d6d933bbeccc5,
+        type: 2}
+    - target: {fileID: 8911849178580709566, guid: a8edb80f3822ab845bc1c459377f2e0e,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fd64d8db3d017e42950aad5001cb3cd,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8edb80f3822ab845bc1c459377f2e0e, type: 3}

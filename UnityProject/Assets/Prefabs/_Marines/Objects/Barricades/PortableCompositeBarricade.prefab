@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4747832034328574895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349239445488300609, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: foreverID
+      value: N8T1RU7rqjU6Zc56W6rIiDJRvq7MM8TS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722599723230727176, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Name
+      value: PortableCompositeBarricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2578312453943213561, guid: 7665e4bc3ccba8a4b8dde8b79657a738,
+        type: 3}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialName
+      value: portable composite barricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialDescription
+      value: A plasteel-carbon composite barricade. Resistant to most acids while
+        being simple to repair. There are two pushplates that allow this barricade
+        to fold into a neat package. Use a blowtorch to repair.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770606251153701226, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 2870e8135ad052b42817ab9d6da580d4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783638386872271765, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: damageDeflection
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783638386872271765, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialIntegrity
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464838265875277522, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cb3beb9889095874cbbca789ed72e042,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7aa5047a5b4192c4aaae85f21241ea00, type: 3}

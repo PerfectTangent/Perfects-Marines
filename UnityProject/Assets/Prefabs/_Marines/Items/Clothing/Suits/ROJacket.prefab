@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3180145162685248077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 486930764220752917, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e58a5a6eb9a7b742bdb56daa8634851,
+        type: 2}
+    - target: {fileID: 809885012485690367, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: foreverID
+      value: a0Ro9a11d2c864b7982u65b5340eed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: allClothingData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 592ddb7fb51428f4f97b54c0a74a476a,
+        type: 2}
+    - target: {fileID: 863223620888726551, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: allClothingData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 592ddb7fb51428f4f97b54c0a74a476a,
+        type: 2}
+    - target: {fileID: 5869886140656512206, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1f550405d5267742bdf9dc5f04342cc,
+        type: 3}
+    - target: {fileID: 5914247487144312334, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 9092901415068336143}
+    - target: {fileID: 5914288836456407590, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_AssetId
+      value: d7866d6dd67c625489e64d2d9b3f97d4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019047452768001938, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_Name
+      value: ROJacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022563827954000614, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154847773141840112, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: initialName
+      value: RO jacket
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154847773141840112, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: initialDescription
+      value: A green jacket worn by USCM personnel. The back has the flag of the
+        United Americas on it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929594585646263533, guid: d2397c13e09f57f498dd74e297e3e432,
+        type: 3}
+      propertyPath: bodyPartsCovered
+      value: 112
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2397c13e09f57f498dd74e297e3e432, type: 3}
+--- !u!114 &9092901415068336143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5913890982743274050, guid: d2397c13e09f57f498dd74e297e3e432,
+    type: 3}
+  m_PrefabInstance: {fileID: 3180145162685248077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

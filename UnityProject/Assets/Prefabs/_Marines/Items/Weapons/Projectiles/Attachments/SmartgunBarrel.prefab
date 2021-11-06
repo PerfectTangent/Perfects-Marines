@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4904730572209254556
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2827125463233795127, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: foreverID
+      value: 3K4kfF75wE3m5ANxJJX7dXrCxh2QiXy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082522023416177629, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ade11100704c584e98e7c5b99df1857,
+        type: 2}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialName
+      value: smartgun barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialDescription
+      value: The very end of the M56 smart gun, featuring a compensator. CANNOT BE
+        REMOVED.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749602309390300984, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: initialTraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c347b076340e3f8438ece714a9b5fd99,
+        type: 2}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d7012f134715b9742b7e77c55443f1a7,
+        type: 3}
+    - target: {fileID: 9038930995906980614, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085304014447748590, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 0de8d1873546a6c4d88192946053aab7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187710774849083482, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_Name
+      value: SmartgunBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192634525590283566, guid: 9d07740a6daa37147b793a13fbf4f68b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d07740a6daa37147b793a13fbf4f68b, type: 3}

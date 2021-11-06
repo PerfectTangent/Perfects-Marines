@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: masks_pred_mask_elder_tr
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7700163353730421890, guid: 6ed63985a9048894a9987e040e6e8f29,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 6072793730857469293, guid: 6ed63985a9048894a9987e040e6e8f29,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2857547316011528231, guid: 6ed63985a9048894a9987e040e6e8f29,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -5377938101668251203, guid: 6ed63985a9048894a9987e040e6e8f29,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28230
+  DisplayName: 

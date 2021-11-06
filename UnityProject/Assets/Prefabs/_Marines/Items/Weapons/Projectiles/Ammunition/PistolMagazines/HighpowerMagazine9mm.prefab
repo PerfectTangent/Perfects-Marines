@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6985837123450917551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418328760131264540, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: ee6c28d40e3c8074681e712b0d025574,
+        type: 2}
+    - target: {fileID: 590698439964956662, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: foreverID
+      value: z4SFcEFr5rnakg91hAEY4hM5w1WDDsbb
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802937588647369627, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Name
+      value: HighpowerMagazine9mm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808428411977393903, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844574341381531183, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_AssetId
+      value: fcab011677f8a8c438ae18d5e2e76c26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943020194073127111, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b9167f7eea73084c90ff20a397f7ff8,
+        type: 3}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialName
+      value: Highpower magazine (9mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225582488213484793, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initialTraits.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: d6df1410890bd6944b9632c7ca94bb67,
+        type: 2}
+    - target: {fileID: 8665711366066072130, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: magazineSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665711366066072130, guid: 40001f0cf25e54044a30a0d5089fcbec,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 772162536463751848, guid: 41291f82c27119147ab9ce2041b332eb,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40001f0cf25e54044a30a0d5089fcbec, type: 3}

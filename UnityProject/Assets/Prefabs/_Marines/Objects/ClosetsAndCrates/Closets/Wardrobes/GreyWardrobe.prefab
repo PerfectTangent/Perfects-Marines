@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6228335479820443775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1846724104790029551, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 775b622367464f54e8271a59f5d1689a,
+        type: 2}
+    - target: {fileID: 1846724104790029551, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 775b622367464f54e8271a59f5d1689a,
+        type: 2}
+    - target: {fileID: 3327527752797399895, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_AssetId
+      value: e76ffbc7ccabfff4cbf44dcca6495f55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563814246919373061, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: initialName
+      value: grey wardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381651245139147298, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b351c6add63f9ba4db1074dbbb0f036b,
+        type: 3}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621880093893679343, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624813838982880821, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: m_Name
+      value: GreyWardrobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818804426710343804, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3,
+        type: 3}
+      propertyPath: foreverID
+      value: q4hNk5AlFp8Dj2SIiM7KlNZO97vje3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4d81bbe51ee7714a8aa88ba3bf91ee3, type: 3}

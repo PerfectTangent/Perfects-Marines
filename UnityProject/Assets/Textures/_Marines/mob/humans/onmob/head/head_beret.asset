@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: head_beret
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 924751610874157985, guid: 437321102512c1c49ab6269ee8619f28,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 2424213859748708480, guid: 437321102512c1c49ab6269ee8619f28,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5721472755946927563, guid: 437321102512c1c49ab6269ee8619f28,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3299685981550070252, guid: 437321102512c1c49ab6269ee8619f28,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24007
+  DisplayName: 

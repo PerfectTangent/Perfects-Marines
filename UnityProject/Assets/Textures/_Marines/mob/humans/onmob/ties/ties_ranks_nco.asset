@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: ties_ranks_nco
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7461539823861023062, guid: 447ad0458ecd22a4bafb87ff30dd59c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1688838820892402441, guid: 447ad0458ecd22a4bafb87ff30dd59c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -2787926958965209568, guid: 447ad0458ecd22a4bafb87ff30dd59c9,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7002455632661113177, guid: 447ad0458ecd22a4bafb87ff30dd59c9,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26096
+  DisplayName: 

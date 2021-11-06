@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2426071961980157968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3760972660997054447, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 310c208b63817634e8241ea7b3d5239f,
+        type: 2}
+    - target: {fileID: 3816285952070680583, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: foreverID
+      value: fceccba0296eb5b4983bdfe2fc9ccUH7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110252680125200365, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: efe467a8590fffe4d9601c35f06a402d,
+        type: 2}
+    - target: {fileID: 7683431831103529736, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: initialName
+      value: UH7 helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803773052333263978, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_Name
+      value: UH7Helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808978002774290718, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914830253289774494, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: Armor.Bio
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914830253289774494, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: Armor.Melee
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914830253289774494, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: Armor.Bullet
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914830253289774494, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: Resistances.UnAcidable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915260679268413918, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_AssetId
+      value: f2e74aa097cafdb4bbd5e2ae57bcd682
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915288804260867574, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: customNetTransform
+      value: 
+      objectReference: {fileID: 5508499269028635050}
+    - target: {fileID: 7979648061958930230, guid: 65160035a2c3685408236454ba172914,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ec0b9cce6f6d0b49ba8e219ffda34b3,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65160035a2c3685408236454ba172914, type: 3}
+--- !u!114 &5508499269028635050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7915425432171684282, guid: 65160035a2c3685408236454ba172914,
+    type: 3}
+  m_PrefabInstance: {fileID: 2426071961980157968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579884b05ae74e8499329b64997147d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

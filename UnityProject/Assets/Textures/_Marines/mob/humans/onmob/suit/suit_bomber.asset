@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_bomber
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -7038958211754138055, guid: 36b051ca461e67f46aab5f5849cd765c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7637183913641003563, guid: 36b051ca461e67f46aab5f5849cd765c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8849800523780222275, guid: 36b051ca461e67f46aab5f5849cd765c,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 479977079999330262, guid: 36b051ca461e67f46aab5f5849cd765c,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25766
+  DisplayName: 

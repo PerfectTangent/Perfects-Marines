@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: marine_closet_squad_bravo_emmaged
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -2930709572973534159, guid: 7e3e6e6b4ac88b84cae6ab0ff66f1ffd,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8063910095257708436, guid: 7e3e6e6b4ac88b84cae6ab0ff66f1ffd,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 1814783853235214126, guid: 7e3e6e6b4ac88b84cae6ab0ff66f1ffd,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -4717974857654602734, guid: 7e3e6e6b4ac88b84cae6ab0ff66f1ffd,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 484177727999615719, guid: 7e3e6e6b4ac88b84cae6ab0ff66f1ffd,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 31343
+  DisplayName: 

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6688583707890338707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349192601524553194, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: a1deaa5c6657ab745b5fe15422b3987e,
+        type: 2}
+    - target: {fileID: 2253468143584145920, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: foreverID
+      value: A19Aa7abba22164ce49fIncf9b9b219f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689036689096282383, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: initialName
+      value: A19 high velocity incendiary magazine (10x24mm)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689036689096282383, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: initialDescription
+      value: A magazine of A19 high velocity incendiary rounds for use in the M4RA
+        battle rifle. The M4RA battle rifle is the only gun that can chamber these
+        rounds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976091859936038193, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d47780dcef966914bbfadd4280a97c52,
+        type: 3}
+    - target: {fileID: 5074256239805350873, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 98f4b92bc0c83b24699c927bb1af7fc0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182753195607327513, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187958421123923565, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: m_Name
+      value: A19HighVelocityIncendiaryMagazine10x24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013507773124710324, guid: 45d9d2be7df28534a8ead6aca59093ad,
+        type: 3}
+      propertyPath: initalProjectile
+      value: 
+      objectReference: {fileID: 570345048743758998, guid: 65552504413f2b649b79470b2813f1bb,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45d9d2be7df28534a8ead6aca59093ad, type: 3}

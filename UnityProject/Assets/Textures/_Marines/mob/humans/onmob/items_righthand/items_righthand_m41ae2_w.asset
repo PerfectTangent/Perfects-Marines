@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_righthand_m41ae2_w
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -3174743735027773530, guid: 130ac03d0b937e346a554f845b3add07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7388781462868813003, guid: 130ac03d0b937e346a554f845b3add07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 9121184414620127975, guid: 130ac03d0b937e346a554f845b3add07,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -3201843302017994112, guid: 130ac03d0b937e346a554f845b3add07,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25321
+  DisplayName: 

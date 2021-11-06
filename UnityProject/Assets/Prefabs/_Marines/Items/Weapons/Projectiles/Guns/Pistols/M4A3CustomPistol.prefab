@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5023292977994959120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2432960272064063645, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: initialName
+      value: M4A3 custom pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432960272064063645, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: initialDescription
+      value: An M4A3 Service Pistol, the standard issue sidearm of the Colonial Marines.
+        Uses 9mm pistol rounds. This one has an ivory-colored grip and has a slide
+        carefully polished yearly by a team of orphan children. Looks like it belongs
+        to a low-ranking officer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432960272064063645, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: itemSprites.SpriteLeftHand
+      value: 
+      objectReference: {fileID: 11400000, guid: dd27bda092f4f5946ba26aebdf96bc03,
+        type: 2}
+    - target: {fileID: 2432960272064063645, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: itemSprites.SpriteRightHand
+      value: 
+      objectReference: {fileID: 11400000, guid: 29664ff25ae4188478eb31010ba09354,
+        type: 2}
+    - target: {fileID: 2729167436756350115, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09ca9336149768b49a7e7e9fd3ae22c3,
+        type: 3}
+    - target: {fileID: 2790599364403788363, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 5ae1afc0255265446a647f7e8510d536
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823201498807781375, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_Name
+      value: M4A3CustomPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827562299868166795, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671182319180966472, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ff1cfe30ab92994abe6e61ca4c6ebaa,
+        type: 2}
+    - target: {fileID: 8243867677323132024, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: bd3b634e6f89235459584ff8e2f5e464,
+        type: 2}
+    - target: {fileID: 9193182926540524434, guid: f009b3a17df841048bb4026fabb7cc59,
+        type: 3}
+      propertyPath: foreverID
+      value: 5UiWmdXMTRIlSBT5KeeO3FuLMjzdzvTA
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f009b3a17df841048bb4026fabb7cc59, type: 3}

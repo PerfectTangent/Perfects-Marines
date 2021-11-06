@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: items_lefthand_oxygen_f
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -5737250025600798123, guid: 1b9d511bf81ef9b45bd6976a09e3d4c7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 7781370577181858460, guid: 1b9d511bf81ef9b45bd6976a09e3d4c7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4204506364889715580, guid: 1b9d511bf81ef9b45bd6976a09e3d4c7,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 5857834373146344328, guid: 1b9d511bf81ef9b45bd6976a09e3d4c7,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 24810
+  DisplayName: 

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_halfarmor5
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 3117698870700101178, guid: abab70035f7cdd940821b4863cd75611,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -6767925728045800333, guid: abab70035f7cdd940821b4863cd75611,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 714641041516776335, guid: abab70035f7cdd940821b4863cd75611,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -261514796956911007, guid: abab70035f7cdd940821b4863cd75611,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 25845
+  DisplayName: 

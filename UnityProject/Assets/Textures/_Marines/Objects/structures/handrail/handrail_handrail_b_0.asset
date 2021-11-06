@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: handrail_handrail_b_0
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -9180203926404999796, guid: 7a7346df88f4f0a429c860cf5c77a60d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4606244062808817382, guid: 7a7346df88f4f0a429c860cf5c77a60d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 3117650338590724636, guid: 7a7346df88f4f0a429c860cf5c77a60d,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -7585868873294800726, guid: 7a7346df88f4f0a429c860cf5c77a60d,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 31323
+  DisplayName: 

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &77406312205192967
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3180389918377419301, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 443a215abfccf9b4cb48b47d9c084877
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288952088834663141, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294161437657702289, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_Name
+      value: DutchsDozenUniformRanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406625410535238861, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5157029899897249553, guid: 13fe2ab183221fb42b3ecdbb3b6faff2,
+        type: 3}
+    - target: {fileID: 8434555714584384508, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: foreverID
+      value: de234d7c3cfd842599uoc8726207f217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487610552621255700, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: clothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487610552621255700, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: currentClothData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487610552621255700, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: allClothingData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7238ccf81e028a84fae09cdfe0dc89a4,
+        type: 2}
+    - target: {fileID: 8714792282596975638, guid: 9863929a67ccfe84189c56f290afdd51,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 189570fb96d56e04c893ffe1abf3b33c,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9863929a67ccfe84189c56f290afdd51, type: 3}

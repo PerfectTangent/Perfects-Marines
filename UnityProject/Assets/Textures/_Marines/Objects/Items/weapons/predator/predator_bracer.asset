@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: predator_bracer
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5141465774912254706, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.3
+    - sprite: {fileID: 6002937235418874121, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.3
+    - sprite: {fileID: 6654762247815497544, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: -1873286777822779973, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 8248853843074980868, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.1
+    - sprite: {fileID: 2154130460767873323, guid: f7c2e14f9c5475a4282e56274b4ef2e7,
+        type: 3}
+      secondDelay: 0.1
+  IsPalette: 0
+  setID: 30437
+  DisplayName: 

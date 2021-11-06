@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: suit_slot_c_smartpistol_holster_g
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 7959290659749455570, guid: fcdf296d64c1175479b9f7b746232cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1311276150512091563, guid: fcdf296d64c1175479b9f7b746232cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 158860624316687129, guid: fcdf296d64c1175479b9f7b746232cef,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -8344579369596356520, guid: fcdf296d64c1175479b9f7b746232cef,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 26022
+  DisplayName: 

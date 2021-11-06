@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: belt_d_smartpistol_holster_g
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: -912071522459189647, guid: ceea3b4b666d55d48afb72db0a8f14c2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 393205827664766221, guid: ceea3b4b666d55d48afb72db0a8f14c2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -4323205665012938814, guid: ceea3b4b666d55d48afb72db0a8f14c2,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1154805062057654902, guid: ceea3b4b666d55d48afb72db0a8f14c2,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 23755
+  DisplayName: 

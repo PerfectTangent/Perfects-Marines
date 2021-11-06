@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1de2691495b304e9843ac3335b626d, type: 3}
+  m_Name: legacy_tiered_armor_H5
+  m_EditorClassIdentifier: 
+  Variance:
+  - Frames:
+    - sprite: {fileID: 5729175951876053196, guid: 357a550213187c5449190329c42d107b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 8096941750822726788, guid: 357a550213187c5449190329c42d107b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: -1460427069885970460, guid: 357a550213187c5449190329c42d107b,
+        type: 3}
+      secondDelay: 0
+  - Frames:
+    - sprite: {fileID: 1104096080340825459, guid: 357a550213187c5449190329c42d107b,
+        type: 3}
+      secondDelay: 0
+  IsPalette: 0
+  setID: 28091
+  DisplayName: 
