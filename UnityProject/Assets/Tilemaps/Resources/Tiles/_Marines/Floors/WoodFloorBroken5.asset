@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c576ac449c2d45d99890dcfa21598645, type: 3}
-  m_Name: WoodFloorBroken3
+  m_Name: WoodFloorBroken5
   m_EditorClassIdentifier: 
   displayName: wood floor
   LayerType: 3
@@ -66,4 +66,4 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   SoundOnDestroy: []
-  sprite: {fileID: 21300000, guid: bfb6678b31c29b94e8a710356735fb11, type: 3}
+  sprite: {fileID: 21300000, guid: 4bf58ee7db56a014e864bfec1cebdeae, type: 3}

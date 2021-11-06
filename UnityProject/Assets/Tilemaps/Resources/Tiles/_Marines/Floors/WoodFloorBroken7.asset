@@ -66,4 +66,4 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   SoundOnDestroy: []
-  sprite: {fileID: 21300000, guid: 8800025b169bb2f449eb986a62dc936c, type: 3}
+  sprite: {fileID: 21300000, guid: d836dc844718bfb469c041434e1adbad, type: 3}

@@ -24,11 +24,18 @@ MonoBehaviour:
   SpawnWithNoAir: 0
   passable: 0
   mineable: 0
+  miningTime: 5
+  constructable: 0
+  RadiationPassability: 0.15
+  ThermalConductivity: 0
+  HeatCapacity: 312500
   doesReflectBullet: 0
+  indestructible: 0
+  ExplosionImpassable: 1
   passableException:
     m_keys: 
     m_values: 
-  maxHealth: 500
+  maxHealth: 100
   damageDeflection: 0
   armor:
     Melee: 90
@@ -41,18 +48,24 @@ MonoBehaviour:
     Acid: 90
     Magic: 0
     Bio: 100
+    DismembermentProtectionChance: 0
   tileInteractions:
   - {fileID: 11400000, guid: df2824a08f89f459e90d745b5e8e07a2, type: 2}
   spawnOnDeconstruct: {fileID: 0}
   spawnAmountOnDeconstruct: 0
   lootOnDespawn: {fileID: 0}
+  toTileWhenDestroyed: {fileID: 11400000, guid: e5521a40048af4964ad58c041a5dc7f4,
+    type: 2}
+  spawnOnDestroy: {fileID: 0}
+  damageOverlayList: {fileID: 0}
   soundOnHit:
     SetLoadSetting: 0
-    AssetAddress: null
+    AssetAddress: 
     AssetReference:
       m_AssetGUID: 
       m_SubObjectName: 
       m_SubObjectType: 
+  SoundOnDestroy: []
   connectCategory: 0
   connectType: 1
   spriteSheet:
