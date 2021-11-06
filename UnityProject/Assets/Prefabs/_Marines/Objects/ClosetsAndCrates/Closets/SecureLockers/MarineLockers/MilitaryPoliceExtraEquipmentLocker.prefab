@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1606028211601833752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 684083229040743669, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_Name
+      value: MilitaryPoliceExtraEquipmentLocker
+      objectReference: {fileID: 0}
+    - target: {fileID: 729133414860370146, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9765f771d83c4b04aa6eb0e8352a9377,
+        type: 3}
+    - target: {fileID: 4471988908426422972, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: foreverID
+      value: 2wLbiJlZ4LR7Yr6SLnljObQra9Pg8Z
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d7048767e8e9e5f4db28b14e277bd17c,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ae2336eb6382534ba7d40abdbb21e1f,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 61a49024da3fff644a40a2b7d49c9ac6,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d7048767e8e9e5f4db28b14e277bd17c,
+        type: 2}
+    - target: {fileID: 7916105367997844421, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: initialName
+      value: MP extra equipment locker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981175845054980503, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 6744204b72ec6a14cb7f8fd83e429ee8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f3b5940c1a9ba34c856057c8b910cbe, type: 3}

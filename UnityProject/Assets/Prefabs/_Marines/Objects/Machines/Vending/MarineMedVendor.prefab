@@ -140,7 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed381a72f1e344bb8020dc181414b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialVendorContent: []
+  InitialVendorContent:
+  - ItemName: Stasis Bag
+    Item: {fileID: 3928733551089330921, guid: 0c67383025c658546b51f18a687d8759, type: 3}
+    Stock: 5
+    Currency: 0
+    Price: 0
   HullColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   EjectObjects: 0
   EjectDirection: 0

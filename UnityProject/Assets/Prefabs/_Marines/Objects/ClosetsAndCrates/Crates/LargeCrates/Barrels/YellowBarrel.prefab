@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9198965399973915146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488209347414869393, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 43381773a880b3d4196f148edca39751,
+        type: 2}
+    - target: {fileID: 2320333446127710331, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: initialName
+      value: yellow barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320333446127710331, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: initialDescription
+      value: A yellow storage barrel.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552028135575214633, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_AssetId
+      value: b3908b151db5b2946a15d0120291d366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936845438576372113, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942286141042978635, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_Name
+      value: YellowBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185538624366299996, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 494ad264cb687554fb6dffcc6680bd29,
+        type: 3}
+    - target: {fileID: 8351766260812026114, guid: 2738ccc3e90a673408b43c6669da00d4,
+        type: 3}
+      propertyPath: foreverID
+      value: VWHD48HW68nwnJWwaqjULqb3CSe9tX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2738ccc3e90a673408b43c6669da00d4, type: 3}

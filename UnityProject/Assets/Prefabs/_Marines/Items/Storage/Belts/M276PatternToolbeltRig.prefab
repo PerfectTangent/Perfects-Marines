@@ -92,12 +92,14 @@ PrefabInstance:
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialName
-      value: toolbelt
+      value: M276 pattern toolbelt rig
       objectReference: {fileID: 0}
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialDescription
-      value: Holds tools.
+      value: The M276 is the standard load-bearing equipment of the USCM. It consists
+        of a modular belt with various clips. This version lacks any combat functionality,
+        and is commonly used by engineers to transport important tools.
       objectReference: {fileID: 0}
     - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}

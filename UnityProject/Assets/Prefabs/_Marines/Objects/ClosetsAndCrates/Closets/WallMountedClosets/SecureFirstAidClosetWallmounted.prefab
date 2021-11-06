@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7980397142353843754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678899883157967407, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 684083229040743669, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_Name
+      value: SecureFirstAidClosetWallmounted
+      objectReference: {fileID: 0}
+    - target: {fileID: 729133414860370146, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8051295664c024641bcf2d85d974cc09,
+        type: 3}
+    - target: {fileID: 2708772870369986015, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: Passable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471988908426422972, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: foreverID
+      value: k6POGsudpHWGxW6QGj7Va7t5vwlqXZ
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 7230ee8ac1a74d94f936768b3e1c6108,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7230ee8ac1a74d94f936768b3e1c6108,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6d91433936975a4e8bd007bca5823e9,
+        type: 2}
+    - target: {fileID: 5417455200430800431, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: SubCatalogue.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7230ee8ac1a74d94f936768b3e1c6108,
+        type: 2}
+    - target: {fileID: 7916105367997844421, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: initialName
+      value: first-aid closet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916105367997844421, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: initialDescription
+      value: It's wall-mounted storage unit for first aid supplies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260176341816705930, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: isInitiallyNotPushable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981175845054980503, guid: 8f3b5940c1a9ba34c856057c8b910cbe,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 56e81b9268d6fe648b10622ac3b9954a
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f3b5940c1a9ba34c856057c8b910cbe, type: 3}

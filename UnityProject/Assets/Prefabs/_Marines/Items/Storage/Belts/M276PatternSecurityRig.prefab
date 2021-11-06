@@ -17,7 +17,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemStorageStructure
       value: 
-      objectReference: {fileID: 11400000, guid: 54cbb4402f813441cb503dcd1d440082,
+      objectReference: {fileID: 11400000, guid: 72f86270876774165a3778d641b8a8bb,
         type: 2}
     - target: {fileID: 1764592290455851827, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
@@ -98,12 +98,15 @@ PrefabInstance:
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialName
-      value: security belt
+      value: M276 pattern security rig
       objectReference: {fileID: 0}
     - target: {fileID: 2235114152810004965, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}
       propertyPath: initialDescription
-      value: Can hold security gear like handcuffs and flashes.
+      value: The M276 is the standard load-bearing equipment of the USCM. It consists
+        of a modular belt with various clips. This configuration is commonly seen
+        among USCM Military Police and peacekeepers, though it can hold some light
+        munitions.
       objectReference: {fileID: 0}
     - target: {fileID: 4707276644318323434, guid: 51c105fae1f0b074abf4c80745d8b129,
         type: 3}

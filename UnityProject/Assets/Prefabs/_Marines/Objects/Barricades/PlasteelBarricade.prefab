@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1065327149905458416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1349239445488300609, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: foreverID
+      value: mbMiQhkuPET8cRLZGXajDUm5SNokjt3p
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722599723230727176, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Name
+      value: PlasteelBarricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728385120449284818, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8015990134750271574, guid: 4d9601b7624e8904aacfbfa50ef42bba,
+        type: 3}
+    - target: {fileID: 2785655509223909407, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817177662300369404, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: isLeavableOnAll
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817177662300369404, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: isEnterableOnAll
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialName
+      value: plasteel barricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714534282124268344, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialDescription
+      value: A very sturdy barricade made out of plasteel panels, the pinnacle of
+        strongpoints. Use a blowtorch to repair. Can be flipped down to create a
+        path.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770606251153701226, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 190311b9fcaceac4c87d0a7c68d07e2b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783638386872271765, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: damageDeflection
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783638386872271765, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: initialIntegrity
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464838265875277522, guid: 7aa5047a5b4192c4aaae85f21241ea00,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 36cac87c96dc19540bf7322964fb2a79,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7aa5047a5b4192c4aaae85f21241ea00, type: 3}

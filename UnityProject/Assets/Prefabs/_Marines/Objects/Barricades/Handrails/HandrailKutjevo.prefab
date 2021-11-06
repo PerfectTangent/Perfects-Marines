@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5611634946990557519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 312921538457076706, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: PresentSpriteSet
+      value: 
+      objectReference: {fileID: 11400000, guid: 796cf61ae7b08e947be24bc1a3eacfec,
+        type: 2}
+    - target: {fileID: 3736467541734366298, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_AssetId
+      value: 4be0394fd30ff3d4a84ae52b263a788d
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001093781866810671, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3473611566656100351, guid: ed4fa276cb98ad148be1fac7b4eb55cb,
+        type: 3}
+    - target: {fileID: 5046081780894804280, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_Name
+      value: HandrailKutjevo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049376784272322530, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175898651734234993, guid: ecdbeedc34570c9469249ca37ea9d601,
+        type: 3}
+      propertyPath: foreverID
+      value: FCC6LomLDGUtqJ0gmVWzdXPmulnPobUZ
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecdbeedc34570c9469249ca37ea9d601, type: 3}
