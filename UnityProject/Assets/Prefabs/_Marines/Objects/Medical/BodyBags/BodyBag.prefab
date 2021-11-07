@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ffa270baac4723983d4ed66622180e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shadow: {fileID: 21300000, guid: 4e5ba2ee6f8cf2d48a8276afe672270a, type: 3}
+  shadow: {fileID: 21300000, guid: 398c81a31c3a80a4bada364bbf131f7c, type: 3}
   draggerMustBeAdjacent: 1
   allowDragWhileSoftCrit: 1
 --- !u!1001 &7978921683146610197

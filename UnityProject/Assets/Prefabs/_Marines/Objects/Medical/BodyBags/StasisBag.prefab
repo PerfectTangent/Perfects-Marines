@@ -17,7 +17,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shadow
       value: 
-      objectReference: {fileID: 21300000, guid: 6a2a0d2d13e6ffd4091795dd7ee50a0d,
+      objectReference: {fileID: 21300000, guid: a5a0f206500a65442bc34a16af8b2642,
         type: 3}
     - target: {fileID: 1698905596242812031, guid: 0b5947e822d9f344081d63a1ad0b291e,
         type: 3}
