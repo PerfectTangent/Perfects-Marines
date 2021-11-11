@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: Synthentic
+  m_EditorClassIdentifier: 
+  jobType: 18
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 1
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 0
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 5c2148e78c87a8c4ab3b15f1ef4afcc6, type: 3}
+  displayName: Synthentic
+  difficulty: 4
+  descriptionShort: "\u2022 Assist the acting Commander and Marine forces to the
+    best of your abilities."
+  descriptionLong: "\"I may be synthetic, but I'm not stupid.\" \u2015Bishop, Aliens\n\nA
+    Synthetic is a biomechanical humanoid that closely emulates humans in appearance
+    and actions; however there is one key difference synthetics aren't affected by
+    emotions in their decision making. Due to emotions not having an effect on them,
+    synthetics have been seen as more reliable in high stress and dangerous environments,
+    such as aboard a military vessel. A medical or xeno hud will show a grey box
+    with a \"meh\" face inside of it."
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

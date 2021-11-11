@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: VehicleCrewman
+  m_EditorClassIdentifier: 
+  jobType: 22
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 2
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 0
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 8d989eca5a1502047920d8bd38a28c1f, type: 3}
+  displayName: Vehicle Crewman
+  difficulty: 3
+  descriptionShort: "\u2022 Operate the M34A2 Longstreet Light Tank or M577 Armored
+    Personnel Carrier."
+  descriptionLong: '"The Ridge'' is a scary tank. Its got stealth, mobility, firepower
+    and point defenses better''n anything we had on the M22. What''s so neat is the
+    way the automatics handle the workload - you''d think you need at least three
+    crew to run all this crap, but in fact you can do it with the same two girls
+    you had in the Jackson. The only problem we had in our battalion was running
+    the panzers in after they were delivered, factory fresh - you need to fire the
+    guns a lot and run all the equipment a number of times before the sensors and
+    weapons settle down and fully integrate." - Capt. Andrea Mae Samona, 2nd Colonial
+    Marine Tank Battalion, Colonial Marines Tech Manual'
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

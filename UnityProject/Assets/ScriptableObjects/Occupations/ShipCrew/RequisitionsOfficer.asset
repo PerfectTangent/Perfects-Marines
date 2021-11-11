@@ -10,34 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
-  m_Name: Standard Gear
+  m_Name: RequisitionsOfficer
   m_EditorClassIdentifier: 
-  jobType: 0
+  jobType: 11
   isCrewmember: 1
   lateSpawnIsArrivals: 1
-  inventoryPopulator: {fileID: 11400000, guid: e9fa91afc36164817bc3c3c26eb54266, type: 2}
+  inventoryPopulator: {fileID: 0}
   limit: 0
   priority: 0
   allowedAccess: 
   spells: []
   progress: 50
   choiceColor: {r: 1, g: 1, b: 1, a: 1}
-  previewSprite: {fileID: 0}
-  displayName: 
+  previewSprite: {fileID: 21300000, guid: fc67157ba56f307439dd4c90ded11f12, type: 3}
+  displayName: Requisitions Officer
   difficulty: 2
-  descriptionShort: 
-  descriptionLong: 
+  descriptionShort: "\u2022 Equip and supply the marines with everything they need
+    for the operation."
+  descriptionLong: "\"I wanna introduce you to a personal friend of mine. It is an
+    M41A Pulse Rifle. Ten millimeter, with over-and-under thirty millimeter pump
+    action grenade launcher.\" \u2015Cpl. Hicks, Aliens\n\n"
   customProperties:
     m_keys: []
     m_values: 
   isTargeteable: 1
-  playSound: 1
+  playSound: 0
   spawnSound:
     SetLoadSetting: 0
-    AssetAddress: Assets/Prefabs/AmbientTracks/AmbiGen8.prefab
+    AssetAddress: 
     AssetReference:
       m_AssetGUID: 
       m_SubObjectName: 
       m_SubObjectType: 
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 1, g: 0, b: 0, a: 0}
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

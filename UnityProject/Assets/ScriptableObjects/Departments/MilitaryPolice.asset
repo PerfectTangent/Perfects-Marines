@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69829c302d5fb54fb21763031858708, type: 3}
-  m_Name: Medical
+  m_Name: MilitaryPolice
   m_EditorClassIdentifier: 
-  displayName: Medical
+  displayName: Military Police
   description: 
-  headerColor: {r: 0.839, g: 0.45138198, b: 0.6968733, a: 1}
+  headerColor: {r: 0.4431373, g: 0.11764707, b: 0.14509805, a: 1}
   icon: {fileID: 0}
   headOccupations:
-  - {fileID: 11400000, guid: d0805fe527e242e49b656622c6ea7a7e, type: 2}
+  - {fileID: 11400000, guid: 4da9933522c2e944cb3bbef7d1bd6013, type: 2}
   occupations:
-  - {fileID: 11400000, guid: addd76eabfc468a44bab84a76146d8b9, type: 2}
-  - {fileID: 11400000, guid: 3b012191b58b14a49b05e1acca7e3688, type: 2}
-  - {fileID: 11400000, guid: 51bb1a8bc39779f41b7e7c32c5d8200f, type: 2}
+  - {fileID: 11400000, guid: 877d6893a05b00b4680e18989a7ef3a1, type: 2}
+  - {fileID: 11400000, guid: cf00ec06dc856b3499231d90f04d5895, type: 2}

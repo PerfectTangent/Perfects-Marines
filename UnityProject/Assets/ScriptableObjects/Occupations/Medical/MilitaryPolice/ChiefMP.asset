@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: ChiefMP
+  m_EditorClassIdentifier: 
+  jobType: 17
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 1
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: d8a9fed3d5ca7354ea863413d26dd66e, type: 3}
+  displayName: Chief MP
+  difficulty: 4
+  descriptionShort: "\u2022 Administrate the brig.\n\u2022 Coordinate the MPs.\n\u2022
+    Ensure Marine Law is properly enforced. Keep the ship and crew safe."
+  descriptionLong: '
+
+
+    "Dura Lex, Sed Lex" ("The law is harsh, but it is the
+    law") - Ancient Roman proverb
+
+
+    As the Chief MP, your main duty is to ensure
+    Marine Law is being properly enforced. You are the second to the final authority
+    on Marine Law aboard the ship, but with that authority comes responsibility.
+    You''re responsible for ensuring all prisoners are safe, given proper sentencing
+    and that their rights are not violated. You may perform arrests yourself if needed,
+    but you shouldn''t be running about investigating crimes and chasing perps. You''re
+    much more valuable at the brig, coordinating and ensuring no breaches of procedure
+    occur, leave the grunt work to the grunts.'
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1

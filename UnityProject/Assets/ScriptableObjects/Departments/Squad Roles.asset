@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69829c302d5fb54fb21763031858708, type: 3}
+  m_Name: Squad Roles
+  m_EditorClassIdentifier: 
+  displayName: Squad Role
+  description: 
+  headerColor: {r: 0.30588236, g: 0.45098042, b: 0.19215688, a: 1}
+  icon: {fileID: 0}
+  headOccupations:
+  - {fileID: 11400000, guid: 80885f9c552fd574e8e87b041f1765b9, type: 2}
+  occupations:
+  - {fileID: 11400000, guid: f09007f2e9bc1cf4e92db0a3e33b263b, type: 2}
+  - {fileID: 11400000, guid: 19a1c487e23e3e544a3f7fd9f360950d, type: 2}
+  - {fileID: 11400000, guid: b9c4260dc0a28824b9f9df33306bc59b, type: 2}
+  - {fileID: 11400000, guid: 96f54a790f33c184994bca97844b3bf1, type: 2}
+  - {fileID: 11400000, guid: 55b70b7bf1cde5a4ab804f6f89e465a2, type: 2}

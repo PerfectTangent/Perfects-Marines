@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: SquadMedic
+  m_EditorClassIdentifier: 
+  jobType: 3
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 12
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 60
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 0bd1037342ca01e40be701731f7cb19b, type: 3}
+  displayName: Squad Medic
+  difficulty: 3
+  descriptionShort: "\u2022 Assist squad.\n\u2022 Heal your squad.\n\u2022 Follow
+    your sergeant's orders."
+  descriptionLong: "As the Squad Medic, you are your squad's main source of first
+    aid and battlefield triage. While Marines usually try to keep themselves out
+    of harm's way, your actions will often decide who lives and dies that day. Wherever
+    it is administering first aid, popping painkillers for a wounded comrade, performing
+    a medevac, or even bringing someone back from the brink of death, you will often
+    be the lifeline of your squad. Without you on your squad's side, only pain and
+    death await.\r\n\r\rAs a Squad Medic, you will be placed under a lot of stress.
+    Your entire squad, and often even the entire Marine force, will rely on you to
+    stay in fighting condition and perform medical procedures correctly and rapidly.
+    You will probably mess up your first few deployments, patients will die in your
+    hands, casualties will overwhelm you, supplies will get misplaced or dropped,
+    and hostiles will get the jump on you and eliminate you, but practice makes perfect.
+    If needed, consult this guide and/or the forum guides linked below whenever you
+    require and mentorhelp if any doubts arise, and remember that all Squad Medics
+    started here."
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1

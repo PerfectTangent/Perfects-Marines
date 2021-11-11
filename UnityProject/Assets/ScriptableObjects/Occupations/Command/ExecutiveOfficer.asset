@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: ExecutiveOfficer
+  m_EditorClassIdentifier: 
+  jobType: 26
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 1
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: c3982623b33c6704bb4bc374e1522961, type: 3}
+  displayName: Executive Officer
+  difficulty: 3
+  descriptionShort: "\u2022 Obey and support the Commanding Officer.\n\u2022 Help
+    run the operation."
+  descriptionLong: "\"Boy's definitely got a corncob up his ass.\" \u2015Private
+    Frost, regarding Lieutenant Gorman, Aliens\nYou are the Executive Officer (A.K.A
+    The X.O.) the second in command of the Marines. You have been tasked with the
+    same objective as the Commanding Officer, you're both there to command the marines.
+    If there is no Commanding Officer alive or available you are next in line to
+    be in command of the marines to brief them on the mission and command them. You
+    can go down to the FOB if there is one setup to further command the marines BUT
+    the Commanding Officer must stay onboard the Almayer. The Commanding Officer
+    is to stay on the Almayer until you have returned to the ship and vice versa
+    for the Commanding Officer."
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1

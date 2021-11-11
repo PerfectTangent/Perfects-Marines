@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: Nurse
+  m_EditorClassIdentifier: 
+  jobType: 7
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 8
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 36e08fbe3485db84884f98750342f272, type: 3}
+  displayName: Nurse
+  difficulty: 1
+  descriptionShort: "\u2022 Maintain Medbay.\n\u2022 Assist the Doctors.\n\u2022
+    Conduct Chemistry."
+  descriptionLong: "\"Be nice to the Nurses. They keep the doctors from accidentally
+    killing you.\"\r\n\u2015 A Random Patient\n\nThe Nurse is in charge of overseeing
+    that each and every patient has been prepped and healed enough for their visit
+    to the Doctor. Your goal is to assist wherever needed in Medbay and provide helping
+    hands to anyone who needs it. Much like a real Nurse, however with additional
+    tasks."
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}
