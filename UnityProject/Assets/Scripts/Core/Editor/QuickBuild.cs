@@ -263,7 +263,7 @@ namespace Core.Editor
 
 		private string mainStation = "TestStation";
 		private bool removeAwaySites = true;
-		private bool removeAsteroids = true;
+		private bool removeShips = true;
 		private bool removeLavaLand = true;
 		private bool removeAdditionalScenes = true;
 
@@ -272,7 +272,7 @@ namespace Core.Editor
 			GUILayout.Label("Main station:");
 			mainStation = GUILayout.TextField(mainStation);
 			removeAwaySites = GUILayout.Toggle(removeAwaySites, "Remove away sites");
-			removeAsteroids = GUILayout.Toggle(removeAsteroids, "Remove asteroids");
+			removeShips = GUILayout.Toggle(removeShips, "Remove asteroids");
 			removeLavaLand = GUILayout.Toggle(removeLavaLand, "Remove LavaLand");
 			removeAdditionalScenes = GUILayout.Toggle(removeAdditionalScenes, "Remove Additional Scenes (unsafe for some scenes)");
 
@@ -287,8 +287,8 @@ namespace Core.Editor
 			// remove all stations except TestStation
 			RemoveAllStations(exceptStation: mainStation);
 
-			if (removeAsteroids)
-				LeaveOneAsteroid();
+			if (removeShips)
+				LeaveOneShip();
 
 			if (removeAwaySites)
 				LeaveOneAwaySite();
@@ -372,28 +372,28 @@ namespace Core.Editor
 		}
 
 		/// <summary>
-		/// Disable all asteroids subscenes, except first one
+		/// Disable all ship subscenes, except first one
 		/// </summary>
-		private static void LeaveOneAsteroid()
+		private static void LeaveOneShip()
 		{
-			// get scriptable object with list of all asteroids
-			var asteroidListSO = AssetDatabase.LoadAssetAtPath<AsteroidListSO>("Assets/ScriptableObjects/SubScenes/AsteroidListSO.asset");
-			if (!asteroidListSO)
+			// get scriptable object with list of all ships
+			var shipListSO = AssetDatabase.LoadAssetAtPath<ShipListSO>("Assets/ScriptableObjects/SubScenes/ShipListSO.asset");
+			if (!shipListSO)
 			{
-				Logger.LogError("Can't find AsteroidListSO!", Category.Editor);
+				Logger.LogError("Can't find ShipListSO!", Category.Editor);
 				return;
 			}
 
-			// remove all except first asteroid
-			var firstAsteroid = asteroidListSO.Asteroids.First();
-			asteroidListSO.Asteroids = new List<string> { firstAsteroid };
-			EditorUtility.SetDirty(asteroidListSO);
+			// remove all except first ship
+			var firstShip = shipListSO.Ships.First();
+			shipListSO.Ships = new List<string> { firstShip };
+			EditorUtility.SetDirty(shipListSO);
 
-			// remove all asteroids from scene list
+			// remove all ships from scene list
 			var currentScenes = EditorBuildSettings.scenes;
-			var asteroids = currentScenes.Where((scene) =>
-				scene.path.Contains("AsteroidScenes") && !scene.path.Contains(firstAsteroid));
-			DisableScenes(asteroids);
+			var ships = currentScenes.Where((scene) =>
+				scene.path.Contains("ShipScenes") && !scene.path.Contains(firstShip));
+			DisableScenes(ships);
 		}
 
 		/// <summary>

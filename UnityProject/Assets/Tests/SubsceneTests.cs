@@ -59,20 +59,20 @@ namespace Tests
 		}
 
 		[Test]
-		public void CheckAsteroidInBuildSettings()
+		public void CheckShipInBuildSettings()
 		{
 			var report = new StringBuilder();
 
-			if (!Utils.TryGetScriptableObjectGUID(typeof(AsteroidListSO), report, out string asset))
+			if (!Utils.TryGetScriptableObjectGUID(typeof(ShipListSO), report, out string asset))
 			{
 				Assert.Fail(report.ToString());
 				return;
 			}
 
-			AsteroidListSO asteroids =
-				AssetDatabase.LoadAssetAtPath<AsteroidListSO>(AssetDatabase.GUIDToAssetPath(asset));
+			ShipListSO ships =
+				AssetDatabase.LoadAssetAtPath<ShipListSO>(AssetDatabase.GUIDToAssetPath(asset));
 
-			if (!CheckForScenesInBuildSettings(typeof(AsteroidListSO), report, asteroids.Asteroids))
+			if (!CheckForScenesInBuildSettings(typeof(ShipListSO), report, ships.Ships))
 			{
 				Assert.Fail(report.ToString());
 				return;
