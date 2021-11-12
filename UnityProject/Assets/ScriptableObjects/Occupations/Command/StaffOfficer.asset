@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: StaffOfficer
+  m_EditorClassIdentifier: 
+  jobType: 25
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 4
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 82d6077b36f2eac41a45cd73d8624eb5, type: 3}
+  displayName: Staff Officer
+  difficulty: 2
+  descriptionShort: "\u2022 Provide overwatch.\n\u2022 Assist the Commanding Officer."
+  descriptionLong: Staff Officers (SO) are sixth in command after the Chief Engineer
+    (CE), Requisitions Officer (RO) and Chief MP (CMP). Despite being the 6th in
+    line for Command, generally when there is no CO or XO, the role of Acting Commanding
+    Officer will pass down to you since other department heads are too busy in their
+    own department. A SO's primary objective is to support the marine squads using
+    the Overwatch Consoles and to communicate with the crew of the ship so that key
+    information can be relayed to all personnel, an example for this would be relaying
+    to the doctors that there are injured about to land on the Almayer aboard the
+    Normandy. Overwatch allows for you and the other command personnel to oversee
+    squad operations from the safety of the Combat Information Centre (CIC).
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

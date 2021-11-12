@@ -12,12 +12,10 @@ namespace Objects.Telecomms
 
 		private static readonly Dictionary<JobType, ChatChannel> channelFromJob = new Dictionary<JobType, ChatChannel>()
 	{
-		{ JobType.CAPTAIN, ChatChannel.Command },
-		{ JobType.HOP, ChatChannel.Service },
-		{ JobType.RD, ChatChannel.Science },
+		{ JobType.COMMANDING_OFFICER, ChatChannel.Command },
 		{ JobType.CHIEF_ENGINEER, ChatChannel.Engineering },
-		{ JobType.CMO, ChatChannel.Medical },
-		{ JobType.HOS, ChatChannel.Security }
+		{ JobType.CHIEF_MEDICAL_OFFICER, ChatChannel.Medical },
+		{ JobType.CHIEF_MP, ChatChannel.Security }
 	};
 
 		private void OnEnable()
@@ -68,15 +66,6 @@ namespace Objects.Telecomms
 			{
 				chatChannels = ChatChannel.CentComm;
 			}
-
-			if (playerOccupation.JobType == JobType.AI)
-			{
-				commonMessage = $"{player.ExpensiveName()} has been bluespace-beamed into the AI core!";
-			}
-			else if (playerOccupation.JobType == JobType.SYNDICATE)
-			{
-				chatChannels = ChatChannel.Syndicate;
-			}
 			else if (playerOccupation.IsCrewmember == false)
 			{
 				// Don't announce non-crewmembers like wizards, fugitives at all (they don't have their own chat channel).
@@ -88,9 +77,9 @@ namespace Objects.Telecomms
 
 		private Loudness GetAnnouncementImportance(Occupation job)
 		{
-			if (job.JobType == JobType.AI || job.JobType == JobType.HOP || job.JobType == JobType.CAPTAIN ||
-			    job.JobType == JobType.CMO || job.JobType == JobType.CENTCOMM_COMMANDER || job.JobType == JobType.RD
-			    || job.JobType == JobType.HOS || job.JobType == JobType.CHIEF_ENGINEER || job.JobType == JobType.CARGOTECH)
+			if (job.JobType == JobType.COMMANDING_OFFICER || job.JobType == JobType.EXECUTIFE_OFFICER || job.JobType == JobType.CHIEF_MP 
+			|| job.JobType == JobType.CHIEF_ENGINEER || job.JobType == JobType.CHIEF_MEDICAL_OFFICER || job.JobType == JobType.REQUISITIONS_OFFICER 
+			|| job.JobType == JobType.STAFF_OFFICER)
 			{
 				return Loudness.LOUD;
 			}

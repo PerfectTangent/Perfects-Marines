@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: MilitaryPolice
+  m_EditorClassIdentifier: 
+  jobType: 15
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 8
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 94b529cb7b3108b478c530e4e57003d8, type: 3}
+  displayName: Military Police
+  difficulty: 3
+  descriptionShort: "\u2022 Enforce Marine Law.\n\u2022 Detain Criminals.\n\u2022
+    Keep Shipside Personnel Safe."
+  descriptionLong: "\"The difference between a normal policeman and a military policeman,
+    is that a military policeman deals with trained killers\" - Anonymous.\n\nAs
+    a Military Police Officer, your primary duty is to obey and enforce Marine Law.\r\n\r\nMPs
+    are held to a very high standard of conduct because you are the source of in-character
+    discipline as well as the server's first line of defense against out-of-character
+    infractions. You are bound to Marine Law as Server Rules meaning if you break
+    any laws in Marine Law you risk being punished outside of \"In Character\", meaning
+    you may be Job banned or even outright banned due to your actions.\r"
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1

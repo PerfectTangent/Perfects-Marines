@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: SquadMarine
+  m_EditorClassIdentifier: 
+  jobType: 1
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 99
+  priority: 99
+  allowedAccess: 
+  spells: []
+  progress: 95
+  choiceColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
+  previewSprite: {fileID: 21300000, guid: 3e184b3013c0bca498025a3407a90763, type: 3}
+  displayName: Squad Marine
+  difficulty: 0
+  descriptionShort: "\u2022 Assist squad.\n\u2022 Born to kill.\n\u2022 Follow your
+    sergeant's orders."
+  descriptionLong: '"How do I get out of this chickenshit outfit?"- Hudson, Aliens
+
+
+
+    You''re
+    in the United States Colonial Marine Corps. Follow your sergeant''s orders and
+    don''t ask too many questions. Whether you''ve been to Hell and back or you''re
+    fresh out of Boot, you''re expected to maintain a level of professionalism. Do
+    your job, follow orders, and maybe you''ll go home in one piece.'
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: null
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

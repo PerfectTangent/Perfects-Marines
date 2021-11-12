@@ -150,13 +150,7 @@ namespace GameModes
 		[SerializeField, BoxGroup("Job Allocation"), ShowIf(nameof(AllocateJobsToAntags))]
 		private List<JobType> nonAntagJobTypes = new List<JobType>
 		{
-			JobType.CAPTAIN,
-			JobType.HOP,
-			JobType.HOS,
-			JobType.WARDEN,
-			JobType.SECURITY_OFFICER,
-			JobType.DETECTIVE,
-			JobType.AI
+			JobType.COMMANDING_OFFICER,
 		};
 		/// <summary>
 		/// The JobTypes that cannot be chosen as antagonists for this game mode

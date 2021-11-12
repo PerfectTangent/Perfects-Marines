@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: Doctor
+  m_EditorClassIdentifier: 
+  jobType: 8
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 4
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: d80a39bc7954ca54a8621dee235327ce, type: 3}
+  displayName: Doctor
+  difficulty: 2
+  descriptionShort: "\u2022 Heal severely injured marines.\n\u2022 Do surgery."
+  descriptionLong: "\"Doctor, I can't feel my legs!\"\r\n\"I know, we amputated them!\"\r\n\u2015
+    A Patient and a Doctor\r\n\r\n\r\nA Squad Medic can bandage a wounded marine,
+    but sometimes the situation is so bad that the Marine should be taken from combat
+    back to the Almayer. That's where you, the Almayer Doctor comes, safe in your
+    medbay on the Almayer, you'll be doing all the things normal field medics can't
+    do."
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

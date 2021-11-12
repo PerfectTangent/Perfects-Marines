@@ -12,21 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c43b64a60d9d014ba24289e407322f3, type: 3}
   m_Name: AdditionalSceneList
   m_EditorClassIdentifier: 
-  AdditionalScenes:
-  - LavaLand
-  - AncientStation
+  AdditionalScenes: []
   defaultCentComScenes:
   - CentCom
   CentComScenes:
   - CentComSceneName: Fallstation Centcom
     DependentScene: FallStation
-  defaultSyndicateScenes:
-  - SyndicateOutpost
-  SyndicateScenes:
-  - SyndicateSceneName: Fallstation Syndicate
-    DependentScene: FallStation
-  - SyndicateSceneName: SyndicatePog
-    DependentScene: PogStation
-  WizardScenes:
-  - WizardAsteroid
-  - WizardShip
+  defaultSyndicateScenes: []
+  SyndicateScenes: []
+  WizardScenes: []

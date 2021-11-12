@@ -17,10 +17,8 @@ MonoBehaviour:
   headerColor: {r: 0.839, g: 0.45138198, b: 0.6968733, a: 1}
   icon: {fileID: 0}
   headOccupations:
-  - {fileID: 11400000, guid: 639b047743b074fb29d97a08deaf93f8, type: 2}
+  - {fileID: 11400000, guid: d0805fe527e242e49b656622c6ea7a7e, type: 2}
   occupations:
-  - {fileID: 11400000, guid: 14dee88c3a7354da5a4ab46bc7e6510b, type: 2}
-  - {fileID: 11400000, guid: c35b9e9fa06845b458f52cf9fb0f0704, type: 2}
-  - {fileID: 11400000, guid: 799ae4e162ac8174ab6c0fac3f1fc5a4, type: 2}
-  - {fileID: 11400000, guid: f01c36fb01ab249329609a6b5e28e750, type: 2}
-  - {fileID: 11400000, guid: 2a1d8045a73ab42079a921e692072fb2, type: 2}
+  - {fileID: 11400000, guid: addd76eabfc468a44bab84a76146d8b9, type: 2}
+  - {fileID: 11400000, guid: 3b012191b58b14a49b05e1acca7e3688, type: 2}
+  - {fileID: 11400000, guid: 51bb1a8bc39779f41b7e7c32c5d8200f, type: 2}

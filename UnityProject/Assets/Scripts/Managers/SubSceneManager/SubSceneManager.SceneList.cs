@@ -10,10 +10,14 @@ public partial class SubSceneManager
 {
 	private string serverChosenAwaySite = "loading";
 	private string serverChosenMainStation = "loading";
+	private string serverChosenShip = "loading";
 
 	public static string ServerChosenMainStation => Instance.serverChosenMainStation;
 
+	public static string ServerChosenShip => Instance.serverChosenShip;
+
 	public static string AdminForcedMainStation = "Random";
+	public static string AdminForcedShip = "Random";
 	public static string AdminForcedAwaySite = "Random";
 	public static bool AdminAllowLavaland;
 
@@ -21,7 +25,7 @@ public partial class SubSceneManager
 	{
 		var loadTimer = new SubsceneLoadTimer();
 		//calculate load time:
-		loadTimer.MaxLoadTime = 20f + (asteroidList.Asteroids.Count * 10f);
+		loadTimer.MaxLoadTime = 20f;
 		loadTimer.IncrementLoadBar("Preparing..");
 
 		while (AddressableCatalogueManager.FinishLoaded == false)
@@ -29,13 +33,12 @@ public partial class SubSceneManager
 			yield return null;
 		}
 
-		//Choose and load a mainstation
+		//Choose and load a mainstation and ship
+		yield return StartCoroutine(ServerLoadShip(loadTimer));
 		yield return StartCoroutine(ServerLoadMainStation(loadTimer));
 
 		if (GameManager.Instance.QuickLoad == false)
 		{
-			//Load Asteroids:
-			yield return StartCoroutine(ServerLoadAsteroids(loadTimer));
 			//Load away site:
 			yield return StartCoroutine(ServerLoadAwaySite(loadTimer));
 			//Load CentCom Scene:
@@ -50,6 +53,38 @@ public partial class SubSceneManager
 		UIManager.Display.preRoundWindow.CloseMapLoadingPanel();
 		EventManager.Broadcast( Event.ScenesLoadedServer, false);
 		Logger.Log($"Server has loaded {serverChosenAwaySite} away site", Category.Round);
+	}
+
+	//Choose and load a ship on the server
+	IEnumerator ServerLoadShip(SubsceneLoadTimer loadTimer)
+	{
+		ShipLoaded = true;
+		//Auto scene load stuff in editor:
+		var prevEditorScene = GetEditorPrevScene();
+		if (shipList.Ships.Contains(prevEditorScene) && AdminForcedShip == "Random")
+		{
+			serverChosenShip = prevEditorScene;
+		}
+		else if(AdminForcedShip == "Random")
+		{
+			serverChosenShip = shipList.GetRandomShip();
+		}
+		else
+		{
+			serverChosenShip = AdminForcedShip;
+		}
+
+		//Reset map selector
+		AdminForcedShip = "Random";
+
+		loadTimer.IncrementLoadBar($"Loading {serverChosenShip}");
+		//load ship
+		yield return StartCoroutine(LoadSubScene(serverChosenShip, loadTimer));
+		loadedScenesList.Add(new SceneInfo
+		{
+			SceneName = serverChosenShip,
+			SceneType = SceneType.Ship
+		});
 	}
 
 	//Choose and load a main station on the server
@@ -83,24 +118,6 @@ public partial class SubSceneManager
 			SceneType = SceneType.MainStation
 		});
 		netIdentity.isDirty = true;
-	}
-
-	//Load all the asteroids on the server
-	IEnumerator ServerLoadAsteroids(SubsceneLoadTimer loadTimer)
-	{
-		loadTimer.IncrementLoadBar("Loading Asteroids");
-
-		foreach (var asteroid in asteroidList.Asteroids)
-		{
-			yield return StartCoroutine(LoadSubScene(asteroid, loadTimer));
-
-			loadedScenesList.Add(new SceneInfo
-			{
-				SceneName = asteroid,
-				SceneType = SceneType.Asteroid
-			});
-			netIdentity.isDirty = true;
-		}
 	}
 
 	IEnumerator ServerLoadCentCom(SubsceneLoadTimer loadTimer)
@@ -220,52 +237,6 @@ public partial class SubSceneManager
 	}
 
 	#region GameMode Unique Scenes
-
-	public IEnumerator LoadSyndicate()
-	{
-		if (SyndicateLoaded) yield break;
-		var pickedMap = additionalSceneList.defaultSyndicateScenes.PickRandom();
-
-		foreach (var syndicateData in additionalSceneList.SyndicateScenes)
-		{
-			if (syndicateData.DependentScene == null || syndicateData.SyndicateSceneName == null)
-				continue;
-			if (syndicateData.DependentScene != serverChosenMainStation)
-				continue;
-
-			pickedMap = syndicateData.SyndicateSceneName;
-			break;
-		}
-		yield return StartCoroutine(LoadSubScene(pickedMap));
-
-		loadedScenesList.Add(new SceneInfo
-		{
-			SceneName = pickedMap,
-			SceneType = SceneType.AdditionalScenes
-		});
-		netIdentity.isDirty = true;
-
-		SyndicateScene = SceneManager.GetSceneByName(pickedMap);
-		SyndicateLoaded = true;
-	}
-
-	public IEnumerator LoadWizard()
-	{
-		if (WizardLoaded) yield break;
-
-		string pickedScene = additionalSceneList.WizardScenes.PickRandom();
-
-		yield return StartCoroutine(LoadSubScene(pickedScene));
-
-		loadedScenesList.Add(new SceneInfo
-		{
-			SceneName = pickedScene,
-			SceneType = SceneType.AdditionalScenes
-		});
-		netIdentity.isDirty = true;
-
-		WizardLoaded = true;
-	}
 
 	#endregion
 

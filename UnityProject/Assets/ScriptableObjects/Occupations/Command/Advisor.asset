@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: Advisor
+  m_EditorClassIdentifier: 
+  jobType: 21
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 1
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: 3834c4ae4321ef443af0dbf1bc364bb3, type: 3}
+  displayName: Senior Enlisted Adviser
+  difficulty: 2
+  descriptionShort: "\u2022 Advise the crew.\n\u2022 Act as a morale figurehead.\n\u2022
+    Teach newbies."
+  descriptionLong: '
+
+    Senior Enlisted Advisors (SEA) are the senior most ranked
+    enlisted aboard the ship. An SEA''s primary objective is to offer in game mentoring
+    to any crew member aboard the ship that may need help with matters especially
+    concerning Marine Law, or Standard Operating Procedure however, you can help
+    any other personnel that is new/inexperienced in a specific department, provided
+    that you are confident in the operations in the department yourself. Additionally,
+    it is their job to assist and teach new recruits the basics of how to work their
+    legs and hands, how to fire a weapon, how to put on their clothes and how to
+    take the dropship down to their early graves. With extensive access as well as
+    an office directly connected to cryogenics, you have the ability to show others
+    how to work the tools aboard the ship in order to help them understand what they
+    must do within the capabilities of their role.'
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1

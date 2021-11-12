@@ -112,18 +112,6 @@ namespace Antagonists
 				yield break;
 			}
 
-			if (antagonist.AntagJobType == JobType.SYNDICATE)
-			{
-				yield return StartCoroutine(SubSceneManager.Instance.LoadSyndicate());
-				yield return WaitFor.EndOfFrame;
-			}
-
-			if (antagonist.AntagJobType == JobType.WIZARD)
-			{
-				yield return StartCoroutine(SubSceneManager.Instance.LoadWizard());
-				yield return WaitFor.EndOfFrame;
-			}
-
 			PlayerSpawn.ServerRespawnPlayer(connectedPlayer.Script.mind);
 			ServerFinishAntag(antagonist, connectedPlayer);
 		}

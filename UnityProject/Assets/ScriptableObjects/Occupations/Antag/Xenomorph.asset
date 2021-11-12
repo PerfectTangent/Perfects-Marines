@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: Xenomorph
+  m_EditorClassIdentifier: 
+  jobType: 30
+  isCrewmember: 0
+  lateSpawnIsArrivals: 0
+  inventoryPopulator: {fileID: 0}
+  limit: 0
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 0.583552, g: 0.12517802, b: 0.9150943, a: 1}
+  previewSprite: {fileID: 21300000, guid: 7e1f049489152434482f28d3abc28bf7, type: 3}
+  displayName: Xenomorph
+  difficulty: 1
+  descriptionShort: "\u2022 Using the life given to you by a host, go forth and expand
+    the Hive. Hide to Evolve if needed."
+  descriptionLong: '"Everyone is screaming in terror after watching a Chestburster/Larva
+    bust out of Kane''s chest." - Alien
+
+
+
+'
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

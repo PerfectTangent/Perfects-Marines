@@ -8,7 +8,7 @@ namespace Managers
 		/// <summary>
 		/// The default occupation to allocate to players who don't get any jobs.
 		/// </summary>
-		private static Occupation DefaultJob => OccupationList.Instance.Get(JobType.ASSISTANT);
+		private static Occupation DefaultJob => OccupationList.Instance.Get(JobType.SQUAD_MARINE);
 		/// <summary>
 		/// All players who have been allocated a job already
 		/// </summary>

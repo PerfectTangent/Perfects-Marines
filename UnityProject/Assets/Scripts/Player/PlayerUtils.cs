@@ -40,41 +40,16 @@ public static class PlayerUtils
 			var ps = player.Script;
 			if (ps.IsDeadOrGhost) continue;
 
-			if (ps.mind != null &&
-			    ps.mind.occupation != null &&
-			    ps.mind.occupation.JobType == JobType.CLOWN)
+			if (ps.PlayerSync.IsMovingServer)
 			{
-				// love clown
-				ps.playerMove.Uncuff();
-
-				ps.playerHealth.ResetDamageAll();
-				ps.registerTile.ServerStandUp();
-
-
-				foreach (var itemSlot in player.Script.DynamicItemStorage.GetNamedItemSlots(NamedSlot.leftHand))
-				{
-					Inventory.ServerAdd(Spawn.ServerPrefab("Bike Horn").GameObject, itemSlot);
-				}
-
-				foreach (var itemSlot in player.Script.DynamicItemStorage.GetNamedItemSlots(NamedSlot.rightHand))
-				{
-					Inventory.ServerAdd(Spawn.ServerPrefab("Bike Horn").GameObject, itemSlot);
-				}
+				var plantPos = ps.WorldPos + ps.CurrentDirection.Vector;
+				Spawn.ServerPrefab("Banana peel", plantPos, cancelIfImpassable: true);
 			}
-			else
+			foreach (var pos in ps.WorldPos.BoundsAround().allPositionsWithin)
 			{
-				if (ps.PlayerSync.IsMovingServer)
-				{
-					var plantPos = ps.WorldPos + ps.CurrentDirection.Vector;
-					Spawn.ServerPrefab("Banana peel", plantPos, cancelIfImpassable: true);
-
-				}
-				foreach (var pos in ps.WorldPos.BoundsAround().allPositionsWithin)
-				{
-					var matrixInfo = MatrixManager.AtPoint(pos, true);
-					var localPos = MatrixManager.WorldToLocalInt(pos, matrixInfo);
-					matrixInfo.MetaDataLayer.Clean(pos, localPos, true);
-				}
+				var matrixInfo = MatrixManager.AtPoint(pos, true);
+				var localPos = MatrixManager.WorldToLocalInt(pos, matrixInfo);
+				matrixInfo.MetaDataLayer.Clean(pos, localPos, true);
 			}
 		}
 		AudioSourceParameters audioSourceParameters = new AudioSourceParameters(pitch: Random.Range(0.2f,0.5f));

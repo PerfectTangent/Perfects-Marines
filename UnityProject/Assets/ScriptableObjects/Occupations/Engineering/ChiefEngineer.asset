@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58d5c5a6190436e9d4ae8e32a26ee6a, type: 3}
+  m_Name: ChiefEngineer
+  m_EditorClassIdentifier: 
+  jobType: 14
+  isCrewmember: 1
+  lateSpawnIsArrivals: 1
+  inventoryPopulator: {fileID: 0}
+  limit: 1
+  priority: 0
+  allowedAccess: 
+  spells: []
+  progress: 50
+  choiceColor: {r: 1, g: 1, b: 1, a: 1}
+  previewSprite: {fileID: 21300000, guid: d944eb78f8e25a74e95f1c6e4a2f4607, type: 3}
+  displayName: ChiefEngineer
+  difficulty: 3
+  descriptionShort: "\u2022 Coordinate engineering.\n\u2022 Keep the power on."
+  descriptionLong: "\"I want to know why they never come down here. This is where
+    the work is.\"\r\n- Corporate Chief Engineer Parker, Alien\r\n\r\nThe Chief Engineer
+    (CE) is a commissioned USCM crewmember and head of the USS Almayer's engineering
+    department. They are expected primarily to delegate and supervise their department's
+    Ordnance Technicians (OTs) to overcome any engineering challenges that may present
+    themselves on the vessel. They are also the third in command of the ship.\r"
+  customProperties:
+    m_keys: []
+    m_values: 
+  isTargeteable: 1
+  playSound: 0
+  spawnSound:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 0, b: 0, a: 1}

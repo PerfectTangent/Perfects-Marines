@@ -12,7 +12,6 @@ namespace Antagonists
 
 		public override void AfterSpawn(ConnectedPlayer player)
 		{
-			player.Job = JobType.SYNDICATE;
 			UpdateChatMessage.Send(player.GameObject, ChatChannel.Syndicate, ChatModifier.None,
 				$"We have intercepted the code for the nuclear weapon: <b>{AntagManager.SyndiNukeCode}</b>.", Loudness.LOUD);
 

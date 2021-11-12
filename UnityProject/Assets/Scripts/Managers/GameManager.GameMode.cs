@@ -31,7 +31,7 @@ public partial class GameManager
 	/// <summary>
 	/// Is the current game mode being kept secret?
 	/// </summary>
-	public bool SecretGameMode = true;
+	public bool SecretGameMode = false;
 
 	/// <summary>
 	/// Array of jobs from a randomized department. Used for Rebels gamemode (ex Cargonia)
@@ -99,7 +99,7 @@ public partial class GameManager
 	{
 		if (SecretGameMode && overrideSecret == false)
 		{
-			return "Secret";
+			return "Distress Beacon";
 		}
 
 		if (GameMode == null)
@@ -139,19 +139,6 @@ public partial class GameManager
 			// If MatrixInfo is not ready, players that spawn in the additional scenes (wizard ship, syndicate base)
 			// will spawn on the wrong matrix and so will exhibit space exposure symptoms.
 
-			if (job.AntagOccupation.JobType == JobType.SYNDICATE)
-			{
-				yield return StartCoroutine(SubSceneManager.Instance.LoadSyndicate());
-				yield return WaitFor.EndOfFrame;
-				break;
-			}
-
-			if (job.AntagOccupation.JobType == JobType.WIZARD)
-			{
-				yield return StartCoroutine(SubSceneManager.Instance.LoadWizard());
-				yield return WaitFor.EndOfFrame;
-				break;
-			}
 		}
 
 		GameMode.StartRound();

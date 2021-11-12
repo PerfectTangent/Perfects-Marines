@@ -108,12 +108,11 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IInt
 				if (occupation == null) return;
 				var charSettings = ps.characterSettings;
 				jobType = occupation.JobType;
-				if (jobType == JobType.CAPTAIN)
+				if (jobType == JobType.COMMANDING_OFFICER)
 				{
 					Initialize(IDCardType.captain, jobType, occupation.AllowedAccess, charSettings.Name);
 				}
-				else if (jobType == JobType.HOP || jobType == JobType.HOS || jobType == JobType.CMO || jobType == JobType.RD ||
-				         jobType == JobType.CHIEF_ENGINEER)
+				else if (jobType == JobType.CHIEF_MP || jobType == JobType.CHIEF_MEDICAL_OFFICER || jobType == JobType.CHIEF_ENGINEER)
 				{
 					Initialize(IDCardType.command, jobType, occupation.AllowedAccess, charSettings.Name);
 				}

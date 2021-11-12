@@ -3,7 +3,11 @@ guid: 88cdce62f5f5af74fa58c874b74efc0a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - awayWorldList: {instanceID: 0}
+  - mainStationList: {instanceID: 0}
+  - shipList: {instanceID: 0}
+  - additionalSceneList: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

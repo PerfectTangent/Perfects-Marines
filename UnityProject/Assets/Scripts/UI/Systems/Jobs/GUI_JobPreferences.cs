@@ -219,7 +219,7 @@ namespace UI
 		/// </summary>
 		public void SetAssistantDefault()
 		{
-			OnPriorityChange(JobType.ASSISTANT, Priority.Low, null);
+			OnPriorityChange(JobType.SQUAD_MARINE, Priority.Low, null);
 		}
 	}
 }
