@@ -31,7 +31,7 @@ public partial class GameManager
 	/// <summary>
 	/// Is the current game mode being kept secret?
 	/// </summary>
-	public bool SecretGameMode = true;
+	public bool SecretGameMode = false;
 
 	/// <summary>
 	/// Array of jobs from a randomized department. Used for Rebels gamemode (ex Cargonia)

@@ -770,7 +770,7 @@ public partial class GameManager : MonoBehaviour, IInitialise
 			}
 		}
 
-		return OccupationList.Instance.Get(JobType.ASSISTANT);
+		return OccupationList.Instance.Get(JobType.SQUAD_MARINE);
 	}
 
 	/// <summary>

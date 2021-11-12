@@ -83,8 +83,6 @@ namespace Systems
 			//Updates clients about the amount of this job
 			ServerAddJob(jobType);
 
-			if (jobType == JobType.AI || jobType == JobType.CYBORG) return entry;
-
 			entry.SecurityRecord = GenerateSecurityRecord(script, jobType);
 			SecurityRecords.Add(entry.SecurityRecord);
 
@@ -203,7 +201,7 @@ namespace Systems
 	public class CrewManifestEntry
 	{
 		public string Name { get; set; } = "Crewmember";
-		public JobType JobType { get; set; } = JobType.ASSISTANT;
+		public JobType JobType { get; set; } = JobType.SQUAD_MARINE;
 
 		public SecurityRecord SecurityRecord { get; set; }
 		// TODO: add extra records like health here, as needed.

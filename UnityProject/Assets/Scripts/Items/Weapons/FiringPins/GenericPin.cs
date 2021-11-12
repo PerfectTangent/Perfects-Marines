@@ -11,7 +11,7 @@ namespace Weapons
 		public override void ServerBehaviour(AimApply interaction, bool isSuicide)
 		{
 			JobType job = GetJobServer(interaction.Performer);
-			if (clusmyMisfire && job == JobType.CLOWN)
+			if (clusmyMisfire)
 			{
 				ClumsyShotServer(interaction, isSuicide);
 			}

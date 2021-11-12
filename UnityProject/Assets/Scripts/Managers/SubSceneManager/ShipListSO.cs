@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using NaughtyAttributes;
+using System.Linq;
 using UnityEngine;
+using NaughtyAttributes;
+using UnityEngine.SceneManagement;
+
 
 [CreateAssetMenu(fileName = "ShipListSO", menuName = "ScriptableObjects/ShipList", order = 1)]
 public class ShipListSO : ScriptableObject
@@ -25,6 +27,7 @@ public class ShipListSO : ScriptableObject
 			return maps.GetRandomMap();
 		}
 
-		return Ships[Random.Range(0, Ships.Count)];
+		// Check that we can actually load the scene.
+		return Ships.Where(scene => SceneUtility.GetBuildIndexByScenePath(scene) > -1).PickRandom();
 	}
 }

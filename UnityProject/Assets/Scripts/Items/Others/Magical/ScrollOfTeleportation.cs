@@ -64,12 +64,12 @@ namespace Items.Scrolls.TeleportScroll
 	// Use the JobType's spawnpoint as the destination.
 	public enum TeleportDestination
 	{
-		Commons = JobType.ASSISTANT,
-		Atmospherics = JobType.ATMOSTECH,
-		Cargo = JobType.CARGOTECH,
+		Commons = JobType.SQUAD_MARINE,
+		Atmospherics = JobType.ORDANCE_TECHICIAN,
+		Cargo = JobType.REQUISITIONS_OFFICER,
 		Medbay = JobType.DOCTOR,
-		Engineering = JobType.ENGINEER,
-		Science = JobType.SCIENTIST,
-		Security = JobType.SECURITY_OFFICER
+		Engineering = JobType.MAINTENANCE_TECHNICIAN,
+		Science = JobType.RESEARCHER,
+		Security = JobType.MILITARY_POLICE
 	}
 }

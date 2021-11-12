@@ -379,7 +379,7 @@ namespace Objects
 						if (health.RegisterPlayer.PlayerScript != null &&
 						    health.RegisterPlayer.PlayerScript.mind != null &&
 						    health.RegisterPlayer.PlayerScript.mind.occupation != null &&
-						    health.RegisterPlayer.PlayerScript.mind.occupation == OccupationList.Instance.Get(JobType.CLOWN))
+						    health.RegisterPlayer.PlayerScript.mind.occupation == OccupationList.Instance.Get(JobType.COMMANDING_OFFICER))
 						{
 							health.Gib();
 							ChangePoints(DMMath.Prob(50) ? -1000 : 1000);

@@ -78,7 +78,7 @@ namespace Systems.MobAIs
 			if (speaker.Script == null) return;
 			if (speaker.Script.playerNetworkActions == null) return;
 
-			if (speaker.Job == JobType.CAPTAIN || speaker.Job == JobType.HOP)
+			if (speaker.Job == JobType.COMMANDING_OFFICER)
 			{
 				StartCoroutine(PerformVoiceCommand(chatEvent.message.ToLower(), speaker));
 			}
