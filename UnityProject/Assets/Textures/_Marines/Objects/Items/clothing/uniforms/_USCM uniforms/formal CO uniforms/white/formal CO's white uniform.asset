@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd5a08c3d2a815a459870fba3d969bfc, type: 3}
-  m_Name: formal commanding officer's white uniform
+  m_Name: formal CO's white uniform
   m_EditorClassIdentifier: 
   SpriteEquipped: {fileID: 11400000, guid: 34286772a351bb0419a528301a300902, type: 2}
   SpriteInHandsLeft: {fileID: 11400000, guid: 3789130262752e34594529bb17330ac2, type: 2}
