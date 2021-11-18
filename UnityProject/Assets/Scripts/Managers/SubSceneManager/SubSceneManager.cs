@@ -84,7 +84,8 @@ public enum SceneType
 	MainStation,
 	AwaySite,
 	Ship,
-	AdditionalScenes
+	AdditionalScenes,
+	Space
 }
 
 [System.Serializable]
