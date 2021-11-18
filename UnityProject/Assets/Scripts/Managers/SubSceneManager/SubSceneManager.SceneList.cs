@@ -33,7 +33,9 @@ public partial class SubSceneManager
 			yield return null;
 		}
 
-		//Choose and load a mainstation and ship
+		yield return StartCoroutine(ServerLoadSpaceScene(loadTimer));
+
+		//Choose and load a mainstation
 		yield return StartCoroutine(ServerLoadShip(loadTimer));
 		yield return StartCoroutine(ServerLoadMainStation(loadTimer));
 
@@ -53,6 +55,19 @@ public partial class SubSceneManager
 		UIManager.Display.preRoundWindow.CloseMapLoadingPanel();
 		EventManager.Broadcast( Event.ScenesLoadedServer, false);
 		Logger.Log($"Server has loaded {serverChosenAwaySite} away site", Category.Round);
+	}
+
+	//Load the space scene on the server
+	IEnumerator ServerLoadSpaceScene(SubsceneLoadTimer loadTimer)
+	{
+		loadTimer.IncrementLoadBar($"Loading the void of time and space");
+		yield return StartCoroutine(LoadSubScene("SpaceScene", loadTimer));
+		loadedScenesList.Add(new SceneInfo
+		{
+			SceneName = "SpaceScene",
+			SceneType = SceneType.Space
+		});
+		netIdentity.isDirty = true;
 	}
 
 	//Choose and load a ship on the server
