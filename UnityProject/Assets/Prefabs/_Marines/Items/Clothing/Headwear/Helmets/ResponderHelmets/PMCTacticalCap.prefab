@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 698176856212991572, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bio
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 698176856212991572, guid: c26ad2f80b1e6944387277a196b8de04,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bomb
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3520668212151141357, guid: c26ad2f80b1e6944387277a196b8de04,
         type: 3}
       propertyPath: m_Sprite

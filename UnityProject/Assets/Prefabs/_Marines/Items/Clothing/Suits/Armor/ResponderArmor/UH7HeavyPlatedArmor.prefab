@@ -124,6 +124,96 @@ PrefabInstance:
       propertyPath: walkingSpeedDebuff
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[1].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[2].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[3].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[4].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[5].armor.Bomb
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[1].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[2].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[3].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[4].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[5].armor.Melee
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[1].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[2].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[3].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[4].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418157028616732125, guid: a8a652ec6415d034c967ff1fc0c77553,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[5].armor.Bullet
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5162746975718503717, guid: a8a652ec6415d034c967ff1fc0c77553,
         type: 3}
       propertyPath: PresentSpriteSet

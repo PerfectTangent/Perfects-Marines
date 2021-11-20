@@ -98,6 +98,11 @@ PrefabInstance:
       propertyPath: bodyPartsCovered
       value: 144
       objectReference: {fileID: 0}
+    - target: {fileID: 3542597504205901604, guid: 7728804a55a110a43bb3f514a43bfc75,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6061576589570863158, guid: 7728804a55a110a43bb3f514a43bfc75,
         type: 3}
       propertyPath: foreverID
