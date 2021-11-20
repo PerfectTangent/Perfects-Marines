@@ -7,6 +7,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[1].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[2].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[3].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[4].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163017366884217516, guid: b2863b1c3192ee342b22b3aa186865fa,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[5].armor.Bullet
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2411966560550646415, guid: b2863b1c3192ee342b22b3aa186865fa,
         type: 3}
       propertyPath: m_Sprite

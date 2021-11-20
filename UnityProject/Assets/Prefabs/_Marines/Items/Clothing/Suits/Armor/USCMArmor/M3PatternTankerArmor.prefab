@@ -7,6 +7,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[0].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[1].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[2].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[3].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[4].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 603489085987435168, guid: 5b44c6fb57f3efe46a94df342694494a,
+        type: 3}
+      propertyPath: armoredBodyParts.Array.data[5].armor.Fire
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3675494832130518717, guid: 5b44c6fb57f3efe46a94df342694494a,
         type: 3}
       propertyPath: initialName
